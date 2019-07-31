@@ -1,0 +1,33 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+/// Regular font family
+/// @type List
+$font-stack: Poppins, sans-serif;
+
+/// Text color
+/// @type Color
+$font-dark: rgb(57, 59, 65);
+$font-pale: rgb(91, 93, 95);
+
+
+/// Background colors
+/// @type Color
+// $body-background-color: rgb(255, 255, 255);
+$body-background-color: rgb(247, 247, 247);
+$header-background-color: rgb(255, 255, 255);
+$footer-background-color: rgb(129, 122, 122);
+
+/// Main color
+/// @type Color
+$primary-color: rgb(127, 135, 158);
+
+/// Secondary color
+/// @type Color
+$secondary-color: rgb(94, 0, 240);
+
+/// Navigation height
+$navigation-height: 65px;

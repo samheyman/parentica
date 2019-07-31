@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+/**
+ * Set up a decent box model on the root element
+ */
+html, input, button {
+    color: $font-dark;
+    font-family: $font-stack;
+    font-size: 16px;
+    text-size-adjust: 100%;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+  
+/**
+* Make all elements from the DOM inherit from the parent box-sizing
+* Since `*` has a specificity of 0, it does not override the `html` value
+* making all elements inheriting from the root box-sizing value
+* See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*/
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+  
+body {
+    padding: 0;
+    margin: 0;
+    background-color: $body-background-color;
+    min-height: 100vh;
+}
+
+.full-height-grow {
+    display: flex;
+    flex-direction: column;
+}
+
+.container, {
+    width: 90%;
+}
+
+.body-container {
+    padding: 0px 10px;
+}
+
+@media only screen and (max-width: 993px) {
+    .container {
+        width: 100%;
+    }
+}
+
+.title {
+    font-weight: 500;
+    font-size: 3em;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    color: black;
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 1.2em;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    color: $primary-color;
+    background-color: $secondary-color;
+    padding: .75rem 1.5rem;
+    border-radius: .5rem;
+    text-decoration: none;
+    font-size: .9rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+}
