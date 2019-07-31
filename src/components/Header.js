@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { NavLink } from 'react-router-dom';
 
 class Header extends Component {
     render() {
@@ -7,30 +8,30 @@ class Header extends Component {
                 <div className="container">
                     <nav>
                         <div className="nav-wrapper white">
-                            <a href="/" className="brand-logo">
+                            <NavLink to="/" className="brand-logo">
                                 PARENTSKILL
-                            </a>
+                            </NavLink>
                             <a href="#" data-target="mobile-sidenav" className="sidenav-trigger">
                                 <i className="material-icons">menu</i>
                             </a>
                             <ul className="right hide-on-med-and-down">
-                                <li><a href="calendar.html">Calendar</a></li>
-                                <li><a href="classNamees.html">Explore</a></li>                            
-                                <li><a href="mobile.html">Partners</a></li>
-                                <li><a href="collapsible.html">Sign in</a></li>
-                                <li><a className="btn-small" href="collapsible.html">Sign up</a></li>
+                                {/* <li><a href="calendar.html">Calendar</a></li> */}
+                                <li><NavLink to="/classes">Classes</NavLink></li>                            
+                                <li><NavLink to="mobile.html">Partners</NavLink></li>
+                                <li><NavLink to="collapsible.html">Sign in</NavLink></li>
+                                <li><NavLink className="btn-small" to="collapsible.html">Sign up</NavLink></li>
                             </ul>
                             <ul className="right hide-on-large-only">
-                                <li><a href="collapsible.html">Sign up</a></li>
+                                <li><NavLink to="collapsible.html">Sign up</NavLink></li>
                             </ul>
                         </div>
                     </nav>
                     <ul className="sidenav" id="mobile-sidenav">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="calendar.html">Calendar</a></li>
-                        <li><a href="classNamees.html">Explore</a></li>
-                        <li><a href="mobile.html">Partners</a></li>
-                        <li><a href="collapsible.html">Sign up</a></li>
+                        <li><NavLink class="sidenav-close" to="/">Home</NavLink></li>
+                        {/* <li><a href="calendar.html">Calendar</a></li> */}
+                        <li><NavLink class="sidenav-close" to="/classes">Classes</NavLink></li>
+                        <li><NavLink class="sidenav-close" to="mobile.html">Partners</NavLink></li>
+                        <li><NavLink class="sidenav-close" to="collapsible.html">Sign up</NavLink></li>
                     </ul>
             </div>
         </header>

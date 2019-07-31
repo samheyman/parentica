@@ -1,19 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Classes extends Component {
-
-    constructor (props) {
-        super(props);
-    }
-
-    render() {
-
-        const classes = this.props.classes.map((classEntry) => {
-            const divStyle = {
-                backgroundImage: 'url(' + classEntry.image + ')',
-            };
-            return (
-                <div className="col s12 m4 l3" key={classEntry.id}>
+function RenderCard({classEntry}) {
+    const divStyle = {
+        backgroundImage: 'url(' + classEntry.image + ')',
+    };
+    return(
+        <div className="col s12 m4 l3" key={classEntry.id}>
                     <div className="card" onClick={() => this.props.onClick(classEntry.id)}>
                         <div className="card-image" style={divStyle} >
                         </div>
@@ -34,22 +26,33 @@ class Classes extends Component {
                         </div>
                     </div>
                 </div>
-            );
-        });
+    );
 
-        return(
-            <React.Fragment>
-                <div className="row">
-                    <div className="col s12">
-                        <h2>All classes</h2>
-                    </div>
-                </div>
-                <div className="row">
-                    {classes}
-                </div>
-            </React.Fragment>
-        );
-    }
 }
 
-export default Classes;
+function Home(props) {
+    return(
+        <div className="row">
+            <div className="col s12">
+                <h2>Featured class</h2>
+            </div>
+            <div className="row">
+                <div className="container">
+                    <div className="row align-items-start">
+                        <div className="col-12 col-md m-1">
+                            <RenderCard classEntry={props.featuredClass} />
+                        </div>
+                        {/* <div className="col-12 col-md m-1">
+                            <RenderCard item={props.promotion} />
+                        </div>
+                        <div className="col-12 col-md m-1">
+                            <RenderCard item={props.leader} />
+                        </div> */}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default Home; 

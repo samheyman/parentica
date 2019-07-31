@@ -10,6 +10,7 @@
 }
 
 .card {
+    width: 218px;
 
     .card-image {
         border-radius: 2px 2px 0 0;
@@ -18,7 +19,8 @@
         // padding-bottom: 50%;
         // overflow: hidden;
         // position: relative;   
-        background-size: cover;
+        //background-size: cover;
+        background: no-repeat center/cover;
         img {
             border-radius: 2px 2px 0 0;
         //     width: 100%;
