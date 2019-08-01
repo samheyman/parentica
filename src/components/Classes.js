@@ -13,23 +13,23 @@ class Classes extends Component {
                 backgroundImage: 'url(' + classEntry.image + ')',
             };
             return (
-                <div className="col s12 m4 l3" key={classEntry.id}>
-                    <div className="card" onClick={() => this.props.onClick(classEntry.id)}>
-                        <div className="card-image" style={divStyle} >
-                        </div>
-                        <div className="card-content">
+                <div key={classEntry.id} className="card" onClick={() => this.props.onClick(classEntry.id)}>
+                    <div className="card-image" style={divStyle}>
+                    </div>
+                    <div className="card-content">
+                        <div>
                             <span className="card-title">{classEntry.className}</span>
                             <span className="card-subtitle">{classEntry.companyName}</span>
-                            <div className="card-footer">
-                                <div className="datetime">
-                                    <span>
-                                    {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(classEntry.date)))}
-                                    {/* {classEntry.date} */}
-                                    </span>
-                                </div>
-                                <div className="price">
-                                    <span>{classEntry.price}€</span>
-                                </div>
+                        </div>
+                        <div className="card-footer">
+                            <div className="datetime">
+                                <span>
+                                {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(classEntry.date)))}
+                                {/* {classEntry.date} */}
+                                </span>
+                            </div>
+                            <div className="price">
+                                <span>{classEntry.price}€</span>
                             </div>
                         </div>
                     </div>
@@ -45,7 +45,9 @@ class Classes extends Component {
                     </div>
                 </div>
                 <div className="row">
-                    {classes}
+                    <div className="horizontalClasses">
+                        {classes}
+                    </div>
                 </div>
             </React.Fragment>
         );

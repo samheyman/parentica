@@ -42,4 +42,19 @@ export const CLASSES = [
         price: 100,
         featured: false
     },
+    {
+        id: 3,
+        className: 'Taller de Mindfulness y embarazo',
+        category: 'Pregnancy',
+        address: 'CDM GO fit Vallehermoso',
+        date: "2019-08-22T17:00Z",
+        time: '12:45',
+        duration: 60,
+        url: 'http://www.go-fit.es/Horarios/Index/1564610400/embarazo%20activo',
+        image: 'images/rinconmindfulness.png',
+        companyName: 'El Rincon De Mindfulness',
+        label: 'New',
+        price: 100,
+        featured: false
+    },
 ];

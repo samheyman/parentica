@@ -9,7 +9,7 @@ class Header extends Component {
                     <nav>
                         <div className="nav-wrapper white">
                             <NavLink to="/" className="brand-logo">
-                                PARENTSKILL
+                                PARENTHUB
                             </NavLink>
                             <a href="#" data-target="mobile-sidenav" className="sidenav-trigger">
                                 <i className="material-icons">menu</i>
@@ -27,11 +27,12 @@ class Header extends Component {
                         </div>
                     </nav>
                     <ul className="sidenav" id="mobile-sidenav">
-                        <li><NavLink class="sidenav-close" to="/">Home</NavLink></li>
-                        {/* <li><a href="calendar.html">Calendar</a></li> */}
-                        <li><NavLink class="sidenav-close" to="/classes">Classes</NavLink></li>
-                        <li><NavLink class="sidenav-close" to="mobile.html">Partners</NavLink></li>
-                        <li><NavLink class="sidenav-close" to="collapsible.html">Sign up</NavLink></li>
+                        <li><a class="sidenav-close" href="#!"><i className="material-icons">close</i></a></li>
+                        {/* <li><div class="divider"></div></li> */}
+                        <li><NavLink className="sidenav-close" to="/"><i className="material-icons nav-icon">home</i>Home</NavLink></li>
+                        <li><NavLink className="sidenav-close" to="/classes"><i className="material-icons nav-icon">search</i>Classes</NavLink></li>
+                        <li><NavLink className="sidenav-close" to="mobile.html"><i className="material-icons nav-icon">business</i>Partners</NavLink></li>
+                        <li><NavLink className="sidenav-close" to="collapsible.html"><i className="material-icons nav-icon">account_circle</i>Sign up</NavLink></li>
                     </ul>
             </div>
         </header>

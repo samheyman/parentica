@@ -40,7 +40,6 @@ class Main extends Component {
                     <Redirect to="/home" />
                 </Switch>
                     {/* <ClassDetails selectedClass={this.state.classes.filter((myClass) => myClass.id === this.state.classSelected)[0] }/> */}
-                {/* </div> */}
             </div>
         );
     }
