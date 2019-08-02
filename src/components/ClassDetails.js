@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DesktopHeader from './Header/DesktopHeader';
 import DesktopNavigation from './DesktopNavigation';
 import MobileBackHeader from './Header/MobileBackHeader';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 class ClassDetails extends Component {
 
@@ -10,11 +11,10 @@ class ClassDetails extends Component {
     }
 
     componentDidMount() {
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
 
     render() {
-
         const divStyle = {
             backgroundImage: 'url(../' + this.props.selectedClass.image + ')',
         };
@@ -26,9 +26,11 @@ class ClassDetails extends Component {
                 <DesktopHeader/>
                 <div className="row">
                     <div className="container">
+                        <div className="class-image-mobile hide-on-large-only" style={divStyle}>
+                        </div>
                         <DesktopNavigation />
                         <div className="col s12 m9 l9">
-                            <div className="class-image" style={divStyle}>
+                            <div className="class-image hide-on-med-and-down" style={divStyle}>
                             </div>
                             <div className="class-details">
                                 <div>
@@ -55,4 +57,4 @@ class ClassDetails extends Component {
     }
 }
 
-export default ClassDetails;
+export default withRouter(ClassDetails);

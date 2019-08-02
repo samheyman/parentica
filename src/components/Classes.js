@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import DesktopHeader from './Header/DesktopHeader';
 import DesktopNavigation from './DesktopNavigation';
 import MobileHeader from './Header/MobileHeader';
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 
 const Classes = (props) => {
 
@@ -55,4 +56,4 @@ const Classes = (props) => {
     );
 }
 
-export default Classes;
+export default withRouter(Classes);
