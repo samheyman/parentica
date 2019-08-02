@@ -26,7 +26,7 @@ class MobileHeader extends Component {
                     <nav>
                         <div className="nav-wrapper white">
                             <NavLink to="/" className="brand-logo">
-                                Mobile Parent<span className="brand-end">Hub</span>
+                                Parent<span className="brand-end">Hub</span>
                             </NavLink>
                             <a href="#!" data-target="mobile-sidenav" className="sidenav-trigger">
                                 <i className="material-icons">menu</i>

@@ -66,3 +66,25 @@ header {
         }
     }
 }
+
+.mobile-back-header {
+    height: $navigation-height;
+    background-color: transparent;
+    vertical-align: middle;
+
+    nav, .nav-wrapper {
+        background-color: transparent;
+    }
+
+    a {
+        color: inherit;
+        float: left;
+        position: relative;
+        z-index: 1;
+        margin: 0 18px !important;
+
+        i {
+            font-size: 30px;
+        }
+    }
+}

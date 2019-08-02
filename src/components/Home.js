@@ -5,7 +5,7 @@ import MobileHeader from './Header/MobileHeader';
 import DesktopNavigation from './DesktopNavigation';
 
 
-function RenderClassCard({classEntry, onClick}) {
+function RenderClassCard({classEntry}) {
     const divStyle = {
         backgroundImage: 'url(' + classEntry.image + ')',
     };
