@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
-import Header from './Header';
 import Classes from './Classes';
-import { CLASSES } from '../shared/classes';
 import ClassDetails from './ClassDetails';
 import Home from './Home';
-import { Switch, Route, Redirect } from 'react-router-dom';
-
+import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { connect } from 'react-redux';
+ 
+const mapStateToProps = (state) => {
+    return(
+        {
+            classes: state.classes,
+            providers: state.providers
+        }
+    );
+};
 
 class Main extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-          classes: CLASSES,
-          classSelected: null
-        }
     }
 
     onClassSelect(classId) {
@@ -25,24 +28,30 @@ class Main extends Component {
         const HomePage = () => {
             return(
                 <Home 
-                    featuredClass={this.state.classes.filter((theClass) => theClass.featured)[0]}
+                    featuredClass={this.props.classes.filter((theClass) => theClass.featured)[0]}
+                    providers={this.props.providers.filter((prov) => prov.featured)[0]}
+                />
+            );
+        }
+
+        const ClassWithId = ({match}) => {
+            // alert(match);
+            return(
+                <ClassDetails
+                    selectedClass={this.props.classes.filter((theClass) => theClass.id === parseInt(match.params.classId,10))[0]}
                 />
             );
         }
 
         return(
-            <div>
-                <Header />
-                <Switch>
-                    <Route path='/home' component={HomePage} />
-                    <Route exact path='/classes' component={() => <Classes classes={this.state.classes} onClick={(classId) => this.onClassSelect(classId)}/>} />
-                    {/* <Route path='/clases/:classId' component={ClassWithId} /> */}
-                    <Redirect to="/home" />
-                </Switch>
-                    {/* <ClassDetails selectedClass={this.state.classes.filter((myClass) => myClass.id === this.state.classSelected)[0] }/> */}
-            </div>
+            <Switch>
+                <Route path='/home' component={HomePage} />
+                <Route exact path='/classes' component={() => <Classes classes={this.props.classes} />} />
+                <Route path='/classes/:classId' component={ClassWithId} />
+                <Redirect to="/home" />
+            </Switch>
         );
     }
 }
 
-export default Main;
+export default withRouter(connect(mapStateToProps)(Main));

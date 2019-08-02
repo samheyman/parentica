@@ -42,7 +42,10 @@ header {
         .brand-logo {
             color: $font-dark;
             font-size: 1.3em;
-            text-transform: uppercase;
+            text-transform: capitalize;
+            .brand-end {
+                color: $secondary-color;
+            }
         }
 
         i.material-icons {

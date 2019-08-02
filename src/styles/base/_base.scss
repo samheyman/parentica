@@ -7,7 +7,6 @@
  */
 html, input, button {
     color: $font-dark;
-    font-family: $font-stack;
     font-size: 16px;
     text-size-adjust: 100%;
     line-height: 1.6;
@@ -27,6 +26,7 @@ html, input, button {
 }
   
 body {
+    font-family: $font-stack;
     padding: 0;
     margin: 0;
     background-color: $body-background-color;
@@ -38,13 +38,13 @@ body {
     flex-direction: column;
 }
 
-.container, {
-    width: 90%;
-}
+// .container, {
+//     width: 90%;
+// }
 
-.body-container {
-    padding: 0px 10px;
-}
+// .body-container {
+//     padding: 0px 10px;
+// }
 
 @media only screen and (max-width: 993px) {
     .container {
@@ -76,5 +76,5 @@ body {
 }
 
 h2 {
-    font-size: 1.5rem;
+    font-size: 1.5rem  !important;
 }

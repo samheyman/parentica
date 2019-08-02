@@ -17,8 +17,10 @@
   
 // 4. Layout
 @import 
-    'layout/header';
+    'layout/header',
+    'layout/desktopNav';
+
 
 // 5. Pages
-@import "pages/home";
-@import "pages/classes";
+@import 'pages/home';
+@import 'pages/classes';
