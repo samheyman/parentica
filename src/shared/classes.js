@@ -14,6 +14,7 @@ export const CLASSES = [
         price: 330,
         language: 'English',
         featured: true,
+        description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
     },
     {
         id: 100,
@@ -30,6 +31,7 @@ export const CLASSES = [
         price: 330,
         language: 'English',
         featured: true,
+        description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
     },
     {
         id: 0,
@@ -46,6 +48,7 @@ export const CLASSES = [
         price: 330,
         language: 'Spanish',
         featured: true,
+        description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
     },
     {
         id: 1,
@@ -58,8 +61,9 @@ export const CLASSES = [
         image: 'images/baby.png',
         companyName: 'Bel & Mums',
         label: 'New',
-        price: 300,
-        featured: false
+        price: 330,
+        featured: false,
+        description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
     },
     {
         id: 2,
@@ -74,7 +78,8 @@ export const CLASSES = [
         companyName: 'Go Fit',
         label: 'New',
         price: 100,
-        featured: false
+        featured: false,
+        description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
     },
     {
         id: 3,
@@ -89,7 +94,8 @@ export const CLASSES = [
         companyName: 'El Rincon De Mindfulness',
         label: 'New',
         price: 100,
-        featured: false
+        featured: false,
+        description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
     },
     {
         id: 4,
@@ -106,7 +112,8 @@ export const CLASSES = [
         price: 60,
         language: 'English',
         spacesLeft: 0,
-        featured: false
+        featured: false,
+        description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
     },
     {
         id: 5,
@@ -123,7 +130,8 @@ export const CLASSES = [
         price: 60,
         language: 'English',
         spacesLeft: 5,
-        featured: false
+        featured: false,
+        description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
     },
     {
         id: 6,
@@ -140,6 +148,7 @@ export const CLASSES = [
         price: 60,
         language: 'English',
         spacesLeft: 5,
-        featured: false
+        featured: false,
+        description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
     },
 ];

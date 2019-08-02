@@ -4,15 +4,15 @@ import { NavLink } from 'react-router-dom';
 const MobileBackHeader = (props) => {
     return(
         <header className="hide-on-large-only mobile-back-header">
-            <div className="container">
-                <nav>
-                    <div className="nav-wrapper">
+            {/* <div className="container"> */}
+                {/* <nav> */}
+                    <div className="">
                         <NavLink to={props.link}>
                             <i className="material-icons">arrow_back</i>
                         </NavLink>
                     </div>
-                </nav>
-            </div>
+                {/* </nav> */}
+            {/* </div> */}
         </header>
     );
 }

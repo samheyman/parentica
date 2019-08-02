@@ -68,22 +68,29 @@ header {
 }
 
 .mobile-back-header {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: $navigation-height;
     background-color: transparent;
-    vertical-align: middle;
+    display : flex;
+    align-items : center;
 
-    nav, .nav-wrapper {
-        background-color: transparent;
+    div {
+        height: $navigation-height;
+        display : flex;
+        align-items : center;
     }
 
     a {
         color: inherit;
-        float: left;
-        position: relative;
-        z-index: 1;
         margin: 0 18px !important;
+        height: $navigation-height;
 
         i {
+            height: $navigation-height;
+            display : flex;
+            align-items : center;
             font-size: 30px;
         }
     }
