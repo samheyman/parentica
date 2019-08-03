@@ -46,7 +46,7 @@ const Classes = (props) => {
             <div className="row">
                 <div className="container">
                     <DesktopNavigation />
-                    <div className="col s12 m12 l9">
+                    <div className="col s12 m12 l9 main-content border-debug">
                         <h2>All classes in Madrid</h2>
                         {classes}
                     </div>

@@ -65,7 +65,7 @@ function Home(props) {
             <div className="row">
                 <div className="container">
                     <DesktopNavigation />
-                    <div className="col s12 m12 l9">
+                    <div className="col s12 m12 l9 main-content border-debug">
                         <div className="row">
                             <div className="col s12 ">
                                 <h2>Featured class</h2>  
