@@ -3,10 +3,15 @@ import { className } from 'postcss-selector-parser';
 
 const DesktopNavigation = (props) => {
     return (
-        <div className="col l3 hide-on-med-and-down desktop-nav border-debug">
+        <div className="col l3 hide-on-med-and-down desktop-nav">
             <ul>
-                <li>one</li>
-                <li>two</li>
+                <li>All classes</li>
+                <li>Pre-birth</li>
+                <li>Post-birth</li>
+                <li>Health</li>
+                <li>Sport</li>
+                <li>Massage</li>
+
             </ul>
         </div>
     );

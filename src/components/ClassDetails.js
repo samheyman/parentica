@@ -27,7 +27,7 @@ class ClassDetails extends Component {
                     <div className="container">
                         <DesktopNavigation />
                         <div className="class-image-mobile hide-on-large-only" style={divStyle}></div>
-                        <div className="col s12 m12 l9 main-content border-debug">
+                        <div className="col s12 m12 l9 main-content">
                             <div className="class-details">
                                 <div className="class-image hide-on-med-and-down" style={divStyle}>
                                 </div>
