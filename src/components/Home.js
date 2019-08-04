@@ -4,11 +4,23 @@ import DesktopHeader from './Header/DesktopHeader';
 import MobileHeader from './Header/MobileHeader';
 import DesktopNavigation from './DesktopNavigation';
 import ClassCard from './ClassCard';
+import OnlineClassCard from './OnlineClassCard';
+import { NavLink } from 'react-router-dom';
 
 function RenderClassCard({classEntry}) {
     return(
         <ClassCard classEntry={classEntry} />
     );
+}
+
+function RenderOnlineClassCards({classEntries}) {
+    return classEntries.map((classEntry) => {
+        return(
+            <React.Fragment>
+                <OnlineClassCard classEntry={classEntry} />
+            </React.Fragment>  
+        );
+    });
 }
 
 function RenderProviderCard({provider}) {
@@ -28,7 +40,63 @@ function RenderProviderCard({provider}) {
             </Link>
         </div>
     );
+}
 
+function RenderSearchForm() {
+    return(
+        <div className="col s12">
+            <div className="hide-on-med-and-down">
+                <h2>Find parenting classes online or group classes in our area.</h2>
+            </div>
+            <form action="#" className="form">
+                <div className="row">
+                    <div className="input-field col s12">
+                        <input placeholder="Madrid" id="where" type="text" className="validate"/>
+                        <label for="where">WHERE</label>
+                    </div>
+                </div>
+                <div className="row">
+                    <div class="col s12 m6">
+                        <label>CATEGORY</label>
+                        <select class="browser-default">
+                        <option value="" disabled="" selected="">All</option>
+                        <option value="1">Parenting</option>
+                        <option value="2">Health</option>
+                        <option value="3">Chid birth</option>
+                        </select>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="col s12">
+                        <label for="last_name">FORMAT</label>
+                    </div>
+                </div>  
+                    
+                <div className="row">
+                    <div className="col s3">
+                        <label>
+                            <input type="checkbox" />
+                            <span>Group</span>
+                        </label>
+                    </div>
+                    <div className="col s3">
+                        <label>
+                            <input type="checkbox" />
+                            <span>Online</span>
+                        </label>
+                    </div>
+                </div>
+                <div className="row">
+                    <div className="btn col s12">
+                        <NavLink className="sidenav-close"  to="/classes">
+                        SEARCH
+                        </NavLink>
+                        {/* <input value="Search" type="submit" className=""/> */}
+                    </div>
+                </div>
+            </form>
+        </div>
+    );
 }
 
 function Home(props) {
@@ -38,25 +106,37 @@ function Home(props) {
             <MobileHeader />
             <div className="row">
                 <div className="container">
-                    <DesktopNavigation />
-                    <div className="col s12 m12 l9 main-content ">
+                    {/* <DesktopNavigation /> */}
+                    <div className="col s12 m12 l12 main-content ">
+                        <div className="row">
+                            <div className="col s12 m12 hide-on-large-only">
+                                <h2>Find parenting classes online or group classes in our area.</h2>  
+                            </div>
+                        </div>
                         <div className="row">
                             <div className="col s12 m12 l12">
-                                <h2>Featured class</h2>  
-                                <RenderClassCard classEntry={props.featuredClass} />
+                                <RenderSearchForm />
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col s12 m12 l12">
+                                <h2>Online classes</h2>
+                                {/* <p>{props.onlineClasses[1].className}</p>   */}
+                                <RenderOnlineClassCards classEntries={props.onlineClasses} />
                             </div>
                         </div>
                         <div className="row">
                             <div className="col s12 m12 l12">
                                 <h2>Classes near you</h2>  
                                 <RenderClassCard classEntry={props.nearbyClass} />
+                                {/* Link to all classes */}
                             </div>
                         </div>
                         <div className="row">
                             <div className="col s12 m12 l12 partners">
                                 <h2>Partners</h2> 
                                 <img src="images/logos/bm_logo2.png"/>
-                                <img src="images/logos/rm_logo.jpg"/>
+                                <img src="images/logos/rm_logo.jpg"/> 
                                 <img src="images/logos/gf_logo.png"/>
 
                                 {/* <RenderProviderCard provider={props.providers} /> */}

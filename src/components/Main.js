@@ -28,7 +28,7 @@ class Main extends Component {
         const HomePage = () => {
             return(
                 <Home 
-                    featuredClass={this.props.classes.filter((theClass) => theClass.featured)[0]}
+                    onlineClasses={this.props.classes.filter((theClass) => theClass.type === 'online')}
                     nearbyClass={this.props.classes.filter((theClass) => theClass.id === parseInt(6,10))[0]}
                     providers={this.props.providers.filter((prov) => prov.featured)[0]}
                 />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ClassCard = (props) => {
+const OnlineClassCard = (props) => {
     const divStyle = {
         backgroundImage: 'url(images/' + props.classEntry.image + ')',
     };
@@ -15,23 +15,19 @@ const ClassCard = (props) => {
                         <div className="card-header">
                             <span className="card-title">{props.classEntry.className}</span>
                             <span className="card-subtitle">{props.classEntry.companyName}</span>
-                            <span className="card-text">{props.classEntry.address}</span>
+                            {/* <span className="card-text">{props.classEntry.address}</span> */}
                         </div>
                         <div className="card-footer">
                             <div className="left-div">
-                                <span>
-                                {new Intl.DateTimeFormat('en-US', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(props.classEntry.date)))}
-                                <br />
-                                {props.classEntry.time}
-                                </span>
+                                
                             </div>
                             {/* <div className="center-div">
                                 <i className="material-icons">access_time</i>
                                 <br />
                                 <span>{props.classEntry.duration}</span>
                             </div> */}
-                            <div className="right-div">
-                                <span>{props.classEntry.price}€</span>
+                            <div className="left-div">
+                                <span>{props.classEntry.price}</span>
                             </div>
                         </div>
                         {/* <div className="card-action"></div> */}
@@ -42,4 +38,4 @@ const ClassCard = (props) => {
     );
 };
 
-export default ClassCard;
+export default OnlineClassCard;

@@ -1,6 +1,7 @@
 export const CLASSES = [
     {
         id: 120,
+        type: 'group',
         className: 'Antenatal class',
         category: 'Pregnancy',
         date: "2019-08-03T10:30Z",
@@ -19,6 +20,7 @@ export const CLASSES = [
     },
     {
         id: 1,
+        type: 'group',
         className: 'First Aid',
         category: 'Aid',
         date: "2019-08-01T17:00Z",
@@ -35,6 +37,7 @@ export const CLASSES = [
     },
     {
         id: 2,
+        type: 'group',
         className: 'Pregnancy Activo',
         category: 'Pregnancy',
         address: 'CDM GO fit Vallehermoso',
@@ -52,6 +55,7 @@ export const CLASSES = [
     },
     {
         id: 4,
+        type: 'group',
         className: 'Breastfeeding Class',
         category: 'Breastfeeding',
         address: "Paseo de las Castellana 45, Madrid",
@@ -71,6 +75,7 @@ export const CLASSES = [
     },
     {
         id: 100,
+        type: 'group',
         className: 'Antenatal class',
         category: 'Pregnancy',
         date: "2019-09-07T10:30Z",
@@ -89,6 +94,7 @@ export const CLASSES = [
     },
     {
         id: 3,
+        type: 'group',
         className: 'Taller de Mindfulness y embarazo',
         category: 'Pregnancy',
         address: 'CDM GO fit Vallehermoso',
@@ -106,6 +112,7 @@ export const CLASSES = [
     },
     {
         id: 5,
+        type: 'group',
         className: 'Breastfeeding Class',
         category: 'Breastfeeding',
         address: "Paseo de las Castellana 45, Madrid",
@@ -125,6 +132,7 @@ export const CLASSES = [
     },
     {
         id: 0,
+        type: 'group',
         className: 'Antenatal class',
         category: 'Pregnancy',
         date: "2019-09-07T16:00Z",
@@ -143,6 +151,7 @@ export const CLASSES = [
     },
     {
         id: 6,
+        type: 'group',
         className: 'Breastfeeding Class',
         category: 'Breastfeeding',
         address: "Paseo de las Castellana 45, Madrid",
@@ -159,5 +168,37 @@ export const CLASSES = [
         spacesLeft: 5,
         featured: false,
         description: "Our Prenatal Classes are interactive and enjoyable where you will always feel respected and supported."
+    },
+    {
+        id: 1000,
+        type: 'online',
+        className: 'Child Nutrition and Cooking',
+        category: 'nutrition',
+        duration: "5 weeks (9h)",
+        image: 'child_nutrition_coursera.png',
+        url: 'https://www.coursera.org/learn/childnutrition',   
+        companyName: 'Coursera',
+        companyLogo: 'coursera_logo.jpg',
+        label: '',
+        price: 'Free Online Course (Audit)',
+        language: 'English',
+        featured: true,
+        description: "Eating patterns that begin in childhood affect health and well-being across the lifespan. The culture of eating has changed significantly in recent decades, especially in parts of the world where processed foods dominate our dietary intake. This course examines contemporary child nutrition and the impact of the individual decisions made by each family. The health risks associated with obesity in childhood are also discussed. Participants will learn what constitutes a healthy diet for children and adults and how to prepare simple, delicious foods aimed at inspiring a lifelong celebration of easy home-cooked meals. This course will help prepare participants to be the leading health providers, teachers and parents of the present and future.The text and other material in this course may include the opinion of the specific instructor and are not statements of advice, endorsement, opinion, or information of Stanford University."    
+    },
+    {
+        id: 1001,
+        type: 'online',
+        className: 'Nutrition and Lifestyle in Pregnancy',
+        category: 'nutrition',
+        duration: "5 weeks (8h)",
+        image: 'nutrition_pregnancy_coursera.png',
+        url: 'https://www.coursera.org/learn/nutrition-pregnancy',  
+        companyName: 'Coursera', 
+        companyLogo: 'coursera_logo.jpg',
+        label: '',
+        price: 'Free Online Course (Audit)',
+        language: 'English',
+        featured: false,
+        description: "Nutrition and Lifestyle in Pregnancy offers an overview of the latest research findings and international recommendations on a variety of nutrition-related aspects and outcomes of pregnancy.  Ensuring a healthy nutritional status and lifestyle prior to and during pregnancy is one of the best ways to help support the healthy growth and development of the unborn child. We will look at how a healthy diet and lifestyle should ideally be achieved prior to conception and provide recommendations for pre-conception counselling of women."
     },
 ];

@@ -10,6 +10,7 @@
 }
 
 .card {
+    min-width: 250px;
     max-width: 320px;
 
     .card-image {
@@ -44,9 +45,17 @@
             }
 
             .card-subtitle {
+                color: $secondary-color;
+                font-size: 0.9em;
+                line-height: 1.2em !important;
+                padding-bottom: 5px;
+            }
+
+            .card-text {
+                display: block;
                 color: $font-pale;
                 font-size: 0.8em;
-                line-height: 1.1em;
+                line-height: 1  em !important;
             }
         }
 
@@ -63,6 +72,7 @@
             .right-div {
                 text-align: right;
                 font-size: 1.6em;
+                color: $font-dark;
             }
         }
 

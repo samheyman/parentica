@@ -5,13 +5,20 @@ import DesktopNavigation from './DesktopNavigation';
 import MobileHeader from './Header/MobileHeader';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import ClassCard from './ClassCard';
+import OnlineClassCard from './OnlineClassCard';
 
 const Classes = (props) => {
 
     const classes = props.classes.map((classEntry) => {
-        return (    
-            <ClassCard classEntry={classEntry} />            
-        );
+        if( classEntry.type === 'group') {
+            return (    
+                <ClassCard classEntry={classEntry} />            
+            );
+        } else {
+            return(
+                <OnlineClassCard classEntry={classEntry} />
+            );
+        }
     });
 
     return(
@@ -21,7 +28,7 @@ const Classes = (props) => {
             <div className="row">
                 <div className="container">
                     <DesktopNavigation />
-                    <div className="col s12 m12 l9 main-content">
+                    <div className="col s12 m12 l10 xl10 main-content">
                         <div className="row">
                             <div className="col s12">
                                 <h2>All classes in Madrid</h2>
