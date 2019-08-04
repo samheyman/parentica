@@ -15,15 +15,23 @@ const ClassCard = (props) => {
                         <div className="card-header">
                             <span className="card-title">{props.classEntry.className}</span>
                             <span className="card-subtitle">{props.classEntry.companyName}</span>
+                            <br/>
+                            <span className="card-subtitle">{props.classEntry.address}</span>
                         </div>
                         <div className="card-footer">
-                            <div className="datetime">
+                            <div className="left-div">
                                 <span>
-                                {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(props.classEntry.date)))}
-                                {/* {classEntry.date} */}
+                                {new Intl.DateTimeFormat('en-US', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(props.classEntry.date)))}
+                                <br />
+                                {props.classEntry.time}
                                 </span>
                             </div>
-                            <div className="price">
+                            {/* <div className="center-div">
+                                <i className="material-icons">access_time</i>
+                                <br />
+                                <span>{props.classEntry.duration}</span>
+                            </div> */}
+                            <div className="right-div">
                                 <span>{props.classEntry.price}€</span>
                             </div>
                         </div>
