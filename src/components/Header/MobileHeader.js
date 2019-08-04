@@ -33,7 +33,8 @@ class MobileHeader extends Component {
                             </a>
                             <ul className="right hide-on-med-and-down">
                                 {/* <li><a href="calendar.html">Calendar</a></li> */}
-                                <li><NavLink to="/classes">Classes</NavLink></li>                            
+                                <li><NavLink to="/classes">Classes</NavLink></li> 
+                                <li><NavLink to="/locations">Locations</NavLink></li>                                                       
                                 <li><NavLink to="mobile.html">Partners</NavLink></li>
                                 <li><NavLink to="collapsible.html">Sign in</NavLink></li>
                                 <li><NavLink className="btn-small" to="collapsible.html">Sign up</NavLink></li>
@@ -50,6 +51,7 @@ class MobileHeader extends Component {
                         {/* <li><div class="divider"></div></li> */}
                         <li><NavLink className="sidenav-close"  to="/"><i className="material-icons nav-icon">home</i>Home</NavLink></li>
                         <li><NavLink className="sidenav-close"  to="/classes"><i className="material-icons nav-icon">search</i>Classes</NavLink></li>
+                        <li><NavLink className="sidenav-close"  to="/locations"><i className="material-icons nav-icon">map</i>Locations</NavLink></li>
                         <li><NavLink className="sidenav-close" to="mobile.html"><i className="material-icons nav-icon">business</i>Partners</NavLink></li>
                         <li><NavLink className="sidenav-close" to="collapsible.html"><i className="material-icons nav-icon">account_circle</i>Sign up</NavLink></li>
                     </ul>

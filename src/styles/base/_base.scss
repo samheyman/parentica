@@ -71,14 +71,19 @@ body {
 }
 
 .btn {
-    color: $primary-color;
-    background-color: $secondary-color;
-    padding: .75rem 1.5rem;
-    border-radius: .5rem;
-    text-decoration: none;
-    font-size: .9rem;
+    color: white !important;
+    background-color: $secondary-color !important;
+    //padding: .75rem 1.5rem !important;
+    border-radius: .5rem !important;
+    text-decoration: none !important;
+    font-size: .9rem !important;
 }
 
 h2 {
     font-size: 1.5rem  !important;
+    padding: 0 0.5em !important;
+}
+
+.main-content {
+    padding: 0 !important;
 }

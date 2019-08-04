@@ -3,17 +3,19 @@ import { Link } from 'react-router-dom';
 
 const ClassCard = (props) => {
     const divStyle = {
-        backgroundImage: 'url(' + props.classEntry.image + ')',
+        backgroundImage: 'url(images/' + props.classEntry.image + ')',
     };
     return(
-        <div className="col s12 m4 l6" key={props.classEntry.id}>
+        <div className="col s12 m4 l4" key={props.classEntry.id}>
             <Link to={`classes/${props.classEntry.id}`}>  
                 <div className="card">
                     <div className="card-image" style={divStyle} >
                     </div>
                     <div className="card-content">
-                        <span className="card-title">{props.classEntry.className}</span>
-                        <span className="card-subtitle">{props.classEntry.companyName}</span>
+                        <div className="card-header">
+                            <span className="card-title">{props.classEntry.className}</span>
+                            <span className="card-subtitle">{props.classEntry.companyName}</span>
+                        </div>
                         <div className="card-footer">
                             <div className="datetime">
                                 <span>
@@ -25,6 +27,7 @@ const ClassCard = (props) => {
                                 <span>{props.classEntry.price}€</span>
                             </div>
                         </div>
+                        {/* <div className="card-action"></div> */}
                     </div>
                 </div>
             </Link>

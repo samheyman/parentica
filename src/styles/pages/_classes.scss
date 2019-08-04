@@ -1,14 +1,3 @@
-.card .card-image img {
-    // display: block;
-    // border-radius: 2px 2px 0 0;
-    // position: relative;
-    // left: 0;
-    // right: 0;
-    // top: 0;
-    // bottom: 0;
-    // width: 100%;
-}
-
 .horizontalClasses{
     width: 100%;
     display: flex;
@@ -17,54 +6,48 @@
 }
 
 .horizontalClasses::-webkit-scrollbar {
-    display: none;
+    // display: none;
 }
 
 .card {
-    min-width: 268px;
-    max-width: 269px;
-    margin-right: 20px;
+    max-width: 320px;
 
     .card-image {
         border-radius: 2px 2px 0 0;
         height: 150px;
-        // width: 100%;
-        // padding-bottom: 50%;
-        // overflow: hidden;
-        // position: relative;   
-        //background-size: cover;
-        background: no-repeat center/cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        background-color: #464646;
+
         img {
             border-radius: 2px 2px 0 0;
-        //     width: 100%;
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     right: 0;
-        //     bottom: 0;
         }
     }
 
     .card-content {
 
-        padding: 10px 10px;
+        padding: 10px 10px !important;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         height: 150px;
 
-        .card-title {
-            color: $font-dark;
-            font-size: 1.2em;
-            font-weight: 500;
-            margin-bottom: 0px;
-            line-height: 1.4em;
-        }
+        .card-header {
 
-        .card-subtitle {
-            color: $font-pale;
-            font-size: 0.8em;
-            line-height: 1.1em;
+            .card-title {
+                color: $font-dark;
+                font-size: 1.2em;
+                font-weight: 500;
+                margin-bottom: 0px;
+                line-height: 1.2em !important;
+            }
+
+            .card-subtitle {
+                color: $font-pale;
+                font-size: 0.8em;
+                line-height: 1.1em;
+            }
         }
 
         .card-footer {
@@ -76,6 +59,17 @@
             .price {
                 text-align: right;
             }
+
+            .datetime {
+                span {
+                    color: $primary-color;
+                }
+            }
+            .price {
+                span {
+                    color: $secondary-color;
+                }
+            }
         }
 
     }
@@ -85,7 +79,11 @@
     // position: relative;
     // top: $navigation-height * -1;
     height: 250px;
-    background: no-repeat center/cover;
+    // background: no-repeat center/cover;
+    background-repeat: no-repeat;
+    background-size: 100% 250px; 
+    background-position: top;
+    background-clip: content-box;
 }
 
 .class-details {
@@ -105,32 +103,35 @@
             flex-direction: row;
             justify-content: space-between;
             align-content: center;
-            // height: 70px;
-
-            .logo {
-                height: 40px;
-                width: 40px;
-                border-radius: 50%;
-                margin-right: 15px;
-            }
 
             .company {
                 display: flex;
                 flex-direction: row;
                 align-items: center;    
                 color: $font-pale;
-                font-size: 1.4em;
+                font-size: 1em;
                 font-weight: 500;
                 margin-bottom: 0px;
                 line-height: 1.4em;
+
+                .logo {
+                    height: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                }
+
+                .company-name {
+                    margin-left: 10px;
+                }
             }
+
 
             .price {
                 display: flex;
                 flex-direction: row;
                 align-items: center;
                 color: $font-dark;
-                font-size: 2em;
+                font-size: 1.2em;
                 line-height: 1.4em;
             }
 
@@ -145,7 +146,7 @@
 
             .title {
                 color: $font-dark;
-                font-size: 1.8em;
+                font-size: 1.4em;
                 line-height: 1.4em;
                 font-weight: 500;
             }

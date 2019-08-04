@@ -29,6 +29,7 @@ class Main extends Component {
             return(
                 <Home 
                     featuredClass={this.props.classes.filter((theClass) => theClass.featured)[0]}
+                    nearbyClass={this.props.classes.filter((theClass) => theClass.id === parseInt(6,10))[0]}
                     providers={this.props.providers.filter((prov) => prov.featured)[0]}
                 />
             );

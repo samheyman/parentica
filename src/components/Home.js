@@ -41,21 +41,25 @@ function Home(props) {
                     <DesktopNavigation />
                     <div className="col s12 m12 l9 main-content ">
                         <div className="row">
-                            <div className="col s12 m6 l6">
+                            <div className="col s12 m12 l12">
                                 <h2>Featured class</h2>  
                                 <RenderClassCard classEntry={props.featuredClass} />
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col s12 m6 l6">
+                            <div className="col s12 m12 l12">
                                 <h2>Classes near you</h2>  
-                                <RenderClassCard classEntry={props.featuredClass} />
+                                <RenderClassCard classEntry={props.nearbyClass} />
                             </div>
                         </div>
                         <div className="row">
-                            <div className="col s12 m6 l6">
-                                <h2>Providers</h2>  
-                                <RenderProviderCard provider={props.providers} />
+                            <div className="col s12 m12 l12 partners">
+                                <h2>Partners</h2> 
+                                <img src="images/logos/bm_logo2.png"/>
+                                <img src="images/logos/rm_logo.jpg"/>
+                                <img src="images/logos/gf_logo.png"/>
+
+                                {/* <RenderProviderCard provider={props.providers} /> */}
                             </div>
                         </div>
                     </div>

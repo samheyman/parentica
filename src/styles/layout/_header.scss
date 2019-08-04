@@ -41,7 +41,7 @@ header {
 
         .brand-logo {
             color: $font-dark;
-            font-size: 1.3em;
+            font-size: 1.5em;
             text-transform: capitalize;
             .brand-end {
                 color: $secondary-color;
@@ -50,6 +50,10 @@ header {
 
         i.material-icons {
             font-size: 30px;
+        }
+
+        .sidenav-trigger {
+            margin: 0 0.5em !important;
         }
     }
 
@@ -84,7 +88,7 @@ header {
 
     a {
         color: inherit;
-        margin: 0 18px !important;
+        margin: 0 0 !important;
         height: $navigation-height;
 
         i {

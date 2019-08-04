@@ -16,7 +16,7 @@ class ClassDetails extends Component {
 
     render() {
         const divStyle = {
-            backgroundImage: 'url(../' + this.props.selectedClass.image + ')',
+            backgroundImage: 'url(../images/' + this.props.selectedClass.image + ')',
         };
 
         return(
@@ -34,9 +34,9 @@ class ClassDetails extends Component {
                                 <div className="header">
                                     <div className="header-top">
                                         <div className="company">
-                                            <img class="logo" src={`../${this.props.selectedClass.image}`}></img>
-                                            <span>
-                                            {this.props.selectedClass.companyName}
+                                            <img className="logo" src={`../images/logos/${this.props.selectedClass.companyLogo}`}></img>
+                                            <span className="company-name">
+                                             {this.props.selectedClass.companyName}
                                             </span>
                                         </div>
                                         <div className="price">
@@ -51,7 +51,7 @@ class ClassDetails extends Component {
                                     <p className="description">{this.props.selectedClass.description}</p>
                                 </div>
                                 <div className="actions">
-                                    <a class="waves-effect waves-light btn" 
+                                    <a className="btn" 
                                     href={`${this.props.selectedClass.url}`} 
                                     rel="nofollow" 
                                     target="_blank">
