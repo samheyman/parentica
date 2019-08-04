@@ -58,14 +58,25 @@ header {
     }
 
     .sidenav {
-        // padding-top: 49px;
+
+        .menu-top {
+            background-color: $header-background-color;
+            .sidenav-close {
+                height: $navigation-height;
+
+                .sidemenu-close {
+                    height: $navigation-height !important;
+                    line-height: $navigation-height !important;
+                }
+            }
+        }
 
         .divider {
             margin-bottom: 20px;
         }
 
         .nav-icon {
-            color: $secondary-color !important;
+            // color: $primary-color !important;
 
         }
     }

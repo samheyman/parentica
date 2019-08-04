@@ -47,7 +47,7 @@ class MobileHeader extends Component {
                     <ul ref={Sidenav => { this.Sidenav = Sidenav;}} 
                         className="sidenav" 
                         id="mobile-sidenav">
-                        <li><a className="sidenav-close" href="#!"><i className="material-icons">close</i></a></li>
+                        <li class="menu-top"><a className="sidenav-close" href="#!"><i className="material-icons sidemenu-close">close</i></a></li>
                         {/* <li><div class="divider"></div></li> */}
                         <li><NavLink className="sidenav-close"  to="/"><i className="material-icons nav-icon">home</i>Home</NavLink></li>
                         <li><NavLink className="sidenav-close"  to="/classes"><i className="material-icons nav-icon">search</i>Classes</NavLink></li>
