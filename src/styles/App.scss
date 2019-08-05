@@ -12,8 +12,8 @@
 
 // 3. Base stuff
 @import
-    'base/base',
-    'base/fonts';
+    'base/fonts',
+    'base/base';
   
 // 4. Layout
 @import 
@@ -21,6 +21,11 @@
     'layout/desktopNav';
 
 
-// 5. Pages
+// 5. Components
+@import 
+    'components/classCard',
+    'components/searchForm';
+
+// 6. Pages
 @import 'pages/home';
 @import 'pages/classes';

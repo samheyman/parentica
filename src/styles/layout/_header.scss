@@ -3,6 +3,10 @@ header {
     background-color: $header-background-color;
     // padding: 0 40px;
 
+    .container {
+        padding: 0 10px;
+    }
+
     nav {
         color: $font-dark;
         box-shadow: none;

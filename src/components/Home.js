@@ -46,19 +46,19 @@ function RenderSearchForm() {
     return(
         <div className="col s12">
             <div className="hide-on-med-and-down">
-                <h2>Find parenting classes online or group classes in our area.</h2>
+                <h2>Helping you become a great parent, one class at a time.</h2>
             </div>
             <form action="#" className="form">
                 <div className="row">
-                    <div className="input-field col s12">
-                        <input placeholder="Madrid" id="where" type="text" className="validate"/>
+                    <div className="col s12">
                         <label for="where">WHERE</label>
+                        <input className="" placeholder="Madrid" id="where" type="text"/>
                     </div>
                 </div>
                 <div className="row">
-                    <div class="col s12 m6">
+                    <div className="col s12 m6">
                         <label>CATEGORY</label>
-                        <select class="browser-default">
+                        <select className="">
                         <option value="" disabled="" selected="">All</option>
                         <option value="1">Parenting</option>
                         <option value="2">Health</option>
@@ -66,32 +66,35 @@ function RenderSearchForm() {
                         </select>
                     </div>
                 </div>
-                <div className="row">
-                    <div className="col s12">
-                        <label for="last_name">FORMAT</label>
-                    </div>
-                </div>  
                     
                 <div className="row">
-                    <div className="col s3">
-                        <label>
-                            <input type="checkbox" />
-                            <span>Group</span>
-                        </label>
-                    </div>
-                    <div className="col s3">
-                        <label>
-                            <input type="checkbox" />
-                            <span>Online</span>
-                        </label>
+                    <div className="col s12">
+                        <div>
+                            <label for="last_name">FORMAT</label>
+                        </div>
+                        <div>
+                            <div className="col s6 m4">
+                                <label>
+                                    <input className="" type="checkbox" checked="checked" />
+                                    <span>Group</span>
+                                </label>
+                            </div>
+                            <div className="col s6 m4">
+                                <label>
+                                    <input type="checkbox" className="" id="filled-in-box" checked="checked" />
+                                    <span>Online</span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="btn col s12">
-                        <NavLink className="sidenav-close"  to="/classes">
-                        SEARCH
-                        </NavLink>
-                        {/* <input value="Search" type="submit" className=""/> */}
+                    <div className="col s12">
+                        <button className="btn search-button">
+                            <NavLink className="sidenav-close"  to="/classes">
+                            SEARCH
+                            </NavLink>
+                        </button>
                     </div>
                 </div>
             </form>
@@ -108,9 +111,9 @@ function Home(props) {
                 <div className="container">
                     {/* <DesktopNavigation /> */}
                     <div className="col s12 m12 l12 main-content ">
-                        <div className="row">
-                            <div className="col s12 m12 hide-on-large-only">
-                                <h2>Find parenting classes online or group classes in our area.</h2>  
+                        <div className="row hide-on-large-only">
+                            <div className="col s12 m12">
+                            <h2>Helping you become a great parent, one class at a time.</h2>
                             </div>
                         </div>
                         <div className="row">
@@ -127,7 +130,7 @@ function Home(props) {
                         </div>
                         <div className="row">
                             <div className="col s12 m12 l12">
-                                <h2>Classes near you</h2>  
+                                <h2>Classes in Madrid</h2>  
                                 <RenderClassCard classEntry={props.nearbyClass} />
                                 {/* Link to all classes */}
                             </div>
