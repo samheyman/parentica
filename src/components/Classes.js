@@ -7,6 +7,13 @@ import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import ClassCard from './ClassCard';
 import OnlineClassCard from './OnlineClassCard';
 
+
+function RenderResultsHeader({results}) {
+    return(
+        <h2>{results.length} classes in Madrid</h2>
+    );
+}
+
 const Classes = (props) => {
 
     const classes = props.classes.map((classEntry) => {
@@ -31,7 +38,7 @@ const Classes = (props) => {
                     <div className="col s12 m12 l12 xl12 main-content">
                         <div className="row">
                             <div className="col s12">
-                                <h2>All classes in Madrid</h2>
+                                <RenderResultsHeader results={props.classes} />
                                 {classes}
                             </div>
                         </div>
