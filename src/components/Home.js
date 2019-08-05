@@ -45,18 +45,18 @@ function RenderProviderCard({provider}) {
 function RenderSearchForm() {
     return(
         <div className="col s12">
-            <div className="hide-on-med-and-down">
-                <h2>Helping you become a great parent, one class at a time.</h2>
-            </div>
             <form action="#" className="form">
+                <div className="row hide-on-med-and-down">
+                    <h2>Helping you become a great parent, one class at a time.</h2>
+                </div>
                 <div className="row">
                     <div className="col s12">
                         <label for="where">WHERE</label>
-                        <input className="" placeholder="Madrid" id="where" type="text"/>
+                        <input className="" tabIndex="0" placeholder="Madrid" id="where" type="text"/>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col s12 m6">
+                    <div className="col s12">
                         <label>CATEGORY</label>
                         <select className="">
                         <option value="" disabled="" selected="">All</option>
@@ -75,13 +75,13 @@ function RenderSearchForm() {
                         <div>
                             <div className="col s6 m4">
                                 <label>
-                                    <input className="" type="checkbox" checked="checked" />
+                                    <input className="" type="checkbox" />
                                     <span>Group</span>
                                 </label>
                             </div>
                             <div className="col s6 m4">
                                 <label>
-                                    <input type="checkbox" className="" id="filled-in-box" checked="checked" />
+                                    <input type="checkbox" className="" id="filled-in-box" />
                                     <span>Online</span>
                                 </label>
                             </div>
@@ -137,7 +137,7 @@ function Home(props) {
                         </div>
                         <div className="row">
                             <div className="col s12 m12 l12 partners">
-                                <h2>Partners</h2> 
+                                <h2>Providers</h2> 
                                 <img src="images/logos/bm_logo2.png"/>
                                 <img src="images/logos/rm_logo.jpg"/> 
                                 <img src="images/logos/gf_logo.png"/>

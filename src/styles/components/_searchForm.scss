@@ -21,6 +21,12 @@
         box-sizing : border-box !important;
     }
 
+    input[type=text]:focus {
+        border-bottom: none!important;
+        box-shadow: none!important;
+        border: 1px solid $font-very-pale !important;
+    }
+
     input, select {
         padding: 0 0px 0 10px !important;
         border: 1px solid $font-very-pale !important;
@@ -30,16 +36,12 @@
         text-overflow: ellipsis !important;
         color: $font-pale !important;
         font-size: 1em !important;
+        -webkit-appearance: none !important; /* add this */
     }
 
     ::placeholder { 
         color: $font-pale !important;
         opacity: 1; /* Firefox */
-    }
-
-    .checkbox-orange[type="checkbox"]:checked + label:before{
-        border: 2px solid #ff9800;
-        background-color: #ff9800;
     }
 
     .search-button {
@@ -48,4 +50,14 @@
         font-weight: 600;
     }
 
+}
+
+@media only screen and (min-width: 993px) {
+    .form {
+        margin-top: 20px !important;
+
+        h2 {
+            margin: 10px 0 !important;
+        }
+    }
 }

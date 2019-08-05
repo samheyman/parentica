@@ -6,7 +6,7 @@ const ClassCard = (props) => {
         backgroundImage: 'url(images/' + props.classEntry.image + ')',
     };
     return(
-        <div className="col s12 m6 l6 xl4" key={props.classEntry.id}>
+        <div className="col s12 m6 l4 xl4" key={props.classEntry.id}>
             <Link to={`classes/${props.classEntry.id}`}>  
                 <div className="card z-depth-1">
                     <div className="card-image" style={divStyle} >

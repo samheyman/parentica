@@ -2,6 +2,10 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
+/// Container dimensions
+$container-width: 90%;
+$container-width-mobile: 100%;
+
 /// Text color
 /// @type Color
 $font-dark: rgb(57, 59, 65);
@@ -24,4 +28,4 @@ $primary-color: rgb(127, 135, 158);
 $secondary-color: rgb(94, 0, 240);
 
 /// Navigation height
-$navigation-height: 65px;
+$navigation-height: 64px;

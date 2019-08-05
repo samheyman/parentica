@@ -27,8 +27,8 @@ const Classes = (props) => {
             <MobileHeader />
             <div className="row">
                 <div className="container">
-                    <DesktopNavigation />
-                    <div className="col s12 m12 l10 xl10 main-content">
+                    {/* <DesktopNavigation /> */}
+                    <div className="col s12 m12 l12 xl12 main-content">
                         <div className="row">
                             <div className="col s12">
                                 <h2>All classes in Madrid</h2>
