@@ -8,9 +8,16 @@ header {
     }
 
     nav {
+        height: $navigation-height !important;
+        line-height: $navigation-height !important;
         color: $font-dark;
         box-shadow: none;
         -webkit-box-shadow: none;
+
+        .nav-wrapper {
+            height: $navigation-height !important;   
+            line-height: $navigation-height !important;
+        }
 
         a {
             color: $font-dark;
@@ -43,17 +50,9 @@ header {
             }
         }
 
-        .brand-logo {
-            color: $font-dark;
-            font-size: 1.5em;
-            text-transform: capitalize;
-            .brand-end {
-                color: $secondary-color;
-            }
-        }
-
         i.material-icons {
             font-size: 30px;
+            line-height: $navigation-height !important;
         }
 
         .sidenav-trigger {

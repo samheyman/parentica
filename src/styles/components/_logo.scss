@@ -1,0 +1,41 @@
+.brand-logo {
+    color: $font-dark;
+    height: $navigation-height !important;
+    text-transform: uppercase;
+    font-size: 1.5em !important;
+
+    .logo {
+        display: flex;
+        flex-direction: row;    
+        height: $navigation-height;
+        // justify-content: ;
+        align-items: center;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+
+            .brand-name {
+                // display: inline;
+                text-shadow: 1px 1px #b9b5b5;
+                color: $secondary-color;
+                vertical-align: bottom;
+                // align-self: flex-end;
+                line-height: 24px;
+            }
+        
+            .brand-sub {
+                // display: inline;
+                // flex: 1;
+                // height:20px;
+                color: $font-pale;
+                // padding-top:4px;
+                font-size: 0.4em !important;
+                vertical-align: bottom;
+                // align-self: flex-end;
+                line-height: 16px;
+            }
+        }
+    }
+}

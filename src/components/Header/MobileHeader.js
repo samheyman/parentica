@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import M from "materialize-css";
 import "materialize-css/dist/css/materialize.min.css";
+import Logo from './Logo';
 
 class MobileHeader extends Component {
 
@@ -26,7 +27,7 @@ class MobileHeader extends Component {
                     <nav>
                         <div className="nav-wrapper white">
                             <NavLink to="/" className="brand-logo">
-                                Parent<span className="brand-end">Hub</span>
+                                <Logo />
                             </NavLink>
                             <a href="#!" data-target="mobile-sidenav" className="sidenav-trigger">
                                 <i className="material-icons">menu</i>
@@ -35,24 +36,24 @@ class MobileHeader extends Component {
                                 {/* <li><a href="calendar.html">Calendar</a></li> */}
                                 <li><NavLink to="/classes">Classes</NavLink></li> 
                                 <li><NavLink to="/locations">Locations</NavLink></li>                                                       
-                                <li><NavLink to="mobile.html">Partners</NavLink></li>
+                                <li><NavLink to="mobile.html">Providers</NavLink></li>
                                 <li><NavLink to="collapsible.html">Sign in</NavLink></li>
                                 <li><NavLink className="btn-small" to="collapsible.html">Sign up</NavLink></li>
                             </ul>
-                            <ul className="right hide-on-large-only">
+                            {/* <ul className="right hide-on-large-only">
                                 <li><NavLink to="collapsible.html">Sign up</NavLink></li>
-                            </ul>
+                            </ul> */}
                         </div>
                     </nav>
                     <ul ref={Sidenav => { this.Sidenav = Sidenav;}} 
                         className="sidenav" 
                         id="mobile-sidenav">
-                        <li class="menu-top"><a className="sidenav-close" href="#!"><i className="material-icons sidemenu-close">close</i></a></li>
+                        <li className="menu-top"><a className="sidenav-close" href="#!"><i className="material-icons sidemenu-close">close</i></a></li>
                         {/* <li><div class="divider"></div></li> */}
                         <li><NavLink className="sidenav-close"  to="/"><i className="material-icons nav-icon">home</i>Home</NavLink></li>
                         <li><NavLink className="sidenav-close"  to="/classes"><i className="material-icons nav-icon">search</i>Classes</NavLink></li>
                         <li><NavLink className="sidenav-close"  to="/locations"><i className="material-icons nav-icon">map</i>Locations</NavLink></li>
-                        <li><NavLink className="sidenav-close" to="mobile.html"><i className="material-icons nav-icon">business</i>Partners</NavLink></li>
+                        <li><NavLink className="sidenav-close" to="mobile.html"><i className="material-icons nav-icon">business</i>Providers</NavLink></li>
                         <li><NavLink className="sidenav-close" to="collapsible.html"><i className="material-icons nav-icon">account_circle</i>Sign up</NavLink></li>
                     </ul>
             </div>
