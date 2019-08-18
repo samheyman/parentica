@@ -13,7 +13,8 @@
 // 3. Base stuff
 @import
     'base/fonts',
-    'base/base';
+    'base/base',
+    'base/tags';
   
 // 4. Layout
 @import 
@@ -23,8 +24,9 @@
 
 // 5. Components
 @import 
-    'components/classCard',
     'components/logo',
+    'components/classCard',
+    'components/classDetails',
     'components/searchForm';
 
 // 6. Pages

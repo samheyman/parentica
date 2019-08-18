@@ -7,8 +7,9 @@
     .card-image {
         border-radius: 4px 4px 0 0 ;
         height: 150px;
+        width: auto;
         background-repeat: no-repeat;
-        background-position: center center;
+        background-position: center left;
         background-size: cover;
         background-color: #464646;
     }
@@ -23,11 +24,46 @@
 
         .card-header {
 
+            .company {
+                display: flex;
+                flex-direction: row;
+                align-items: center;    
+                color: $font-pale;
+                font-weight: 300;
+                margin-bottom: 0px;
+                line-height: 1.1em;
+
+                .logo {
+                    display: flex;
+                    height: 30px;
+                    width: 30px;
+                    border-radius: 50%;
+                }
+
+                .company-details {
+                    display: flex;
+                    flex-direction: column;
+                    align-content: flex-start;
+                    margin-left: 10px;
+
+                    .company-name {
+                        display: flex;
+                        font-size: 0.8em;
+                        color: $font-dark;
+                    }
+    
+                    .company-address {
+                        font-size: 0.7em;
+                        color: $font-pale;
+                    }
+                }
+            }
+
             .card-title {
                 color: $font-dark;
-                font-size: 1.2em;
+                font-size: 1.1em;
                 font-weight: 500;
-                margin-bottom: 0px;
+                margin-top: 10px;
                 line-height: 1.2em !important;
             }
 
@@ -35,32 +71,93 @@
                 color: $secondary-color;
                 font-size: 0.9em;
                 line-height: 1.2em !important;
-                padding-bottom: 5px;
+                padding-bottom: 0px;
             }
 
-            .card-text {
-                display: block;
-                color: $font-pale;
+            .class-datetime {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-content: flex-start;
+                color: $secondary-color;
                 font-size: 0.8em;
-                line-height: 1  em !important;
+
+                i {
+                    font-size: 1.1em;
+                    margin-right: 5px;
+                    display: inline-flex;
+                    vertical-align: top; 
+                }
+
+                .class-time, .class-date, .class-duration {
+                    line-height: 1.1em;
+                    // flex: 1 1 0;
+                }
             }
         }
 
         .card-footer {
-            font-size: 12px; 
             display: flex;
             flex-direction: row;
             justify-content: space-between;
-            color: $primary-color;
+            align-items: flex-end ;
 
             .left-div {
-            
+                // display: flex;
+                // flex-direction: row;
+                // // vertical-align: bottom;
+                // justify-content: end;
+                // text-align: left;
+                font-size: 0.9em;
+                color: $primary-color;
+
+                .class-time, .class-date, .class-duration {
+                    // line-height: 1.1em;
+                    // flex: 1 1 0;
+                }
+
+                .class-duration {
+                    display: flex;
+                    flex-direction: row;
+                    vertical-align: middle;
+                    // font-size: 0.6em;
+                }
+
+                .duration-icon {
+                    padding: 0;
+                    // vertical-align: middle;
+                    // font-size: 1.2em;
+                    // padding: 2px 5px;
+                }
+
+                // clear Material icons default CSS
+                .material-icons {
+                    margin-right: 5px;
+                    line-height: inherit !important;
+                    font-size: inherit !important;
+                }
             }
+
+            .center-div {
+                color: $font-pale;
+            }
+
             .right-div {
+                display: flex;
+                flex-direction: column;
+                vertical-align: bottom;
+                justify-content: center;
                 text-align: right;
-                font-size: 1.6em;
+                // font-size: 1.6em;
                 color: $font-dark;
             }
+        }
+
+        .language-flag {
+            // position: absolute;
+            // right: 10px;
+            margin-top: 2px;
+            height: 12px;
         }
 
     }
