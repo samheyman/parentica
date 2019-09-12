@@ -1,0 +1,42 @@
+button.contact-form {
+    height: 4em;
+    background-color: $secondary-color !important;
+}
+
+.error-message {
+    padding: 20px;
+    border: 1px solid rgb(139, 32, 32);
+    border-radius: 4px;
+    background: rgb(248, 202, 209);
+    color: rgb(139, 32, 32);
+}
+
+.success-message {
+    margin: 40px 0;
+    padding: 20px;
+    border: 1px solid #1c663d;
+    border-radius: 4px;
+    background: rgb(213, 241, 215);
+    color: #1c663d;
+    text-align: center;
+
+    a {
+        color: inherit;
+        text-decoration: underline;
+    }
+}
+
+.success-icon {
+    color: #1c663d;
+    font-size: 40px !important;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}

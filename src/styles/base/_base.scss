@@ -31,7 +31,7 @@ body {
     font-family: $font-stack;
     padding: 0;
     margin: 0;
-    background-color: $body-background-color;
+    background-color: $body-background-color !important;
     min-height: 100vh;
 }
 
@@ -57,6 +57,10 @@ body {
     box-shadow: 0 2px 3px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.24) !important;
     transition: all 0.3s cubic-bezier(.55,.18,.25,1);;
 
+}
+
+.main-content {
+    min-height: 80vh;
 }
 
 .container, {
@@ -91,20 +95,37 @@ body {
 
 .btn {
     color: white !important;
-    background-color: $secondary-color !important;
+    // background-color: $secondary-color !important;
     //padding: .75rem 1.5rem !important;
     border-radius: .5rem !important;
     text-decoration: none !important;
     font-size: .9rem !important;
 }
 
+.btn-first {
+    background-color: $purple !important;
+    color: white !important;
+}
+
+.btn-second {
+    background-color: $green !important;
+    color: white !important;
+    border: 1px solid $green !important;
+}
+
 h2 {
-    font-size: 1.6rem  !important;
-    padding: 0 0.5em !important;
-    font-weight: 500 !important;
-    color: $font-dark;
+    font-size: 2rem;
+    font-weight: 700 !important;
+    color: $secondary-color;
+    letter-spacing: 1px;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8rem;
 }
 
 .main-content {
-    padding: 0 10px !important;
+    padding: 0 15px !important;
 }

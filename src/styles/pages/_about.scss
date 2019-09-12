@@ -1,0 +1,58 @@
+.content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sam {
+    background-position: 0 0px !important;
+    width: 110%;
+    height: 300px !important;
+}
+
+.eline {
+    background-position: 0 0px !important;
+    height: 300px !important;
+}
+
+.team-name {
+    font-size: 28px !important;
+}
+
+.job-title {
+    font-size: 18px !important;
+    margin: 10px 0 !important;
+    font-weight: bold;
+}
+
+ol {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.8rem;
+    padding-left: 20px;
+
+    li {
+        padding: 10px 0;
+        font-weight: 400;
+    }
+}
+
+h3 {
+    margin-top: 30px;
+    font-size: 1.6em;
+}
+
+.quote {
+    border-left: 4px solid $secondary-color;
+    font-weight: 200;
+    padding: 20px;
+    p {
+        color: $font-dark;
+    }
+}
+
+.manifesto-quote {
+    border-left: 2px dotted $secondary-color;
+    margin: 10px 0;
+    padding: 10px;
+    font-weight: 200;
+}

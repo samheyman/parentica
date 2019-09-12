@@ -1,0 +1,38 @@
+.MuiContainer-root {
+    padding: 0 15px !important;
+}
+
+.footer {
+    border-top: 1px solid $font-very-pale;
+    color: $font-pale;
+    min-height: 50px;
+    padding: 20px 0 30px 0; 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    .brand {
+        font-weight: bold;
+        color: $font-pale;
+    }
+
+    .copyright{
+        width: 50%;
+        text-align: left;
+    }
+
+    .social-links {
+        width: 50%;
+        text-align: right;
+
+        .facebook, .instagram, .linkedin {
+            display: inline;
+        }
+
+        img {
+            display: inline;
+            height: 25px;
+            margin: 0 10px 0 0;
+        }
+    }
+}

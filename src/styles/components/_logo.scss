@@ -1,8 +1,8 @@
 .brand-logo {
     color: $font-dark;
     height: $navigation-height !important;
-    text-transform: uppercase;
-    font-size: 1.5em !important;
+    text-decoration: none;
+    font-size: 1.7em !important;
 
     .logo {
         display: flex;
@@ -10,22 +10,36 @@
         height: $navigation-height;
         align-items: center;
 
+        img {
+            margin: 0 5px 2px 0; 
+            height:18px;
+        }
+
         div {
             display: flex;
             flex-direction: row;
             align-items: baseline;
 
             .brand-name {
-                color: $secondary-color;
+                color: #03314B;
+                font-family: Poppins;
                 vertical-align: bottom;
                 line-height: 24px;
+                text-transform: capitalize;
+                font-weight: 500;
             }
         
             .brand-sub {
-                color: $font-pale;
-                font-size: 0.5em !important;
+                // position: absolute;
+                // top: 33px;
+                // left: 54px;
+                // font-size: 0.4em;
+                font-weight: 300;
+                color: $font-dark;
+                // font-size: 0.5em;
                 vertical-align: bottom;
-                line-height: 16px;
+                line-height: 24px;
+                text-transform: capitalize;
             }
         }
     }

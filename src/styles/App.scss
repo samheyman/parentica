@@ -18,17 +18,22 @@
   
 // 4. Layout
 @import 
-    'layout/header',
-    'layout/desktopNav';
+    'layout/header';
 
 
 // 5. Components
 @import 
     'components/logo',
     'components/classCard',
+    'components/topicCard',
     'components/classDetails',
+    'components/footer',
     'components/searchForm';
 
 // 6. Pages
-@import 'pages/home';
-@import 'pages/classes';
+@import 
+    'pages/home',
+    'pages/classes',
+    'pages/about',
+    'pages/contact',
+    'pages/explore';

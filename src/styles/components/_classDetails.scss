@@ -1,0 +1,221 @@
+.MuiGrid-container {
+    padding: 0 !important;
+}
+
+.class-details-container {
+    margin: 0 auto;
+    max-width: 750px;
+}
+
+.class-image {
+    height: 300px;
+    background: no-repeat top/cover;
+    width: 100%;
+}
+
+.class-details {
+    // width: 100% !important;
+    // margin-top: 20px;
+    padding: 0 15px;
+    
+    .header {
+        margin: 30px 0px 0 0px;
+
+        
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: space-between;
+        // text-align: center;
+        // border-bottom: 1px solid $font-very-pale;
+        // border-top: 1px solid $font-very-pale;
+        // padding: 10px 0;
+
+        .company {
+            display: flex;
+            flex-direction: row;
+            align-content: flex-start;
+            font-size: 1.4em;
+            font-weight: 300;
+            margin-top: 5px;
+            margin-bottom: 0px;
+            // line-height: 1.4em;
+            text-transform: capitalize;
+
+            .logo {
+                display: block;
+                height: 45px;
+                width: 45px;
+                border-radius: 50%;
+                margin-right: 10px;
+            }
+
+            .company-name {
+                height: 45px;
+                line-height: 45px;
+            }
+        }
+
+
+        // .price {
+        //     display: flex;
+        //     flex-direction: row;
+        //     align-items: center;
+        //     color: $font-dark;
+        //     font-size: 1.2em;
+        //     line-height: 1.4em;
+        // }
+        .class-price {
+            padding: 10px 0 0 0;
+            font-size: 1.2em;
+        }
+    
+
+    
+        // display: flex;
+        // flex-direction: row;
+        // justify-content: space-between;
+        // text-align: center;
+        // padding-top: 20px;
+
+        .class-title {
+            color: $font-dark;
+            font-size: 2em;
+            line-height: 1.4em;
+            font-weight: 400 !important;
+            margin: 0;
+        }
+
+        .class-top-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start ;
+            margin: 30px 0;
+            padding: 20px 0;
+            color: rgba(0, 0, 0, 0.54);
+            border-top: 1px solid $font-very-pale;
+            border-bottom: 1px solid $font-very-pale;
+
+            .value {
+                // padding-left: 15px;
+
+                .material-icons {
+                    margin-right: 12px;
+                    margin-bottom: 2px;
+                }
+
+                span {
+                    margin-right: 5px; 
+                    display: block;
+                    line-height: inherit !important;
+                    display: inline-flex;
+                }
+
+                .language {
+                    text-transform: capitalize;
+                }
+    
+            }
+                
+            .MuiIcon-root {
+                height: inherit !important;
+            }
+
+            .material-icons {
+                display: inline-flex;
+                font-size: 20px;
+                vertical-align: middle;
+            }
+
+            .spacing {
+                margin-left: 20px;
+            }
+
+            .class-duration {
+                display: flex;
+                flex-direction: row;
+                vertical-align: middle;
+                // font-size: 0.6em;
+            }
+
+            .duration-icon {
+                padding: 0;
+                // vertical-align: middle;
+                // font-size: 1.2em;
+                // padding: 2px 5px;
+            }
+        }
+    }
+
+    .class-tags {
+        // text-align: center;
+        margin: 20px 0;
+    }
+
+    .card-tabs {
+        // margin: 5px 10px;
+
+        h3 {
+            font-size: 1.5em;
+            font-weight: 500;
+        }
+
+        .description {
+            color: $font-dark;
+            font-size: 1em;
+            line-height: 1.4em;
+        }
+    }
+
+    .actions {
+        margin-top: 40px;
+        display:flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+
+}
+
+.class-details-tabs {
+    header {
+        background-color: transparent;
+    }
+
+    .MuiBox-root {
+        padding: 10px 0;
+    }
+}
+
+.class-date-item {
+    display: flex;
+    margin: 15px 0;
+    flex-direction: row;
+    justify-content: center;
+    
+    span {
+        margin-right: 10px;
+    }
+
+    p {
+        margin:0;
+    }
+}
+
+.button-div {
+    margin: 40px 0 20px 0;
+    text-align: center;
+}
+
+.language-flag {
+    height: 12px;
+}
+
+.about-class {
+    min-height: 300px;
+}
+
+table {
+    width: 100%;
+    // border: 1px solid navy;
+}

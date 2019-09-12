@@ -1,10 +1,63 @@
+.MuiAppBar-colorPrimary {
+    background-color: #ffffff !important;
+    color: $font-dark !important;
+}
+
+.MuiPaper-elevation4 {
+    z-index: 0 !important;
+    box-shadow: none !important;
+}
+
+.MuiPaper-elevation16 {
+    box-shadow: none !important;
+}
+
+.spacer {
+    min-height: $navigation-height;
+}
+
+.MuiBackdrop-root {
+    background-color: rgba(0,0,0,0) !important; 
+}
+
+.MuiDrawer-paperAnchorRight {
+    top: 64px !important;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.MuiIconButton-root {
+    padding: 0 !important;
+}
+
 header {
     width: 100%;
     background-color: $header-background-color;
     // padding: 0 40px;
 
+    div {
+        justify-content: space-between;
+    }
+
     .container {
         padding: 0 10px;
+    }
+
+    .app-header-full {
+        li {
+            display: inline;
+            padding: 0 10px;
+            font-size: 1.1em;
+            color: $navy;
+
+            a:active {
+                color: $navy;
+            }
+
+            a:visited {
+                color: $navy;
+            }
+        }
     }
 
     nav {
@@ -17,6 +70,15 @@ header {
         .nav-wrapper {
             height: $navigation-height !important;   
             line-height: $navigation-height !important;
+        }
+
+        .brand-logo {
+            vertical-align: middle;
+        }
+
+        img {
+            vertical-align: middle;
+            height: 26px;
         }
 
         a {
@@ -51,12 +113,12 @@ header {
         }
 
         i.material-icons {
-            font-size: 30px;
+            // font-size: 28px;
             line-height: $navigation-height !important;
         }
 
         .sidenav-trigger {
-            margin: 0 0.5em !important;
+            margin: 0 !important;
         }
     }
 
@@ -64,12 +126,14 @@ header {
 
         .menu-top {
             background-color: $header-background-color;
+
             .sidenav-close {
                 height: $navigation-height;
 
                 .sidemenu-close {
                     height: $navigation-height !important;
                     line-height: $navigation-height !important;
+                    font-size:18px;
                 }
             }
         }
@@ -77,6 +141,15 @@ header {
         .divider {
             margin-bottom: 20px;
         }
+
+        li > a {
+            color: rgb(111, 117, 118);
+            font-size: 14px;
+            line-height: 40px;
+            font-weight: 500;
+            text-transform: none;
+        }
+        
 
         .nav-icon {
             // color: $primary-color !important;
@@ -86,11 +159,11 @@ header {
 }
 
 .mobile-back-header {
-    position: absolute;
-    top: 0;
-    left: 0;
+    // position: absolute;
+    // top: 0;
+    // left: 0;
     height: $navigation-height;
-    background-color: transparent;
+    // background-color: transparent;
     display : flex;
     align-items : center;
 
@@ -102,14 +175,36 @@ header {
 
     a {
         color: inherit;
-        margin: 0 0 !important;
+        // margin: 0 0 !important;
         height: $navigation-height;
 
         i {
             height: $navigation-height;
             display : flex;
             align-items : center;
-            font-size: 30px;
+            font-size: 25px;
         }
+    }
+}
+
+// Overide the hamburger icon style
+.menu-icon {
+    span {
+        svg {
+            color: #03314B;
+            font-size: 1.8rem;
+        }
+    }
+}
+
+// Overide the side menu style
+.sidebar-links {
+    color: rgb(111, 117, 118);
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+    span {
+        font-size: 1.1rem !important;
     }
 }

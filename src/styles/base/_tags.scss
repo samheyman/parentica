@@ -15,7 +15,7 @@
     border-radius: 4px;
     color: #4a4a4a;
     display: inline-flex;
-    font-size: .7rem;
+    font-size: .8rem;
     height: 2em;
     justify-content: center;
     line-height: 1.5;
@@ -24,43 +24,76 @@
     white-space: nowrap;
 }
 
-.tag:not(:last-child) {
+
+
+.tag {
     margin-right: .5rem;
 }
+
 
 .tags .tag {
     margin-bottom: .5rem;
 }
 
 .tag-pregnancy {
-    background-color: #FFECEC !important;
+    background-color: $pastel-red !important;
     color: #363636;
 }
 
 .tag-parenting {
-    background-color: #f5f5f5 !important;
+    background-color: $pastel-pink !important;
     color: #363636;
 }
 
-.tag-health {
-    background-color: #FDF2FF !important;
-    color: #363636;
-}
+// .tag-health {
+//     background-color: $pastel-purple !important;
+//     color: #363636;
+// }
 
 .tag-breastfeeding {
-    background-color: #F1ECFF !important;
+    background-color: $pastel-dark-purple !important;
     color: #363636;
 }
 
 .tag-nutrition {
-    background-color: #DBF0F7 !important;
+    background-color: $pastel-turquoise !important;
     color: #363636;
 }
 
 .tag-baby {
-    background-color: #EAFFEF !important;
+    background-color: $pastel-dark-green !important;
     color: #363636;
 }
 
-// CFFEF0, EAFFEF, EEEEFF, FFFFE3
+.tag-music {
+    background-color: $pastel-green !important;
+    color: #363636;
+}
+
+.tag-massage {
+    background-color: $pastel-purple !important;
+    color: #363636;
+}
+
+.tag-sleep {
+    background-color: $pastel-yellow !important;
+    color: #363636;
+}
+
+.tag-feeding {
+    background-color: $pastel-red !important;
+    color: #363636;
+}
+
+.tag-first {
+    background-color: $pastel-blue !important;
+    color: #363636;
+}
+
+.tag-yoga {
+    background-color: $pastel-blue !important;
+    color: #363636;
+}
+
+// 
 // https://www.incengine.com/?name=Pastel-HTML-Color-Codes&art=pastel_colors

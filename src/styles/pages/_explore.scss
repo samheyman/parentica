@@ -1,0 +1,45 @@
+.MuiAppBar-colorDefault {
+    background-color: $body-background-color !important;
+}
+
+.MuiBox-root {
+    padding: 0 !important;
+}
+
+.MuiTabs-indicator {
+    background-color: $secondary-color !important;
+}
+
+.MuiGrid-container {
+    padding: 15px;
+}
+
+.search-results {
+    margin: 15px 0 !important;
+}
+
+// .MuiTypography-body1 {
+//     margin: 20px 0 !important;
+// }
+
+.result-filters {
+    margin: 10px 0;
+}
+
+.filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    // background-color: #f9f9f9;
+    color: $font-pale;
+
+    ul {
+
+        li {
+            display: inline;
+            margin: 0 40px 0 0;
+            text-decoration: none;
+        }
+    }
+}

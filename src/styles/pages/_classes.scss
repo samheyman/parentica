@@ -5,6 +5,10 @@
     overflow-x: auto;
 }
 
+.card-container {
+    padding: 0 15px 0 0 !important;
+}
+
 .horizontalClasses::-webkit-scrollbar {
     // display: none;
 }
@@ -21,4 +25,6 @@
     background-position: top;
     background-clip: content-box;
 }
+
+
 
