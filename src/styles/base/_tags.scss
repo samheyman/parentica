@@ -41,32 +41,27 @@
 }
 
 .tag-parenting {
-    background-color: $pastel-pink !important;
+    background-color: $pastel-light-green !important;
     color: #363636;
 }
 
-// .tag-health {
-//     background-color: $pastel-purple !important;
-//     color: #363636;
-// }
-
 .tag-breastfeeding {
-    background-color: $pastel-dark-purple !important;
+    background-color: $pastel-deep-purple !important;
     color: #363636;
 }
 
 .tag-nutrition {
-    background-color: $pastel-turquoise !important;
+    background-color: $pastel-cyan !important;
     color: #363636;
 }
 
 .tag-baby {
-    background-color: $pastel-dark-green !important;
+    background-color: $pastel-brown !important;
     color: #363636;
 }
 
 .tag-music {
-    background-color: $pastel-green !important;
+    background-color: $pastel-teal !important;
     color: #363636;
 }
 
@@ -81,17 +76,27 @@
 }
 
 .tag-feeding {
-    background-color: $pastel-red !important;
+    background-color: $pastel-lime !important;
     color: #363636;
 }
 
 .tag-first {
-    background-color: $pastel-blue !important;
+    background-color: $pastel-deep-orange !important;
     color: #363636;
 }
 
 .tag-yoga {
     background-color: $pastel-blue !important;
+    color: #363636;
+}
+
+.tag-social {
+    background-color: $pastel-indigo !important;
+    color: #363636;
+}
+
+.tag-all {
+    border: 1px solid $pastel-blue-grey !important;
     color: #363636;
 }
 

@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import ScrollToTop from './components/ScrollToTop';
 
 const store = ConfigureStore();
 
@@ -14,9 +15,11 @@ class App extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <CssBaseline />
-          <div className="App">
-            <Main />
-          </div>
+          <ScrollToTop>
+            <div className="App">
+              <Main />
+            </div>
+          </ScrollToTop>
         </BrowserRouter>
       </Provider>
     );
