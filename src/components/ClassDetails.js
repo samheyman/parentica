@@ -281,7 +281,13 @@ function ClassDetails(props) {
                             </div>
                             <div className="button-div">
                                 <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
-                                    onclick={`getOutboundLink(${props.selectedClass.url}); return false;`} >
+                                    onClick={()=>{
+                                        window.gtag("event", "click", {
+                                            event_category: "conversion",
+                                            event_label: props.selectedClass.url
+                                        }); 
+                                    }}
+                                >
                                     <Button variant="outlined" color="primary">Go to website</Button>
                                 </a>
                             </div>
