@@ -280,7 +280,8 @@ function ClassDetails(props) {
                                 <RenderTags tags={props.selectedClass.tags} />
                             </div>
                             <div className="button-div">
-                                <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer">
+                                <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
+                                    onclick={`getOutboundLink(${props.selectedClass.url}); return false;`} >
                                     <Button variant="outlined" color="primary">Go to website</Button>
                                 </a>
                             </div>
