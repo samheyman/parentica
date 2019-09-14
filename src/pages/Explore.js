@@ -48,9 +48,14 @@ export default function Explore(props) {
         setValue(newValue);
     }
 
+    let duplicates = [];
+
     const classesList = props.classes.map((classEntry) => {
         if( classEntry.type === 'group' || classEntry.type === "meetup") {
-            if (new Date(classEntry.date) > new Date()) {
+            let classEntryName = classEntry.className + "_" + classEntry.companyName;
+            if (new Date(classEntry.date) > new Date() && !duplicates.includes(classEntryName)) {
+                duplicates.push(classEntryName);
+                console.log(duplicates);
                 return (
                     <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
                         <ClassCard classEntry={classEntry} />      

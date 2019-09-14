@@ -79,7 +79,7 @@ class Main extends Component {
                         }
                     }} />
                     <Route path='/explore/online' render={() => {
-                        if(this.props.location.topic === null || this.props.location.topic === "all"){
+                        if(this.props.location.topic == null || this.props.location.topic === "all"){
                             return(
                                 <Explore
                                     classes={this.props.classes} 
@@ -98,7 +98,7 @@ class Main extends Component {
                         }
                     }} />
                     <Route path='/explore/madrid' render={() => {
-                        if(this.props.location.topic === null || this.props.location.topic === "all") {
+                        if(this.props.location.topic == null || this.props.location.topic === "all") {
                             return(
                                 <Explore
                                     classes={this.props.classes} 

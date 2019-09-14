@@ -53,6 +53,9 @@ function RenderOtherClasses({otherClasses}) {
                 <TableCell>
                     <Link to={`/classes/${item.id}`}>{item.className}</Link>
                 </TableCell>
+                <TableCell>
+                    {item.district}
+                </TableCell>
                 <TableCell>{formatedDates}</TableCell>
             </TableRow>
         );
