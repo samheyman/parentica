@@ -30,28 +30,12 @@
     margin-right: .5rem;
 }
 
-
 .tags .tag {
     margin-bottom: .5rem;
 }
 
-.tag-pregnancy {
-    background-color: $pastel-red !important;
-    color: #363636;
-}
-
-.tag-parenting {
-    background-color: $pastel-light-green !important;
-    color: #363636;
-}
-
-.tag-breastfeeding {
-    background-color: $pastel-deep-purple !important;
-    color: #363636;
-}
-
-.tag-nutrition {
-    background-color: $pastel-cyan !important;
+.tag-all {
+    border: 1px solid $pastel-blue-grey !important;
     color: #363636;
 }
 
@@ -60,18 +44,8 @@
     color: #363636;
 }
 
-.tag-music {
-    background-color: $pastel-teal !important;
-    color: #363636;
-}
-
-.tag-massage {
-    background-color: $pastel-purple !important;
-    color: #363636;
-}
-
-.tag-sleep {
-    background-color: $pastel-yellow !important;
+.tag-breastfeeding {
+    background-color: $pastel-deep-purple !important;
     color: #363636;
 }
 
@@ -80,13 +54,44 @@
     color: #363636;
 }
 
+// first aid
 .tag-first {
     background-color: $pastel-deep-orange !important;
     color: #363636;
 }
 
-.tag-yoga {
-    background-color: $pastel-blue !important;
+.tag-massage {
+    background-color: $pastel-purple !important;
+    color: #363636;
+}
+
+.tag-music {
+    background-color: $pastel-teal !important;
+    color: #363636;
+}
+
+.tag-nutrition {
+    background-color: $pastel-cyan !important;
+    color: #363636;
+}
+
+.tag-parenting {
+    background-color: $pastel-light-green !important;
+    color: #363636;
+}
+
+.tag-postpartam {
+    background-color: $pastel-light-blue !important;
+    color: #363636;
+}
+
+.tag-pregnancy {
+    background-color: $pastel-red !important;
+    color: #363636;
+}
+
+.tag-sleep {
+    background-color: $pastel-yellow !important;
     color: #363636;
 }
 
@@ -95,10 +100,9 @@
     color: #363636;
 }
 
-.tag-all {
-    border: 1px solid $pastel-blue-grey !important;
+.tag-yoga {
+    background-color: $pastel-blue !important;
     color: #363636;
 }
-
 // 
 // https://www.incengine.com/?name=Pastel-HTML-Color-Codes&art=pastel_colors
