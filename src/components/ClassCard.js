@@ -58,7 +58,14 @@ export default function MediaCard(props) {
     const classes = useStyles();
   
     return (
-      <Link className="class-card-link" to={`../classes/${props.classEntry.id}` }>  
+      <Link className="class-card-link" to={`../classes/${props.classEntry.id}`}
+          onClick={()=>{
+            window.gtag("event", props.classEntry.companyName, {
+                event_category: "class view",
+                event_label: props.classEntry.className
+            }); 
+          }}
+      >  
         <Card className={classes.card}>
           <CardActionArea>
             <CardMedia

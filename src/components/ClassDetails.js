@@ -282,9 +282,9 @@ function ClassDetails(props) {
                             <div className="button-div">
                                 <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
                                     onClick={()=>{
-                                        window.gtag("event", "click", {
+                                        window.gtag("event", props.selectedClass.companyName, {
                                             event_category: "conversion",
-                                            event_label: props.selectedClass.url
+                                            event_label: props.selectedClass.className
                                         }); 
                                     }}
                                 >
