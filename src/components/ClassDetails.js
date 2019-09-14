@@ -57,6 +57,9 @@ function RenderOtherClasses({otherClasses}) {
                     {item.district}
                 </TableCell>
                 <TableCell>{formatedDates}</TableCell>
+                <TableCell>
+                    {item.time}
+                </TableCell>
             </TableRow>
         );
     });
