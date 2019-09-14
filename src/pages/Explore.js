@@ -89,7 +89,11 @@ export default function Explore(props) {
     return(
         <Container className="main-content">
             <div className="result-filters">
-                <span>Topic: <span className={`tag tag-${props.topic}`}>{props.topic}</span></span>
+                {(props.topic!=="all")?
+                    <span className={`tag tag-${props.topic}`}>{props.topic}</span>
+                    :
+                    <span></span>
+                }
             </div>
             <AppBar position="static" color="default">
                 <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">

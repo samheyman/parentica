@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Explore from './Explore';
 import OnlineClasses from '../components/OnlineClasses';
-import ClassDetails from '../components/ClassDetails';
+import ClassDetails from '../pages/ClassDetails';
 import Home from './Home';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';

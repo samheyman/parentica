@@ -4,10 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import TopicCard from '../components/TopicCard';
 
 const useStyles = makeStyles(theme => ({
     button: {
@@ -17,94 +14,6 @@ const useStyles = makeStyles(theme => ({
       display: 'none',
     },
 }));
-
-function RenderPregnancyLink({classes}) {
-    const numberClasses = classes.length;
-    return(
-        <Link to={{pathname:"/explore", topic:"pregnancy"}}>
-        <Grid item xs={12} sm={6} md={4} key="1">
-            <Card className="topic-card">
-                <CardActionArea>
-                    <CardMedia
-                    image="../images/brand/pregnancy.jpg"
-                    title="Pregnancy"
-                    />
-                    <CardContent>
-                        <h4>Pregnancy</h4>
-                        <p>{numberClasses} classes</p>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-        </Grid>
-        </Link>
-    );
-}
-
-function RenderParentingLink({classes}) {
-    const numberClasses = classes.length;
-    return(
-        <Link to={{pathname:"/explore", topic:"parenting"}}>
-        <Grid item xs={12} sm={6} md={4} key="2">
-            <Card className="topic-card">
-                <CardActionArea>
-                    <CardMedia
-                    image="../images/brand/parenting.png"
-                    title="Parenting"
-                    />
-                    <CardContent>
-                        <h4>Parenting</h4>
-                        <p>{numberClasses} classes</p>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-        </Grid>
-        </Link>
-    );
-}
-
-function RenderNutritionLink({classes}) {
-    const numberClasses = classes.length;
-    return(
-        <Link to={{pathname:"/explore", topic:"nutrition"}}>
-        <Grid item xs={12} sm={6} md={4} key="3">
-            <Card className="topic-card">
-                <CardActionArea>
-                    <CardMedia
-                    image="../images/brand/nutrition.jpg"
-                    title="Nutrition"
-                    />
-                    <CardContent>
-                        <h4>Nutrition</h4>
-                        <p>{numberClasses} classes</p>
-                    </CardContent>
-                </CardActionArea>
-            </Card>
-        </Grid>
-        </Link>
-    );
-}
-
-function RenderOnlineClassCard({classes}) {
-    const numberClasses = classes.length;
-    return(
-        <Link to={{pathname:"/explore/online", topic:"all"}}>
-            <Grid item xs={12} sm={6} md={4} key="4">
-                <Card className="topic-card">
-                    <CardActionArea>
-                        <CardMedia
-                        image="../images/brand/manonlaptop.jpg"
-                        title="Online classes"
-                        />
-                        <CardContent>
-                            <h4>Online classes</h4>
-                            <p>{numberClasses} classes</p>
-                        </CardContent>
-                    </CardActionArea>
-                </Card>
-            </Grid>
-        </Link>
-    );
-}
 
 function MadridProviders({providers}) {
     const providersList = providers.map((provider) => {
@@ -172,10 +81,11 @@ function Home(props) {
             <div className="popular-topics">
                 <h2>Popular topics</h2>  
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
-                    <RenderPregnancyLink classes={props.classEntries.filter((item) => item.tags.includes("pregnancy"))} />
-                    <RenderParentingLink classes={props.classEntries.filter((item) => item.tags.includes("parenting"))} />
-                    <RenderOnlineClassCard classes={props.onlineClasses} />
-                    <RenderNutritionLink classes={props.classEntries.filter((item) => item.tags.includes("nutrition"))} />
+                    <TopicCard topic="parenting" resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
+                    <TopicCard topic="pregnancy" resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
+                    <TopicCard topic="nutrition" resultCount={props.classEntries.filter((item) => item.tags.includes("nutrition")).length}/>
+                    <TopicCard topic="music" resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}/>
+                    <TopicCard topic="postpartum" resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}/>
                 </Grid>
             </div>
             <div className="row">

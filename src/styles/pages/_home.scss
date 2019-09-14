@@ -42,6 +42,7 @@
 }
 
 h2 {
+    margin-top: 40px;
     color: $navy;
     font-size: 1.5em;
 }
@@ -139,6 +140,6 @@ a {
 }
 
 .topic-cards {
-    display: flex;
-    flex-direction: row;
+    // display: flex;
+    // flex-direction: row;
 }
