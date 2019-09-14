@@ -86,6 +86,7 @@ function Home(props) {
                     <TopicCard topic="nutrition" resultCount={props.classEntries.filter((item) => item.tags.includes("nutrition")).length}/>
                     <TopicCard topic="music" resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}/>
                     <TopicCard topic="postpartum" resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}/>
+                    <TopicCard topic="yoga" resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}/>
                 </Grid>
             </div>
             <div className="row">

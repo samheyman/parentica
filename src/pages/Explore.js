@@ -53,7 +53,7 @@ export default function Explore(props) {
     const classesList = props.classes.map((classEntry) => {
         if( classEntry.type === 'group' || classEntry.type === "meetup") {
             let classEntryName = classEntry.className + "_" + classEntry.companyName;
-            if (new Date(classEntry.date) > new Date() && !duplicates.includes(classEntryName)) {
+            if (new Date(classEntry.date) > new Date()) {
                 duplicates.push(classEntryName);
                 console.log(duplicates);
                 return (
