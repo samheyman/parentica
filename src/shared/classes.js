@@ -389,7 +389,7 @@ export const CLASSES = [
         city: "Madrid",
         district: "El Viso",
         address: "British Council School, C/Alfonso Rodríguez Santamaría 23-25, 28002 Madrid",
-        url: 'https://www.eventbrite.es/e/entradas-baby-over-the-rainbow-party-72376844089?utm_campaign=BilingualBabyClub&utm_source=facebook&utm_medium=Social&utm_content=BilingualBabyClub',
+        url: 'https://www.eventbrite.es/e/entradas-baby-over-the-rainbow-party-72376844089?utm_campaign=Parentica&utm_source=parentica&utm_content=BilingualBabyClub',
         image: 'bilingualbabymorning.jpg',
         companyName: 'British Council',
         companyLogo: 'britishcouncil_sq.png',
@@ -408,7 +408,7 @@ export const CLASSES = [
         ],
     },
     {
-        id: 5064,
+        id: 7064,
         type: 'group',
         className: 'TALLER DE MÚSICA EN FAMILIA',
         tags: ['music'],
