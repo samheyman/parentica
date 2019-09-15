@@ -68,12 +68,12 @@ export default function MediaCard(props) {
                 
                   {/* {props.classEntry.price}€  */}
 
-                  <div className="value">
+                  {/* <div className="value"> */}
                     {/* <Icon className={classes.icon}>
                     timelapse
                     </Icon> */}
-                    <span>{props.classEntry.duration}</span>
-                  </div>
+                    {/* <span>{props.classEntry.duration}</span>
+                  </div> */}
               </div>
               <RenderTags tags={props.classEntry.tags} />
 
