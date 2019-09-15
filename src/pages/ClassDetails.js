@@ -286,8 +286,8 @@ function ClassDetails(props) {
                                 <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
                                     onClick={()=>{
                                         window.gtag("event", props.selectedClass.companyName, {
-                                            event_category: "conversion",
-                                            event_label: props.selectedClass.className
+                                            event_category: "conversions",
+                                            event_label: props.selectedClass.companyName + " - " + props.selectedClass.className
                                         }); 
                                     }}
                                 >
