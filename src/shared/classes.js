@@ -2477,6 +2477,26 @@ export const CLASSES = [
         ],
     },
     {
+        id: 1012,
+        type: 'online',
+        className: 'Baby2Body',
+        tags: ['pregnancy'],
+        image: 'baby2body.jpg',
+        url: 'https://baby2body.com',   
+        companyName: 'Baby2Body',
+        companyLogo: 'baby2body_sq.png',
+        label: '',
+        price: 0,
+        language: 'english',
+        featured: true,
+        description: [
+            "Packed full of workouts, circuits and daily exercises, Baby2Body is your personal fitness coach, always at hand. We’ll even make you your very own workout plan tailored to your goals and fitness level.",
+            "We’re here to keep mamas around the world inspired and motivated to live healthier every day. We’ll be your best friend in your back pocket, coaching you on how to stay fit, eat well, and live more mindfully.",
+            "Our diverse team is dedicated to optimizing women’s wellness, and we’re here to bring you everything you need to live happier and healthier. Baby2Body is your one stop shop when it comes to healthy lifestyle guidance you can trust. We’ve brought together experts in prenatal and postnatal health and wellness from around the world to create bespoke fitness programs, customizable nutrition guidance, and empowering wellbeing support – designed just for you, at this incredible time in your life.",
+
+        ],
+    },
+    {
         id: 4005,
         type: 'online',
         className: 'Stanford\'s Short Course on Breastfeeding',
