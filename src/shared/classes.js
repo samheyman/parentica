@@ -2008,7 +2008,7 @@ export const CLASSES = [
         time: '11h30',
         duration: '2h',
         url: 'https://www.monetes.es/producto/baby-led-weaning/',
-        image: 'blw_monetes.png',
+        image: 'blw_monetes.jpg',
         companyName: 'Monetes',
         companyLogo: 'monetes_sq.png',
         label: 'New',
