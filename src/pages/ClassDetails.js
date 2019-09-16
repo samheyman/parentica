@@ -244,7 +244,6 @@ function ClassDetails(props) {
     // function handleChangeIndex(index) {
     //     setValue(index);
     // }
-
     return(
         <React.Fragment>
             <ScrollToTop/>

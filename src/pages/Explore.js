@@ -55,7 +55,6 @@ export default function Explore(props) {
             let classEntryName = classEntry.className + "_" + classEntry.companyName;
             if (new Date(classEntry.date) > new Date()) {
                 duplicates.push(classEntryName);
-                console.log(duplicates);
                 return (
                     <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
                         <ClassCard classEntry={classEntry} />      
@@ -85,7 +84,6 @@ export default function Explore(props) {
         }
     });
     
-    console.log(classesList.length);
     return(
         <Container className="main-content">
             <div className="result-filters">

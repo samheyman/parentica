@@ -43,11 +43,21 @@ function RenderTags({tags}) {
     return output;
 }
 
+function RenderFlag({language}) {
+  if (language==='spanish' || language==='english') {
+      return (
+          <img className="language-flag" src={`/images/flags/${language}.png`} alt={`${language}`} />
+      );
+  } else {
+    return null;
+  }
+}
+
 export default function MediaCard(props) {
     const classes = useStyles();
   
     return (
-      <Link className="class-card-link" to={`../classes/${props.classEntry.id}`}>  
+      <Link className="class-card-link" to={`../classes/${props.classEntry.nameId}`}>  
         <Card className={classes.card}>
           <CardActionArea>
             <CardMedia

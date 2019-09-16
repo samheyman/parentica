@@ -10,6 +10,7 @@ import About from './About';
 import Contact from './Contact';
 import Navbar from '../components/Header/Navbar';
 import Footer from '../components/Footer';
+import Error from '../pages/Error';
 
 const mapStateToProps = (state) => {
     return(
@@ -45,19 +46,42 @@ class Main extends Component {
             );
         }
 
-        const ClassWithId = ({match}) => {
-            return(
+        // const ClassWithId = ({match}) => {
+        //     return(
+        //             <ClassDetails
+        //                 selectedClass={this.props.classes.filter((theClass) => theClass.id === parseInt(match.params.classId,10))[0]}
+        //                 // TODO only send the class names, not all the information
+        //                 otherClasses={this.props.classes}
+        //             />
+        //     );
+        // }
+
+        const ClassWithName = ({match}) => {
+            let selectedClass = this.props.classes.filter((theClass) => theClass.nameId === match.params.classNameId)[0];
+            if (selectedClass == null) {
+                return(<Redirect to='/error' />);
+            } else {
+                return(
                     <ClassDetails
-                        selectedClass={this.props.classes.filter((theClass) => theClass.id === parseInt(match.params.classId,10))[0]}
+                        selectedClass={this.props.classes.filter((theClass) => theClass.nameId === match.params.classNameId)[0]}
                         // TODO only send the class names, not all the information
                         otherClasses={this.props.classes}
                     />
+                );
+            } 
+        }
+
+        const NotFound = () => {
+            return(
+                <Error />
             );
         }
+
         return(
             <React.Fragment>
                 <Navbar/>
                 <Switch>
+                    <Route exact path='/' component={HomePage} />
                     <Route path='/home' component={HomePage} />
                     <Route exact path='/explore' render={() => {
                         if(this.props.location.topic == null || this.props.location.topic === "all") {
@@ -118,12 +142,13 @@ class Main extends Component {
                     }} />
                     {/* issue here is that a new component is rendered every time, rather than update existing one */}
                     {/* https://tylermcginnis.com/react-router-pass-props-to-components/ */}
-                    <Route path='/classes/:classId' component={ClassWithId} />
+                    {/* <Route path='/classes/:classId' component={ClassWithId} /> */}
+                    <Route path='/classes/:classNameId' component={ClassWithName} />
                     <Route path='/online-classes' component={OnlineClassesPage} />
                     <Route path='/locations' component={Locations} />
                     <Route path='/about' component={About} />
                     <Route path='/contact' component={Contact} />
-                    <Redirect to="/home" />
+                    <Route component={NotFound}  />
                 </Switch>
                 <Footer/>
             </React.Fragment>
