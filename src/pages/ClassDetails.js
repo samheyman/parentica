@@ -51,7 +51,7 @@ function RenderOtherClasses({otherClasses}) {
         return (
             <TableRow key={i++}>
                 <TableCell>
-                    <Link to={`/classes/${item.id}`}>{item.className}</Link>
+                    <Link to={`/classes/${item.nameId}`}>{item.className}</Link>
                 </TableCell>
                 <TableCell>{formatedDates} - {item.time}</TableCell>
                 <TableCell>
