@@ -83,10 +83,12 @@ function Home(props) {
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     <TopicCard topic="parenting" resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard topic="pregnancy" resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
+                    <TopicCard topic="baby" resultCount={props.classEntries.filter((item) => item.tags.includes("baby")).length}/>
                     <TopicCard topic="nutrition" resultCount={props.classEntries.filter((item) => item.tags.includes("nutrition")).length}/>
                     <TopicCard topic="music" resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}/>
                     <TopicCard topic="postpartum" resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}/>
                     <TopicCard topic="yoga" resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}/>
+                    <TopicCard topic="first aid" resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}/>
                 </Grid>
             </div>
             <div className="row">

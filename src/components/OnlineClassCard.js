@@ -70,12 +70,14 @@ export default function MediaCard(props) {
                 {props.classEntry.className}
               </Typography>
               <Typography className={classes.companyName} color="textSecondary" component="h4" gutterBottom>
+                <RenderFlag language={props.classEntry.language} />
+                <span>&nbsp;</span>
                 {props.classEntry.companyName}
               </Typography>
-            
+
               
               <div className={`card-footer ${classes.cardFooter}`}>
-                
+
                   {/* {props.classEntry.price}€  */}
 
                   {/* <div className="value"> */}

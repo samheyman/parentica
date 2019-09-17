@@ -1,11 +1,9 @@
 .topic-card {
-    // width: 300px;
-    // margin: 10px;
-
+    
     .MuiCardMedia-root {
         height: 200px;
         width: auto;
-        background-color: #eaeaea;
+        background-color: $image-background-color;
     }
 
     .MuiCardContent-root {
