@@ -3,7 +3,7 @@ export const CLASSES = [
     "id":1100,
     "type":"group",
     "className":"Yoga para mamás con bebés",
-    "date":"2019-09-16T12:30Z",
+    "date":"2019-09-16T12:30+02:00",
     "time":"12h30",
     "tags":[
     "yoga"
@@ -16,11 +16,10 @@ export const CLASSES = [
     "image":"yogamumsbabyskenko.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
     "price":50,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
     "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
@@ -39,18 +38,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Rivas",
     "address":"TOYSRUS Rivas, CC Rivas-Futura, Calle Marie Curie s / n - Local A-10 and A-11",
-    "date":"2019-09-16T17:00Z",
+    "date":"2019-09-16T17:00+02:00",
     "time":"17h00",
     "duration":"3h",
     "url":"https://www.bienvenidobebe.es/registro-presencial",
     "image":"tallercuidadosbebe.png",
     "companyName":"Bienvenido Bebe",
     "companyLogo":"bienvenidobebe_sq.png",
-    "label":"New",
+    
     "price":0,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Desde la llegada de tu bebé tu mundo está patas arriba. Ahora mismo tu principal preocupación es garantizar el bienestar y correcto desarrollo de tu pequeño, algo que generará ciertas inseguridades sobre todo si eres papá o mamá primeriza: ¿por qué llora el bebé? ¿tiene hambre, sueño, frio…? ¿duerme lo suficiente?",
     "Bienvenido Bebé es un completo Curso sobre Cuidados del Bebé gratuito dirigido a padres y madres con hijos de 0 a 18 meses que busca apoyarles y ayudarles a afrontar con seguridad y tranquilidad el cuidado y la crianza de su pequeño.",
@@ -72,18 +71,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-16T18:30Z",
+    "date":"2019-09-16T18:30+02:00",
     "time":"18h30",
     "duration":"1h30",
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"postpartoentremamas.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":30,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Precio:",
     "30€/sesión en grupo.",
@@ -109,18 +108,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-17T18:30Z",
+    "date":"2019-09-17T18:30+02:00",
     "time":"18h30",
     "duration":"1h00",
     "url":"http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
     "image":"grupodeapoyo.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":5,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tercer martes de cada mes a las 18h30.",
     "Reunión para embarazadas (parejas bienvenidas)",
@@ -134,7 +133,7 @@ export const CLASSES = [
     "id":1101,
     "type":"group",
     "className":"Yoga para mamás con bebés",
-    "date":"2019-09-18T12:30Z",
+    "date":"2019-09-18T12:30+02:00",
     "time":"12h30",
     "tags":[
     "yoga"
@@ -147,11 +146,11 @@ export const CLASSES = [
     "image":"yogamumsbabyskenko.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":50,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
     "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
@@ -170,18 +169,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"La Latina",
     "address":"c/ Aguas, 4, local 2, 28005 Madrid",
-    "date":"2019-09-18T16:30Z",
+    "date":"2019-09-18T16:30+02:00",
     "time":"16h30",
     "duration":"8h (8 sessions)",
     "url":"https://espaciokenko.com/gimnasia-hipopresiva/",
     "image":"gimnasiahipopresivaespaciokenko.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":110,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "GRUPO 1 – MIÉRCOLES de 16:30 a 17:30",
     "(días 18, 25 de SEPTIEMBRE, 2, 9, 16, 23, 30 de OCTUBRE y 6 de NOVIEMBRE)",
@@ -203,18 +202,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-19T11:00Z",
+    "date":"2019-09-19T11:00+02:00",
     "time":"11h00",
     "duration":"1h30",
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"masajeentremamas.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":20,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Precio: 20€/sesión por adulto.",
     "Tercer jueves de cada mes, de 11:00 - 12:30.",
@@ -235,18 +234,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamberí",
     "address":"c/ Raimundo Lulio, 5, 28010 Madrid",
-    "date":"2019-09-19T12:00Z",
+    "date":"2019-09-19T12:00+02:00",
     "time":"12h00",
     "duration":"1h",
     "url":"https://www.olavideyoga.es/horarios",
     "image":"yogamamasybebesolavideyoga.jpg",
     "companyName":"Olavide Yoga",
     "companyLogo":"olavideyoga_sq.png",
-    "label":"New",
+    
     "price":20,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Horario:",
     "Todos los jueves de 12h a 13h",
@@ -268,18 +267,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamberí",
     "address":"c/ Raimundo Lulio, 5, 28010 Madrid",
-    "date":"2019-09-19T18:30Z",
+    "date":"2019-09-19T18:30+02:00",
     "time":"18h30",
     "duration":"1h",
     "url":"https://www.olavideyoga.es/horarios",
     "image":"yogamamasybebesolavideyoga.jpg",
     "companyName":"Olavide Yoga",
     "companyLogo":"olavideyoga_sq.png",
-    "label":"New",
+    
     "price":20,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Horario:",
     "Todos los jueves de 18h30 a 19h30",
@@ -301,19 +300,19 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Pradillo 10, 28002 Madrid",
-    "date":"2019-09-19T17:30Z",
+    "date":"2019-09-19T17:30+02:00",
     "time":"17h30",
     "duration":"1h",
     "url":"https://elultimokoala.com/actividades/5519-taller-de-baby-led-weaning.html",
     "image":"elultimakoala.png",
     "companyName":"El Ultimo Koala",
     "companyLogo":"elultimokoala_sq.png",
-    "label":"New",
+    
     "price":15,
     "priceCouple":25,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "El baby led weaning (blw), podría traducirse como “alimentación complementaria autorregulada” o “alimentación complementaria a demanda”, es una manera de incorporar los sólidos en la alimentación del bebé sin pasar por la fase de purés y papillas, siendo el propio bebé quien se alimenta por sí mismo usando las manos.",
     "Hablaremos sobre esta manera de ofrecer alimentos, de las bases y ventajas que ofrece tanto al bebé como a la familia. Se daran pautas generales para hacerlo de manera respetuosa y segura.",
@@ -332,18 +331,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Rivas",
     "address":"Monetes, Avenida Pablo Iglesias 87 (local 1) 28521 Rivas",
-    "date":"2019-09-20T17:30Z",
+    "date":"2019-09-20T17:30+02:00",
     "time":"17h30 and 18h30",
     "duration":"45min",
     "url":"https://www.creciendomisol.com/calendario-de-talleres-musica-para-bebes/",
     "image":"creciendomisol.jpg",
     "companyName":"Creciendomisol",
     "companyLogo":"creciendomisol_sq.png",
-    "label":"New",
+    
     "price":18,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Taller de música en familia",
     "17:30h Grupo según demanda: bebés (4-15 meses) o deambuladores (16-36 meses)",
@@ -363,20 +362,20 @@ export const CLASSES = [
     "music"
     ],
     "city":"Madrid",
-    "district":"Moratalaz",
+    "district":"Moratala",
     "address":"Arihú, Calle de la Laguna Negra, 13 28013 Madrid",
-    "date":"2019-09-20T17:30Z",
+    "date":"2019-09-20T17:30+02:00",
     "time":"17h30 and 18h30",
     "duration":"45min",
     "url":"https://www.creciendomisol.com/calendario-de-talleres-musica-para-bebes/",
     "image":"tallerdemusicalenfamilia.jpg",
     "companyName":"Creciendomisol",
     "companyLogo":"creciendomisol_sq.png",
-    "label":"New",
+    
     "price":18,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Taller de música en familia",
     "17:30h Grupo según demanda: bebés (4-15 meses) o deambuladores (16-36 meses)",
@@ -398,18 +397,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Bellas Vistas",
     "address":"Belo Art, Calle Pamplona 59, Madrid",
-    "date":"2019-09-20T18:00Z",
+    "date":"2019-09-20T18:00+02:00",
     "time":"18h00",
     "duration":"1h",
     "url":"http://denisesuarez.com/workshop",
     "image":"hablaratushijos.jpg",
-    "companyName":"Denise Suarez",
+    "companyName":"Denise Suare+02:00",
     "companyLogo":"denisesuarez_sq.png",
-    "label":"New",
+    
     "price":0,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Durante la sesión, aprendemos habilidades de comunicación básicas que pueden ayudar a tus hijos a escucharte. También veremos cómo podemos ayudarles afrontar sus emociones con técnicas que podráis usar cuando llegais a casa. Al final del taller habrá un espacio donde podéis preguntar sobre vuestros conflictos y/o problemas.",
     "Dirigido a: Padres y madres con niños de 2 a 6 años. También a otros familiares y profesionales que trabajan con niños de esa edad",
@@ -427,18 +426,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"San Sebastián de los Reyes",
     "address":"La chata merenguela, Plaza Dolores Ibarruri 4, local 6 28702 San Sebastián de los Reyes. Madrid",
-    "date":"2019-09-21T11:00Z",
+    "date":"2019-09-21T11:00+02:00",
     "time":"11h00 and 12h00",
     "duration":"45min",
     "url":"https://www.creciendomisol.com/calendario-de-talleres-musica-para-bebes/",
     "image":"tallerdemusicaenfamiliasansebastian.jpg",
     "companyName":"Creciendomisol",
     "companyLogo":"creciendomisol_sq.png",
-    "label":"New",
+    
     "price":18,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Taller de música en familia",
     "17:30h Grupo según demanda: bebés (4-15 meses) o deambuladores (16-36 meses)",
@@ -458,7 +457,7 @@ export const CLASSES = [
     "baby",
     "social"
     ],
-    "date":"2019-09-21T10:00Z",
+    "date":"2019-09-21T10:00+02:00",
     "time":"10h00",
     "duration":"2h30",
     "city":"Madrid",
@@ -468,7 +467,7 @@ export const CLASSES = [
     "image":"bilingualbabymorning.jpg",
     "companyName":"British Council",
     "companyLogo":"britishcouncil_sq.png",
-    "label":"New",
+    
     "price":0,
     "language":"english",
     "featured":true,
@@ -493,18 +492,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Carabanchel Alto",
     "address":"ECOS Ladybird, Avda. de la Peseta, 37 28054 Madrid",
-    "date":"2019-09-22T10:30Z",
+    "date":"2019-09-22T10:30+02:00",
     "time":"multiple sessions",
     "duration":"45min",
     "url":"https://www.creciendomisol.com/calendario-de-talleres-musica-para-bebes/",
     "image":"tallerdemusicaenfamiliasansebastian.jpg",
     "companyName":"Creciendomisol",
     "companyLogo":"creciendomisol_sq.png",
-    "label":"New",
+    
     "price":18,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Taller de música en familia",
     "10:30h Grupo de bebés (4-15 meses)",
@@ -529,18 +528,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-23T09:00Z",
+    "date":"2019-09-23T09:00+02:00",
     "time":"9h00",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"hipopresivosmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Hipopresivos",
     "Clases de 1 hora cada lunes a las 9h y 17h, martes a las 10h, miércoles a las 12h y jueves a las 10h.",
@@ -563,18 +562,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-23T10:00Z",
+    "date":"2019-09-23T10:00+02:00",
     "time":"10h00",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"yogaembarazomaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Yoga para mamás y bebés",
     "Clases de 1 hora cada lunes y miércoles",
@@ -598,18 +597,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-23T11:30Z",
+    "date":"2019-09-23T11:30+02:00",
     "time":"11h30",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"yogamamasybebesmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Yoga para mamás y bebés",
     "Clases de 1 hora cada lunes y miércoles",
@@ -625,7 +624,7 @@ export const CLASSES = [
     "id":1102,
     "type":"group",
     "className":"Yoga para mamás con bebés",
-    "date":"2019-09-23T12:30Z",
+    "date":"2019-09-23T12:30+02:00",
     "time":"12h30",
     "tags":[
     "yoga"
@@ -638,11 +637,11 @@ export const CLASSES = [
     "image":"yogamumsbabyskenko.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":50,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
     "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
@@ -661,18 +660,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-23T17:00Z",
+    "date":"2019-09-23T17:00+02:00",
     "time":"17h00",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"hipopresivosmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Hipopresivos",
     "Clases de 1 hora cada lunes a las 9h y 17h, martes a las 10h, miércoles a las 12h y jueves a las 10h.",
@@ -694,18 +693,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-23T18:30Z",
+    "date":"2019-09-23T18:30+02:00",
     "time":"18h30",
     "duration":"1h30",
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"postpartoentremamas.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":30,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Precio:",
     "30€/sesión en grupo.",
@@ -730,18 +729,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-24T10:00Z",
+    "date":"2019-09-24T10:00+02:00",
     "time":"10h00",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"hipopresivosmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Hipopresivos",
     "Clases de 1 hora cada lunes a las 9h y 17h, martes a las 10h, miércoles a las 12h y jueves a las 10h.",
@@ -764,18 +763,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-25T10:00Z",
+    "date":"2019-09-25T10:00+02:00",
     "time":"10h00",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"yogaembarazomaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Yoga en el embarazo",
     "Clases de 1 hora cada lunes y miércoles",
@@ -799,18 +798,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-25T11:30Z",
+    "date":"2019-09-25T11:30+02:00",
     "time":"11h30",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"yogamamasybebesmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Yoga para mamás y bebés",
     "Clases de 1 hora cada lunes y miércoles",
@@ -832,18 +831,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-25T12:00Z",
+    "date":"2019-09-25T12:00+02:00",
     "time":"12h00",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"hipopresivosmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Hipopresivos",
     "Clases de 1 hora cada lunes a las 9h y 17h, martes a las 10h, miércoles a las 12h y jueves a las 10h.",
@@ -859,7 +858,7 @@ export const CLASSES = [
     "id":1103,
     "type":"group",
     "className":"Yoga para mamás con bebés",
-    "date":"2019-09-25T12:30Z",
+    "date":"2019-09-25T12:30+02:00",
     "time":"12h30",
     "tags":[
     "yoga"
@@ -872,11 +871,11 @@ export const CLASSES = [
     "image":"yogamumsbabyskenko.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":50,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
     "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
@@ -895,18 +894,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-26T10:00Z",
+    "date":"2019-09-26T10:00+02:00",
     "time":"10h00",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"hipopresivosmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Hipopresivos",
     "Clases de 1 hora cada lunes a las 9h y 17h, martes a las 10h, miércoles a las 12h y jueves a las 10h.",
@@ -929,18 +928,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamberí",
     "address":"c/ Raimundo Lulio, 5, 28010 Madrid",
-    "date":"2019-09-26T12:00Z",
+    "date":"2019-09-26T12:00+02:00",
     "time":"12h00",
     "duration":"1h",
     "url":"https://www.olavideyoga.es/horarios",
     "image":"yogamamasybebesolavideyoga.jpg",
     "companyName":"Olavide Yoga",
     "companyLogo":"olavideyoga_sq.png",
-    "label":"New",
+    
     "price":20,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Horario:",
     "Todos los jueves de 12h a 13h",
@@ -962,18 +961,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamberí",
     "address":"c/ Raimundo Lulio, 5, 28010 Madrid",
-    "date":"2019-09-26T18:30Z",
+    "date":"2019-09-26T18:30+02:00",
     "time":"18h30",
     "duration":"1h",
     "url":"https://www.olavideyoga.es/horarios",
     "image":"yogamamasybebesolavideyoga.jpg",
     "companyName":"Olavide Yoga",
     "companyLogo":"olavideyoga_sq.png",
-    "label":"New",
+    
     "price":20,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Horario:",
     "Todos los jueves de 18h30 a 19h30",
@@ -992,7 +991,7 @@ export const CLASSES = [
     "baby",
     "parenting"
     ],
-    "date":"2019-09-28T10:00Z",
+    "date":"2019-09-28T10:00+02:00",
     "time":"10h00",
     "duration":"3h",
     "city":"Madrid",
@@ -1002,7 +1001,7 @@ export const CLASSES = [
     "image":"ensename.jpg",
     "companyName":"Mama real, no perfecta",
     "companyLogo":"mama_real.jpg",
-    "label":"New",
+    
     "price":25,
     "language":"spanish",
     "featured":true,
@@ -1020,7 +1019,7 @@ export const CLASSES = [
     "tags":[
     "parenting"
     ],
-    "date":"2019-09-28T10:00Z",
+    "date":"2019-09-28T10:00+02:00",
     "time":"10h00",
     "duration":"7h",
     "city":"Madrid",
@@ -1030,7 +1029,7 @@ export const CLASSES = [
     "image":"educarsingritos.jpg",
     "companyName":"Educar en Calma",
     "companyLogo":"educarencalma_sq.png",
-    "label":"New",
+    
     "price":95,
     "priceCouple":175,
     "language":"spanish",
@@ -1055,18 +1054,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-28T11:00Z",
+    "date":"2019-09-28T11:00+02:00",
     "time":"11h00 and 12h00",
     "duration":"1h",
     "url":"https://maternayoga.es/estimulacion-musical-en-familia/",
     "image":"estimulacionmusicalmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":10,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Horarios:",
     "A las 11:00, los más pequeños, bebés hasta 2 años.",
@@ -1093,18 +1092,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-30T09:00Z",
+    "date":"2019-09-30T09:00+02:00",
     "time":"09h00",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"hipopresivosmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Hipopresivos",
     "Clases de 1 hora cada lunes a las 9h y 17h, martes a las 10h, miércoles a las 12h y jueves a las 10h.",
@@ -1127,18 +1126,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-30T10:00Z",
+    "date":"2019-09-30T10:00+02:00",
     "time":"10h00",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"yogaembarazomaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Yoga para mamás y bebés",
     "Clases de 1 hora cada lunes y miércoles",
@@ -1162,18 +1161,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-30T11:30Z",
+    "date":"2019-09-30T11:30+02:00",
     "time":"11h30",
     "duration":"1h",
     "url":"https://maternayoga.es/calendario/",
     "image":"yogamamasybebesmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":43,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Yoga para mamás y bebés",
     "Clases de 1 hora cada lunes y miércoles",
@@ -1189,7 +1188,7 @@ export const CLASSES = [
     "id":1104,
     "type":"group",
     "className":"Yoga para mamás con bebés",
-    "date":"2019-09-30T12:30Z",
+    "date":"2019-09-30T12:30+02:00",
     "time":"12h30",
     "tags":[
     "yoga"
@@ -1202,11 +1201,11 @@ export const CLASSES = [
     "image":"yogamumsbabyskenko.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":50,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
     "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
@@ -1225,18 +1224,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-30T18:30Z",
+    "date":"2019-09-30T18:30+02:00",
     "time":"18h30",
     "duration":"1h30",
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"postpartoentremamas.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":30,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Precio:",
     "30€/sesión en grupo.",
@@ -1263,18 +1262,18 @@ export const CLASSES = [
         "city":"Madrid",
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
-        "date":"2019-10-02T12:30Z",
+        "date":"2019-10-02T12:30+02:00",
         "time":"12h30",
         "duration":"2h",
         "url":"https://www.belandmums.com/lactancia-materna/",
         "image":"breastfeeding.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":60,
         "language":"spanish",
-        "spacesLeft":5,
-        "featured":false,
+        
+        
         "description":[
         "La lactancia materna es el mejor regalo que puedes darle a tu bebé y es muy reconfortante pero requiere mucho esfuerzo y dedicación. Por eso es muy recomendable asistir a un buen curso de lactancia durante el embarazo y así estar bien preparada desde su primera toma.",
         "Te ayudaremos a alinear expectativas y evitar complicaciones que a menudo desembocan en un cese forzoso de lactancia.",
@@ -1286,7 +1285,7 @@ export const CLASSES = [
     "id":1105,
     "type":"group",
     "className":"Yoga para mamás con bebés",
-    "date":"2019-10-02T12:30Z",
+    "date":"2019-10-02T12:30+02:00",
     "time":"12h30",
     "tags":[
     "yoga"
@@ -1299,11 +1298,11 @@ export const CLASSES = [
     "image":"yogamumsbabyskenko.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":50,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
     "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
@@ -1322,7 +1321,7 @@ export const CLASSES = [
     ],
     "district":"Almagro",
     "address":"Paseo de la Castellana 45",
-    "date":"2019-10-02T17:00Z",
+    "date":"2019-10-02T17:00+02:00",
     "time":"17h00",
     "duration":"2h",
     "image":"bumps_tea.png",
@@ -1332,7 +1331,7 @@ export const CLASSES = [
     "label":"",
     "price":6,
     "language":"english",
-    "featured":false,
+    
     "description":[
     "At Bel & Mums we know how valuable it is to have a supporting network during pregnancy and postnatally. We also know how tricky this can be in a city like Madrid specially if you have just moved in. We want to help you creating your community and get to know other women in your same situation.",
     "This is a bumps only group where every pregnant women is welcome.",
@@ -1356,18 +1355,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Almagro",
     "address":"Paseo de las Castellana 45, Madrid",
-    "date":"2019-10-03T10:00Z",
+    "date":"2019-10-03T10:00+02:00",
     "time":"10h00",
     "duration":"2h",
     "url":"https://www.belandmums.com/breastfeeding/",
     "image":"breastfeeding.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":60,
     "language":"english",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Breastfeeding is the best gift you could give to your baby and is very rewarding but also requires effort and dedication. That is why it is highly recommended to attend a good Breastfeeding Course during pregnancy so you will be ready from his first feed.",
     "We will help you to align expectations and avoid complications that often lead to a bad experience.",
@@ -1393,18 +1392,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"La Latina",
     "address":"c/ Aguas, 4, local 2, 28005 Madrid",
-    "date":"2019-10-03T11:00Z",
+    "date":"2019-10-03T11:00+02:00",
     "time":"11h00",
     "duration":"8h (8 sessions)",
     "url":"https://espaciokenko.com/gimnasia-hipopresiva/",
     "image":"gimnasiahipopresivaespaciokenko.jpg",
     "companyName":"espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":110,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "GRUPO 3 – JUEVES de 11:00 a 12:00",
     "(días 3, 10, 17, 24, 31 de OCTUBRE, 7, 14, 21 de NOVIEMBRE)",
@@ -1426,18 +1425,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Almagro",
     "address":"Paseo de las Castellana 45, Madrid",
-    "date":"2019-10-03T17:00Z",
+    "date":"2019-10-03T17:00+02:00",
     "time":"17h00",
     "duration":"1h",
     "url":"https://www.belandmums.com/masaje/",
     "image":"massage_bm.jpg",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":20,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "En esta hora de taller tu bebé aprenderá a relajarse, dandole un tiempo de paz cada día, mejorando su sueño y ahorrándole cólicos e indigestiones.",
     "También es una excusa ideal para pasar tiempo con tu bebé fortaleciendo vuestro vinculo."
@@ -1452,7 +1451,7 @@ export const CLASSES = [
     "baby",
     "first aid"
     ],
-    "date":"2019-10-03T17:30Z",
+    "date":"2019-10-03T17:30+02:00",
     "time":"17h30",
     "duration":"3h",
     "city":"Madrid",
@@ -1462,10 +1461,10 @@ export const CLASSES = [
     "image":"firstaidbelandmums.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "language":"english",
     "price":45,
-    "featured":false,
+    
     "description":[
     "Children are unpredictable and fearless and, although emergency situations rarely occur, their solutions are often easy and effective. ",
     "The course is addressed to parents and any person under the care of a minor.",
@@ -1486,19 +1485,19 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Arturo Soria",
     "address":"Colegio Madrid, Calle Arturo Soria, 147, 28043 Madrid",
-    "date":"2019-10-03T18:00Z",
+    "date":"2019-10-03T18:00+02:00",
     "time":"18h00",
     "duration":"12h (6 sessions)",
     "url":"https://centrodisciplinapositiva.com/producto/madrid-chamartin-taller-semanal-6-sesiones-oct-y-nov-2019-2/",
     "image":"tallerdisciplinapositiva.jpg",
     "companyName":"Centro Integral Disciplina Positiva",
     "companyLogo":"centrointegraldisciplinapositiva_sq.png",
-    "label":"New",
+    
     "price":160,
     "priceCouple":250,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Los días 3, 10, 17 y 23 de octubre y 7 y 14 de noviembre 2019",
     "18:00 - 20:00",
@@ -1534,18 +1533,18 @@ export const CLASSES = [
         "city":"Madrid",
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
-        "date":"2019-10-04T16:00Z",
+        "date":"2019-10-04T16:00+02:00",
         "time":"16h00",
         "duration":"3h",
         "url":"https://www.belandmums.com/primeros-auxilios/",
         "image":"firstaidbelandmums.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":60,
         "language":"spanish",
-        "spacesLeft":5,
-        "featured":false,
+        
+        
         "description":[
         "Los niños son imprevisibles y, aunque las situaciones de emergencia ocurren muy rara vez, su solución suele ser fácil y eficiente.",
         "Nuestro curso está dirigido a padres y cualquier persona a cargo de un menor.",
@@ -1565,19 +1564,19 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Bellas Vistas",
     "address":"Belo Art, Calle Pamplona 59, Madrid",
-    "date":"2019-10-04T18:00Z",
+    "date":"2019-10-04T18:00+02:00",
     "time":"18h00",
     "duration":"14h (7 sessions)",
     "url":"http://denisesuarez.com/workshop",
     "image":"hablaratushijos.jpg",
-    "companyName":"Denise Suarez",
+    "companyName":"Denise Suare+02:00",
     "companyLogo":"denisesuarez_sq.png",
-    "label":"New",
+    
     "price":175,
     "priceCouple":310,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "¿Estás cansado de leer libros sobre la crianza y, sin embargo, no poder poner la teoría en práctica? ¿Estás buscando una manera de cumplir tus necesidades y las de tus hijos? ¿Quieres comunicarte con tus hijos sin frustraciones ni gritos?",
     "¡Este taller es para ti!",
@@ -1598,19 +1597,19 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Madrid Capital",
     "address":" ",
-    "date":"2019-10-05T09:00Z",
+    "date":"2019-10-05T09:00+02:00",
     "time":"09h00",
     "duration":"12h (2 sessions)",
     "url":"https://centrodisciplinapositiva.com/producto/madrid-taller-disciplina-positiva-en-la-pareja-nivel-1-5-y-26-oct-2019/",
     "image":"tallerdisciplinapositivanivel1.jpg",
     "companyName":"Centro Integral Disciplina Positiva",
     "companyLogo":"centrointegraldisciplinapositiva_sq.png",
-    "label":"New",
+    
     "price":160,
     "priceCouple":250,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "5 y 26 Oct 2019",
     "9:00 - 15:00",
@@ -1648,19 +1647,19 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Arroyomolinos",
     "address":"Embarazados. C/ Marbella, 11 - 28939 Arroyomolinos, Madrid",
-    "date":"2019-10-05T10:30Z",
+    "date":"2019-10-05T10:30+02:00",
     "time":"10h30",
     "duration":"3h",
     "url":"https://educarencalma.com/events/rabietas-desde-la-perspectiva-de-la-disciplina-positiva/",
     "image":"disciplinapositiva.jpg",
     "companyName":"Educar en Calma",
     "companyLogo":"educarencalma_sq.png",
-    "label":"New",
+    
     "price":30,
     "priceCouple":50,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Todo el mundo sabe acompañar la alegría, la felicidad, la sonrisa, la carcajada limpia de un niño. Sin embargo, cuando hay enfados, ira, rabia… pocos quieren y saben estar al lado del niño, y muchas veces se escuchan expresiones como “qué feo te pones cuando te enfadas”, “vaya carácter”, “a mí no me gustas así”, “si no dejas de estar así, me voy y te quedas solo”, etc.",
     "En este taller veremos qué son las rabietas, cuándo se dan con más frecuencia, si podemos evitar esta etapa, cómo deberíamos actuar con nuestros hijos cuando tengan una rabieta y qué hacer con los comentarios de los demás juzgando situaciones de explosión emocional.",
@@ -1676,9 +1675,9 @@ export const CLASSES = [
     "tags":[
     "pregnancy"
     ],
-    "date":"2019-10-05T10:30Z",
+    "date":"2019-10-05T10:30+02:00",
     "otherDates":[
-    "2019-10-06T10:30Z",
+    "2019-10-06T10:30+02:00",
     "2019-10-17T18:30Z"
     ],
     "time":"10h30",
@@ -1690,7 +1689,7 @@ export const CLASSES = [
     "image":"antenatalbelandmums.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":330,
     "language":"english",
     "featured":true,
@@ -1714,9 +1713,9 @@ export const CLASSES = [
     "tags":[
     "pregnancy"
     ],
-    "date":"2019-10-05T16:00Z",
+    "date":"2019-10-05T16:00+02:00",
     "otherDates":[
-    "2019-10-06T16:00Z",
+    "2019-10-06T16:00+02:00",
     "2019-10-17T12:00Z"
     ],
     "time":"16h00",
@@ -1728,7 +1727,7 @@ export const CLASSES = [
     "image":"antenatalbelandmums.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":330,
     "language":"spanish",
     "featured":true,
@@ -1759,18 +1758,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-10-07T18:30Z",
+    "date":"2019-10-07T18:30+02:00",
     "time":"18h30",
     "duration":"1h30",
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"postpartoentremamas.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":30,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Precio:",
     "30€/sesión en grupo.",
@@ -1793,9 +1792,9 @@ export const CLASSES = [
         "tags":[
         "pregnancy"
         ],
-        "date":"2019-10-14T16:00Z",
+        "date":"2019-10-14T16:00+02:00",
         "otherDates":[
-        "2019-10-16T16:00Z",
+        "2019-10-16T16:00+02:00",
         ],
         "time":"16h00",
         "duration":"5h (2 sessions)",
@@ -1806,7 +1805,7 @@ export const CLASSES = [
         "image":"hypnobirthbelandmums.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":160,
         "priceCouple": 160,
         "language":"english",
@@ -1828,18 +1827,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-10-14T18:30Z",
+    "date":"2019-10-14T18:30+02:00",
     "time":"18h30",
     "duration":"1h30",
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"postpartoentremamas.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":30,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Precio:",
     "30€/sesión en grupo.",
@@ -1864,7 +1863,7 @@ export const CLASSES = [
     ],
     "district":"Almagro",
     "address":"Paseo de la Castellana 45",
-    "date":"2019-10-15T11:00Z",
+    "date":"2019-10-15T11:00+02:00",
     "time":"11h00",
     "duration":"2h",
     "image":"bumps_tea.png",
@@ -1874,7 +1873,7 @@ export const CLASSES = [
     "label":"",
     "price":6,
     "language":"english",
-    "featured":false,
+    
     "description":[
     "At Bel & Mums we know how valuable it is to have a supporting network during pregnancy and postnatally. We also know how tricky this can be in a city like Madrid specially if you have just moved in. We want to help you creating your community and get to know other women in your same situation.",
     "This is a bumps only group where every pregnant women is welcome.",
@@ -1888,16 +1887,16 @@ export const CLASSES = [
     "nameId":"bel-mums-the-bumps-tea-1090"
     },
     {
-        "id":9004,
-        "nameId": "taller-parto-natural-hypnobirth-9004",
+        "id":9024,
+        "nameId": "taller-parto-natural-hypnobirth-9024",
         "type":"group",
         "className":"Taller Parto Natural - Hypnobirth",
         "tags":[
         "pregnancy"
         ],
-        "date":"2019-10-15T16:00Z",
+        "date":"2019-10-15T16:00+02:00",
         "otherDates":[
-        "2019-10-17T16:00Z",
+        "2019-10-17T16:00+02:00",
         ],
         "time":"16h00",
         "duration":"5h (2 sessions)",
@@ -1908,7 +1907,7 @@ export const CLASSES = [
         "image":"hypnobirthbelandmums.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":160,
         "priceCouple": 160,
         "language":"spanish",
@@ -1929,18 +1928,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-10-15T18:30Z",
+    "date":"2019-10-15T18:30+02:00",
     "time":"18h30",
     "duration":"1h00",
     "url":"http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
     "image":"grupodeapoyo.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":5,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tercer martes de cada mes a las 18h30.",
     "Reunión para embarazadas (parejas bienvenidas)",
@@ -1961,18 +1960,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-10-17T11:00Z",
+    "date":"2019-10-17T11:00+02:00",
     "time":"11h00",
     "duration":"1h30",
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"masajeentremamas.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":20,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Precio: 20€/sesión por adulto.",
     "Tercer jueves de cada mes, de 11:00 - 12:30.",
@@ -1992,18 +1991,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-10-19T11:00Z",
+    "date":"2019-10-19T11:00+02:00",
     "time":"11h00 and 12h00",
     "duration":"1h",
     "url":"https://maternayoga.es/estimulacion-musical-en-familia/",
     "image":"estimulacionmusicalmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":10,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Horarios:",
     "A las 11:00, los más pequeños, bebés hasta 2 años.",
@@ -2032,19 +2031,19 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Pedrezuela",
     "address":"Monetes, Avenida Pablo Iglesias 87 (local 1) 28521 Rivas",
-    "date":"2019-10-19T11:30Z",
+    "date":"2019-10-19T11:30+02:00",
     "time":"11h30",
     "duration":"2h",
     "url":"https://www.monetes.es/producto/primeros-auxilios-pediatricos/",
     "image":"primerosauxiliospediatricos.png",
     "companyName":"Beatriz Martin",
     "companyLogo":"beatrizmartin_sq.png",
-    "label":"New",
+    
     "price":30,
     "priceCouple":50,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Taller de 2 horas de duración en el que se abordará la actuación ante emergencias infantiles, así como los cuidados en otras situaciones habituales de la infancia.",
     "Contenidos del taller:",
@@ -2065,7 +2064,7 @@ export const CLASSES = [
     "postpartum",
     "social"
     ],
-    "date":"2019-10-25T11:00Z",
+    "date":"2019-10-25T11:00+02:00",
     "time":"11h00",
     "duration":"10h (3 sessions)",
     "city":"Madrid",
@@ -2075,7 +2074,7 @@ export const CLASSES = [
     "image":"grupopostparto.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":0,
     "language":"spanish",
     "featured":true,
@@ -2101,18 +2100,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-10-26T11:00Z",
+    "date":"2019-10-26T11:00+02:00",
     "time":"11h00 and 12h00",
     "duration":"1h",
     "url":"https://maternayoga.es/estimulacion-musical-en-familia/",
     "image":"estimulacionmusicalmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":10,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Horarios:",
     "A las 11:00, los más pequeños, bebés hasta 2 años.",
@@ -2141,18 +2140,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Almagro",
     "address":"Paseo de las Castellana 45, Madrid",
-    "date":"2019-11-07T10:00Z",
+    "date":"2019-11-07T10:00+01:00",
     "time":"10h00",
     "duration":"2h",
     "url":"https://www.belandmums.com/breastfeeding/",
     "image":"breastfeeding.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":60,
     "language":"english",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Breastfeeding is the best gift you could give to your baby and is very rewarding but also requires effort and dedication. That is why it is highly recommended to attend a good Breastfeeding Course during pregnancy so you will be ready from his first feed.",
     "We will help you to align expectations and avoid complications that often lead to a bad experience.",
@@ -2176,7 +2175,7 @@ export const CLASSES = [
     "baby",
     "first aid"
     ],
-    "date":"2019-11-07T17:00Z",
+    "date":"2019-11-07T17:00+01:00",
     "time":"17h00",
     "duration":"3h",
     "city":"Madrid",
@@ -2186,10 +2185,10 @@ export const CLASSES = [
     "image":"firstaidbelandmums.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "language":"english",
     "price":45,
-    "featured":false,
+    
     "description":[
     "Children are unpredictable and fearless and, although emergency situations rarely occur, their solutions are often easy and effective. ",
     "The course is addressed to parents and any person under the care of a minor.",
@@ -2212,18 +2211,18 @@ export const CLASSES = [
         "city":"Madrid",
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
-        "date":"2019-11-08T10:00Z",
+        "date":"2019-11-08T10:00+01:00",
         "time":"10h00",
         "duration":"2h",
         "url":"https://www.belandmums.com/lactancia-materna/",
         "image":"breastfeeding.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":60,
         "language":"spanish",
-        "spacesLeft":5,
-        "featured":false,
+        
+        
         "description":[
         "La lactancia materna es el mejor regalo que puedes darle a tu bebé y es muy reconfortante pero requiere mucho esfuerzo y dedicación. Por eso es muy recomendable asistir a un buen curso de lactancia durante el embarazo y así estar bien preparada desde su primera toma.",
         "Te ayudaremos a alinear expectativas y evitar complicaciones que a menudo desembocan en un cese forzoso de lactancia.",
@@ -2243,18 +2242,18 @@ export const CLASSES = [
         "city":"Madrid",
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
-        "date":"2019-11-08T16:00Z",
+        "date":"2019-11-08T16:00+01:00",
         "time":"16h00",
         "duration":"3h",
         "url":"https://www.belandmums.com/primeros-auxilios/",
         "image":"firstaidbelandmums.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":60,
         "language":"spanish",
-        "spacesLeft":5,
-        "featured":false,
+        
+        
         "description":[
         "Los niños son imprevisibles y, aunque las situaciones de emergencia ocurren muy rara vez, su solución suele ser fácil y eficiente.",
         "Nuestro curso está dirigido a padres y cualquier persona a cargo de un menor.",
@@ -2271,9 +2270,9 @@ export const CLASSES = [
     "tags":[
     "pregnancy"
     ],
-    "date":"2019-11-09T10:30Z",
+    "date":"2019-11-09T10:30+01:00",
     "otherDates":[
-    "2019-11-10T10:30Z",
+    "2019-11-10T10:30+01:00",
     "2019-11-22T18:30Z"
     ],
     "time":"10h30",
@@ -2285,7 +2284,7 @@ export const CLASSES = [
     "image":"antenatalbelandmums.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":330,
     "language":"english",
     "featured":true,
@@ -2309,9 +2308,9 @@ export const CLASSES = [
     "tags":[
     "pregnancy"
     ],
-    "date":"2019-11-09T16:00Z",
+    "date":"2019-11-09T16:00+01:00",
     "otherDates":[
-    "2019-11-10T16:00Z",
+    "2019-11-10T16:00+01:00",
     "2019-11-22T16:00Z"
     ],
     "time":"16h00",
@@ -2323,7 +2322,7 @@ export const CLASSES = [
     "image":"antenatalbelandmums.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":330,
     "language":"spanish",
     "featured":true,
@@ -2354,18 +2353,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"La Latina",
     "address":"c/ Aguas, 4, local 2, 28005 Madrid",
-    "date":"2019-11-13T16:30Z",
+    "date":"2019-11-13T16:30+01:00",
     "time":"16h30",
     "duration":"8h (8 sessions)",
     "url":"https://espaciokenko.com/gimnasia-hipopresiva/",
     "image":"gimnasiahipopresivaespaciokenko.jpg",
     "companyName":"espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":110,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "GRUPO 4 – MIÉRCOLES de 16:30 a 17:30",
     "(días 13, 20, 27 de NOVIEMBRE, 4, 11, 18 de DICIEMBRE y 8, 15 de ENERO)",
@@ -2386,18 +2385,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"La Latina",
     "address":"c/ Aguas, 4, local 2, 28005 Madrid",
-    "date":"2019-11-14T19:30Z",
+    "date":"2019-11-14T19:30+01:00",
     "time":"19h30",
     "duration":"8h (8 sessions)",
     "url":"https://espaciokenko.com/gimnasia-hipopresiva/",
     "image":"gimnasiahipopresivaespaciokenko.jpg",
     "companyName":"espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":110,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "GRUPO 5 – JUEVES de 19:30 a 20:30",
     "(días 14, 21, 28 de NOVIEMBRE, 5, 12, 19 de DICIEMBRE y 2, 9 de ENERO)",
@@ -2419,19 +2418,19 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Bellas Vistas",
     "address":"Avenida Pablo Iglesias, 87 (local 1) 28521 Rivas Vaciamadrid, Madrid",
-    "date":"2019-11-16T11:30Z",
+    "date":"2019-11-16T11:30+01:00",
     "time":"11h30",
     "duration":"2h",
     "url":"https://www.monetes.es/producto/baby-led-weaning/",
     "image":"blw_monetes.jpg",
     "companyName":"Monetes",
     "companyLogo":"monetes_sq.png",
-    "label":"New",
+    
     "price":20,
     "priceCouple":30,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Al principio la comida no es sólo alimento, sino que es experimento, ¿qué textura tiene? ¿Qué pasa si aplasto esta patata? ¿y si la tiro al suelo? ¡Hay cosas que están calientes! ¡Esto está muy frío! ¿Qué pasará si me lo pongo encima de la cabeza? …mmm, ¡qué rico si lo meto en la boca!, uy… eso rojo de ahí no me gusta!. Este es un ejemplo de las etapas por las que van pasando al ofrecerles comida sólida, a su ritmo, sin llorar, sin forzarles y teniendo la total confianza de que está estableciendo una relación sana con la alimentación. Beneficia además a las destrezas motoras finas, para coger al principio toda la comida con las manos, lo que facilita luego la utilización de cubiertos.",
     "Contenidos:",
@@ -2452,9 +2451,9 @@ export const CLASSES = [
         "tags":[
         "pregnancy"
         ],
-        "date":"2019-11-18T17:30Z",
+        "date":"2019-11-18T17:30+01:00",
         "otherDates":[
-        "2019-11-20T17:30Z",
+        "2019-11-20T17:30+01:00",
         ],
         "time":"17h30",
         "duration":"5h (2 sessions)",
@@ -2465,7 +2464,7 @@ export const CLASSES = [
         "image":"hypnobirthbelandmums.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":160,
         "priceCouple": 160,
         "language":"english",
@@ -2478,16 +2477,16 @@ export const CLASSES = [
         ],
     },
     {
-        "id":9004,
-        "nameId": "bel-mums-taller-parto-natural-hypnobirth-9004",
+        "id":9014,
+        "nameId": "bel-mums-taller-parto-natural-hypnobirth-9014",
         "type":"group",
         "className":"Taller Parto Natural - Hypnobirth",
         "tags":[
         "pregnancy"
         ],
-        "date":"2019-11-19T17:30Z",
+        "date":"2019-11-19T17:30+01:00",
         "otherDates":[
-        "2019-11-21T17:30Z",
+        "2019-11-21T17:30+01:00",
         ],
         "time":"17h30",
         "duration":"5h (2 sessions)",
@@ -2498,7 +2497,7 @@ export const CLASSES = [
         "image":"hypnobirthbelandmums.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":160,
         "priceCouple": 160,
         "language":"english",
@@ -2519,18 +2518,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-11-19T18:30Z",
+    "date":"2019-11-19T18:30+01:00",
     "time":"18h30",
     "duration":"1h00",
     "url":"http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
     "image":"grupodeapoyo.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":5,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tercer martes de cada mes a las 18h30.",
     "Reunión para embarazadas (parejas bienvenidas)",
@@ -2551,18 +2550,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-11-21T11:00Z",
+    "date":"2019-11-21T11:00+01:00",
     "time":"11h00",
     "duration":"1h30",
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"masajeentremamas.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":20,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Precio: 20€/sesión por adulto.",
     "Tercer jueves de cada mes, de 11:00 - 12:30.",
@@ -2582,18 +2581,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-11-23T11:00Z",
+    "date":"2019-11-23T11:00+01:00",
     "time":"11h00 and 12h00",
     "duration":"1h",
     "url":"https://maternayoga.es/estimulacion-musical-en-familia/",
     "image":"estimulacionmusicalmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":10,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Horarios:",
     "A las 11:00, los más pequeños, bebés hasta 2 años.",
@@ -2622,19 +2621,19 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Bellas Vistas",
     "address":"Avenida Pablo Iglesias, 87 (local 1) 28521 Rivas Vaciamadrid, Madrid",
-    "date":"2019-11-28T11:30Z",
+    "date":"2019-11-28T11:30+01:00",
     "time":"11h30",
     "duration":"2h",
     "url":"https://www.monetes.es/producto/baby-led-weaning/",
     "image":"blw_monetes.jpg",
     "companyName":"Monetes",
     "companyLogo":"monetes_sq.png",
-    "label":"New",
+    
     "price":20,
     "priceCouple":30,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Al principio la comida no es sólo alimento, sino que es experimento, ¿qué textura tiene? ¿Qué pasa si aplasto esta patata? ¿y si la tiro al suelo? ¡Hay cosas que están calientes! ¡Esto está muy frío! ¿Qué pasará si me lo pongo encima de la cabeza? …mmm, ¡qué rico si lo meto en la boca!, uy… eso rojo de ahí no me gusta!. Este es un ejemplo de las etapas por las que van pasando al ofrecerles comida sólida, a su ritmo, sin llorar, sin forzarles y teniendo la total confianza de que está estableciendo una relación sana con la alimentación. Beneficia además a las destrezas motoras finas, para coger al principio toda la comida con las manos, lo que facilita luego la utilización de cubiertos.",
     "Contenidos:",
@@ -2652,9 +2651,9 @@ export const CLASSES = [
     "type":"group",
     "className":"Grupo postparto gratuito",
     "tags":[
-    "pregnancy"
+    "postpartum"
     ],
-    "date":"2019-11-29T11:00Z",
+    "date":"2019-11-29T11:00+01:00",
     "time":"11h00",
     "duration":"10h (3 sessions)",
     "city":"Madrid",
@@ -2664,7 +2663,7 @@ export const CLASSES = [
     "image":"grupopostparto.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":0,
     "language":"spanish",
     "featured":true,
@@ -2688,7 +2687,7 @@ export const CLASSES = [
     "baby",
     "first aid"
     ],
-    "date":"2019-12-05T17:00Z",
+    "date":"2019-12-05T17:00+01:00",
     "time":"17h00",
     "duration":"3h",
     "city":"Madrid",
@@ -2698,10 +2697,10 @@ export const CLASSES = [
     "image":"firstaidbelandmums.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "language":"english",
     "price":45,
-    "featured":false,
+    
     "description":[
     "Children are unpredictable and fearless and, although emergency situations rarely occur, their solutions are often easy and effective. ",
     "The course is addressed to parents and any person under the care of a minor.",
@@ -2723,18 +2722,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Almagro",
     "address":"Paseo de las Castellana 45, Madrid",
-    "date":"2019-12-12T10:00Z",
+    "date":"2019-12-12T10:00+01:00",
     "time":"10h00",
     "duration":"2h",
     "url":"https://www.belandmums.com/breastfeeding/",
     "image":"breastfeeding.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":60,
     "language":"english",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Breastfeeding is the best gift you could give to your baby and is very rewarding but also requires effort and dedication. That is why it is highly recommended to attend a good Breastfeeding Course during pregnancy so you will be ready from his first feed.",
     "We will help you to align expectations and avoid complications that often lead to a bad experience.",
@@ -2762,18 +2761,18 @@ export const CLASSES = [
         "city":"Madrid",
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
-        "date":"2019-12-13T10:00Z",
+        "date":"2019-12-13T10:00+01:00",
         "time":"10h00",
         "duration":"2h",
         "url":"https://www.belandmums.com/lactancia-materna/",
         "image":"breastfeeding.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":60,
         "language":"spanish",
-        "spacesLeft":5,
-        "featured":false,
+        
+        
         "description":[
         "La lactancia materna es el mejor regalo que puedes darle a tu bebé y es muy reconfortante pero requiere mucho esfuerzo y dedicación. Por eso es muy recomendable asistir a un buen curso de lactancia durante el embarazo y así estar bien preparada desde su primera toma.",
         "Te ayudaremos a alinear expectativas y evitar complicaciones que a menudo desembocan en un cese forzoso de lactancia.",
@@ -2793,18 +2792,18 @@ export const CLASSES = [
         "city":"Madrid",
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
-        "date":"2019-12-13T16:00Z",
+        "date":"2019-12-13T16:00+01:00",
         "time":"16h00",
         "duration":"3h",
         "url":"https://www.belandmums.com/primeros-auxilios/",
         "image":"firstaidbelandmums.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":60,
         "language":"spanish",
-        "spacesLeft":5,
-        "featured":false,
+        
+        
         "description":[
         "Los niños son imprevisibles y, aunque las situaciones de emergencia ocurren muy rara vez, su solución suele ser fácil y eficiente.",
         "Nuestro curso está dirigido a padres y cualquier persona a cargo de un menor.",
@@ -2821,9 +2820,9 @@ export const CLASSES = [
     "tags":[
     "pregnancy"
     ],
-    "date":"2019-12-14T16:00Z",
+    "date":"2019-12-14T16:00+01:00",
     "otherDates":[
-    "2019-12-15T16:00Z",
+    "2019-12-15T16:00+01:00",
     "2019-12-20T16:00Z"
     ],
     "time":"16h00",
@@ -2835,7 +2834,7 @@ export const CLASSES = [
     "image":"antenatalbelandmums.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":330,
     "language":"spanish",
     "featured":true,
@@ -2863,9 +2862,9 @@ export const CLASSES = [
     "tags":[
     "pregnancy"
     ],
-    "date":"2019-12-14T10:30Z",
+    "date":"2019-12-14T10:30+01:00",
     "otherDates":[
-    "2019-12-15T10:30Z",
+    "2019-12-15T10:30+01:00",
     "2019-12-20T18:30Z"
     ],
     "time":"10h30",
@@ -2877,7 +2876,7 @@ export const CLASSES = [
     "image":"antenatalbelandmums.png",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq.jpg",
-    "label":"New",
+    
     "price":330,
     "language":"english",
     "featured":true,
@@ -2905,19 +2904,19 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Pedrezuela",
     "address":"Monetes, Avenida Pablo Iglesias 87 (local 1) 28521 Rivas",
-    "date":"2019-12-14T11:30Z",
+    "date":"2019-12-14T11:30+01:00",
     "time":"11h30",
     "duration":"2h",
     "url":"https://www.monetes.es/producto/primeros-auxilios-pediatricos/",
     "image":"primerosauxiliospediatricos.png",
     "companyName":"Beatriz Martin",
     "companyLogo":"beatrizmartin_sq.png",
-    "label":"New",
+    
     "price":30,
     "priceCouple":50,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Taller de 2 horas de duración en el que se abordará la actuación ante emergencias infantiles, así como los cuidados en otras situaciones habituales de la infancia.",
     "Contenidos del taller:",
@@ -2938,9 +2937,9 @@ export const CLASSES = [
         "tags":[
         "pregnancy"
         ],
-        "date":"2019-12-16T17:30Z",
+        "date":"2019-12-16T17:30+01:00",
         "otherDates":[
-        "2019-12-18T17:30Z",
+        "2019-12-18T17:30+01:00",
         ],
         "time":"17h30",
         "duration":"5h (2 sessions)",
@@ -2951,7 +2950,7 @@ export const CLASSES = [
         "image":"hypnobirthbelandmums.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":160,
         "priceCouple": 160,
         "language":"english",
@@ -2971,9 +2970,9 @@ export const CLASSES = [
         "tags":[
         "pregnancy"
         ],
-        "date":"2019-12-17T17:30Z",
+        "date":"2019-12-17T17:30+01:00",
         "otherDates":[
-        "2019-12-19T17:30Z",
+        "2019-12-19T17:30+01:00",
         ],
         "time":"17h30",
         "duration":"5h (2 sessions)",
@@ -2984,7 +2983,7 @@ export const CLASSES = [
         "image":"hypnobirthbelandmums.png",
         "companyName":"Bel & Mums",
         "companyLogo":"belandmums_sq.jpg",
-        "label":"New",
+        
         "price":160,
         "priceCouple": 160,
         "language":"spanish",
@@ -3005,18 +3004,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-12-17T18:30Z",
+    "date":"2019-12-17T18:30+01:00",
     "time":"18h30",
     "duration":"1h00",
     "url":"http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
     "image":"grupodeapoyo.jpg",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq.png",
-    "label":"New",
+    
     "price":5,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Tercer martes de cada mes a las 18h30.",
     "Reunión para embarazadas (parejas bienvenidas)",
@@ -3031,9 +3030,9 @@ export const CLASSES = [
     "type":"group",
     "className":"Grupo postparto gratuito",
     "tags":[
-    "pregnancy"
+    "postpartum"
     ],
-    "date":"2019-12-20T11:00Z",
+    "date":"2019-12-20T11:00+01:00",
     "time":"11h00",
     "duration":"10h (3 sessions)",
     "city":"Madrid",
@@ -3043,7 +3042,7 @@ export const CLASSES = [
     "image":"grupopostparto.jpg",
     "companyName":"Espacio Kenko",
     "companyLogo":"espaciokenko_sq.png",
-    "label":"New",
+    
     "price":0,
     "language":"spanish",
     "featured":true,
@@ -3069,18 +3068,18 @@ export const CLASSES = [
     "city":"Madrid",
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-12-21T11:00Z",
+    "date":"2019-12-21T11:00+01:00",
     "time":"11h00 and 12h00",
     "duration":"1h",
     "url":"https://maternayoga.es/estimulacion-musical-en-familia/",
     "image":"estimulacionmusicalmaternayoga.jpg",
     "companyName":"Materna Yoga",
     "companyLogo":"maternayoga_sq.png",
-    "label":"New",
+    
     "price":10,
     "language":"spanish",
-    "spacesLeft":5,
-    "featured":false,
+    
+    
     "description":[
     "Horarios:",
     "A las 11:00, los más pequeños, bebés hasta 2 años.",
@@ -3251,7 +3250,7 @@ export const CLASSES = [
     "label":"",
     "price":"Free Online Course (Audit)",
     "language":"english",
-    "featured":false,
+    
     "description":[
     "Nutrition and Lifestyle in Pregnancy offers an overview of the latest research findings and international recommendations on a variety of nutrition-related aspects and outcomes of pregnancy. Ensuring a healthy nutritional status and lifestyle prior to and during pregnancy is one of the best ways to help support the healthy growth and development of the unborn child. We will look at how a healthy diet and lifestyle should ideally be achieved prior to conception and provide recommendations for pre-conception counselling of women."
     ],
@@ -3272,7 +3271,7 @@ export const CLASSES = [
     "label":"",
     "price":"Free Online Course (Audit)",
     "language":"english",
-    "featured":false,
+    
     "description":[
     "Everyday Parenting gives you access to a toolkit of behavior-change techniques that",
     "will make your typical day in the home easier as you develop the behaviors you would",
