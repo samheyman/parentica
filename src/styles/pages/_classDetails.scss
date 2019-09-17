@@ -97,7 +97,6 @@
             border-bottom: 1px solid $font-very-pale;
 
             .value {
-                // padding-left: 15px;
 
                 .material-icons {
                     margin-right: 12px;
@@ -115,6 +114,13 @@
                     text-transform: capitalize;
                 }
     
+            }
+
+            .other-dates {
+
+                margin-top: -5px;
+                margin-left: 33px;
+                margin-bottom: 3px;
             }
                 
             .MuiIcon-root {
@@ -218,4 +224,8 @@
 table {
     width: 100%;
     // border: 1px solid navy;
+
+    td.MuiTableCell-body {
+        text-transform: capitalize;
+    }
 }

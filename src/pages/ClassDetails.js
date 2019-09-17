@@ -51,7 +51,7 @@ function RenderOtherClasses({otherClasses}) {
         return (
             <TableRow key={i++}>
                 <TableCell>
-                    <Link to={`/classes/${item.nameId}`}>{item.className}</Link>
+                    <Link to={`/classes/${item.nameId}`}>{item.className.toLowerCase()}</Link>
                 </TableCell>
                 <TableCell>{formatedDates} - {item.time}</TableCell>
                 <TableCell>
@@ -80,7 +80,12 @@ function ClassDate({classDate}, {icon}) {
                 <Icon className={icon}>
                 calendar_today
                 </Icon>
-                <span className="date-time">{new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(classDate)))}</span>
+                <span className="date-time">
+                    {new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(classDate)))}
+                </span>
+                <span className="date-time"> 
+                    - {new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit' }).format(new Date(Date.parse(classDate)))}
+                </span>
             </div>
         );
     } else {
@@ -88,14 +93,26 @@ function ClassDate({classDate}, {icon}) {
     }
 }
 
-function ClassTime({classTime}, {icon}) {
-    if (classTime != null) {
+function OtherSessions({otherDates}, {icon}) {
+    if (otherDates != null) {
+        let i=0;
+        const dates = otherDates.map((sess) => {
+            i++;
+            return(
+                <div className="" key={i} >
+                    <span> {new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(sess)))}</span>
+                    <span> - {new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit' }).format(new Date(Date.parse(sess)))}</span>             
+                </div>
+                );
+        });
         return(
             <div className="value">
-                <Icon className={icon}>
-                schedule
-                </Icon>
-                <span>{classTime}</span>
+                {/* <Icon className={icon}>
+                plus
+                </Icon> */}
+                <div className="other-dates">
+                    {dates}
+                </div>
             </div>
         );
     } else {
@@ -268,8 +285,9 @@ function ClassDetails(props) {
                                         price
                                         </Icon> */}
                                         {/* <span>{props.selectedClass.price}€</span> */}
-                                    <ClassDate classDate={props.selectedClass.date} classes={classes.icon} />
-                                    <ClassTime classTime={props.selectedClass.time} classes={classes.icon} />
+                                    <ClassDate classDate={props.selectedClass.date} classTime={props.selectedClass.classTime} classes={classes.icon} />
+                                    <OtherSessions otherDates={props.selectedClass.otherDates} classes={classes.icon} />
+                                    {/* <ClassTime classTime={props.selectedClass.time} classes={classes.icon} /> */}
                                     <ClassDuration duration={props.selectedClass.duration} classes={classes.icon} />
                                     <ClassLocation address={props.selectedClass.address} classes={classes.icon} />
                                     <ClassLanguage language={props.selectedClass.language} classes={classes.icon} />
