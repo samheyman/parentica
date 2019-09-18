@@ -33,7 +33,7 @@
 header {
     width: 100%;
     background-color: $header-background-color;
-    // padding: 0 40px;
+    text-transform: capitalize !important;
 
     div {
         justify-content: space-between;
@@ -44,11 +44,13 @@ header {
     }
 
     .app-header-full {
+
         li {
             display: inline;
             padding: 0 10px;
             font-size: 1.1em;
             color: $navy;
+            text-transform: capitalize !important;
 
             a:active {
                 color: $navy;
@@ -206,5 +208,6 @@ header {
     }
     span {
         font-size: 1.1rem !important;
+        text-transform: capitalize;
     }
 }

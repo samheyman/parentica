@@ -18,7 +18,8 @@
   
 // 4. Layout
 @import 
-    'layout/header';
+    'layout/header',
+    'layout/footer';
 
 
 // 5. Components
@@ -26,7 +27,6 @@
     'components/logo',
     'components/classCard',
     'components/topicCard',
-    'components/footer',
     'components/searchForm';
 
 // 6. Pages

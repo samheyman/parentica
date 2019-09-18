@@ -1,0 +1,64 @@
+{
+    "navbar.home_link.en-GB": "home",
+    "navbar.home_link.es-SP": "casa",
+
+    "navbar.explore_link.en-GB": "explore",
+    "navbar.explore_link.es-SP": "explorar",
+
+    "navbar.about_link.en-GB": "about",
+    "navbar.about_link.es-SP": "nosotros",
+
+    "navbar.locations_link.en-GB": "explore",
+    "navbar.locations_link.es-SP": "ubicaciones",
+
+    "navbar.contact_link.en-GB": "contact",
+    "navbar.contact_link.es-SP": "contacto",
+    
+    
+    "homepage.tagline_header.en-GB": "Skilled parents for happy, thriving children",
+    "homepage.tagline_header.es-SP": "Padres expertos para niños felices y prósperos",
+
+    "homepage.tagline_paragraph.en-GB": "Find pregnancy and parenting classes and events, either online or in one of the cities we are in",
+    "homepage.tagline_paragraph.es-SP": "Encuentra clases y eventos sobre embarazo y paternidad, ya sea en línea o en una de las ciudades en las que estamos",
+    
+    "homepage.tagline_online_button.en-GB": "online",
+    "homepage.tagline_online_button.es-SP": "en línea",
+
+    "homepage.tagline_madrid_button.en-GB": "madrid",
+    "homepage.tagline_madrid_button.es-SP": "madrid",
+
+    "homepage.popular_topics_header.en-GB": "Popular topics",
+    "homepage.popular_topics_header.es-SP": "Temas populares",
+
+    "homepage.providers_madrid_header.en-GB": "Providers in Madrid",
+    "homepage.providers_madrid_header.es-SP": "Proveedores en Madrid",
+
+    "homepage.providers_online_header.en-GB": "Online providers",
+    "homepage.providers_online_header.es-SP": "Proveedores en línea",
+
+    "topics.pregnancy.en-GB": "pregnancy",
+    "topics.pregnancy.es-SP": "el embarazo",
+
+    "topics.parenting.en-GB": "parenting",
+    "topics.parenting.es-SP": "paternidad",
+
+    "topics.baby.en-GB": "baby",
+    "topics.baby.es-SP": "bebé",
+
+    "topics.nutrition.en-GB": "nutrition",
+    "topics.nutrition.es-SP": "nutrición",
+
+    "topics.yoga.en-GB": "yoga",
+    "topics.yoga.es-SP": "yoga",
+
+    "topics.first.en-GB": "first aid",
+    "topics.first.es-SP": "primeros auxilios",
+
+    "topics.postpartum.en-GB": "postpartum",
+    "topics.postpartum.es-SP": "posparto",
+
+    "topics.music.en-GB": "music",
+    "topics.music.es-SP": "música"
+
+
+}

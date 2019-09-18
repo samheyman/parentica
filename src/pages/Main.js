@@ -18,7 +18,8 @@ const mapStateToProps = (state) => {
             classes: state.classes,
             providers: state.providers,
             resources: state.resources,
-            tab: state.tab
+            tab: state.tab,
+            locale: state.locale
         }
     );
 };
@@ -29,6 +30,7 @@ class Main extends Component {
         const HomePage = () => {
             return(
                 <Home 
+                    locale={this.props.locale}
                     classEntries={this.props.classes}
                     madridProviders={this.props.providers.filter((provider) => !provider.online)}
                     onlineProviders={this.props.providers.filter((provider) => provider.online)}
@@ -68,7 +70,7 @@ class Main extends Component {
 
         return(
             <React.Fragment>
-                <Navbar/>
+                <Navbar locale={this.props.locale}/>
                 <Switch>
                     <Route exact path='/' component={HomePage} />
                     <Route path='/home' component={HomePage} />
@@ -139,7 +141,7 @@ class Main extends Component {
                     <Route path='/contact' component={Contact} />
                     <Route component={NotFound}  />
                 </Switch>
-                <Footer/>
+                <Footer locale={this.props.locale} />
             </React.Fragment>
         );
     }

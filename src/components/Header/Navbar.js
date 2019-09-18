@@ -11,6 +11,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
+import { FormattedMessage } from 'react-intl';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -18,7 +19,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function Navbar() {
+export default function Navbar(props) {
 
     const classes = useStyles();
     const [state, setState] = React.useState({
@@ -47,27 +48,37 @@ export default function Navbar() {
       <List className="sidebar-links">
         <NavLink to="/home">
             <ListItem button key="home">
-              <ListItemText primary="Home" />
+            <ListItemText 
+              primary={<FormattedMessage id={`navbar.home_link.${props.locale}`} />} 
+            />
             </ListItem>
           </NavLink>
           <NavLink to="/explore">
             <ListItem button key="explore">
-              <ListItemText primary="Explore" />
+              <ListItemText 
+                primary={<FormattedMessage id={`navbar.explore_link.${props.locale}`} />} 
+              />
             </ListItem>
           </NavLink>
           <NavLink to="/about">
             <ListItem button key="about">
-              <ListItemText primary="About us" />
+              <ListItemText 
+                primary={<FormattedMessage id={`navbar.about_link.${props.locale}`} />} 
+              />
             </ListItem>
           </NavLink>
           <NavLink to="/locations">
             <ListItem button key="locations">
-              <ListItemText primary="Locations" />
+              <ListItemText               
+                primary={<FormattedMessage id={`navbar.locations_link.${props.locale}`} />} 
+               />
             </ListItem>
           </NavLink>
           <NavLink to="/contact">
             <ListItem button key="contact">
-              <ListItemText primary="Contact" />
+              <ListItemText               
+                primary={<FormattedMessage id={`navbar.contact_link.${props.locale}`} />} 
+             />
             </ListItem>
           </NavLink>
         </List>
@@ -83,10 +94,10 @@ export default function Navbar() {
             </NavLink>
             <Box display={{ xs: 'none', sm: 'none', md: 'block', lg: 'block', xl: 'block' }}>
               <ul className="app-header-full">                      
-                <li><NavLink to="/explore">Explore</NavLink></li>
-                <li><NavLink to="/about">About us</NavLink></li>
-                <li><NavLink to="/locations">Locations</NavLink></li>
-                <li><NavLink to="/contact">Contact</NavLink></li>
+                <li><NavLink to="/explore"><FormattedMessage id={`navbar.explore_link.${props.locale}`} /></NavLink></li>
+                <li><NavLink to="/about"><FormattedMessage id={`navbar.about_link.${props.locale}`} /></NavLink></li>
+                <li><NavLink to="/locations"><FormattedMessage id={`navbar.locations_link.${props.locale}`} /></NavLink></li>
+                <li><NavLink to="/contact"><FormattedMessage id={`navbar.contact_link.${props.locale}`} /></NavLink></li>
                 {/* <li><NavLink to="collapsible.html">Sign in</NavLink></li>
                 <li><NavLink className="btn-small" to="collapsible.html">Sign up</NavLink></li> */}
               </ul>
