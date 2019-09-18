@@ -1,11 +1,9 @@
-import { CLASSES } from '../shared/classes';
-import { PROVIDERS } from '../shared/providers';
-import { RESOURCES } from '../shared/resources';
+import { CLASSES } from '../shared/classesJSON';
+import { PROVIDERS } from '../shared/providersJSON';
 
 export const initialState = {
     classes: CLASSES,
     providers: PROVIDERS,
-    resources: RESOURCES,
     tab: 1,
 };
 

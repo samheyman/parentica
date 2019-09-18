@@ -11,6 +11,9 @@
 # production
 /build
 
+# local files
+/local_files
+
 # misc
 .DS_Store
 .env.local
@@ -19,7 +22,6 @@
 .env.production.local
 .firebase/*
 .firebase/hosting.YnVpbGQ.cache
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*

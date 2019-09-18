@@ -29,7 +29,6 @@ class Main extends Component {
         const HomePage = () => {
             return(
                 <Home 
-                    onlineClasses={this.props.resources.filter((theClass) => theClass.type === 'online')}
                     classEntries={this.props.classes}
                     madridProviders={this.props.providers.filter((provider) => !provider.online)}
                     onlineProviders={this.props.providers.filter((provider) => provider.online)}
@@ -45,16 +44,6 @@ class Main extends Component {
                 />
             );
         }
-
-        // const ClassWithId = ({match}) => {
-        //     return(
-        //             <ClassDetails
-        //                 selectedClass={this.props.classes.filter((theClass) => theClass.id === parseInt(match.params.classId,10))[0]}
-        //                 // TODO only send the class names, not all the information
-        //                 otherClasses={this.props.classes}
-        //             />
-        //     );
-        // }
 
         const ClassWithName = ({match}) => {
             let selectedClass = this.props.classes.filter((theClass) => theClass.nameId === match.params.classNameId)[0];
