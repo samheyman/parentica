@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -6,6 +7,19 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
+import { FormattedMessage, FormattedDate } from 'react-intl';
+
+const mapStateToProps = (state) => {
+  return(
+      {
+          classes: state.classes,
+          providers: state.providers,
+          resources: state.resources,
+          tab: state.tab,
+          locale: state.locale
+      }
+  );
+};
 
 const useStyles = makeStyles({
   card: {
@@ -32,20 +46,25 @@ const useStyles = makeStyles({
   }
 });
 
-function RenderTags({tags}) {
+function RenderTags({tags, lang}) {
   let i = 0;
   const output = tags.map((tag) => {
       i++;
       return (
-          <span key={i} className={`tag tag-${tag}`}>{tag}</span>
+          <span key={i} className={`tag tag-${tag}`}>
+            <FormattedMessage 
+              id={`topics.${tag.split(" ")[0]}.${lang}`}
+              defaultMessage={tag}
+            />
+          </span>
       );
   });
 
   return output;
 }
 
-function RenderFlag({language}) {
-  if (language==='spanish' || language==='english') {
+function RenderFlag({language, locale}) {
+  if ((language==='english' && locale==='es-SP') || (language==='spanish' && locale==='en-GB')) {
       return (
           <img className="language-flag" src={`/images/flags/${language}.png`} alt={`${language}`} />
       );
@@ -54,7 +73,7 @@ function RenderFlag({language}) {
   }
 }
 
-export default function MediaCard(props) {
+function MediaCard(props) {
     const classes = useStyles();
     return (
       <Link className="class-card-link" to={`../classes/${props.classEntry.nameId}`}
@@ -81,37 +100,37 @@ export default function MediaCard(props) {
               </Typography>
 
               <div className={`card-footer ${classes.cardFooter}`}>
-{/*                 
-                  {props.classEntry.price}€  */}
-              <RenderFlag language={props.classEntry.language} />
+
+                <RenderFlag language={props.classEntry.language} locale={props.locale} />
 
                   <div className="value">
-                    {/* <Icon className={classes.icon}>
-                    calendar_today
-                    </Icon> */}
-                    <span className="date-time">{new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(props.classEntry.date)))}</span>
-                  {/* </div>
-                  <div className="value left-spacer"> */}
+                    
+                    <span className="date-time">
+                      <FormattedDate
+                          value={props.classEntry.date}
+                          day="2-digit"
+                          month="2-digit"
+                      />
+                      
+                    </span>
+                  
                     <span className="dot"></span>
-                  {/* </div>
-                  <div className="value left-spacer"> */}
-                    {/* <Icon className={classes.icon}>
-                    location_on
-                    </Icon> */}
-                    <span>{props.classEntry.time}</span>
-                  {/* </div>
-                  <div className="value left-spacer"> */}
+                  
+                    <span>
+                      <FormattedDate
+                        value={props.classEntry.date}
+                        hour="2-digit"
+                        minute="2-digit"
+                      />
+                    </span>
+                  
                     <span className="dot"></span>
-                  {/* </div>
-                  <div className="value left-spacer"> */}
-                    {/* <Icon className={classes.icon}>
-                    location_on
-                    </Icon> */}
+                  
                     <span>{props.classEntry.district}</span>
                   </div>
                   
               </div>
-              <RenderTags tags={props.classEntry.tags} />
+              <RenderTags tags={props.classEntry.tags} lang={props.locale} />
               
             </CardContent>
           </CardActionArea>
@@ -136,3 +155,5 @@ export default function MediaCard(props) {
       </Link>
     );
   }
+
+  export default connect(mapStateToProps)(MediaCard);

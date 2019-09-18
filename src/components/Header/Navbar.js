@@ -49,35 +49,35 @@ export default function Navbar(props) {
         <NavLink to="/home">
             <ListItem button key="home">
             <ListItemText 
-              primary={<FormattedMessage id={`navbar.home_link.${props.locale}`} />} 
+              primary={<FormattedMessage id={`navbar.home.link.${props.locale}`} />} 
             />
             </ListItem>
           </NavLink>
           <NavLink to="/explore">
             <ListItem button key="explore">
               <ListItemText 
-                primary={<FormattedMessage id={`navbar.explore_link.${props.locale}`} />} 
+                primary={<FormattedMessage id={`navbar.explore.link.${props.locale}`} />} 
               />
             </ListItem>
           </NavLink>
           <NavLink to="/about">
             <ListItem button key="about">
               <ListItemText 
-                primary={<FormattedMessage id={`navbar.about_link.${props.locale}`} />} 
+                primary={<FormattedMessage id={`navbar.about.link.${props.locale}`} />} 
               />
             </ListItem>
           </NavLink>
           <NavLink to="/locations">
             <ListItem button key="locations">
               <ListItemText               
-                primary={<FormattedMessage id={`navbar.locations_link.${props.locale}`} />} 
+                primary={<FormattedMessage id={`navbar.locations.link.${props.locale}`} />} 
                />
             </ListItem>
           </NavLink>
           <NavLink to="/contact">
             <ListItem button key="contact">
               <ListItemText               
-                primary={<FormattedMessage id={`navbar.contact_link.${props.locale}`} />} 
+                primary={<FormattedMessage id={`navbar.contact.link.${props.locale}`} />} 
              />
             </ListItem>
           </NavLink>
@@ -94,10 +94,10 @@ export default function Navbar(props) {
             </NavLink>
             <Box display={{ xs: 'none', sm: 'none', md: 'block', lg: 'block', xl: 'block' }}>
               <ul className="app-header-full">                      
-                <li><NavLink to="/explore"><FormattedMessage id={`navbar.explore_link.${props.locale}`} /></NavLink></li>
-                <li><NavLink to="/about"><FormattedMessage id={`navbar.about_link.${props.locale}`} /></NavLink></li>
-                <li><NavLink to="/locations"><FormattedMessage id={`navbar.locations_link.${props.locale}`} /></NavLink></li>
-                <li><NavLink to="/contact"><FormattedMessage id={`navbar.contact_link.${props.locale}`} /></NavLink></li>
+                <li><NavLink to="/explore"><FormattedMessage id={`navbar.explore.link.${props.locale}`} /></NavLink></li>
+                <li><NavLink to="/about"><FormattedMessage id={`navbar.about.link.${props.locale}`} /></NavLink></li>
+                <li><NavLink to="/locations"><FormattedMessage id={`navbar.locations.link.${props.locale}`} /></NavLink></li>
+                <li><NavLink to="/contact"><FormattedMessage id={`navbar.contact.link.${props.locale}`} /></NavLink></li>
                 {/* <li><NavLink to="collapsible.html">Sign in</NavLink></li>
                 <li><NavLink className="btn-small" to="collapsible.html">Sign up</NavLink></li> */}
               </ul>

@@ -64,32 +64,32 @@ function Home(props) {
             <div className="tagline">
                 <h2 className="tagline-header">
                     <FormattedMessage 
-                        id={`homepage.tagline_header.${props.locale}`}
+                        id={`homepage.tagline.header.${props.locale}`}
                         defaultMessage="Parenting and pregnancy classes for all"
                     />
                 </h2>  
                 <p className="tagline-paragraph">
                     <FormattedMessage 
-                        id={`homepage.tagline_paragraph.${props.locale}`}
+                        id={`homepage.tagline.paragraph.${props.locale}`}
                         defaultMessage="Find pregnancy and parenting classes and events, either online or in one of the cities we are in"
                     />
                 </p>
                 <div className="main-links">
                     <Link to={{pathname:"/explore/online", topic:"all"}}>
                         <Button variant="contained" className={`btn-first ${classes.button}`}>
-                            <FormattedMessage id={`homepage.tagline_online_button.${props.locale}`} />
+                            <FormattedMessage id={`homepage.tagline.online.button.${props.locale}`} />
                         </Button>
                     </Link>
                     <Link to={{pathname:"/explore/madrid", topic:"all"}}>
                         <Button variant="contained" className={`btn-second ${classes.button}`}>
-                            <FormattedMessage id={`homepage.tagline_madrid_button.${props.locale}`} />
+                            <FormattedMessage id={`homepage.tagline.madrid.button.${props.locale}`} />
                         </Button>
                     </Link>
                 </div>
             </div>
             <div className="popular-topics">
                 <h2>
-                    <FormattedMessage id={`homepage.popular_topics_header.${props.locale}`} />    
+                    <FormattedMessage id={`homepage.popular.topics.header.${props.locale}`} />    
                 </h2>  
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     <TopicCard 
@@ -144,14 +144,14 @@ function Home(props) {
             </div>
             <div className="row">
                 <div className="col s12 m12 l12 partners">
-                    <h2><FormattedMessage id={`homepage.providers_madrid_header.${props.locale}`} /></h2> 
+                    <h2><FormattedMessage id={`homepage.providers.madrid.header.${props.locale}`} /></h2> 
                     <MadridProviders providers={props.madridProviders}/>
                     {/* <RenderProviderCard provider={props.providers} /> */}
                 </div>
             </div>
             <div className="row">
                 <div className="col s12 m12 l12 partners">
-                    <h2><FormattedMessage id={`homepage.providers_online_header.${props.locale}`} /></h2> 
+                    <h2><FormattedMessage id={`homepage.providers.online.header.${props.locale}`} /></h2> 
                     <OnlineProviders providers={props.onlineProviders}/>
                 </div>
             </div>

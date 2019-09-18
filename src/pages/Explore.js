@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,6 +10,19 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import ClassCard from '../components/ClassCard';
 import OnlineClassCard from '../components/OnlineClassCard';
+import { FormattedMessage } from 'react-intl';
+
+const mapStateToProps = (state) => {
+    return(
+        {
+            classes: state.classes,
+            providers: state.providers,
+            resources: state.resources,
+            tab: state.tab,
+            locale: state.locale
+        }
+    );
+};
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -41,7 +55,7 @@ function a11yProps(index) {
 }
 
 
-export default function Explore(props) {
+function Explore(props) {
     const [value, setValue] = React.useState(props.tabSelected);
 
     function handleChange(event, newValue) {
@@ -83,7 +97,7 @@ export default function Explore(props) {
             );
         }
     });
-    
+    console.log(props.locale);
     return(
         <Container className="main-content">
             <div className="result-filters">
@@ -95,18 +109,42 @@ export default function Explore(props) {
             </div>
             <AppBar position="static" color="default">
                 <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">
-                    <Tab label={`Madrid`} {...a11yProps(0)} />
-                    <Tab label={`Online`} {...a11yProps(1)} />
+                    <Tab 
+                        label={
+                            <FormattedMessage 
+                                id={`explore.tab.madrid.${props.locale}`}
+                                defaultMessage="Madrid"
+                            />
+                        } 
+                        {...a11yProps(0)} 
+                    />
+                    <Tab 
+                        label={
+                            <FormattedMessage 
+                                id={`explore.tab.online.${props.locale}`}
+                                defaultMessage="online"
+                            />
+                        } 
+                        {...a11yProps(1)} 
+                    />
                 </Tabs>
             </AppBar>
             <TabPanel className="search-results" value={value} index={0}>
                 {(classesList.length > 0) ? 
-                    <Grid container spacing={2} alignContent="center">{classesList}</Grid> : <p>No classes found</p>}
+                    <Grid container spacing={2} alignContent="center">
+                        {classesList}
+                    </Grid> 
+                    : <p>No classes found</p>}
             </TabPanel>
             <TabPanel className="search-results" value={value} index={1}>
                 {(onlineClassesList.length > 0) ? 
-                    <Grid container spacing={2} alignContent="center">{onlineClassesList}</Grid> : <p>No classes found</p>}
+                    <Grid container spacing={2} alignContent="center">
+                        {onlineClassesList}
+                    </Grid> 
+                    : <p>No classes found</p>}
             </TabPanel>
         </Container>
     );
 }
+
+export default connect(mapStateToProps)(Explore);

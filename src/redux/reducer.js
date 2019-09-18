@@ -6,6 +6,7 @@ export const initialState = {
     providers: PROVIDERS,
     tab: 1,
     locale: 'es-SP',
+    // locale: 'en-GB'
 };
 
 export const Reducer = (state=initialState, action) => {
