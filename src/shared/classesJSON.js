@@ -2500,7 +2500,7 @@ export const CLASSES = [
         
         "price":160,
         "priceCouple": 160,
-        "language":"english",
+        "language":"spanish",
         "featured":true,
         "description":[
         "Aprenderás las técnicas mas efectivas para la preparación al parto natural. Usamos principalmente técnicas de hypnobirth que consiste en la interiorización de conocimientos y técnicas que resultan en un parto controlado y menos doloroso, contribuyendo a crear una experiencia positiva y empoderadora para la mujer. Los partos en los que se lleva a cabo Hypnobirth tienden a ser más cortos y fáciles, con todas las consecuencias positivas que esto tiene para la madre y el bebé.",
