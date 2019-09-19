@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import ClassCard from '../components/ClassCard';
-import OnlineClassCard from '../components/OnlineClassCard';
+// import OnlineClassCard from '../components/OnlineClassCard';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -74,7 +74,7 @@ export default function Explore(props) {
         if( classEntry.type === 'online') {
             return (
                 <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
-                    <OnlineClassCard classEntry={classEntry} />      
+                    <ClassCard classEntry={classEntry} />      
                 </Grid>
             );        
         } else {

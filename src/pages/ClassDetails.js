@@ -25,7 +25,7 @@ function RenderTags({tags}) {
                 onClick={()=>{
                     window.gtag("event", "topic tag", {
                         event_category: "topics",
-                        event_label: topic
+                        event_label: tag
                     }); 
                 }}
             >

@@ -89,25 +89,38 @@ export default function MediaCard(props) {
                     {/* <Icon className={classes.icon}>
                     calendar_today
                     </Icon> */}
+                    {(props.classEntry.date != null)?
                     <span className="date-time">{new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(props.classEntry.date)))}</span>
-                  {/* </div>
+                    :
+                    <span className="date-time">Anytime</span>
+                    }
+                    {/* </div>
                   <div className="value left-spacer"> */}
-                    <span className="dot"></span>
-                  {/* </div>
-                  <div className="value left-spacer"> */}
-                    {/* <Icon className={classes.icon}>
-                    location_on
-                    </Icon> */}
-                    <span>{props.classEntry.time}</span>
-                  {/* </div>
-                  <div className="value left-spacer"> */}
-                    <span className="dot"></span>
                   {/* </div>
                   <div className="value left-spacer"> */}
                     {/* <Icon className={classes.icon}>
                     location_on
                     </Icon> */}
-                    <span>{props.classEntry.district}</span>
+                    {(props.classEntry.time != null)?
+                        (
+                          <React.Fragment>
+                          <span className="dot"></span>
+                          <span>{props.classEntry.time}</span>
+                          </React.Fragment>                     
+                        )
+                        :
+                        (null)
+                    }
+                    {(props.classEntry.district != null)?
+                        (
+                          <React.Fragment>
+                          <span className="dot"></span>
+                          <span>{props.classEntry.district}</span>
+                          </React.Fragment>                     
+                        )
+                        :
+                        (null)
+                    }
                   </div>
                   
               </div>
