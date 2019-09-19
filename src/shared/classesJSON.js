@@ -3098,6 +3098,30 @@ export const CLASSES = [
     "nameId":"materna-yoga-estimulación-musical-en-familia-5081"
     },
     {
+        "id":10000,
+        "type":"online",
+        "className":"Curso Cuidados del Bebé",
+        "tags":[
+        "baby"
+        ],
+        "duration":"3h",
+        "image":"cursodecuidadobienvenidobebe.jpg",
+        "url":"https://www.bienvenidobebe.es/resumen-programa",
+        "companyName":"Bienvenido Bebé",
+        "companyLogo":"bienvenidobebe_sq.png",
+        "label":"",
+        "price":0,
+        "language":"spanish",
+        
+        "description":[
+            "¿Cuántas horas debe dormir mi bebé? ¿Qué hago si no quiere comer? ¿Cuándo empiezan a salir los dientes de leche? Constantemente surgen miedos y dudas a medida que el bebé va creciendo. Por eso, es esencial que conozcas toda la información que te ofrecemos en este curso online para que resuelvas todas las incertidumbres y vivas esta nueva etapa como algo maravilloso.",
+            "El Curso de Cuidados del Bebé de Bienvenido Bebé pone a tu disposición toda la información que necesitas para el desarrollo, la atención y los cuidados del bebé desde que nace hasta los 18 meses.",
+            "En cada apartado encontrarás 2 vídeos explicativos y en eBook descargable para poder completar el cuestionario disponible al final de cada apartado y superar el módulo. Al completar los 5 módulos que comprende el programa de formación accederás al cuestionario final, que te dará acceso al Certificado de Participación una vez hayas superado con éxito la prueba.",
+            "¡Regístrate gratuitamente y comienza tu formación!",
+        ],
+        "nameId":"bienvenido-bebe-curso-cuidados-del-bebe-10000"
+    },
+    {
     "id":1004,
     "type":"online",
     "className":"Conscious Parenting",
@@ -3224,7 +3248,7 @@ export const CLASSES = [
     "companyName":"Coursera",
     "companyLogo":"coursera_sq.png",
     "label":"",
-    "price":"Free Online Course (Audit)",
+    "price":0,
     "language":"english",
     "featured":true,
     "description":[
@@ -3248,7 +3272,7 @@ export const CLASSES = [
     "companyName":"Coursera",
     "companyLogo":"coursera_sq.png",
     "label":"",
-    "price":"Free Online Course (Audit)",
+    "price":0,
     "language":"english",
     
     "description":[
@@ -3269,7 +3293,7 @@ export const CLASSES = [
     "companyName":"Coursera",
     "companyLogo":"coursera_sq.png",
     "label":"",
-    "price":"Free Online Course (Audit)",
+    "price": 0,
     "language":"english",
     
     "description":[
@@ -3281,6 +3305,7 @@ export const CLASSES = [
     "compliance. The course will also shed light on many parenting misconceptions and ineffective",
     "strategies that are routinely used."
     ],
-    "nameId":"coursera-everyday-parenting:-the-abcs-of-child-rearing-1002"
-    }
+    "nameId":"coursera-everyday-parenting-the-abcs-of-child-rearing-1002"
+    },
+    
     ];
