@@ -47,8 +47,6 @@ function RenderDescription({description}) {
 }
 
 function RenderOtherClasses({otherClasses}) {
-    // const formatedDates = <span>{new Intl.DateTimeFormat('es-ES', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(date)))}</span>;
-    // const formatedTime = <span>{new Intl.DateTimeFormat('es-ES', { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }).format(new Date(Date.parse(date)))}</span>;
     let i =0;
     const otherClassesList = otherClasses.map((item) => {
         let formatedDates = null;
@@ -76,7 +74,7 @@ function RenderOtherClasses({otherClasses}) {
             </Table>
         );
     } else {
-        return(<p>No other classes found.</p>);
+        return(<p>No other classes to show.</p>);
     } 
 }
 
@@ -345,11 +343,6 @@ function ClassDetails(props) {
                                             otherClasses={props.otherClasses.filter((item) => (item.companyName === props.selectedClass.companyName) && item.id !== props.selectedClass.id)}
                                         />
                                     </TabPanel>
-                                    {/* <TabPanel value={value} index={2} dir={theme.direction}>
-                                        <RenderPrice
-                                            price={props.selectedClass.price}
-                                        />
-                                    </TabPanel> */}
                                 </div>
                             </div>
                     </Grid>
