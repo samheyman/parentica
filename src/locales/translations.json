@@ -1,4 +1,10 @@
 {
+    "general.english.en-GB": "English",
+    "general.english.es-SP": "inglés",
+
+    "general.spanish.en-GB": "Spanish",
+    "general.spanish.es-SP": "Español",
+
     "navbar.home.link.en-GB": "Home",
     "navbar.home.link.es-SP": "Inicio",
 
@@ -76,6 +82,28 @@
     "explore.tab.madrid.es-SP": "Madrid",
 
     "explore.tab.online.en-GB": "online",
-    "explore.tab.online.es-SP": "en línea"
+    "explore.tab.online.es-SP": "en línea",
+
+    "classDetails.price.en-GB": "Price",
+    "classDetails.price.es-SP": "Precio",
+
+    "classDetails.sessions.en-GB": "sessions",
+    "classDetails.sessions.es-SP": "sesiones",
+
+    "classDetails.price.free.en-GB": "free",
+    "classDetails.price.free.es-SP": "gratis",
+
+    "classDetails.price.forCouples.en-GB": "for couples",
+    "classDetails.price.forCouples.es-SP": "para parejas",
+
+    "classDetails.linkToWebsite.en-GB": "Go to website",
+    "classDetails.linkToWebsite.es-SP": "Ir al sitio web",
+    
+    "classDetails.about.en-GB": "About",
+    "classDetails.about.es-SP": "Acerca de",
+
+    "classDetails.otherClasses.en-GB": "Other classes",
+    "classDetails.otherClasses.es-SP": "Otras clases"
+
 
 }

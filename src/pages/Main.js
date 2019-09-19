@@ -57,6 +57,7 @@ class Main extends Component {
                         selectedClass={this.props.classes.filter((theClass) => theClass.nameId === match.params.classNameId)[0]}
                         // TODO only send the class names, not all the information
                         otherClasses={this.props.classes}
+                        locale={this.props.locale}
                     />
                 );
             } 

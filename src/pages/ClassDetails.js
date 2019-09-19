@@ -16,13 +16,19 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
+import { FormattedMessage, FormattedDate } from 'react-intl';
 
-function RenderTags({tags}) {
+function RenderTags({tags, locale}) {
     let i=0;
     const output = tags.map((tag) => {
         return (
             <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}>
-                <span className={`tag tag-${tag}`}>{tag}</span>
+                <span className={`tag tag-${tag}`}>
+                <FormattedMessage 
+                    id={`topics.${tag.split(" ")[0]}.${locale}`}
+                    defaultMessage={tag}
+                />
+                </span>
             </Link>
         );
     });
@@ -40,8 +46,6 @@ function RenderDescription({description}) {
 }
 
 function RenderOtherClasses({otherClasses}) {
-    // const formatedDates = <span>{new Intl.DateTimeFormat('es-ES', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(date)))}</span>;
-    // const formatedTime = <span>{new Intl.DateTimeFormat('es-ES', { hour: '2-digit', minute: '2-digit', timeZoneName: 'short' }).format(new Date(Date.parse(date)))}</span>;
     let i =0;
     const otherClassesList = otherClasses.map((item) => {
         let formatedDates = null;
@@ -81,10 +85,18 @@ function ClassDate({classDate}, {icon}) {
                 calendar_today
                 </Icon>
                 <span className="date-time">
-                    {new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(classDate)))}
+                    <FormattedDate
+                        value={classDate}
+                        day="2-digit"
+                        month="2-digit"
+                    />
                 </span>
                 <span className="date-time"> 
-                    - {new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit' }).format(new Date(Date.parse(classDate)))}
+                &nbsp;-&nbsp;<FormattedDate
+                        value={classDate}
+                        hour="2-digit"
+                        minute="2-digit"
+                    />
                 </span>
             </div>
         );
@@ -100,16 +112,25 @@ function OtherSessions({otherDates}, {icon}) {
             i++;
             return(
                 <div className="" key={i} >
-                    <span> {new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(sess)))}</span>
-                    <span> - {new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit' }).format(new Date(Date.parse(sess)))}</span>             
+                    <span> 
+                        <FormattedDate
+                            value={sess}
+                            day="2-digit"
+                            month="2-digit"
+                        />
+                    </span>
+                    <span>&nbsp;-&nbsp; 
+                        <FormattedDate
+                            value={sess}
+                            hour="2-digit"
+                            minute="2-digit"
+                        />
+                    </span>             
                 </div>
                 );
         });
         return(
             <div className="value">
-                {/* <Icon className={icon}>
-                plus
-                </Icon> */}
                 <div className="other-dates">
                     {dates}
                 </div>
@@ -120,17 +141,40 @@ function OtherSessions({otherDates}, {icon}) {
     }
 }
 
-function ClassPrice({classPrice, classPriceCouple}) {
+function ClassPrice({classPrice, classPriceCouple, locale}) {
     let price = null;
     let couplePrice = null;
 
     if (classPrice != null && classPrice > 0) {
-        price =  <span className="class-price">Price: {classPrice}€</span>;
+        price =  <span className="class-price">
+                    <FormattedMessage 
+                        id={`classDetails.price.${locale}`}
+                        defaultMessage="Price"
+                    />:
+                    &nbsp;{classPrice}€
+                </span>;
     } else {
-        price =  <span className="class-price">Price: Free</span>;
+        price =  <span className="class-price">
+                    <FormattedMessage 
+                        id={`classDetails.price.${locale}`}
+                        defaultMessage="Price"
+                    />:
+                    &nbsp;
+                    <FormattedMessage 
+                        id={`classDetails.price.free.${locale}`}
+                        defaultMessage="free"
+                    />
+                </span>;
     }
     if (classPriceCouple >= 0) {
-        couplePrice = <span className="class-price"> ({classPriceCouple}€ for couples)</span>;
+        couplePrice = <span className="class-price"> 
+                ({classPriceCouple}€&nbsp;
+                    <FormattedMessage 
+                        id={`classDetails.price.forCouples.${locale}`}
+                        defaultMessage="for couples"
+                    />
+                )
+            </span>;
     } 
    
     return(
@@ -155,14 +199,19 @@ function ClassLocation({address, icon}) {
     }
 }
 
-function ClassLanguage({language}, {icon}) {
-    if (language != null) {
+function ClassLanguage({language, locale}, {icon}) {
+    if ((language==='english' && locale==='es-SP') || (language==='spanish' && locale==='en-GB')) {
         return(
             <div className="value">
                 <Icon className={icon}>
                 language
                 </Icon>
-                <span className="language">{language}</span>
+                <span className="language">
+                    <FormattedMessage 
+                        id={`general.${language}.${locale}`}
+                        defaultMessage="Price"
+                    />
+                </span>
                 <img className="language-flag" src={`../images/flags/${language}.png`} alt={`${language}`} />
             </div>
         );
@@ -171,14 +220,25 @@ function ClassLanguage({language}, {icon}) {
     }
 }
 
-function ClassDuration({duration}, {icon}) {
+function ClassDuration({duration, sessions, locale}, {icon}) {
     if (duration != null) {
         return(
             <div className="value">
                 <Icon className={icon}>
                 timelapse
                 </Icon>
-                <span>{duration}</span>
+                <span>{duration/60}h
+                    { (sessions != null && sessions > 1) ? 
+                        <span>&nbsp;({sessions}&nbsp; 
+                            <FormattedMessage 
+                                id={`classDetails.sessions.${locale}`}
+                                defaultMessage="sessions"
+                            />
+                        )</span>
+                        :
+                        null
+                    }
+                </span>
             </div>
         );
     } else {
@@ -288,16 +348,16 @@ function ClassDetails(props) {
                                     <ClassDate classDate={props.selectedClass.date} classTime={props.selectedClass.classTime} classes={classes.icon} />
                                     <OtherSessions otherDates={props.selectedClass.otherDates} classes={classes.icon} />
                                     {/* <ClassTime classTime={props.selectedClass.time} classes={classes.icon} /> */}
-                                    <ClassDuration duration={props.selectedClass.duration} classes={classes.icon} />
+                                    <ClassDuration sessions={props.selectedClass.sessions} duration={props.selectedClass.duration} locale={props.locale} classes={classes.icon} />
                                     <ClassLocation address={props.selectedClass.address} classes={classes.icon} />
-                                    <ClassLanguage language={props.selectedClass.language} classes={classes.icon} />
-                                    <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} />
+                                    <ClassLanguage language={props.selectedClass.language} locale={props.locale} classes={classes.icon} />
+                                    <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} locale={props.locale} />
 
                                 </div>
                                 
                             </div>
                             <div className="class-tags">
-                                <RenderTags tags={props.selectedClass.tags} />
+                                <RenderTags tags={props.selectedClass.tags} locale={props.locale} />
                             </div>
                             <div className="button-div">
                                 <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
@@ -308,7 +368,12 @@ function ClassDetails(props) {
                                         }); 
                                     }}
                                 >
-                                    <Button variant="outlined" color="primary">Go to website</Button>
+                                    <Button variant="outlined" color="primary">
+                                        <FormattedMessage 
+                                            id={`classDetails.linkToWebsite.${props.locale}`}
+                                            defaultMessage="Go to website"
+                                        />
+                                    </Button>
                                 </a>
                             </div>
                             <div className="row">
@@ -322,9 +387,20 @@ function ClassDetails(props) {
                                         variant="fullWidth"
                                         aria-label="full width tabs example"
                                         >
-                                        <Tab label="About" {...a11yProps(0)} />
-                                        <Tab label="Other classes" {...a11yProps(1)} />
-                                        {/* <Tab label="Price" {...a11yProps(2)} /> */}
+                                        <Tab label=
+                                            {<FormattedMessage 
+                                                id={`classDetails.about.${props.locale}`}
+                                                defaultMessage="Go to website"
+                                            />}
+                                            {...a11yProps(0)} 
+                                        />
+                                        <Tab label=
+                                            {<FormattedMessage 
+                                                id={`classDetails.otherClasses.${props.locale}`}
+                                                defaultMessage="Go to website"
+                                            />}
+                                            {...a11yProps(1)} 
+                                        />
                                         </Tabs>
                                     </AppBar>
                                     
