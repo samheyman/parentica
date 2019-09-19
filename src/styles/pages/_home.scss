@@ -47,6 +47,11 @@ h2 {
     font-size: 1.5em;
 }
 
+.homepage-tags {
+    display: inline-block;
+    margin: 5px;
+}
+
 .MuiButton-containedPrimary {
     background-color: $green !important;
 }
@@ -137,9 +142,4 @@ a {
         height: auto;
         max-width: 100%;
     }
-}
-
-.topic-cards {
-    // display: flex;
-    // flex-direction: row;
 }

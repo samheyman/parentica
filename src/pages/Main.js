@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
         {
             classes: state.classes,
             providers: state.providers,
-            resources: state.resources,
+            topics: state.topics,
             tab: state.tab
         }
     );
@@ -30,6 +30,7 @@ class Main extends Component {
             return(
                 <Home 
                     classEntries={this.props.classes}
+                    topics={this.props.topics}
                     madridProviders={this.props.providers.filter((provider) => !provider.online)}
                     onlineProviders={this.props.providers.filter((provider) => provider.online)}
                 />
