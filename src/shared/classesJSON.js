@@ -572,7 +572,7 @@ export const CLASSES = [
         "duration":"30min",
         "url":"https://www.bienvenidobebe.es/registro-streaming",
         "image":"charlabienvenidobebe.jpg",
-        "companyName":"Bienvenido Bebe",
+        "companyName":"Bienvenido Bebé",
         "companyLogo":"bienvenidobebe_sq.png",
         "price":0,
         "language":"spanish",
