@@ -60,7 +60,7 @@ export default function MediaCard(props) {
       <Link className="class-card-link" to={`../classes/${props.classEntry.nameId}`}
           onClick={()=>{
             window.gtag("event", props.classEntry.companyName, {
-                event_category: "class detail views",
+                event_category: "class details",
                 event_label: props.classEntry.companyName + " - " + props.classEntry.className
             }); 
           }}

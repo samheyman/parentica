@@ -21,7 +21,14 @@ function RenderTags({tags}) {
     let i=0;
     const output = tags.map((tag) => {
         return (
-            <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}>
+            <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}
+                onClick={()=>{
+                    window.gtag("event", "topic tag", {
+                        event_category: "topics",
+                        event_label: topic
+                    }); 
+                }}
+            >
                 <span className={`tag tag-${tag}`}>{tag}</span>
             </Link>
         );
