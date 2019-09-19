@@ -112,6 +112,71 @@
     "locations.contactUs.p1.es-SP": "Actualmente estamos ubicados y prestamos servicios a Madrid en España, pero esperamos llegar a otras ciudades en el futuro cercano.",
 
     "locations.contactUs.p2.en-GB": "Feel free to contact us for more information or to list your classes.",
-    "locations.contactUs.p2.es-SP": "No dude en contactarnos para obtener más información o para enumerar sus clases."
+    "locations.contactUs.p2.es-SP": "No dude en contactarnos para obtener más información o para enumerar sus clases.",
+
+
+    "about.about.en-GB": "About",
+    "about.about.es-SP": "Nosotros",
+
+    "about.mission.p1.en-GB": "The mission of Parentica is simple...",
+    "about.mission.p1.es-SP": "La misión de Parentica es simple ...",
+
+    "about.mission.statement.en-GB": "Help parents and parents-to-be find classes that will inspire them to become even better parents.",
+    "about.mission.statement.es-SP": "Ayudar a padres y a futuros padres a encontrar clases que los inspiren a convertirse en mejores padres.",
+
+    "about.manifesto.en-GB": "Manifesto",
+    "about.manifesto.es-SP": "Manifiesto",
+
+    "about.manifesto.p1.en-GB": "The latest research in neurology, medicine, mental science, and all other disciplines is pushing the boundaries of what we know and assumed to be true, challenging preconceived thoughts.",
+    "about.manifesto.p1.es-SP": "La última investigación en neurología, medicina, ciencias mentales y todas las demás disciplinas está empujando los límites de lo que sabemos y asumimos que son verdaderos, desafiando los pensamientos preconcebidos.",
+
+    "about.manifesto.q1.en-GB": "\"The only true wisdom is in knowing you know nothing.\" - Socrates",
+    "about.manifesto.q1.es-SP": "\"La única sabiduría verdadera es saber que no sabes nada.\" - Socrates",
+
+    "about.manifesto.p2.en-GB": "Opinions and knowledge change from culture to culture, and generation to generation.",
+    "about.manifesto.p2.es-SP": "Las opiniones y el conocimiento cambian de cultura en cultura, y de generación en generación.",
+
+    "about.manifesto.q2.en-GB": "\"There’s no way to be a perfect mother and a million ways to be a good one.\" - Jill Churchill",
+    "about.manifesto.q2.es-SP": "\"No hay forma de ser una madre perfecta y un millón de maneras de ser buena.\" - Jill Churchill",
+
+    "about.manifesto.p3.en-GB": "People tend to live further from their families, often in different countries, reducing the chances of family and community knowledge sharing.   ",
+    "about.manifesto.p3.es-SP": "Las personas tienden a vivir más lejos de sus familias, a menudo en diferentes países, lo que reduce las posibilidades de compartir conocimientos familiares y comunitarios.",
+
+    "about.manifesto.q3.en-GB": "\"It takes a village to raise a child.\" - African Proverb",
+    "about.manifesto.q3.es-SP": "\"Se necesita un pueblo para criar a un niño.\" - Proverbio Africano",
+
+    "about.manifesto.p4.en-GB": "Online teaching is opening the doors to knowledge sharing and learning to all.",
+    "about.manifesto.p4.es-SP": "La enseñanza en línea está abriendo las puertas al intercambio de conocimientos y al aprendizaje para todos.",
+
+    "about.manifesto.q4.en-GB": "\"There are only two lasting bequests we can hope to give our children. One of these is roots, the other, wings.\" - Johann Wolfgang von Goethe",
+    "about.manifesto.q4.es-SP": "\"Solo hay dos legados duraderos que podemos esperar dar a nuestros hijos. Una de ellas son las raíces, la otra, las alas.\" - Johann Wolfgang von Goethe",
+
+    "about.manifesto.p5.en-GB": "Learning to raise children is a challenge that is worth taking.",
+    "about.manifesto.p5.es-SP": "Aprender a criar niños es un desafío que vale la pena asumir.",
+
+    "about.manifesto.q5.en-GB": "\"The important thing is not to win the children but to earn them, for this the adult must invest time in motivating and teaching essential competencies for life.\" - R. Dreikurs",
+    "about.manifesto.q5.es-SP": "\"Lo importante no es ganar a los niños sino ganarlos, para esto el adulto debe invertir tiempo en motivar y enseñar las competencias esenciales para la vida.\" - R. Dreikurs",
+
+    "about.manifesto.p6.en-GB": "Happiness and well-being are of the upmost importance.",
+    "about.manifesto.p6.es-SP": "La felicidad y el bienestar son de suma importancia.",
+
+    "about.manifesto.q6.en-GB": "\"Children learn more from what you are than what you teach.\" - W.E.B. DuBois",
+    "about.manifesto.q6.es-SP": "\"Los niños aprenden más de lo que eres que de lo que enseñas.\" - W.E.B. DuBois",
+
+    "about.team.meet.en-GB": "Meet the team",
+    "about.team.meet.es-SP": "Conocer al equipo",
+
+    "about.team.samJob.en-GB": "Founder and developer",
+    "about.team.samJob.es-SP": "Fundador y desarrollador",
+
+    "about.team.elineJob.en-GB": "Provider manager",
+    "about.team.elineJob.es-SP": "Gerente de proveedores",
+
+    "about.team.samDescription.en-GB": "Sam is a software engineer and father-to-be. He has a breadth of experience in building web applications having worked as a software developer for companies such as Skyscanner and Amadeus IT Group. He now wants to use his skills to help parents like himself with the daunting but exciting challenge of raising children.",
+    "about.team.samDescription.es-SP": "Sam es ingeniero de software y futuro padre. Tiene una amplia experiencia en la creación de aplicaciones web, ya que trabajó como desarrollador de software para empresas como Skyscanner y Amadeus IT Group. Ahora quiere usar sus habilidades para ayudar a los padres como él con el desafío desalentador pero emocionante de criar hijos.",
+
+    "about.team.elineDescription.en-GB": "Eline is the co-founder of two NGOs that help empower children to become change agents in their communities through education. She loves to work with those who want to create a better world and solve the major challenges of today and tomorrow. She specializes in 21st century skills, school transformation and social impact, and is always eager to meet others on the same journey.",
+    "about.team.elineDescription.es-SP": "Eline es cofundadora de dos ONG que ayudan a empoderar a los niños a convertirse en agentes de cambio en sus comunidades a través de la educación. Le encanta trabajar con aquellos que desean crear un mundo mejor y resolver los principales desafíos de hoy y de mañana. Se especializa en habilidades del siglo XXI, transformación escolar e impacto social, y siempre está ansiosa por conocer a otros en el mismo viaje."
+
 
 }
