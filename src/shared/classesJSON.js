@@ -1,197 +1,5 @@
 export const CLASSES = [
     {
-    "id":1100,
-    "type":"group",
-    "className":"Yoga para mamás con bebés",
-    "date":"2019-09-16T12:30+02:00",
-    "time":"12h30",
-    "tags":[
-    "yoga"
-    ],
-    "city":"Madrid",
-    "district":"La Latina",
-    "address":"C / Aguas 4, local 2, 28005 Madrid",
-    "duration":"1h",
-    "url":"https://espaciokenko.com/yoga-mamas-y-bebes/",
-    "image":"yogamumsbabyskenko.jpg",
-    "companyName":"Espacio Kenko",
-    "companyLogo":"espaciokenko_sq.png",
-    "price":50,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
-    "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
-    "Si no has practicado yoga previamente, no te preocupes. Nuestras clases son específicas para mamás y te ayudarán a disfrutar con salud y vitalidad este período.",
-    "¡Te esperamos!"
-    ],
-    "nameId":"espacio-kenko-yoga-para-mamás-con-bebés-1100"
-    },
-    {
-    "id":1068,
-    "type":"group",
-    "className":"Taller cuidados del bebé",
-    "tags":[
-    "baby"
-    ],
-    "city":"Madrid",
-    "district":"Rivas",
-    "address":"TOYSRUS Rivas, CC Rivas-Futura, Calle Marie Curie s / n - Local A-10 and A-11",
-    "date":"2019-09-16T17:00+02:00",
-    "time":"17h00",
-    "duration":"3h",
-    "url":"https://www.bienvenidobebe.es/registro-presencial",
-    "image":"tallercuidadosbebe.png",
-    "companyName":"Bienvenido Bebe",
-    "companyLogo":"bienvenidobebe_sq.png",
-    
-    "price":0,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Desde la llegada de tu bebé tu mundo está patas arriba. Ahora mismo tu principal preocupación es garantizar el bienestar y correcto desarrollo de tu pequeño, algo que generará ciertas inseguridades sobre todo si eres papá o mamá primeriza: ¿por qué llora el bebé? ¿tiene hambre, sueño, frio…? ¿duerme lo suficiente?",
-    "Bienvenido Bebé es un completo Curso sobre Cuidados del Bebé gratuito dirigido a padres y madres con hijos de 0 a 18 meses que busca apoyarles y ayudarles a afrontar con seguridad y tranquilidad el cuidado y la crianza de su pequeño.",
-    "En la plataforma encontrarás las modalidades presencial, online y streaming para escoger la que mejor se ajuste a tus necesidades, o combinarlas. Todas ellas son gratuitas y te darán acceso a contenidos amenos, rigurosos, elaborados por profesionales y especialmente pensados para resolver las principales dudas en torno al cuidado y desarrollo del bebé.",
-    "Para reservar plaza en una charla presencial solo tienes que escoger la provincia y la fecha de tu conveniencia y completar tu inscripción. Durante el taller de cuidados del bebé, además de recibir los consejos y recomendaciones de la pediatra recibirás una canastilla gratis con muestras de productos para tu bebé.",
-    "Si no puedes acudir o no hay ninguna charla cerca de tu casa puedes regístrate en el Curso de Cuidados del Bebé Online y completar el programa a través de la plataforma web. En sus 5 módulos encontrarás información sobre higiene y cuidados del bebé, alimentación del bebé, salud del bebé, sueño del bebé o estimulación y desarrollo. Si completas el programa y superas todos los test recibirás tu certificado de participación.",
-    "Además, cada mes realizamos 2 conexiones en directo con la pediatra, de media hora de duración, a las que podrás apuntarte gratuitamente y seguirlas en streaming a través de la web. Podrás apuntarte en tantas sesiones como desees.",
-    "¡Bienvenido Bebé es la mejor opción para las mamás y papás que acaban de dar la bienvenida a su bebé! No esperes más e inscríbete gratis."
-    ],
-    "nameId":"bienvenido-bebe-taller-cuidados-del-bebé-1068"
-    },
-    {
-    "id":5096,
-    "type":"group",
-    "className":"Talleres postparto",
-    "tags":[
-    "postpartum"
-    ],
-    "city":"Madrid",
-    "district":"Chamartín",
-    "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-16T18:30+02:00",
-    "time":"18h30",
-    "duration":"1h30",
-    "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
-    "image":"postpartoentremamas.jpg",
-    "companyName":"Entre Mamás",
-    "companyLogo":"entremamas_sq.png",
-    
-    "price":30,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Precio:",
-    "30€/sesión en grupo.",
-    "50 euros la sesión privada (acordando la fecha).",
-    "Hemos organizado este espacio de reflexión que puede hacerse en cualquier momento (junto a tu pareja, si tienes) y está pensado para el último trimestre del embarazo y el primer trimestre después del nacimiento.",
-    "​¿En qué consisten? Información y recursos para un posparto llevadero en el que puedas disfrutar con plenitud de la maternidad. Recomendaciones desde la evidencia. Recursos para gestionar aquellos momentos difíciles de los primeros días en casa, las dudas, los sentimientos, el tiempo que ya no es el mismo... ",
-    "Sesión 1 - Primer lunes: Taller inicial de portabebés",
-    "Sesión 2 - Segundo lunes: Volver a amar después del parto",
-    "Sesión 3 - Tercer lunes: Nadie me lo dijo (la expectativa del posparto y su realidad)",
-    "Sesion 4 - Cuarto lunes: Qué le pasa a María (Para parejas de puérperas)",
-    "Sesión 5 - Taller de lactancia GRATUITO Si se hacen los otros talleres."
-    ],
-    "nameId":"entre-mamás-talleres-postparto-5096"
-    },
-    {
-    "id":5102,
-    "type":"group",
-    "className":"Grupo de apoyo al embarazo",
-    "tags":[
-    "pregnancy",
-    "social"
-    ],
-    "city":"Madrid",
-    "district":"Chamartín",
-    "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-17T18:30+02:00",
-    "time":"18h30",
-    "duration":"1h00",
-    "url":"http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
-    "image":"grupodeapoyo.jpg",
-    "companyName":"Entre Mamás",
-    "companyLogo":"entremamas_sq.png",
-    
-    "price":5,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Tercer martes de cada mes a las 18h30.",
-    "Reunión para embarazadas (parejas bienvenidas)",
-    "Participación: Rellena el formulario http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
-    "Si estás embarazada y quieres compartir un tiempo con otras mujeres como tú, despejar dudas, hablar sobre las opciones de parto que existen, cómo elegir el mejor sitio en Madrid según tus necesidades, la evidencia científica alrededor del parto y posparto, el acompañamiento, lo que necesitarás después...",
-    "El grupo de embarazo está pensado para ofrecerte recursos durante este tiempo y compartir un momento agradable. ¡Ven!"
-    ],
-    "nameId":"entre-mamás-grupo-de-apoyo-al-embarazo-5102"
-    },
-    {
-    "id":1101,
-    "type":"group",
-    "className":"Yoga para mamás con bebés",
-    "date":"2019-09-18T12:30+02:00",
-    "time":"12h30",
-    "tags":[
-    "yoga"
-    ],
-    "city":"Madrid",
-    "district":"La Latina",
-    "address":"C / Aguas 4, local 2, 28005 Madrid",
-    "duration":"1h",
-    "url":"https://espaciokenko.com/yoga-mamas-y-bebes/",
-    "image":"yogamumsbabyskenko.jpg",
-    "companyName":"Espacio Kenko",
-    "companyLogo":"espaciokenko_sq.png",
-    
-    "price":50,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
-    "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
-    "Si no has practicado yoga previamente, no te preocupes. Nuestras clases son específicas para mamás y te ayudarán a disfrutar con salud y vitalidad este período.",
-    "¡Te esperamos!"
-    ],
-    "nameId":"espacio-kenko-yoga-para-mamás-con-bebés-1101"
-    },
-    {
-    "id":5086,
-    "type":"group",
-    "className":"Cuidados de suelo pélvico y gimnasia hipopresiva",
-    "tags":[
-    "postpartum"
-    ],
-    "city":"Madrid",
-    "district":"La Latina",
-    "address":"c/ Aguas, 4, local 2, 28005 Madrid",
-    "date":"2019-09-18T16:30+02:00",
-    "time":"16h30",
-    "duration":"8h (8 sessions)",
-    "url":"https://espaciokenko.com/gimnasia-hipopresiva/",
-    "image":"gimnasiahipopresivaespaciokenko.jpg",
-    "companyName":"Espacio Kenko",
-    "companyLogo":"espaciokenko_sq.png",
-    
-    "price":110,
-    "language":"spanish",
-    
-    
-    "description":[
-    "GRUPO 1 – MIÉRCOLES de 16:30 a 17:30",
-    "(días 18, 25 de SEPTIEMBRE, 2, 9, 16, 23, 30 de OCTUBRE y 6 de NOVIEMBRE)",
-    "Si no has practicado antes gimnasia hipopresiva, te proponemos este taller inicial en el que a lo largo de 8 sesiones aprenderemos a reconocer y ejercitar la musculatura del suelo pélvico y la cincha abdominal con ejercicios hipopresivos, ejercicios de coactivación abdominoperineal, ejercicios sensoriales… integrando este trabajo de manera corporal global.",
-    "Se complementará la parte práctica con explicaciones teóricas que nos ayudarán a comprender la importancia de este conjunto muscular y aprenderemos a integrarlo conscientemente en las actividades de nuestra vida diaria.",
-    "Se trata de un grupo cerrado y reducido, como máximo con 7 alumnas, en el que aprenderemos las bases de los ejercicios para poder practicar e incorporarlo a nuestro entrenamiento corporal. Incluye un dossier de ejercicios para practicar en casa.",
-    "Si has sido madre recientemente, puedes venir a clase con tu bebé."
-    ],
-    "nameId":"espacio-kenko-cuidados-de-suelo-pélvico-y-gimnasia-hipopresiva-5086"
-    },
-    {
     "id":5093,
     "type":"group",
     "className":"Taller de masaje y psicomotricidad",
@@ -752,6 +560,26 @@ export const CLASSES = [
     ],
     "nameId":"materna-yoga-hipopresivos-5073"
     },
+    {
+        "id":10001,
+        "type":"online",
+        "className":"Charla en streaming: Cuidados del Recién nacido",
+        "tags":[
+            "baby", "lecture"
+        ],
+        "date":"2019-09-24T20:30+02:00",
+        "time":"20h30",
+        "duration":"30min",
+        "url":"https://www.bienvenidobebe.es/registro-streaming",
+        "image":"charlabienvenidobebe.jpg",
+        "companyName":"Bienvenido Bebe",
+        "companyLogo":"bienvenidobebe_sq.png",
+        "price":0,
+        "language":"spanish",
+        "description":[
+        "Mas information con el sitio web."],
+        "nameId":"bienvenido-bebe-charla-en-streaming-10000"
+        },
     {
     "id":5068,
     "type":"group",
