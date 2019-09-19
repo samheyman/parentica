@@ -74,7 +74,7 @@ class Main extends Component {
                 <Navbar locale={this.props.locale}/>
                 <Switch>
                     <Route exact path='/' component={HomePage} />
-                    <Route path='/home' component={HomePage} />
+                    <Route path='/home' render={()=><Redirect to="/" /> } />
                     <Route exact path='/explore' render={() => {
                         if(this.props.location.topic == null || this.props.location.topic === "all") {
                             return(
@@ -137,9 +137,18 @@ class Main extends Component {
                     {/* <Route path='/classes/:classId' component={ClassWithId} /> */}
                     <Route path='/classes/:classNameId' component={ClassWithName} />
                     <Route path='/online-classes' component={OnlineClassesPage} />
-                    <Route path='/locations' component={Locations} />
-                    <Route path='/about' component={About} />
-                    <Route path='/contact' component={Contact} />
+                    <Route path='/locations' render={
+                            (props) => <Locations {...props} locale={this.props.locale}
+                        />}
+                    />
+                    <Route path='/about' render={
+                            (props) => <About {...props} locale={this.props.locale}
+                        />}
+                    />
+                    <Route path='/contact' render={
+                            (props) => <Contact {...props} locale={this.props.locale}
+                        />}
+                    />
                     <Route component={NotFound}  />
                 </Switch>
                 <Footer locale={this.props.locale} />

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
+import { FormattedMessage } from 'react-intl';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -16,21 +17,29 @@ const useStyles = makeStyles(theme => ({
 
 function Locations(props) {
     const classes = useStyles();
-
     return(
-            <Container className="main-content">
-                <div className="col content">
-                    <div className={classes.root}>
-                        <h2>Locations</h2>
-                        <p>We are currently located in and serving Madrid in Spain, but we hope to reach
-                        out to other cities in the near future.</p>
-                        <p>Feel free to <Link to="contact">contact us</Link> for more information or to list
-                        your classes.
-                        </p>
-                        
-                    </div>
+        <Container className="main-content">
+            <div className="col content">
+                <div className={classes.root}>
+                    <h2>
+                        <FormattedMessage 
+                            id={`locations.locations.${props.locale}`}
+                            defaultMessage="Locations"
+                        />
+                    </h2>
+                    <p>
+                    <FormattedMessage 
+                        id={`locations.contactUs.p1.${props.locale}`}
+                        defaultMessage=""
+                    /></p>
+                    <p>
+                    <FormattedMessage 
+                        id={`locations.contactUs.p2.${props.locale}`}
+                        defaultMessage=""
+                    /></p>
                 </div>
-            </Container>
+            </div>
+        </Container>
     );
 }
 

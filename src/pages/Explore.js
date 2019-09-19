@@ -97,7 +97,7 @@ function Explore(props) {
             );
         }
     });
-    console.log(props.locale);
+
     return(
         <Container className="main-content">
             <div className="result-filters">

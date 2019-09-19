@@ -103,7 +103,15 @@
     "classDetails.about.es-SP": "Acerca de",
 
     "classDetails.otherClasses.en-GB": "Other classes",
-    "classDetails.otherClasses.es-SP": "Otras clases"
+    "classDetails.otherClasses.es-SP": "Otras clases",
 
+    "locations.locations.en-GB": "locations",
+    "locations.locations.es-SP": "Ubicaciones",
+
+    "locations.contactUs.p1.en-GB": "We are currently located in and serving Madrid in Spain, but we hope to reach out to other cities in the near future.",
+    "locations.contactUs.p1.es-SP": "Actualmente estamos ubicados y prestamos servicios a Madrid en España, pero esperamos llegar a otras ciudades en el futuro cercano.",
+
+    "locations.contactUs.p2.en-GB": "Feel free to contact us for more information or to list your classes.",
+    "locations.contactUs.p2.es-SP": "No dude en contactarnos para obtener más información o para enumerar sus clases."
 
 }
