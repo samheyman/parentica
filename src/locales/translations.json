@@ -1,6 +1,6 @@
 {
     "navbar.home.link.en-GB": "Home",
-    "navbar.home.link.es-SP": "Casa",
+    "navbar.home.link.es-SP": "Inicio",
 
     "navbar.explore.link.en-GB": "Explore",
     "navbar.explore.link.es-SP": "Explorar",
@@ -16,7 +16,7 @@
     
     
     "homepage.tagline.header.en-GB": "Skilled parents for happy, thriving children",
-    "homepage.tagline.header.es-SP": "Padres expertos para niños felices y prósperos",
+    "homepage.tagline.header.es-SP": "Padres competentes para niños felices y prósperos",
 
     "homepage.tagline.paragraph.en-GB": "Find pregnancy and parenting classes and events, either online or in one of the cities we are in",
     "homepage.tagline.paragraph.es-SP": "Encuentra clases y eventos sobre embarazo y paternidad, ya sea en línea o en una de las ciudades en las que estamos",
@@ -37,7 +37,7 @@
     "homepage.providers.online.header.es-SP": "Proveedores en línea",
 
     "topics.pregnancy.en-GB": "pregnancy",
-    "topics.pregnancy.es-SP": "el embarazo",
+    "topics.pregnancy.es-SP": "embarazo",
 
     "topics.parenting.en-GB": "parenting",
     "topics.parenting.es-SP": "paternidad",
