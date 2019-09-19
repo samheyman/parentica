@@ -1243,6 +1243,33 @@ export const CLASSES = [
     "nameId":"espacio-kenko-cuidados-de-suelo-pélvico-y-gimnasia-hipopresiva-5088"
     },
     {
+        "id":10002,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-10-03T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10002"
+    },
+    {
     "id":6,
     "type":"group",
     "className":"Taller de Masaje de Bebé",
@@ -1613,12 +1640,39 @@ export const CLASSES = [
     "nameId":"entre-mamás-talleres-postparto-5100"
     },
     {
+        "id":10003,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-10-10T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10003"
+    },
+    {
         "id":9000,
         "nameId": "bel-mums-natural-birth-course-hypnobirth-9000",
         "type":"group",
         "className":"Natural Birth Course - Hypnobirth",
         "tags":[
-        "pregnancy"
+        "pregnancy", "mindfulness"
         ],
         "date":"2019-10-14T16:00+02:00",
         "otherDates":[
@@ -1713,6 +1767,33 @@ export const CLASSES = [
     "We are so looking forward to meeting you!"
     ],
     "nameId":"bel-mums-the-bumps-tea-1090"
+    },
+    {
+        "id":10004,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-10-17T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10004"
     },
     {
         "id":9024,
@@ -1857,7 +1938,7 @@ export const CLASSES = [
     "first aid"
     ],
     "city":"Madrid",
-    "district":"Pedrezuela",
+    "district":"Rivas",
     "address":"Monetes, Avenida Pablo Iglesias 87 (local 1) 28521 Rivas",
     "date":"2019-10-19T11:30+02:00",
     "time":"11h30",
@@ -1883,6 +1964,33 @@ export const CLASSES = [
     "Imparte: Beatriz Martín, madre, matrona y enfermera pediátrica. Cofundadora de Materna Yoga, centro para el acompañamiento de la maternidad y la crianza."
     ],
     "nameId":"beatriz-martin-primeros-auxilios-pediátricos-1095"
+    },
+    {
+        "id":10005,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-10-24T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10005"
     },
     {
     "id":1083,
@@ -1958,6 +2066,33 @@ export const CLASSES = [
     "nameId":"materna-yoga-estimulación-musical-en-familia-5079"
     },
     {
+        "id":10006,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-10-31T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10006"
+    },
+    {
     "id":1085,
     "type":"group",
     "className":"Breastfeeding Class",
@@ -1994,6 +2129,33 @@ export const CLASSES = [
     "Proper storage of the milk"
     ],
     "nameId":"bel-mums-breastfeeding-class-1085"
+    },
+    {
+        "id":10007,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-11-07T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10007"
     },
     {
     "id":3001,
@@ -2204,6 +2366,33 @@ export const CLASSES = [
     "nameId":"espacio-kenko-cuidados-de-suelo-pélvico-y-gimnasia-hipopresiva-5089"
     },
     {
+        "id":10009,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-11-14T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10009"
+    },
+    {
     "id":5090,
     "type":"group",
     "className":"Cuidados de suelo pélvico y gimnasia hipopresiva",
@@ -2277,7 +2466,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Natural Birth Course - Hypnobirth",
         "tags":[
-        "pregnancy"
+        "pregnancy", "mindfulness"
         ],
         "date":"2019-11-18T17:30+01:00",
         "otherDates":[
@@ -2310,7 +2499,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Taller Parto Natural - Hypnobirth",
         "tags":[
-        "pregnancy"
+        "pregnancy", "mindfulness"
         ],
         "date":"2019-11-19T17:30+01:00",
         "otherDates":[
@@ -2366,6 +2555,33 @@ export const CLASSES = [
     "El grupo de embarazo está pensado para ofrecerte recursos durante este tiempo y compartir un momento agradable. ¡Ven!"
     ],
     "nameId":"entre-mamás-grupo-de-apoyo-al-embarazo-5104"
+    },
+    {
+        "id":10010,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-11-21T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10010"
     },
     {
     "id":5095,
@@ -2439,6 +2655,33 @@ export const CLASSES = [
     "nameId":"materna-yoga-estimulación-musical-en-familia-5080"
     },
     {
+        "id":10011,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-11-28T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10011"
+    },
+    {
     "id":1067,
     "type":"group",
     "className":"BABY LED WEANING",
@@ -2506,6 +2749,33 @@ export const CLASSES = [
     "Coordina el grupo: Jazmín Mirelman (psicóloga perinatal)"
     ],
     "nameId":"espacio-kenko-grupo-postparto-gratuito-1082"
+    },
+    {
+        "id":10012,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-12-05T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10012"
     },
     {
     "id":3002,
@@ -2576,6 +2846,33 @@ export const CLASSES = [
     "Proper storage of the milk"
     ],
     "nameId":"bel-mums-breastfeeding-class-1087"
+    },
+    {
+        "id":10013,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness","parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-12-12T11:00+02:00",
+        "time":"11h00",
+        "duration":"1h30",
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition.jpg",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq.jpg",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10013"
     },
     {
         "id":9007,
@@ -2730,7 +3027,7 @@ export const CLASSES = [
     "first aid"
     ],
     "city":"Madrid",
-    "district":"Pedrezuela",
+    "district":"Rivas",
     "address":"Monetes, Avenida Pablo Iglesias 87 (local 1) 28521 Rivas",
     "date":"2019-12-14T11:30+01:00",
     "time":"11h30",
@@ -2763,7 +3060,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Natural Birth Course - Hypnobirth",
         "tags":[
-        "pregnancy"
+        "pregnancy", "mindfulness"
         ],
         "date":"2019-12-16T17:30+01:00",
         "otherDates":[
@@ -2796,7 +3093,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Taller Parto Natural - Hypnobirth",
         "tags":[
-        "pregnancy"
+        "pregnancy", "mindfulness"
         ],
         "date":"2019-12-17T17:30+01:00",
         "otherDates":[
