@@ -69,6 +69,8 @@
     "topics.postpartum.es-SP": "posparto",
     "topics.pregnancy.en-GB": "pregnancy",
     "topics.pregnancy.es-SP": "embarazo",
+    "topics.sleep.en-GB": "sleep",
+    "topics.sleep.es-SP": "sueño",
     "topics.social.en-GB": "social",
     "topics.social.es-SP": "social",
     "topics.yoga.en-GB": "yoga",
@@ -76,11 +78,18 @@
 
 
 
-    "explore.tab.madrid.en-GB": "Madrid",
-    "explore.tab.madrid.es-SP": "Madrid",
+    "explore.tab.madrid.en-GB": "Madrid ({count})",
+    "explore.tab.madrid.es-SP": "Madrid ({count})",
 
-    "explore.tab.online.en-GB": "online",
-    "explore.tab.online.es-SP": "en línea",
+    "explore.tab.online.en-GB": "online ({count})",
+    "explore.tab.online.es-SP": "en línea ({count})",
+
+    "explore.results.madrid.none.en-GB": "Sorry no classes found for `{topicLabel}` in Madrid.",
+    "explore.results.madrid.none.es-SP": "Lo sentimos, no se encontraron clases para `{topicLabel}` en Madrid.",
+
+    "explore.results.online.none.en-GB": "Sorry no online classes found for `{topicLabel}`.",
+    "explore.results.online.none.es-SP": "Lo sentimos, no se encontraron clases en línea para `{topicLabel}`.",
+
 
     "classDetails.price.en-GB": "Price",
     "classDetails.price.es-SP": "Precio",

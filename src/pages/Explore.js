@@ -49,27 +49,17 @@ function Explore(props) {
         setValue(newValue);
     }
 
-    let duplicates = [];
-
-    const classesList = props.classes.map((classEntry) => {
-        if( classEntry.type === 'group' || classEntry.type === "meetup") {
-            let classEntryName = classEntry.className + "_" + classEntry.companyName;
-            if (new Date(classEntry.date) > new Date()) {
-                duplicates.push(classEntryName);
-                return (
+    const classesList = props.classes.map(
+        (classEntry) => {
+            if ((classEntry.type === 'group' || classEntry.type === "meetup") && new Date(classEntry.date) > new Date()) {
+                return(
                     <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
-                        <ClassCard classEntry={classEntry} />      
+                    <ClassCard classEntry={classEntry} />      
                     </Grid>
                 );
-            } else {
-                return null;
             }
-        } else {
-            return(
-                null
-            );
         }
-    });
+    );
 
     const onlineClassesList = props.classes.map((classEntry) => {
         if( classEntry.type === 'online') {
@@ -84,6 +74,12 @@ function Explore(props) {
             );
         }
     });
+    let groupCount = classesList.filter((item) => item !== '' && item != null).length;
+    let onlineCount = onlineClassesList.filter((item) => item !== '' && item != null).length;
+    let topic = props.topic;
+    console.log(props.classes.length + " classes: " + props.classes);
+    console.log(groupCount + " classes in Madrid");
+    console.log(onlineCount + " classes online");
 
     return(
         <Container className="main-content">
@@ -106,6 +102,9 @@ function Explore(props) {
                             <FormattedMessage 
                                 id={`explore.tab.madrid.${props.locale}`}
                                 defaultMessage="Madrid"
+                                values={{
+                                    count: groupCount
+                                }}
                             />
                         } 
                         {...a11yProps(0)} 
@@ -115,6 +114,9 @@ function Explore(props) {
                             <FormattedMessage 
                                 id={`explore.tab.online.${props.locale}`}
                                 defaultMessage="online"
+                                values={{
+                                    count: onlineCount
+                                }}
                             />
                         } 
                         {...a11yProps(1)} 
@@ -122,18 +124,42 @@ function Explore(props) {
                 </Tabs>
             </AppBar>
             <TabPanel className="search-results" value={value} index={0}>
-                {(classesList.length > 0) ? 
-                    <Grid container spacing={2} alignContent="center">
-                        {classesList}
-                    </Grid> 
-                    : <p>No classes found</p>}
+                {(groupCount > 0 ) ?
+                <Grid container spacing={2} alignContent="center">
+                    {classesList.filter((item) => item !== '')}
+                </Grid>
+                :
+                <p>
+                    <FormattedMessage 
+                        id={`explore.results.madrid.none.${props.locale}`}
+                        defaultMessage=""
+                        values={{
+                            topicLabel: <FormattedMessage 
+                                            id={`topics.${props.topic.split(" ")[0]}.${props.locale}`}
+                                            defaultMessage={props.topic}
+                                        />
+                        }}
+                    />
+                </p>}
             </TabPanel>
             <TabPanel className="search-results" value={value} index={1}>
-                {(onlineClassesList.length > 0) ? 
-                    <Grid container spacing={2} alignContent="center">
-                        {onlineClassesList}
-                    </Grid> 
-                    : <p>No classes found</p>}
+                {(onlineCount > 0 ) ?
+                <Grid container spacing={2} alignContent="center">
+                    {onlineClassesList.filter((item) => item !== '')}
+                </Grid>
+                :
+                <p>
+                    <FormattedMessage 
+                        id={`explore.results.online.none.${props.locale}`}
+                        defaultMessage=""
+                        values={{
+                            topicLabel: <FormattedMessage 
+                                            id={`topics.${props.topic.split(" ")[0]}.${props.locale}`}
+                                            defaultMessage={props.topic}
+                                        />
+                        }}
+                    />
+                </p>}
             </TabPanel>
         </Container>
     );

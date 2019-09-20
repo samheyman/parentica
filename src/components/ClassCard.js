@@ -41,6 +41,7 @@ function RenderTags({tags, lang}) {
       return (
         <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}
                 onClick={()=>{
+                  window.scrollTo(0, 0);
                   console.log("Tag selected: " + tag);
                     window.gtag("event", "topic tag from class card", {
                         event_category: "topics",

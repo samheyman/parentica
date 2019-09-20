@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function RenderTags({tags}) {
+function RenderTags({tags, locale}) {
     let i=0;
     const output = tags.map((tag) => {
         return (
@@ -28,7 +28,12 @@ function RenderTags({tags}) {
                     }); 
                 }}
             >
-                <span className={`tag tag-${tag.id}`}>{tag.name}</span>
+                <span className={`tag tag-${tag.id}`}>
+                    <FormattedMessage 
+                        id={`topics.${tag.name.split(" ")[0]}.${locale}`}
+                        defaultMessage={tag.name}
+                    />
+                </span>
             </Link>
         );
     });
@@ -162,7 +167,7 @@ function Home(props) {
             </div>
             <div className="all-topics">
                 <h2>Topics</h2>  
-                <RenderTags tags={props.topics} /> 
+                <RenderTags tags={props.topics} locale={props.locale} /> 
             </div>
             <div className="row">
                 <div className="col s12 m12 l12 partners">
