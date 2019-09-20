@@ -5,6 +5,7 @@ import Container from '@material-ui/core/Container';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
+import { FormattedMessage } from 'react-intl';
 
 class Contact extends Component {
     constructor(props) {
@@ -54,24 +55,36 @@ class Contact extends Component {
         };
 
         if (this.state.touched.firstname && firstname.length < 3)
-            errors.firstname = 'First name should be more 3 characters';
+            errors.firstname = <FormattedMessage id={`contact.error.firstName.tooShort.${this.props.locale}`}>
+                                {(txt) => txt}
+                              </FormattedMessage>;
         else if (this.state.touched.firstname && firstname.length > 20)
-            errors.firstname = 'First name should be less than 20 characters';
+            errors.firstname = <FormattedMessage id={`contact.error.firstName.tooLong.${this.props.locale}`}>
+                                    {(txt) => txt}
+                                </FormattedMessage>;
 
         if (this.state.touched.lastname && lastname.length < 3)
-            errors.lastname = 'Last name should be more than 3 characters';
+            errors.lastname = <FormattedMessage id={`contact.error.lastName.tooShort.${this.props.locale}`}>
+                                        {(txt) => txt}
+                                </FormattedMessage>;
         else if (this.state.touched.lastname && lastname.length > 20)
-            errors.lastname = 'Last name should be less than 20 characters';
+            errors.lastname = <FormattedMessage id={`contact.error.lastName.tooLong.${this.props.locale}`}>
+                                    {(txt) => txt}
+                                </FormattedMessage>;
             
         if (this.state.touched.message && message.length < 1)
-            errors.message = 'Please add your message';
+            errors.message = <FormattedMessage id={`contact.error.message.empty.${this.props.locale}`}>
+                                    {(txt) => txt}
+                                </FormattedMessage>;
 
         // const re = /^\d+$/;
         const re = /\S+@\S+\.\S+/;        ;
         // const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         // const re = /^(([^<>()[].,;:\s@"]+([^<>()[].,;:\s@"]+)*)|(".+"))@(([^<>()[].,;:\s@"]+.)+[^<>()[].,;:\s@"]{2,})$/i;
         if (this.state.touched.email && !re.test(email)) 
-            errors.email = 'Please enter a valid email address';
+            errors.email = <FormattedMessage id={`contact.error.email.invalid.${this.props.locale}`}>
+                                    {(txt) => txt}
+                                </FormattedMessage>;
         
         return errors; 
     }
@@ -136,34 +149,57 @@ class Contact extends Component {
                 <Container className="main-content">
                     <Grid container className="contact-form">
                         <Grid item xs={12} sm={12} md={6}>
-                            <h2>Contact</h2>
-                            <p>Please feel free to get in touch with us for more information or to find 
-                                out about listing your classes.</p>
-                            <p>We look forward to hearing from you!</p>
-                            <form className={"contact-form " + (this.state.success ? "hide" : "show")} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
-                                <TextField
-                                    required
-                                    fullWidth
-                                    id="firstName"
-                                    name="firstName"
-                                    placeholder="First name"
-                                    label="First Name"
-                                    className="contact-form"
-                                    value={this.state.firstName}
-                                    onChange={this.handleInputChange}
-                                    error={errors.firstname!==""}
-                                    helperText={errors.firstname === "" ? '' : errors.firstname}
-                                    onBlur={this.handleBlur('firstname')}
-                                    margin="normal"
-                                    variant="outlined"
+                            <h2>
+                                <FormattedMessage 
+                                    id={`contact.contact.${this.props.locale}`}
+                                    defaultMessage=""
                                 />
-                                <TextField
+                            </h2>
+                            <p>
+                                <FormattedMessage 
+                                    id={`contact.p1.${this.props.locale}`}
+                                    defaultMessage=""
+                                />
+                            </p>
+                            <p>
+                                <FormattedMessage 
+                                    id={`contact.p2.${this.props.locale}`}
+                                    defaultMessage=""
+                                />
+                            </p>
+                            <form className={"contact-form " + (this.state.success ? "hide" : "show")} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
+                                <FormattedMessage id={`contact.firstName.${this.props.locale}`}>
+                                    {
+                                        (txt) => {
+                                            return(<TextField
+                                                required
+                                                fullWidth
+                                                id="firstName"
+                                                name="firstName"
+                                                placeholder={txt}
+                                                label={txt}
+                                                className="contact-form"
+                                                value={this.state.firstName}
+                                                onChange={this.handleInputChange}
+                                                error={errors.firstname!==""}
+                                                helperText={errors.firstname === "" ? '' : errors.firstname}
+                                                onBlur={this.handleBlur('firstname')}
+                                                margin="normal"
+                                                variant="outlined"
+                                            />);
+                                        }
+                                    }
+                                </FormattedMessage>
+                                <FormattedMessage id={`contact.lastName.${this.props.locale}`}>
+                                    {
+                                        (txt) => {
+                                            return(<TextField
                                     required
                                     fullWidth
                                     id="lastName"
                                     name="lastName"
-                                    placeholder="Last name"
-                                    label="Last Name"
+                                    placeholder={txt}
+                                    label={txt}
                                     error={errors.lastname!==""}
                                     helperText={errors.lastname === "" ? '' : errors.lastname}
                                     value={this.state.lastName}
@@ -172,14 +208,18 @@ class Contact extends Component {
                                     className="contact-form"
                                     margin="normal"
                                     variant="outlined"
-                                />
-                                <TextField
+                                />);}}
+                                </FormattedMessage>
+                                <FormattedMessage id={`contact.email.${this.props.locale}`}>
+                                    {
+                                        (txt) => {
+                                            return(<TextField
                                     required
                                     fullWidth
                                     id="email"
                                     name="email"
-                                    placeholder="Email"
-                                    label="Email"
+                                    placeholder={txt}
+                                    label={txt}
                                     className="contact-form"
                                     value={this.state.email}
                                     onChange={this.handleInputChange}
@@ -188,28 +228,36 @@ class Contact extends Component {
                                     onBlur={this.handleBlur('email')}
                                     margin="normal"
                                     variant="outlined"
-                                />
-                                <TextField
+                                />);}}
+                                </FormattedMessage>
+                                <FormattedMessage id={`contact.company.${this.props.locale}`}>
+                                    {
+                                        (txt) => {
+                                            return(<TextField
                                     fullWidth
                                     id="company"
-                                    label="Company"
+                                    label={txt}
                                     name="company"
-                                    placeholder="Company"
+                                    placeholder={txt}
                                     className="contact-form"
                                     margin="normal"
                                     value={this.state.company}
                                     variant="outlined"
                                     onChange={this.handleInputChange}
-                                />
-                                <TextField
+                                />);}}
+                                </FormattedMessage>
+                                <FormattedMessage id={`contact.message.${this.props.locale}`}>
+                                    {
+                                        (txt) => {
+                                            return(<TextField
                                     required
                                     fullWidth
                                     id="message"
-                                    label="Message"
+                                    label={txt}
                                     name="message"
                                     error={errors.message!==""}
                                     helperText={errors.message === "" ? "" : errors.message}
-                                    placeholder="Your message"
+                                    placeholder={txt}
                                     multiline
                                     rows="4"
                                     value={this.state.message}
@@ -218,11 +266,17 @@ class Contact extends Component {
                                     className="contact-form"
                                     margin="normal"
                                     variant="outlined"
-                                />
+                                />);}}
+                                </FormattedMessage>
                                 <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
-                                    <Button disabled={!isValid} variant="contained" className="contact-form" type="submit" >
-                                        Send
-                                    </Button>
+                                    <FormattedMessage id={`contact.send.${this.props.locale}`}>
+                                    {
+                                        (txt) => {
+                                            return(
+                                            <Button disabled={!isValid} variant="contained" className="contact-form" type="submit" >
+                                        {txt}
+                                    </Button>);}}
+                                    </FormattedMessage>
                                 </div>
                             </form>
                             <div className={"error-message " + (this.state.showError ? "show" : "hide")} >

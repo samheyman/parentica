@@ -112,7 +112,12 @@ function MediaCard(props) {
                         />
                       </span>
                       :
-                      <span className="class-details-date">Anytime</span>
+                      <span className="class-details-date">
+                      <FormattedMessage 
+                            id={`classDetails.time.anytime.${props.locale}`}
+                            defaultMessage="Anytime"
+                        />
+                      </span>
                     }
                     {(props.classEntry.time != null)?
                         (

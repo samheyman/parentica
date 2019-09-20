@@ -85,6 +85,9 @@
     "classDetails.price.en-GB": "Price",
     "classDetails.price.es-SP": "Precio",
 
+    "classDetails.time.anytime.en-GB": "Anytime",
+    "classDetails.time.anytime.es-SP": "En cualquier momento",
+
     "classDetails.sessions.en-GB": "sessions",
     "classDetails.sessions.es-SP": "sesiones",
 
@@ -174,7 +177,51 @@
     "about.team.samDescription.es-SP": "Sam es ingeniero de software y futuro padre. Tiene una amplia experiencia en la creación de aplicaciones web, ya que trabajó como desarrollador de software para empresas como Skyscanner y Amadeus IT Group. Ahora quiere usar sus habilidades para ayudar a los padres como él con el desafío desalentador pero emocionante de criar hijos.",
 
     "about.team.elineDescription.en-GB": "Eline is the co-founder of two NGOs that help empower children to become change agents in their communities through education. She loves to work with those who want to create a better world and solve the major challenges of today and tomorrow. She specializes in 21st century skills, school transformation and social impact, and is always eager to meet others on the same journey.",
-    "about.team.elineDescription.es-SP": "Eline es cofundadora de dos ONG que ayudan a empoderar a los niños a convertirse en agentes de cambio en sus comunidades a través de la educación. Le encanta trabajar con aquellos que desean crear un mundo mejor y resolver los principales desafíos de hoy y de mañana. Se especializa en habilidades del siglo XXI, transformación escolar e impacto social, y siempre está ansiosa por conocer a otros en el mismo viaje."
+    "about.team.elineDescription.es-SP": "Eline es cofundadora de dos ONG que ayudan a empoderar a los niños a convertirse en agentes de cambio en sus comunidades a través de la educación. Le encanta trabajar con aquellos que desean crear un mundo mejor y resolver los principales desafíos de hoy y de mañana. Se especializa en habilidades del siglo XXI, transformación escolar e impacto social, y siempre está ansiosa por conocer a otros en el mismo viaje.",
+    
+    "contact.contact.en-GB": "Contact",
+    "contact.contact.es-SP": "Contacto",
 
+    "contact.p1.en-GB": "Please feel free to get in touch with us for more information or to find out about listing your classes.",
+    "contact.p1.es-SP": "No dude en ponerse en contacto con nosotros para obtener más información o para obtener información sobre cómo enumerar sus clases.",
+
+    "contact.p2.en-GB": "We look forward to hearing from you!",
+    "contact.p2.es-SP": "¡Esperamos con interés escuchar de usted!",
+
+    "contact.firstName.en-GB": "First name",
+    "contact.firstName.es-SP": "Nombre",
+
+    "contact.lastName.en-GB": "Last name",
+    "contact.lastName.es-SP": "Apellidos",
+
+    "contact.company.en-GB": "Company",
+    "contact.company.es-SP": "Empresa",
+
+    "contact.email.en-GB": "Email",
+    "contact.email.es-SP": "Correo electrónico",
+
+    "contact.message.en-GB": "Message",
+    "contact.message.es-SP": "Mensaje",
+
+    "contact.send.en-GB": "Send",
+    "contact.send.es-SP": "Enviar",
+
+    "contact.error.firstName.tooShort.en-GB": "First name should be more 3 characters",
+    "contact.error.firstName.tooShort.es-SP": "El nombre debe tener más de 3 caracteres.",
+
+    "contact.error.firstName.tooLong.en-GB": "First name should be less than 20 characters",
+    "contact.error.firstName.tooLong.es-SP": "El nombre debe tener menos de 20 caracteres.",
+
+    "contact.error.lastName.tooShort.en-GB": "Last name should be more than 3 characters",
+    "contact.error.lastName.tooShort.es-SP": "El apellido debe tener más de 3 caracteres.",
+
+    "contact.error.lastName.tooLong.en-GBP": "Last name should be less than 20 characters",
+    "contact.error.lastName.tooLong.es-SP": "El apellido debe tener menos de 20 caracteres.",
+
+    "contact.error.message.empty.en-GB": "Please leave a message",
+    "contact.error.message.empty.es-SP": "Por favor, deje un mensaje",
+
+    "contact.error.email.invalid.en-GB": "Please enter a valid email",
+    "contact.error.email.invalid.es-SP": "Por favor introduzca una dirección de correo electrónico válida"
 
 }

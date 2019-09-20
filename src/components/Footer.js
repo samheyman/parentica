@@ -29,7 +29,11 @@ export default function Footer(props) {
                 <div className="footer">
                     <div className="copyright">
                         &copy; 2019, <span className="brand">Parentica</span>
-                        <ShowLanguage language={props.locale} />
+                        {(props.locale === 'es-SP')?
+                            <ShowLanguage language={props.locale} />
+                            :
+                            null
+                        }
                     </div>
                     <div className="social-links">
                         <div className="instagram">
