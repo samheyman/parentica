@@ -77,7 +77,6 @@ function OnlineProviders({providers}) {
 
 function Home(props) {
     const classes = useStyles();
-    console.log("Props: \n" + props.locale);
     return(
         <Container className="main-content">
             <div className="tagline">

@@ -28,6 +28,7 @@ class Main extends Component {
     
     render() {
         const HomePage = () => {
+            console.log("User locale: " + this.props.locale);
             return(
                 <Home 
                     locale={this.props.locale}
