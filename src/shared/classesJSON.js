@@ -1247,7 +1247,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -1644,7 +1644,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -1773,7 +1773,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -1970,7 +1970,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2070,7 +2070,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2135,7 +2135,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2370,7 +2370,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2561,7 +2561,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2659,7 +2659,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2755,7 +2755,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2852,7 +2852,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness"
+        "mindfulness", "parenting"
         ],
         "city":"Madrid",
         "district":"Almagro",
