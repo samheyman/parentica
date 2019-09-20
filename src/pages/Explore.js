@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -9,20 +8,8 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import ClassCard from '../components/ClassCard';
-import OnlineClassCard from '../components/OnlineClassCard';
 import { FormattedMessage } from 'react-intl';
 
-const mapStateToProps = (state) => {
-    return(
-        {
-            classes: state.classes,
-            providers: state.providers,
-            resources: state.resources,
-            tab: state.tab,
-            locale: state.locale
-        }
-    );
-};
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -88,7 +75,7 @@ function Explore(props) {
         if( classEntry.type === 'online') {
             return (
                 <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
-                    <OnlineClassCard classEntry={classEntry} />      
+                    <ClassCard classEntry={classEntry} />      
                 </Grid>
             );        
         } else {
@@ -102,9 +89,14 @@ function Explore(props) {
         <Container className="main-content">
             <div className="result-filters">
                 {(props.topic!=="all")?
-                    <span className={`tag tag-${props.topic}`}>{props.topic}</span>
+                    <span className={`tag tag-${props.topic}`}>
+                        <FormattedMessage 
+                            id={`topics.${props.topic.split(" ")[0]}.${props.locale}`}
+                            defaultMessage={props.topic}
+                        />
+                    </span>
                     :
-                    <span></span>
+                    null
                 }
             </div>
             <AppBar position="static" color="default">
@@ -147,4 +139,4 @@ function Explore(props) {
     );
 }
 
-export default connect(mapStateToProps)(Explore);
+export default Explore;

@@ -16,6 +16,25 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
+function RenderTags({tags}) {
+    let i=0;
+    const output = tags.map((tag) => {
+        return (
+            <Link className="homepage-tags" key={i++} to={{pathname:"/explore", topic:`${tag.name}`}}
+                onClick={()=>{
+                    window.gtag("event", "topic tag from homepage", {
+                        event_category: "topics",
+                        event_label: tag.name
+                    }); 
+                }}
+            >
+                <span className={`tag tag-${tag.id}`}>{tag.name}</span>
+            </Link>
+        );
+    });
+    return output;
+}
+
 function MadridProviders({providers}) {
     const providersList = providers.map((provider) => {
         return(
@@ -141,6 +160,10 @@ function Home(props) {
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}/>
                 </Grid>
+            </div>
+            <div className="all-topics">
+                <h2>Topics</h2>  
+                <RenderTags tags={props.topics} /> 
             </div>
             <div className="row">
                 <div className="col s12 m12 l12 partners">

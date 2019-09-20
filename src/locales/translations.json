@@ -42,41 +42,39 @@
     "homepage.providers.online.header.en-GB": "Online providers",
     "homepage.providers.online.header.es-SP": "Proveedores en línea",
 
-    "topics.pregnancy.en-GB": "pregnancy",
-    "topics.pregnancy.es-SP": "embarazo",
-
-    "topics.parenting.en-GB": "parenting",
-    "topics.parenting.es-SP": "paternidad",
+    
+    
 
     "topics.baby.en-GB": "baby",
     "topics.baby.es-SP": "bebé",
-
+    "topics.breastfeeding.en-GB": "breastfeeding",
+    "topics.breastfeeding.es-SP": "amamantamiento",
+    "topics.feeding.en-GB": "feeding",
+    "topics.feeding.es-SP": "alimentación",
+    "topics.first.en-GB": "first aid",
+    "topics.first.es-SP": "primeros auxilios",
+    "topics.lecture.en-GB": "lecture",
+    "topics.lecture.es-SP": "charla",
+    "topics.massage.en-GB": "massage",
+    "topics.massage.es-SP": "masaje",
+    "topics.mindfulness.en-GB": "mindfulness",
+    "topics.mindfulness.es-SP": "mindfulness",
+    "topics.music.en-GB": "music",
+    "topics.music.es-SP": "música",
     "topics.nutrition.en-GB": "nutrition",
     "topics.nutrition.es-SP": "nutrición",
-
+    "topics.parenting.en-GB": "parenting",
+    "topics.parenting.es-SP": "paternidad",
+    "topics.postpartum.en-GB": "postpartum",
+    "topics.postpartum.es-SP": "posparto",
+    "topics.pregnancy.en-GB": "pregnancy",
+    "topics.pregnancy.es-SP": "embarazo",
+    "topics.social.en-GB": "social",
+    "topics.social.es-SP": "social",
     "topics.yoga.en-GB": "yoga",
     "topics.yoga.es-SP": "yoga",
 
-    "topics.first.en-GB": "first aid",
-    "topics.first.es-SP": "primeros auxilios",
 
-    "topics.postpartum.en-GB": "postpartum",
-    "topics.postpartum.es-SP": "posparto",
-
-    "topics.music.en-GB": "music",
-    "topics.music.es-SP": "música",
-
-    "topics.breastfeeding.en-GB": "breastfeeding",
-    "topics.breastfeeding.es-SP": "amamantamiento",
-
-    "topics.feeding.en-GB": "feeding",
-    "topics.feeding.es-SP": "alimentación",
-
-    "topics.social.en-GB": "social",
-    "topics.social.es-SP": "social",
-    
-    "topics.massage.en-GB": "massage",
-    "topics.massage.es-SP": "masaje",
 
     "explore.tab.madrid.en-GB": "Madrid",
     "explore.tab.madrid.es-SP": "Madrid",

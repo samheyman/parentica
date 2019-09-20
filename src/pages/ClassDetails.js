@@ -22,12 +22,19 @@ function RenderTags({tags, locale}) {
     let i=0;
     const output = tags.map((tag) => {
         return (
-            <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}>
+            <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}
+                onClick={()=>{
+                    window.gtag("event", "topic tag from class details", {
+                        event_category: "topics",
+                        event_label: tag
+                    }); 
+                }}
+            >
                 <span className={`tag tag-${tag}`}>
-                <FormattedMessage 
-                    id={`topics.${tag.split(" ")[0]}.${locale}`}
-                    defaultMessage={tag}
-                />
+                    <FormattedMessage 
+                        id={`topics.${tag.split(" ")[0]}.${locale}`}
+                        defaultMessage={tag}
+                    />
                 </span>
             </Link>
         );
@@ -73,7 +80,7 @@ function RenderOtherClasses({otherClasses}) {
             </Table>
         );
     } else {
-        return(<p>No other classes found.</p>);
+        return(<p>No other classes to show.</p>);
     } 
 }
 
@@ -414,11 +421,6 @@ function ClassDetails(props) {
                                             otherClasses={props.otherClasses.filter((item) => (item.companyName === props.selectedClass.companyName) && item.id !== props.selectedClass.id)}
                                         />
                                     </TabPanel>
-                                    {/* <TabPanel value={value} index={2} dir={theme.direction}>
-                                        <RenderPrice
-                                            price={props.selectedClass.price}
-                                        />
-                                    </TabPanel> */}
                                 </div>
                             </div>
                     </Grid>

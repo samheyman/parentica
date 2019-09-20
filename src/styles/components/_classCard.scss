@@ -1,112 +1,8 @@
-// .card {
-//     min-width: 250px;
-//     border-radius: 4px !important;
-//     // max-width: 320px;
-
-//     .card-image {
-//         border-radius: 4px 4px 0 0 ;
-//         height: 150px;
-//         width: auto;
-//         background-repeat: no-repeat;
-//         background-position: center left;
-//         background-size: cover;
-//         background-color: #464646;
-//     }
-
-//     .card-content {
-
-//         padding: 10px 10px !important;
-//         display: flex;
-//         flex-direction: column;
-//         justify-content: space-between;
-//         height: 150px;
-
-//         .card-header {
-
-//             .company {
-//                 display: flex;
-//                 flex-direction: row;
-//                 align-items: center;    
-//                 color: $font-pale;
-//                 font-weight: 500;
-//                 margin-bottom: 0px;
-//                 line-height: 1.1em;
-
-//                 .logo {
-//                     display: flex;
-//                     height: 30px;
-//                     width: 30px;
-//                     border-radius: 50%;
-//                 }
-
-//                 .company-details {
-//                     display: flex;
-//                     flex-direction: column;
-//                     align-content: flex-start;
-//                     // margin-left: 10px;
-
-//                     .company-name {
-//                         display: flex;
-//                         font-size: 0.9em;
-//                         color: $font-pale;
-//                     }
-    
-//                     .company-address {
-//                         font-size: 0.7em;
-//                         color: $font-pale;
-//                     }
-//                 }
-//             }
-
-//             .card-title {
-//                 color: $font-dark;
-//                 font-size: 1.4em;
-//                 font-weight: 700;
-//                 margin-top: 5px;
-//                 line-height: 1.2em !important;
-//             }
-
-//             .card-subtitle {
-//                 color: $secondary-color;
-//                 font-size: 0.9em;
-//                 line-height: 1.2em !important;
-//                 padding-bottom: 0px;
-//             }
-
-//             .class-datetime {
-//                 display: flex;
-//                 flex-direction: row;
-//                 justify-content: space-between;
-//                 align-content: flex-start;
-//                 color: $secondary-color;
-//                 font-size: 0.8em;
-
-//                 i {
-//                     font-size: 1.1em;
-//                     margin-right: 5px;
-//                     display: inline-flex;
-//                     vertical-align: top; 
-//                 }
-
-//                 .class-time, .class-date, .class-duration {
-//                     line-height: 1.1em;
-//                     // flex: 1 1 0;
-//                 }
-//             }
-//         }
-
 .class-card-link {
     text-decoration: none;
 }
 
-.class-name {
-    color: rgba(0, 0, 0, 0.54) !important;
-    font-weight: 400 !important;
-}
 
-.date-time {
-    text-transform: capitalize;
-}
 
 .dot {
     height: 4px;
@@ -117,8 +13,28 @@
     margin: 0 10px 3px 10px;
 }
 
-h3 {
+.class-name {
     text-transform: capitalize !important;
+    color: $font-dark !important;
+    font-weight: 600 !important;
+    font-size: 22px !important;
+}
+
+.company {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 25px;
+
+    .company-name {
+        color: $font-dark;
+    }
+
+    .company-logo {
+        margin: 0 8px 0 0px;
+        height: 100%;
+        border-radius: 50%;
+    }
 }
 
 h4.class-name {
@@ -132,73 +48,27 @@ h4.class-name {
 }
 
 .MuiCardContent-root {
+    margin-bottom: 0 !important;
+    padding-bottom: 5px !important;
+
     h4 {
         margin: 0;
     }
 }
 
-.card-footer {
-    display: flex;
-    // font-style: italic;
-    flex-direction: row;
-    justify-content: flex-flex;
-    // align-items: flex-end ;
-    margin: 10px 0 15px;
-
-        color: rgba(0, 0, 0, 0.54);
-
-        .value {
-            // padding-left: 15px;
-
-            .material-icons {
-                margin-right: 2px;
-                margin-bottom: 2px;
-            }
-        }
-        .left-spacer {
-            margin-left: 25px;
-        }
-        .icon {
-            vertical-align: middle;
-            span {
-                margin-right: 15px; 
-                display: block;
-                line-height: inherit !important;
-            }
-
-            .MuiIcon-root {
-                height: inherit !important;
-            }
-        }
-
-        .class-time, .class-date, .class-duration {
-            // line-height: 1.1em;
-            // flex: 1 1 0;
-        }
-
-        .class-duration {
-            display: flex;
-            flex-direction: row;
-            vertical-align: middle;
-            // font-size: 0.6em;
-        }
-
-        .duration-icon {
-            padding: 0;
-            // vertical-align: middle;
-            // font-size: 1.2em;
-            // padding: 2px 5px;
-        }
-
-        // clear Material icons default CSS
-        .material-icons {
-            // margin-right: 5px;
-            // line-height: inherit !important;
-            // font-size: inherit !important;
-        }
+.MuiCardActions-root {
+    padding: 10px 16px 16px 16px !important;
 }
 
-.language-flag {
-    margin: 5px 10px 0 0px;
-    height: 12px;
+.card-footer {
+    .class-details {
+        width: 100%;
+        margin: 0;
+        padding: 10px 0 0px 0;
+        color: rgba(0, 0, 0, 0.54);
+    }
+
+    .class-details-flag {
+        margin-bottom: -1px;
+    }
 }

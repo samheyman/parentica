@@ -17,9 +17,9 @@ const mapStateToProps = (state) => {
         {
             classes: state.classes,
             providers: state.providers,
-            resources: state.resources,
+            topics: state.topics,
             tab: state.tab,
-            locale: state.locale
+            locale: state.locale,                   
         }
     );
 };
@@ -32,6 +32,7 @@ class Main extends Component {
                 <Home 
                     locale={this.props.locale}
                     classEntries={this.props.classes}
+                    topics={this.props.topics}
                     madridProviders={this.props.providers.filter((provider) => !provider.online)}
                     onlineProviders={this.props.providers.filter((provider) => provider.online)}
                 />
@@ -60,7 +61,7 @@ class Main extends Component {
                         locale={this.props.locale}
                     />
                 );
-            } 
+            }
         }
 
         const NotFound = () => {
@@ -82,6 +83,7 @@ class Main extends Component {
                                     classes={this.props.classes} 
                                     tabSelected={0}
                                     topic="all"
+                                    locale={this.props.locale}
                                 />
                             );
                         } else {
@@ -90,6 +92,7 @@ class Main extends Component {
                                     classes={this.props.classes.filter(item => item.tags.includes(`${this.props.location.topic}`))} 
                                     tabSelected={0}
                                     topic={this.props.location.topic}
+                                    locale={this.props.locale}
                                 />
                             );
                         }
@@ -101,6 +104,7 @@ class Main extends Component {
                                     classes={this.props.classes} 
                                     tabSelected={1}
                                     topic="all"
+                                    locale={this.props.locale}
                                 />
                             );
                         } else {
@@ -109,6 +113,7 @@ class Main extends Component {
                                     classes={this.props.classes} 
                                     tabSelected={1}
                                     topic={this.props.location.topic}
+                                    locale={this.props.locale}
                                 />
                             );
                         }
@@ -120,6 +125,7 @@ class Main extends Component {
                                     classes={this.props.classes} 
                                     tabSelected={0}
                                     topic="all"
+                                    locale={this.props.locale}
                                 />
                             );
                         } else {
@@ -128,6 +134,7 @@ class Main extends Component {
                                     classes={this.props.classes} 
                                     tabSelected={0}
                                     topic={this.props.location.topic}
+                                    locale={this.props.locale}
                                 />
                             );
                         }
