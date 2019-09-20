@@ -23,15 +23,6 @@ const mapStateToProps = (state) => {
     );
 };
 
-function userRedirect(nextState, replace) {
-    var defaultLanguage = 'en';
-    var redirectPath = defaultLanguage + nextState.location.pathname
-    replace({
-      pathname: redirectPath,
-    })
-  };
-  
-
 class Main extends Component {
     
     render() {

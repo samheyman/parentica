@@ -23,7 +23,7 @@ function RenderTags({tags}) {
         return (
             <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}
                 onClick={()=>{
-                    window.gtag("event", "topic tag", {
+                    window.gtag("event", "topic tag from class details", {
                         event_category: "topics",
                         event_label: tag
                     }); 

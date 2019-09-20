@@ -170,7 +170,7 @@ export const CLASSES = [
     "music"
     ],
     "city":"Madrid",
-    "district":"Moratala",
+    "district":"Moratalaz",
     "address":"Arihú, Calle de la Laguna Negra, 13 28013 Madrid",
     "date":"2019-09-20T17:30+02:00",
     "time":"17h30 and 18h30",
@@ -1421,11 +1421,7 @@ export const CLASSES = [
     "duration":"14h (7 sessions)",
     "url":"http://denisesuarez.com/workshop",
     "image":"hablaratushijos.jpg",
-<<<<<<< Updated upstream
     "companyName":"Denise Suarez",
-=======
-    "companyName":"Denise Suare",
->>>>>>> Stashed changes
     "companyLogo":"denisesuarez_sq.png",
     
     "price":175,
