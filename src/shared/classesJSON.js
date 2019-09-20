@@ -210,7 +210,7 @@ export const CLASSES = [
     "duration":"1h",
     "url":"http://denisesuarez.com/workshop",
     "image":"hablaratushijos.jpg",
-    "companyName":"Denise Suare+02:00",
+    "companyName":"Denise Suarez",
     "companyLogo":"denisesuarez_sq.png",
     
     "price":0,
@@ -1424,7 +1424,7 @@ export const CLASSES = [
     "duration":"14h (7 sessions)",
     "url":"http://denisesuarez.com/workshop",
     "image":"hablaratushijos.jpg",
-    "companyName":"Denise Suare+02:00",
+    "companyName":"Denise Suarez",
     "companyLogo":"denisesuarez_sq.png",
     
     "price":175,
