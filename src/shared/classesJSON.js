@@ -1,420 +1,5 @@
 export const CLASSES = [
     {
-    "id":1100,
-    "type":"group",
-    "className":"Yoga para mamás con bebés",
-    "date":"2019-09-16T12:30+02:00",
-    "time":"12h30",
-    "tags":[
-    "yoga"
-    ],
-    "city":"Madrid",
-    "district":"La Latina",
-    "address":"C / Aguas 4, local 2, 28005 Madrid",
-    "duration":60,
-    "url":"https://espaciokenko.com/yoga-mamas-y-bebes/",
-    "image":"yogamumsbabyskenko.jpg",
-    "companyName":"Espacio Kenko",
-    "companyLogo":"espaciokenko_sq.png",
-    "price":50,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
-    "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
-    "Si no has practicado yoga previamente, no te preocupes. Nuestras clases son específicas para mamás y te ayudarán a disfrutar con salud y vitalidad este período.",
-    "¡Te esperamos!"
-    ],
-    "nameId":"espacio-kenko-yoga-para-mamás-con-bebés-1100"
-    },
-    {
-    "id":1068,
-    "type":"group",
-    "className":"Taller cuidados del bebé",
-    "tags":[
-    "baby"
-    ],
-    "city":"Madrid",
-    "district":"Rivas",
-    "address":"TOYSRUS Rivas, CC Rivas-Futura, Calle Marie Curie s / n - Local A-10 and A-11",
-    "date":"2019-09-16T17:00+02:00",
-    "time":"17h00",
-    "duration":180,
-    "url":"https://www.bienvenidobebe.es/registro-presencial",
-    "image":"tallercuidadosbebe.png",
-    "companyName":"Bienvenido Bebe",
-    "companyLogo":"bienvenidobebe_sq.png",
-    
-    "price":0,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Desde la llegada de tu bebé tu mundo está patas arriba. Ahora mismo tu principal preocupación es garantizar el bienestar y correcto desarrollo de tu pequeño, algo que generará ciertas inseguridades sobre todo si eres papá o mamá primeriza: ¿por qué llora el bebé? ¿tiene hambre, sueño, frio…? ¿duerme lo suficiente?",
-    "Bienvenido Bebé es un completo Curso sobre Cuidados del Bebé gratuito dirigido a padres y madres con hijos de 0 a 18 meses que busca apoyarles y ayudarles a afrontar con seguridad y tranquilidad el cuidado y la crianza de su pequeño.",
-    "En la plataforma encontrarás las modalidades presencial, online y streaming para escoger la que mejor se ajuste a tus necesidades, o combinarlas. Todas ellas son gratuitas y te darán acceso a contenidos amenos, rigurosos, elaborados por profesionales y especialmente pensados para resolver las principales dudas en torno al cuidado y desarrollo del bebé.",
-    "Para reservar plaza en una charla presencial solo tienes que escoger la provincia y la fecha de tu conveniencia y completar tu inscripción. Durante el taller de cuidados del bebé, además de recibir los consejos y recomendaciones de la pediatra recibirás una canastilla gratis con muestras de productos para tu bebé.",
-    "Si no puedes acudir o no hay ninguna charla cerca de tu casa puedes regístrate en el Curso de Cuidados del Bebé Online y completar el programa a través de la plataforma web. En sus 5 módulos encontrarás información sobre higiene y cuidados del bebé, alimentación del bebé, salud del bebé, sueño del bebé o estimulación y desarrollo. Si completas el programa y superas todos los test recibirás tu certificado de participación.",
-    "Además, cada mes realizamos 2 conexiones en directo con la pediatra, de media hora de duración, a las que podrás apuntarte gratuitamente y seguirlas en streaming a través de la web. Podrás apuntarte en tantas sesiones como desees.",
-    "¡Bienvenido Bebé es la mejor opción para las mamás y papás que acaban de dar la bienvenida a su bebé! No esperes más e inscríbete gratis."
-    ],
-    "nameId":"bienvenido-bebe-taller-cuidados-del-bebé-1068"
-    },
-    {
-    "id":5096,
-    "type":"group",
-    "className":"Talleres postparto",
-    "tags":[
-    "postpartum"
-    ],
-    "city":"Madrid",
-    "district":"Chamartín",
-    "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-16T18:30+02:00",
-    "time":"18h30",
-    "duration":90,
-    "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
-    "image":"postpartoentremamas.jpg",
-    "companyName":"Entre Mamás",
-    "companyLogo":"entremamas_sq.png",
-    
-    "price":30,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Precio:",
-    "30€/sesión en grupo.",
-    "50 euros la sesión privada (acordando la fecha).",
-    "Hemos organizado este espacio de reflexión que puede hacerse en cualquier momento (junto a tu pareja, si tienes) y está pensado para el último trimestre del embarazo y el primer trimestre después del nacimiento.",
-    "​¿En qué consisten? Información y recursos para un posparto llevadero en el que puedas disfrutar con plenitud de la maternidad. Recomendaciones desde la evidencia. Recursos para gestionar aquellos momentos difíciles de los primeros días en casa, las dudas, los sentimientos, el tiempo que ya no es el mismo... ",
-    "Sesión 1 - Primer lunes: Taller inicial de portabebés",
-    "Sesión 2 - Segundo lunes: Volver a amar después del parto",
-    "Sesión 3 - Tercer lunes: Nadie me lo dijo (la expectativa del posparto y su realidad)",
-    "Sesion 4 - Cuarto lunes: Qué le pasa a María (Para parejas de puérperas)",
-    "Sesión 5 - Taller de lactancia GRATUITO Si se hacen los otros talleres."
-    ],
-    "nameId":"entre-mamás-talleres-postparto-5096"
-    },
-    {
-    "id":5102,
-    "type":"group",
-    "className":"Grupo de apoyo al embarazo",
-    "tags":[
-    "pregnancy",
-    "social"
-    ],
-    "city":"Madrid",
-    "district":"Chamartín",
-    "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-17T18:30+02:00",
-    "time":"18h30",
-    "duration":60,
-    "url":"http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
-    "image":"grupodeapoyo.jpg",
-    "companyName":"Entre Mamás",
-    "companyLogo":"entremamas_sq.png",
-    
-    "price":5,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Tercer martes de cada mes a las 18h30.",
-    "Reunión para embarazadas (parejas bienvenidas)",
-    "Participación: Rellena el formulario http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
-    "Si estás embarazada y quieres compartir un tiempo con otras mujeres como tú, despejar dudas, hablar sobre las opciones de parto que existen, cómo elegir el mejor sitio en Madrid según tus necesidades, la evidencia científica alrededor del parto y posparto, el acompañamiento, lo que necesitarás después...",
-    "El grupo de embarazo está pensado para ofrecerte recursos durante este tiempo y compartir un momento agradable. ¡Ven!"
-    ],
-    "nameId":"entre-mamás-grupo-de-apoyo-al-embarazo-5102"
-    },
-    {
-    "id":1101,
-    "type":"group",
-    "className":"Yoga para mamás con bebés",
-    "date":"2019-09-18T12:30+02:00",
-    "time":"12h30",
-    "tags":[
-    "yoga"
-    ],
-    "city":"Madrid",
-    "district":"La Latina",
-    "address":"C / Aguas 4, local 2, 28005 Madrid",
-    "duration":60,
-    "url":"https://espaciokenko.com/yoga-mamas-y-bebes/",
-    "image":"yogamumsbabyskenko.jpg",
-    "companyName":"Espacio Kenko",
-    "companyLogo":"espaciokenko_sq.png",
-    
-    "price":50,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
-    "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
-    "Si no has practicado yoga previamente, no te preocupes. Nuestras clases son específicas para mamás y te ayudarán a disfrutar con salud y vitalidad este período.",
-    "¡Te esperamos!"
-    ],
-    "nameId":"espacio-kenko-yoga-para-mamás-con-bebés-1101"
-    },
-    {
-    "id":5086,
-    "type":"group",
-    "className":"Cuidados de suelo pélvico y gimnasia hipopresiva",
-    "tags":[
-    "postpartum"
-    ],
-    "city":"Madrid",
-    "district":"La Latina",
-    "address":"c/ Aguas, 4, local 2, 28005 Madrid",
-    "date":"2019-09-18T16:30+02:00",
-    "time":"16h30",
-    "duration":480,
-    "sessions": 8,
-    "url":"https://espaciokenko.com/gimnasia-hipopresiva/",
-    "image":"gimnasiahipopresivaespaciokenko.jpg",
-    "companyName":"Espacio Kenko",
-    "companyLogo":"espaciokenko_sq.png",
-    
-    "price":110,
-    "language":"spanish",
-    
-    
-    "description":[
-    "GRUPO 1 – MIÉRCOLES de 16:30 a 17:30",
-    "(días 18, 25 de SEPTIEMBRE, 2, 9, 16, 23, 30 de OCTUBRE y 6 de NOVIEMBRE)",
-    "Si no has practicado antes gimnasia hipopresiva, te proponemos este taller inicial en el que a lo largo de 8 sesiones aprenderemos a reconocer y ejercitar la musculatura del suelo pélvico y la cincha abdominal con ejercicios hipopresivos, ejercicios de coactivación abdominoperineal, ejercicios sensoriales… integrando este trabajo de manera corporal global.",
-    "Se complementará la parte práctica con explicaciones teóricas que nos ayudarán a comprender la importancia de este conjunto muscular y aprenderemos a integrarlo conscientemente en las actividades de nuestra vida diaria.",
-    "Se trata de un grupo cerrado y reducido, como máximo con 7 alumnas, en el que aprenderemos las bases de los ejercicios para poder practicar e incorporarlo a nuestro entrenamiento corporal. Incluye un dossier de ejercicios para practicar en casa.",
-    "Si has sido madre recientemente, puedes venir a clase con tu bebé."
-    ],
-    "nameId":"espacio-kenko-cuidados-de-suelo-pélvico-y-gimnasia-hipopresiva-5086"
-    },
-    {
-    "id":5093,
-    "type":"group",
-    "className":"Taller de masaje y psicomotricidad",
-    "tags":[
-    "baby",
-    "massage"
-    ],
-    "city":"Madrid",
-    "district":"Chamartín",
-    "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-19T11:00+02:00",
-    "time":"11h00",
-    "duration":90,
-    "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
-    "image":"masajeentremamas.jpg",
-    "companyName":"Entre Mamás",
-    "companyLogo":"entremamas_sq.png",
-    
-    "price":20,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Precio: 20€/sesión por adulto.",
-    "Tercer jueves de cada mes, de 11:00 - 12:30.",
-    "MASAJE Y ESTIMULACIÓN SENSORIAL: Psicomotricidad para bebés",
-    "El taller de masaje y estimulación sensorial es una forma de ver el mundo a través de los sentidos, poniendo énfasis en el tacto, tan importante en esta etapa. Además podrás relacionarte con otras madres.",
-    "Imparte: Gema Dauder. Descubre técnicas de masaje infantil y estimulación sensorial para los más pequeñitos."
-    ],
-    "nameId":"entre-mamás-taller-de-masaje-y-psicomotricidad-5093"
-    },
-    {
-    "id":5082,
-    "type":"group",
-    "className":"Yoga mamás y bebés",
-    "tags":[
-    "baby",
-    "yoga"
-    ],
-    "city":"Madrid",
-    "district":"Chamberí",
-    "address":"c/ Raimundo Lulio, 5, 28010 Madrid",
-    "date":"2019-09-19T12:00+02:00",
-    "time":"12h00",
-    "duration":60,
-    "url":"https://www.olavideyoga.es/horarios",
-    "image":"yogamamasybebesolavideyoga.jpg",
-    "companyName":"Olavide Yoga",
-    "companyLogo":"olavideyoga_sq.png",
-    
-    "price":20,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Horario:",
-    "Todos los jueves de 12h a 13h",
-    "Precio:",
-    "20€ / clase",
-    "60 € / mes (una clase por semana)",
-    "Grupos siempre reducidos para guiar el descubrimiento o el perfeccionamiento de tu práctica."
-    ],
-    "nameId":"olavide-yoga-yoga-mamás-y-bebés-5082"
-    },
-    {
-    "id":5084,
-    "type":"group",
-    "className":"Yoga embarazadas",
-    "tags":[
-    "pregnancy",
-    "yoga"
-    ],
-    "city":"Madrid",
-    "district":"Chamberí",
-    "address":"c/ Raimundo Lulio, 5, 28010 Madrid",
-    "date":"2019-09-19T18:30+02:00",
-    "time":"18h30",
-    "duration":60,
-    "url":"https://www.olavideyoga.es/horarios",
-    "image":"yogamamasybebesolavideyoga.jpg",
-    "companyName":"Olavide Yoga",
-    "companyLogo":"olavideyoga_sq.png",
-    
-    "price":20,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Horario:",
-    "Todos los jueves de 18h30 a 19h30",
-    "Precio:",
-    "20€ / clase",
-    "60 € / mes (una clase por semana)",
-    "Grupos siempre reducidos para guiar el descubrimiento o el perfeccionamiento de tu práctica."
-    ],
-    "nameId":"olavide-yoga-yoga-embarazadas-5084"
-    },
-    {
-    "id":1065,
-    "type":"group",
-    "className":"Taller de baby led weaning",
-    "tags":[
-    "parenting",
-    "feeding"
-    ],
-    "city":"Madrid",
-    "district":"Chamartín",
-    "address":"Calle Pradillo 10, 28002 Madrid",
-    "date":"2019-09-19T17:30+02:00",
-    "time":"17h30",
-    "duration":60,
-    "url":"https://elultimokoala.com/actividades/5519-taller-de-baby-led-weaning.html",
-    "image":"elultimakoala.png",
-    "companyName":"El Ultimo Koala",
-    "companyLogo":"elultimokoala_sq.png",
-    
-    "price":15,
-    "priceCouple":25,
-    "language":"spanish",
-    
-    
-    "description":[
-    "El baby led weaning (blw), podría traducirse como “alimentación complementaria autorregulada” o “alimentación complementaria a demanda”, es una manera de incorporar los sólidos en la alimentación del bebé sin pasar por la fase de purés y papillas, siendo el propio bebé quien se alimenta por sí mismo usando las manos.",
-    "Hablaremos sobre esta manera de ofrecer alimentos, de las bases y ventajas que ofrece tanto al bebé como a la familia. Se daran pautas generales para hacerlo de manera respetuosa y segura.",
-    "Dirigido a: Papás y mamás de niñ@s de 6 meses a 2 años. Profesionales y educadores que quieran aprender sobre este método.",
-    "Impartido por: Sara Jiménez Espartero de Nace Una Familia. Licenciada en Biología y especialista en Nutrición, también está formada como Doula y Asesora de Lactancia. Puedes encontrar más información en http://www.naceunafamilia.es/"
-    ],
-    "nameId":"el-ultimo-koala-taller-de-baby-led-weaning-1065"
-    },
-    {
-    "id":63,
-    "type":"group",
-    "className":"TALLER DE MÚSICA EN FAMILIA",
-    "tags":[
-    "music"
-    ],
-    "city":"Madrid",
-    "district":"Rivas",
-    "address":"Monetes, Avenida Pablo Iglesias 87 (local 1) 28521 Rivas",
-    "date":"2019-09-20T17:30+02:00",
-    "time":"17h30 and 18h30",
-    "duration":45,
-    "url":"https://www.creciendomisol.com/calendario-de-talleres-musica-para-bebes/",
-    "image":"creciendomisol.jpg",
-    "companyName":"Creciendomisol",
-    "companyLogo":"creciendomisol_sq.png",
-    
-    "price":18,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Taller de música en familia",
-    "17:30h Grupo según demanda: bebés (4-15 meses) o deambuladores (16-36 meses)",
-    "18:30h Grupo de deambuladores I (15-36 meses)",
-    "CrecienDoMiSol es un proyecto de educación musical temprana dirigido a familias con bebés entre los 4 y 36 meses. Su objetivo es doble: por un lado mejorar las capacidades musicales innatas del bebé y por otro utilizar la música para alcanzar su pleno desarrollo cognitivo, psicomotor y socioafectivo.",
-    "Las sesiones se estructuran mediante propuestas abiertas en las que una canción, una música o un instrumento es la excusa para el juego. Las propuestas de actividad tratan de atraer la atención del niño y a la vez respetar el momento madurativo de cada peque. El aprendizaje se realiza por inmersión en diferentes modos y compases, creando así un bagaje sonoro rico sobre el que seguir construyendo su educación musical en el futuro.",
-    "El interés del niño es el centro de nuestra atención pero en las sesiones procuramos que todos, grandes y pequeños, encontréis un espacio donde expresaros y sentiros a gusto. Como padres además os llevaréis recursos e ideas que poner en práctica cada día y por supuesto ¡os divertiréis juntos!",
-    "Precio 18€ por familia. Incluye al bebé y uno o dos acompañantes. También hermanos del mismo grupo de edad."
-    ],
-    "nameId":"creciendomisol-taller-de-música-en-familia-63"
-    },
-    {
-    "id":5063,
-    "type":"group",
-    "className":"TALLER DE MÚSICA EN FAMILIA",
-    "tags":[
-    "music"
-    ],
-    "city":"Madrid",
-    "district":"Moratalaz",
-    "address":"Arihú, Calle de la Laguna Negra, 13 28013 Madrid",
-    "date":"2019-09-20T17:30+02:00",
-    "time":"17h30 and 18h30",
-    "duration":45,
-    "url":"https://www.creciendomisol.com/calendario-de-talleres-musica-para-bebes/",
-    "image":"tallerdemusicalenfamilia.jpg",
-    "companyName":"Creciendomisol",
-    "companyLogo":"creciendomisol_sq.png",
-    
-    "price":18,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Taller de música en familia",
-    "17:30h Grupo según demanda: bebés (4-15 meses) o deambuladores (16-36 meses)",
-    "18:30h Grupo de deambuladores I (15-36 meses)",
-    "CrecienDoMiSol es un proyecto de educación musical temprana dirigido a familias con bebés entre los 4 y 36 meses. Su objetivo es doble: por un lado mejorar las capacidades musicales innatas del bebé y por otro utilizar la música para alcanzar su pleno desarrollo cognitivo, psicomotor y socioafectivo.",
-    "Las sesiones se estructuran mediante propuestas abiertas en las que una canción, una música o un instrumento es la excusa para el juego. Las propuestas de actividad tratan de atraer la atención del niño y a la vez respetar el momento madurativo de cada peque. El aprendizaje se realiza por inmersión en diferentes modos y compases, creando así un bagaje sonoro rico sobre el que seguir construyendo su educación musical en el futuro.",
-    "El interés del niño es el centro de nuestra atención pero en las sesiones procuramos que todos, grandes y pequeños, encontréis un espacio donde expresaros y sentiros a gusto. Como padres además os llevaréis recursos e ideas que poner en práctica cada día y por supuesto ¡os divertiréis juntos!",
-    "Precio 18€ por familia. Incluye al bebé y uno o dos acompañantes. También hermanos del mismo grupo de edad."
-    ],
-    "nameId":"creciendomisol-taller-de-música-en-familia-5063"
-    },
-    {
-    "id":6001,
-    "type":"group",
-    "className":"Sesión informátiva del taller \"Cómo hablar a tus hijos\"",
-    "tags":[
-    "parenting"
-    ],
-    "city":"Madrid",
-    "district":"Bellas Vistas",
-    "address":"Belo Art, Calle Pamplona 59, Madrid",
-    "date":"2019-09-20T18:00+02:00",
-    "time":"18h00",
-    "duration":60,
-    "url":"http://denisesuarez.com/workshop",
-    "image":"hablaratushijos.jpg",
-    "companyName":"Denise Suarez",
-    "companyLogo":"denisesuarez_sq.png",
-    "price":0,
-    "language":"spanish",
-    "description":[
-    "Durante la sesión, aprendemos habilidades de comunicación básicas que pueden ayudar a tus hijos a escucharte. También veremos cómo podemos ayudarles afrontar sus emociones con técnicas que podráis usar cuando llegais a casa. Al final del taller habrá un espacio donde podéis preguntar sobre vuestros conflictos y/o problemas.",
-    "Dirigido a: Padres y madres con niños de 2 a 6 años. También a otros familiares y profesionales que trabajan con niños de esa edad",
-    "Impartido por: Denise Suarez de Con Cariño. Coach familiar y facilitadora certificada del taller \"Cómo hablar a tus hijos\". Más información en denisesuarez.com."
-    ],
-    "nameId":"denise-suarez-sesión-informátiva-del-taller-cómo-hablar-a-tus-hijos-6001"
-    },
-    {
     "id":5064,
     "type":"group",
     "className":"TALLER DE MÚSICA EN FAMILIA",
@@ -1725,7 +1310,7 @@ export const CLASSES = [
     "date":"2019-10-05T10:30+02:00",
     "otherDates":[
     "2019-10-06T10:30+02:00",
-    "2019-10-17T18:30Z"
+    "2019-10-17T18:30+02:00"
     ],
     "time":"10h30",
     "duration":600,
@@ -1764,7 +1349,7 @@ export const CLASSES = [
     "date":"2019-10-05T16:00+02:00",
     "otherDates":[
     "2019-10-06T16:00+02:00",
-    "2019-10-17T12:00Z"
+    "2019-10-17T12:00+02:00"
     ],
     "time":"16h00",
     "duration":600,
@@ -2460,7 +2045,7 @@ export const CLASSES = [
     "date":"2019-11-09T10:30+01:00",
     "otherDates":[
     "2019-11-10T10:30+01:00",
-    "2019-11-22T18:30Z"
+    "2019-11-22T18:30+01:00"
     ],
     "time":"10h30",
     "duration":600,
@@ -2499,7 +2084,7 @@ export const CLASSES = [
     "date":"2019-11-09T16:00+01:00",
     "otherDates":[
     "2019-11-10T16:00+01:00",
-    "2019-11-22T16:00Z"
+    "2019-11-22T16:00+01:00"
     ],
     "time":"16h00",
     "duration":600,
@@ -3152,7 +2737,7 @@ export const CLASSES = [
     "date":"2019-12-14T16:00+01:00",
     "otherDates":[
     "2019-12-15T16:00+01:00",
-    "2019-12-20T16:00Z"
+    "2019-12-20T16:00+01:00"
     ],
     "time":"16h00",
     "duration":600,
@@ -3195,7 +2780,7 @@ export const CLASSES = [
     "date":"2019-12-14T10:30+01:00",
     "otherDates":[
     "2019-12-15T10:30+01:00",
-    "2019-12-20T18:30Z"
+    "2019-12-20T18:30+01:00"
     ],
     "time":"10h30",
     "duration":600,
