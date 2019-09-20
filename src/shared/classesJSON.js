@@ -1247,7 +1247,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -1263,7 +1263,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -1644,7 +1644,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -1660,7 +1660,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -1773,7 +1773,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -1789,7 +1789,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -1970,7 +1970,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -1986,7 +1986,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -2070,7 +2070,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2086,7 +2086,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -2135,7 +2135,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2151,7 +2151,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -2370,7 +2370,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2386,7 +2386,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -2561,7 +2561,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2577,7 +2577,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -2659,7 +2659,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2675,7 +2675,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -2755,7 +2755,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2771,7 +2771,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
@@ -2852,7 +2852,7 @@ export const CLASSES = [
         "type":"group",
         "className":"Parent and Baby Mindfulness",
         "tags":[
-        "mindfulness","parenting"
+        "mindfulness"
         ],
         "city":"Madrid",
         "district":"Almagro",
@@ -2868,7 +2868,7 @@ export const CLASSES = [
         "price":10,
         "language":"english", 
         "description":[
-            "Parent and Baby Mindfulness: Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
             "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
             "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
         ],
