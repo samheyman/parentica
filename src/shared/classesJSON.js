@@ -212,11 +212,8 @@ export const CLASSES = [
     "image":"hablaratushijos.jpg",
     "companyName":"Denise Suarez",
     "companyLogo":"denisesuarez_sq.png",
-    
     "price":0,
     "language":"spanish",
-    
-    
     "description":[
     "Durante la sesión, aprendemos habilidades de comunicación básicas que pueden ayudar a tus hijos a escucharte. También veremos cómo podemos ayudarles afrontar sus emociones con técnicas que podráis usar cuando llegais a casa. Al final del taller habrá un espacio donde podéis preguntar sobre vuestros conflictos y/o problemas.",
     "Dirigido a: Padres y madres con niños de 2 a 6 años. También a otros familiares y profesionales que trabajan con niños de esa edad",
@@ -1424,7 +1421,11 @@ export const CLASSES = [
     "duration":"14h (7 sessions)",
     "url":"http://denisesuarez.com/workshop",
     "image":"hablaratushijos.jpg",
+<<<<<<< Updated upstream
     "companyName":"Denise Suarez",
+=======
+    "companyName":"Denise Suare",
+>>>>>>> Stashed changes
     "companyLogo":"denisesuarez_sq.png",
     
     "price":175,
