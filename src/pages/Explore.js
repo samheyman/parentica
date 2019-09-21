@@ -43,6 +43,7 @@ function a11yProps(index) {
 
 
 function Explore(props) {
+    const rtf = new Intl.RelativeTimeFormat('en');
     const [value, setValue] = React.useState(props.tabSelected);
 
     function handleChange(event, newValue) {
@@ -51,7 +52,7 @@ function Explore(props) {
 
     const classesList = props.classes.map(
         (classEntry) => {
-            if ((classEntry.type === 'group' || classEntry.type === "meetup") && new Date(classEntry.date) > new Date()) {
+            if ((classEntry.type === 'group' || classEntry.type === "meetup") && rtf(new Date(classEntry.date), new Date())) {
                 return(
                     <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
                     <ClassCard classEntry={classEntry} />      
