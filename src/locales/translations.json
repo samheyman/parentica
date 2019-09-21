@@ -36,8 +36,11 @@
     "homepage.tagline.madrid.button.en-GB": "madrid",
     "homepage.tagline.madrid.button.es-SP": "madrid",
 
-    "homepage.popular.topics.header.en-GB": "Popular topics",
-    "homepage.popular.topics.header.es-SP": "Temas populares",
+    "homepage.popularTopics.en-GB": "Popular topics",
+    "homepage.popularTopics.es-SP": "Temas populares",
+
+    "homepage.allTopics.en-GB": "All topics",
+    "homepage.allTopics.es-SP": "Todos los temas",
 
     "homepage.providers.madrid.header.en-GB": "Providers in Madrid",
     "homepage.providers.madrid.header.es-SP": "Proveedores en Madrid",

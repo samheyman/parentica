@@ -115,7 +115,7 @@ function Home(props) {
             </div>
             <div className="popular-topics">
                 <h2>
-                    <FormattedMessage id={`homepage.popular.topics.header.${locale}`} />    
+                    <FormattedMessage id={`homepage.popularTopics.${locale}`} />    
                 </h2>  
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     <TopicCard 
@@ -169,7 +169,9 @@ function Home(props) {
                 </Grid>
             </div>
             <div className="all-topics">
-                <h2>Topics</h2>  
+                <h2>
+                <FormattedMessage id={`homepage.allTopics.${locale}`} />        
+                </h2>  
                 <RenderTags tags={props.topics} locale={locale} /> 
             </div>
             <div className="row">
