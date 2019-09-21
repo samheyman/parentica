@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, FormattedDate } from 'react-intl';
+import { LocaleContext } from '../contexts/LocaleContext';
 
 const mapStateToProps = (state) => {
   return(
@@ -78,7 +79,9 @@ function RenderFlag({language, locale}) {
 function MediaCard(props) {
     const classes = useStyles();
     return (
-        <Card className={classes.card}>
+      <LocaleContext.Consumer>{(context) => {
+        const locale = context.locale;
+        return(<Card className={classes.card}>
           <CardActionArea>
             <Link className="class-card-link" to={`../classes/${props.classEntry.nameId}`}
                 onClick={()=>{
@@ -115,7 +118,7 @@ function MediaCard(props) {
                       :
                       <span className="class-details-date">
                       <FormattedMessage 
-                            id={`classDetails.time.anytime.${props.locale}`}
+                            id={`classDetails.time.anytime.${locale}`}
                             defaultMessage="Anytime"
                         />
                       </span>
@@ -148,7 +151,7 @@ function MediaCard(props) {
                         :
                         (null)
                     }
-                    <RenderFlag language={props.classEntry.language} locale={props.locale} />
+                    <RenderFlag language={props.classEntry.language} locale={locale} />
 
                   </div>
                   
@@ -157,9 +160,9 @@ function MediaCard(props) {
             </Link>
           </CardActionArea>
           <CardActions>
-            <RenderTags tags={props.classEntry.tags} lang={props.locale} />
+            <RenderTags tags={props.classEntry.tags} lang={locale} />
           </CardActions>
-        </Card>
+        </Card>)}}</LocaleContext.Consumer>
     );
   }
 

@@ -17,6 +17,8 @@ import TableRow from '@material-ui/core/TableRow';
 import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
 import { FormattedMessage, FormattedDate } from 'react-intl';
+import { LocaleContext } from '../contexts/LocaleContext';
+import Container from '@material-ui/core/Container';
 
 function RenderTags({tags, locale}) {
     let i=0;
@@ -325,11 +327,10 @@ function ClassDetails(props) {
         setValue(newValue);
     }
 
-    // function handleChangeIndex(index) {
-    //     setValue(index);
-    // }
     return(
-        <React.Fragment>
+        <LocaleContext.Consumer>{(context) => {
+            const locale = context.locale;
+            return(<Container>
             <ScrollToTop/>
             <div className="row">
                 <Grid container className="class-details-container">
@@ -355,16 +356,16 @@ function ClassDetails(props) {
                                     <ClassDate classDate={props.selectedClass.date} classTime={props.selectedClass.classTime} classes={classes.icon} />
                                     <OtherSessions otherDates={props.selectedClass.otherDates} classes={classes.icon} />
                                     {/* <ClassTime classTime={props.selectedClass.time} classes={classes.icon} /> */}
-                                    <ClassDuration sessions={props.selectedClass.sessions} duration={props.selectedClass.duration} locale={props.locale} classes={classes.icon} />
+                                    <ClassDuration sessions={props.selectedClass.sessions} duration={props.selectedClass.duration} locale={locale} classes={classes.icon} />
                                     <ClassLocation address={props.selectedClass.address} classes={classes.icon} />
-                                    <ClassLanguage language={props.selectedClass.language} locale={props.locale} classes={classes.icon} />
-                                    <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} locale={props.locale} />
+                                    <ClassLanguage language={props.selectedClass.language} locale={locale} classes={classes.icon} />
+                                    <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} locale={locale} />
 
                                 </div>
                                 
                             </div>
                             <div className="class-tags">
-                                <RenderTags tags={props.selectedClass.tags} locale={props.locale} />
+                                <RenderTags tags={props.selectedClass.tags} locale={locale} />
                             </div>
                             <div className="button-div">
                                 <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
@@ -377,7 +378,7 @@ function ClassDetails(props) {
                                 >
                                     <Button variant="outlined" color="primary">
                                         <FormattedMessage 
-                                            id={`classDetails.linkToWebsite.${props.locale}`}
+                                            id={`classDetails.linkToWebsite.${locale}`}
                                             defaultMessage="Go to website"
                                         />
                                     </Button>
@@ -396,14 +397,14 @@ function ClassDetails(props) {
                                         >
                                         <Tab label=
                                             {<FormattedMessage 
-                                                id={`classDetails.about.${props.locale}`}
+                                                id={`classDetails.about.${locale}`}
                                                 defaultMessage="Go to website"
                                             />}
                                             {...a11yProps(0)} 
                                         />
                                         <Tab label=
                                             {<FormattedMessage 
-                                                id={`classDetails.otherClasses.${props.locale}`}
+                                                id={`classDetails.otherClasses.${locale}`}
                                                 defaultMessage="Go to website"
                                             />}
                                             {...a11yProps(1)} 
@@ -426,7 +427,7 @@ function ClassDetails(props) {
                     </Grid>
                 </Grid>
             </div>
-        </React.Fragment>
+        </Container>)}}</LocaleContext.Consumer>
     );
 
 }

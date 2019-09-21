@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import TopicCard from '../components/TopicCard';
 import { FormattedMessage } from 'react-intl';
+import { LocaleContext } from '../contexts/LocaleContext';
 
 const useStyles = makeStyles(theme => ({
     button: {
@@ -83,106 +84,108 @@ function OnlineProviders({providers}) {
 function Home(props) {
     const classes = useStyles();
     return(
-        <Container className="main-content">
+        <LocaleContext.Consumer>{(context) => {
+            const locale = context.locale;
+            return(<Container className="main-content">
             <div className="tagline">
                 <h2 className="tagline-header">
                     <FormattedMessage 
-                        id={`homepage.tagline.header.${props.locale}`}
+                        id={`homepage.tagline.header.${locale}`}
                         defaultMessage="Parenting and pregnancy classes for all"
                     />
                 </h2>  
                 <p className="tagline-paragraph">
                     <FormattedMessage 
-                        id={`homepage.tagline.paragraph.${props.locale}`}
+                        id={`homepage.tagline.paragraph.${locale}`}
                         defaultMessage="Find pregnancy and parenting classes and events, either online or in one of the cities we are in"
                     />
                 </p>
                 <div className="main-links">
                     <Link to={{pathname:"/explore/online", topic:"all"}}>
                         <Button variant="contained" className={`btn-first ${classes.button}`}>
-                            <FormattedMessage id={`homepage.tagline.online.button.${props.locale}`} />
+                            <FormattedMessage id={`homepage.tagline.online.button.${locale}`} />
                         </Button>
                     </Link>
                     <Link to={{pathname:"/explore/madrid", topic:"all"}}>
                         <Button variant="contained" className={`btn-second ${classes.button}`}>
-                            <FormattedMessage id={`homepage.tagline.madrid.button.${props.locale}`} />
+                            <FormattedMessage id={`homepage.tagline.madrid.button.${locale}`} />
                         </Button>
                     </Link>
                 </div>
             </div>
             <div className="popular-topics">
                 <h2>
-                    <FormattedMessage id={`homepage.popular.topics.header.${props.locale}`} />    
+                    <FormattedMessage id={`homepage.popular.topics.header.${locale}`} />    
                 </h2>  
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     <TopicCard 
                         topic="parenting" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.parenting.${props.locale}`} />
+                            <FormattedMessage id={`topics.parenting.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard 
                         topic="pregnancy" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.pregnancy.${props.locale}`} />
+                            <FormattedMessage id={`topics.pregnancy.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard 
                         topic="baby" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.baby.${props.locale}`} />
+                            <FormattedMessage id={`topics.baby.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("baby")).length}/>
                     <TopicCard 
                         topic="nutrition" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.nutrition.${props.locale}`} />
+                            <FormattedMessage id={`topics.nutrition.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("nutrition")).length}/>
                     <TopicCard 
                         topic="music" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.music.${props.locale}`} />
+                            <FormattedMessage id={`topics.music.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}/>
                     <TopicCard 
                         topic="postpartum" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.postpartum.${props.locale}`} />
+                            <FormattedMessage id={`topics.postpartum.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}/>
                     <TopicCard 
                         topic="yoga" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.yoga.${props.locale}`} />
+                            <FormattedMessage id={`topics.yoga.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}/>
                     <TopicCard 
                         topic="first aid" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.first.${props.locale}`} />
+                            <FormattedMessage id={`topics.first.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}/>
                 </Grid>
             </div>
             <div className="all-topics">
                 <h2>Topics</h2>  
-                <RenderTags tags={props.topics} locale={props.locale} /> 
+                <RenderTags tags={props.topics} locale={locale} /> 
             </div>
             <div className="row">
                 <div className="col s12 m12 l12 partners">
-                    <h2><FormattedMessage id={`homepage.providers.madrid.header.${props.locale}`} /></h2> 
+                    <h2><FormattedMessage id={`homepage.providers.madrid.header.${locale}`} /></h2> 
                     <MadridProviders providers={props.madridProviders}/>
                     {/* <RenderProviderCard provider={props.providers} /> */}
                 </div>
             </div>
             <div className="row">
                 <div className="col s12 m12 l12 partners">
-                    <h2><FormattedMessage id={`homepage.providers.online.header.${props.locale}`} /></h2> 
+                    <h2><FormattedMessage id={`homepage.providers.online.header.${locale}`} /></h2> 
                     <OnlineProviders providers={props.onlineProviders}/>
                 </div>
             </div>
-        </Container>
+        </Container>)}}</LocaleContext.Consumer>
     );
 }
 

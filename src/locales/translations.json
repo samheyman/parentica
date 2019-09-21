@@ -1,9 +1,12 @@
 {
     "general.english.en-GB": "English",
-    "general.english.es-SP": "inglés",
+    "general.english.es-SP": "Inglés",
 
     "general.spanish.en-GB": "Spanish",
     "general.spanish.es-SP": "Español",
+
+    "navbar.selectLanguage.en-GB": "Language",
+    "navbar.selectLanguage.es-SP": "Idioma",
 
     "navbar.home.link.en-GB": "Home",
     "navbar.home.link.es-SP": "Inicio",
@@ -115,7 +118,7 @@
     "classDetails.otherClasses.en-GB": "Other classes",
     "classDetails.otherClasses.es-SP": "Otras clases",
 
-    "locations.locations.en-GB": "locations",
+    "locations.locations.en-GB": "Locations",
     "locations.locations.es-SP": "Ubicaciones",
 
     "locations.contactUs.p1.en-GB": "We are currently located in and serving Madrid in Spain, but we hope to reach out to other cities in the near future.",
@@ -231,6 +234,9 @@
     "contact.error.message.empty.es-SP": "Por favor, deje un mensaje",
 
     "contact.error.email.invalid.en-GB": "Please enter a valid email",
-    "contact.error.email.invalid.es-SP": "Por favor introduzca una dirección de correo electrónico válida"
+    "contact.error.email.invalid.es-SP": "Por favor introduzca una dirección de correo electrónico válida",
+
+    "errorPage.notFound.en-GB": "Sorry, the page you requested was not found.",
+    "errorPage.notFound.es-SP": "Lo sentimos, no se encontró la página que solicitó."
 
 }

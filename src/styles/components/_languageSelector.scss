@@ -1,0 +1,10 @@
+.locale-selector {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .locale-flag {
+        height: 15px !important;
+        margin: 0 5px;  
+    }
+}

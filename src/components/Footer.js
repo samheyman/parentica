@@ -1,39 +1,16 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-
-function ShowLanguage({language}) {
-    let selectedLanguage = 'english';
-    switch(language) {
-        case 'en-GB':
-            selectedLanguage = 'english';
-            break;
-        case 'es-SP':
-            selectedLanguage = 'spanish';
-            break;
-        default:
-            break;
-    }
-    return(
-        <div>
-            <img className="locale-flag" 
-                 src={`/images/flags/${selectedLanguage}.png`} 
-                 alt={`language set to ${selectedLanguage} flag`} />
-        </div>
-    );
-}
+import { LocaleContext } from '../contexts/LocaleContext';
+import LanguageSelector from './LanguageSelector';
 
 export default function Footer(props) {
     return(
-        <React.Fragment>
-            <Container>
+        <LocaleContext.Consumer>{(context) => {
+            return(<Container>
                 <div className="footer">
                     <div className="copyright">
                         &copy; 2019, <span className="brand">Parentica</span>
-                        {(props.locale === 'es-SP')?
-                            <ShowLanguage language={props.locale} />
-                            :
-                            null
-                        }
+                        <LanguageSelector/>
                     </div>
                     <div className="social-links">
                         <div className="instagram">
@@ -48,7 +25,7 @@ export default function Footer(props) {
                         </div>
                     </div>
                 </div>
-            </Container>
-        </React.Fragment>
+            </Container>);
+            }}</LocaleContext.Consumer>
     );
 }

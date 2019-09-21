@@ -12,6 +12,8 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
 import { FormattedMessage } from 'react-intl';
+import { LocaleContext } from '../../contexts/LocaleContext';
+import LanguageSelector from '../LanguageSelector';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -37,7 +39,7 @@ export default function Navbar(props) {
       setState({ ...state, [side]: open });
     };
 
-    const drawer = side => (
+    const drawer = (side, locale) => (
       <div
         className={classes.toolbar}
         role="presentation"
@@ -49,44 +51,47 @@ export default function Navbar(props) {
         <NavLink to="/home">
             <ListItem button key="home">
             <ListItemText 
-              primary={<FormattedMessage id={`navbar.home.link.${props.locale}`} />} 
+              primary={<FormattedMessage id={`navbar.home.link.${locale}`} />} 
             />
             </ListItem>
           </NavLink>
           <NavLink to="/explore">
             <ListItem button key="explore">
               <ListItemText 
-                primary={<FormattedMessage id={`navbar.explore.link.${props.locale}`} />} 
+                primary={<FormattedMessage id={`navbar.explore.link.${locale}`} />} 
               />
             </ListItem>
           </NavLink>
           <NavLink to="/about">
             <ListItem button key="about">
               <ListItemText 
-                primary={<FormattedMessage id={`navbar.about.link.${props.locale}`} />} 
+                primary={<FormattedMessage id={`navbar.about.link.${locale}`} />} 
               />
             </ListItem>
           </NavLink>
           <NavLink to="/locations">
             <ListItem button key="locations">
               <ListItemText               
-                primary={<FormattedMessage id={`navbar.locations.link.${props.locale}`} />} 
+                primary={<FormattedMessage id={`navbar.locations.link.${locale}`} />} 
                />
             </ListItem>
           </NavLink>
           <NavLink to="/contact">
             <ListItem button key="contact">
               <ListItemText               
-                primary={<FormattedMessage id={`navbar.contact.link.${props.locale}`} />} 
+                primary={<FormattedMessage id={`navbar.contact.link.${locale}`} />} 
              />
             </ListItem>
           </NavLink>
+          <ListItem><LanguageSelector/></ListItem>
         </List>
       </div>
     );
 
     return (
-      <div className={classes.root}>
+      <LocaleContext.Consumer>{(context) => {
+        const locale = context.locale;
+        return(<div className={classes.root}>
         <AppBar className="app-header" position="static">
           <Toolbar>
             <NavLink to="/" className="brand-logo">
@@ -94,10 +99,10 @@ export default function Navbar(props) {
             </NavLink>
             <Box display={{ xs: 'none', sm: 'none', md: 'block', lg: 'block', xl: 'block' }}>
               <ul className="app-header-full">                      
-                <li><NavLink to="/explore"><FormattedMessage id={`navbar.explore.link.${props.locale}`} /></NavLink></li>
-                <li><NavLink to="/about"><FormattedMessage id={`navbar.about.link.${props.locale}`} /></NavLink></li>
-                <li><NavLink to="/locations"><FormattedMessage id={`navbar.locations.link.${props.locale}`} /></NavLink></li>
-                <li><NavLink to="/contact"><FormattedMessage id={`navbar.contact.link.${props.locale}`} /></NavLink></li>
+                <li><NavLink to="/explore"><FormattedMessage id={`navbar.explore.link.${locale}`} /></NavLink></li>
+                <li><NavLink to="/about"><FormattedMessage id={`navbar.about.link.${locale}`} /></NavLink></li>
+                <li><NavLink to="/locations"><FormattedMessage id={`navbar.locations.link.${locale}`} /></NavLink></li>
+                <li><NavLink to="/contact"><FormattedMessage id={`navbar.contact.link.${locale}`} /></NavLink></li>
                 {/* <li><NavLink to="collapsible.html">Sign in</NavLink></li>
                 <li><NavLink className="btn-small" to="collapsible.html">Sign up</NavLink></li> */}
               </ul>
@@ -111,9 +116,9 @@ export default function Navbar(props) {
           </Toolbar>
         </AppBar>
         <Drawer anchor="right" open={state.top} onClose={toggleDrawer('top', false)}>
-        {drawer('top')}
+        {drawer('top', locale)}
         </Drawer>
-      </div>
+      </div>)}}</LocaleContext.Consumer>
       
     );
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 import Container from '@material-ui/core/Container';
-import { LocaleContext } from '../contexts/LocaleContext';
 import { makeStyles } from '@material-ui/core/styles';
 import { FormattedMessage } from 'react-intl';
+import { LocaleContext } from '../contexts/LocaleContext';
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -15,28 +15,17 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function Locations(props) {
+function PageNotFound(props) {
     const classes = useStyles();
+
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
             return(<Container className="main-content">
             <div className="col content">
                 <div className={classes.root}>
-                    <h2>
-                        <FormattedMessage 
-                            id={`locations.locations.${locale}`}
-                            defaultMessage="Locations"
-                        />
-                    </h2>
-                    <p>
-                    <FormattedMessage 
-                        id={`locations.contactUs.p1.${locale}`}
-                        defaultMessage=""
-                    /></p>
-                    <p>
-                    <FormattedMessage 
-                        id={`locations.contactUs.p2.${locale}`}
+                    <p><FormattedMessage 
+                        id={`errorPage.notFound.${locale}`}
                         defaultMessage=""
                     /></p>
                 </div>
@@ -45,4 +34,4 @@ function Locations(props) {
     );
 }
 
-export default Locations; 
+export default PageNotFound; 

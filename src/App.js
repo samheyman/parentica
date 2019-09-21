@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ScrollToTop from './components/ScrollToTop';
+import LocaleContextProvider from './contexts/LocaleContext';
 
 const store = ConfigureStore();
 
@@ -13,14 +14,16 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <BrowserRouter>
-          <CssBaseline />
-          <ScrollToTop>
-            <div className="App">
-              <Main />
-            </div>
-          </ScrollToTop>
-        </BrowserRouter>
+          <BrowserRouter>
+            <CssBaseline />
+            <ScrollToTop>
+              <div className="App">
+                <LocaleContextProvider>
+                <Main />
+                </LocaleContextProvider>
+              </div>
+            </ScrollToTop>
+          </BrowserRouter>
       </Provider>
     );
   }

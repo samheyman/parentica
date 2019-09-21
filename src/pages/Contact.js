@@ -6,8 +6,11 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import { FormattedMessage } from 'react-intl';
+import { LocaleContext } from '../contexts/LocaleContext';
 
 class Contact extends Component {
+    static contextType = LocaleContext;
+
     constructor(props) {
         super(props);
 
@@ -45,7 +48,7 @@ class Contact extends Component {
         });
     }
 
-    validate(firstname, lastname, email, message) {
+    validate(firstname, lastname, email, message, locale) {
 
         const errors = {
             firstname: '',
@@ -55,25 +58,25 @@ class Contact extends Component {
         };
 
         if (this.state.touched.firstname && firstname.length < 3)
-            errors.firstname = <FormattedMessage id={`contact.error.firstName.tooShort.${this.props.locale}`}>
+            errors.firstname = <FormattedMessage id={`contact.error.firstName.tooShort.${locale}`}>
                                 {(txt) => txt}
                               </FormattedMessage>;
         else if (this.state.touched.firstname && firstname.length > 20)
-            errors.firstname = <FormattedMessage id={`contact.error.firstName.tooLong.${this.props.locale}`}>
+            errors.firstname = <FormattedMessage id={`contact.error.firstName.tooLong.${locale}`}>
                                     {(txt) => txt}
                                 </FormattedMessage>;
 
         if (this.state.touched.lastname && lastname.length < 3)
-            errors.lastname = <FormattedMessage id={`contact.error.lastName.tooShort.${this.props.locale}`}>
+            errors.lastname = <FormattedMessage id={`contact.error.lastName.tooShort.${locale}`}>
                                         {(txt) => txt}
                                 </FormattedMessage>;
         else if (this.state.touched.lastname && lastname.length > 20)
-            errors.lastname = <FormattedMessage id={`contact.error.lastName.tooLong.${this.props.locale}`}>
+            errors.lastname = <FormattedMessage id={`contact.error.lastName.tooLong.${locale}`}>
                                     {(txt) => txt}
                                 </FormattedMessage>;
             
         if (this.state.touched.message && message.length < 1)
-            errors.message = <FormattedMessage id={`contact.error.message.empty.${this.props.locale}`}>
+            errors.message = <FormattedMessage id={`contact.error.message.empty.${locale}`}>
                                     {(txt) => txt}
                                 </FormattedMessage>;
 
@@ -82,7 +85,7 @@ class Contact extends Component {
         // const re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
         // const re = /^(([^<>()[].,;:\s@"]+([^<>()[].,;:\s@"]+)*)|(".+"))@(([^<>()[].,;:\s@"]+.)+[^<>()[].,;:\s@"]{2,})$/i;
         if (this.state.touched.email && !re.test(email)) 
-            errors.email = <FormattedMessage id={`contact.error.email.invalid.${this.props.locale}`}>
+            errors.email = <FormattedMessage id={`contact.error.email.invalid.${locale}`}>
                                     {(txt) => txt}
                                 </FormattedMessage>;
         
@@ -139,8 +142,15 @@ class Contact extends Component {
     }
 
     render() {
+        const locale = this.context.locale;
+
         let isValid=false;
-        const errors = this.validate(this.state.firstName, this.state.lastName, this.state.email, this.state.message, );
+        const errors = this.validate(
+            this.state.firstName, 
+            this.state.lastName, 
+            this.state.email, 
+            this.state.message,
+            locale );
         if (this.state.touched.firstname && errors.firstname==="" && errors.lastname==="" && errors.email==="" && errors.message==="") { 
             isValid = true
         }
@@ -151,24 +161,24 @@ class Contact extends Component {
                         <Grid item xs={12} sm={12} md={6}>
                             <h2>
                                 <FormattedMessage 
-                                    id={`contact.contact.${this.props.locale}`}
+                                    id={`contact.contact.${locale}`}
                                     defaultMessage=""
                                 />
                             </h2>
                             <p>
                                 <FormattedMessage 
-                                    id={`contact.p1.${this.props.locale}`}
+                                    id={`contact.p1.${locale}`}
                                     defaultMessage=""
                                 />
                             </p>
                             <p>
                                 <FormattedMessage 
-                                    id={`contact.p2.${this.props.locale}`}
+                                    id={`contact.p2.${locale}`}
                                     defaultMessage=""
                                 />
                             </p>
                             <form className={"contact-form " + (this.state.success ? "hide" : "show")} noValidate autoComplete="off" onSubmit={this.handleSubmit}>
-                                <FormattedMessage id={`contact.firstName.${this.props.locale}`}>
+                                <FormattedMessage id={`contact.firstName.${locale}`}>
                                     {
                                         (txt) => {
                                             return(<TextField
@@ -190,7 +200,7 @@ class Contact extends Component {
                                         }
                                     }
                                 </FormattedMessage>
-                                <FormattedMessage id={`contact.lastName.${this.props.locale}`}>
+                                <FormattedMessage id={`contact.lastName.${locale}`}>
                                     {
                                         (txt) => {
                                             return(<TextField
@@ -210,7 +220,7 @@ class Contact extends Component {
                                     variant="outlined"
                                 />);}}
                                 </FormattedMessage>
-                                <FormattedMessage id={`contact.email.${this.props.locale}`}>
+                                <FormattedMessage id={`contact.email.${locale}`}>
                                     {
                                         (txt) => {
                                             return(<TextField
@@ -230,7 +240,7 @@ class Contact extends Component {
                                     variant="outlined"
                                 />);}}
                                 </FormattedMessage>
-                                <FormattedMessage id={`contact.company.${this.props.locale}`}>
+                                <FormattedMessage id={`contact.company.${locale}`}>
                                     {
                                         (txt) => {
                                             return(<TextField
@@ -246,7 +256,7 @@ class Contact extends Component {
                                     onChange={this.handleInputChange}
                                 />);}}
                                 </FormattedMessage>
-                                <FormattedMessage id={`contact.message.${this.props.locale}`}>
+                                <FormattedMessage id={`contact.message.${locale}`}>
                                     {
                                         (txt) => {
                                             return(<TextField
@@ -269,7 +279,7 @@ class Contact extends Component {
                                 />);}}
                                 </FormattedMessage>
                                 <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
-                                    <FormattedMessage id={`contact.send.${this.props.locale}`}>
+                                    <FormattedMessage id={`contact.send.${locale}`}>
                                     {
                                         (txt) => {
                                             return(

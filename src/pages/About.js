@@ -10,7 +10,8 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import { FormattedMessage } from 'react-intl';
-
+import { LocaleContext } from '../contexts/LocaleContext';
+ 
 const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
@@ -35,17 +36,19 @@ function About(props) {
     const classes = useStyles();
 
     return(
-        <Container className="main-content">
+        <LocaleContext.Consumer>{(context) => {
+            const locale = context.locale;
+            return(<Container className="main-content">
             <div className="col content">
                 <div className={classes.root}>
                     <h2>
                         <FormattedMessage 
-                            id={`about.about.${props.locale}`}
+                            id={`about.about.${locale}`}
                             defaultMessage=""
                         />
                     </h2>
                     <p><FormattedMessage 
-                            id={`about.mission.p1.${props.locale}`}
+                            id={`about.mission.p1.${locale}`}
                             defaultMessage=""
                         />
                         <br/>
@@ -53,7 +56,7 @@ function About(props) {
                     <Paper className={`quote ${classes.root}`}>
                         <Typography component="p">
                             <FormattedMessage 
-                                id={`about.mission.statement.${props.locale}`}
+                                id={`about.mission.statement.${locale}`}
                                 defaultMessage=""
                             />
                         </Typography>
@@ -61,79 +64,79 @@ function About(props) {
                     
                     <h3>
                         <FormattedMessage 
-                            id={`about.manifesto.${props.locale}`}
+                            id={`about.manifesto.${locale}`}
                             defaultMessage=""
                         />
                     </h3>
                     <ol>
                         <li>
                             <FormattedMessage 
-                                id={`about.manifesto.p1.${props.locale}`}
+                                id={`about.manifesto.p1.${locale}`}
                                 defaultMessage=""
                             />
                             <div className="manifesto-quote">
                                 <FormattedMessage 
-                                    id={`about.manifesto.q1.${props.locale}`}
+                                    id={`about.manifesto.q1.${locale}`}
                                     defaultMessage=""
                                 />
                             </div>
                         </li>
                         <li>
                             <FormattedMessage 
-                                id={`about.manifesto.p2.${props.locale}`}
+                                id={`about.manifesto.p2.${locale}`}
                                 defaultMessage=""
                             />
                             <div className="manifesto-quote">
                                 <FormattedMessage 
-                                    id={`about.manifesto.q2.${props.locale}`}
+                                    id={`about.manifesto.q2.${locale}`}
                                     defaultMessage=""
                                 />
                             </div>
                         </li>
                         <li>
                             <FormattedMessage 
-                                id={`about.manifesto.p3.${props.locale}`}
+                                id={`about.manifesto.p3.${locale}`}
                                 defaultMessage=""
                             />
                             <div className="manifesto-quote">
                                 <FormattedMessage 
-                                    id={`about.manifesto.q3.${props.locale}`}
+                                    id={`about.manifesto.q3.${locale}`}
                                     defaultMessage=""
                                 />
                             </div>
                         </li>
                         <li>
                             <FormattedMessage 
-                                id={`about.manifesto.p4.${props.locale}`}
+                                id={`about.manifesto.p4.${locale}`}
                                 defaultMessage=""
                             />
                             <div className="manifesto-quote">
                                 <FormattedMessage 
-                                    id={`about.manifesto.q4.${props.locale}`}
+                                    id={`about.manifesto.q4.${locale}`}
                                     defaultMessage=""
                                 />
                             </div>
                         </li>
                         <li>
                             <FormattedMessage 
-                                id={`about.manifesto.p5.${props.locale}`}
+                                id={`about.manifesto.p5.${locale}`}
                                 defaultMessage=""
                             />
                             <div className="manifesto-quote">
                                 <FormattedMessage 
-                                    id={`about.manifesto.q5.${props.locale}`}
+                                    id={`about.manifesto.q5.${locale}`}
                                     defaultMessage=""
                                 />
                             </div>
                         </li>
                         <li>
                             <FormattedMessage 
-                                id={`about.manifesto.p6.${props.locale}`}
+                                id={`about.manifesto.p6.${locale}`}
                                 defaultMessage=""
                             />
                             <div className="manifesto-quote">
                                 <FormattedMessage 
-                                    id={`about.manifesto.q6.${props.locale}`}
+                                    id={`about.manifesto.q6.${locale}`}
                                     defaultMessage=""
                                 />
                             </div>
@@ -141,7 +144,7 @@ function About(props) {
                     </ol>
                     <h3>
                         <FormattedMessage 
-                            id={`about.team.meet.${props.locale}`}
+                            id={`about.team.meet.${locale}`}
                             defaultMessage=""
                         />
                     </h3>
@@ -160,13 +163,13 @@ function About(props) {
                                     </Typography>
                                     <Typography gutterBottom variant="h4" component="h4" className="job-title">
                                         <FormattedMessage 
-                                            id={`about.team.samJob.${props.locale}`}
+                                            id={`about.team.samJob.${locale}`}
                                             defaultMessage=""
                                         />
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         <FormattedMessage 
-                                            id={`about.team.samDescription.${props.locale}`}
+                                            id={`about.team.samDescription.${locale}`}
                                             defaultMessage=""
                                         />     
                                     </Typography>
@@ -191,13 +194,13 @@ function About(props) {
                                     </Typography>
                                     <Typography gutterBottom variant="h4" component="h4" className="job-title">
                                         <FormattedMessage 
-                                            id={`about.team.elineJob.${props.locale}`}
+                                            id={`about.team.elineJob.${locale}`}
                                             defaultMessage=""
                                         /> 
                                     </Typography>
                                     <Typography variant="body2" color="textSecondary" component="p">
                                         <FormattedMessage 
-                                            id={`about.team.elineDescription.${props.locale}`}
+                                            id={`about.team.elineDescription.${locale}`}
                                             defaultMessage=""
                                         /> 
                                     </Typography>
@@ -212,7 +215,7 @@ function About(props) {
                     <br/>
                 </div>
             </div>
-        </Container>
+        </Container>)}}</LocaleContext.Consumer>
     );
 }
 
