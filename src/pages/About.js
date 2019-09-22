@@ -62,7 +62,7 @@ function About(props) {
                         </Typography>
                     </Paper>
                     
-                    <h3>
+                    {/* <h3>
                         <FormattedMessage 
                             id={`about.manifesto.${locale}`}
                             defaultMessage=""
@@ -141,7 +141,7 @@ function About(props) {
                                 />
                             </div>
                         </li>
-                    </ol>
+                    </ol> */}
                     <h3>
                         <FormattedMessage 
                             id={`about.team.meet.${locale}`}
