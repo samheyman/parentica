@@ -9,7 +9,7 @@
     padding: 20px 0 30px 0; 
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    align-items: flex-start;
 
     .brand {
         font-weight: bold;

@@ -13,7 +13,6 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../../contexts/LocaleContext';
-import LanguageSelector from '../LanguageSelector';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -83,7 +82,6 @@ export default function Navbar(props) {
              />
             </ListItem>
           </NavLink>
-          <ListItem><LanguageSelector/></ListItem>
         </List>
       </div>
     );

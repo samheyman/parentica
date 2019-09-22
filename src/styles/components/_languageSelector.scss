@@ -1,10 +1,25 @@
 .locale-selector {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+
+    font-size: 12px;
+    margin-top: 10px;
 
     .locale-flag {
         height: 15px !important;
         margin: 0 5px;  
+    }
+
+    .MuiButton-root {
+        min-width: auto;
+        margin: 0 3px 0 5px !important;
+    }
+
+    .language-selector-btn {
+        text-transform: lowercase;
+        font-weight: normal;
+        margin: 0;
+        padding: 0;
+        line-height: inherit;
+        font-size: inherit;
+        color: $font-dark;
     }
 }

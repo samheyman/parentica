@@ -4,8 +4,7 @@ export const LocaleContext = createContext();
 
 class LocaleContextProvider extends Component {
     state = {
-        // locale: 'en-GB',
-        locale: 'es-SP'
+        locale: 'en-GB',
     }
 
     setEnglish = () => {
