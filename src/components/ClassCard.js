@@ -93,7 +93,7 @@ function MediaCard(props) {
             >  
             <CardMedia
               className={classes.media}
-              image={`../images/classes/${props.classEntry.image}`}
+              image={`../../images/classes/${props.classEntry.image}`}
               title={props.classEntry.className}
             />
             <CardContent>
@@ -101,7 +101,7 @@ function MediaCard(props) {
                 {props.classEntry.className.toLowerCase()}
               </Typography>
               <div className="company">
-                <img className="company-logo" src={`../images/logos/${props.classEntry.companyLogo}`} alt={`${props.classEntry.companyLogo} logo`} />
+                <img className="company-logo" src={`../../images/logos/${props.classEntry.companyLogo}`} alt={`${props.classEntry.companyLogo} logo`} />
                 <span className="company-name">{props.classEntry.companyName}</span>
               </div> 
 

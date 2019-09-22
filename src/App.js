@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './styles/App.scss';
 import Main from './pages/Main';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -19,7 +19,11 @@ class App extends Component {
             <ScrollToTop>
               <div className="App">
                 <LocaleContextProvider>
-                <Main />
+                <Switch>
+                  <Route path="/en" component={Main} />
+                  <Route path="/es" component={Main} />
+                  <Redirect to="/en" />
+                </Switch>
                 </LocaleContextProvider>
               </div>
             </ScrollToTop>

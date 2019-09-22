@@ -19,8 +19,8 @@ export default function LanguageSelector() {
                     onClick={setSpanish} /> */}
                 {/* <img className="locale-flag" src='../images/flags/english.png' alt="British flag"
                     onClick={setEnglish} /> */}
-                <Button className="language-selector-btn" onClick={setSpanish}>español</Button>
-                <Button className="language-selector-btn" onClick={setEnglish}>english</Button>
+                <a href="/es" className="language-selector-btn" onClick={setSpanish}>español</a>
+                <a href="/en" className="language-selector-btn" onClick={setEnglish}>english</a>
 
             </div>);
     }}</LocaleContext.Consumer>);

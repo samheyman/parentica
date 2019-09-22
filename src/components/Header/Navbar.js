@@ -47,35 +47,35 @@ export default function Navbar(props) {
       >
       {/* <div className="spacer"></div> */}
       <List className="sidebar-links">
-        <NavLink to="/home">
+        <NavLink to={`/${locale.split('-')[0]}/home`}>
             <ListItem button key="home">
             <ListItemText 
               primary={<FormattedMessage id={`navbar.home.link.${locale}`} />} 
             />
             </ListItem>
           </NavLink>
-          <NavLink to="/explore">
+          <NavLink to={`/${locale.split('-')[0]}/explore`}>
             <ListItem button key="explore">
               <ListItemText 
                 primary={<FormattedMessage id={`navbar.explore.link.${locale}`} />} 
               />
             </ListItem>
           </NavLink>
-          <NavLink to="/about">
+          <NavLink to={`/${locale.split('-')[0]}/about`}>
             <ListItem button key="about">
               <ListItemText 
                 primary={<FormattedMessage id={`navbar.about.link.${locale}`} />} 
               />
             </ListItem>
           </NavLink>
-          <NavLink to="/locations">
+          <NavLink to={`/${locale.split('-')[0]}/locations`}>
             <ListItem button key="locations">
               <ListItemText               
                 primary={<FormattedMessage id={`navbar.locations.link.${locale}`} />} 
                />
             </ListItem>
           </NavLink>
-          <NavLink to="/contact">
+          <NavLink to={`/${locale.split('-')[0]}/contact`}>
             <ListItem button key="contact">
               <ListItemText               
                 primary={<FormattedMessage id={`navbar.contact.link.${locale}`} />} 
@@ -92,17 +92,15 @@ export default function Navbar(props) {
         return(<div className={classes.root}>
         <AppBar className="app-header" position="static">
           <Toolbar>
-            <NavLink to="/" className="brand-logo">
+            <NavLink to={`/${locale.split('-')[0]}`} className="brand-logo">
               <Logo />
             </NavLink>
             <Box display={{ xs: 'none', sm: 'none', md: 'block', lg: 'block', xl: 'block' }}>
               <ul className="app-header-full">                      
-                <li><NavLink to="/explore"><FormattedMessage id={`navbar.explore.link.${locale}`} /></NavLink></li>
-                <li><NavLink to="/about"><FormattedMessage id={`navbar.about.link.${locale}`} /></NavLink></li>
-                <li><NavLink to="/locations"><FormattedMessage id={`navbar.locations.link.${locale}`} /></NavLink></li>
-                <li><NavLink to="/contact"><FormattedMessage id={`navbar.contact.link.${locale}`} /></NavLink></li>
-                {/* <li><NavLink to="collapsible.html">Sign in</NavLink></li>
-                <li><NavLink className="btn-small" to="collapsible.html">Sign up</NavLink></li> */}
+                <li><NavLink to={`/${locale.split('-')[0]}/explore`}><FormattedMessage id={`navbar.explore.link.${locale}`} /></NavLink></li>
+                <li><NavLink to={`/${locale.split('-')[0]}/about`}><FormattedMessage id={`navbar.about.link.${locale}`} /></NavLink></li>
+                <li><NavLink to={`/${locale.split('-')[0]}/locations`}><FormattedMessage id={`navbar.locations.link.${locale}`} /></NavLink></li>
+                <li><NavLink to={`/${locale.split('-')[0]}/contact`}><FormattedMessage id={`navbar.contact.link.${locale}`} /></NavLink></li>
               </ul>
             </Box>
             <Box display={{ xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' }}>

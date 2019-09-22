@@ -4,7 +4,7 @@ export const LocaleContext = createContext();
 
 class LocaleContextProvider extends Component {
     state = {
-        locale: 'en-GB',
+        locale: (window.location.pathname==="/es") ? 'es-SP' : 'en-GB',
     }
 
     setEnglish = () => {
@@ -16,6 +16,9 @@ class LocaleContextProvider extends Component {
     }
 
     render() {
+        console.log(window.location.pathname);
+        console.log(this.state.locale);
+
         return(
             <LocaleContext.Provider value={{...this.state, setEnglish: this.setEnglish, setSpanish: this.setSpanish}}>
                 {this.props.children}

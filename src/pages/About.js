@@ -105,7 +105,7 @@ function About(props) {
                                 />
                             </div>
                         </li>
-                        <li>
+                        {/* <li>
                             <FormattedMessage 
                                 id={`about.manifesto.p4.${locale}`}
                                 defaultMessage=""
@@ -116,8 +116,8 @@ function About(props) {
                                     defaultMessage=""
                                 />
                             </div>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                             <FormattedMessage 
                                 id={`about.manifesto.p5.${locale}`}
                                 defaultMessage=""
@@ -128,8 +128,8 @@ function About(props) {
                                     defaultMessage=""
                                 />
                             </div>
-                        </li>
-                        <li>
+                        </li> */}
+                        {/* <li>
                             <FormattedMessage 
                                 id={`about.manifesto.p6.${locale}`}
                                 defaultMessage=""

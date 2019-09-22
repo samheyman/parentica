@@ -53,14 +53,15 @@ class Main extends Component {
                 );
             }
         }
-
+        const { match } = this.props;
+        console.log("match url: " + match.url);
         return(
             <React.Fragment>
                 <Navbar/>
                 <Switch>
-                    <Route exact path='/' component={HomePage} />
-                    <Route path='/home' render={()=><Redirect to="/" /> } />
-                    <Route exact path='/explore' render={() => {
+                    <Route exact path={`${match.url}/`} component={HomePage} />
+                    <Route path={`${match.url}/home`} render={()=><Redirect to={`${match.url}/`} /> } />
+                    <Route exact path={`${match.url}/explore`} render={() => {
                         if(this.props.location.topic == null || this.props.location.topic === "all") {
                             return(
                                 <Explore
@@ -81,7 +82,7 @@ class Main extends Component {
                             );
                         }
                     }} />
-                    <Route path='/explore/online' render={() => {
+                    <Route path={`${match.url}/explore/online`} render={() => {
                         if(this.props.location.topic == null || this.props.location.topic === "all"){
                             return(
                                 <Explore
@@ -102,7 +103,7 @@ class Main extends Component {
                             );
                         }
                     }} />
-                    <Route path='/explore/madrid' render={() => {
+                    <Route path={`${match.url}/explore/madrid`} render={() => {
                         if(this.props.location.topic == null || this.props.location.topic === "all") {
                             return(
                                 <Explore
@@ -126,10 +127,10 @@ class Main extends Component {
                     {/* issue here is that a new component is rendered every time, rather than update existing one */}
                     {/* https://tylermcginnis.com/react-router-pass-props-to-components/ */}
                     {/* <Route path='/classes/:classId' component={ClassWithId} /> */}
-                    <Route path='/classes/:classNameId' component={ClassWithName} />
-                    <Route path='/locations' component={Locations}/>
-                    <Route path='/about' component={About}/>
-                    <Route path='/contact' render={
+                    <Route path={`${match.url}/classes/:classNameId`} component={ClassWithName} />
+                    <Route path={`${match.url}/locations`} component={Locations}/>
+                    <Route path={`${match.url}/about`} component={About}/>
+                    <Route path={`${match.url}/contact`} render={
                             (props) => <Contact {...props}
                         />}
                     />
