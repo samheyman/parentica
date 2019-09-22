@@ -1,7 +1,8 @@
 .locale-selector {
-
+    display: flex;
     font-size: 12px;
     margin-top: 10px;
+    align-items: center;
 
     .locale-flag {
         height: 15px !important;
