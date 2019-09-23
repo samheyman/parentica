@@ -359,15 +359,19 @@ function ClassDetails(props) {
                                     <ClassDuration sessions={props.selectedClass.sessions} duration={props.selectedClass.duration} locale={locale} classes={classes.icon} />
                                     <ClassLocation address={props.selectedClass.address} classes={classes.icon} />
                                     <ClassLanguage language={props.selectedClass.language} locale={locale} classes={classes.icon} />
-                                    <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} locale={locale} />
+                                    <div className="class-tags">
+                                        Topics: <RenderTags tags={props.selectedClass.tags} locale={locale} />
+                                    </div>
+                                </div>           
+                            </div>
+                            
+                            <div className="redirect-div">
+                                <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} locale={locale} />
 
-                                </div>
-                                
-                            </div>
-                            <div className="class-tags">
-                                <RenderTags tags={props.selectedClass.tags} locale={locale} />
-                            </div>
-                            <div className="button-div">
+                                <p><FormattedMessage 
+                                            id={`classDetails.infoLinkToWebsite.${locale}`}
+                                            defaultMessage=""
+                                /></p>
                                 <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
                                     onClick={()=>{
                                         window.gtag("event", props.selectedClass.companyName, {
@@ -376,11 +380,14 @@ function ClassDetails(props) {
                                         }); 
                                     }}
                                 >
-                                    <Button variant="outlined" color="primary">
+                                    <Button variant="contained">
                                         <FormattedMessage 
                                             id={`classDetails.linkToWebsite.${locale}`}
                                             defaultMessage="Go to website"
                                         />
+                                        <Icon className={classes.icon}>
+                                        &nbsp;keyboard_arrow_right
+                                        </Icon>
                                     </Button>
                                 </a>
                             </div>
