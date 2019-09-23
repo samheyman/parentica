@@ -83,7 +83,7 @@ function MediaCard(props) {
         const locale = context.locale;
         return(<Card className={classes.card}>
           <CardActionArea>
-            <Link className="class-card-link" to={`../classes/${props.classEntry.nameId}`}
+            <Link className="class-card-link" to={`/${locale.split('-')[0]}/classes/${props.classEntry.nameId}`}
                 onClick={()=>{
                   window.gtag("event", props.classEntry.companyName, {
                       event_category: "class details",

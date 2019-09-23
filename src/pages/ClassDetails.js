@@ -54,7 +54,7 @@ function RenderDescription({description}) {
     return formatedDescription;
 }
 
-function RenderOtherClasses({otherClasses}) {
+function RenderOtherClasses({otherClasses, locale}) {
     let i =0;
     const otherClassesList = otherClasses.map((item) => {
         let formatedDates = null;
@@ -64,7 +64,7 @@ function RenderOtherClasses({otherClasses}) {
         return (
             <TableRow key={i++}>
                 <TableCell>
-                    <Link to={`/classes/${item.nameId}`}>{item.className.toLowerCase()}</Link>
+                    <Link to={`/${locale.split('-')[0]}/classes/${item.nameId}`}>{item.className.toLowerCase()}</Link>
                 </TableCell>
                 <TableCell>{formatedDates} - {item.time}</TableCell>
                 <TableCell>
@@ -221,7 +221,7 @@ function ClassLanguage({language, locale}, {icon}) {
                         defaultMessage="Price"
                     />
                 </span>
-                <img className="language-flag" src={`../images/flags/${language}.png`} alt={`${language}`} />
+                <img className="language-flag" src={`../../images/flags/${language}.png`} alt={`${language}`} />
             </div>
         );
     } else {
@@ -315,7 +315,7 @@ const useStyles = makeStyles({
 function ClassDetails(props) {
     
     const divStyle = {
-        backgroundImage: 'url(../images/classes/' + props.selectedClass.image + ')',
+        backgroundImage: 'url(../../images/classes/' + props.selectedClass.image + ')',
     };
     const classes = useStyles();
 
@@ -343,7 +343,7 @@ function ClassDetails(props) {
                             <div className="header">
                                 <h2 className="class-title">{props.selectedClass.className}</h2>
                                 <div className="company">
-                                    <img className="logo" src={`../images/logos/${props.selectedClass.companyLogo}`} alt={`${props.selectedClass.companyLogo} logo`}></img>
+                                    <img className="logo" src={`../../images/logos/${props.selectedClass.companyLogo}`} alt={`${props.selectedClass.companyLogo} logo`}></img>
                                     <div className="company-name">
                                         {props.selectedClass.companyName}
                                     </div>
@@ -419,7 +419,7 @@ function ClassDetails(props) {
                                     </TabPanel>
                                     <TabPanel className="about-class" value={value} index={1} dir={theme.direction}>
                                         <RenderOtherClasses
-                                            otherClasses={props.otherClasses.filter((item) => (item.companyName === props.selectedClass.companyName) && item.id !== props.selectedClass.id)}
+                                            locale={locale} otherClasses={props.otherClasses.filter((item) => (item.companyName === props.selectedClass.companyName) && item.id !== props.selectedClass.id)}
                                         />
                                     </TabPanel>
                                 </div>
