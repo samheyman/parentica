@@ -27,7 +27,6 @@
             font-weight: 300;
             margin: 15px 0 20px 0;
             text-transform: capitalize;
-            border: 1px solid red;
             height: 45px;
 
             .logo {
@@ -42,6 +41,12 @@
         .class-price {
             padding: 10px 0 0 0;
             font-size: 1.2em;
+        }
+
+        .class-price-couples {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: 0.9em;
         }
 
         .class-title {

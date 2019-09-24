@@ -176,14 +176,14 @@ function ClassPrice({classPrice, classPriceCouple, locale}) {
                 </span>;
     }
     if (classPriceCouple >= 0) {
-        couplePrice = <span className="class-price"> 
+        couplePrice = <p className="class-price-couples"> 
                 ({classPriceCouple}€&nbsp;
                     <FormattedMessage 
                         id={`classDetails.price.forCouples.${locale}`}
                         defaultMessage="for couples"
                     />
                 )
-            </span>;
+            </p>;
     } 
    
     return(
