@@ -121,6 +121,9 @@
     "classDetails.about.en-GB": "About",
     "classDetails.about.es-ES": "Acerca de",
 
+    "classDetails.topics.en-GB": "Topics: ",
+    "classDetails.topics.es-ES": "Temas: ",
+
     "classDetails.otherClasses.en-GB": "Other classes",
     "classDetails.otherClasses.es-ES": "Otras clases",
 

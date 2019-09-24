@@ -360,7 +360,11 @@ function ClassDetails(props) {
                                     <ClassLocation address={props.selectedClass.address} classes={classes.icon} />
                                     <ClassLanguage language={props.selectedClass.language} locale={locale} classes={classes.icon} />
                                     <div className="class-tags">
-                                        Topics: <RenderTags tags={props.selectedClass.tags} locale={locale} />
+                                        <FormattedMessage 
+                                            id={`classDetails.topics.${locale}`}
+                                            defaultMessage=""
+                                        /> 
+                                        <RenderTags tags={props.selectedClass.tags} locale={locale} />
                                     </div>
                                 </div>           
                             </div>

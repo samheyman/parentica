@@ -40,15 +40,13 @@ class LocaleContextProvider extends Component {
     };
 
     state = {
-        locale: (window.location.pathname==="/") ?
+        locale: (window.location.pathname.split('/')[1]==="") ?
             this.getFirstBrowserLanguage()
             :
-            (window.location.pathname==="/es") ? 'es-ES' : 'en-GB'
+            (window.location.pathname.split('/')[1]==="es") ? 'es-ES' : 'en-GB'
     }
 
     render() {
-        // console.log(window.location.pathname);
-        console.log(window.location.pathname);
         console.log("Locale detected: " + this.getFirstBrowserLanguage());
         return(
             <LocaleContext.Provider value={{...this.state, setEnglish: this.setEnglish, setSpanish: this.setSpanish}}>
