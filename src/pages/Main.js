@@ -55,6 +55,7 @@ class Main extends Component {
         }
         const { match } = this.props;
         console.log("match url: " + match.url);
+
         return(
             <React.Fragment>
                 <Navbar/>

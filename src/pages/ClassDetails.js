@@ -209,7 +209,7 @@ function ClassLocation({address, icon}) {
 }
 
 function ClassLanguage({language, locale}, {icon}) {
-    if ((language==='english' && locale==='es-SP') || (language==='spanish' && locale==='en-GB')) {
+    if ((language==='english' && locale==='es-ES') || (language==='spanish' && locale==='en-GB')) {
         return(
             <div className="value">
                 <Icon className={icon}>

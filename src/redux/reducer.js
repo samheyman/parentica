@@ -7,7 +7,7 @@ export const initialState = {
     providers: PROVIDERS,
     topics: TOPICS,
     tab: 1,
-    locale: 'es-SP',
+    locale: 'es-ES',
     // locale: 'en-GB'
 };
 
