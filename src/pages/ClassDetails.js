@@ -18,7 +18,6 @@ import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
 import { FormattedMessage, FormattedDate } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
-import Container from '@material-ui/core/Container';
 
 function RenderTags({tags, locale}) {
     let i=0;
@@ -57,16 +56,31 @@ function RenderDescription({description}) {
 function RenderOtherClasses({otherClasses, locale}) {
     let i =0;
     const otherClassesList = otherClasses.map((item) => {
-        let formatedDates = null;
+        let formatedDate = null;
+        let formatedTime = null;
+
         if (item.date != null) {
-            formatedDates = <span>{new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(item.date)))}</span>;
+            formatedDate = <span>
+                                <FormattedDate
+                                    value={item.date}
+                                    day="2-digit"
+                                    month="2-digit"
+                                    />
+                            </span>;
+            formatedTime = <span>
+                                <FormattedDate
+                                    value={item.date}
+                                    hour="2-digit"
+                                    minute="2-digit"
+                                    />
+                            </span>
         }
         return (
             <TableRow key={i++}>
                 <TableCell>
                     <Link to={`/${locale.split('-')[0]}/classes/${item.nameId}`}>{item.className.toLowerCase()}</Link>
                 </TableCell>
-                <TableCell>{formatedDates} - {item.time}</TableCell>
+                <TableCell>{formatedDate} - {formatedTime}</TableCell>
                 <TableCell>
                     {item.district}
                 </TableCell>
@@ -176,19 +190,19 @@ function ClassPrice({classPrice, classPriceCouple, locale}) {
                 </span>;
     }
     if (classPriceCouple >= 0) {
-        couplePrice = <p className="class-price-couples"> 
+        couplePrice = <span className="price-couples"> 
                 ({classPriceCouple}€&nbsp;
                     <FormattedMessage 
                         id={`classDetails.price.forCouples.${locale}`}
                         defaultMessage="for couples"
                     />
                 )
-            </p>;
+            </span>;
     } 
    
     return(
-        <div className="value">
-            {price} {couplePrice}
+        <div>
+            {price} <br/> {couplePrice}
         </div>
     );
 }
@@ -218,7 +232,7 @@ function ClassLanguage({language, locale}, {icon}) {
                 <span className="language">
                     <FormattedMessage 
                         id={`general.${language}.${locale}`}
-                        defaultMessage="Price"
+                        defaultMessage=""
                     />
                 </span>
                 <img className="language-flag" src={`../../images/flags/${language}.png`} alt={`${language}`} />
@@ -371,19 +385,23 @@ function ClassDetails(props) {
                             
                             <div className="redirect-div">
                                 <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} locale={locale} />
-
-                                <p><FormattedMessage 
+                                <div>
+                                    <span>
+                                        <FormattedMessage 
                                             id={`classDetails.infoLinkToWebsite.${locale}`}
                                             defaultMessage=""
-                                /></p>
-                                <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
-                                    onClick={()=>{
-                                        window.gtag("event", props.selectedClass.companyName, {
-                                            event_category: "conversions",
-                                            event_label: props.selectedClass.companyName + " - " + props.selectedClass.className
-                                        }); 
-                                    }}
-                                >
+                                        />
+                                    </span>
+                                </div>
+                                <div className="button-div">
+                                    <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
+                                        onClick={()=>{
+                                            window.gtag("event", props.selectedClass.companyName, {
+                                                event_category: "conversions",
+                                                event_label: props.selectedClass.companyName + " - " + props.selectedClass.className
+                                            }); 
+                                        }}
+                                    >
                                     <Button variant="contained">
                                         <FormattedMessage 
                                             id={`classDetails.linkToWebsite.${locale}`}
@@ -393,7 +411,8 @@ function ClassDetails(props) {
                                         &nbsp;keyboard_arrow_right
                                         </Icon>
                                     </Button>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                             <div className="row">
                                 <div className="class-details-tabs">

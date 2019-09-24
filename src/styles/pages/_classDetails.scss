@@ -86,6 +86,11 @@
                 .language {
                     text-transform: capitalize;
                 }
+
+                .language-flag {
+                    height: 12px;
+                    margin-left: 5px;
+                }
     
             }
 
@@ -182,7 +187,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    margin: 20px 0 40px 0;
+    margin: 0px 0 40px 0;
     padding-bottom: 30px;
     border-bottom: 1px solid $font-very-pale;
 
@@ -191,7 +196,15 @@
         color: #fff !important;
     }
 
-    p {
+    div {
+        margin: 20px 0 0 0;
+    }
+
+    .button-div {
+        margin-top:25px;
+    }
+
+    .price-couples {
         color: rgba(0, 0, 0, 0.54);
         font-size: 0.875rem;
         margin: 10px 0 10px 0;
@@ -201,10 +214,6 @@
         font-size: 1.2rem;
     }
 
-}
-
-.language-flag {
-    height: 12px;
 }
 
 .about-class {
