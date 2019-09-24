@@ -45,4 +45,15 @@ describe('Parentica', () => {
         cy.get('#online-classes-btn');
         cy.contains('en línea');
     });
+
+    it('can select topic from class card, in Spanish', () => {
+        cy.get('.language-selector-btn').eq(0).click();
+        cy.get('#online-classes-btn').click();
+        cy.contains('en línea').click();
+        cy.get('#wrapped-tabpanel-1').find('.tag-baby').eq(0).click();
+        cy.get('.result-filters').find('.tag-baby').should(($tag) => {
+            const tag = $tag.text()
+            expect(tag).eq('bebé')
+        });
+    });
 })
