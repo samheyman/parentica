@@ -40,7 +40,7 @@ function RenderTags({tags, lang}) {
   const output = tags.map((tag) => {
       i++;
       return (
-        <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}
+        <Link key={i++} to={{pathname:`/${lang.split('-')[0]}/explore`, topic:`${tag}`}}
                 onClick={()=>{
                   window.scrollTo(0, 0);
                   console.log("Tag selected: " + tag);

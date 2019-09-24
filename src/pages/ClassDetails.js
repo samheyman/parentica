@@ -24,7 +24,7 @@ function RenderTags({tags, locale}) {
     let i=0;
     const output = tags.map((tag) => {
         return (
-            <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}
+            <Link key={i++} to={{pathname:`/${locale.split('-')[0]}/explore`, topic:`${tag}`}}
                 onClick={()=>{
                     window.gtag("event", "topic tag from class details", {
                         event_category: "topics",
@@ -330,9 +330,9 @@ function ClassDetails(props) {
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
-            return(<Container>
-            <ScrollToTop/>
+            return(
             <div className="row">
+                <ScrollToTop/>
                 <Grid container className="class-details-container">
                     <div className="class-image-mobile hide-on-med-and-up" style={divStyle}></div>
                     {/* <Grid className="col s12 m4 main-content"> */}
@@ -434,7 +434,7 @@ function ClassDetails(props) {
                     </Grid>
                 </Grid>
             </div>
-        </Container>)}}</LocaleContext.Consumer>
+        )}}</LocaleContext.Consumer>
     );
 
 }
