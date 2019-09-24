@@ -1,0 +1,56 @@
+button {
+    text-transform: capitalize !important;
+    padding: 3px 12px !important;
+    font-weight: normal !important;
+    font-size: 0.9rem !important;
+    margin: 0 10px 0 0 !important;
+    .material-icons {
+        font-size: 1rem !important;
+    }
+}
+
+.primary {
+    background-color: $purple !important;
+    color: #fff !important;
+    
+}
+
+.secondary {
+    background-color: transparent !important;
+    color: $font-pale !important;
+}
+
+form {
+    border: 1px solid #e1dede;
+    margin-top: 30px;
+    border-radius: 5px;
+    padding: 20px 30px;
+
+    .provider-form-item {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        label {
+            margin: 0 10px 0 0 ;
+            min-width: 150px;
+            text-align: right;
+        }
+
+        input, .MuiSelect-root, textarea {
+            min-width: 300px;
+        }
+    }
+
+    .form-buttons {
+
+        .send-form-data, .cancel-form-data {
+            width: 100px;
+        }
+
+        .material-icons {
+            font-size: 1rem !important;
+            margin-right: 10px;
+        }
+    }
+}

@@ -10,6 +10,8 @@ import Contact from './Contact';
 import Navbar from '../components/Header/Navbar';
 import Footer from '../components/Footer';
 import PageNotFound from './PageNotFound';
+import ClassForm from './ClassForm';
+import Providers from './Providers';
 
 const mapStateToProps = (state) => {
     return(
@@ -131,6 +133,14 @@ class Main extends Component {
                     <Route path={`${match.url}/classes/:classNameId`} component={ClassWithName} />
                     <Route path={`${match.url}/locations`} component={Locations}/>
                     <Route path={`${match.url}/about`} component={About}/>
+                    <Route exact path={`${match.url}/providers`} render={
+                            (props) => <Providers {...props} classes={this.props.classes}
+                        />}
+                    />
+                    <Route path={`${match.url}/providers/new`} render={
+                            (props) => <ClassForm {...props}
+                        />}
+                    />
                     <Route path={`${match.url}/contact`} render={
                             (props) => <Contact {...props}
                         />}
