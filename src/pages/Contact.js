@@ -296,8 +296,18 @@ class Contact extends Component {
                                 <Icon className="success-icon">
                                     done
                                 </Icon>
-                                <p>Your message was successfully sent. We will get back to you as soon as we can.</p>
-                                <p><Link to="/home">back to home</Link></p>
+                                <p>
+                                <FormattedMessage 
+                                    id={`contact.confirmationMessage.${locale}`}
+                                    defaultMessage=""
+                                />
+                                </p>
+                                <p><Link to="/home">
+                                <FormattedMessage 
+                                    id={`contact.backHomeLink.${locale}`}
+                                    defaultMessage=""
+                                />
+                                </Link></p>
                             </div>
                         </Grid>
                     </Grid>

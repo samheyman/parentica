@@ -191,7 +191,7 @@
     "contact.contact.es-SP": "Contacto",
 
     "contact.p1.en-GB": "Please feel free to get in touch with us for more information or to find out about listing your classes.",
-    "contact.p1.es-SP": "No dude en ponerse en contacto con nosotros para obtener más información o para obtener información sobre cómo enumerar sus clases.",
+    "contact.p1.es-SP": "No dude en ponerse en contacto con nosotros para obtener más información o para obtener información sobre cómo publicar sus clases.",
 
     "contact.p2.en-GB": "We look forward to hearing from you!",
     "contact.p2.es-SP": "¡Esperamos con interés escuchar de usted!",
@@ -213,6 +213,15 @@
 
     "contact.send.en-GB": "Send",
     "contact.send.es-SP": "Enviar",
+
+    "contact.confirmationMessage.en-GB": "Your message was successfully sent. We will get back to you as soon as we can.",
+    "contact.confirmationMessage.es-SP": "Su mensaje fue enviado con éxito. Nos pondremos en contacto con usted lo antes posible.",
+
+    "contact.errorSendingMessage.en-GB": "Sorry, there was an error sending the form. Please try again.",
+    "contact.errorSendingMessage.es-SP": "Lo sentimos, hubo un error al enviar el formulario. Inténtelo de nuevo.",
+
+    "contact.backHomeLink.en-GB": "back to home",
+    "contact.backHomeLink.es-SP": "inicio",
 
     "contact.error.firstName.tooShort.en-GB": "First name should be more 3 characters",
     "contact.error.firstName.tooShort.es-SP": "El nombre debe tener más de 3 caracteres.",
