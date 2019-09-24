@@ -14,32 +14,20 @@
 }
 
 .class-details {
-    // width: 100% !important;
-    // margin-top: 20px;
     padding: 0 15px;
     
     .header {
         margin: 30px 0px 0 0px;
 
-        
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: space-between;
-        // text-align: center;
-        // border-bottom: 1px solid $font-very-pale;
-        // border-top: 1px solid $font-very-pale;
-        // padding: 10px 0;
-
         .company {
             display: flex;
             flex-direction: row;
-            align-content: flex-start;
+            align-items: center;
             font-size: 1.4em;
             font-weight: 300;
-            margin-top: 5px;
-            margin-bottom: 0px;
-            // line-height: 1.4em;
+            margin: 15px 0 20px 0;
             text-transform: capitalize;
+            height: 45px;
 
             .logo {
                 display: block;
@@ -48,39 +36,21 @@
                 border-radius: 50%;
                 margin-right: 10px;
             }
-
-            .company-name {
-                height: 45px;
-                line-height: 45px;
-            }
         }
 
-
-        // .price {
-        //     display: flex;
-        //     flex-direction: row;
-        //     align-items: center;
-        //     color: $font-dark;
-        //     font-size: 1.2em;
-        //     line-height: 1.4em;
-        // }
         .class-price {
             padding: 10px 0 0 0;
             font-size: 1.2em;
         }
-    
 
-    
-        // display: flex;
-        // flex-direction: row;
-        // justify-content: space-between;
-        // text-align: center;
-        // padding-top: 20px;
+        .class-price-couples {
+            padding: 0 !important;
+            margin: 0 !important;
+            font-size: 0.9em;
+        }
 
         .class-title {
             color: $font-dark;
-            font-size: 2em;
-            line-height: 1.4em;
             font-weight: 400 !important;
             margin: 0;
         }
@@ -90,21 +60,24 @@
             flex-direction: column;
             justify-content: center;
             align-items: flex-start ;
-            margin: 30px 0;
+            margin: 0;
             padding: 20px 0;
             color: rgba(0, 0, 0, 0.54);
             border-top: 1px solid $font-very-pale;
             border-bottom: 1px solid $font-very-pale;
 
             .value {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 2px 0;
 
                 .material-icons {
-                    margin-right: 12px;
-                    margin-bottom: 2px;
+                    margin-right: 20px;
                 }
 
                 span {
-                    margin-right: 5px; 
+                    margin-right: 2px; 
                     display: block;
                     line-height: inherit !important;
                     display: inline-flex;
@@ -113,14 +86,21 @@
                 .language {
                     text-transform: capitalize;
                 }
+
+                .language-flag {
+                    height: 12px;
+                    margin-left: 5px;
+                }
     
             }
 
             .other-dates {
-
                 margin-top: -5px;
-                margin-left: 33px;
-                margin-bottom: 3px;
+                margin-left: 40px;
+
+                div > span {
+                    padding-bottom: 3px;
+                }
             }
                 
             .MuiIcon-root {
@@ -141,25 +121,19 @@
                 display: flex;
                 flex-direction: row;
                 vertical-align: middle;
-                // font-size: 0.6em;
             }
 
             .duration-icon {
                 padding: 0;
-                // vertical-align: middle;
-                // font-size: 1.2em;
-                // padding: 2px 5px;
             }
         }
     }
 
     .class-tags {
-        // text-align: center;
-        margin: 20px 0;
+        margin:10px 0 0 0;
     }
 
     .card-tabs {
-        // margin: 5px 10px;
 
         h3 {
             font-size: 1.5em;
@@ -208,13 +182,38 @@
     }
 }
 
-.button-div {
-    margin: 40px 0 20px 0;
-    text-align: center;
-}
+.redirect-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 0px 0 40px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid $font-very-pale;
 
-.language-flag {
-    height: 12px;
+    .MuiButton-contained {
+        background-color: $purple !important;
+        color: #fff !important;
+    }
+
+    div {
+        margin: 20px 0 0 0;
+    }
+
+    .button-div {
+        margin-top:25px;
+    }
+
+    .price-couples {
+        color: rgba(0, 0, 0, 0.54);
+        font-size: 0.875rem;
+        margin: 10px 0 10px 0;
+    }
+
+    .class-price {
+        font-size: 1.2rem;
+    }
+
 }
 
 .about-class {
@@ -223,7 +222,6 @@
 
 table {
     width: 100%;
-    // border: 1px solid navy;
 
     td.MuiTableCell-body {
         text-transform: capitalize;

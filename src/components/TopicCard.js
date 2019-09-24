@@ -10,10 +10,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 export default function TopicCard(props) {
     let topicId = props.topic.split(" ")[0];
     let topic = props.topic;
-
+    console.log(props);
     return(
         <Grid item xs={6} sm={4} md={3} key="3">
-            <Link to={{pathname:"/explore", topic:`${topic}`}}
+            <Link to={{pathname:`/${props.locale.split('-')[0]}/explore`, topic:`${topic}`}}
                 onClick={()=>{
                     window.gtag("event", "topic card", {
                         event_category: "topics",

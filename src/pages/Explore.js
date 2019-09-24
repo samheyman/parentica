@@ -9,7 +9,7 @@ import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 import ClassCard from '../components/ClassCard';
 import { FormattedMessage } from 'react-intl';
-
+import { LocaleContext } from '../contexts/LocaleContext';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -43,7 +43,6 @@ function a11yProps(index) {
 
 
 function Explore(props) {
-    const rtf = new Intl.RelativeTimeFormat('en');
     const [value, setValue] = React.useState(props.tabSelected);
 
     function handleChange(event, newValue) {
@@ -77,18 +76,18 @@ function Explore(props) {
     });
     let groupCount = classesList.filter((item) => item !== '' && item != null).length;
     let onlineCount = onlineClassesList.filter((item) => item !== '' && item != null).length;
-    let topic = props.topic;
-    console.log(props.classes.length + " classes: " + props.classes);
+    // console.log(props.classes.length + " classes: " + props.classes);
     console.log(groupCount + " classes in Madrid");
     console.log(onlineCount + " classes online");
-
     return(
-        <Container className="main-content">
+        <LocaleContext.Consumer>{(context) => {
+            const locale = context.locale;
+            return(<Container className="main-content">
             <div className="result-filters">
                 {(props.topic!=="all")?
                     <span className={`tag tag-${props.topic}`}>
                         <FormattedMessage 
-                            id={`topics.${props.topic.split(" ")[0]}.${props.locale}`}
+                            id={`topics.${props.topic.split(" ")[0]}.${locale}`}
                             defaultMessage={props.topic}
                         />
                     </span>
@@ -98,10 +97,10 @@ function Explore(props) {
             </div>
             <AppBar position="static" color="default">
                 <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">
-                    <Tab 
+                    <Tab
                         label={
                             <FormattedMessage 
-                                id={`explore.tab.madrid.${props.locale}`}
+                                id={`explore.tab.madrid.${locale}`}
                                 defaultMessage="Madrid"
                                 values={{
                                     count: groupCount
@@ -113,7 +112,7 @@ function Explore(props) {
                     <Tab 
                         label={
                             <FormattedMessage 
-                                id={`explore.tab.online.${props.locale}`}
+                                id={`explore.tab.online.${locale}`}
                                 defaultMessage="online"
                                 values={{
                                     count: onlineCount
@@ -132,11 +131,11 @@ function Explore(props) {
                 :
                 <p>
                     <FormattedMessage 
-                        id={`explore.results.madrid.none.${props.locale}`}
+                        id={`explore.results.madrid.none.${locale}`}
                         defaultMessage=""
                         values={{
                             topicLabel: <FormattedMessage 
-                                            id={`topics.${props.topic.split(" ")[0]}.${props.locale}`}
+                                            id={`topics.${props.topic.split(" ")[0]}.${locale}`}
                                             defaultMessage={props.topic}
                                         />
                         }}
@@ -151,18 +150,19 @@ function Explore(props) {
                 :
                 <p>
                     <FormattedMessage 
-                        id={`explore.results.online.none.${props.locale}`}
+                        id={`explore.results.online.none.${locale}`}
                         defaultMessage=""
                         values={{
-                            topicLabel: <FormattedMessage 
-                                            id={`topics.${props.topic.split(" ")[0]}.${props.locale}`}
-                                            defaultMessage={props.topic}
-                                        />
+                            topicLabel: 
+                                <FormattedMessage 
+                                    id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                                    defaultMessage={props.topic}
+                                />
                         }}
                     />
                 </p>}
             </TabPanel>
-        </Container>
+        </Container>)}}</LocaleContext.Consumer>
     );
 }
 

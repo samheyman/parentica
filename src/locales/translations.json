@@ -1,235 +1,250 @@
 {
     "general.english.en-GB": "English",
-    "general.english.es-SP": "Inglés",
+    "general.english.es-ES": "Inglés",
 
     "general.spanish.en-GB": "Spanish",
-    "general.spanish.es-SP": "Español",
+    "general.spanish.es-ES": "Español",
 
     "navbar.selectLanguage.en-GB": "Offered in",
-    "navbar.selectLanguage.es-SP": "Ofrecido en",
+    "navbar.selectLanguage.es-ES": "Ofrecido en",
 
     "navbar.home.link.en-GB": "Home",
-    "navbar.home.link.es-SP": "Inicio",
+    "navbar.home.link.es-ES": "Inicio",
 
     "navbar.explore.link.en-GB": "Explore",
-    "navbar.explore.link.es-SP": "Explorar",
+    "navbar.explore.link.es-ES": "Explorar",
 
     "navbar.about.link.en-GB": "About",
-    "navbar.about.link.es-SP": "Nosotros",
+    "navbar.about.link.es-ES": "Nosotros",
 
     "navbar.locations.link.en-GB": "Locations",
-    "navbar.locations.link.es-SP": "Ubicaciones",
+    "navbar.locations.link.es-ES": "Ubicaciones",
 
     "navbar.contact.link.en-GB": "Contact",
-    "navbar.contact.link.es-SP": "Contacto",
+    "navbar.contact.link.es-ES": "Contacto",
     
     
     "homepage.tagline.header.en-GB": "Skilled parents for happy, thriving children",
-    "homepage.tagline.header.es-SP": "Padres competentes para niños felices y prósperos",
+    "homepage.tagline.header.es-ES": "Padres competentes para niños felices y prósperos",
 
     "homepage.tagline.paragraph.en-GB": "Find pregnancy and parenting classes and events, either online or in one of the cities we are in",
-    "homepage.tagline.paragraph.es-SP": "Encuentra clases y eventos sobre embarazo y paternidad, ya sea en línea o en una de las ciudades en las que estamos",
+    "homepage.tagline.paragraph.es-ES": "Encuentra clases y eventos sobre embarazo y paternidad, ya sea en línea o en una de las ciudades en las que estamos",
     
     "homepage.tagline.online.button.en-GB": "online",
-    "homepage.tagline.online.button.es-SP": "en línea",
+    "homepage.tagline.online.button.es-ES": "en línea",
 
     "homepage.tagline.madrid.button.en-GB": "madrid",
-    "homepage.tagline.madrid.button.es-SP": "madrid",
+    "homepage.tagline.madrid.button.es-ES": "madrid",
 
     "homepage.popularTopics.en-GB": "Popular topics",
-    "homepage.popularTopics.es-SP": "Temas populares",
+    "homepage.popularTopics.es-ES": "Temas populares",
 
     "homepage.allTopics.en-GB": "All topics",
-    "homepage.allTopics.es-SP": "Todos los temas",
+    "homepage.allTopics.es-ES": "Todos los temas",
 
     "homepage.providers.madrid.header.en-GB": "Providers in Madrid",
-    "homepage.providers.madrid.header.es-SP": "Proveedores en Madrid",
+    "homepage.providers.madrid.header.es-ES": "Proveedores en Madrid",
 
     "homepage.providers.online.header.en-GB": "Online providers",
-    "homepage.providers.online.header.es-SP": "Proveedores en línea",
+    "homepage.providers.online.header.es-ES": "Proveedores en línea",
 
     
     
 
     "topics.baby.en-GB": "baby",
-    "topics.baby.es-SP": "bebé",
+    "topics.baby.es-ES": "bebé",
     "topics.breastfeeding.en-GB": "breastfeeding",
-    "topics.breastfeeding.es-SP": "amamantamiento",
+    "topics.breastfeeding.es-ES": "amamantamiento",
     "topics.feeding.en-GB": "feeding",
-    "topics.feeding.es-SP": "alimentación",
+    "topics.feeding.es-ES": "alimentación",
     "topics.first.en-GB": "first aid",
-    "topics.first.es-SP": "primeros auxilios",
+    "topics.first.es-ES": "primeros auxilios",
     "topics.lecture.en-GB": "lecture",
-    "topics.lecture.es-SP": "charla",
+    "topics.lecture.es-ES": "charla",
     "topics.massage.en-GB": "massage",
-    "topics.massage.es-SP": "masaje",
+    "topics.massage.es-ES": "masaje",
     "topics.mindfulness.en-GB": "mindfulness",
-    "topics.mindfulness.es-SP": "mindfulness",
+    "topics.mindfulness.es-ES": "mindfulness",
     "topics.music.en-GB": "music",
-    "topics.music.es-SP": "música",
+    "topics.music.es-ES": "música",
     "topics.nutrition.en-GB": "nutrition",
-    "topics.nutrition.es-SP": "nutrición",
+    "topics.nutrition.es-ES": "nutrición",
     "topics.parenting.en-GB": "parenting",
-    "topics.parenting.es-SP": "paternidad",
+    "topics.parenting.es-ES": "paternidad",
     "topics.postpartum.en-GB": "postpartum",
-    "topics.postpartum.es-SP": "posparto",
+    "topics.postpartum.es-ES": "posparto",
     "topics.pregnancy.en-GB": "pregnancy",
-    "topics.pregnancy.es-SP": "embarazo",
+    "topics.pregnancy.es-ES": "embarazo",
     "topics.sleep.en-GB": "sleep",
-    "topics.sleep.es-SP": "sueño",
+    "topics.sleep.es-ES": "sueño",
     "topics.social.en-GB": "social",
-    "topics.social.es-SP": "social",
+    "topics.social.es-ES": "social",
     "topics.yoga.en-GB": "yoga",
-    "topics.yoga.es-SP": "yoga",
+    "topics.yoga.es-ES": "yoga",
 
 
 
     "explore.tab.madrid.en-GB": "Madrid ({count})",
-    "explore.tab.madrid.es-SP": "Madrid ({count})",
+    "explore.tab.madrid.es-ES": "Madrid ({count})",
 
     "explore.tab.online.en-GB": "online ({count})",
-    "explore.tab.online.es-SP": "en línea ({count})",
+    "explore.tab.online.es-ES": "en línea ({count})",
 
     "explore.results.madrid.none.en-GB": "Sorry no classes found for `{topicLabel}` in Madrid.",
-    "explore.results.madrid.none.es-SP": "Lo sentimos, no se encontraron clases para `{topicLabel}` en Madrid.",
+    "explore.results.madrid.none.es-ES": "Lo sentimos, no se encontraron clases para `{topicLabel}` en Madrid.",
 
     "explore.results.online.none.en-GB": "Sorry no online classes found for `{topicLabel}`.",
-    "explore.results.online.none.es-SP": "Lo sentimos, no se encontraron clases en línea para `{topicLabel}`.",
+    "explore.results.online.none.es-ES": "Lo sentimos, no se encontraron clases en línea para `{topicLabel}`.",
 
 
     "classDetails.price.en-GB": "Price",
-    "classDetails.price.es-SP": "Precio",
+    "classDetails.price.es-ES": "Precio",
 
     "classDetails.time.anytime.en-GB": "Anytime",
-    "classDetails.time.anytime.es-SP": "En cualquier momento",
+    "classDetails.time.anytime.es-ES": "En cualquier momento",
 
     "classDetails.sessions.en-GB": "sessions",
-    "classDetails.sessions.es-SP": "sesiones",
+    "classDetails.sessions.es-ES": "sesiones",
 
     "classDetails.price.free.en-GB": "free",
-    "classDetails.price.free.es-SP": "gratis",
+    "classDetails.price.free.es-ES": "gratis",
 
     "classDetails.price.forCouples.en-GB": "for couples",
-    "classDetails.price.forCouples.es-SP": "para parejas",
+    "classDetails.price.forCouples.es-ES": "para parejas",
+
+    "classDetails.infoLinkToWebsite.en-GB": "For more information and for booking:",
+    "classDetails.infoLinkToWebsite.es-ES": "Para más información y para inscripciones:",
 
     "classDetails.linkToWebsite.en-GB": "Go to website",
-    "classDetails.linkToWebsite.es-SP": "Ir al sitio web",
+    "classDetails.linkToWebsite.es-ES": "Ir al sitio web",
     
     "classDetails.about.en-GB": "About",
-    "classDetails.about.es-SP": "Acerca de",
+    "classDetails.about.es-ES": "Acerca de",
+
+    "classDetails.topics.en-GB": "Topics: ",
+    "classDetails.topics.es-ES": "Temas: ",
 
     "classDetails.otherClasses.en-GB": "Other classes",
-    "classDetails.otherClasses.es-SP": "Otras clases",
+    "classDetails.otherClasses.es-ES": "Otras clases",
 
     "locations.locations.en-GB": "Locations",
-    "locations.locations.es-SP": "Ubicaciones",
+    "locations.locations.es-ES": "Ubicaciones",
 
     "locations.contactUs.p1.en-GB": "We are currently located in and serving Madrid in Spain, but we hope to reach out to other cities in the near future.",
-    "locations.contactUs.p1.es-SP": "Actualmente estamos ubicados y prestamos servicios a Madrid en España, pero esperamos llegar a otras ciudades en el futuro cercano.",
+    "locations.contactUs.p1.es-ES": "Actualmente estamos ubicados y prestamos servicios a Madrid en España, pero esperamos llegar a otras ciudades en el futuro cercano.",
 
     "locations.contactUs.p2.en-GB": "Feel free to contact us for more information or to list your classes.",
-    "locations.contactUs.p2.es-SP": "No dude en contactarnos para obtener más información o para enumerar sus clases.",
+    "locations.contactUs.p2.es-ES": "No dude en contactarnos para obtener más información o para enumerar sus clases.",
 
 
     "about.about.en-GB": "About",
-    "about.about.es-SP": "Nosotros",
+    "about.about.es-ES": "Nosotros",
 
     "about.mission.p1.en-GB": "The mission of Parentica is simple...",
-    "about.mission.p1.es-SP": "La misión de Parentica es simple ...",
+    "about.mission.p1.es-ES": "La misión de Parentica es simple ...",
 
     "about.mission.statement.en-GB": "Help parents and parents-to-be find great classes and learning resources to fuel their persuit of knowledge, well-being and competence.",
-    "about.mission.statement.es-SP": "Ayudar a padres y a futuros padres a encontrar clases que los inspiren a convertirse en mejores padres.",
+    "about.mission.statement.es-ES": "Ayudar a padres y a futuros padres a encontrar clases que los inspiren a convertirse en mejores padres.",
 
     "about.manifesto.en-GB": "Manifesto",
-    "about.manifesto.es-SP": "Manifiesto",
+    "about.manifesto.es-ES": "Manifiesto",
 
     "about.manifesto.p1.en-GB": "The latest research in neuroscience, mental health, and many other disciplines, is redefining what we know about child raising.",
-    "about.manifesto.p1.es-SP": "La última investigación en neurología, medicina, ciencias mentales y todas las demás disciplinas está empujando los límites de lo que sabemos y asumimos que son verdaderos, desafiando los pensamientos preconcebidos.",
+    "about.manifesto.p1.es-ES": "La última investigación en neurología, medicina, ciencias mentales y todas las demás disciplinas está empujando los límites de lo que sabemos y asumimos que son verdaderos, desafiando los pensamientos preconcebidos.",
 
     "about.manifesto.q1.en-GB": "\"The only true wisdom is in knowing you know nothing.\" - Socrates",
-    "about.manifesto.q1.es-SP": "\"La única sabiduría verdadera es saber que no sabes nada.\" - Socrates",
+    "about.manifesto.q1.es-ES": "\"La única sabiduría verdadera es saber que no sabes nada.\" - Socrates",
 
     "about.manifesto.p2.en-GB": "Knowledge and opinions change from generation to generation, and culture to culture. It's important to keep an open mind.",
-    "about.manifesto.p2.es-SP": "Las opiniones y el conocimiento cambian de cultura en cultura, y de generación en generación.",
+    "about.manifesto.p2.es-ES": "Las opiniones y el conocimiento cambian de cultura en cultura, y de generación en generación.",
 
     "about.manifesto.q2.en-GB": "\"There’s no way to be a perfect mother and a million ways to be a good one.\" - Jill Churchill",
-    "about.manifesto.q2.es-SP": "\"No hay forma de ser una madre perfecta y un millón de maneras de ser buena.\" - Jill Churchill",
+    "about.manifesto.q2.es-ES": "\"No hay forma de ser una madre perfecta y un millón de maneras de ser buena.\" - Jill Churchill",
 
     "about.manifesto.p3.en-GB": "People tend to live further away from their families, often in different countries, and with less access to communities. This reduces the chances of family and community knowledge sharing.",
-    "about.manifesto.p3.es-SP": "Las personas tienden a vivir más lejos de sus familias, a menudo en diferentes países, lo que reduce las posibilidades de compartir conocimientos familiares y comunitarios.",
+    "about.manifesto.p3.es-ES": "Las personas tienden a vivir más lejos de sus familias, a menudo en diferentes países, lo que reduce las posibilidades de compartir conocimientos familiares y comunitarios.",
 
     "about.manifesto.q3.en-GB": "\"It takes a village to raise a child.\" - African Proverb",
-    "about.manifesto.q3.es-SP": "\"Se necesita un pueblo para criar a un niño.\" - Proverbio Africano",
+    "about.manifesto.q3.es-ES": "\"Se necesita un pueblo para criar a un niño.\" - Proverbio Africano",
 
     
 
     "about.manifesto.q5.en-GB": "\"There are only two lasting bequests we can hope to give our children. One of these is roots, the other, wings.\" - Johann Wolfgang von Goethe",
-    "about.manifesto.q5.es-SP": "\"Solo hay dos legados duraderos que podemos esperar dar a nuestros hijos. Una de ellas son las raíces, la otra, las alas.\" - Johann Wolfgang von Goethe",
+    "about.manifesto.q5.es-ES": "\"Solo hay dos legados duraderos que podemos esperar dar a nuestros hijos. Una de ellas son las raíces, la otra, las alas.\" - Johann Wolfgang von Goethe",
 
     "about.manifesto.p5.en-GB": "Learning to raise children in the best way possible is a noble goal.",
-    "about.manifesto.p5.es-SP": "Aprender a criar niños es un desafío que vale la pena asumir.",
+    "about.manifesto.p5.es-ES": "Aprender a criar niños es un desafío que vale la pena asumir.",
 
     "about.team.meet.en-GB": "Meet the team",
-    "about.team.meet.es-SP": "Conocer al equipo",
+    "about.team.meet.es-ES": "Conocer al equipo",
 
     "about.team.samJob.en-GB": "Founder and developer",
-    "about.team.samJob.es-SP": "Fundador y desarrollador",
+    "about.team.samJob.es-ES": "Fundador y desarrollador",
 
     "about.team.elineJob.en-GB": "Provider manager",
-    "about.team.elineJob.es-SP": "Gerente de proveedores",
+    "about.team.elineJob.es-ES": "Gerente de proveedores",
 
     "about.team.samDescription.en-GB": "Sam is a software engineer and father-to-be. He has a breadth of experience in building web applications having worked as a software developer for companies such as Skyscanner and Amadeus IT Group. He now wants to use his skills to help parents like himself with the daunting but exciting challenge of raising children.",
-    "about.team.samDescription.es-SP": "Sam es ingeniero de software y futuro padre. Tiene una amplia experiencia en la creación de aplicaciones web, ya que trabajó como desarrollador de software para empresas como Skyscanner y Amadeus IT Group. Ahora quiere usar sus habilidades para ayudar a los padres como él con el desafío desalentador pero emocionante de criar hijos.",
+    "about.team.samDescription.es-ES": "Sam es ingeniero de software y futuro padre. Tiene una amplia experiencia en la creación de aplicaciones web, ya que trabajó como desarrollador de software para empresas como Skyscanner y Amadeus IT Group. Ahora quiere usar sus habilidades para ayudar a los padres como él con el desafío desalentador pero emocionante de criar hijos.",
 
     "about.team.elineDescription.en-GB": "Eline is the co-founder of two NGOs that help empower children to become change agents in their communities through education. She loves to work with those who want to create a better world and solve the major challenges of today and tomorrow. She specializes in 21st century skills, school transformation and social impact, and is always eager to meet others on the same journey.",
-    "about.team.elineDescription.es-SP": "Eline es cofundadora de dos ONG que ayudan a empoderar a los niños a convertirse en agentes de cambio en sus comunidades a través de la educación. Le encanta trabajar con aquellos que desean crear un mundo mejor y resolver los principales desafíos de hoy y de mañana. Se especializa en habilidades del siglo XXI, transformación escolar e impacto social, y siempre está ansiosa por conocer a otros en el mismo viaje.",
+    "about.team.elineDescription.es-ES": "Eline es cofundadora de dos ONG que ayudan a empoderar a los niños a convertirse en agentes de cambio en sus comunidades a través de la educación. Le encanta trabajar con aquellos que desean crear un mundo mejor y resolver los principales desafíos de hoy y de mañana. Se especializa en habilidades del siglo XXI, transformación escolar e impacto social, y siempre está ansiosa por conocer a otros en el mismo viaje.",
     
     "contact.contact.en-GB": "Contact",
-    "contact.contact.es-SP": "Contacto",
+    "contact.contact.es-ES": "Contacto",
 
     "contact.p1.en-GB": "Please feel free to get in touch with us for more information or to find out about listing your classes.",
-    "contact.p1.es-SP": "No dude en ponerse en contacto con nosotros para obtener más información o para obtener información sobre cómo enumerar sus clases.",
+    "contact.p1.es-ES": "No dude en ponerse en contacto con nosotros para obtener más información o para obtener información sobre cómo publicar sus clases.",
 
     "contact.p2.en-GB": "We look forward to hearing from you!",
-    "contact.p2.es-SP": "¡Esperamos con interés escuchar de usted!",
+    "contact.p2.es-ES": "¡Esperamos con interés escuchar de usted!",
 
     "contact.firstName.en-GB": "First name",
-    "contact.firstName.es-SP": "Nombre",
+    "contact.firstName.es-ES": "Nombre",
 
     "contact.lastName.en-GB": "Last name",
-    "contact.lastName.es-SP": "Apellidos",
+    "contact.lastName.es-ES": "Apellidos",
 
     "contact.company.en-GB": "Company",
-    "contact.company.es-SP": "Empresa",
+    "contact.company.es-ES": "Empresa",
 
     "contact.email.en-GB": "Email",
-    "contact.email.es-SP": "Correo electrónico",
+    "contact.email.es-ES": "Correo electrónico",
 
     "contact.message.en-GB": "Message",
-    "contact.message.es-SP": "Mensaje",
+    "contact.message.es-ES": "Mensaje",
 
     "contact.send.en-GB": "Send",
-    "contact.send.es-SP": "Enviar",
+    "contact.send.es-ES": "Enviar",
+
+    "contact.confirmationMessage.en-GB": "Your message was successfully sent. We will get back to you as soon as we can.",
+    "contact.confirmationMessage.es-ES": "Su mensaje fue enviado con éxito. Nos pondremos en contacto con usted lo antes posible.",
+
+    "contact.errorSendingMessage.en-GB": "Sorry, there was an error sending the form. Please try again.",
+    "contact.errorSendingMessage.es-ES": "Lo sentimos, hubo un error al enviar el formulario. Inténtelo de nuevo.",
+
+    "contact.backHomeLink.en-GB": "back to home",
+    "contact.backHomeLink.es-ES": "inicio",
 
     "contact.error.firstName.tooShort.en-GB": "First name should be more 3 characters",
-    "contact.error.firstName.tooShort.es-SP": "El nombre debe tener más de 3 caracteres.",
+    "contact.error.firstName.tooShort.es-ES": "El nombre debe tener más de 3 caracteres.",
 
     "contact.error.firstName.tooLong.en-GB": "First name should be less than 20 characters",
-    "contact.error.firstName.tooLong.es-SP": "El nombre debe tener menos de 20 caracteres.",
+    "contact.error.firstName.tooLong.es-ES": "El nombre debe tener menos de 20 caracteres.",
 
     "contact.error.lastName.tooShort.en-GB": "Last name should be more than 3 characters",
-    "contact.error.lastName.tooShort.es-SP": "El apellido debe tener más de 3 caracteres.",
+    "contact.error.lastName.tooShort.es-ES": "El apellido debe tener más de 3 caracteres.",
 
     "contact.error.lastName.tooLong.en-GBP": "Last name should be less than 20 characters",
-    "contact.error.lastName.tooLong.es-SP": "El apellido debe tener menos de 20 caracteres.",
+    "contact.error.lastName.tooLong.es-ES": "El apellido debe tener menos de 20 caracteres.",
 
     "contact.error.message.empty.en-GB": "Please leave a message",
-    "contact.error.message.empty.es-SP": "Por favor, deje un mensaje",
+    "contact.error.message.empty.es-ES": "Por favor, deje un mensaje",
 
     "contact.error.email.invalid.en-GB": "Please enter a valid email",
-    "contact.error.email.invalid.es-SP": "Por favor introduzca una dirección de correo electrónico válida",
+    "contact.error.email.invalid.es-ES": "Por favor introduzca una dirección de correo electrónico válida",
 
     "errorPage.notFound.en-GB": "Sorry, the page you requested was not found.",
-    "errorPage.notFound.es-SP": "Lo sentimos, no se encontró la página que solicitó."
+    "errorPage.notFound.es-ES": "Lo sentimos, no se encontró la página que solicitó."
 
 }

@@ -7,6 +7,7 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
+import Spinner from 'react-spinner-material';
 
 class Contact extends Component {
     static contextType = LocaleContext;
@@ -27,7 +28,8 @@ class Contact extends Component {
                 message: false
             },
             success: false,
-            showError: false
+            showError: false,
+            loading: false
         };
         this.toggleSuccess = this.toggleSuccess.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -38,7 +40,8 @@ class Contact extends Component {
 
     toggleSuccess() {
         this.setState({
-            success: !this.state.success
+            success: !this.state.success,
+            loading: false
         });
     }
 
@@ -109,6 +112,7 @@ class Contact extends Component {
 
     handleSubmit(event) {
         event.preventDefault();
+        this.setState({loading:true});
         this.sendContactUsData(this.state);
     }
 
@@ -132,10 +136,12 @@ class Contact extends Component {
                 // window.location.reload();
                 return response;
             } else {
+                this.setState({loading:false});
                 console.log('Somthing went wrong: ' + response.status + ' error.');
                 this.toggleShowError();
             }
         }).catch(err => {
+            this.setState({loading:false});
             console.log("Error sending the contact form data.");
             this.toggleShowError();
         });
@@ -143,7 +149,13 @@ class Contact extends Component {
 
     render() {
         const locale = this.context.locale;
-
+        const Loader = () => {
+            return(
+                <div className="loading-spinner">
+                    <Spinner size={80} spinnerColor={"#333"} spinnerWidth={4} visible={true} />
+                </div>
+            );
+        }
         let isValid=false;
         const errors = this.validate(
             this.state.firstName, 
@@ -154,7 +166,6 @@ class Contact extends Component {
         if (this.state.touched.firstname && errors.firstname==="" && errors.lastname==="" && errors.email==="" && errors.message==="") { 
             isValid = true
         }
-
         return(
                 <Container className="main-content">
                     <Grid container className="contact-form">
@@ -279,14 +290,20 @@ class Contact extends Component {
                                 />);}}
                                 </FormattedMessage>
                                 <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
+                                    { !this.state.loading ?
                                     <FormattedMessage id={`contact.send.${locale}`}>
                                     {
                                         (txt) => {
                                             return(
-                                            <Button disabled={!isValid} variant="contained" className="contact-form" type="submit" >
-                                        {txt}
-                                    </Button>);}}
+                                                <Button disabled={!isValid} variant="contained" className="contact-form" type="submit" >
+                                                    {txt}
+                                                </Button>
+                                            );
+                                        }
+                                    }
                                     </FormattedMessage>
+                                    :
+                                    <Loader/>}
                                 </div>
                             </form>
                             <div className={"error-message " + (this.state.showError ? "show" : "hide")} >
@@ -296,8 +313,18 @@ class Contact extends Component {
                                 <Icon className="success-icon">
                                     done
                                 </Icon>
-                                <p>Your message was successfully sent. We will get back to you as soon as we can.</p>
-                                <p><Link to="/home">back to home</Link></p>
+                                <p>
+                                <FormattedMessage 
+                                    id={`contact.confirmationMessage.${locale}`}
+                                    defaultMessage=""
+                                />
+                                </p>
+                                <p><Link to="/home">
+                                <FormattedMessage 
+                                    id={`contact.backHomeLink.${locale}`}
+                                    defaultMessage=""
+                                />
+                                </Link></p>
                             </div>
                         </Grid>
                     </Grid>

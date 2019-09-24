@@ -40,7 +40,7 @@ function RenderTags({tags, lang}) {
   const output = tags.map((tag) => {
       i++;
       return (
-        <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}
+        <Link key={i++} to={{pathname:`/${lang.split('-')[0]}/explore`, topic:`${tag}`}}
                 onClick={()=>{
                   window.scrollTo(0, 0);
                   console.log("Tag selected: " + tag);
@@ -64,7 +64,7 @@ function RenderTags({tags, lang}) {
 }
 
 function RenderFlag({language, locale}) {
-  if ((language==='english' && locale==='es-SP') || (language==='spanish' && locale==='en-GB')) {
+  if ((language==='english' && locale==='es-ES') || (language==='spanish' && locale==='en-GB')) {
       return (
         <React.Fragment>
           <span className="dot"></span>
@@ -83,7 +83,7 @@ function MediaCard(props) {
         const locale = context.locale;
         return(<Card className={classes.card}>
           <CardActionArea>
-            <Link className="class-card-link" to={`../classes/${props.classEntry.nameId}`}
+            <Link className="class-card-link" to={`/${locale.split('-')[0]}/classes/${props.classEntry.nameId}`}
                 onClick={()=>{
                   window.gtag("event", props.classEntry.companyName, {
                       event_category: "class details",
@@ -93,7 +93,7 @@ function MediaCard(props) {
             >  
             <CardMedia
               className={classes.media}
-              image={`../images/classes/${props.classEntry.image}`}
+              image={`../../images/classes/${props.classEntry.image}`}
               title={props.classEntry.className}
             />
             <CardContent>
@@ -101,7 +101,7 @@ function MediaCard(props) {
                 {props.classEntry.className.toLowerCase()}
               </Typography>
               <div className="company">
-                <img className="company-logo" src={`../images/logos/${props.classEntry.companyLogo}`} alt={`${props.classEntry.companyLogo} logo`} />
+                <img className="company-logo" src={`../../images/logos/${props.classEntry.companyLogo}`} alt={`${props.classEntry.companyLogo} logo`} />
                 <span className="company-name">{props.classEntry.companyName}</span>
               </div> 
 

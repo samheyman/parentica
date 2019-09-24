@@ -587,6 +587,37 @@ export const CLASSES = [
     "nameId":"olavide-yoga-yoga-embarazadas-5085"
     },
     {
+        "id":1320,
+        "type":"meetup",
+        "className":"Taller de alimentación complementaria dirigida por el bebé",
+        "tags":[
+        "baby", "feeding", "lecture"
+        ],
+        "date":"2019-09-27T17:30+02:00",
+        "duration":120,
+        "city":"Madrid",
+        "district":"Hispanoamérica",
+        "address":"Crecer Juntos con Arte, Calle Rodriguez Martin 90, 28016 Madrid",
+        "url":"https://crecerjuntosconarte.es/courses/charla-baby-led-weaning-madrid-sept-2019/",
+        "image":"charlasbabyledweaningcrecerjuntosconarte.jpg",
+        "companyName":"Crecer ",
+        "companyLogo":"crecerjuntosconarte_sq.png",
+        "price": 0,
+        "language":"spanish",
+        "description":[
+        "Este taller repasa todos los aspectos importantes a tener en cuenta durante la primera etapa de alimentación complementaria del bebé. Cómo ofrecer los alimentos, ventajas, inconvenientes, cómo practicarlo con seguridad…",
+        "Temas:",
+        "¿Qué es alimentación complementaria?",
+        "¿Qué es la alimentación complementaria con Baby-Led Weaning?",
+        "¿Cómo practicar Baby-Led Weaning?",
+        "¿PARA QUIÉN ES LA CHARLA?",
+        "Familias: papás, mamás, abuelos que quieran sorprenderse, maravillarse y crecer junto a sus hijos.",
+        "Profesionales del sector de la educación y la salud que trabajan con niños.",
+        "Video: https://www.youtube.com/watch?v=ews5ceknSZ4",
+        ],
+        "nameId":"crecer-juntos-con-arte-taller-alimentation-complementaria-1320"
+        },
+    {
     "id":120,
     "type":"group",
     "className":"Autonomía infantil (0-6 años)",

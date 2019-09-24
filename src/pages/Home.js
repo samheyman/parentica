@@ -21,7 +21,7 @@ function RenderTags({tags, locale}) {
     let i=0;
     const output = tags.map((tag) => {
         return (
-            <Link className="homepage-tags" key={i++} to={{pathname:"/explore", topic:`${tag.name}`}}
+            <Link className="homepage-tags" key={i++} to={{pathname:`/${locale.split('-')[0]}/explore`, topic:`${tag.name}`}}
                 onClick={()=>{
                     window.gtag("event", "topic tag from homepage", {
                         event_category: "topics",
@@ -101,13 +101,13 @@ function Home(props) {
                     />
                 </p>
                 <div className="main-links">
-                    <Link to={{pathname:"/explore/online", topic:"all"}}>
-                        <Button variant="contained" className={`btn-first ${classes.button}`}>
+                    <Link to={{pathname:`/${locale.split('-')[0]}/explore/online`, topic:"all"}}>
+                        <Button id="online-classes-btn" variant="contained" className={`btn-first ${classes.button}`}>
                             <FormattedMessage id={`homepage.tagline.online.button.${locale}`} />
                         </Button>
                     </Link>
-                    <Link to={{pathname:"/explore/madrid", topic:"all"}}>
-                        <Button variant="contained" className={`btn-second ${classes.button}`}>
+                    <Link to={{pathname:`/${locale.split('-')[0]}/explore/madrid`, topic:"all"}}>
+                        <Button id="madrid-classes-btn" variant="contained" className={`btn-second ${classes.button}`}>
                             <FormattedMessage id={`homepage.tagline.madrid.button.${locale}`} />
                         </Button>
                     </Link>
@@ -118,49 +118,57 @@ function Home(props) {
                     <FormattedMessage id={`homepage.popularTopics.${locale}`} />    
                 </h2>  
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
-                    <TopicCard 
+                    <TopicCard
+                        locale={`${locale}`}
                         topic="parenting" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.parenting.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard 
+                        locale={`${locale}`}
                         topic="pregnancy" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.pregnancy.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard 
+                        locale={`${locale}`}
                         topic="baby" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.baby.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("baby")).length}/>
                     <TopicCard 
+                        locale={`${locale}`}
                         topic="nutrition" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.nutrition.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("nutrition")).length}/>
                     <TopicCard 
+                        locale={`${locale}`}
                         topic="music" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.music.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}/>
-                    <TopicCard 
+                    <TopicCard
+                        locale={`${locale}`}
                         topic="postpartum" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.postpartum.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}/>
-                    <TopicCard 
+                    <TopicCard
+                        locale={`${locale}`}
                         topic="yoga" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.yoga.${locale}`} />
                         }
                         resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}/>
-                    <TopicCard 
+                    <TopicCard
+                        locale={`${locale}`}
                         topic="first aid" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.first.${locale}`} />
@@ -172,7 +180,7 @@ function Home(props) {
                 <h2>
                 <FormattedMessage id={`homepage.allTopics.${locale}`} />        
                 </h2>  
-                <RenderTags tags={props.topics} locale={locale} /> 
+                <RenderTags tags={props.topics} locale={`${locale}`} /> 
             </div>
             <div className="row">
                 <div className="col s12 m12 l12 partners">

@@ -18,13 +18,12 @@ import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
 import { FormattedMessage, FormattedDate } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
-import Container from '@material-ui/core/Container';
 
 function RenderTags({tags, locale}) {
     let i=0;
     const output = tags.map((tag) => {
         return (
-            <Link key={i++} to={{pathname:"/explore", topic:`${tag}`}}
+            <Link key={i++} to={{pathname:`/${locale.split('-')[0]}/explore`, topic:`${tag}`}}
                 onClick={()=>{
                     window.gtag("event", "topic tag from class details", {
                         event_category: "topics",
@@ -54,19 +53,34 @@ function RenderDescription({description}) {
     return formatedDescription;
 }
 
-function RenderOtherClasses({otherClasses}) {
+function RenderOtherClasses({otherClasses, locale}) {
     let i =0;
     const otherClassesList = otherClasses.map((item) => {
-        let formatedDates = null;
+        let formatedDate = null;
+        let formatedTime = null;
+
         if (item.date != null) {
-            formatedDates = <span>{new Intl.DateTimeFormat('en-GB', { weekday: 'short', day: '2-digit', month: 'short' }).format(new Date(Date.parse(item.date)))}</span>;
+            formatedDate = <span>
+                                <FormattedDate
+                                    value={item.date}
+                                    day="2-digit"
+                                    month="2-digit"
+                                    />
+                            </span>;
+            formatedTime = <span>
+                                <FormattedDate
+                                    value={item.date}
+                                    hour="2-digit"
+                                    minute="2-digit"
+                                    />
+                            </span>
         }
         return (
             <TableRow key={i++}>
                 <TableCell>
-                    <Link to={`/classes/${item.nameId}`}>{item.className.toLowerCase()}</Link>
+                    <Link to={`/${locale.split('-')[0]}/classes/${item.nameId}`}>{item.className.toLowerCase()}</Link>
                 </TableCell>
-                <TableCell>{formatedDates} - {item.time}</TableCell>
+                <TableCell>{formatedDate} - {formatedTime}</TableCell>
                 <TableCell>
                     {item.district}
                 </TableCell>
@@ -128,7 +142,7 @@ function OtherSessions({otherDates}, {icon}) {
                             month="2-digit"
                         />
                     </span>
-                    <span>&nbsp;-&nbsp; 
+                    <span>&nbsp;-&nbsp;
                         <FormattedDate
                             value={sess}
                             hour="2-digit"
@@ -176,7 +190,7 @@ function ClassPrice({classPrice, classPriceCouple, locale}) {
                 </span>;
     }
     if (classPriceCouple >= 0) {
-        couplePrice = <span className="class-price"> 
+        couplePrice = <span className="price-couples"> 
                 ({classPriceCouple}€&nbsp;
                     <FormattedMessage 
                         id={`classDetails.price.forCouples.${locale}`}
@@ -187,8 +201,8 @@ function ClassPrice({classPrice, classPriceCouple, locale}) {
     } 
    
     return(
-        <div className="value">
-            {price} {couplePrice}
+        <div>
+            {price} <br/> {couplePrice}
         </div>
     );
 }
@@ -209,7 +223,7 @@ function ClassLocation({address, icon}) {
 }
 
 function ClassLanguage({language, locale}, {icon}) {
-    if ((language==='english' && locale==='es-SP') || (language==='spanish' && locale==='en-GB')) {
+    if ((language==='english' && locale==='es-ES') || (language==='spanish' && locale==='en-GB')) {
         return(
             <div className="value">
                 <Icon className={icon}>
@@ -218,10 +232,10 @@ function ClassLanguage({language, locale}, {icon}) {
                 <span className="language">
                     <FormattedMessage 
                         id={`general.${language}.${locale}`}
-                        defaultMessage="Price"
+                        defaultMessage=""
                     />
                 </span>
-                <img className="language-flag" src={`../images/flags/${language}.png`} alt={`${language}`} />
+                <img className="language-flag" src={`../../images/flags/${language}.png`} alt={`${language}`} />
             </div>
         );
     } else {
@@ -315,7 +329,7 @@ const useStyles = makeStyles({
 function ClassDetails(props) {
     
     const divStyle = {
-        backgroundImage: 'url(../images/classes/' + props.selectedClass.image + ')',
+        backgroundImage: 'url(../../images/classes/' + props.selectedClass.image + ')',
     };
     const classes = useStyles();
 
@@ -330,9 +344,9 @@ function ClassDetails(props) {
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
-            return(<Container>
-            <ScrollToTop/>
+            return(
             <div className="row">
+                <ScrollToTop/>
                 <Grid container className="class-details-container">
                     <div className="class-image-mobile hide-on-med-and-up" style={divStyle}></div>
                     {/* <Grid className="col s12 m4 main-content"> */}
@@ -343,7 +357,7 @@ function ClassDetails(props) {
                             <div className="header">
                                 <h2 className="class-title">{props.selectedClass.className}</h2>
                                 <div className="company">
-                                    <img className="logo" src={`../images/logos/${props.selectedClass.companyLogo}`} alt={`${props.selectedClass.companyLogo} logo`}></img>
+                                    <img className="logo" src={`../../images/logos/${props.selectedClass.companyLogo}`} alt={`${props.selectedClass.companyLogo} logo`}></img>
                                     <div className="company-name">
                                         {props.selectedClass.companyName}
                                     </div>
@@ -359,30 +373,46 @@ function ClassDetails(props) {
                                     <ClassDuration sessions={props.selectedClass.sessions} duration={props.selectedClass.duration} locale={locale} classes={classes.icon} />
                                     <ClassLocation address={props.selectedClass.address} classes={classes.icon} />
                                     <ClassLanguage language={props.selectedClass.language} locale={locale} classes={classes.icon} />
-                                    <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} locale={locale} />
-
+                                    <div className="class-tags">
+                                        <FormattedMessage 
+                                            id={`classDetails.topics.${locale}`}
+                                            defaultMessage=""
+                                        /> 
+                                        <RenderTags tags={props.selectedClass.tags} locale={locale} />
+                                    </div>
+                                </div>           
+                            </div>
+                            
+                            <div className="redirect-div">
+                                <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} locale={locale} />
+                                <div>
+                                    <span>
+                                        <FormattedMessage 
+                                            id={`classDetails.infoLinkToWebsite.${locale}`}
+                                            defaultMessage=""
+                                        />
+                                    </span>
                                 </div>
-                                
-                            </div>
-                            <div className="class-tags">
-                                <RenderTags tags={props.selectedClass.tags} locale={locale} />
-                            </div>
-                            <div className="button-div">
-                                <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
-                                    onClick={()=>{
-                                        window.gtag("event", props.selectedClass.companyName, {
-                                            event_category: "conversions",
-                                            event_label: props.selectedClass.companyName + " - " + props.selectedClass.className
-                                        }); 
-                                    }}
-                                >
-                                    <Button variant="outlined" color="primary">
+                                <div className="button-div">
+                                    <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
+                                        onClick={()=>{
+                                            window.gtag("event", props.selectedClass.companyName, {
+                                                event_category: "conversions",
+                                                event_label: props.selectedClass.companyName + " - " + props.selectedClass.className
+                                            }); 
+                                        }}
+                                    >
+                                    <Button variant="contained">
                                         <FormattedMessage 
                                             id={`classDetails.linkToWebsite.${locale}`}
                                             defaultMessage="Go to website"
                                         />
+                                        <Icon className={classes.icon}>
+                                        &nbsp;keyboard_arrow_right
+                                        </Icon>
                                     </Button>
-                                </a>
+                                    </a>
+                                </div>
                             </div>
                             <div className="row">
                                 <div className="class-details-tabs">
@@ -419,7 +449,7 @@ function ClassDetails(props) {
                                     </TabPanel>
                                     <TabPanel className="about-class" value={value} index={1} dir={theme.direction}>
                                         <RenderOtherClasses
-                                            otherClasses={props.otherClasses.filter((item) => (item.companyName === props.selectedClass.companyName) && item.id !== props.selectedClass.id)}
+                                            locale={locale} otherClasses={props.otherClasses.filter((item) => (item.companyName === props.selectedClass.companyName) && item.id !== props.selectedClass.id)}
                                         />
                                     </TabPanel>
                                 </div>
@@ -427,7 +457,7 @@ function ClassDetails(props) {
                     </Grid>
                 </Grid>
             </div>
-        </Container>)}}</LocaleContext.Consumer>
+        )}}</LocaleContext.Consumer>
     );
 
 }
