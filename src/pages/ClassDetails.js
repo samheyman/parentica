@@ -128,7 +128,7 @@ function OtherSessions({otherDates}, {icon}) {
                             month="2-digit"
                         />
                     </span>
-                    <span>&nbsp;-&nbsp; 
+                    <span>&nbsp;-&nbsp;
                         <FormattedDate
                             value={sess}
                             hour="2-digit"
