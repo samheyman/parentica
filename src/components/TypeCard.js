@@ -7,27 +7,17 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 
-export default function TopicCard(props) {
+export default function TypeCard(props) {
     let topicId = props.topic.split(" ")[0];
     let topic = props.topic;
 
     let routePath = `/${props.locale.split('-')[0]}${props.rootUrl}/explore`
-        // (topicId==='group' || topicId==='meetups    ') ? 
-        // (topicId==='meetups' || topicId==='meetups    ') ?
-        //     `/${props.locale.split('-')[0]}/madrid/explore`
-        //     :
-        //     `/${props.locale.split('-')[0]}/madrid/explore`
-        // :
-        // (topicId==='online') ?
-        //     `/${props.locale.split('-')[0]}/online  `
-        //     :
-            
-        // ;    
+        
     return(
         <Grid item xs={6} sm={4} md={2} key="3">
             <Link 
                     to={{
-                        pathname: routePath, topic:`${topic}`}}
+                        pathname: routePath, type: topic }}
                         onClick={()=>{
                             window.gtag("event", "topic card", {
                                 event_category: "topics",

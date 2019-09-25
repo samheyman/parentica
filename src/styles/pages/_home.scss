@@ -137,3 +137,28 @@ a {
         max-width: 100%;
     }
 }
+
+.topic-cards {
+    // overflow-x: scroll !important;
+    // width: auto;
+    // white-space: nowrap;
+}
+
+#items{
+    overflow-x: scroll;
+    width: auto;
+    white-space: nowrap;
+}
+
+
+.item{
+    display: inline-block;
+    margin: 0 15px 0 0;
+    height: 100px;
+    // border:1px solid;
+    
+ }
+
+ .class-details {
+    // white-space: normal !important;
+ }

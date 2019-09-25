@@ -40,23 +40,23 @@ function RenderTags({tags, lang}) {
   const output = tags.map((tag) => {
       i++;
       return (
-        <Link key={i++} to={{pathname:`/${lang.split('-')[0]}/explore`, topic:`${tag}`}}
-                onClick={()=>{
-                  window.scrollTo(0, 0);
-                  console.log("Tag selected: " + tag);
-                    window.gtag("event", "topic tag from class card", {
-                        event_category: "topics",
-                        event_label: tag
-                    }); 
-                }}
-            >
+        // <Link key={i++} to={{pathname:`/${lang.split('-')[0]}/explore`, topic:`${tag}`}}
+        //         onClick={()=>{
+        //           window.scrollTo(0, 0);
+        //           console.log("Tag selected: " + tag);
+        //             window.gtag("event", "topic tag from class card", {
+        //                 event_category: "topics",
+        //                 event_label: tag
+        //             }); 
+        //         }}
+        //     >
           <span key={i} className={`tag tag-${tag}`}>
             <FormattedMessage 
               id={`topics.${tag.split(" ")[0]}.${lang}`}
               defaultMessage={tag}
             />
           </span>
-        </Link>
+        // </Link>
       );
   });
 
@@ -83,7 +83,7 @@ function MediaCard(props) {
         const locale = context.locale;
         return(<Card className={classes.card}>
           <CardActionArea>
-            <Link className="class-card-link" to={`/${locale.split('-')[0]}/classes/${props.classEntry.nameId}`}
+            <Link className="class-card-link" to={`/${locale.split('-')[0]}/listings/${props.classEntry.nameId}`}
                 onClick={()=>{
                   window.gtag("event", props.classEntry.companyName, {
                       event_category: "class details",

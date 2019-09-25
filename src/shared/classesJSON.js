@@ -7,7 +7,7 @@ export const CLASSES = [
     "music"
     ],
     "city":"Madrid",
-    "district":"San Sebastián de los Reyes",
+    "district":"San Seb. de los Reyes",
     "address":"La chata merenguela, Plaza Dolores Ibarruri 4, local 6 28702 San Sebastián de los Reyes. Madrid",
     "date":"2019-09-21T11:00+02:00",
     "time":"11h00 and 12h00",
@@ -34,11 +34,10 @@ export const CLASSES = [
     },
     {
     "id":4002,
-    "type":"group",
+    "type":"meetup",
     "className":"Baby Over the Rainbow Party!",
     "tags":[
     "baby",
-    "social"
     ],
     "date":"2019-09-21T10:00+02:00",
     "time":"10h00",
@@ -337,10 +336,10 @@ export const CLASSES = [
     },
     {
         "id":10001,
-        "type":"online",
+        "type":"webinar",
         "className":"Charla en streaming: Cuidados del Recién nacido",
         "tags":[
-            "baby", "lecture"
+            "baby"
         ],
         "date":"2019-09-24T20:30+02:00",
         "time":"20h30",
@@ -588,10 +587,10 @@ export const CLASSES = [
     },
     {
         "id":1320,
-        "type":"meetup",
+        "type":"seminar",
         "className":"Taller de alimentación complementaria dirigida por el bebé",
         "tags":[
-        "baby", "feeding", "lecture"
+        "baby", "feeding"
         ],
         "date":"2019-09-27T17:30+02:00",
         "duration":120,
@@ -657,7 +656,7 @@ export const CLASSES = [
     "time":"10h00",
     "duration":420,
     "city":"Madrid",
-    "district":"San Sebastian de los Reyes",
+    "district":"San Seb. de los Reyes",
     "address":"Plaza Dolores Ibarruri, 4, San Sebastian de los Reyes, Madrid",
     "url":"https://educarencalma.com/events/educar-sin-gritos-ni-castigos-disciplina-positiva/",
     "image":"educarsingritos.jpg",
@@ -951,7 +950,6 @@ export const CLASSES = [
     "className":"The Bumps Tea",
     "tags":[
     "pregnancy",
-    "social"
     ],
     "district":"Almagro",
     "address":"Paseo de la Castellana 45",
@@ -1552,7 +1550,6 @@ export const CLASSES = [
     "className":"The Bumps Tea",
     "tags":[
     "pregnancy",
-    "social"
     ],
     "district":"Almagro",
     "address":"Paseo de la Castellana 45",
@@ -1640,11 +1637,10 @@ export const CLASSES = [
     },
     {
     "id":5103,
-    "type":"group",
+    "type":"meetup",
     "className":"Grupo de apoyo al embarazo",
     "tags":[
     "pregnancy",
-    "social"
     ],
     "city":"Madrid",
     "district":"Chamartín",
@@ -1806,11 +1802,10 @@ export const CLASSES = [
     },
     {
     "id":1083,
-    "type":"group",
+    "type":"meetup",
     "className":"Grupo postparto gratuito",
     "tags":[
     "postpartum",
-    "social"
     ],
     "date":"2019-10-25T11:00+02:00",
     "time":"11h00",
@@ -2345,11 +2340,10 @@ export const CLASSES = [
     },
     {
     "id":5104,
-    "type":"group",
+    "type":"meetup",
     "className":"Grupo de apoyo al embarazo",
     "tags":[
     "pregnancy",
-    "social"
     ],
     "city":"Madrid",
     "district":"Chamartín",
@@ -2944,11 +2938,10 @@ export const CLASSES = [
     },
     {
     "id":5105,
-    "type":"group",
+    "type":"meetup",
     "className":"Grupo de apoyo al embarazo",
     "tags":[
     "pregnancy",
-    "social"
     ],
     "city":"Madrid",
     "district":"Chamartín",

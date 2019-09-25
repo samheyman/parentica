@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
@@ -49,20 +50,20 @@ function Explore(props) {
         setValue(newValue);
     }
 
-    const classesList = props.classes.map(
+    const classesList = props.listings.map(
         (classEntry) => {
-            if ((classEntry.type === 'group' || classEntry.type === "meetup") && new Date(classEntry.date) > new Date()) {
+            if ((classEntry.type === 'group' || classEntry.type === 'online')) {
                 return(
                     <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
-                    <ClassCard classEntry={classEntry} />      
+                        <ClassCard classEntry={classEntry} />      
                     </Grid>
                 );
             }
         }
     );
 
-    const onlineClassesList = props.classes.map((classEntry) => {
-        if( classEntry.type === 'online') {
+    const meetupsList = props.listings.map((classEntry) => {
+        if( classEntry.type === 'meetup') {
             return (
                 <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
                     <ClassCard classEntry={classEntry} />      
@@ -74,64 +75,120 @@ function Explore(props) {
             );
         }
     });
-    let groupCount = classesList.filter((item) => item !== '' && item != null).length;
-    let onlineCount = onlineClassesList.filter((item) => item !== '' && item != null).length;
+    const seminarsList = props.listings.map((classEntry) => {
+        if((classEntry.type === 'seminar' || classEntry.type === 'webinar')) {
+            return (
+                <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
+                    <ClassCard classEntry={classEntry} />      
+                </Grid>
+            );        
+        } else {
+            return(
+                null
+            );
+        }
+    });
+    // TODO better way to do this
+    let classesCount = classesList.filter((item) => item !== '' && item != null).length;
+    let meetupsCount = meetupsList.filter((item) => item !== '' && item != null).length;
+    let seminarsCount = seminarsList.filter((item) => item !== '' && item != null).length;
+
     // console.log(props.classes.length + " classes: " + props.classes);
-    console.log(groupCount + " classes in Madrid");
-    console.log(onlineCount + " classes online");
+    console.log(classesCount + " classes");
+    console.log(meetupsCount + " meetups");
+    console.log(seminarsCount + " seminars");
+
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
-            return(<Container className="main-content">
-            <div className="result-filters">
-                {(props.topic!=="all")?
-                    <span className={`tag tag-${props.topic}`}>
-                        <FormattedMessage 
-                            id={`topics.${props.topic.split(" ")[0]}.${locale}`}
-                            defaultMessage={props.topic}
-                        />
-                    </span>
-                    :
-                    null
-                }
-            </div>
+            return(
+                <Container className="main-content">
+                    <h2>{props.format}</h2>
+                    <div className="result-filters">
+                        {(props.topic!=="all")?
+                            <React.Fragment>
+                                <span className={`tag tag-${props.topic}`}>
+                                    <FormattedMessage 
+                                        id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                                        defaultMessage={props.topic}
+                                    />
+                                </span>
+                                
+                                <Link to={{pathname:`/${props.locale.split('-')[0]}/madrid/explore`}}>
+                                    <span className="tag">
+                                        <FormattedMessage 
+                                            id={`general.clear.${locale}`}
+                                            defaultMessage="clear"
+                                        />
+                                    </span>
+                                </Link>
+                                
+                            </React.Fragment>
+                            :
+                            null
+                        }
+                    </div>
             <AppBar position="static" color="default">
                 <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">
-                    <Tab
-                        label={
-                            <FormattedMessage 
-                                id={`explore.tab.madrid.${locale}`}
-                                defaultMessage="Madrid"
-                                values={{
-                                    count: groupCount
-                                }}
-                            />
-                        } 
-                        {...a11yProps(0)} 
-                    />
-                    <Tab 
-                        label={
-                            <FormattedMessage 
-                                id={`explore.tab.online.${locale}`}
-                                defaultMessage="online"
-                                values={{
-                                    count: onlineCount
-                                }}
-                            />
-                        } 
-                        {...a11yProps(1)} 
-                    />
+                    {
+                    classesCount > 0 ?
+                        <Tab
+                            label={
+                                <FormattedMessage 
+                                    id={`explore.tab.classes.${locale}`}
+                                    defaultMessage="Classes"
+                                    values={{
+                                        count: classesCount
+                                    }}
+                                />
+                            } 
+                            {...a11yProps(0)} 
+                        />
+                    : null
+                    }
+                    {
+                    meetupsCount > 0 ?
+                        <Tab 
+                            label={
+                                <FormattedMessage 
+                                    id={`explore.tab.meetups.${locale}`}
+                                    defaultMessage="meetups"
+                                    values={{
+                                        count: meetupsCount
+                                    }}
+                                />
+                            } 
+                            {...a11yProps(1)} 
+                        />
+                    : null
+                    }
+                    {
+                    seminarsCount > 0 ?
+                        <Tab 
+                            label={
+                                <FormattedMessage 
+                                    id={`explore.tab.seminars.${locale}`}
+                                    defaultMessage="seminars"
+                                    values={{
+                                        count: seminarsCount
+                                    }}
+                                />
+                            } 
+                            {...a11yProps(2)} 
+                        />
+                    : null
+                    }
                 </Tabs>
             </AppBar>
             <TabPanel className="search-results" value={value} index={0}>
-                {(groupCount > 0 ) ?
+                {(classesCount > 0 ) ?
                 <Grid container spacing={2} alignContent="center">
                     {classesList.filter((item) => item !== '')}
                 </Grid>
                 :
                 <p>
                     <FormattedMessage 
-                        id={`explore.results.madrid.none.${locale}`}
+                        id={`explore.results.city.none.${locale}`}
                         defaultMessage=""
                         values={{
                             topicLabel: <FormattedMessage 
@@ -143,15 +200,35 @@ function Explore(props) {
                 </p>}
             </TabPanel>
             <TabPanel className="search-results" value={value} index={1}>
-                {(onlineCount > 0 ) ?
+                {(meetupsCount > 0 ) ?
                 <Grid container spacing={2} alignContent="center">
-                    {onlineClassesList.filter((item) => item !== '')}
+                    {meetupsList.filter((item) => item !== '')}
                 </Grid>
                 :
                 <p>
                     <FormattedMessage 
-                        id={`explore.results.online.none.${locale}`}
-                        defaultMessage=""
+                        id={`explore.results.meetups.none.${locale}`}
+                        defaultMessage="Sorry no meetups found."
+                        values={{
+                            topicLabel: 
+                                <FormattedMessage 
+                                    id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                                    defaultMessage={props.topic}
+                                />
+                        }}
+                    />
+                </p>}
+            </TabPanel>
+            <TabPanel className="search-results" value={value} index={2}>
+                {(seminarsCount > 0 ) ?
+                <Grid container spacing={2} alignContent="center">
+                    {seminarsList.filter((item) => item !== '')}
+                </Grid>
+                :
+                <p>
+                    <FormattedMessage 
+                        id={`explore.results.seminars.none.${locale}`}
+                        defaultMessage="Sorry no seminars found."
                         values={{
                             topicLabel: 
                                 <FormattedMessage 

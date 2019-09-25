@@ -5,6 +5,18 @@
     "general.spanish.en-GB": "Spanish",
     "general.spanish.es-ES": "Español",
 
+    "general.classes.en-GB": "Classes",
+    "general.classes.es-ES": "Clasas",
+    "general.webinars.en-GB": "Webinars",
+    "general.webinars.es-ES": "Seminarios",
+    "general.blog.en-GB": "Blog",
+    "general.blog.es-ES": "Blog",
+    "general.meetups.en-GB": "Meetups",
+    "general.meetups.es-ES": "Meetups",
+    "general.seminars.en-GB": "Meetups",
+    "general.seminars.es-ES": "Charlas",
+    "general.clear.en-GB": "clear",
+    "general.clear.es-ES": "eliminar",
     "navbar.selectLanguage.en-GB": "Offered in",
     "navbar.selectLanguage.es-ES": "Ofrecido en",
 
@@ -25,10 +37,10 @@
     
     
     "homepage.tagline.header.en-GB": "Skilled parents for happy, thriving children",
-    "homepage.tagline.header.es-ES": "Padres competentes para niños felices y prósperos",
+    "homepage.tagline.header.es-ES": "Padres competentes para niños felices y florecientes",
 
     "homepage.tagline.paragraph.en-GB": "Find pregnancy and parenting classes and events, either online or in one of the cities we are in",
-    "homepage.tagline.paragraph.es-ES": "Encuentra clases y eventos sobre embarazo y paternidad, ya sea en línea o en una de las ciudades en las que estamos",
+    "homepage.tagline.paragraph.es-ES": "Encuentra clases y eventos sobre embarazo y paternidad, ya sea en línea o en una de las ciudades en las que estamos.",
     
     "homepage.tagline.online.button.en-GB": "online",
     "homepage.tagline.online.button.es-ES": "en línea",
@@ -39,17 +51,26 @@
     "homepage.popularTopics.en-GB": "Popular topics",
     "homepage.popularTopics.es-ES": "Temas populares",
 
+    "homepage.popularOnlineClasses.en-GB": "Popular online classes",
+    "homepage.popularOnlineClasses.es-ES": "Clases en línea populares",
+
     "homepage.allTopics.en-GB": "All topics",
     "homepage.allTopics.es-ES": "Todos los temas",
 
     "homepage.providers.madrid.header.en-GB": "Providers in Madrid",
     "homepage.providers.madrid.header.es-ES": "Proveedores en Madrid",
 
-    "homepage.providers.online.header.en-GB": "Online providers",
-    "homepage.providers.online.header.es-ES": "Proveedores en línea",
+    "homepage.onlineProviders.en-GB": "Online providers",
+    "homepage.onlineProviders.es-ES": "Proveedores en línea",
+    
+    "homepage.searchByCity.en-GB": "Search by city",
+    "homepage.searchByCity.es-ES": "Buscar por ciudad",
+    
+    "homepage.searchOnline.en-GB": "Search online",
+    "homepage.searchOnline.es-ES": "Buscar en línea",
 
-    
-    
+    "homepage.byLanguage.en-GB": "By language",
+    "homepage.byLanguage.es-ES": "Por idioma",
 
     "topics.baby.en-GB": "baby",
     "topics.baby.es-ES": "bebé",
@@ -82,19 +103,31 @@
     "topics.yoga.en-GB": "yoga",
     "topics.yoga.es-ES": "yoga",
 
+    "city.thisWeek.en-GB": "This week in Madrid",
+    "city.thisWeek.es-ES": "Esta semana en Madrid",
+    "city.searchByType.en-GB": "Search by type",
+    "city.searchByType.es-ES": "Buscar par tipo",
 
-
+    "explore.tab.classes.en-GB": "Classes ({count})",
+    "explore.tab.classes.es-ES": "Clasas ({count})",
+    "explore.tab.meetups.en-GB": "Meetups ({count})",
+    "explore.tab.meetups.es-ES": "Meetups ({count})",
+    "explore.tab.seminars.en-GB": "Seminars ({count})",
+    "explore.tab.seminars.es-ES": "Charlas ({count})",
     "explore.tab.madrid.en-GB": "Madrid ({count})",
     "explore.tab.madrid.es-ES": "Madrid ({count})",
 
     "explore.tab.online.en-GB": "online ({count})",
     "explore.tab.online.es-ES": "en línea ({count})",
 
-    "explore.results.madrid.none.en-GB": "Sorry no classes found for `{topicLabel}` in Madrid.",
-    "explore.results.madrid.none.es-ES": "Lo sentimos, no se encontraron clases para `{topicLabel}` en Madrid.",
-
+    "explore.results.city.none.en-GB": "Sorry no classes found for `{topicLabel}` in Madrid.",
+    "explore.results.city.none.es-ES": "Lo sentimos, no se encontraron clases para `{topicLabel}` en Madrid.",
     "explore.results.online.none.en-GB": "Sorry no online classes found for `{topicLabel}`.",
-    "explore.results.online.none.es-ES": "Lo sentimos, no se encontraron clases en línea para `{topicLabel}`.",
+    "explore.results.online.none.es-ES": "Lo sentimos, no se encontraron clases en linea para `{topicLabel}`.",
+    "explore.results.meetups.none.en-GB": "Sorry no meetups classes found for `{topicLabel}`.",
+    "explore.results.meetups.none.es-ES": "Lo sentimos, no se encontraron meetups para `{topicLabel}`.",
+    "explore.results.seminars.none.en-GB": "Sorry no seminars found for `{topicLabel}`.",
+    "explore.results.seminars.none.es-ES": "Lo sentimos, no se encontraron charlas para `{topicLabel}`.",
 
 
     "classDetails.price.en-GB": "Price",

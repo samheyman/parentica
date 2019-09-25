@@ -19,11 +19,12 @@ import ScrollToTop from '../components/ScrollToTop';
 import { FormattedMessage, FormattedDate } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 
-function RenderTags({tags, locale}) {
+function RenderTags({tags, locale, online}) {
     let i=0;
+    let rootUrl = (online) ? 'online' : 'madrid';
     const output = tags.map((tag) => {
         return (
-            <Link key={i++} to={{pathname:`/${locale.split('-')[0]}/explore`, topic:`${tag}`}}
+            <Link key={i++} to={{pathname:`/${locale.split('-')[0]}/${rootUrl}/explore`, topic:`${tag}`}}
                 onClick={()=>{
                     window.gtag("event", "topic tag from class details", {
                         event_category: "topics",
@@ -378,7 +379,7 @@ function ClassDetails(props) {
                                             id={`classDetails.topics.${locale}`}
                                             defaultMessage=""
                                         /> 
-                                        <RenderTags tags={props.selectedClass.tags} locale={locale} />
+                                        <RenderTags tags={props.selectedClass.tags} locale={locale} rootUrl={props.selectedClass.online} />
                                     </div>
                                 </div>           
                             </div>

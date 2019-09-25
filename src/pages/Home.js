@@ -1,65 +1,33 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import TopicCard from '../components/TopicCard';
+import CityCard from '../components/CityCard';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
+import ClassCard from '../components/ClassCard';
 
-const useStyles = makeStyles(theme => ({
-    button: {
-      margin: theme.spacing(1),
-    },
-    input: {
-      display: 'none',
-    },
-}));
 
-function RenderTags({tags, locale}) {
-    let i=0;
-    const output = tags.map((tag) => {
-        return (
-            <Link className="homepage-tags" key={i++} to={{pathname:`/${locale.split('-')[0]}/explore`, topic:`${tag.name}`}}
-                onClick={()=>{
-                    window.gtag("event", "topic tag from homepage", {
-                        event_category: "topics",
-                        event_label: tag.name
-                    }); 
-                }}
-            >
-                <span className={`tag tag-${tag.id}`}>
-                    <FormattedMessage 
-                        id={`topics.${tag.name.split(" ")[0]}.${locale}`}
-                        defaultMessage={tag.name}
-                    />
-                </span>
-            </Link>
-        );
-    });
-    return output;
-}
+// function MadridProviders({providers}) {
+//     const providersList = providers.map((provider) => {
+//         return(
+//             <Grid item xs={4} sm={3} md={2} key={provider.id}>
+//                 <div className="logo-container">
+//                     <a href={`${provider.url}`} target="_blank" rel="noopener noreferrer"> 
+//                         <img src={`../images/logos/${provider.logo}.png`} alt={`${provider.logo} logo`} />
+//                     </a>
+//                 </div>
+//             </Grid>
+//         );
+//     });
 
-function MadridProviders({providers}) {
-    const providersList = providers.map((provider) => {
-        return(
-            <Grid item xs={4} sm={3} md={2} key={provider.id}>
-                <div className="logo-container">
-                    <a href={`${provider.url}`} target="_blank" rel="noopener noreferrer"> 
-                        <img src={`../images/logos/${provider.logo}.png`} alt={`${provider.logo} logo`} />
-                    </a>
-                </div>
-            </Grid>
-        );
-    });
-
-    return(
-        <Grid container spacing={2}>
-            {providersList}
-        </Grid>
-    );
-}
+//     return(
+//         <Grid container spacing={2}>
+//             {providersList}
+//         </Grid>
+//     );
+// }
 
 function OnlineProviders({providers}) {
     const providersList = providers.map((provider) => {
@@ -82,7 +50,6 @@ function OnlineProviders({providers}) {
 }
 
 function Home(props) {
-    const classes = useStyles();
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
@@ -100,7 +67,7 @@ function Home(props) {
                         defaultMessage="Find pregnancy and parenting classes and events, either online or in one of the cities we are in"
                     />
                 </p>
-                <div className="main-links">
+                {/* <div className="main-links">
                     <Link to={{pathname:`/${locale.split('-')[0]}/explore/online`, topic:"all"}}>
                         <Button id="online-classes-btn" variant="contained" className={`btn-first ${classes.button}`}>
                             <FormattedMessage id={`homepage.tagline.online.button.${locale}`} />
@@ -111,90 +78,112 @@ function Home(props) {
                             <FormattedMessage id={`homepage.tagline.madrid.button.${locale}`} />
                         </Button>
                     </Link>
-                </div>
+                </div> */}
             </div>
-            <div className="popular-topics">
+            
+            <div className="cities">
                 <h2>
-                    <FormattedMessage id={`homepage.popularTopics.${locale}`} />    
+                    <FormattedMessage 
+                        id={`homepage.searchByCity.${locale}`} 
+                        defaultMessage="Search by city" />    
+                </h2>  
+                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                    <CityCard
+                        locale={`${locale}`}
+                        topic="madrid" 
+                        topicLocalised="madrid"
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
+                </Grid>
+            </div>
+            <div className="types">
+                <h2>
+                    <FormattedMessage 
+                        id={`homepage.searchOnline.${locale}`} 
+                        defaultMessage="Search online" />    
                 </h2>  
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     <TopicCard
                         locale={`${locale}`}
-                        topic="parenting" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.parenting.${locale}`} />
-                        }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
-                    <TopicCard 
-                        locale={`${locale}`}
-                        topic="pregnancy" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.pregnancy.${locale}`} />
-                        }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("pregnancy")).length}/>
-                    <TopicCard 
-                        locale={`${locale}`}
-                        topic="baby" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.baby.${locale}`} />
-                        }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("baby")).length}/>
-                    <TopicCard 
-                        locale={`${locale}`}
-                        topic="nutrition" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.nutrition.${locale}`} />
-                        }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("nutrition")).length}/>
-                    <TopicCard 
-                        locale={`${locale}`}
-                        topic="music" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.music.${locale}`} />
-                        }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}/>
+                        topic="online classes" 
+                        topicLocalised={<FormattedMessage 
+                            id={`general.classes.${locale}`} 
+                            defaultMessage="Classes" />}
+                        rootUrl="/online"
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
                     <TopicCard
                         locale={`${locale}`}
-                        topic="postpartum" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.postpartum.${locale}`} />
-                        }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}/>
+                        topic="webinars" 
+                        topicLocalised={<FormattedMessage 
+                            id={`general.webinars.${locale}`} 
+                            defaultMessage="Webinars" />}
+                        rootUrl="/online"
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
                     <TopicCard
                         locale={`${locale}`}
-                        topic="yoga" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.yoga.${locale}`} />
-                        }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}/>
-                    <TopicCard
-                        locale={`${locale}`}
-                        topic="first aid" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.first.${locale}`} />
-                        }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}/>
+                        topic="blog" 
+                        topicLocalised={<FormattedMessage 
+                            id={`general.blog.${locale}`} 
+                            defaultMessage="Blog" />}
+                        rootUrl="/online"
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
                 </Grid>
             </div>
-            <div className="all-topics">
+            <div className="online-classes">
                 <h2>
-                <FormattedMessage id={`homepage.allTopics.${locale}`} />        
+                    <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Popular online classes"/>    
+                </h2> 
+                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                    {props.onlineClasses.map((item) => {                        
+                        return(
+                            <Grid item xs={12} sm={6} md={3} key={item.id}>
+                                <ClassCard 
+                                    classEntry={item}
+                                />
+                            </Grid>);
+                    })
+                    }
+                </Grid>
+            </div>
+            <div className="types">
+                <h2>
+                    <FormattedMessage id={`homepage.byLanguage.${locale}`} defaultMessage="By language" />    
                 </h2>  
-                <RenderTags tags={props.topics} locale={`${locale}`} /> 
+                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                    <TopicCard
+                        locale={`${locale}`}
+                        topic="english" 
+                        topicLocalised={<FormattedMessage 
+                            id={`general.english.${locale}`} 
+                            defaultMessage="Blog" />}
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
+                    <TopicCard
+                        locale={`${locale}`}
+                        topic="spanish" 
+                        topicLocalised={<FormattedMessage 
+                            id={`general.spanish.${locale}`} 
+                            defaultMessage="Blog" />}
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
+                    
+                </Grid>
             </div>
-            <div className="row">
-                <div className="col s12 m12 l12 partners">
-                    <h2><FormattedMessage id={`homepage.providers.madrid.header.${locale}`} /></h2> 
-                    <MadridProviders providers={props.madridProviders}/>
-                    {/* <RenderProviderCard provider={props.providers} /> */}
-                </div>
+        
+            <div className="providers">
+                <h2>
+                    <FormattedMessage id={`homepage.onlineProviders.${locale}`} defaultMessage="Online providers"/>    
+                </h2> 
+                {/* <p>List your classes</p> */}
+                <OnlineProviders providers={props.onlineProviders}/>
+
             </div>
-            <div className="row">
-                <div className="col s12 m12 l12 partners">
-                    <h2><FormattedMessage id={`homepage.providers.online.header.${locale}`} /></h2> 
-                    <OnlineProviders providers={props.onlineProviders}/>
-                </div>
-            </div>
+            
+            
+            
         </Container>)}}</LocaleContext.Consumer>
     );
 }

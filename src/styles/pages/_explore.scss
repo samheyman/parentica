@@ -24,6 +24,14 @@
 
 .result-filters {
     margin: 10px 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .filter-icon {
+        font-size: 0.8rem;
+    }
 }
 
 .filters {
@@ -41,5 +49,9 @@
             margin: 0 40px 0 0;
             text-decoration: none;
         }
+    }
+
+    .filter-icon {
+        font-size: 0.8rem;
     }
 }
