@@ -7,35 +7,21 @@ import CityCard from '../components/CityCard';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 import ClassCard from '../components/ClassCard';
-
-
-// function MadridProviders({providers}) {
-//     const providersList = providers.map((provider) => {
-//         return(
-//             <Grid item xs={4} sm={3} md={2} key={provider.id}>
-//                 <div className="logo-container">
-//                     <a href={`${provider.url}`} target="_blank" rel="noopener noreferrer"> 
-//                         <img src={`../images/logos/${provider.logo}.png`} alt={`${provider.logo} logo`} />
-//                     </a>
-//                 </div>
-//             </Grid>
-//         );
-//     });
-
-//     return(
-//         <Grid container spacing={2}>
-//             {providersList}
-//         </Grid>
-//     );
-// }
+import LazyLoad from 'react-lazy-load';
 
 function OnlineProviders({providers}) {
     const providersList = providers.map((provider) => {
         return(
             <Grid item xs={4} sm={3} md={2} key={provider.id}>
                 <div className="logo-container">
-                    <Link to={`classes/${provider.id}`}> 
+                    <Link to={`classes/${provider.id}`}>
+                        <LazyLoad 
+                            
+                            debounce={false}
+                            offsetVertical={500}
+                            >
                         <img src={`../images/logos/${provider.logo}.png`} alt={`${provider.logo} logo`} />
+                        </LazyLoad>
                     </Link>
                 </div>
             </Grid>
@@ -91,10 +77,15 @@ function Home(props) {
                     <CityCard
                         locale={`${locale}`}
                         topic="madrid" 
-                        topicLocalised="madrid"
+                        topicLocalised="Madrid"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
                 </Grid>
+                {/* <Grid container className="topic-cards" spacing={2} alignContent="center">
+                    <div>
+                        <p>More cities to come</p>
+                    </div>
+                </Grid> */}
             </div>
             <div className="types">
                 <h2>
@@ -121,7 +112,7 @@ function Home(props) {
                         rootUrl="/online"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
-                    <TopicCard
+                    {/* <TopicCard
                         locale={`${locale}`}
                         topic="blog" 
                         topicLocalised={<FormattedMessage 
@@ -129,7 +120,7 @@ function Home(props) {
                             defaultMessage="Blog" />}
                         rootUrl="/online"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
-                    />
+                    /> */}
                 </Grid>
             </div>
             <div className="online-classes">
@@ -148,7 +139,7 @@ function Home(props) {
                     }
                 </Grid>
             </div>
-            <div className="types">
+            {/* <div className="types">
                 <h2>
                     <FormattedMessage id={`homepage.byLanguage.${locale}`} defaultMessage="By language" />    
                 </h2>  
@@ -171,7 +162,7 @@ function Home(props) {
                     />
                     
                 </Grid>
-            </div>
+            </div> */}
         
             <div className="providers">
                 <h2>

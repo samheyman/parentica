@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
+import LazyLoad from 'react-lazy-load';
 
 export default function TopicCard(props) {
     let topicId = props.topic.split(" ")[0];
@@ -37,10 +38,16 @@ export default function TopicCard(props) {
             >
             <Card className="topic-card">
                 <CardActionArea>
-                    <CardMedia
-                    image={`../images/topics/${topicId}.jpg`}
-                    title={props.topicLocalised}
-                    />
+                    <LazyLoad 
+                        width={300}
+                        debounce={false}
+                        offsetVertical={500}
+                        >
+                        <CardMedia
+                        image={`../images/topics/${topicId}.jpg`}
+                        title={props.topicLocalised}
+                        />
+                    </LazyLoad>
                     <CardContent>
                     <h4>{props.topicLocalised}</h4>
                     </CardContent>

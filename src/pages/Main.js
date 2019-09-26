@@ -29,12 +29,16 @@ class Main extends Component {
     render() {
         const HomePage = () => {
             let count = 0;
+            let today = new Date();
             return(
                 <Home 
                     locale={this.props.locale}
                     classEntries={this.props.classes}
                     topics={this.props.topics}
-                    onlineClasses={this.props.classes.filter((item) => (item.type==='online' || item.type==='webinar' ) && count++ < 3)}
+                    onlineClasses={this.props.classes.filter((item) => 
+                        (item.type==='online' || item.type==='webinar' ) && 
+                        (!item.date || new Date(item.date) > today) &&
+                        count++ < 4)}
                     onlineProviders={this.props.providers.filter((provider) => provider.online)}
                 />
             );
@@ -57,7 +61,7 @@ class Main extends Component {
                             (item) => item.city==='Madrid' && 
                                       new Date(item.date) > today && 
                                       new Date(item.date) < nextWeek  && 
-                                      count++ < 15)}
+                                      count++ < 4)}
                     topics={this.props.topics}
                     madridProviders={this.props.providers.filter((provider) => !provider.online)}
                 />

@@ -1,4 +1,5 @@
 .city-card {
+    max-width: 290px !important;
     
     .MuiCardMedia-root {
         height: 200px;
@@ -10,7 +11,6 @@
         padding: 0 16px;
 
         h4 {
-            text-transform: capitalize;
             margin: 10px 0; 
         }
 

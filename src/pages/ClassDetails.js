@@ -97,7 +97,14 @@ function RenderOtherClasses({otherClasses, locale}) {
             </Table>
         );
     } else {
-        return(<p>No other classes to show.</p>);
+        return(
+            <p>
+                <FormattedMessage 
+                    id={`classDetails.noOtherClasses.${locale}`}
+                    defaultMessage="No other classes"
+                />
+            </p>
+        );
     } 
 }
 
@@ -330,7 +337,7 @@ const useStyles = makeStyles({
 function ClassDetails(props) {
     
     const divStyle = {
-        backgroundImage: 'url(../../images/classes/' + props.selectedClass.image + ')',
+        backgroundImage: 'url(../../images/classes/' + props.selectedClass.image + '.jpg    )',
     };
     const classes = useStyles();
 
@@ -358,7 +365,7 @@ function ClassDetails(props) {
                             <div className="header">
                                 <h2 className="class-title">{props.selectedClass.className}</h2>
                                 <div className="company">
-                                    <img className="logo" src={`../../images/logos/${props.selectedClass.companyLogo}`} alt={`${props.selectedClass.companyLogo} logo`}></img>
+                                    <img className="logo" src={`../../images/logos/${props.selectedClass.companyLogo}.jpg`} alt={`${props.selectedClass.companyLogo} logo`}></img>
                                     <div className="company-name">
                                         {props.selectedClass.companyName}
                                     </div>

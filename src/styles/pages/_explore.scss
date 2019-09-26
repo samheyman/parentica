@@ -18,6 +18,11 @@
     margin: 15px 0 !important;
 }
 
+.tabs {
+    border-bottom: 1px solid #eaeaea;
+
+}
+
 // .MuiTypography-body1 {
 //     margin: 20px 0 !important;
 // }
@@ -54,4 +59,9 @@
     .filter-icon {
         font-size: 0.8rem;
     }
+}
+
+.results-count {
+    font-size: 0.7rem;
+    color: $font-pale;
 }

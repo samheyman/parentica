@@ -6,14 +6,14 @@
     "general.spanish.es-ES": "Español",
 
     "general.classes.en-GB": "Classes",
-    "general.classes.es-ES": "Clasas",
-    "general.webinars.en-GB": "Webinars",
-    "general.webinars.es-ES": "Seminarios",
+    "general.classes.es-ES": "Clases",
+    "general.webinars.en-GB": "Seminars",
+    "general.webinars.es-ES": "Charlas virtuales",
     "general.blog.en-GB": "Blog",
     "general.blog.es-ES": "Blog",
     "general.meetups.en-GB": "Meetups",
     "general.meetups.es-ES": "Meetups",
-    "general.seminars.en-GB": "Meetups",
+    "general.seminars.en-GB": "Seminars",
     "general.seminars.es-ES": "Charlas",
     "general.clear.en-GB": "clear",
     "general.clear.es-ES": "eliminar",
@@ -36,10 +36,10 @@
     "navbar.contact.link.es-ES": "Contacto",
     
     
-    "homepage.tagline.header.en-GB": "Skilled parents for happy, thriving children",
-    "homepage.tagline.header.es-ES": "Padres competentes para niños felices y florecientes",
+    "homepage.tagline.header.en-GB": "The platform for parents who love to learn",
+    "homepage.tagline.header.es-ES": "La plataforma para padres con ganas de aprender",
 
-    "homepage.tagline.paragraph.en-GB": "Find pregnancy and parenting classes and events, either online or in one of the cities we are in",
+    "homepage.tagline.paragraph.en-GB": "Find pregnancy and parenting classes and events, either online or in one of the cities we are in.",
     "homepage.tagline.paragraph.es-ES": "Encuentra clases y eventos sobre embarazo y paternidad, ya sea en línea o en una de las ciudades en las que estamos.",
     
     "homepage.tagline.online.button.en-GB": "online",
@@ -64,18 +64,20 @@
     "homepage.onlineProviders.es-ES": "Proveedores en línea",
     
     "homepage.searchByCity.en-GB": "Search by city",
-    "homepage.searchByCity.es-ES": "Buscar por ciudad",
+    "homepage.searchByCity.es-ES": "Busca por ciudad",
     
-    "homepage.searchOnline.en-GB": "Search online",
-    "homepage.searchOnline.es-ES": "Buscar en línea",
+    "homepage.searchOnline.en-GB": "Learn online",
+    "homepage.searchOnline.es-ES": "Aprende en línea",
 
     "homepage.byLanguage.en-GB": "By language",
     "homepage.byLanguage.es-ES": "Por idioma",
 
+    "topics.all.en-GB": "all",
+    "topics.all.es-ES": "todos",
     "topics.baby.en-GB": "baby",
     "topics.baby.es-ES": "bebé",
     "topics.breastfeeding.en-GB": "breastfeeding",
-    "topics.breastfeeding.es-ES": "amamantamiento",
+    "topics.breastfeeding.es-ES": "lactancia",
     "topics.feeding.en-GB": "feeding",
     "topics.feeding.es-ES": "alimentación",
     "topics.first.en-GB": "first aid",
@@ -93,7 +95,7 @@
     "topics.parenting.en-GB": "parenting",
     "topics.parenting.es-ES": "paternidad",
     "topics.postpartum.en-GB": "postpartum",
-    "topics.postpartum.es-ES": "posparto",
+    "topics.postpartum.es-ES": "postparto",
     "topics.pregnancy.en-GB": "pregnancy",
     "topics.pregnancy.es-ES": "embarazo",
     "topics.sleep.en-GB": "sleep",
@@ -106,16 +108,16 @@
     "city.thisWeek.en-GB": "This week in Madrid",
     "city.thisWeek.es-ES": "Esta semana en Madrid",
     "city.searchByType.en-GB": "Search by type",
-    "city.searchByType.es-ES": "Buscar par tipo",
+    "city.searchByType.es-ES": "Busca por tipo",
 
-    "explore.tab.classes.en-GB": "Classes ({count})",
-    "explore.tab.classes.es-ES": "Clasas ({count})",
-    "explore.tab.meetups.en-GB": "Meetups ({count})",
-    "explore.tab.meetups.es-ES": "Meetups ({count})",
-    "explore.tab.seminars.en-GB": "Seminars ({count})",
-    "explore.tab.seminars.es-ES": "Charlas ({count})",
-    "explore.tab.madrid.en-GB": "Madrid ({count})",
-    "explore.tab.madrid.es-ES": "Madrid ({count})",
+    "explore.tab.classes.en-GB": "Classes",
+    "explore.tab.classes.es-ES": "Clases",
+    "explore.tab.meetups.en-GB": "Meetups",
+    "explore.tab.meetups.es-ES": "Encuentros",
+    "explore.tab.seminars.en-GB": "Seminars",
+    "explore.tab.seminars.es-ES": "Charlas",
+    "explore.tab.madrid.en-GB": "Madrid",
+    "explore.tab.madrid.es-ES": "Madrid",
 
     "explore.tab.online.en-GB": "online ({count})",
     "explore.tab.online.es-ES": "en línea ({count})",
@@ -124,8 +126,8 @@
     "explore.results.city.none.es-ES": "Lo sentimos, no se encontraron clases para `{topicLabel}` en Madrid.",
     "explore.results.online.none.en-GB": "Sorry no online classes found for `{topicLabel}`.",
     "explore.results.online.none.es-ES": "Lo sentimos, no se encontraron clases en linea para `{topicLabel}`.",
-    "explore.results.meetups.none.en-GB": "Sorry no meetups classes found for `{topicLabel}`.",
-    "explore.results.meetups.none.es-ES": "Lo sentimos, no se encontraron meetups para `{topicLabel}`.",
+    "explore.results.meetups.none.en-GB": "Sorry no meetups found for `{topicLabel}`.",
+    "explore.results.meetups.none.es-ES": "Lo sentimos, no se encontraron encuentros para `{topicLabel}`.",
     "explore.results.seminars.none.en-GB": "Sorry no seminars found for `{topicLabel}`.",
     "explore.results.seminars.none.es-ES": "Lo sentimos, no se encontraron charlas para `{topicLabel}`.",
 
@@ -152,10 +154,13 @@
     "classDetails.linkToWebsite.es-ES": "Ir al sitio web",
     
     "classDetails.about.en-GB": "About",
-    "classDetails.about.es-ES": "Acerca de",
+    "classDetails.about.es-ES": "Descripción",
 
     "classDetails.topics.en-GB": "Topics: ",
     "classDetails.topics.es-ES": "Temas: ",
+
+    "classDetails.noOtherClasses.en-GB": "Sorry, no other classes to show from this provider.",
+    "classDetails.noOtherClasses.es-ES": "Lo sentimos, no se encontraron otras clases de este proveedor.",
 
     "classDetails.otherClasses.en-GB": "Other classes",
     "classDetails.otherClasses.es-ES": "Otras clases",
@@ -200,8 +205,6 @@
     "about.manifesto.q3.en-GB": "\"It takes a village to raise a child.\" - African Proverb",
     "about.manifesto.q3.es-ES": "\"Se necesita un pueblo para criar a un niño.\" - Proverbio Africano",
 
-    
-
     "about.manifesto.q5.en-GB": "\"There are only two lasting bequests we can hope to give our children. One of these is roots, the other, wings.\" - Johann Wolfgang von Goethe",
     "about.manifesto.q5.es-ES": "\"Solo hay dos legados duraderos que podemos esperar dar a nuestros hijos. Una de ellas son las raíces, la otra, las alas.\" - Johann Wolfgang von Goethe",
 
@@ -209,16 +212,16 @@
     "about.manifesto.p5.es-ES": "Aprender a criar niños es un desafío que vale la pena asumir.",
 
     "about.team.meet.en-GB": "Meet the team",
-    "about.team.meet.es-ES": "Conocer al equipo",
+    "about.team.meet.es-ES": "Conoce al equipo",
 
     "about.team.samJob.en-GB": "Founder and developer",
     "about.team.samJob.es-ES": "Fundador y desarrollador",
 
-    "about.team.elineJob.en-GB": "Provider manager",
-    "about.team.elineJob.es-ES": "Gerente de proveedores",
+    "about.team.elineJob.en-GB": "Research and strategy",
+    "about.team.elineJob.es-ES": "Investigación y estrategia",
 
-    "about.team.samDescription.en-GB": "Sam is a software engineer and father-to-be. He has a breadth of experience in building web applications having worked as a software developer for companies such as Skyscanner and Amadeus IT Group. He now wants to use his skills to help parents like himself with the daunting but exciting challenge of raising children.",
-    "about.team.samDescription.es-ES": "Sam es ingeniero de software y futuro padre. Tiene una amplia experiencia en la creación de aplicaciones web, ya que trabajó como desarrollador de software para empresas como Skyscanner y Amadeus IT Group. Ahora quiere usar sus habilidades para ayudar a los padres como él con el desafío desalentador pero emocionante de criar hijos.",
+    "about.team.samDescription.en-GB": "Sam is a software engineer and father-to-be. He has a breadth of experience in building web applications having worked as a software developer for companies such as Skyscanner and Amadeus IT Group. He now wants to use his skills to help parents like himself with the exciting challenge of raising children.",
+    "about.team.samDescription.es-ES": "Sam es ingeniero de software y futuro padre. Tiene una amplia experiencia en la creación de aplicaciones web, y ha trabajado como desarrollador de software para empresas como Skyscanner y Amadeus IT Group. Ahora quiere utilizar sus habilidades para ayudar al padres como él con el desafío emocionante de criar hijos.",
 
     "about.team.elineDescription.en-GB": "Eline is the co-founder of two NGOs that help empower children to become change agents in their communities through education. She loves to work with those who want to create a better world and solve the major challenges of today and tomorrow. She specializes in 21st century skills, school transformation and social impact, and is always eager to meet others on the same journey.",
     "about.team.elineDescription.es-ES": "Eline es cofundadora de dos ONG que ayudan a empoderar a los niños a convertirse en agentes de cambio en sus comunidades a través de la educación. Le encanta trabajar con aquellos que desean crear un mundo mejor y resolver los principales desafíos de hoy y de mañana. Se especializa en habilidades del siglo XXI, transformación escolar e impacto social, y siempre está ansiosa por conocer a otros en el mismo viaje.",
@@ -227,10 +230,10 @@
     "contact.contact.es-ES": "Contacto",
 
     "contact.p1.en-GB": "Please feel free to get in touch with us for more information or to find out about listing your classes.",
-    "contact.p1.es-ES": "No dude en ponerse en contacto con nosotros para obtener más información o para obtener información sobre cómo publicar sus clases.",
+    "contact.p1.es-ES": "No dudes en ponerte en contacto con nosotros para obtener más información o para obtener información sobre cómo publicar tus clases.",
 
     "contact.p2.en-GB": "We look forward to hearing from you!",
-    "contact.p2.es-ES": "¡Esperamos con interés escuchar de usted!",
+    "contact.p2.es-ES": "¡Hablamos!",
 
     "contact.firstName.en-GB": "First name",
     "contact.firstName.es-ES": "Nombre",
@@ -251,10 +254,10 @@
     "contact.send.es-ES": "Enviar",
 
     "contact.confirmationMessage.en-GB": "Your message was successfully sent. We will get back to you as soon as we can.",
-    "contact.confirmationMessage.es-ES": "Su mensaje fue enviado con éxito. Nos pondremos en contacto con usted lo antes posible.",
+    "contact.confirmationMessage.es-ES": "Tu mensaje fue enviado con éxito. Nos pondremos en contacto contigo lo antes posible.",
 
     "contact.errorSendingMessage.en-GB": "Sorry, there was an error sending the form. Please try again.",
-    "contact.errorSendingMessage.es-ES": "Lo sentimos, hubo un error al enviar el formulario. Inténtelo de nuevo.",
+    "contact.errorSendingMessage.es-ES": "Lo sentimos, hubo un error al enviar el formulario. Inténtalo de nuevo.",
 
     "contact.backHomeLink.en-GB": "back to home",
     "contact.backHomeLink.es-ES": "inicio",
@@ -271,13 +274,13 @@
     "contact.error.lastName.tooLong.en-GBP": "Last name should be less than 20 characters",
     "contact.error.lastName.tooLong.es-ES": "El apellido debe tener menos de 20 caracteres.",
 
-    "contact.error.message.empty.en-GB": "Please leave a message",
-    "contact.error.message.empty.es-ES": "Por favor, deje un mensaje",
+    "contact.error.message.empty.en-GB": "Please leave a message.",
+    "contact.error.message.empty.es-ES": "Por favor, deja un mensaje.",
 
     "contact.error.email.invalid.en-GB": "Please enter a valid email",
-    "contact.error.email.invalid.es-ES": "Por favor introduzca una dirección de correo electrónico válida",
+    "contact.error.email.invalid.es-ES": "Por favor introduce una dirección de correo electrónico válida.",
 
     "errorPage.notFound.en-GB": "Sorry, the page you requested was not found.",
-    "errorPage.notFound.es-ES": "Lo sentimos, no se encontró la página que solicitó."
+    "errorPage.notFound.es-ES": "Lo sentimos, no se encontró la página solicitada."
 
 }

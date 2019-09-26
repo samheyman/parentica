@@ -7,6 +7,7 @@ import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 import ClassCard from '../components/ClassCard';
 import TypeCard from '../components/TypeCard';
+import LazyLoad from 'react-lazy-load';
 
 
 function RenderTags({tags, locale}) {
@@ -39,7 +40,12 @@ function MadridProviders({providers}) {
             <Grid item xs={4} sm={3} md={2} key={provider.id}>
                 <div className="logo-container">
                     <a href={`${provider.url}`} target="_blank" rel="noopener noreferrer"> 
+                    <LazyLoad
+                            debounce={false}
+                            offsetVertical={500}
+                            >
                         <img src={`../images/logos/${provider.logo}.png`} alt={`${provider.logo} logo`} />
+                    </LazyLoad>
                     </a>
                 </div>
             </Grid>
@@ -83,19 +89,21 @@ function City(props) {
                 <h2>
                     <FormattedMessage id={`city.thisWeek.${locale}`} defaultMessage="This week in Madrid"/>    
                 </h2>
-                <div id="items"> 
+                <Grid container className="topic-cards" spacing={2} alignContent="center">
                     {props.classesThisWeek.map((item) => {                        
                         return(
-                            <div className="item" key={item.id}>
+                            // <div className="item" key={item.id}>
+                            <Grid item xs={12} sm={6} md={3} key={item.id}>
                                     <ClassCard 
                                         classEntry={item}
                                     />
-                            </div>
+                            </Grid>
+                            /* </div> */
                         );
                     })
                     }
-                
-                </div>
+                </Grid>
+                {/* </div> */}
             </div>
 
             <div className="popular-topics">

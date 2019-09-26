@@ -10,6 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, FormattedDate } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
+import LazyLoad from 'react-lazy-load';
 
 const mapStateToProps = (state) => {
   return(
@@ -90,18 +91,32 @@ function MediaCard(props) {
                       event_label: props.classEntry.companyName + " - " + props.classEntry.className
                   }); 
                 }}
-            >  
-            <CardMedia
-              className={classes.media}
-              image={`../../images/classes/${props.classEntry.image}`}
-              title={props.classEntry.className}
-            />
+            >
+            <LazyLoad 
+                    width={327}
+                    height={140}
+                    debounce={false}
+                    offsetVertical={500}
+                    >
+                <CardMedia
+                  className={classes.media}
+                  image={`../../images/classes/${props.classEntry.image}_sm.jpg`}
+                  title={props.classEntry.className}
+                />
+            </LazyLoad>
             <CardContent>
               <Typography className={`class-name`} gutterBottom variant="h3" component="h3">
                 {props.classEntry.className.toLowerCase()}
               </Typography>
               <div className="company">
-                <img className="company-logo" src={`../../images/logos/${props.classEntry.companyLogo}`} alt={`${props.classEntry.companyLogo} logo`} />
+                <LazyLoad 
+                      width={25}
+                      height={25}
+                      debounce={false}
+                      offsetVertical={500}
+                      >
+                  <img className="company-logo" src={`../../images/logos/${props.classEntry.companyLogo}.jpg`} alt={`${props.classEntry.companyLogo} logo`} />
+                </LazyLoad>
                 <span className="company-name">{props.classEntry.companyName}</span>
               </div> 
 

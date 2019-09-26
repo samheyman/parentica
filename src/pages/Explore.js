@@ -47,6 +47,8 @@ function Explore(props) {
     const [value, setValue] = React.useState(props.tabSelected);
 
     function handleChange(event, newValue) {
+        // scroll down 1px to trigger lazy loading of cards
+        window.scrollBy(0, 1);
         setValue(newValue);
     }
 
@@ -131,48 +133,51 @@ function Explore(props) {
             <AppBar position="static" color="default">
                 <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">
                     {
-                    classesCount > 0 ?
+                    1===1 ?
                         <Tab
                             label={
+                                <React.Fragment>
                                 <FormattedMessage 
                                     id={`explore.tab.classes.${locale}`}
                                     defaultMessage="Classes"
                                     values={{
                                         count: classesCount
                                     }}
-                                />
+                                /><br/><span className="results-count">({classesCount})</span></React.Fragment>
                             } 
                             {...a11yProps(0)} 
                         />
                     : null
                     }
                     {
-                    meetupsCount > 0 ?
+                    1===1 ?
                         <Tab 
                             label={
+                                <React.Fragment>
                                 <FormattedMessage 
                                     id={`explore.tab.meetups.${locale}`}
                                     defaultMessage="meetups"
                                     values={{
                                         count: meetupsCount
                                     }}
-                                />
+                                /><br/><span className="results-count">({meetupsCount})</span></React.Fragment>
                             } 
                             {...a11yProps(1)} 
                         />
                     : null
                     }
                     {
-                    seminarsCount > 0 ?
+                    1===1 ?
                         <Tab 
                             label={
+                                <React.Fragment>
                                 <FormattedMessage 
                                     id={`explore.tab.seminars.${locale}`}
                                     defaultMessage="seminars"
                                     values={{
                                         count: seminarsCount
                                     }}
-                                />
+                                /><br/><span className="results-count">({seminarsCount})</span></React.Fragment>
                             } 
                             {...a11yProps(2)} 
                         />

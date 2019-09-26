@@ -2,7 +2,9 @@
     text-decoration: none;
 }
 
-
+.MuiCard-root {
+    max-width: 327px !important;
+}
 
 .dot {
     height: 4px;
@@ -26,6 +28,10 @@
     align-items: center;
     height: 25px;
 
+    .LazyLoad {
+        margin-right: 5px;
+    }
+
     .company-name {
         color: $font-dark;
     }
@@ -34,6 +40,7 @@
         margin: 0 8px 0 0px;
         height: 100%;
         border-radius: 50%;
+        max-width: 26px;
     }
 }
 
