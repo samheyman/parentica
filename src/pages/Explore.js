@@ -155,14 +155,14 @@ function Explore(props) {
                             label={
                                 <React.Fragment>
                                 <FormattedMessage 
-                                    id={`explore.tab.meetups.${locale}`}
-                                    defaultMessage="meetups"
+                                    id={`explore.tab.seminars.${locale}`}
+                                    defaultMessage="seminars"
                                     values={{
-                                        count: meetupsCount
+                                        count: seminarsCount
                                     }}
-                                /><br/><span className="results-count">({meetupsCount})</span></React.Fragment>
+                                /><br/><span className="results-count">({seminarsCount})</span></React.Fragment>
                             } 
-                            {...a11yProps(1)} 
+                            {...a11yProps(2)} 
                         />
                     : null
                     }
@@ -172,14 +172,14 @@ function Explore(props) {
                             label={
                                 <React.Fragment>
                                 <FormattedMessage 
-                                    id={`explore.tab.seminars.${locale}`}
-                                    defaultMessage="seminars"
+                                    id={`explore.tab.meetups.${locale}`}
+                                    defaultMessage="meetups"
                                     values={{
-                                        count: seminarsCount
+                                        count: meetupsCount
                                     }}
-                                /><br/><span className="results-count">({seminarsCount})</span></React.Fragment>
+                                /><br/><span className="results-count">({meetupsCount})</span></React.Fragment>
                             } 
-                            {...a11yProps(2)} 
+                            {...a11yProps(1)} 
                         />
                     : null
                     }

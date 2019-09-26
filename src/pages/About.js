@@ -185,7 +185,7 @@ function About(props) {
                                 <CardActionArea>
                                     <CardMedia
                                         className={`eline ${classes.media}`}
-                                        image="/images/brand/eline_sm.jpg"
+                                        image="/images/brand/eline_sm2.jpg"
                                         title="Eline Lund"
                                     />
                                     <CardContent>

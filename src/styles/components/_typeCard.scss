@@ -1,0 +1,33 @@
+.type-card {
+    max-width: 290px !important;
+
+    .MuiCardMedia-root {
+        height: 150px;
+        width: auto;
+        background-color: $image-background-color;
+    }
+
+    .MuiCardContent-root {
+        margin: 0;
+        text-align: center;
+        padding-bottom: 16px !important;
+        h4 {
+            // color: $green; 
+            
+        }
+        .material-icons {
+            // color: $green;
+        }
+        p {
+            // margin: 0 0 20px 0;
+        }
+    }
+}
+
+.type-card-online {
+    // background-color: $pastel-lime !important;
+}
+
+.type-card-webinars {
+    // background-color: $pastel-blue !important;
+}

@@ -162,3 +162,11 @@ a {
  .class-details {
     // white-space: normal !important;
  }
+
+ .more-cities {
+    min-height: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }

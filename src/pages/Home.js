@@ -8,6 +8,11 @@ import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 import ClassCard from '../components/ClassCard';
 import LazyLoad from 'react-lazy-load';
+import TypeCard from '../components/TypeCard';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 
 function OnlineProviders({providers}) {
     const providersList = providers.map((provider) => {
@@ -80,12 +85,19 @@ function Home(props) {
                         topicLocalised="Madrid"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
+                    <Grid item xs={6} sm={4} md={3} key="3">
+                        <Card className="more-cities">
+                            <CardActionArea>
+                                <CardContent>
+                                <h4><FormattedMessage 
+                                    id={`home.moreCities.${locale}`} 
+                                    defaultMessage="More cities to come!" /></h4>
+                                </CardContent>
+                            </CardActionArea>
+                        </Card>
+                    </Grid>
                 </Grid>
-                {/* <Grid container className="topic-cards" spacing={2} alignContent="center">
-                    <div>
-                        <p>More cities to come</p>
-                    </div>
-                </Grid> */}
+                
             </div>
             <div className="types">
                 <h2>
@@ -93,8 +105,8 @@ function Home(props) {
                         id={`homepage.searchOnline.${locale}`} 
                         defaultMessage="Search online" />    
                 </h2>  
-                <Grid container className="topic-cards" spacing={2} alignContent="center">
-                    <TopicCard
+                <Grid container className="topic-cards " spacing={2} alignContent="center">
+                    <TypeCard
                         locale={`${locale}`}
                         topic="online classes" 
                         topicLocalised={<FormattedMessage 
@@ -103,7 +115,7 @@ function Home(props) {
                         rootUrl="/online"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
-                    <TopicCard
+                    <TypeCard   
                         locale={`${locale}`}
                         topic="webinars" 
                         topicLocalised={<FormattedMessage 

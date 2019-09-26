@@ -179,18 +179,17 @@ function City(props) {
                     <FormattedMessage id={`city.searchByType.${locale}`} defaultMessage="Search by type" />    
                 </h2>  
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
-                  
                     <TypeCard
                         locale={`${locale}`}
-                        topic="seminars" 
-                        topicLocalised={<FormattedMessage id={`general.seminars.${locale}`} defaultMessage="seminars"/>}
+                        topic="classes" 
+                        topicLocalised={<FormattedMessage id={`general.classes.${locale}`} defaultMessage="classes"/>}
                         rootUrl="/madrid"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
                     <TypeCard
                         locale={`${locale}`}
-                        topic="classes" 
-                        topicLocalised={<FormattedMessage id={`general.classes.${locale}`} defaultMessage="classes"/>}
+                        topic="seminars" 
+                        topicLocalised={<FormattedMessage id={`general.seminars.${locale}`} defaultMessage="seminars"/>}
                         rootUrl="/madrid"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />

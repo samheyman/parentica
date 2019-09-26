@@ -7,13 +7,31 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import LazyLoad from 'react-lazy-load';
+import Icon from '@material-ui/core/Icon';
 
 export default function TypeCard(props) {
     let topicId = props.topic.split(" ")[0];
     let topic = props.topic;
-
+    let icon = '';
     let routePath = `/${props.locale.split('-')[0]}${props.rootUrl}/explore`
-        
+    switch(topicId) {
+        case 'online': 
+            icon="school";
+            break;
+        case 'webinars': 
+            icon="question_answer";
+            break;
+        case 'meetups':
+            icon="group";
+            break;
+        case 'seminars':
+            icon="record_voice_over";
+            break;
+        default:
+            icon="school";
+            break;
+
+    }
     return(
         <Grid item xs={6} sm={4} md={2} key="3">
             <Link 
@@ -26,20 +44,15 @@ export default function TypeCard(props) {
                             }); 
                         }}
             >
-            <Card className="topic-card">
+            <Card className={`type-card type-card-${topicId}`}>
                 <CardActionArea>
-                    <LazyLoad 
-                        width={290}
-                        height={200}
-                        debounce={false}
-                        offsetVertical={500}
-                        >
-                        <CardMedia
+                    
+                        {/* <CardMedia
                         image={`../images/topics/${topicId}.jpg`}
                         title={props.topicLocalised}
-                        />
-                    </LazyLoad>
+                        /> */}
                     <CardContent>
+                        <Icon>{icon}</Icon>
                     <h4>{props.topicLocalised}</h4>
                     </CardContent>
                 </CardActionArea>

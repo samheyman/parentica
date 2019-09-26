@@ -138,7 +138,7 @@ class Main extends Component {
                                     listings={onlineListings}
                                     topic="all"
                                     locale={this.props.locale}
-                                    tabSelected={2}
+                                    tabSelected={0}
                                 />
                             );
                         } else {
@@ -148,7 +148,7 @@ class Main extends Component {
                                     listings={onlineListings}
                                     topic="all"
                                     locale={this.props.locale}
-                                    tabSelected={2}
+                                    tabSelected={0}
                                 />
                             );
                         }
@@ -165,7 +165,7 @@ class Main extends Component {
                                     listings={cityListings}
                                     topic="all"
                                     locale={this.props.locale}
-                                    tabSelected={2}
+                                    tabSelected={1}
                                 />
                             );
                         }
@@ -176,7 +176,7 @@ class Main extends Component {
                                     listings={cityListings}
                                     topic="all"
                                     locale={this.props.locale}
-                                    tabSelected={1}
+                                    tabSelected={2}
                                 />
                             );
                         }
