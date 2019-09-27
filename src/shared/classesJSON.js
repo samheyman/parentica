@@ -3048,6 +3048,35 @@ export const CLASSES = [
     "nameId":"materna-yoga-estimulación-musical-en-familia-5081"
     },
     {
+        "id":10099,
+        "type":"online",
+        "className":"Inglés de 0 a 3 años",
+        "tags":[
+        "baby","language"
+        ],
+        "duration":195,
+        "image":"bitacorasinglesde0a3.jpg",
+        "url":"https://escuela.bitacoras.com/curso/ingles-de-0-a-3-anos/",
+        "companyName":"Escuela Bitácoras",
+        "companyLogo":"escuelabitacoras_sq",
+        "label":"",
+        "price":29.90,
+        "language":"spanish",
+        "description":[
+            "¿Cómo introducir el inglés en casa y ayudar a los niños a crecer bilingües?",
+            "Las claves del curso:",
+            "Si te relacionas con padres de bebés y niños de corta edad lo habrás observado; cada día más familias pierden el complejo a hablar con sus hijos en inglés, tanto en privado como delante de otras personas. Es una maravillosa tendencia y el primer paso para normalizar el uso de una segunda lengua en la familia.",
+            "¿Cuál es el momento más adecuado para aprender un idioma y cómo hacerlo? ¿Se puede criar bilingüe a nuestro hijo (o niños a nuestro cargo) sin ser nosotros nativos o tener un nivel alto o ‘proficiency’ de inglés? Son las preguntas que muchos padres y educadores nos hacemos.",
+            "Qué aprenderás:",
+            "Gracias a las investigaciones más recientes sabemos que el momento más propicio para aprender una lengua es desde el nacimiento. Por ello, cada vez hay más familias y educadores interesados en usar el inglés con los bebés desde una perspectiva natural, respetuosa, divertida y aprovechando el vínculo afectivo.",
+            "A lo largo de las tres horas y cuarto de duración del curso «Inglés de 0 a 3 años» accederás, de la mano de Tania Asensi, a toda la información necesaria para saber cómo usar el inglés con bebés de 0 a 3 años, así como los beneficios que entraña aprender idiomas en la primera infancia. Unas herramientas que nos ayudarán a deshacernos de miedos y complejos.",
+            "Verás formas prácticas y divertidas de usar el inglés tanto casa como en el aula, independientemente de tu nivel de inglés. Conocerás información veraz y tendrás respuestas sobre las dudas más comunes de las familias y los educadores.",
+            "Pase anual:",
+            "El ‘Pase Anual’ de Escuela Bitácoras (89€) te da acceso inmediato a los 50 cursos publicados hasta la fecha y a los 25 nuevos cursos que estrenaremos durante los próximos 12 meses. Embarazo, postparto, lactancia, BLW, los primeros pasos, las primeras palabras, el cole, literatura infantil, las emociones, las rabietas, la creatividad, el contacto con la tecnología, pedagogías alternativas, preadolescencia y adolescencia… ¡Todo!",
+        ],
+        "nameId":"ingles-de-0-a-3-anos-10099"
+    },
+     {
         "id":10000,
         "type":"online",
         "className":"Curso Cuidados del Bebé",
