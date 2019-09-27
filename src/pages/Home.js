@@ -17,7 +17,7 @@ function OnlineProviders({providers}) {
         return(
             <Grid item xs={4} sm={3} md={2} key={provider.id}>
                 <div className="logo-container">
-                    <Link to={`classes/${provider.id}`}>
+                    <a href={`${provider.url}`} target="_blank" rel="nofollow">
                         <LazyLoad 
                             
                             debounce={false}
@@ -25,7 +25,7 @@ function OnlineProviders({providers}) {
                             >
                         <img src={`../images/logos/${provider.logo}.png`} alt={`${provider.logo} logo`} />
                         </LazyLoad>
-                    </Link>
+                    </a>
                 </div>
             </Grid>
         );
