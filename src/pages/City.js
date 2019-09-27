@@ -159,6 +159,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.music.${locale}`} />
                         }
+                        rootUrl="/madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}
                         />
                     <TopicCard
@@ -167,6 +168,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.postpartum.${locale}`} />
                         }
+                        rootUrl="/madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}
                         />
                     <TopicCard
@@ -175,6 +177,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.yoga.${locale}`} />
                         }
+                        rootUrl="/madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}
                         />
                     <TopicCard
@@ -183,6 +186,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.first.${locale}`} />
                         }
+                        rootUrl="/madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
                         />
                 </Grid>
