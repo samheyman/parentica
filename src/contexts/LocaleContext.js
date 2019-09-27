@@ -3,6 +3,7 @@ import React, {createContext, Component} from 'react';
 export const LocaleContext = createContext();
 
 class LocaleContextProvider extends Component {
+    locale = 'en-GB';
 
     setEnglish = () => {
         this.setState({ locale: 'en-GB' });
@@ -23,7 +24,7 @@ class LocaleContextProvider extends Component {
         for (i = 0; i < nav.languages.length; i++) {
             language = nav.languages[i];
             if (language && language.length) {
-            return language;
+                return language;
             }
         }
         }
@@ -41,7 +42,8 @@ class LocaleContextProvider extends Component {
 
     state = {
         locale: (window.location.pathname.split('/')[1]==="") ?
-            this.getFirstBrowserLanguage()
+            this.getFirstBrowserLanguage() === 'es' || this.getFirstBrowserLanguage() === 'es-ES' ?
+                'es-ES' : 'en-GB'
             :
             (window.location.pathname.split('/')[1]==="es") ? 'es-ES' : 'en-GB'
     }
