@@ -122,9 +122,8 @@
     "explore.tab.seminars.es-ES": "Charlas",
     "explore.tab.madrid.en-GB": "Madrid",
     "explore.tab.madrid.es-ES": "Madrid",
-
-    "explore.tab.online.en-GB": "online ({count})",
-    "explore.tab.online.es-ES": "en línea ({count})",
+    "explore.tab.online.en-GB": "Online",
+    "explore.tab.online.es-ES": "En línea",
 
     "explore.results.city.none.en-GB": "Sorry no classes found for `{topicLabel}` in Madrid.",
     "explore.results.city.none.es-ES": "Lo sentimos, no se encontraron clases para `{topicLabel}` en Madrid.",

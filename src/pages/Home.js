@@ -44,7 +44,7 @@ function Home(props) {
             const locale = context.locale;
             return(<Container className="main-content">
             <div className="tagline">
-                <h2 className="tagline-header lower-case">
+                <h2 className="tagline-header">
                     <FormattedMessage 
                         id={`homepage.tagline.header.${locale}`}
                         defaultMessage="Parenting and pregnancy classes for all"
@@ -71,7 +71,7 @@ function Home(props) {
             </div>
             
             <div className="cities">
-                <h2 className="lower-case">
+                <h2>
                     <FormattedMessage 
                         id={`homepage.searchByCity.${locale}`} 
                         defaultMessage="Search by city" />    
@@ -98,7 +98,7 @@ function Home(props) {
                 
             </div>
             <div className="types">
-                <h2 className="lower-case">
+                <h2>
                     <FormattedMessage 
                         id={`homepage.searchOnline.${locale}`} 
                         defaultMessage="Search online" />    
@@ -134,7 +134,7 @@ function Home(props) {
                 </Grid>
             </div>
             <div className="online-classes">
-                <h2 className="lower-case">
+                <h2>
                     <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Popular online classes"/>    
                 </h2> 
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
@@ -175,7 +175,7 @@ function Home(props) {
             </div> */}
         
             <div className="providers">
-                <h2 className="lower-case">
+                <h2>
                     <FormattedMessage id={`homepage.onlineProviders.${locale}`} defaultMessage="Online providers"/>    
                 </h2> 
                 {/* <p>List your classes</p> */}

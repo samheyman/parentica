@@ -121,10 +121,10 @@ h2 {
     letter-spacing: 1px;
     margin-top: 40px;
     color: $navy;
-    text-transform: capitalize;
+    text-transform: none;
 }
 
-h2.lower-case {
+h2.lowercase {
     text-transform: none;
 }
 

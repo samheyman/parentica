@@ -105,7 +105,19 @@ function Explore(props) {
             const locale = context.locale;
             return(
                 <Container className="main-content">
-                    <h2>{props.format}</h2>
+                    <h2>{
+                        props.format === 'online' ?
+                        <FormattedMessage 
+                            id={`explore.tab.online.${locale}`}
+                            defaultMessage="online"
+                        />
+                        :
+                        <FormattedMessage 
+                            id={`explore.tab.madrid.${locale}`}
+                            defaultMessage="Madrid"
+                        />
+                        
+                    }</h2>
                     <div className="result-filters">
                         {(props.topic!=="all")?
                             <React.Fragment>
