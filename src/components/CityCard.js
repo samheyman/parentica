@@ -16,7 +16,7 @@ export default function CityCard(props) {
             <Link to={{pathname:`/${props.locale.split('-')[0]}/${topic}`}}
                 onClick={()=>{
                     window.gtag("event", "city card", {
-                        event_category: "topics",
+                        event_category: "cities",
                         event_label: topic
                     }); 
                 }}

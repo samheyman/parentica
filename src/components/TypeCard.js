@@ -38,8 +38,8 @@ export default function TypeCard(props) {
                     to={{
                         pathname: routePath, type: topic }}
                         onClick={()=>{
-                            window.gtag("event", "topic card", {
-                                event_category: "topics",
+                            window.gtag("event", "class format card", {
+                                event_category: "formats",
                                 event_label: topic
                             }); 
                         }}
