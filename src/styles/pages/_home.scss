@@ -138,6 +138,24 @@ a {
     }
 }
 
+.show-all-link {
+    font-size: 1.1rem;
+    color: $purple;  
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+
+    a {
+        color: inherit;
+    }
+
+    .material-icons {
+        height: 100%;
+    }
+}
+
 .topic-cards {
     // overflow-x: scroll !important;
     // width: auto;

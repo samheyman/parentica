@@ -133,7 +133,7 @@ class Main extends Component {
                         let topic = this.props.location.topic;
                         let type = this.props.location.type;
                         let onlineListings = this.props.classes.filter((item)=> item.type==='online' || item.type==='webinar');
-                        if(type === 'online classes'){
+                        if(type === 'online classes' || type == null ){
                             return(
                                 <Explore
                                     format="online"

@@ -25,7 +25,7 @@ export default function TopicCard(props) {
             
         // ;    
     return(
-        <Grid item xs={6} sm={4} md={2} key="3">
+        <Grid item xs={6} sm={4} md={3} key="3">
             <Link 
                     to={{
                         pathname: routePath, topic:`${topic}`}}

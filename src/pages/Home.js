@@ -11,6 +11,7 @@ import TypeCard from '../components/TypeCard';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
+import Icon from '@material-ui/core/Icon';
 
 function OnlineProviders({providers}) {
     const providersList = providers.map((provider) => {
@@ -140,7 +141,7 @@ function Home(props) {
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     {props.onlineClasses.map((item) => {                        
                         return(
-                            <Grid item xs={12} sm={6} md={3} key={item.id}>
+                            <Grid item xs={12} sm={6} md={4} key={item.id}>
                                 <ClassCard 
                                     classEntry={item}
                                 />
@@ -148,6 +149,13 @@ function Home(props) {
                     })
                     }
                 </Grid>
+                <div className="show-all-link">
+                    <Link to={{pathname:`/${locale.split('-')[0]}/online/explore`}}>
+                        <FormattedMessage id={`general.showAll.${locale}`} defaultMessage="show all" />    
+                    </Link>
+                    <Icon>keyboard_arrow_right</Icon>
+                </div>
+                
             </div>
             {/* <div className="types">
                 <h2>

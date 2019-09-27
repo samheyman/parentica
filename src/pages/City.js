@@ -8,6 +8,7 @@ import { LocaleContext } from '../contexts/LocaleContext';
 import ClassCard from '../components/ClassCard';
 import TypeCard from '../components/TypeCard';
 import LazyLoad from 'react-lazy-load';
+import Icon from '@material-ui/core/Icon';
 
 
 function RenderTags({tags, locale}) {
@@ -87,7 +88,9 @@ function City(props) {
             
             <div className="upcoming-classes">
                 <h2>
-                    <FormattedMessage id={`city.thisWeek.${locale}`} defaultMessage="This week in Madrid"/>    
+                    <FormattedMessage 
+                        id={`city.thisWeek.${locale}`} 
+                        defaultMessage="This week in Madrid"/>    
                 </h2>
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     {props.classesThisWeek.map((item) => {                        
@@ -103,6 +106,12 @@ function City(props) {
                     })
                     }
                 </Grid>
+                <div className="show-all-link">
+                    <Link to={{pathname:`/${locale.split('-')[0]}/madrid/explore`}}>
+                    <FormattedMessage id={`general.showAll.${locale}`} defaultMessage="show all" />    
+                    </Link>
+                    <Icon>keyboard_arrow_right</Icon>
+                </div>
                 {/* </div> */}
             </div>
 
@@ -144,34 +153,38 @@ function City(props) {
                         rootUrl="/madrid"
 
                         resultCount={props.classesThisWeek.filter((item) => item.tags.includes("nutrition")).length}/>
-                    {/* <TopicCard 
+                    <TopicCard 
                         locale={`${locale}`}
                         topic="music" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.music.${locale}`} />
                         }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}/>
+                        // resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}
+                        />
                     <TopicCard
                         locale={`${locale}`}
                         topic="postpartum" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.postpartum.${locale}`} />
                         }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}/>
+                        // resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}
+                        />
                     <TopicCard
                         locale={`${locale}`}
                         topic="yoga" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.yoga.${locale}`} />
                         }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}/>
+                        // resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}
+                        />
                     <TopicCard
                         locale={`${locale}`}
                         topic="first aid" 
                         topicLocalised={                            
                             <FormattedMessage id={`topics.first.${locale}`} />
                         }
-                        resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}/> */}
+                        // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
+                        />
                 </Grid>
             </div>
             <div className="types">
