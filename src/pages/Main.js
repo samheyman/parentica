@@ -128,13 +128,15 @@ class Main extends Component {
                     }} /> */}
                     <Route path={`${match.url}/online/explore`} render={() => {
                         console.log("Searching online classes for  " + this.props.location.topic);
+                        console.log("and of type  " + this.props.location.type);
+
                         let topic = this.props.location.topic;
                         let type = this.props.location.type;
                         let onlineListings = this.props.classes.filter((item)=> item.type==='online' || item.type==='webinar');
-                        if(topic == null || topic === "all"){
+                        if(type === 'online classes'){
                             return(
                                 <Explore
-                                    format="Online"
+                                    format="online"
                                     listings={onlineListings}
                                     topic="all"
                                     locale={this.props.locale}
@@ -144,11 +146,11 @@ class Main extends Component {
                         } else {
                             return(
                                 <Explore
-                                    format="Online"
+                                    format="online"
                                     listings={onlineListings}
                                     topic="all"
                                     locale={this.props.locale}
-                                    tabSelected={0}
+                                    tabSelected={1}
                                 />
                             );
                         }
@@ -161,7 +163,7 @@ class Main extends Component {
                         if(type === 'seminars') {
                             return(
                                 <Explore
-                                    format="Madrid"
+                                    format="madrid"
                                     listings={cityListings}
                                     topic="all"
                                     locale={this.props.locale}
@@ -172,7 +174,7 @@ class Main extends Component {
                         if(type === 'meetups') {
                             return(
                                 <Explore
-                                    format="Madrid"
+                                    format="madrid"
                                     listings={cityListings}
                                     topic="all"
                                     locale={this.props.locale}
@@ -183,7 +185,7 @@ class Main extends Component {
                         if(topic == null || topic === "all") {
                             return(
                                 <Explore
-                                    format="Madrid"
+                                    format="madrid"
                                     listings={cityListings}
                                     topic="all"
                                     locale={this.props.locale}
@@ -193,7 +195,7 @@ class Main extends Component {
                         } else {
                             return(
                                 <Explore
-                                    format="Madrid"
+                                    format="madrid"
                                     listings={cityListings.filter((listing) => listing.tags.includes(`${topic}`))}
                                     topic={topic}
                                     locale={this.props.locale}

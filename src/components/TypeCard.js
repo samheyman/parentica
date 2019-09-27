@@ -5,8 +5,6 @@ import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import LazyLoad from 'react-lazy-load';
 import Icon from '@material-ui/core/Icon';
 
 export default function TypeCard(props) {

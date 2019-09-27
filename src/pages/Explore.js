@@ -97,8 +97,8 @@ function Explore(props) {
 
     // console.log(props.classes.length + " classes: " + props.classes);
     console.log(classesCount + " classes");
-    console.log(meetupsCount + " meetups");
     console.log(seminarsCount + " seminars");
+    console.log(meetupsCount + " meetups");
 
     return(
         <LocaleContext.Consumer>{(context) => {
@@ -132,42 +132,38 @@ function Explore(props) {
                     </div>
             <AppBar position="static" color="default">
                 <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">
+                    <Tab
+                        label={
+                            <React.Fragment>
+                            <FormattedMessage 
+                                id={`explore.tab.classes.${locale}`}
+                                defaultMessage="Classes"
+                                values={{
+                                    count: classesCount
+                                }}
+                            />
+                            {/* <br/><span className="results-count">({classesCount})</span> */}
+                            </React.Fragment>
+                        } 
+                        {...a11yProps(0)} 
+                    />
+                    <Tab 
+                        label={
+                            <React.Fragment>
+                            <FormattedMessage 
+                                id={`explore.tab.seminars.${locale}`}
+                                defaultMessage="seminars"
+                                values={{
+                                    count: seminarsCount
+                                }}
+                            />
+                            {/* <br/><span className="results-count">({seminarsCount})</span> */}
+                            </React.Fragment>
+                        } 
+                        {...a11yProps(2)} 
+                    />
                     {
-                    1===1 ?
-                        <Tab
-                            label={
-                                <React.Fragment>
-                                <FormattedMessage 
-                                    id={`explore.tab.classes.${locale}`}
-                                    defaultMessage="Classes"
-                                    values={{
-                                        count: classesCount
-                                    }}
-                                /><br/><span className="results-count">({classesCount})</span></React.Fragment>
-                            } 
-                            {...a11yProps(0)} 
-                        />
-                    : null
-                    }
-                    {
-                    1===1 ?
-                        <Tab 
-                            label={
-                                <React.Fragment>
-                                <FormattedMessage 
-                                    id={`explore.tab.seminars.${locale}`}
-                                    defaultMessage="seminars"
-                                    values={{
-                                        count: seminarsCount
-                                    }}
-                                /><br/><span className="results-count">({seminarsCount})</span></React.Fragment>
-                            } 
-                            {...a11yProps(2)} 
-                        />
-                    : null
-                    }
-                    {
-                    1===1 ?
+                    props.format!=='online' ?
                         <Tab 
                             label={
                                 <React.Fragment>
@@ -177,7 +173,9 @@ function Explore(props) {
                                     values={{
                                         count: meetupsCount
                                     }}
-                                /><br/><span className="results-count">({meetupsCount})</span></React.Fragment>
+                                />
+                                {/* <br/><span className="results-count">({meetupsCount})</span> */}
+                                </React.Fragment>
                             } 
                             {...a11yProps(1)} 
                         />
@@ -205,15 +203,15 @@ function Explore(props) {
                 </p>}
             </TabPanel>
             <TabPanel className="search-results" value={value} index={1}>
-                {(meetupsCount > 0 ) ?
+                {(seminarsCount > 0 ) ?
                 <Grid container spacing={2} alignContent="center">
-                    {meetupsList.filter((item) => item !== '')}
+                    {seminarsList.filter((item) => item !== '')}
                 </Grid>
                 :
                 <p>
                     <FormattedMessage 
-                        id={`explore.results.meetups.none.${locale}`}
-                        defaultMessage="Sorry no meetups found."
+                        id={`explore.results.seminars.none.${locale}`}
+                        defaultMessage="Sorry no seminars found."
                         values={{
                             topicLabel: 
                                 <FormattedMessage 
@@ -225,15 +223,15 @@ function Explore(props) {
                 </p>}
             </TabPanel>
             <TabPanel className="search-results" value={value} index={2}>
-                {(seminarsCount > 0 ) ?
+                {(meetupsCount > 0 ) ?
                 <Grid container spacing={2} alignContent="center">
-                    {seminarsList.filter((item) => item !== '')}
+                    {meetupsList.filter((item) => item !== '')}
                 </Grid>
                 :
                 <p>
                     <FormattedMessage 
-                        id={`explore.results.seminars.none.${locale}`}
-                        defaultMessage="Sorry no seminars found."
+                        id={`explore.results.meetups.none.${locale}`}
+                        defaultMessage="Sorry no meetups found."
                         values={{
                             topicLabel: 
                                 <FormattedMessage 

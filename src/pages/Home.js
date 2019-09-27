@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import TopicCard from '../components/TopicCard';
 import CityCard from '../components/CityCard';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
@@ -12,7 +11,6 @@ import TypeCard from '../components/TypeCard';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
 
 function OnlineProviders({providers}) {
     const providersList = providers.map((provider) => {
@@ -46,7 +44,7 @@ function Home(props) {
             const locale = context.locale;
             return(<Container className="main-content">
             <div className="tagline">
-                <h2 className="tagline-header">
+                <h2 className="tagline-header lower-case">
                     <FormattedMessage 
                         id={`homepage.tagline.header.${locale}`}
                         defaultMessage="Parenting and pregnancy classes for all"
@@ -73,7 +71,7 @@ function Home(props) {
             </div>
             
             <div className="cities">
-                <h2>
+                <h2 className="lower-case">
                     <FormattedMessage 
                         id={`homepage.searchByCity.${locale}`} 
                         defaultMessage="Search by city" />    
@@ -100,7 +98,7 @@ function Home(props) {
                 
             </div>
             <div className="types">
-                <h2>
+                <h2 className="lower-case">
                     <FormattedMessage 
                         id={`homepage.searchOnline.${locale}`} 
                         defaultMessage="Search online" />    
@@ -136,7 +134,7 @@ function Home(props) {
                 </Grid>
             </div>
             <div className="online-classes">
-                <h2>
+                <h2 className="lower-case">
                     <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Popular online classes"/>    
                 </h2> 
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
@@ -177,7 +175,7 @@ function Home(props) {
             </div> */}
         
             <div className="providers">
-                <h2>
+                <h2 className="lower-case">
                     <FormattedMessage id={`homepage.onlineProviders.${locale}`} defaultMessage="Online providers"/>    
                 </h2> 
                 {/* <p>List your classes</p> */}

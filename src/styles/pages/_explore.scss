@@ -18,9 +18,24 @@
     margin: 15px 0 !important;
 }
 
-.tabs {
+.MuiTabs-scroller {
     border-bottom: 1px solid #eaeaea;
 
+}
+
+// Active tab decorator
+.MuiTabs-indicator {
+    height: 5px !important;
+}
+
+.MuiTab-wrapper {
+    color:$font-pale;
+}
+
+.Mui-selected {
+    span {
+        color: #666;
+    }
 }
 
 // .MuiTypography-body1 {

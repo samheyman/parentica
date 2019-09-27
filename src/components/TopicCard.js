@@ -39,7 +39,7 @@ export default function TopicCard(props) {
             <Card className="topic-card">
                 <CardActionArea>
                     <LazyLoad 
-                        width={300}
+                        width={220}
                         debounce={false}
                         offsetVertical={500}
                         >
