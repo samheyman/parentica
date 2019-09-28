@@ -141,6 +141,28 @@ function Explore(props) {
                             :
                             null
                         }
+                        {(props.classLanguage==="spanish" || props.classLanguage==="english")?
+                            <React.Fragment>
+                                <span className={`tag tag-${props.topic}`}>
+                                    <FormattedMessage 
+                                        id={`general.${props.classLanguage}.${locale}`}
+                                        defaultMessage=""
+                                    />
+                                </span>
+                                
+                                <Link to={{pathname:`/${props.locale.split('-')[0]}/madrid/explore`}}>
+                                    <span className="tag">
+                                        <FormattedMessage 
+                                            id={`general.clear.${locale}`}
+                                            defaultMessage="clear"
+                                        />
+                                    </span>
+                                </Link>
+                                
+                            </React.Fragment>
+                            :
+                            null
+                        }
                     </div>
             <AppBar position="static" color="default">
                 <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">

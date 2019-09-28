@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import TopicCard from '../components/TopicCard';
+import LanguageCard from '../components/LanguageCard';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 import ClassCard from '../components/ClassCard';
@@ -191,6 +192,12 @@ function City(props) {
                         />
                 </Grid>
             </div>
+            <div className="all-topics">
+                <h2>
+                <FormattedMessage id={`homepage.allTopics.${locale}`} />        
+                </h2>  
+                <RenderTags tags={props.topics} locale={`${locale}`} /> 
+            </div>
             <div className="types">
                 <h2>
                     <FormattedMessage id={`city.searchByType.${locale}`} defaultMessage="Search by type" />    
@@ -221,11 +228,30 @@ function City(props) {
                     
                 </Grid>
             </div>
-            <div className="all-topics">
+            <div className="types">
                 <h2>
-                <FormattedMessage id={`homepage.allTopics.${locale}`} />        
+                    <FormattedMessage id={`homepage.byLanguage.${locale}`} defaultMessage="By language" />    
                 </h2>  
-                <RenderTags tags={props.topics} locale={`${locale}`} /> 
+                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                    <LanguageCard
+                        locale={`${locale}`}
+                        topic="spanish"
+                        rootUrl="/madrid" 
+                        topicLocalised={<FormattedMessage 
+                            id={`general.spanish.${locale}`} 
+                            defaultMessage="Blog" />}
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
+                    <LanguageCard
+                        locale={`${locale}`}
+                        topic="english" 
+                        rootUrl="/madrid"
+                        topicLocalised={<FormattedMessage 
+                            id={`general.english.${locale}`} 
+                            defaultMessage="Blog" />}
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
+                </Grid>
             </div>
             <div className="row">
                 <div className="col s12 m12 l12 partners">

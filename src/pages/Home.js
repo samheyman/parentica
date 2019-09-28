@@ -157,30 +157,6 @@ function Home(props) {
                 </div>
                 
             </div>
-            {/* <div className="types">
-                <h2>
-                    <FormattedMessage id={`homepage.byLanguage.${locale}`} defaultMessage="By language" />    
-                </h2>  
-                <Grid container className="topic-cards" spacing={2} alignContent="center">
-                    <TopicCard
-                        locale={`${locale}`}
-                        topic="english" 
-                        topicLocalised={<FormattedMessage 
-                            id={`general.english.${locale}`} 
-                            defaultMessage="Blog" />}
-                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
-                    />
-                    <TopicCard
-                        locale={`${locale}`}
-                        topic="spanish" 
-                        topicLocalised={<FormattedMessage 
-                            id={`general.spanish.${locale}`} 
-                            defaultMessage="Blog" />}
-                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
-                    />
-                    
-                </Grid>
-            </div> */}
         
             <div className="providers">
                 <h2>

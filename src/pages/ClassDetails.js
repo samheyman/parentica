@@ -21,7 +21,8 @@ import { LocaleContext } from '../contexts/LocaleContext';
 
 function RenderTags({tags, locale, online}) {
     let i=0;
-    let rootUrl = (online) ? 'online' : 'madrid';
+    console.log(online);
+    let rootUrl = (online==="online") ? 'online' : 'madrid';
     const output = tags.map((tag) => {
         return (
             <Link key={i++} to={{pathname:`/${locale.split('-')[0]}/${rootUrl}/explore`, topic:`${tag}`}}
@@ -386,7 +387,7 @@ function ClassDetails(props) {
                                             id={`classDetails.topics.${locale}`}
                                             defaultMessage=""
                                         /> 
-                                        <RenderTags tags={props.selectedClass.tags} locale={locale} rootUrl={props.selectedClass.online} />
+                                        <RenderTags tags={props.selectedClass.tags} locale={locale} online={props.selectedClass.type} />
                                     </div>
                                 </div>           
                             </div>

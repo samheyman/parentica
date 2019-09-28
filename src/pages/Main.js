@@ -134,15 +134,27 @@ class Main extends Component {
                         let type = this.props.location.type;
                         let onlineListings = this.props.classes.filter((item)=> item.type==='online' || item.type==='webinar');
                         if(type === 'online classes' || type == null ){
-                            return(
-                                <Explore
-                                    format="online"
-                                    listings={onlineListings}
-                                    topic="all"
-                                    locale={this.props.locale}
-                                    tabSelected={0}
-                                />
-                            );
+                            if(topic == null || topic === "all") {
+                                return(
+                                    <Explore
+                                        format="online"
+                                        listings={onlineListings}
+                                        topic="all"
+                                        locale={this.props.locale}
+                                        tabSelected={0}
+                                    />
+                                );
+                            } else {
+                                return(
+                                    <Explore
+                                        format="online"
+                                        listings={onlineListings.filter((listing) => listing.tags.includes(`${topic}`))}
+                                        topic={topic}
+                                        locale={this.props.locale}
+                                        tabSelected={0}
+                                    />
+                                );
+                            }
                         } else {
                             return(
                                 <Explore
@@ -159,7 +171,21 @@ class Main extends Component {
                         console.log("Searching classes in Madrid for  " + this.props.location.topic);
                         let topic = this.props.location.topic;
                         let type = this.props.location.type;
+                        let language = this.props.location.language;
                         let cityListings = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date());
+                        if(language === 'english' || language === 'spanish') {
+                            let cityListingsLanguage = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date() && listing.language===language);
+                            return(
+                                <Explore
+                                    format="madrid"
+                                    listings={cityListingsLanguage}
+                                    topic="all"
+                                    locale={this.props.locale}
+                                    tabSelected={0}
+                                    classLanguage={language}
+                                />
+                            );
+                        }
                         if(type === 'seminars') {
                             return(
                                 <Explore
