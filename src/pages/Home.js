@@ -8,6 +8,8 @@ import { LocaleContext } from '../contexts/LocaleContext';
 import ClassCard from '../components/ClassCard';
 import LazyLoad from 'react-lazy-load';
 import TypeCard from '../components/TypeCard';
+import LanguageCard from '../components/LanguageCard';
+
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -156,6 +158,32 @@ function Home(props) {
                     <Icon>keyboard_arrow_right</Icon>
                 </div>
                 
+            </div>
+            <div className="types">
+                <h2>
+                    <FormattedMessage id={`homepage.onlineByLanguage.${locale}`} defaultMessage="By language" />    
+                </h2>  
+                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                    <LanguageCard
+                        locale={`${locale}`}
+                        topic="english" 
+                        rootUrl="/online"
+                        topicLocalised={<FormattedMessage 
+                            id={`general.english.${locale}`} 
+                            defaultMessage="Blog" />}
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
+                    <LanguageCard
+                        locale={`${locale}`}
+                        topic="spanish"
+                        rootUrl="/online" 
+                        topicLocalised={<FormattedMessage 
+                            id={`general.spanish.${locale}`} 
+                            defaultMessage="Blog" />}
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
+                    
+                </Grid>
             </div>
         
             <div className="providers">

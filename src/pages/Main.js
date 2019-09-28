@@ -132,19 +132,22 @@ class Main extends Component {
 
                         let topic = this.props.location.topic;
                         let type = this.props.location.type;
+                        let language = this.props.location.language;
                         let onlineListings = this.props.classes.filter((item)=> item.type==='online' || item.type==='webinar');
                         if(type === 'online classes' || type == null ){
-                            if(topic == null || topic === "all") {
+                            if(language === 'english' || language === 'spanish') {
+                                let onlineListingsLanguage = onlineListings.filter((listing) => listing.language===language);
                                 return(
                                     <Explore
                                         format="online"
-                                        listings={onlineListings}
+                                        listings={onlineListingsLanguage}
                                         topic="all"
                                         locale={this.props.locale}
                                         tabSelected={0}
+                                        classLanguage={language}
                                     />
                                 );
-                            } else {
+                            } else if(topic !== null || topic !== "all"){
                                 return(
                                     <Explore
                                         format="online"
@@ -154,7 +157,18 @@ class Main extends Component {
                                         tabSelected={0}
                                     />
                                 );
+                            } else {
+                                return(
+                                    <Explore
+                                        format="online"
+                                        listings={onlineListings}
+                                        topic="all"
+                                        locale={this.props.locale}
+                                        tabSelected={0}
+                                    />
+                                );
                             }
+    
                         } else {
                             return(
                                 <Explore
