@@ -1577,33 +1577,6 @@ export const CLASSES = [
     "nameId":"bel-mums-the-bumps-tea-1090"
     },
     {
-        "id":10004,
-        "type":"group",
-        "className":"Parent and Baby Mindfulness",
-        "tags":[
-        "mindfulness", "parenting"
-        ],
-        "city":"Madrid",
-        "district":"Almagro",
-        "address":"Calle Rafael Calvo 15, 3C Madrid",
-        "date":"2019-10-17T11:00+02:00",
-        "time":"11h00",
-        "duration":90,
-        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
-        "image":"parentbabymindfulnesshealthbyintuition",
-        "companyName":"Health by Intuition",
-        "companyLogo":"healthbyintuition_sq",
-        
-        "price":10,
-        "language":"english", 
-        "description":[
-            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
-            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
-            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
-        ],
-        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10004"
-    },
-    {
         "id":9024,
         "nameId": "taller-parto-natural-hypnobirth-9024",
         "type":"group",
@@ -1665,6 +1638,33 @@ export const CLASSES = [
     "El grupo de embarazo está pensado para ofrecerte recursos durante este tiempo y compartir un momento agradable. ¡Ven!"
     ],
     "nameId":"entre-mamás-grupo-de-apoyo-al-embarazo-5103"
+    },
+    {
+        "id":10004,
+        "type":"group",
+        "className":"Parent and Baby Mindfulness",
+        "tags":[
+        "mindfulness", "parenting"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Calle Rafael Calvo 15, 3C Madrid",
+        "date":"2019-10-17T11:00+02:00",
+        "time":"11h00",
+        "duration":90,
+        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
+        "image":"parentbabymindfulnesshealthbyintuition",
+        "companyName":"Health by Intuition",
+        "companyLogo":"healthbyintuition_sq",
+        
+        "price":10,
+        "language":"english", 
+        "description":[
+            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
+            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
+            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
+        ],
+        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10004"
     },
     {
     "id":5094,
