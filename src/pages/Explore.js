@@ -103,6 +103,7 @@ function Explore(props) {
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
+
             return(
                 <Container className="main-content">
                     <h2>{
@@ -128,7 +129,7 @@ function Explore(props) {
                                     />
                                 </span>
                                 
-                                <Link to={{pathname:`/${props.locale.split('-')[0]}/madrid/explore`}}>
+                                <Link to={{pathname:`/${props.locale.split('-')[0]}/${props.format}/explore`}}>
                                     <span className="tag">
                                         <FormattedMessage 
                                             id={`general.clear.${locale}`}
