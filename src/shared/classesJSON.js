@@ -1699,6 +1699,35 @@ export const CLASSES = [
     "nameId":"entre-mamás-taller-de-masaje-y-psicomotricidad-5094"
     },
     {
+        "id":11094,
+        "nameId":"bel-and-mums-baby-massage-workshop-11094",
+        "type":"group",
+        "className":"Baby massage workshop",
+        "tags":[
+        "baby",
+        "massage"
+        ],
+        "city":"Madrid",
+        "district":"Almagro",
+        "address":"Paseo de las Castellana 45, Madrid",
+        "date":"2019-10-18T11:30+02:00",
+        "duration":60,
+        "url":"https://www.belandmums.com/babymassage/",
+        "image":"babymassagebelandmums",
+        "companyName":"Bel and Mums",
+        "companyLogo":"belandmums_sq",
+        
+        "price":25,
+        "language":"english",
+        "description":[
+        "During this 1 hour workshop with your baby you will learn how to favour her relaxation, giving her a peaceful time daily, improving her sleep and preventing indigestions and colics. It is also the best way to enjoy time with your baby and strengthen your bond.",
+        "We are bringing what we have learnt in London, a combination of the Indian Shantalla baby massage and the pro-digestion massage.",
+        "You will learn to give your baby a very relaxing and safe massage to help with her routine, get better sleep and avoid or treat colics while spending an amazing time with her.",
+        "While your baby can not understand our language, you can communicate and comfort her through touch.",
+        "We encourage you to talk softly, sing or hum to her while massaging to create a sense of calm and reassurance for your child.",
+        ],
+    },
+    {
     "id":5078,
     "type":"group",
     "className":"Estimulación musical en familia",
