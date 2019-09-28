@@ -131,14 +131,14 @@
     "explore.tab.online.en-GB": "Online",
     "explore.tab.online.es-ES": "En línea",
 
-    "explore.results.city.none.en-GB": "Sorry no classes found for `{topicLabel}` in Madrid.",
-    "explore.results.city.none.es-ES": "Lo sentimos, no se encontraron clases para `{topicLabel}` en Madrid.",
-    "explore.results.online.none.en-GB": "Sorry no online classes found for `{topicLabel}`.",
-    "explore.results.online.none.es-ES": "Lo sentimos, no se encontraron clases en linea para `{topicLabel}`.",
-    "explore.results.meetups.none.en-GB": "Sorry no meetups found for `{topicLabel}`.",
-    "explore.results.meetups.none.es-ES": "Lo sentimos, no se encontraron encuentros para `{topicLabel}`.",
-    "explore.results.seminars.none.en-GB": "Sorry no seminars found for `{topicLabel}`.",
-    "explore.results.seminars.none.es-ES": "Lo sentimos, no se encontraron charlas para `{topicLabel}`.",
+    "explore.results.city.none.en-GB": "Sorry no classes found..",
+    "explore.results.city.none.es-ES": "Lo sentimos, no se encontraron clases.",
+    "explore.results.online.none.en-GB": "Sorry no online classes found.",
+    "explore.results.online.none.es-ES": "Lo sentimos, no se encontraron clases en linea.",
+    "explore.results.meetups.none.en-GB": "Sorry no meetups found.",
+    "explore.results.meetups.none.es-ES": "Lo sentimos, no se encontraron encuentros.",
+    "explore.results.seminars.none.en-GB": "Sorry no seminars found.",
+    "explore.results.seminars.none.es-ES": "Lo sentimos, no se encontraron charlas.",
 
 
     "classDetails.price.en-GB": "Price",

@@ -103,7 +103,7 @@ function Explore(props) {
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
-
+            console.log(props.topic);
             return(
                 <Container className="main-content">
                     <h2>{
@@ -120,7 +120,7 @@ function Explore(props) {
                         
                     }</h2>
                     <div className="result-filters">
-                        {(props.topic!=="all")?
+                        {(props.topic && props.topic!=="all" && props.topic!==null)?
                             <React.Fragment>
                                 <span className={`tag tag-${props.topic}`}>
                                     <FormattedMessage 
@@ -228,12 +228,12 @@ function Explore(props) {
                     <FormattedMessage 
                         id={`explore.results.city.none.${locale}`}
                         defaultMessage=""
-                        values={{
-                            topicLabel: <FormattedMessage 
-                                            id={`topics.${props.topic.split(" ")[0]}.${locale}`}
-                                            defaultMessage={props.topic}
-                                        />
-                        }}
+                        // values={{
+                        //     topicLabel: <FormattedMessage 
+                        //                     id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                        //                     defaultMessage={props.topic}
+                        //                 />
+                        // }}
                     />
                 </p>}
             </TabPanel>
@@ -247,13 +247,13 @@ function Explore(props) {
                     <FormattedMessage 
                         id={`explore.results.seminars.none.${locale}`}
                         defaultMessage="Sorry no seminars found."
-                        values={{
-                            topicLabel: 
-                                <FormattedMessage 
-                                    id={`topics.${props.topic.split(" ")[0]}.${locale}`}
-                                    defaultMessage={props.topic}
-                                />
-                        }}
+                        // values={{
+                        //     topicLabel: 
+                        //         <FormattedMessage 
+                        //             id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                        //             defaultMessage={props.topic}
+                        //         />
+                        // }}
                     />
                 </p>}
             </TabPanel>
@@ -267,13 +267,13 @@ function Explore(props) {
                     <FormattedMessage 
                         id={`explore.results.meetups.none.${locale}`}
                         defaultMessage="Sorry no meetups found."
-                        values={{
-                            topicLabel: 
-                                <FormattedMessage 
-                                    id={`topics.${props.topic.split(" ")[0]}.${locale}`}
-                                    defaultMessage={props.topic}
-                                />
-                        }}
+                        // values={{
+                        //     topicLabel: 
+                        //         <FormattedMessage 
+                        //             id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                        //             defaultMessage={props.topic}
+                        //         />
+                        // }}
                     />
                 </p>}
             </TabPanel>

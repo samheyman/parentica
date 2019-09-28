@@ -134,7 +134,9 @@ class Main extends Component {
                         let type = this.props.location.type;
                         let language = this.props.location.language;
                         let onlineListings = this.props.classes.filter((item)=> item.type==='online' || item.type==='webinar');
-                        if(type === 'online classes' || type == null ){
+                        console.log(onlineListings);
+                        console.log(topic);
+                        if(type === 'online classes' || type == null || !type){
                             if(language === 'english' || language === 'spanish') {
                                 let onlineListingsLanguage = onlineListings.filter((listing) => listing.language===language);
                                 return(
@@ -147,7 +149,8 @@ class Main extends Component {
                                         classLanguage={language}
                                     />
                                 );
-                            } else if(topic !== null || topic !== "all"){
+                            } else if (topic != null && topic !== "all"){
+                                console.log('here');
                                 return(
                                     <Explore
                                         format="online"
