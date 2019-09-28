@@ -9,7 +9,7 @@ import ClassCard from '../components/ClassCard';
 import LazyLoad from 'react-lazy-load';
 import TypeCard from '../components/TypeCard';
 import LanguageCard from '../components/LanguageCard';
-
+import TopicCard from '../components/TopicCard';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
@@ -158,6 +158,83 @@ function Home(props) {
                     <Icon>keyboard_arrow_right</Icon>
                 </div>
                 
+            </div>
+            <div className="popular-topics">
+                <h2>
+                    <FormattedMessage id={`homepage.onlinePopularTopics.${locale}`} defaultMessage="Topics"/>    
+                </h2>  
+                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                    <TopicCard
+                        locale={`${locale}`}
+                        topic="parenting" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.parenting.${locale}`} />
+                        }
+                        rootUrl="/online"
+                        // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}
+                        />
+                    <TopicCard 
+                        locale={`${locale}`}
+                        topic="pregnancy" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.pregnancy.${locale}`} />
+                        }
+                        rootUrl="/online"
+                        // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}
+                        />
+                    <TopicCard 
+                        locale={`${locale}`}
+                        topic="baby" 
+                        topicLocalised={<FormattedMessage id={`topics.baby.${locale}`} defaultMessage="baby"/>}
+                        rootUrl="/online"
+                        // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("baby")).length}
+                        />
+                    <TopicCard 
+                        locale={`${locale}`}
+                        topic="nutrition" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.nutrition.${locale}`} />
+                        }
+                        rootUrl="/online"
+                        // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("nutrition")).length}
+                        />
+                    <TopicCard 
+                        locale={`${locale}`}
+                        topic="music" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.music.${locale}`} />
+                        }
+                        rootUrl="/online"
+                        // resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}
+                        />
+                    <TopicCard
+                        locale={`${locale}`}
+                        topic="postpartum" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.postpartum.${locale}`} />
+                        }
+                        rootUrl="/online"
+                        // resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}
+                        />
+                    <TopicCard
+                        locale={`${locale}`}
+                        topic="yoga" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.yoga.${locale}`} />
+                        }
+                        rootUrl="/online"
+                        // resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}
+                        />
+                    <TopicCard
+                        locale={`${locale}`}
+                        topic="first aid" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.first.${locale}`} />
+                        }
+                        rootUrl="/online"
+                        // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
+                        />
+                </Grid>
             </div>
             <div className="types">
                 <h2>
