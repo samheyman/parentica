@@ -77,7 +77,7 @@ function Home(props) {
                         id={`homepage.searchByCity.${locale}`} 
                         defaultMessage="Search by city" />    
                 </h2>  
-                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                <Grid container className="cities-links" spacing={2} alignContent="center">
                     <CityCard
                         locale={`${locale}`}
                         topic="madrid" 

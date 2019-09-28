@@ -440,7 +440,7 @@ function ClassDetails(props) {
                                             />}
                                             {...a11yProps(0)} 
                                         />
-                                        <Tab label=
+                                        <Tab className="other-classes" label=
                                             {<FormattedMessage 
                                                 id={`classDetails.otherClasses.${locale}`}
                                                 defaultMessage="Go to website"
@@ -455,7 +455,7 @@ function ClassDetails(props) {
                                             description={props.selectedClass.description}
                                         />
                                     </TabPanel>
-                                    <TabPanel className="about-class other-classes" value={value} index={1} dir={theme.direction}>
+                                    <TabPanel className="about-class" value={value} index={1} dir={theme.direction}>
                                         <RenderOtherClasses
                                             locale={locale} otherClasses={props.otherClasses.filter((item) => (item.companyName === props.selectedClass.companyName) && item.id !== props.selectedClass.id)}
                                         />

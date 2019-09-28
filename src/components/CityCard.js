@@ -21,7 +21,7 @@ export default function CityCard(props) {
                     }); 
                 }}
             >
-            <Card className="city-card">
+            <Card className={`city-card ${topicId}-card`}>
                 <CardActionArea>
                     <LazyLoad 
                     width={290}

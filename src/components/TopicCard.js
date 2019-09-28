@@ -36,7 +36,7 @@ export default function TopicCard(props) {
                             }); 
                         }}
             >
-            <Card className="topic-card">
+            <Card className={`topic-card ${topic}-card`}>
                 <CardActionArea>
                     <LazyLoad 
                         width={220}
