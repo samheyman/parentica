@@ -79,7 +79,7 @@ function RenderOtherClasses({otherClasses, locale}) {
         return (
             <TableRow key={i++}>
                 <TableCell>
-                    <Link to={`/${locale.split('-')[0]}/classes/${item.nameId}`}>{item.className.toLowerCase()}</Link>
+                    <Link to={`/${locale.split('-')[0]}/listings/${item.nameId}`}>{item.className.toLowerCase()}</Link>
                 </TableCell>
                 <TableCell>{formatedDate} - {formatedTime}</TableCell>
                 <TableCell>
@@ -455,7 +455,7 @@ function ClassDetails(props) {
                                             description={props.selectedClass.description}
                                         />
                                     </TabPanel>
-                                    <TabPanel className="about-class" value={value} index={1} dir={theme.direction}>
+                                    <TabPanel className="about-class other-classes" value={value} index={1} dir={theme.direction}>
                                         <RenderOtherClasses
                                             locale={locale} otherClasses={props.otherClasses.filter((item) => (item.companyName === props.selectedClass.companyName) && item.id !== props.selectedClass.id)}
                                         />
