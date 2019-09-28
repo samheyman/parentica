@@ -30,8 +30,8 @@ export default function TopicCard(props) {
                     to={{
                         pathname: routePath, topic:`${topic}`}}
                         onClick={()=>{
-                            window.gtag("event", "topic card", {
-                                event_category: "topics",
+                            window.gtag("event", props.rootUrl + " topic card", {
+                                event_category: props.rootUrl + " topics",
                                 event_label: topic
                             }); 
                         }}

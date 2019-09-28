@@ -18,8 +18,8 @@ function RenderTags({tags, locale}) {
         return (
             <Link className="homepage-tags" key={i++} to={{pathname:`/${locale.split('-')[0]}/madrid/explore`, topic:`${tag.name}`}}
                 onClick={()=>{
-                    window.gtag("event", "topic tag from homepage", {
-                        event_category: "topics",
+                    window.gtag("event", "topic tag from Madrid", {
+                        event_category: "Madrid topics",
                         event_label: tag.name
                     }); 
                 }}

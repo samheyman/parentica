@@ -15,6 +15,30 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Icon from '@material-ui/core/Icon';
 
+function RenderTags({tags, locale}) {
+    let i=0;
+    const output = tags.map((tag) => {
+        return (
+            <Link className="homepage-tags" key={i++} to={{pathname:`/${locale.split('-')[0]}/online/explore`, topic:`${tag.name}`}}
+                onClick={()=>{
+                    window.gtag("event", "online topic tag from homepage", {
+                        event_category: "online topics",
+                        event_label: tag.name
+                    }); 
+                }}
+            >
+                <span className={`tag tag-${tag.id}`}>
+                    <FormattedMessage 
+                        id={`topics.${tag.name.split(" ")[0]}.${locale}`}
+                        defaultMessage={tag.name}
+                    />
+                </span>
+            </Link>
+        );
+    });
+    return output;
+}
+
 function OnlineProviders({providers}) {
     const providersList = providers.map((provider) => {
         return(
@@ -235,6 +259,12 @@ function Home(props) {
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
                         />
                 </Grid>
+            </div>
+            <div className="all-topics">
+                <h2>
+                <FormattedMessage id={`homepage.allTopics.${locale}`} />        
+                </h2>  
+                <RenderTags tags={props.topics} locale={`${locale}`} rootUrl="/online" /> 
             </div>
             <div className="types">
                 <h2>
