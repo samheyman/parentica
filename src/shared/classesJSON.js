@@ -174,7 +174,7 @@ export const CLASSES = [
     "className":"Yoga para mamás y bebés",
     "tags":[
     "baby",
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -209,7 +209,7 @@ export const CLASSES = [
     "date":"2019-09-23T12:30+02:00",
     "time":"12h30",
     "tags":[
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"La Latina",
@@ -360,7 +360,7 @@ export const CLASSES = [
     "className":"Yoga en el embarazo",
     "tags":[
     "pregnancy",
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -395,7 +395,7 @@ export const CLASSES = [
     "className":"Yoga para mamás y bebés",
     "tags":[
     "baby",
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -463,7 +463,7 @@ export const CLASSES = [
     "date":"2019-09-25T12:30+02:00",
     "time":"12h30",
     "tags":[
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"La Latina",
@@ -525,7 +525,7 @@ export const CLASSES = [
     "className":"Yoga mamás y bebés",
     "tags":[
     "baby",
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"Chamberí",
@@ -558,7 +558,7 @@ export const CLASSES = [
     "className":"Yoga embarazadas",
     "tags":[
     "pregnancy",
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"Chamberí",
@@ -754,7 +754,7 @@ export const CLASSES = [
     "className":"Yoga en el embarazo",
     "tags":[
     "pregnancy",
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -789,7 +789,7 @@ export const CLASSES = [
     "className":"Yoga para mamás y bebés",
     "tags":[
     "baby",
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -824,7 +824,7 @@ export const CLASSES = [
     "date":"2019-09-30T12:30+02:00",
     "time":"12h30",
     "tags":[
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"La Latina",
@@ -921,7 +921,7 @@ export const CLASSES = [
     "date":"2019-10-02T12:30+02:00",
     "time":"12h30",
     "tags":[
-    "fitness"
+    "fitness", "yoga"
     ],
     "city":"Madrid",
     "district":"La Latina",

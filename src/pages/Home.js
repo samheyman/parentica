@@ -242,9 +242,9 @@ function Home(props) {
                         />
                     <TopicCard
                         locale={`${locale}`}
-                        topic="yoga" 
+                        topic="fitness" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.yoga.${locale}`} />
+                            <FormattedMessage id={`topics.fitness.${locale}`} />
                         }
                         rootUrl="/online"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}
