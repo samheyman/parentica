@@ -51,6 +51,9 @@ export const TOPICS = [
         id: "sleep",
         name: "sleep",
     },
-    
+    {
+        id: "yoga",
+        name: "yoga",
+    },
     
 ];

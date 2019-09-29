@@ -185,7 +185,7 @@ function Home(props) {
             </div>
             <div className="popular-topics">
                 <h2>
-                    <FormattedMessage id={`homepage.onlinePopularTopics.${locale}`} defaultMessage="Topics"/>    
+                    <FormattedMessage id={`homepage.popularTopics.${locale}`} defaultMessage="Topics"/>    
                 </h2>  
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     <TopicCard
@@ -222,7 +222,7 @@ function Home(props) {
                         rootUrl="/online"
                         // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("nutrition")).length}
                         />
-                    <TopicCard 
+                    {/* <TopicCard 
                         locale={`${locale}`}
                         topic="music" 
                         topicLocalised={                            
@@ -257,7 +257,7 @@ function Home(props) {
                         }
                         rootUrl="/online"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
-                        />
+                        /> */}
                 </Grid>
             </div>
             <div className="all-topics">
