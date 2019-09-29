@@ -121,23 +121,6 @@ function City(props) {
                     <FormattedMessage id={`homepage.popularTopics.${locale}`} defaultMessage="Topics"/>    
                 </h2>  
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
-                    <TopicCard
-                        locale={`${locale}`}
-                        topic="parenting" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.parenting.${locale}`} />
-                        }
-                        rootUrl="/madrid"
-                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}/>
-                    <TopicCard 
-                        locale={`${locale}`}
-                        topic="pregnancy" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.pregnancy.${locale}`} />
-                        }
-                        rootUrl="/madrid"
-
-                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard 
                         locale={`${locale}`}
                         topic="baby" 
@@ -147,13 +130,21 @@ function City(props) {
                         resultCount={props.classesThisWeek.filter((item) => item.tags.includes("baby")).length}/>
                     <TopicCard 
                         locale={`${locale}`}
-                        topic="nutrition" 
+                        topic="pregnancy" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.nutrition.${locale}`} />
+                            <FormattedMessage id={`topics.pregnancy.${locale}`} />
                         }
                         rootUrl="/madrid"
 
-                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("nutrition")).length}/>
+                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}/>
+                    <TopicCard
+                        locale={`${locale}`}
+                        topic="massage" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.massage.${locale}`} />
+                        }
+                        rootUrl="/madrid"
+                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard 
                         locale={`${locale}`}
                         topic="music" 
@@ -163,6 +154,23 @@ function City(props) {
                         rootUrl="/madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}
                         />
+                    <TopicCard
+                        locale={`${locale}`}
+                        topic="first aid" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.first.${locale}`} />
+                        }
+                        rootUrl="/madrid"
+                        // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
+                        /><TopicCard 
+                        locale={`${locale}`}
+                        topic="breastfeeding" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.breastfeeding.${locale}`} />
+                        }
+                        rootUrl="/madrid"
+
+                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("nutrition")).length}/>
                     <TopicCard
                         locale={`${locale}`}
                         topic="postpartum" 
@@ -181,15 +189,7 @@ function City(props) {
                         rootUrl="/madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}
                         />
-                    <TopicCard
-                        locale={`${locale}`}
-                        topic="first aid" 
-                        topicLocalised={                            
-                            <FormattedMessage id={`topics.first.${locale}`} />
-                        }
-                        rootUrl="/madrid"
-                        // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
-                        />
+                    
                 </Grid>
             </div>
             <div className="all-topics">
