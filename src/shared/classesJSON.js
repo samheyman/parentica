@@ -139,7 +139,7 @@ export const CLASSES = [
     "className":"Yoga en el embarazo",
     "tags":[
     "pregnancy",
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -174,7 +174,7 @@ export const CLASSES = [
     "className":"Yoga para mamás y bebés",
     "tags":[
     "baby",
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -209,7 +209,7 @@ export const CLASSES = [
     "date":"2019-09-23T12:30+02:00",
     "time":"12h30",
     "tags":[
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"La Latina",
@@ -360,7 +360,7 @@ export const CLASSES = [
     "className":"Yoga en el embarazo",
     "tags":[
     "pregnancy",
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -395,7 +395,7 @@ export const CLASSES = [
     "className":"Yoga para mamás y bebés",
     "tags":[
     "baby",
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -463,7 +463,7 @@ export const CLASSES = [
     "date":"2019-09-25T12:30+02:00",
     "time":"12h30",
     "tags":[
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"La Latina",
@@ -525,7 +525,7 @@ export const CLASSES = [
     "className":"Yoga mamás y bebés",
     "tags":[
     "baby",
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"Chamberí",
@@ -558,7 +558,7 @@ export const CLASSES = [
     "className":"Yoga embarazadas",
     "tags":[
     "pregnancy",
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"Chamberí",
@@ -754,7 +754,7 @@ export const CLASSES = [
     "className":"Yoga en el embarazo",
     "tags":[
     "pregnancy",
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -789,7 +789,7 @@ export const CLASSES = [
     "className":"Yoga para mamás y bebés",
     "tags":[
     "baby",
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"Vallecas",
@@ -824,7 +824,7 @@ export const CLASSES = [
     "date":"2019-09-30T12:30+02:00",
     "time":"12h30",
     "tags":[
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"La Latina",
@@ -921,7 +921,7 @@ export const CLASSES = [
     "date":"2019-10-02T12:30+02:00",
     "time":"12h30",
     "tags":[
-    "yoga"
+    "fitness"
     ],
     "city":"Madrid",
     "district":"La Latina",
@@ -2652,6 +2652,31 @@ export const CLASSES = [
     ],
     "nameId":"bel-mums-first-aid-baby-and-child-3002"
     },
+    {
+        "id":13002,
+        "type":"group",
+        "className":"Cloth Diapering Workshop",
+        "tags":[
+        "baby",
+        ],
+        "date":"2019-12-07T11:00+01:00",
+        "duration":180,
+        "city":"Madrid",
+        "district":"San Sebastián de los Reyes",
+        "address":"San Sebastián de los Reyes, Madrid",
+        "url":"https://www.facebook.com/events/3308369169178432/",
+        "image":"ichitarodriguezclothdiapering",
+        "companyName":"Ichita Rodriguez",
+        "companyLogo":"ichitarodriguez_sq",
+        "language":"english",
+        "price":0,
+        "description":[
+            "This is a free event for people interested in using Cloth Diapers with their babies. ",
+            "We will cover from places to buy, cleaning, storage, rashes. ",
+            "This workshop is limited to 4 couples.",
+        ],
+        "nameId":"ichita-rodriguez-cloth-diapering-workshop-071219"
+        },
     {
     "id":1087,
     "type":"group",
