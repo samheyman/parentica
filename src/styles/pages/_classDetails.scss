@@ -92,6 +92,14 @@
                     margin-left: 5px;
                 }
     
+                .date-time {
+                    text-transform: capitalize;
+
+                }
+            }
+
+            .date-time-section {
+                align-items: flex-start;
             }
 
             .other-dates {

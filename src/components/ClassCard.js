@@ -11,6 +11,9 @@ import { Link } from 'react-router-dom';
 import { FormattedMessage, FormattedDate } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 import LazyLoad from 'react-lazy-load';
+import * as moment from 'moment';
+import 'moment/locale/en-gb';
+import 'moment/locale/es';
 
 const mapStateToProps = (state) => {
   return(
@@ -82,6 +85,7 @@ function MediaCard(props) {
     return (
       <LocaleContext.Consumer>{(context) => {
         const locale = context.locale;
+        moment.locale(props.locale);
         return(<Card className={classes.card}>
           <CardActionArea>
             <Link className="class-card-link" to={`/${locale.split('-')[0]}/listings/${props.classEntry.nameId}`}
@@ -123,12 +127,11 @@ function MediaCard(props) {
               <div className={`card-footer ${classes.cardFooter}`}>
                   <div className="class-details">
                     {(props.classEntry.date != null)?
+                    
                       <span className="class-details-date">
-                        <FormattedDate
-                          value={props.classEntry.date}
-                          day="2-digit"
-                          month="2-digit"
-                        />
+
+                        {moment(props.classEntry.date).format("MMM D")}
+                      
                       </span>
                       :
                       <span className="class-details-date">

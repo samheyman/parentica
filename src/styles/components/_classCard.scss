@@ -77,6 +77,10 @@ h4.class-name {
         color: rgba(0, 0, 0, 0.54);
     }
 
+    .class-details-date {
+        text-transform: capitalize;
+    }
+
     .class-details-flag {
         position: relative;
         bottom: -4px;

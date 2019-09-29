@@ -18,6 +18,9 @@ import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
 import { FormattedMessage, FormattedDate } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
+import * as moment from 'moment';
+import 'moment/locale/en-gb';
+import 'moment/locale/es';
 
 function RenderTags({tags, locale, online}) {
     let i=0;
@@ -62,27 +65,16 @@ function RenderOtherClasses({otherClasses, locale}) {
         let formatedTime = null;
 
         if (item.date != null) {
-            formatedDate = <span>
-                                <FormattedDate
-                                    value={item.date}
-                                    day="2-digit"
-                                    month="2-digit"
-                                    />
-                            </span>;
-            formatedTime = <span>
-                                <FormattedDate
-                                    value={item.date}
-                                    hour="2-digit"
-                                    minute="2-digit"
-                                    />
-                            </span>
+            formatedDate = <span className="date-time">
+                {moment(item.date).format("MMM D, LT")}
+            </span>;
         }
         return (
             <TableRow key={i++}>
                 <TableCell>
                     <Link to={`/${locale.split('-')[0]}/listings/${item.nameId}`}>{item.className.toLowerCase()}</Link>
                 </TableCell>
-                <TableCell>{formatedDate} - {formatedTime}</TableCell>
+                <TableCell>{formatedDate}</TableCell>
                 <TableCell>
                     {item.district}
                 </TableCell>
@@ -109,26 +101,18 @@ function RenderOtherClasses({otherClasses, locale}) {
     } 
 }
 
-function ClassDate({classDate}, {icon}) {
+function ClassDate({classDate, locale}, {icon}) {
+    moment.locale(locale);
     if (classDate != null) {
         return(
-            <div className="value">
+            <div className="value date-time-section">
                 <Icon className={icon}>
                 calendar_today
                 </Icon>
                 <span className="date-time">
-                    <FormattedDate
-                        value={classDate}
-                        day="2-digit"
-                        month="2-digit"
-                    />
-                </span>
-                <span className="date-time"> 
-                &nbsp;-&nbsp;<FormattedDate
-                        value={classDate}
-                        hour="2-digit"
-                        minute="2-digit"
-                    />
+                    {moment(classDate).format("dddd, MMMM D, YYYY ")}
+                <br/>
+                    {moment(classDate).format("LT")}
                 </span>
             </div>
         );
@@ -144,20 +128,11 @@ function OtherSessions({otherDates}, {icon}) {
             i++;
             return(
                 <div className="" key={i} >
-                    <span> 
-                        <FormattedDate
-                            value={sess}
-                            day="2-digit"
-                            month="2-digit"
-                        />
-                    </span>
-                    <span>&nbsp;-&nbsp;
-                        <FormattedDate
-                            value={sess}
-                            hour="2-digit"
-                            minute="2-digit"
-                        />
-                    </span>             
+                    <span className="date-time">
+                        {moment(sess).format("dddd, MMMM D, YYYY ")}
+                    <br/>
+                        {moment(sess).format("LT")}
+                    </span>            
                 </div>
                 );
         });
@@ -376,7 +351,7 @@ function ClassDetails(props) {
                                         price
                                         </Icon> */}
                                         {/* <span>{props.selectedClass.price}€</span> */}
-                                    <ClassDate classDate={props.selectedClass.date} classTime={props.selectedClass.classTime} classes={classes.icon} />
+                                    <ClassDate classDate={props.selectedClass.date} classTime={props.selectedClass.classTime} classes={classes.icon} locale={locale} />
                                     <OtherSessions otherDates={props.selectedClass.otherDates} classes={classes.icon} />
                                     {/* <ClassTime classTime={props.selectedClass.time} classes={classes.icon} /> */}
                                     <ClassDuration sessions={props.selectedClass.sessions} duration={props.selectedClass.duration} locale={locale} classes={classes.icon} />
