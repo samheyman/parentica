@@ -22,6 +22,14 @@ describe('Parentica', () => {
         cy.contains('Seminars');
     });
 
+    it('can select Spanish classes from homepage', () => {
+        cy.get('.spanish-card').click();
+        cy.get('h2');
+        cy.contains('Online');
+        cy.get('.tag');
+        cy.contains('Spanish');
+    });
+
     it('can view classes in Madrid', () => {
         cy.get('.madrid-card').click();
         cy.get('h2').eq(1);
