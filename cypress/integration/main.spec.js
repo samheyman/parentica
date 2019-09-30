@@ -10,10 +10,16 @@ describe('Parentica', () => {
         cy.contains('Online');
     });
 
-    it('can view online classes', () => {
+    it('can view online classes section on homepage', () => {
         cy.get('.online-classes');
         cy.get('h2');
-        cy.contains('Learn online');
+        cy.contains('Online');
+    });
+
+    it('can select online seminars from homepage', () => {
+        cy.get('.type-card-webinars').click();
+        cy.get('.Mui-selected');
+        cy.contains('Seminars');
     });
 
     it('can view classes in Madrid', () => {
