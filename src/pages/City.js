@@ -125,7 +125,7 @@ function City(props) {
                         locale={`${locale}`}
                         topic="baby" 
                         topicLocalised={<FormattedMessage id={`topics.baby.${locale}`} defaultMessage="baby"/>}
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
 
                         resultCount={props.classesThisWeek.filter((item) => item.tags.includes("baby")).length}/>
                     <TopicCard 
@@ -134,7 +134,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.pregnancy.${locale}`} />
                         }
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
 
                         resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard
@@ -143,7 +143,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.massage.${locale}`} />
                         }
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
                         resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard 
                         locale={`${locale}`}
@@ -151,7 +151,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.music.${locale}`} />
                         }
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}
                         />
                     <TopicCard
@@ -160,7 +160,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.first.${locale}`} />
                         }
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
                         /><TopicCard 
                         locale={`${locale}`}
@@ -168,7 +168,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.breastfeeding.${locale}`} />
                         }
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
 
                         resultCount={props.classesThisWeek.filter((item) => item.tags.includes("nutrition")).length}/>
                     <TopicCard
@@ -177,7 +177,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.postpartum.${locale}`} />
                         }
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}
                         />
                     <TopicCard
@@ -186,7 +186,7 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.fitness.${locale}`} />
                         }
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}
                         />
                     
@@ -207,21 +207,21 @@ function City(props) {
                         locale={`${locale}`}
                         topic="classes" 
                         topicLocalised={<FormattedMessage id={`general.classes.${locale}`} defaultMessage="classes"/>}
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
                     <TypeCard
                         locale={`${locale}`}
                         topic="seminars" 
                         topicLocalised={<FormattedMessage id={`general.seminars.${locale}`} defaultMessage="seminars"/>}
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
                     <TypeCard
                         locale={`${locale}`}
                         topic="meetups" 
                         topicLocalised={<FormattedMessage id={`general.meetups.${locale}`} defaultMessage="meetups"/>}
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
 
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
@@ -236,7 +236,7 @@ function City(props) {
                     <LanguageCard
                         locale={`${locale}`}
                         topic="spanish"
-                        rootUrl="/madrid" 
+                        rootUrl="madrid" 
                         topicLocalised={<FormattedMessage 
                             id={`general.spanish.${locale}`} 
                             defaultMessage="Blog" />}
@@ -245,7 +245,7 @@ function City(props) {
                     <LanguageCard
                         locale={`${locale}`}
                         topic="english" 
-                        rootUrl="/madrid"
+                        rootUrl="madrid"
                         topicLocalised={<FormattedMessage 
                             id={`general.english.${locale}`} 
                             defaultMessage="Blog" />}

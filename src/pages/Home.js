@@ -137,7 +137,7 @@ function Home(props) {
                         topicLocalised={<FormattedMessage 
                             id={`general.classes.${locale}`} 
                             defaultMessage="Classes" />}
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
                     <TypeCard   
@@ -146,7 +146,7 @@ function Home(props) {
                         topicLocalised={<FormattedMessage 
                             id={`general.webinars.${locale}`} 
                             defaultMessage="Webinars" />}
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
                     {/* <TopicCard
@@ -155,7 +155,7 @@ function Home(props) {
                         topicLocalised={<FormattedMessage 
                             id={`general.blog.${locale}`} 
                             defaultMessage="Blog" />}
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     /> */}
                 </Grid>
@@ -194,7 +194,7 @@ function Home(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.parenting.${locale}`} />
                         }
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}
                         />
                     <TopicCard 
@@ -203,14 +203,14 @@ function Home(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.pregnancy.${locale}`} />
                         }
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}
                         />
                     <TopicCard 
                         locale={`${locale}`}
                         topic="baby" 
                         topicLocalised={<FormattedMessage id={`topics.baby.${locale}`} defaultMessage="baby"/>}
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("baby")).length}
                         />
                     <TopicCard 
@@ -219,7 +219,7 @@ function Home(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.nutrition.${locale}`} />
                         }
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("nutrition")).length}
                         />
                     {/* <TopicCard 
@@ -228,7 +228,7 @@ function Home(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.music.${locale}`} />
                         }
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("music")).length}
                         />
                     <TopicCard
@@ -237,7 +237,7 @@ function Home(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.postpartum.${locale}`} />
                         }
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("postpartum")).length}
                         />
                     <TopicCard
@@ -246,7 +246,7 @@ function Home(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.fitness.${locale}`} />
                         }
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}
                         />
                     <TopicCard
@@ -255,7 +255,7 @@ function Home(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.first.${locale}`} />
                         }
-                        rootUrl="/online"
+                        rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
                         /> */}
                 </Grid>
@@ -264,7 +264,7 @@ function Home(props) {
                 <h2>
                 <FormattedMessage id={`homepage.allTopics.${locale}`} />        
                 </h2>  
-                <RenderTags tags={props.topics} locale={`${locale}`} rootUrl="/online" /> 
+                <RenderTags tags={props.topics} locale={`${locale}`} rootUrl="online" /> 
             </div>
             <div className="types">
                 <h2>
@@ -274,7 +274,7 @@ function Home(props) {
                     <LanguageCard
                         locale={`${locale}`}
                         topic="english" 
-                        rootUrl="/online"
+                        rootUrl="online"
                         topicLocalised={<FormattedMessage 
                             id={`general.english.${locale}`} 
                             defaultMessage="Blog" />}
@@ -283,7 +283,7 @@ function Home(props) {
                     <LanguageCard
                         locale={`${locale}`}
                         topic="spanish"
-                        rootUrl="/online" 
+                        rootUrl="online" 
                         topicLocalised={<FormattedMessage 
                             id={`general.spanish.${locale}`} 
                             defaultMessage="Blog" />}
