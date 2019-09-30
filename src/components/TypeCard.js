@@ -11,7 +11,7 @@ export default function TypeCard(props) {
     let topicId = props.topic.split(" ")[0];
     let topic = props.topic;
     let icon = '';
-    let routePath = `/${props.locale.split('-')[0]}${props.rootUrl}/explore`
+    let routePath = `/${props.locale.split('-')[0]}/${props.rootUrl}/explore`
     switch(topicId) {
         case 'online': 
             icon="school";

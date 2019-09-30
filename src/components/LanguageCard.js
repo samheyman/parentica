@@ -12,7 +12,7 @@ export default function Language(props) {
     let topicId = props.topic.split(" ")[0];
     let topic = props.topic;
 
-    let routePath = `/${props.locale.split('-')[0]}${props.rootUrl}/explore`
+    let routePath = `/${props.locale.split('-')[0]}/${props.rootUrl}/explore`
         // (topicId==='group' || topicId==='meetups    ') ? 
         // (topicId==='meetups' || topicId==='meetups    ') ?
         //     `/${props.locale.split('-')[0]}/madrid/explore`
