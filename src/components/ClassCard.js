@@ -10,6 +10,10 @@ import Typography from '@material-ui/core/Typography';
 import { Link } from 'react-router-dom';
 import { FormattedMessage, FormattedDate } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
+import LazyLoad from 'react-lazy-load';
+import * as moment from 'moment';
+import 'moment/locale/en-gb';
+import 'moment/locale/es';
 
 const mapStateToProps = (state) => {
   return(
@@ -40,23 +44,23 @@ function RenderTags({tags, lang}) {
   const output = tags.map((tag) => {
       i++;
       return (
-        <Link key={i++} to={{pathname:`/${lang.split('-')[0]}/explore`, topic:`${tag}`}}
-                onClick={()=>{
-                  window.scrollTo(0, 0);
-                  console.log("Tag selected: " + tag);
-                    window.gtag("event", "topic tag from class card", {
-                        event_category: "topics",
-                        event_label: tag
-                    }); 
-                }}
-            >
+        // <Link key={i++} to={{pathname:`/${lang.split('-')[0]}/explore`, topic:`${tag}`}}
+        //         onClick={()=>{
+        //           window.scrollTo(0, 0);
+        //           console.log("Tag selected: " + tag);
+        //             window.gtag("event", "topic tag from class card", {
+        //                 event_category: "topics",
+        //                 event_label: tag
+        //             }); 
+        //         }}
+        //     >
           <span key={i} className={`tag tag-${tag}`}>
             <FormattedMessage 
               id={`topics.${tag.split(" ")[0]}.${lang}`}
               defaultMessage={tag}
             />
           </span>
-        </Link>
+        // </Link>
       );
   });
 
@@ -81,39 +85,53 @@ function MediaCard(props) {
     return (
       <LocaleContext.Consumer>{(context) => {
         const locale = context.locale;
+        moment.locale(props.locale);
         return(<Card className={classes.card}>
           <CardActionArea>
-            <Link className="class-card-link" to={`/${locale.split('-')[0]}/classes/${props.classEntry.nameId}`}
+            <Link className="class-card-link" to={`/${locale.split('-')[0]}/${props.classEntry.nameId}`}
                 onClick={()=>{
                   window.gtag("event", props.classEntry.companyName, {
                       event_category: "class details",
                       event_label: props.classEntry.companyName + " - " + props.classEntry.className
                   }); 
                 }}
-            >  
-            <CardMedia
-              className={classes.media}
-              image={`../../images/classes/${props.classEntry.image}`}
-              title={props.classEntry.className}
-            />
+            >
+            <LazyLoad 
+                    width={327}
+                    height={140}
+                    debounce={false}
+                    offsetVertical={500}
+                    >
+                <CardMedia
+                  className={classes.media}
+                  image={`../../images/classes/${props.classEntry.image}_sm.jpg`}
+                  title={props.classEntry.className}
+                />
+            </LazyLoad>
             <CardContent>
               <Typography className={`class-name`} gutterBottom variant="h3" component="h3">
                 {props.classEntry.className.toLowerCase()}
               </Typography>
               <div className="company">
-                <img className="company-logo" src={`../../images/logos/${props.classEntry.companyLogo}`} alt={`${props.classEntry.companyLogo} logo`} />
+                <LazyLoad 
+                      width={25}
+                      height={25}
+                      debounce={false}
+                      offsetVertical={500}
+                      >
+                  <img className="company-logo" src={`../../images/logos/${props.classEntry.companyLogo}.jpg`} alt={`${props.classEntry.companyLogo} logo`} />
+                </LazyLoad>
                 <span className="company-name">{props.classEntry.companyName}</span>
               </div> 
 
               <div className={`card-footer ${classes.cardFooter}`}>
                   <div className="class-details">
                     {(props.classEntry.date != null)?
+                    
                       <span className="class-details-date">
-                        <FormattedDate
-                          value={props.classEntry.date}
-                          day="2-digit"
-                          month="2-digit"
-                        />
+
+                        {moment(props.classEntry.date).format("MMM D")}
+                      
                       </span>
                       :
                       <span className="class-details-date">

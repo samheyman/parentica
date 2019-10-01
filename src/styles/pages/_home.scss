@@ -137,3 +137,54 @@ a {
         max-width: 100%;
     }
 }
+
+.show-all-link {
+    font-size: 1.1rem;
+    color: $purple;  
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+
+    a {
+        color: inherit;
+    }
+
+    .material-icons {
+        height: 100%;
+    }
+}
+
+.topic-cards {
+    // overflow-x: scroll !important;
+    // width: auto;
+    // white-space: nowrap;
+}
+
+// #items{
+//     overflow-x: scroll;
+//     width: auto;
+//     white-space: nowrap;
+// }
+
+
+// .item{
+//     display: inline-block;
+//     margin: 0 15px 0 0;
+//     height: 100px;
+//     // border:1px solid;
+    
+//  }
+
+ .class-details {
+    // white-space: normal !important;
+ }
+
+ .more-cities {
+    min-height: 250px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+ }

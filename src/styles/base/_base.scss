@@ -115,12 +115,17 @@ body {
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700 !important;
     color: $secondary-color;
     letter-spacing: 1px;
     margin-top: 40px;
     color: $navy;
+    text-transform: none;
+}
+
+h2.lowercase {
+    text-transform: none;
 }
 
 p {

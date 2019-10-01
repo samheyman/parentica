@@ -18,12 +18,40 @@
     margin: 15px 0 !important;
 }
 
+.MuiTabs-scroller {
+    border-bottom: 1px solid #eaeaea;
+
+}
+
+// Active tab decorator
+.MuiTabs-indicator {
+    height: 5px !important;
+}
+
+.MuiTab-wrapper {
+    color:$font-pale;
+}
+
+.Mui-selected {
+    span {
+        color: #666;
+    }
+}
+
 // .MuiTypography-body1 {
 //     margin: 20px 0 !important;
 // }
 
 .result-filters {
     margin: 10px 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .filter-icon {
+        font-size: 0.8rem;
+    }
 }
 
 .filters {
@@ -42,4 +70,13 @@
             text-decoration: none;
         }
     }
+
+    .filter-icon {
+        font-size: 0.8rem;
+    }
+}
+
+.results-count {
+    font-size: 0.7rem;
+    color: $font-pale;
 }

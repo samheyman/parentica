@@ -54,13 +54,13 @@ export default function Navbar(props) {
             />
             </ListItem>
           </NavLink>
-          <NavLink to={`/${locale.split('-')[0]}/explore`}>
+          {/* <NavLink to={`/${locale.split('-')[0]}/explore`}>
             <ListItem button key="explore">
               <ListItemText 
                 primary={<FormattedMessage id={`navbar.explore.link.${locale}`} />} 
               />
             </ListItem>
-          </NavLink>
+          </NavLink> */}
           <NavLink to={`/${locale.split('-')[0]}/about`}>
             <ListItem button key="about">
               <ListItemText 
@@ -68,13 +68,20 @@ export default function Navbar(props) {
               />
             </ListItem>
           </NavLink>
-          <NavLink to={`/${locale.split('-')[0]}/locations`}>
+          {/* <NavLink to={`/${locale.split('-')[0]}/locations`}>
             <ListItem button key="locations">
               <ListItemText               
                 primary={<FormattedMessage id={`navbar.locations.link.${locale}`} />} 
                />
             </ListItem>
-          </NavLink>
+          </NavLink> */}
+          {/* <NavLink to={`/${locale.split('-')[0]}/providors`}>
+            <ListItem button key="providors">
+              <ListItemText               
+                primary={<FormattedMessage id={`navbar.providors.link.${locale}`} />} 
+               />
+            </ListItem>
+          </NavLink> */}
           <NavLink to={`/${locale.split('-')[0]}/contact`}>
             <ListItem button key="contact">
               <ListItemText               
@@ -97,9 +104,10 @@ export default function Navbar(props) {
             </NavLink>
             <Box display={{ xs: 'none', sm: 'none', md: 'block', lg: 'block', xl: 'block' }}>
               <ul className="app-header-full">                      
-                <li><NavLink to={`/${locale.split('-')[0]}/explore`}><FormattedMessage id={`navbar.explore.link.${locale}`} /></NavLink></li>
+                {/* <li><NavLink to={`/${locale.split('-')[0]}/explore`}><FormattedMessage id={`navbar.explore.link.${locale}`} /></NavLink></li> */}
                 <li><NavLink to={`/${locale.split('-')[0]}/about`}><FormattedMessage id={`navbar.about.link.${locale}`} /></NavLink></li>
-                <li><NavLink to={`/${locale.split('-')[0]}/locations`}><FormattedMessage id={`navbar.locations.link.${locale}`} /></NavLink></li>
+                {/* <li><NavLink to={`/${locale.split('-')[0]}/locations`}><FormattedMessage id={`navbar.locations.link.${locale}`} /></NavLink></li> */}
+                {/* <li><NavLink to={`/${locale.split('-')[0]}/providers`}><FormattedMessage id={`navbar.providors.link.${locale}`} /></NavLink></li> */}
                 <li><NavLink to={`/${locale.split('-')[0]}/contact`}><FormattedMessage id={`navbar.contact.link.${locale}`} /></NavLink></li>
               </ul>
             </Box>

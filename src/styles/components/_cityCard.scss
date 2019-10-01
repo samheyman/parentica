@@ -1,0 +1,21 @@
+.city-card {
+    max-width: 290px !important;
+    
+    .MuiCardMedia-root {
+        height: 200px;
+        width: auto;
+        background-color: $image-background-color;
+    }
+
+    .MuiCardContent-root {
+        padding: 0 16px;
+
+        h4 {
+            margin: 10px 0; 
+        }
+
+        span {
+            padding: 0 0 20px 0;
+        }
+    }
+}

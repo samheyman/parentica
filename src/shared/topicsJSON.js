@@ -16,8 +16,8 @@ export const TOPICS = [
         name: "first aid"
     },
     {
-        id: "lecture",
-        name: "lecture"
+        id: "fitness",
+        name: "fitness",
     },
     {
         id: "massage",
@@ -50,10 +50,6 @@ export const TOPICS = [
     {
         id: "sleep",
         name: "sleep",
-    },
-    {
-        id: "social",
-        name: "social",
     },
     {
         id: "yoga",

@@ -6,7 +6,7 @@ export const initialState = {
     classes: CLASSES,
     providers: PROVIDERS,
     topics: TOPICS,
-    tab: 1,
+    tab: 0,
     locale: 'es-ES',
     // locale: 'en-GB'
 };

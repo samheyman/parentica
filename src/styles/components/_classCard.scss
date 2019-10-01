@@ -2,7 +2,9 @@
     text-decoration: none;
 }
 
-
+.MuiCard-root {
+    max-width: 327px !important;
+}
 
 .dot {
     height: 4px;
@@ -10,7 +12,7 @@
     background-color: $font-pale;
     border-radius: 50%;
     display: inline-block;
-    margin: 0 10px 3px 10px;
+    margin: 10px 10px 0 10px;
 }
 
 .class-name {
@@ -26,6 +28,10 @@
     align-items: center;
     height: 25px;
 
+    .LazyLoad {
+        margin-right: 5px;
+    }
+
     .company-name {
         color: $font-dark;
     }
@@ -34,6 +40,7 @@
         margin: 0 8px 0 0px;
         height: 100%;
         border-radius: 50%;
+        max-width: 26px;
     }
 }
 
@@ -62,13 +69,21 @@ h4.class-name {
 
 .card-footer {
     .class-details {
+        display: flex;
+        flex-direction: row;
         width: 100%;
         margin: 0;
         padding: 10px 0 0px 0;
         color: rgba(0, 0, 0, 0.54);
     }
 
+    .class-details-date {
+        text-transform: capitalize;
+    }
+
     .class-details-flag {
-        margin-bottom: -1px;
+        position: relative;
+        bottom: -4px;
+        height: 15px;
     }
 }
