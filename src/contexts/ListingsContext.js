@@ -1,13 +1,15 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useReducer } from 'react';
 import { LISTINGS } from '../shared/listingsJSON';
+import { listingsReducer } from '../reducers/lisingsReducer';
+import uuid from 'uuid/v1';
 
 export const ListingsContext = createContext();
 
 const ListingsContextProvider = (props) => {
-    const [listings, setListings] = useState(LISTINGS);
-
+    const [listings, dispatch] = useReducer(listingsReducer, LISTINGS);
+    
     return(
-        <ListingsContext.Provider value={{listings}}>
+        <ListingsContext.Provider value={{listings, dispatch}}>
             { props.children }
         </ListingsContext.Provider>
     );

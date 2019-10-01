@@ -40,6 +40,10 @@ form {
         input, .MuiSelect-root, textarea {
             min-width: 300px;
         }
+
+        textarea {
+            height: auto;
+        }
     }
 
     .form-buttons {
@@ -52,5 +56,13 @@ form {
             font-size: 1rem !important;
             margin-right: 10px;
         }
+    }
+}
+
+.MuiTableRow-head {
+    background-color: #f7f7f7;
+    th {
+        color: rgba(0,0,0,0.85);
+        font-size: 0.9rem;
     }
 }
