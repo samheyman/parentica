@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
@@ -11,6 +11,7 @@ import Grid from '@material-ui/core/Grid';
 import ClassCard from '../components/ClassCard';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
+import { ListingsContext } from '../contexts/ListingsContext';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -45,6 +46,7 @@ function a11yProps(index) {
 
 function Explore(props) {
     const [value, setValue] = React.useState(props.tabSelected);
+    const { listings } = useContext(ListingsContext);
 
     function handleChange(event, newValue) {
         // scroll down 1px to trigger lazy loading of cards
@@ -52,7 +54,7 @@ function Explore(props) {
         setValue(newValue);
     }
 
-    const classesList = props.listings.map(
+    const classesList = listings.map(
         (classEntry) => {
             if ((classEntry.type === 'group' || classEntry.type === 'online')) {
                 return(
@@ -64,7 +66,7 @@ function Explore(props) {
         }
     );
 
-    const meetupsList = props.listings.map((classEntry) => {
+    const meetupsList = listings.map((classEntry) => {
         if( classEntry.type === 'meetup') {
             return (
                 <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
@@ -77,7 +79,7 @@ function Explore(props) {
             );
         }
     });
-    const seminarsList = props.listings.map((classEntry) => {
+    const seminarsList = listings.map((classEntry) => {
         if((classEntry.type === 'seminar' || classEntry.type === 'webinar')) {
             return (
                 <Grid item xs={12} sm={6} md={4} key={classEntry.id}>

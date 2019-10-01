@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useContext } from 'react';
 import Explore from './Explore';
 import ClassDetails from '../pages/ClassDetails';
 import Home from './Home';
@@ -11,34 +11,35 @@ import Contact from './Contact';
 import Navbar from '../components/Header/Navbar';
 import Footer from '../components/Footer';
 import PageNotFound from './PageNotFound';
+import { ListingsContext } from '../contexts/ListingsContext';
 
 const mapStateToProps = (state) => {
     return(
         {
-            classes: state.classes,
             providers: state.providers,
             topics: state.topics,
             tab: state.tab,
-            locale: state.locale,                   
         }
     );
 };
 
 class Main extends Component {
-    
-    render() {
+    static contextType = ListingsContext;
+    render() {  
+        const {listings} = this.context;     
+
+        console.log(listings);
+
         const HomePage = () => {
-            let count = 0;
-            let today = new Date();
+            // let count = 0;
+            // let today = new Date();
             return(
                 <Home 
-                    locale={this.props.locale}
-                    classEntries={this.props.classes}
                     topics={this.props.topics}
-                    onlineClasses={this.props.classes.filter((item) => 
-                        (item.type==='online' || item.type==='webinar' ) && 
-                        (!item.date || new Date(item.date) > today) &&
-                        count++ < 4)}
+                    // onlineClasses={listings.filter((item) => 
+                    //     (item.type==='online' || item.type==='webinar' ) && 
+                    //     (!item.date || new Date(item.date) > today) &&
+                    //     count++ < 4)}
                     onlineProviders={this.props.providers.filter((provider) => provider.online)}
                 />
             );
@@ -80,20 +81,21 @@ class Main extends Component {
         }
 
         const ClassWithName = ({match}) => {
-            let selectedClass = this.props.classes.filter((theClass) => theClass.nameId === match.params.classNameId)[0];
-            if (selectedClass == null) {
-                return(<Redirect to='/error' />);
-            } else {
-                return(
-                    <ClassDetails
-                        selectedClass={this.props.classes.filter((theClass) => theClass.nameId === match.params.classNameId)[0]}
-                        // TODO only send the class names, not all the information
-                        otherClasses={this.props.classes}
-                        locale={this.props.locale}
-                    />
-                );
-            }
+            let selectedClass = listings.filter((item) => item.nameId === match.params.classNameId)[0];
+            return(
+                selectedClass ? 
+                    (
+                        <ClassDetails
+                            selectedClass={selectedClass}
+                            // TODO only send the class names, not all the information
+                            otherClasses={listings}
+                        />
+                    )
+                    :
+                    (<Redirect to='/error' />)
+            );
         }
+
         const { match } = this.props;
 
         return(
@@ -189,15 +191,13 @@ class Main extends Component {
                         let topic = this.props.location.topic;
                         let type = this.props.location.type;
                         let language = this.props.location.language;
-                        let cityListings = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date());
+                        // let cityListings = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date());
                         if(language === 'english' || language === 'spanish') {
                             let cityListingsLanguage = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date() && listing.language===language);
                             return(
                                 <Explore
                                     format="madrid"
-                                    listings={cityListingsLanguage}
                                     topic="all"
-                                    locale={this.props.locale}
                                     tabSelected={0}
                                     classLanguage={language}
                                 />
@@ -207,9 +207,7 @@ class Main extends Component {
                             return(
                                 <Explore
                                     format="madrid"
-                                    listings={cityListings}
                                     topic="all"
-                                    locale={this.props.locale}
                                     tabSelected={1}
                                 />
                             );
@@ -218,9 +216,7 @@ class Main extends Component {
                             return(
                                 <Explore
                                     format="madrid"
-                                    listings={cityListings}
                                     topic="all"
-                                    locale={this.props.locale}
                                     tabSelected={2}
                                 />
                             );
@@ -229,9 +225,7 @@ class Main extends Component {
                             return(
                                 <Explore
                                     format="madrid"
-                                    listings={cityListings}
                                     topic="all"
-                                    locale={this.props.locale}
                                     tabSelected={0}
                                 />
                             );
@@ -239,9 +233,7 @@ class Main extends Component {
                             return(
                                 <Explore
                                     format="madrid"
-                                    listings={cityListings.filter((listing) => listing.tags.includes(`${topic}`))}
                                     topic={topic}
-                                    locale={this.props.locale}
                                     tabSelected={0}
                                 />
                             );
@@ -250,13 +242,14 @@ class Main extends Component {
                     {/* issue here is that a new component is rendered every time, rather than update existing one */}
                     {/* https://tylermcginnis.com/react-router-pass-props-to-components/ */}
                     {/* <Route path='/classes/:classId' component={ClassWithId} /> */}
-                    <Route path={`${match.url}/listings/:classNameId`} component={ClassWithName} />
+                    <Route path={`${match.url}/:classNameId`} component={ClassWithName} />
                     <Route path={`${match.url}/locations`} component={Locations}/>
                     <Route path={`${match.url}/about`} component={About}/>
                     <Route path={`${match.url}/contact`} render={
                             (props) => <Contact {...props}
                         />}
                     />
+                    <Route path={`${match.url}/error`} component={PageNotFound}/>
                     <Route component={PageNotFound}  />
                 </Switch>
                 <Footer/>

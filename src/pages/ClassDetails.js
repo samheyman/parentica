@@ -72,7 +72,7 @@ function RenderOtherClasses({otherClasses, locale}) {
         return (
             <TableRow key={i++}>
                 <TableCell>
-                    <Link to={`/${locale.split('-')[0]}/listings/${item.nameId}`}>{item.className.toLowerCase()}</Link>
+                    <Link to={`/${locale.split('-')[0]}/${item.nameId}`}>{item.className.toLowerCase()}</Link>
                 </TableCell>
                 <TableCell>{formatedDate}</TableCell>
                 <TableCell>
