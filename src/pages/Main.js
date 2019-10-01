@@ -58,8 +58,8 @@ class Main extends Component {
                     locale={this.props.locale}
                     city='madrid'
                     classesThisWeek={
-                        this.props.classes.filter(
-                            (item) => item.city==='Madrid' && 
+                        listings.filter(
+                            (item) => (item.city==='Madrid' || item.city==='madrid') && 
                                       new Date(item.date) > today && 
                                       new Date(item.date) < nextWeek  && 
                                       count++ < 4)}
@@ -135,7 +135,7 @@ class Main extends Component {
                         let topic = this.props.location.topic;
                         let type = this.props.location.type;
                         let language = this.props.location.language;
-                        let onlineListings = this.props.classes.filter((item)=> item.type==='online' || item.type==='webinar');
+                        let onlineListings = listings.filter((item)=> item.type==='online' || item.type==='webinar');
                         console.log(onlineListings);
                         console.log(topic);
                         if(type === 'online classes' || type == null || !type){

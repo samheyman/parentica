@@ -79,6 +79,7 @@ function Explore(props) {
             );
         }
     });
+
     const seminarsList = listings.map((classEntry) => {
         if((classEntry.type === 'seminar' || classEntry.type === 'webinar')) {
             return (
@@ -105,7 +106,7 @@ function Explore(props) {
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
-            console.log(props.topic);
+            console.log(locale);
             return(
                 <Container className="main-content">
                     <h2>{
@@ -131,7 +132,7 @@ function Explore(props) {
                                     />
                                 </span>
                                 
-                                <Link to={{pathname:`/${props.locale.split('-')[0]}/${props.format}/explore`}}>
+                                <Link to={{pathname:`/${locale.split('-')[0]}/${props.format}/explore`}}>
                                     <span className="tag">
                                         <FormattedMessage 
                                             id={`general.clear.${locale}`}
@@ -153,7 +154,7 @@ function Explore(props) {
                                     />
                                 </span>
                                 
-                                <Link to={{pathname:`/${props.locale.split('-')[0]}/madrid/explore`}}>
+                                <Link to={{pathname:`/${locale.split('-')[0]}/madrid/explore`}}>
                                     <span className="tag">
                                         <FormattedMessage 
                                             id={`general.clear.${locale}`}
