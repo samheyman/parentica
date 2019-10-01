@@ -16,7 +16,7 @@ import TableCell from '@material-ui/core/TableCell';
 import TableRow from '@material-ui/core/TableRow';
 import { Link } from 'react-router-dom';
 import ScrollToTop from '../components/ScrollToTop';
-import { FormattedMessage, FormattedDate } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 import * as moment from 'moment';
 import 'moment/locale/en-gb';
@@ -62,7 +62,6 @@ function RenderOtherClasses({otherClasses, locale}) {
     let i =0;
     const otherClassesList = otherClasses.map((item) => {
         let formatedDate = null;
-        let formatedTime = null;
 
         if (item.date != null) {
             formatedDate = <span className="date-time">

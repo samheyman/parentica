@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react';
+import React, { Component } from 'react';
 import Explore from './Explore';
 import ClassDetails from '../pages/ClassDetails';
 import Home from './Home';
@@ -190,7 +190,7 @@ class Main extends Component {
                         let language = this.props.location.language;
                         // let cityListings = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date());
                         if(language === 'english' || language === 'spanish') {
-                            let cityListingsLanguage = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date() && listing.language===language);
+                            // let cityListingsLanguage = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date() && listing.language===language);
                             return(
                                 <Explore
                                     format="madrid"

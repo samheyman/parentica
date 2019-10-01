@@ -1,17 +1,11 @@
-import React, { Component } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
-import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
-import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
-import Spinner from 'react-spinner-material';
-import clsx from 'clsx';
-import MenuItem from '@material-ui/core/MenuItem';
 import { makeStyles } from '@material-ui/core/styles';
-import Paper from '@material-ui/core/Paper';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
@@ -19,6 +13,9 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import { FormattedDate } from 'react-intl';
+import { FirebaseContext } from '../contexts/FirebaseContext';
+import * as moment from 'moment';
+import uuid from 'uuid';
 
 const columns = [
     { id: 'name', label: 'Class name' },
@@ -45,11 +42,7 @@ const columns = [
 ];
 
 function createData(id, name, provider, date, price) {
-    let class_date = <FormattedDate
-                        value={date}
-                        day="2-digit"
-                        month="2-digit"
-                    />;
+    let class_date = moment(date).format("MMM D");
     let class_time = <FormattedDate
                         value={date}
                         hour="2-digit"
@@ -69,20 +62,58 @@ const useStyles = makeStyles({
 });
 
 function Providers(props) {
+    const firebase = useContext(FirebaseContext);
+    const [listings, setListings] = useState(null);
+    const ref = firebase.firestore().collection(`listings`);
     const classes = useStyles();
-    const classesList = props.classes;
+
+    useEffect(() => {
+        ref.get().then(snapshot => {
+            if (!snapshot) {
+                setListings(l => [])
+            } else {
+                let items = []
+                snapshot.forEach(item => {
+                items.push({ key: item.id, ...item.data() })
+                })
+                setListings(l => items)
+            }
+        }).catch(error => {
+            console.log("Error: " + error);
+        })
+    }, []);
+
+    // let listingsToDispay;
+    // if (listings === null) {
+    //     listToDisplay = (<li>Loading shirts...</li>)
+    // } else if (listings.length === 0) {
+    //     listToDisplay = [];
+    // } else {
+    //     listToDisplay = listings.map(shirt => {
+    //     return (<li key={ shirt.key }>{ shirt.name }</li>)
+    //     })
+    // }
+
+    // const { listings } = useContext(ListingsContext);
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
-    const rows = classesList.map((classEntry) => {
-        return(
-            createData(
-                classEntry.id,
-                classEntry.className,
-                classEntry.companyName,
-                new Date(classEntry.date),
-                classEntry.price
-        ));
-    });
+    // const rows = [];
+
+    let rows;
+    if(listings!=null && listings.length > 0) {
+        rows = listings.map((classEntry) => {
+            return(
+                createData(
+                    classEntry.id,
+                    classEntry.className,
+                    classEntry.companyName,
+                    new Date(classEntry.date),
+                    classEntry.price
+            ));
+        });
+    } else {
+        rows = []; 
+    }
 
     const handleChangePage = (event, newPage) => {
         setPage(newPage);
@@ -135,7 +166,7 @@ function Providers(props) {
                                 <TableBody>
                                   {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
                                     return (
-                                      <TableRow hover role="checkbox" tabIndex={-1} key={row.id}>
+                                      <TableRow hover role="checkbox" tabIndex={-1} key={uuid()}>
                                         {columns.map(column => {
                                           const value = row[column.id];
                                           return (

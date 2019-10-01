@@ -45,7 +45,7 @@ function OnlineProviders({providers}) {
         return(
             <Grid item xs={4} sm={3} md={2} key={provider.id}>
                 <div className="logo-container">
-                    <a href={`${provider.url}`} target="_blank" rel="nofollow">
+                    <a href={`${provider.url}`} target="_blank" rel="nofollow noopener noreferrer">
                         <LazyLoad 
                             
                             debounce={false}
