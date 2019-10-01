@@ -275,17 +275,17 @@ export const CLASSES = [
     ],
     "district":"Almagro",
     "address":"Paseo de la Castellana 45",
+    "city": "madrid",
     "date":"2019-10-02T17:00+02:00",
     "time":"17h00",
     "duration":120,
-    "image":"bumps_tea.png",
+    "image":"bumpstea",
     "url":"https://www.belandmums.com/informative-sessions/",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq",
     "label":"",
     "price":6,
     "language":"english",
-    
     "description":[
     "At Bel & Mums we know how valuable it is to have a supporting network during pregnancy and postnatally. We also know how tricky this can be in a city like Madrid specially if you have just moved in. We want to help you creating your community and get to know other women in your same situation.",
     "This is a bumps only group where every pregnant women is welcome.",
@@ -989,10 +989,11 @@ export const CLASSES = [
     ],
     "district":"Almagro",
     "address":"Paseo de la Castellana 45",
+    "city": "madrid",
     "date":"2019-10-15T11:00+02:00",
     "time":"11h00",
     "duration":120,
-    "image":"bumps_tea.png",
+    "image":"bumpstea",
     "url":"https://www.belandmums.com/informative-sessions/",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq",
@@ -1061,11 +1062,8 @@ export const CLASSES = [
     "image":"grupodeapoyo",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq",
-    
     "price":5,
     "language":"spanish",
-    
-    
     "description":[
     "Tercer martes de cada mes a las 18h30.",
     "Reunión para embarazadas (parejas bienvenidas)",

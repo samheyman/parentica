@@ -58,7 +58,7 @@ class Main extends Component {
                     city='madrid'
                     classesThisWeek={
                         this.props.classes.filter(
-                            (item) => item.city==='Madrid' && 
+                            (item) => (item.city==='Madrid' || item.city==='madrid') && 
                                       new Date(item.date) > today && 
                                       new Date(item.date) < nextWeek  && 
                                       count++ < 4)}
@@ -189,7 +189,7 @@ class Main extends Component {
                         let topic = this.props.location.topic;
                         let type = this.props.location.type;
                         let language = this.props.location.language;
-                        let cityListings = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date());
+                        let cityListings = this.props.classes.filter((listing) => (listing.city==='Madrid' || listing.city==='madrid') && new Date(listing.date) > new Date());
                         if(language === 'english' || language === 'spanish') {
                             let cityListingsLanguage = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date() && listing.language===language);
                             return(
