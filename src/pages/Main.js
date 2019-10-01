@@ -105,6 +105,8 @@ class Main extends Component {
                     <Route exact path={`${match.url}/`} component={HomePage} />
                     <Route path={`${match.url}/home`} render={()=><Redirect to={`${match.url}/`} /> } />
                     <Route exact path={`${match.url}/madrid`} component={CityPage} />
+                    <Route exact path={`${match.url}/other`} component={About} />
+
                     <Route exact path={`${match.url}/online`} component={OnlinePage} />
 
                     {/* <Route exact path={`${match.url}/explore`} render={() => {
@@ -242,7 +244,6 @@ class Main extends Component {
                     {/* issue here is that a new component is rendered every time, rather than update existing one */}
                     {/* https://tylermcginnis.com/react-router-pass-props-to-components/ */}
                     {/* <Route path='/classes/:classId' component={ClassWithId} /> */}
-                    <Route path={`${match.url}/:classNameId`} component={ClassWithName} />
                     <Route path={`${match.url}/locations`} component={Locations}/>
                     <Route path={`${match.url}/about`} component={About}/>
                     <Route path={`${match.url}/contact`} render={
@@ -250,6 +251,9 @@ class Main extends Component {
                         />}
                     />
                     <Route path={`${match.url}/error`} component={PageNotFound}/>
+                    
+                    <Route path={`${match.url}/:classNameId`} component={ClassWithName} />
+                    
                     <Route component={PageNotFound}  />
                 </Switch>
                 <Footer/>
