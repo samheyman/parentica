@@ -68,7 +68,7 @@ form {
 }
 
 .new-class-form {
-    select {
+    select, .date-selector, .MuiButtonBase-root  {
         margin: 8px 0 4px 0;
         width: 330px;
         padding: 5px 35px 5px 5px;
@@ -78,5 +78,11 @@ form {
         // -webkit-appearance: none;
         // -moz-appearance: none;
         // appearance: none;
-      }
+    }
+
+    .time-notice {
+        font-size: 0.7rem;
+        color: rgb(92, 80, 58);
+        padding-left: 10px;
+    }
 }

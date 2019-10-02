@@ -13,7 +13,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import { FormattedDate } from 'react-intl';
-// import { FirebaseContext } from '../contexts/FirebaseContext';
 import * as moment from 'moment';
 import uuid from 'uuid';
 // import { ListingsContext } from '../contexts/ListingsContext';
@@ -45,12 +44,9 @@ const columns = [
 ];
 
 function createData(id, name, provider, date, price) {
+    console.log(typeof(date) + " -- " + date);
     let class_date = moment(date).format("MMM D");
-    let class_time = <FormattedDate
-                        value={date}
-                        hour="2-digit"
-                        minute="2-digit"
-                    />;
+    let class_time = moment(date).format("HH:mm");
     return { id, name, provider, class_date, class_time , price };
 }
   
@@ -96,9 +92,9 @@ const Providers = () => {
             return(
                 createData(
                     classEntry.id,
-                    classEntry.className,
+                    classEntry.listingName,
                     classEntry.companyName,
-                    new Date(classEntry.date),
+                    classEntry.date,
                     classEntry.price
             ));
         });

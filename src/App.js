@@ -8,7 +8,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import ScrollToTop from './components/ScrollToTop';
 import LocaleContextProvider from './contexts/LocaleContext';
 import ListingsContextProvider from './contexts/ListingsContext';
-import FirebaseContextProvider from './contexts/FirebaseContext';
+// import FirebaseContextProvider from './contexts/FirebaseContext';
 
 const store = ConfigureStore();
 
@@ -21,7 +21,7 @@ class App extends Component {
             <ScrollToTop>
               <div className="App">
                 <LocaleContextProvider>
-                  <FirebaseContextProvider>
+                  {/* <FirebaseContextProvider> */}
                     <ListingsContextProvider>
                       <Switch>
                         <Route path="/en" component={Main} />
@@ -29,7 +29,7 @@ class App extends Component {
                         <Redirect to="/en" />
                       </Switch>
                     </ListingsContextProvider>
-                  </FirebaseContextProvider>
+                  {/* </FirebaseContextProvider> */}
                 </LocaleContextProvider>
               </div>
             </ScrollToTop>

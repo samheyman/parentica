@@ -158,27 +158,44 @@ const ClassForm = () => {
                 online,
                 format,
                 listingName,
+                date: date + "T" + time + "+02:00",
+                duration:parseInt(duration),
+                language,
+                price,
+                website,
                 tags: tagList,
-                companyName    
+                companyName,
+                image,
+
             }).then(() => {
                 setOnline('');
                 setFormat('');
                 setListingName('');
-                setCompanyName('');
+                setDuration('');
+                setPrice('');
+                setLanguage('');
+                setWebsite('');
                 setTags('');
+                setImage('');
+                setCompanyName('');
             })
         }
         const [ online, setOnline ] = useState('');
         const [ format, setFormat ] = useState('');
         const [ listingName, setListingName ] = useState('');
-        const [ tags, setTags ] = useState('');
-        const [ companyName, setCompanyName ] = useState('');
+        const [ duration, setDuration ] = useState('');
         const [ price, setPrice ] = useState('');
-        const [ website, setWebsite ] = useState('');
+        const [ date, setDate ] = useState('');
+        const [ time, setTime ] = useState('');
         const [ language, setLanguage ] = useState('');
+
+        const [ tags, setTags ] = useState('');
+        const [ website, setWebsite ] = useState('');
+        const [ image, setImage ] = useState('');
         const [ description, setDescription ] = useState('');
         const [ companyLogo, setCompanyLogo ] = useState('');
         const [ listingImage, setListingImage ] = useState('');
+        const [ companyName, setCompanyName ] = useState('');
 
         return(
             <Container className="main-content">
@@ -213,14 +230,96 @@ const ClassForm = () => {
                                 <label className="ant-form-item-required" title="listingName">Name: </label>
                                 <TextField
                                     required
-                                    id="class-name"
+                                    id="listingName"
                                     value={listingName}
                                     margin="dense"
                                     variant="outlined"
                                     onChange={(e) => setListingName(e.currentTarget.value)}
                                 />
                             </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="date">Date: </label>
+                                <input 
+                                    required
+                                    className="date-selector" 
+                                    type="date" 
+                                    name="date"
+                                    value={date}
+                                    onChange={(e) => setDate(e.currentTarget.value)}
+                                />
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="time">Time: </label>
+                                <input
+                                    required
+                                    className="date-selector" 
+                                    type="time" 
+                                    name="time"
+                                    value={time}
+                                    onChange={(e) => setTime(e.currentTarget.value)}
+                                />
+                                <span className="time-notice">add 1h for classes after October 27</span>
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="duration">Duration: </label>
+                                <TextField
+                                    required
+                                    id="duration"
+                                    value={duration}
+                                    margin="dense"
+                                    variant="outlined"
+                                    onChange={(e) => setDuration(e.currentTarget.value)}
+                                />
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="price">Price: </label>
+                                <TextField
+                                    required
+                                    id="price"
+                                    value={price}
+                                    margin="dense"
+                                    variant="outlined"
+                                    onChange={(e) => setPrice(e.currentTarget.value)}
+                                />
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="Customer">Language: </label>
+                                <select required onChange={e => setLanguage(e.currentTarget.value)}>
+                                    <option value=""></option>
+                                    <option value="spanish">Spanish</option>
+                                    <option value="english">English</option>
+                                </select>
+                            </div>
                             
+                            <div className="provider-form-item">
+                            <label className="ant-form-item-required" title="image">Image: </label>
+                            <Button
+                                variant="contained"
+                                component="label"
+                                >
+                                Upload File
+                                <input
+                                    required
+                                    value={image}
+                                    type="file"
+                                    style={{ display: "none" }}
+                                    onChange={(e) => setImage(e.currentTarget.value)}
+                                />
+                                <span>{image}</span>
+                                </Button>
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="website">Website: </label>
+                                <TextField
+                                    required
+                                    id="website"
+                                    margin="dense"
+                                    variant="outlined"
+                                    value={website}
+                                    placeholder="e.g. https://example.com/class"
+                                    onChange={(e) => setWebsite(e.currentTarget.value)}
+                                />
+                            </div>
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="tags">Tags: </label>
                                 <TextField
@@ -230,6 +329,20 @@ const ClassForm = () => {
                                     value={tags}
                                     placeholder="e.g. 'parenting', 'yoga"
                                     onChange={(e) => setTags(e.currentTarget.value)}
+                                />
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="description">Description: </label>
+                                <TextField
+                                    id="description"
+                                    label=""
+                                    multiline
+                                    rows="12"
+                                    rowsMax="100"
+                                    defaultValue="Please describe your class"
+                                    margin="normal"
+                                    helperText=""
+                                    variant="outlined"
                                 />
                             </div>
                             <div className="provider-form-item">
@@ -260,64 +373,6 @@ const ClassForm = () => {
                                 />
                             </div>
                             <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="date">Date: </label>
-                                <TextField
-                                    id="class-name"
-                                    label=""
-                                    margin="dense"
-                                    variant="outlined"
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="time">Time: </label>
-                                <TextField
-                                    id="class-name"
-                                    label=""
-                                    margin="dense"
-                                    variant="outlined"
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="duration">Duration: </label>
-                                <TextField
-                                    id="class-name"
-                                    label=""
-                                    margin="dense"
-                                    variant="outlined"
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="Customer">Sessions: </label>
-                                <TextField
-                                    id="class-name"
-                                    label=""
-                                    margin="dense"
-                                    variant="outlined"
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="Customer">Url: </label>
-                                <TextField
-                                    id="class-name"
-                                    label=""
-                                    margin="dense"
-                                    variant="outlined"
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                            <label className="ant-form-item-required" title="image">Image: </label>
-                            <Button
-                                variant="contained"
-                                component="label"
-                                >
-                                Upload File
-                                <input
-                                    type="file"
-                                    style={{ display: "none" }}
-                                />
-                                </Button>
-                            </div>
-                            <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="Customer">Company name: </label>
                                 <TextField
                                     id="class-name"
@@ -341,60 +396,6 @@ const ClassForm = () => {
                                 />
                                 </Button>
                             </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="Customer">Price<span className="required-field">*</span>: </label>
-                                <TextField
-                                    // required
-                                    id="class-name"
-                                    label=""
-                                    margin="dense"
-                                    variant="outlined"
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="Customer">Price (couples): </label>
-                                <TextField
-                                    id="class-name"
-                                    label=""
-                                    margin="dense"
-                                    variant="outlined"
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="Customer">Language: </label>
-                                <TextField
-                                    id="language"
-                                    select
-                                    label=""
-                                    value='Español'
-                                    helperText=""
-                                    margin="normal"
-                                    variant="outlined"
-                                >
-                                    <MenuItem key='' value='Español'>
-                                        Español
-                                    </MenuItem>
-                                    <MenuItem key='' value='English'>
-                                        English
-                                    </MenuItem>
-                                </TextField>
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="Customer">Description: </label>
-                                <TextField
-                                    id="description"
-                                    label=""
-                                    multiline
-                                    rows="12"
-                                    rowsMax="100"
-                                    defaultValue="Please describe your class"
-                                    margin="normal"
-                                    helperText=""
-                                    variant="outlined"
-                                />
-                            </div>
-                            
-                            
                             <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
                                 
                                 <div className="form-buttons">
