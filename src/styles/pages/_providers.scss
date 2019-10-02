@@ -66,3 +66,17 @@ form {
         font-size: 0.9rem;
     }
 }
+
+.new-class-form {
+    select {
+        margin: 8px 0 4px 0;
+        width: 330px;
+        padding: 5px 35px 5px 5px;
+        font-size: 16px;
+        border: 1px solid #CCC;
+        height: 42px;
+        // -webkit-appearance: none;
+        // -moz-appearance: none;
+        // appearance: none;
+      }
+}

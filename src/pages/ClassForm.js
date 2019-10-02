@@ -9,6 +9,7 @@ import { LocaleContext } from '../contexts/LocaleContext';
 import { ListingsContext } from '../contexts/ListingsContext';
 
 import MenuItem from '@material-ui/core/MenuItem';
+import firebase from '../config/firebase';
 
 
 const ClassForm = () => {
@@ -150,16 +151,34 @@ const ClassForm = () => {
     // }
 
         const { locale } = useContext(LocaleContext);
-        const { dispatch } = useContext(ListingsContext);
         const handleSubmit = (e) => {
             e.preventDefault();
-            console.log("Adding listing: " + className);
-            dispatch({type: 'ADD_LISTING', listing: {
-                className
-            }});
-            setClassName('');
+            const tagList=tags.split(",").map(item => item.trim());
+            firebase.firestore().collection('listings').add({
+                online,
+                format,
+                listingName,
+                tags: tagList,
+                companyName    
+            }).then(() => {
+                setOnline('');
+                setFormat('');
+                setListingName('');
+                setCompanyName('');
+                setTags('');
+            })
         }
-        const [ className, setClassName ] = useState('');
+        const [ online, setOnline ] = useState('');
+        const [ format, setFormat ] = useState('');
+        const [ listingName, setListingName ] = useState('');
+        const [ tags, setTags ] = useState('');
+        const [ companyName, setCompanyName ] = useState('');
+        const [ price, setPrice ] = useState('');
+        const [ website, setWebsite ] = useState('');
+        const [ language, setLanguage ] = useState('');
+        const [ description, setDescription ] = useState('');
+        const [ companyLogo, setCompanyLogo ] = useState('');
+        const [ listingImage, setListingImage ] = useState('');
 
         return(
             <Container className="main-content">
@@ -169,45 +188,48 @@ const ClassForm = () => {
                             New Class
                         </h2>           
                 
-                        <form className="contact-form noValidate" autoComplete="off" onSubmit={handleSubmit}>
+                        <form className="new-class-form noValidate" autoComplete="off" onSubmit={handleSubmit}>
+                            {/* <h3>Format</h3> */}
                             <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="name">Class name: </label>
-                                <TextField
-                                    required
-                                    id="class-name"
-                                    label=""
-                                    value={className}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setClassName(e.target.value)}
-                                />
+                                <label className="ant-form-item-required" title="online">Type: </label>
+                                <select required onChange={e => setOnline(e.currentTarget.value)}>
+                                    <option value=""></option>
+                                    <option value="online">Online</option>
+                                    <option value="person">In person</option>
+                                </select>
                             </div>
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="format">Format: </label>
-                                <TextField
-                                    id="type"
-                                    select
-                                    value="Group class"
-                                    helperText=""
-                                    margin="normal"
-                                    variant="outlined"
-                                >
-                                    <MenuItem key='' value='Group class'>
-                                        Group class
-                                    </MenuItem>
-                                    <MenuItem key='' value='Meetup'>
-                                        Meetup
-                                    </MenuItem>
-                                </TextField>
+                                <select required onChange={e => setFormat(e.currentTarget.value)}>
+                                    <option value=""></option>
+                                    <option value="class">Class</option>
+                                    <option value="workshop">Workshop</option>
+                                    <option value="meetup">Meetup</option>
+                                    <option value="seminar">Seminar</option>
+                                    <option value="webinar">Webinar</option>
+                                </select>
                             </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="listingName">Name: </label>
+                                <TextField
+                                    required
+                                    id="class-name"
+                                    value={listingName}
+                                    margin="dense"
+                                    variant="outlined"
+                                    onChange={(e) => setListingName(e.currentTarget.value)}
+                                />
+                            </div>
+                            
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="tags">Tags: </label>
                                 <TextField
                                     id="class-name"
-                                    label=""
                                     margin="dense"
                                     variant="outlined"
+                                    value={tags}
                                     placeholder="e.g. 'parenting', 'yoga"
+                                    onChange={(e) => setTags(e.currentTarget.value)}
                                 />
                             </div>
                             <div className="provider-form-item">
@@ -299,9 +321,11 @@ const ClassForm = () => {
                                 <label className="ant-form-item-required" title="Customer">Company name: </label>
                                 <TextField
                                     id="class-name"
+                                    value={companyName}
                                     label=""
                                     margin="dense"
                                     variant="outlined"
+                                    onChange={(e) => setCompanyName(e.currentTarget.value)}
                                 />
                             </div>
                             <div className="provider-form-item">

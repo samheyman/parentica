@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
@@ -13,11 +13,14 @@ import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import { FormattedDate } from 'react-intl';
-import { FirebaseContext } from '../contexts/FirebaseContext';
+// import { FirebaseContext } from '../contexts/FirebaseContext';
 import * as moment from 'moment';
 import uuid from 'uuid';
+// import { ListingsContext } from '../contexts/ListingsContext';
+import firebase from '../config/firebase';
 
 const columns = [
+    { id: 'id', label: ''},
     { id: 'name', label: 'Class name' },
     { id: 'provider', label: 'Provider'},
     {
@@ -61,43 +64,31 @@ const useStyles = makeStyles({
     },
 });
 
-function Providers(props) {
-    const firebase = useContext(FirebaseContext);
-    const [listings, setListings] = useState(null);
-    const ref = firebase.firestore().collection(`listings`);
-    const classes = useStyles();
 
+function useListings() {
+    // TODO add unsubscribe callback!
+    const [times, setTimes] = useState([]);
+   
     useEffect(() => {
-        ref.get().then(snapshot => {
-            if (!snapshot) {
-                setListings(l => [])
-            } else {
-                let items = []
-                snapshot.forEach(item => {
-                items.push({ key: item.id, ...item.data() })
-                })
-                setListings(l => items)
-            }
-        }).catch(error => {
-            console.log("Error: " + error);
-        })
-    }, []);
+        const unsubscribe = firebase.firestore().collection('listings').onSnapshot((snapshot) => {
+            const newListings = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setTimes(newListings);
+        });
+        return () => unsubscribe();
 
-    // let listingsToDispay;
-    // if (listings === null) {
-    //     listToDisplay = (<li>Loading shirts...</li>)
-    // } else if (listings.length === 0) {
-    //     listToDisplay = [];
-    // } else {
-    //     listToDisplay = listings.map(shirt => {
-    //     return (<li key={ shirt.key }>{ shirt.name }</li>)
-    //     })
-    // }
+    }, [])
 
-    // const { listings } = useContext(ListingsContext);
+    return times;
+}
+
+const Providers = () => {
+    const listings = useListings();
+    const classes = useStyles();
     const [page, setPage] = React.useState(0);
     const [rowsPerPage, setRowsPerPage] = React.useState(10);
-    // const rows = [];
 
     let rows;
     if(listings!=null && listings.length > 0) {
@@ -168,12 +159,15 @@ function Providers(props) {
                                     return (
                                       <TableRow hover role="checkbox" tabIndex={-1} key={uuid()}>
                                         {columns.map(column => {
-                                          const value = row[column.id];
-                                          return (
-                                            <TableCell key={column.id} align={column.align}>
-                                              {value}
-                                            </TableCell>
-                                          );
+                                            const value = (column.id !=="id") ? 
+                                                row[column.id] 
+                                                : 
+                                                <input type="checkbox" name={row[column.id]} value={row[column.id]}/>
+                                            return (
+                                                <TableCell key={column.id} align={column.align}>
+                                                {value}
+                                                </TableCell>
+                                            );
                                         })}
                                       </TableRow>
                                     );
