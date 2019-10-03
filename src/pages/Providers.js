@@ -82,15 +82,10 @@ function useListings() {
 }
 
 function deleteListings(listings) {
-    // TODO add unsubscribe callback!
-   
-    // useEffect(() => {
-        listings.forEach((listing) => {
-            firebase.firestore().collection('listings').doc(listing).delete();
-            console.log("Deleted " + listing);
-        });
-    // }, [])
-
+    listings.forEach((listing) => {
+        firebase.firestore().collection('listings').doc(listing).delete();
+        console.log("Deleted " + listing);
+    });
     return true;
 }
 
@@ -133,8 +128,10 @@ const Providers = () => {
         setListingsSelected(() => {
             console.log("Checking if " + listingId + " in " + listingsSelected);
             if (listingsSelected.includes(listingId)) {
-                console.log(listingId + " in list, removing it");
-                return listingsSelected.filter(item => item!=listingId)
+                console.log(listingId + " already in list, removing it");
+                const newList = listingsSelected.filter(item => item!=listingId);
+                if (newList.length<1) { setIsListingSelected(false)}
+                return newList;
             } else {
                 console.log(listingId + " not in list, adding it");
                 return [...listingsSelected, listingId];
@@ -144,8 +141,11 @@ const Providers = () => {
     }
 
     const deleteSelectedListings = () => {
-        alert("Are you sure?");
-        deleteListings(listingsSelected);
+        let result = false;
+        result = deleteListings(listingsSelected);
+        if (result) {
+            setIsListingSelected(false);
+        }
     }
 
     return(<LocaleContext.Consumer>{(context) => {
@@ -166,10 +166,16 @@ const Providers = () => {
                                     </Button>
                                 </Link>
                                 <Button 
-                                    disabled={!isListingSelected} 
+                                    disabled={!isListingSelected && listingsSelected.length<1} 
                                     variant="outlined" 
                                     className="delete-class-btn" 
-                                    onClick={deleteSelectedListings}>
+                                    onClick={()=> {
+                                        var confirm = window.confirm("Are you sure?");
+                                        if (confirm) {
+                                            deleteSelectedListings()
+                                        }
+                                    }}
+                                >
                                     <Icon>
                                         delete_outlined
                                         </Icon>
