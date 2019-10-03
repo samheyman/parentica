@@ -46,7 +46,6 @@ const columns = [
 
 function createData(id, name, provider, date, price) {
     moment.locale('en');
-    console.log(typeof(date) + " -- " + date);
     let class_date = moment(date).format("MMM D");
     let class_time = moment(date).format("HH:mm");
     return { id, name, provider, class_date, class_time , price };
@@ -82,12 +81,26 @@ function useListings() {
     return times;
 }
 
+function deleteListings(listings) {
+    // TODO add unsubscribe callback!
+   
+    // useEffect(() => {
+        listings.forEach((listing) => {
+            firebase.firestore().collection('listings').doc(listing).delete();
+            console.log("Deleted " + listing);
+        });
+    // }, [])
+
+    return true;
+}
+
 const Providers = () => {
     const listings = useListings();
     const classes = useStyles();
-    const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
-
+    const [page, setPage] = useState(0);
+    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [isListingSelected, setIsListingSelected] = useState(false);
+    const [listingsSelected, setListingsSelected] = useState([]);
     let rows;
     if(listings!=null && listings.length > 0) {
         rows = listings.map((classEntry) => {
@@ -113,6 +126,28 @@ const Providers = () => {
         setPage(0);
     };
 
+    const listingSelected = event => {
+        const listingId = event.target.value;
+        console.log("Selected: " + listingId);
+        setIsListingSelected(true);
+        setListingsSelected(() => {
+            console.log("Checking if " + listingId + " in " + listingsSelected);
+            if (listingsSelected.includes(listingId)) {
+                console.log(listingId + " in list, removing it");
+                return listingsSelected.filter(item => item!=listingId)
+            } else {
+                console.log(listingId + " not in list, adding it");
+                return [...listingsSelected, listingId];
+            }
+        });
+        console.log(listingsSelected);
+    }
+
+    const deleteSelectedListings = () => {
+        alert("Are you sure?");
+        deleteListings(listingsSelected);
+    }
+
     return(<LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
             return(
@@ -130,7 +165,12 @@ const Providers = () => {
                                             &nbsp;New
                                     </Button>
                                 </Link>
-                                <Button disabled variant="outlined" className="secondary " ><Icon>
+                                <Button 
+                                    disabled={!isListingSelected} 
+                                    variant="outlined" 
+                                    className="delete-class-btn" 
+                                    onClick={deleteSelectedListings}>
+                                    <Icon>
                                         delete_outlined
                                         </Icon>
                                         &nbsp;Delete
@@ -160,7 +200,7 @@ const Providers = () => {
                                             const value = (column.id !=="id") ? 
                                                 row[column.id] 
                                                 : 
-                                                <input type="checkbox" name={row[column.id]} value={row[column.id]}/>
+                                                <input checked={listingsSelected.includes(row[column.id])} type="checkbox" name={row[column.id]} value={row[column.id]} onChange={listingSelected} />
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
                                                 {value}
