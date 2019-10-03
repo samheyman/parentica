@@ -7,9 +7,10 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import { LocaleContext } from '../contexts/LocaleContext';
 import { ListingsContext } from '../contexts/ListingsContext';
-
+import Loader from '../components/Loader';
 import MenuItem from '@material-ui/core/MenuItem';
 import firebase from '../config/firebase';
+import { FormattedMessage } from 'react-intl';
 
 
 const ClassForm = () => {
@@ -153,7 +154,10 @@ const ClassForm = () => {
         const { locale } = useContext(LocaleContext);
         const handleSubmit = (e) => {
             e.preventDefault();
-            const tagList=tags.split(",").map(item => item.trim());
+            setLoading(true);
+            const tagList = tags.split(",").map(item => item.trim());
+            const descriptionParagraphs = description.split('\n').map(paragraph => paragraph.trim());
+            const descriptionCleaned = descriptionParagraphs.filter(paragraph => paragraph!=="");
             firebase.firestore().collection('listings').add({
                 online,
                 format,
@@ -164,6 +168,10 @@ const ClassForm = () => {
                 price,
                 website,
                 tags: tagList,
+                description: descriptionCleaned,
+                city,
+                district,
+                address,
                 companyName,
                 image,
 
@@ -176,10 +184,20 @@ const ClassForm = () => {
                 setLanguage('');
                 setWebsite('');
                 setTags('');
+                setDescription('');
+                setCity('');
+                setDistrict('');
+                setAddress('');
                 setImage('');
                 setCompanyName('');
+                setLoading(false);
+                setSuccess(true);
             })
         }
+
+        const [ loading, setLoading ] = useState(false);
+        const [ success, setSuccess ] = useState(false);
+
         const [ online, setOnline ] = useState('');
         const [ format, setFormat ] = useState('');
         const [ listingName, setListingName ] = useState('');
@@ -193,6 +211,9 @@ const ClassForm = () => {
         const [ website, setWebsite ] = useState('');
         const [ image, setImage ] = useState('');
         const [ description, setDescription ] = useState('');
+        const [ city, setCity ] = useState('');
+        const [ district, setDistrict ] = useState('');
+        const [ address, setAddress ] = useState('');
         const [ companyLogo, setCompanyLogo ] = useState('');
         const [ listingImage, setListingImage ] = useState('');
         const [ companyName, setCompanyName ] = useState('');
@@ -204,8 +225,7 @@ const ClassForm = () => {
                         <h2>
                             New Class
                         </h2>           
-                
-                        <form className="new-class-form noValidate" autoComplete="off" onSubmit={handleSubmit}>
+                        <form className={"new-class-form noValidate " + (success ? "hide" : "show")} autoComplete="off" onSubmit={handleSubmit}>
                             {/* <h3>Format</h3> */}
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="online">Type: </label>
@@ -299,10 +319,10 @@ const ClassForm = () => {
                                 >
                                 Upload File
                                 <input
-                                    required
+                                    // required
                                     value={image}
                                     type="file"
-                                    style={{ display: "none" }}
+                                    // style={{ display: "none" }}
                                     onChange={(e) => setImage(e.currentTarget.value)}
                                 />
                                 <span>{image}</span>
@@ -323,7 +343,8 @@ const ClassForm = () => {
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="tags">Tags: </label>
                                 <TextField
-                                    id="class-name"
+                                    required
+                                    id="tags"
                                     margin="dense"
                                     variant="outlined"
                                     value={tags}
@@ -334,50 +355,52 @@ const ClassForm = () => {
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="description">Description: </label>
                                 <TextField
+                                    required
                                     id="description"
-                                    label=""
+                                    value={description}
                                     multiline
                                     rows="12"
-                                    rowsMax="100"
-                                    defaultValue="Please describe your class"
+                                    placeholder="Please describe your class"
                                     margin="normal"
-                                    helperText=""
                                     variant="outlined"
+                                    onChange={(e) => setDescription(e.currentTarget.value)}
                                 />
                             </div>
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="city">City: </label>
                                 <TextField
-                                    id="class-name"
-                                    label=""
+                                    id="city"
+                                    value={city}
                                     margin="dense"
                                     variant="outlined"
+                                    onChange={(e) => setCity(e.currentTarget.value)}
                                 />
                             </div>
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="district">District: </label>
                                 <TextField
-                                    id="class-name"
-                                    label=""
+                                    id="district"
+                                    value={district}
                                     margin="dense"
                                     variant="outlined"
+                                    onChange={(e) => setDistrict(e.currentTarget.value)}
                                 />
                             </div>
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="address">Address of venue: </label>
                                 <TextField
-                                    id="class-name"
-                                    label=""
+                                    id="address"
+                                    value={address}
                                     margin="dense"
                                     variant="outlined"
+                                    onChange={(e) => setAddress(e.currentTarget.value)}
                                 />
                             </div>
                             <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="Customer">Company name: </label>
+                                <label className="ant-form-item-required" title="companyName">Company name: </label>
                                 <TextField
-                                    id="class-name"
+                                    id="companyName"
                                     value={companyName}
-                                    label=""
                                     margin="dense"
                                     variant="outlined"
                                     onChange={(e) => setCompanyName(e.currentTarget.value)}
@@ -397,7 +420,7 @@ const ClassForm = () => {
                                 </Button>
                             </div>
                             <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
-                                
+                            { !loading ?
                                 <div className="form-buttons">
                                     <Button variant="contained" className="send-form-data primary" type="submit" >
                                         <Icon>
@@ -414,10 +437,29 @@ const ClassForm = () => {
                                     </Button>
                                     </Link>
                                 </div>
+                                :
+                                <Loader/>}
                                 
                             </div>
+                            
                         </form>
-                        
+                        <div className={"success-message " + (success ? "show" : "hide")} >
+                                <Icon className="success-icon">
+                                    done
+                                </Icon>
+                                <p>
+                                <FormattedMessage 
+                                    id={`providers.confirmClassAdded.${locale}`}
+                                    defaultMessage="Class added"
+                                />
+                                </p>
+                                <p><Link to={{pathname:`/${locale.split('-')[0]}/providers`}}>
+                                <FormattedMessage 
+                                    id={`providers.backHomeLink.${locale}`}
+                                    defaultMessage="back to list"
+                                />
+                                </Link></p>
+                            </div>
                     </Grid>
                 </Grid>
                 <br/>

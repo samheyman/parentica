@@ -14,6 +14,7 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import { FormattedDate } from 'react-intl';
 import * as moment from 'moment';
+ 
 import uuid from 'uuid';
 // import { ListingsContext } from '../contexts/ListingsContext';
 import firebase from '../config/firebase';
@@ -44,6 +45,7 @@ const columns = [
 ];
 
 function createData(id, name, provider, date, price) {
+    moment.locale('en');
     console.log(typeof(date) + " -- " + date);
     let class_date = moment(date).format("MMM D");
     let class_time = moment(date).format("HH:mm");
