@@ -33,3 +33,7 @@ cypress/fixtures/
 cypress/integration/examples/
 cypress/plugins/
 cypress/support/
+
+# firebase
+src/config
+src/config/firebase.js
