@@ -188,3 +188,18 @@ a {
     flex-direction: column;
     justify-content: center;
  }
+
+
+ .type-card-online {
+    button {
+        color: white;
+        background: linear-gradient(243deg, rgba(120,91,243,1) 25%, rgba(195,91,243,1) 100%, rgba(91,185,243,1) 125%);
+    }
+}
+
+ .type-card-webinars {
+    button {
+        color: white;
+        background: linear-gradient(243deg, rgba(45,224,128,1) 25%, rgba(45,140,224,1) 100%, rgba(93,224,45,1) 125%);
+    }
+}

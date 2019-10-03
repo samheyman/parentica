@@ -131,7 +131,7 @@ function Home(props) {
                         defaultMessage="Search online" />    
                 </h2>  
                 <Grid container className="topic-cards " spacing={2} alignContent="center">
-                    <TypeCard
+                    <TypeCard className="classes-card"
                         locale={`${locale}`}
                         topic="online classes" 
                         topicLocalised={<FormattedMessage 
@@ -140,7 +140,7 @@ function Home(props) {
                         rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
-                    <TypeCard   
+                    <TypeCard className="webinars-card"
                         locale={`${locale}`}
                         topic="webinars" 
                         topicLocalised={<FormattedMessage 

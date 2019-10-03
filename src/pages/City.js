@@ -97,7 +97,7 @@ function City(props) {
                     {props.classesThisWeek.map((item) => {                        
                         return(
                             // <div className="item" key={item.id}>
-                            <Grid item xs={12} sm={6} md={3} key={item.id}>
+                            <Grid item xs={12} sm={6} md={4} key={item.id}>
                                     <ClassCard 
                                         classEntry={item}
                                     />
