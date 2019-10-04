@@ -21,7 +21,7 @@ import firebase from '../config/firebase';
 
 const columns = [
     { id: 'id', label: ''},
-    { id: 'name', label: 'Class name' },
+    { id: 'name', label: 'Name' },
     { id: 'provider', label: 'Provider'},
     {
         id: 'class_date',
@@ -42,13 +42,14 @@ const columns = [
         align: 'right',
         format: value => value.toFixed(2),
     },
+    { id: 'active', label: 'Live'}
 ];
 
-function createData(id, name, provider, date, price) {
+function createData(id, name, provider, date, price, active) {
     moment.locale('en');
     let class_date = moment(date).format("MMM D");
     let class_time = moment(date).format("HH:mm");
-    return { id, name, provider, class_date, class_time , price };
+    return { id, name, provider, class_date, class_time , price, active };
 }
   
 const useStyles = makeStyles({
@@ -89,6 +90,24 @@ function deleteListings(listings) {
     return true;
 }
 
+function activateListings(listings) {
+    listings.forEach((listing) => {
+        firebase.firestore().collection('listings').doc(listing).update({
+            "active": true
+        });
+    });
+    return true;
+}
+
+function deactivateListings(listings) {
+    listings.forEach((listing) => {
+        firebase.firestore().collection('listings').doc(listing).update({
+            "active": false
+        });
+    });
+    return true;
+}
+
 const Providers = () => {
     const listings = useListings();
     const classes = useStyles();
@@ -105,7 +124,8 @@ const Providers = () => {
                     classEntry.listingName,
                     classEntry.companyName,
                     classEntry.date,
-                    classEntry.price
+                    classEntry.price,
+                    classEntry.active ? "true": "false"
             ));
         });
     } else {
@@ -148,6 +168,26 @@ const Providers = () => {
         }
     }
 
+    const activateSelectedListings = () => {
+        let result = false;
+        result = activateListings(listingsSelected);
+        if (result) {
+            console.log("activated listing, removing it from list");
+            setListingsSelected([]);
+            setIsListingSelected(false);
+        }
+    }
+
+    const deactivateSelectedListings = () => {
+        let result = false;
+        result = deactivateListings(listingsSelected);
+        if (result) {
+            console.log("deactivated listing, removing it from list");
+            setListingsSelected([]);
+            setIsListingSelected(false);
+        }
+    }
+
     return(<LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
             return(
@@ -165,6 +205,32 @@ const Providers = () => {
                                             &nbsp;New
                                     </Button>
                                 </Link>
+                                <Button 
+                                    disabled={!isListingSelected && listingsSelected.length<1} 
+                                    variant="outlined" 
+                                    className="delete-class-btn" 
+                                    onClick={()=> {
+                                        activateSelectedListings()
+                                    }}
+                                >
+                                    <Icon>
+                                        visibility
+                                    </Icon>
+                                    &nbsp;Activate
+                                </Button>
+                                <Button 
+                                    disabled={!isListingSelected && listingsSelected.length<1} 
+                                    variant="outlined" 
+                                    className="delete-class-btn" 
+                                    onClick={()=> {
+                                        deactivateSelectedListings()
+                                    }}
+                                >
+                                    <Icon>
+                                        visibility_off
+                                    </Icon>
+                                    &nbsp; Deactivate
+                                </Button>
                                 <Button 
                                     disabled={!isListingSelected && listingsSelected.length<1} 
                                     variant="outlined" 
@@ -203,10 +269,17 @@ const Providers = () => {
                                     return (
                                       <TableRow hover role="checkbox" tabIndex={-1} key={uuid()}>
                                         {columns.map(column => {
-                                            const value = (column.id !=="id") ? 
-                                                row[column.id] 
-                                                : 
-                                                <input checked={listingsSelected.includes(row[column.id])} type="checkbox" name={row[column.id]} value={row[column.id]} onChange={listingSelected} />
+                                            let value = null;
+                                            if (column.id == "active") {
+                                                value = (row[column.id  ]==="true") ? 
+                                                    <Icon style={{color: '#2DE080'}}>visibility</Icon>
+                                                    :
+                                                    <Icon style={{color: '#eaeaea'}}>visibility_off</Icon>;
+                                            } else if (column.id !=="id") {
+                                                value = row[column.id];
+                                            } else {
+                                                value = <input checked={listingsSelected.includes(row[column.id])} type="checkbox" name={row[column.id]} value={row[column.id]} onChange={listingSelected} />
+                                            }
                                             return (
                                                 <TableCell key={column.id} align={column.align}>
                                                 {value}

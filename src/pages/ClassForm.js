@@ -151,6 +151,21 @@ const ClassForm = () => {
     //     });
     // }
 
+        const cleanString = (string) => {
+            let output = string.toLowerCase();
+            output.replace(/[|&$%@"<>()+*'`!?:;,~]/g, "");
+            output.replace("é", "e");
+            output.replace("è", "e");
+            output.replace("ê", "e");
+            output.replace("ë", "e");
+            output.replace("à", "a");
+            output.replace("á", "a");
+            output.replace("â", "a");
+            output.replace("ä", "a");
+            output.replace("ñ", "n");
+            return output.split(' ').join('-');
+        }
+
         const { locale } = useContext(LocaleContext);
         const handleSubmit = (e) => {
             e.preventDefault();
@@ -158,6 +173,8 @@ const ClassForm = () => {
             const tagList = tags.split(",").map(item => item.trim());
             const descriptionParagraphs = description.split('\n').map(paragraph => paragraph.trim());
             const descriptionCleaned = descriptionParagraphs.filter(paragraph => paragraph!=="");
+            const tempImageUrl = cleanString(listingName + " " + companyName);
+            const tempCompanyLogo = cleanString(companyName);
             firebase.firestore().collection('listings').add({
                 online,
                 format,
@@ -173,9 +190,15 @@ const ClassForm = () => {
                 district,
                 address,
                 companyName,
-                image,
+                listingImage: tempImageUrl,
+                companyLogo: tempCompanyLogo,
+                active: false
 
             }).then(() => {
+                setLoading(false);
+                setCompanyLogo(tempCompanyLogo);
+                setListingImage(tempImageUrl);
+                setSuccess(true);
                 setOnline('');
                 setFormat('');
                 setListingName('');
@@ -188,10 +211,7 @@ const ClassForm = () => {
                 setCity('');
                 setDistrict('');
                 setAddress('');
-                setImage('');
                 setCompanyName('');
-                setLoading(false);
-                setSuccess(true);
             })
         }
 
@@ -214,9 +234,9 @@ const ClassForm = () => {
         const [ city, setCity ] = useState('');
         const [ district, setDistrict ] = useState('');
         const [ address, setAddress ] = useState('');
+        const [ companyName, setCompanyName ] = useState('');
         const [ companyLogo, setCompanyLogo ] = useState('');
         const [ listingImage, setListingImage ] = useState('');
-        const [ companyName, setCompanyName ] = useState('');
 
         return(
             <Container className="main-content">
@@ -290,6 +310,7 @@ const ClassForm = () => {
                                     variant="outlined"
                                     onChange={(e) => setDuration(e.currentTarget.value)}
                                 />
+                                <span className="time-notice">in minutes    </span>
                             </div>
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="price">Price: </label>
@@ -311,7 +332,7 @@ const ClassForm = () => {
                                 </select>
                             </div>
                             
-                            <div className="provider-form-item">
+                            {/* <div className="provider-form-item">
                             <label className="ant-form-item-required" title="image">Image: </label>
                             <Button
                                 variant="contained"
@@ -327,7 +348,7 @@ const ClassForm = () => {
                                 />
                                 <span>{image}</span>
                                 </Button>
-                            </div>
+                            </div> */}
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="website">Website: </label>
                                 <TextField
@@ -406,7 +427,7 @@ const ClassForm = () => {
                                     onChange={(e) => setCompanyName(e.currentTarget.value)}
                                 />
                             </div>
-                            <div className="provider-form-item">
+                            {/* <div className="provider-form-item">
                             <label className="ant-form-item-required" title="logo">Company logo: </label>
                             <Button
                                 variant="contained"
@@ -418,7 +439,7 @@ const ClassForm = () => {
                                     style={{ display: "none" }}
                                 />
                                 </Button>
-                            </div>
+                            </div> */}
                             <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
                             { !loading ?
                                 <div className="form-buttons">
@@ -452,6 +473,11 @@ const ClassForm = () => {
                                     id={`providers.confirmClassAdded.${locale}`}
                                     defaultMessage="Class added"
                                 />
+                                </p>
+                                <p>
+                                    Please add the following images to cloud store:
+                                    <br/>{listingImage}
+                                    <br/>{companyLogo}
                                 </p>
                                 <p><Link to={{pathname:`/${locale.split('-')[0]}/providers`}}>
                                 <FormattedMessage 
