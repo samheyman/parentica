@@ -3,12 +3,12 @@
 // -----------------------------------------------------------------------------
 
 /// Container dimensions
-$container-width: 90%;
+$container-width: 95%;
 $container-width-mobile: 100%;
 
 /// Text color
 /// @type Color
-$font-dark: rgb(57, 59, 65);
+$font-dark: rgb(36, 38, 18);
 $font-pale: rgba(91, 93, 95, 0.7);
 $font-very-pale: rgb(224, 224, 224);
 // $purple: #3f51b5;
@@ -17,7 +17,8 @@ $purple: #785BF3;
 $green: #2DE080;
 // $green: #6EDB88;
 $navy: #03314B;
-
+$very-dark-grey: rgb(36,30,18);
+$very-pale-grey: rgb(229,227,221);
 /// Background colors
 /// @type Color
 // $body-background-color: rgb(255, 255, 255);
