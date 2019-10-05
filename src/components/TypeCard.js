@@ -31,7 +31,7 @@ export default function TypeCard(props) {
 
     }
     return(
-        <Grid item xs={6} sm={6} md={4} key="3">
+        <Grid item xs={6} sm={6} md={3} key="3">
             <Link 
                     to={{
                         pathname: routePath, type: topic }}

@@ -29,16 +29,16 @@ class Main extends Component {
     static contextType = ListingsContext;
     render() {  
         const {listings} = this.context;     
+        // console.log(listings);
         const HomePage = () => {
-            // let count = 0;
-            // let today = new Date();
+            let count = 0;
+            let today = new Date();
             return(
                 <Home 
                     topics={this.props.topics}
-                    // onlineClasses={listings.filter((item) => 
-                    //     (item.type==='online' || item.type==='webinar' ) && 
-                    //     (!item.date || new Date(item.date) > today) &&
-                    //     count++ < 4)}
+                    onlineClasses={listings.filter((item) => 
+                        (item.online==='online' || item.type==='webinar' )  &&
+                        count++ < 4)}
                     onlineProviders={this.props.providers.filter((provider) => provider.online)}
                 />
             );
@@ -50,18 +50,18 @@ class Main extends Component {
             let nextWeek = new Date();
             let sevenDays = today.getDate() + 7;
             nextWeek.setDate(sevenDays);
-            console.log(today);
+            let results = listings.filter(
+                (item) => (item.city==='Madrid' || item.city==='madrid') && 
+                          new Date(item.date) > today && 
+                          new Date(item.date) < nextWeek  && 
+                          count++ < 4);
+            console.log(results);
             console.log(nextWeek);
             return(
                 <City 
                     locale={this.props.locale}
                     city='madrid'
-                    classesThisWeek={
-                        listings.filter(
-                            (item) => (item.city==='Madrid' || item.city==='madrid') && 
-                                      new Date(item.date) > today && 
-                                      new Date(item.date) < nextWeek  && 
-                                      count++ < 4)}
+                    classesThisWeek={results}
                     topics={this.props.topics}
                     madridProviders={this.props.providers.filter((provider) => !provider.online)}
                 />

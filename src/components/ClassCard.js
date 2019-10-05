@@ -104,13 +104,13 @@ function MediaCard(props) {
                     >
                 <CardMedia
                   className={classes.media}
-                  image={`../../images/classes/${props.classEntry.image}_sm.jpg`}
+                  image={`../../images/classes/${props.classEntry.listingImage}_sm.jpg`}
                   title={props.classEntry.className}
                 />
             </LazyLoad>
             <CardContent>
               <Typography className={`class-name`} gutterBottom variant="h3" component="h3">
-                {props.classEntry.className.toLowerCase()}
+                {props.classEntry.listingName.toLowerCase()}
               </Typography>
               <div className="company">
                 <LazyLoad 
@@ -129,41 +129,31 @@ function MediaCard(props) {
                     {(props.classEntry.date != null)?
                     
                       <span className="class-details-date">
-
                         {moment(props.classEntry.date).format("MMM D")}
-                      
                       </span>
                       :
                       <span className="class-details-date">
-                      <FormattedMessage 
-                            id={`classDetails.time.anytime.${locale}`}
-                            defaultMessage="Anytime"
+                        <FormattedMessage 
+                          id={`classDetails.time.anytime.${locale}`}
+                          defaultMessage="Anytime"
                         />
                       </span>
                     }
-                    {(props.classEntry.time != null)?
+                   
+                    <React.Fragment>
+                    <span className="dot"></span>
+                    <span className="class-details-time">
+                      {moment(props.classEntry.date).format("HH:mm")} 
+                    </span>
+                    </React.Fragment>                     
+                        
+                    {(props.classEntry.district !== null && props.classEntry.district !== "")?
                         (
                           <React.Fragment>
-                          <span className="dot"></span>
-                          <span className="class-details-time">
-                            <FormattedDate
-                              value={props.classEntry.date}
-                              hour="2-digit"
-                              minute="2-digit"
-                            />
-                          </span>
-                          </React.Fragment>                     
-                        )
-                        :
-                        (null)
-                    }
-                    {(props.classEntry.district != null)?
-                        (
-                          <React.Fragment>
-                          <span className="dot"></span>
-                          <span className="class-details-district">
-                          {props.classEntry.district}
-                          </span>
+                            <span className="dot"></span>
+                            <span className="class-details-district">
+                            {props.classEntry.district}
+                            </span>
                           </React.Fragment>                     
                         )
                         :

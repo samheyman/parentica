@@ -1,22 +1,42 @@
-import React, { createContext, useReducer } from 'react';
-// import { LISTINGS } from '../shared/listingsJSON';
-import { listingsReducer } from '../reducers/lisingsReducer';
-// import fbConfig from './FirebaseContext';
+import React, { createContext, useState, useEffect } from 'react';
+import firebase from '../config/firebase';
 
 export const ListingsContext = createContext();
 
+function useListings() {
+    const [times, setTimes] = useState([]);
+   
+    useEffect(() => {
+        const unsubscribe = firebase.firestore()
+            .collection('listings').where("active", "==", true).onSnapshot((snapshot) => {
+            const newListings = snapshot.docs.map((doc) => ({
+                id: doc.id,
+                ...doc.data()
+            }));
+            setTimes(newListings);
+        });
+        return () => unsubscribe();
+
+    }, [])
+
+    return times;
+}
 
 
 const ListingsContextProvider = (props) => {
-    let LISTINGS = [];
-    const [listings, dispatch] = useReducer(listingsReducer, LISTINGS);
+    const listings = useListings();
+    
+
+    // let listings = data;
+    // console.log(listings);
+    // const [listings, dispatch] = useReducer(listingsReducer, LISTINGS);
     
     // fbConfig.firestore().collection('listings').get().then(
     //     [listings, dispatch] = useReducer(listingsReducer, LISTINGS)
     // );
     
     return(
-        <ListingsContext.Provider value={{listings, dispatch}}>
+        <ListingsContext.Provider value={{listings}}>
             { props.children }
         </ListingsContext.Provider>
     );

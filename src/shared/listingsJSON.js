@@ -1,7 +1,7 @@
 export const LISTINGS = [
     {
     "id":5076,
-    "type":"group",
+    "type":"online",
     "className":"Hipopresivos",
     "tags":[
     "postpartum"

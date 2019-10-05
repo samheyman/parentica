@@ -36,20 +36,19 @@ const columns = [
         align: 'right',
     },
     {
-        id: 'price',
-        label: 'Price',
+        id: 'online',
+        label: 'Online',
         minWidth: 120,
         align: 'right',
-        format: value => value.toFixed(2),
     },
     { id: 'active', label: 'Live'}
 ];
 
-function createData(id, name, provider, date, price, active) {
+function createData(id, name, provider, date, online, active) {
     moment.locale('en');
-    let class_date = moment(date).format("MMM D");
+    let class_date = moment(date).format("D MMM, YYYY");
     let class_time = moment(date).format("HH:mm");
-    return { id, name, provider, class_date, class_time , price, active };
+    return { id, name, provider, class_date, class_time , online, active };
 }
   
 const useStyles = makeStyles({
@@ -64,11 +63,10 @@ const useStyles = makeStyles({
 
 
 function useListings() {
-    // TODO add unsubscribe callback!
     const [times, setTimes] = useState([]);
    
     useEffect(() => {
-        const unsubscribe = firebase.firestore().collection('listings').onSnapshot((snapshot) => {
+        const unsubscribe = firebase.firestore().collection('listings').orderBy('date', 'desc').onSnapshot((snapshot) => {
             const newListings = snapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
@@ -124,7 +122,7 @@ const Providers = () => {
                     classEntry.listingName,
                     classEntry.companyName,
                     classEntry.date,
-                    classEntry.price,
+                    classEntry.online,
                     classEntry.active ? "true": "false"
             ));
         });
