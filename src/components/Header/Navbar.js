@@ -31,7 +31,7 @@ export default function Navbar(props) {
     });
 
     const toggleDrawer = (side, open) => event => {
-      var element = document.getElementById("nav-icon3");
+      var element = document.getElementById("nav-icon");
       (element.className==="open") ? element.classList.remove("open") : element.classList.add("open");
               
       if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
@@ -115,7 +115,7 @@ export default function Navbar(props) {
               </ul>
             </Box>
             <Box display={{ xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' }}>
-            <div id="nav-icon3" 
+            <div id="nav-icon" 
               aria-label="menu"
               onClick = {toggleDrawer('top', true)}>
               <span></span>
@@ -123,10 +123,6 @@ export default function Navbar(props) {
               <span></span>
               <span></span>
             </div>
-              {/* <IconButton 
-                onClick={toggleDrawer('top', true)} className={`${classes.menuButton} menu-icon`} color="inherit" aria-label="menu">
-                <MenuIcon />
-              </IconButton> */}
             </Box>
           </Toolbar>
         </AppBar>
