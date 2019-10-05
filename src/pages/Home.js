@@ -83,18 +83,6 @@ function Home(props) {
                         defaultMessage="Find pregnancy and parenting classes and events, either online or in one of the cities we are in"
                     />
                 </p>
-                {/* <div className="main-links">
-                    <Link to={{pathname:`/${locale.split('-')[0]}/explore/online`, topic:"all"}}>
-                        <Button id="online-classes-btn" variant="contained" className={`btn-first ${classes.button}`}>
-                            <FormattedMessage id={`homepage.tagline.online.button.${locale}`} />
-                        </Button>
-                    </Link>
-                    <Link to={{pathname:`/${locale.split('-')[0]}/explore/madrid`, topic:"all"}}>
-                        <Button id="madrid-classes-btn" variant="contained" className={`btn-second ${classes.button}`}>
-                            <FormattedMessage id={`homepage.tagline.madrid.button.${locale}`} />
-                        </Button>
-                    </Link>
-                </div> */}
             </div>
             
             <div className="cities">
