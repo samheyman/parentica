@@ -1,613 +1,5 @@
 export const CLASSES = [
     {
-    "id":5076,
-    "type":"group",
-    "className":"Hipopresivos",
-    "tags":[
-    "postpartum"
-    ],
-    "city":"Madrid",
-    "district":"Vallecas",
-    "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-30T09:00+02:00",
-    "time":"09h00",
-    "duration":60,
-    "url":"https://maternayoga.es/calendario/",
-    "image":"hipopresivosmaternayoga",
-    "companyName":"Materna Yoga",
-    "companyLogo":"maternayoga_sq",
-    
-    "price":43,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Hipopresivos",
-    "Clases de 1 hora cada lunes a las 9h y 17h, martes a las 10h, miércoles a las 12h y jueves a las 10h.",
-    "Precios:",
-    "1 día a la semana: 43€ / mes, 117€ / trimestre, 144€ / cuatrimestre",
-    "2 días a la semana: 72€ / mes, 198€ / trimestre, 256€ / cuatrimestre",
-    "3 días a la semana: 96€ / mes, 261€ / trimestre, 324€ / cuatrimestre",
-    "¿Qué son los hipopresivos?... Los hipopresivos no son un tipo de gimnasia abdominal, una técnica más completa y global: \"un conjunto de técnicas posturales que provocan un descenso de la presión intraabdominal y una activación refleja de los músculos del suelo pélvico y de la faja abdominal\". A largo plazo, su práctica continuada conduce a un aumento del tono del suelo pélvico y de la faja abdominal, reduciendo de forma significativa el perímetro abdominal y el riesgo de incontinencia urinaria y de descensos viscerales. En Materna Yoga podrás encontrar talleres de un día al mes o clases regulares para mantener tu rutina. Para prevenir y mantener con un trabajo de 2 veces en semana podemos notar sus beneficios. En personas con patologías (hernia discal, prolapso, incontinencia urinaria, etc…) la práctica más indicada es de 4 ó 5 veces por semana. ¿Quién puede realizar los hipopresivos? Prácticamente todo el mundo. En Materna Yoga, espacio colaborador del Centro Médico Fuentespina, nuestra fisioterapeuta especializada realizará un cuestionario y exploración, si fuera necesario, antes de comenzar. De esta manera, las clases irán encaminadas a lo que tu cuerpo necesita. En Materna Yoga, os daremos todas estas respuestas, y os recomendamos aprender siempre con la supervisión de un profesional especializado."
-    ],
-    "nameId":"materna-yoga-hipopresivos-5076"
-    },
-    {
-    "id":5070,
-    "type":"group",
-    "className":"Yoga en el embarazo",
-    "tags":[
-    "pregnancy",
-    "fitness", "yoga"
-    ],
-    "city":"Madrid",
-    "district":"Vallecas",
-    "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-30T10:00+02:00",
-    "time":"10h00",
-    "duration":60,
-    "url":"https://maternayoga.es/calendario/",
-    "image":"yogaembarazomaternayoga",
-    "companyName":"Materna Yoga",
-    "companyLogo":"maternayoga_sq",
-    
-    "price":43,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Yoga para mamás y bebés",
-    "Clases de 1 hora cada lunes y miércoles",
-    "Precios:",
-    "1 día a la semana: 43€ / mes, 117€ / trimestre, 144€ / cuatrimestre",
-    "2 días a la semana: 72€ / mes, 198€ / trimestre, 256€ / cuatrimestre",
-    "3 días a la semana: 96€ / mes, 261€ / trimestre, 324€ / cuatrimestre",
-    "¡Enhorabuena! ¡Vas a ser MAMÁ! La maternidad supone un gran cambio tanto a nivel físico como emocional... ",
-    "Queremos acompañarte y aportar nuestro granito de arena para que las alegrías no se vean empañadas por algunas \"cosillas no tan buenas\" que acontecen en esta etapa. ¿Te duele la espalda? ¿Tienes molestias digestivas? ¿Te cuesta un abismo subir unas escaleras? ¿Quieres cuidarte y cuidarl@? ¿Te gustaría reducir tu nivel de estrés entre todas esas pruebas médicas, elegir un nombre, ponerle la habitación, comprar el carrito, las abuelas, tu vuelta al trabajo tras la baja.....? ¡Vente a nuestros grupos de Embarazo! Te ayudaremos a aliviar las molestias físicas típicas de esta etapa, cuidarás de tu cuerpo (y del de tu bebé) y aprenderás a respirar de manera beneficiosa para los dos. A través de los estiramientos y asanas de Yoga notarás cómo mejoras. Gracias a la respiración durante la práctica, aprenderás técnicas muy útiles para el momento del parto. En MATERNA YOGA, damos especial importancia al SUELO PÉLVICO y sus cuidados, antes y después del parto. Aprenderás a identificarlo, te enseñaremos movimientos y posturas adecuadas de ayuda para \"VUESTRO GRAN MOMENTO\"... Como madres y profesionales sabemos que la parte emocional de las clases es fundamental para tí, ya que compartes este momento con otras mujeres, sus inquietudes, inseguridades y alegrías. Siendo fieles al significado de la palabra Yoga (Unión), fortalecerás el vínculo afectivo con tu bebé, llegando casi a \"tocaros\" durante las técnicas de relajación de las que disfrutarás. Te animamos a vivir con nosotras una MATERNIDAD CONSCIENTE."
-    ],
-    "nameId":"materna-yoga-yoga-en-el-embarazo-5070"
-    },
-    {
-    "id":5069,
-    "type":"group",
-    "className":"Yoga para mamás y bebés",
-    "tags":[
-    "baby",
-    "fitness", "yoga"
-    ],
-    "city":"Madrid",
-    "district":"Vallecas",
-    "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
-    "date":"2019-09-30T11:30+02:00",
-    "time":"11h30",
-    "duration":60,
-    "url":"https://maternayoga.es/calendario/",
-    "image":"yogamamasybebesmaternayoga",
-    "companyName":"Materna Yoga",
-    "companyLogo":"maternayoga_sq",
-    
-    "price":43,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Yoga para mamás y bebés",
-    "Clases de 1 hora cada lunes y miércoles",
-    "Precios:",
-    "1 día a la semana: 43€ / mes, 117€ / trimestre, 144€ / cuatrimestre",
-    "2 días a la semana: 72€ / mes, 198€ / trimestre, 256€ / cuatrimestre",
-    "3 días a la semana: 96€ / mes, 261€ / trimestre, 324€ / cuatrimestre",
-    "¿Tu cuerpo ha cambiado? ¿Tu bebé \"no te deja\" hacer nada? ¿Siempre has tenido curiosidad por practicar YOGA?... En MATERNA YOGA las clases para mamás y bebés defienden la verdadera esencia de esta práctica milenaria. La palabra YOGA significa UNIÓN. Os divertiréis juntos y eso ayudará a fortalecer vuestro vínculo afectivo, dejando tras la puerta todos los juicios y preocupaciones que ahora tanto te afectan. Tocamos, abrazamos, besamos y cantamos a nuestro bebé, a la vez que cuidamos nuestra figura y ayudamos a nuestro cuerpo con el ejercicio físico. Encontrarás una tribu de mujeres/hombres que se encuentran en tu misma situación. Tu bebé se divertirá, estimularemos sus sentidos, y encontrará una mini-tribu de amiguitos que quizá dure para siempre..... Y los papás y mamás también!"
-    ],
-    "nameId":"materna-yoga-yoga-para-mamás-y-bebés-5069"
-    },
-    {
-    "id":1104,
-    "type":"group",
-    "className":"Yoga para mamás con bebés",
-    "date":"2019-09-30T12:30+02:00",
-    "time":"12h30",
-    "tags":[
-    "fitness", "yoga"
-    ],
-    "city":"Madrid",
-    "district":"La Latina",
-    "address":"C / Aguas 4, local 2, 28005 Madrid",
-    "duration":60,
-    "url":"https://espaciokenko.com/yoga-mamas-y-bebes/",
-    "image":"yogamumsbabyskenko",
-    "companyName":"Espacio Kenko",
-    "companyLogo":"espaciokenko_sq",
-    
-    "price":50,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
-    "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
-    "Si no has practicado yoga previamente, no te preocupes. Nuestras clases son específicas para mamás y te ayudarán a disfrutar con salud y vitalidad este período.",
-    "¡Te esperamos!"
-    ],
-    "nameId":"espacio-kenko-yoga-para-mamás-con-bebés-1104"
-    },
-    {
-    "id":5098,
-    "type":"group",
-    "className":"Talleres postparto",
-    "tags":[
-    "postpartum"
-    ],
-    "city":"Madrid",
-    "district":"Chamartín",
-    "address":"Calle Luis Larrainza, 55, 28002 Madrid",
-    "date":"2019-09-30T18:30+02:00",
-    "time":"18h30",
-    "duration":90,
-    "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
-    "image":"postpartoentremamas",
-    "companyName":"Entre Mamás",
-    "companyLogo":"entremamas_sq",
-    
-    "price":30,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Precio:",
-    "30€/sesión en grupo.",
-    "50 euros la sesión privada (acordando la fecha).",
-    "Hemos organizado este espacio de reflexión que puede hacerse en cualquier momento (junto a tu pareja, si tienes) y está pensado para el último trimestre del embarazo y el primer trimestre después del nacimiento.",
-    "​¿En qué consisten? Información y recursos para un posparto llevadero en el que puedas disfrutar con plenitud de la maternidad. Recomendaciones desde la evidencia. Recursos para gestionar aquellos momentos difíciles de los primeros días en casa, las dudas, los sentimientos, el tiempo que ya no es el mismo... ",
-    "Sesión 1 - Primer lunes: Taller inicial de portabebés",
-    "Sesión 2 - Segundo lunes: Volver a amar después del parto",
-    "Sesión 3 - Tercer lunes: Nadie me lo dijo (la expectativa del posparto y su realidad)",
-    "Sesion 4 - Cuarto lunes: Qué le pasa a María (Para parejas de puérperas)",
-    "Sesión 5 - Taller de lactancia GRATUITO Si se hacen los otros talleres."
-    ],
-    "nameId":"entre-mamás-talleres-postparto-5098"
-    },
-    {
-        "id":13003,
-        "nameId":"lucy-allen-baby-body-wearing-body-burn-011019",
-        "type":"group",
-        "className":"Baby Wearing Body Burn",
-        "tags":[
-        "postpartum",
-        "baby",
-        "fitness"
-        ],
-        "city":"Madrid",
-        "district":"Vallehermoso",
-        "address":"Parque Santander, Av. de Pablo Iglesias, 9 · Madrid",
-        "date":"2019-10-01T10:30+02:00",
-        "duration":60,
-        "url":"https://www.meetup.com/Body-burn-with-Baby/",
-        "image":"babywearingbodyburnlucyallen",
-        "companyName":"Lucy Allen",
-        "companyLogo":"lucyallen_sq",
-        "price":7,
-        "language":"english",
-        "description":[
-        "Feeling exhausted and need a boost of energy?",
-        "Lacking the motivation to workout?",
-        "Want to meet other mums in Madrid?",
-        "Come and join us with your little one for a full-body circuit that will leave your muscles sore and your mind refreshed!",
-        "What will the workout consist of?",
-        "The full-body circuit makes use of different strength resistance bands, as well as the ‘resistance’ provided by your baby to increase the intensity of the movements. We primarily focus on toning and lifting the legs and glutes, both for aesthetic purposes and injury-prevention, as well as toning and strengthening the shoulders and back to help hold and carry increasingly heavy little bundles whilst improving posture. The core is worked throughout the routine through mindful breathing and activation techniques.",
-        "How big will the group be?",
-        "The group is kept to a maximum of 10 mums, to ensure that the movements are performed safely and effectively.",
-        "What shall I bring/wear?",
-        "*Comfortable workout clothing/footwear.",
-        "*Bottle of water.",
-        "*Toys to entertain baby (as needed)",
-        "*The class is designed as a baby-wearing workout class, however you are welcome to come with baby in the buggy if you don’t own a carrier. I do recommend that even if you come wearing your little one, that you also bring your pram/buggy just in case baby gets too heavy/fussy during the routine.",
-        "*FIRST CLASS = 5 EUROS*",
-        ],
-    },
-    {
-        "id":9006,
-        "nameId":"bel-mums-clase-de-lactancia-materna-9006",
-        "type":"group",
-        "className":"Clase de Lactancia Materna",
-        "tags":[
-        "pregnancy",
-        "breastfeeding"
-        ],
-        "city":"Madrid",
-        "district":"Almagro",
-        "address":"Paseo de las Castellana 45, Madrid",
-        "date":"2019-10-02T12:30+02:00",
-        "time":"12h30",
-        "duration":120,
-        "url":"https://www.belandmums.com/lactancia-materna/",
-        "image":"breastfeeding",
-        "companyName":"Bel & Mums",
-        "companyLogo":"belandmums_sq",
-        
-        "price":60,
-        "language":"spanish",
-        
-        
-        "description":[
-        "La lactancia materna es el mejor regalo que puedes darle a tu bebé y es muy reconfortante pero requiere mucho esfuerzo y dedicación. Por eso es muy recomendable asistir a un buen curso de lactancia durante el embarazo y así estar bien preparada desde su primera toma.",
-        "Te ayudaremos a alinear expectativas y evitar complicaciones que a menudo desembocan en un cese forzoso de lactancia.",
-        "Breastfeeding on demand",
-        "Proper storage of the milk"
-        ],
-    },
-    {
-    "id":1105,
-    "type":"group",
-    "className":"Yoga para mamás con bebés",
-    "date":"2019-10-02T12:30+02:00",
-    "time":"12h30",
-    "tags":[
-    "fitness", "yoga"
-    ],
-    "city":"Madrid",
-    "district":"La Latina",
-    "address":"C / Aguas 4, local 2, 28005 Madrid",
-    "duration":60,
-    "url":"https://espaciokenko.com/yoga-mamas-y-bebes/",
-    "image":"yogamumsbabyskenko",
-    "companyName":"Espacio Kenko",
-    "companyLogo":"espaciokenko_sq",
-    
-    "price":50,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Tras el parto son muchas las necesidades del bebé y suele ser complicado para la madre retomar la actividad física. Nuestras clases de yoga mamás y bebés te permitirán continuar la práctica de yoga durante el postparto y la lactancia mientras el bebé nos acompaña. ¡Una estupenda manera de ponerte en forma!",
-    "Los ejercicios en las clases de yoga mamás y bebés están enfocados en las necesidades corporales de la madre teniendo presente al bebé y pudiéndole atender en cualquier momento. Trabajamos el cuerpo con especial atención hacia las zonas más vulnerables en este período ayudándonos a aliviar molestias en la espalda, a tonificar el abdomen, el suelo pélvico…",
-    "Si no has practicado yoga previamente, no te preocupes. Nuestras clases son específicas para mamás y te ayudarán a disfrutar con salud y vitalidad este período.",
-    "¡Te esperamos!"
-    ],
-    "nameId":"espacio-kenko-yoga-para-mamás-con-bebés-1105"
-    },
-    {
-    "id":1089,
-    "type":"meetup",
-    "className":"The Bumps Tea",
-    "tags":[
-    "pregnancy",
-    ],
-    "district":"Almagro",
-    "address":"Paseo de la Castellana 45",
-    "city": "madrid",
-    "date":"2019-10-02T17:00+02:00",
-    "time":"17h00",
-    "duration":120,
-    "image":"bumpstea",
-    "url":"https://www.belandmums.com/informative-sessions/",
-    "companyName":"Bel & Mums",
-    "companyLogo":"belandmums_sq",
-    "label":"",
-    "price":6,
-    "language":"english",
-    "description":[
-    "At Bel & Mums we know how valuable it is to have a supporting network during pregnancy and postnatally. We also know how tricky this can be in a city like Madrid specially if you have just moved in. We want to help you creating your community and get to know other women in your same situation.",
-    "This is a bumps only group where every pregnant women is welcome.",
-    "This is an English-speaking group and we believe in the power of different culture's input so please come and join us, no matter if you come from Spain, England, China or anywhere! We would love to have you.",
-    "There is only one rule, our most important value:\"We don't judge, we support\" We start all Bumps Teas with an informal Q&A with Belen (midwife) and we provide teas and coffees (all included).",
-    "We host Bumps Teas in the morning and evenings (see dates when booking).",
-    "This initiative is partly funded by Bel&Mums, you pay 6€ and we pay the other 6€ to make it affordable for every woman.",
-    "The spaces are limited, please book in advance so you won't miss this one.",
-    "We are so looking forward to meeting you!"
-    ],
-    "nameId":"bel-mums-the-bumps-tea-1089"
-    },
-    {
-    "id":1086,
-    "type":"group",
-    "className":"Breastfeeding Class",
-    "tags":[
-    "pregnancy",
-    "breastfeeding"
-    ],
-    "city":"Madrid",
-    "district":"Almagro",
-    "address":"Paseo de las Castellana 45, Madrid",
-    "date":"2019-10-03T10:00+02:00",
-    "time":"10h00",
-    "duration":120,
-    "url":"https://www.belandmums.com/breastfeeding/",
-    "image":"breastfeeding",
-    "companyName":"Bel & Mums",
-    "companyLogo":"belandmums_sq",
-    
-    "price":60,
-    "language":"english",
-    
-    
-    "description":[
-    "Breastfeeding is the best gift you could give to your baby and is very rewarding but also requires effort and dedication. That is why it is highly recommended to attend a good Breastfeeding Course during pregnancy so you will be ready from his first feed.",
-    "We will help you to align expectations and avoid complications that often lead to a bad experience.",
-    "If your baby is already born we recommend you the Breastfeeding Support Sessions.",
-    "You will learn:",
-    "Physiology of lactation and why is important for your child's health",
-    "Different positions for breastfeeding",
-    "Effective latching",
-    "How to ensure that your baby is feeding well",
-    "Common complications and how to avoid them",
-    "Breastfeeding on demand",
-    "Proper storage of the milk"
-    ],
-    "nameId":"bel-mums-breastfeeding-class-1086"
-    },
-    {
-    "id":5088,
-    "type":"group",
-    "className":"Cuidados de suelo pélvico y gimnasia hipopresiva",
-    "tags":[
-    "postpartum"
-    ],
-    "city":"Madrid",
-    "district":"La Latina",
-    "address":"c/ Aguas, 4, local 2, 28005 Madrid",
-    "date":"2019-10-03T11:00+02:00",
-    "time":"11h00",
-    "duration":480,
-    "sessions": 8,
-    "url":"https://espaciokenko.com/gimnasia-hipopresiva/",
-    "image":"gimnasiahipopresivaespaciokenko",
-    "companyName":"espacio Kenko",
-    "companyLogo":"espaciokenko_sq",
-    
-    "price":110,
-    "language":"spanish",
-    
-    
-    "description":[
-    "GRUPO 3 – JUEVES de 11:00 a 12:00",
-    "(días 3, 10, 17, 24, 31 de OCTUBRE, 7, 14, 21 de NOVIEMBRE)",
-    "Si no has practicado antes gimnasia hipopresiva, te proponemos este taller inicial en el que a lo largo de 8 sesiones aprenderemos a reconocer y ejercitar la musculatura del suelo pélvico y la cincha abdominal con ejercicios hipopresivos, ejercicios de coactivación abdominoperineal, ejercicios sensoriales… integrando este trabajo de manera corporal global.",
-    "Se complementará la parte práctica con explicaciones teóricas que nos ayudarán a comprender la importancia de este conjunto muscular y aprenderemos a integrarlo conscientemente en las actividades de nuestra vida diaria.",
-    "Se trata de un grupo cerrado y reducido, como máximo con 7 alumnas, en el que aprenderemos las bases de los ejercicios para poder practicar e incorporarlo a nuestro entrenamiento corporal. Incluye un dossier de ejercicios para practicar en casa.",
-    "Si has sido madre recientemente, puedes venir a clase con tu bebé."
-    ],
-    "nameId":"espacio-kenko-cuidados-de-suelo-pélvico-y-gimnasia-hipopresiva-5088"
-    },
-    {
-        "id":10002,
-        "type":"group",
-        "className":"Parent and Baby Mindfulness",
-        "tags":[
-        "mindfulness", "parenting"
-        ],
-        "city":"Madrid",
-        "district":"Almagro",
-        "address":"Calle Rafael Calvo 15, 3C Madrid",
-        "date":"2019-10-03T11:00+02:00",
-        "duration":90,
-        "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
-        "image":"parentbabymindfulnesshealthbyintuition",
-        "companyName":"Health by Intuition",
-        "companyLogo":"healthbyintuition_sq",
-        "price":10,
-        "language":"english", 
-        "description":[
-            "Life as a parent can be overwhelming. Oftentimes, we care for our children automatically without even noticing what/how we are doing. This class offers parents a chance to practice presence with your babies in a guided setting. We connect with ourselves and our babies in this hour-long class through focusing on breath as well as minding each of the actions we take while caring for our child. ",
-            "When a baby cries, we take time to notice our internal reaction, connect with the child, and mindfully pick her up, noticing the physical feelings in our arms and our emotional feelings in the body.  When a toddler knocks something off a shelf, we look internally to our feelings, our breathing, and our body sensations. We learn about ourselves as well as our reactions. Throughout the class, we have dedicated moments to share our experiences and what we've learned.",
-            "The last half hour is for chatting and closing. I provide refreshments and snacks for all participants.",
-        ],
-        "nameId":"health-by-intuition-parent-and-baby-mindfulness-10002"
-    },
-    {
-    "id":6,
-    "type":"group",
-    "className":"Taller de Masaje de Bebé",
-    "tags":[
-    "baby",
-    "massage"
-    ],
-    "city":"Madrid",
-    "district":"Almagro",
-    "address":"Paseo de las Castellana 45, Madrid",
-    "date":"2019-10-03T17:00+02:00",
-    "time":"17h00",
-    "duration":60,
-    "url":"https://www.belandmums.com/masaje/",
-    "image":"massage",
-    "companyName":"Bel & Mums",
-    "companyLogo":"belandmums_sq",
-    
-    "price":20,
-    "language":"spanish",
-    
-    
-    "description":[
-    "En esta hora de taller tu bebé aprenderá a relajarse, dandole un tiempo de paz cada día, mejorando su sueño y ahorrándole cólicos e indigestiones.",
-    "También es una excusa ideal para pasar tiempo con tu bebé fortaleciendo vuestro vinculo."
-    ],
-    "nameId":"bel-mums-taller-de-masaje-de-bebé-6"
-    },
-    {
-    "id":3000,
-    "type":"group",
-    "className":"First Aid (baby and child)",
-    "tags":[
-    "baby",
-    "first aid"
-    ],
-    "date":"2019-10-03T17:30+02:00",
-    "time":"17h30",
-    "duration":180,
-    "city":"Madrid",
-    "district":"Almagro",
-    "address":"Paseo de las Castellana 45, Madrid",
-    "url":"https://www.belandmums.com/first-aid-course/",
-    "image":"firstaidbelandmums2",
-    "companyName":"Bel & Mums",
-    "companyLogo":"belandmums_sq",
-    
-    "language":"english",
-    "price":45,
-    
-    "description":[
-    "Children are unpredictable and fearless and, although emergency situations rarely occur, their solutions are often easy and effective. ",
-    "The course is addressed to parents and any person under the care of a minor.",
-    "Is a theoretical-practical course and all the attendants practice with the baby and child mannequins under direct supervision.",
-    "The places are limited to 8 to ensure an excellent quality.",
-    "The instructor is a Certified Pediatric Nurse and Midwife with a wide experience on this field.",
-    "If you need a pediatric first aid certificate please let us know when you book the course."
-    ],
-    "nameId":"bel-mums-first-aid-baby-and-child-3000"
-    },
-    {
-    "id":5092,
-    "type":"group",
-    "className":"Practicando Disciplina Positiva",
-    "tags":[
-    "parenting"
-    ],
-    "city":"Madrid",
-    "district":"Arturo Soria",
-    "address":"Colegio Madrid, Calle Arturo Soria, 147, 28043 Madrid",
-    "date":"2019-10-03T18:00+02:00",
-    "time":"18h00",
-    "duration":720,
-    "sessions": 6,
-    "url":"https://centrodisciplinapositiva.com/producto/madrid-chamartin-taller-semanal-6-sesiones-oct-y-nov-2019-2/",
-    "image":"tallerdisciplinapositiva",
-    "companyName":"Centro Integral Disciplina Positiva",
-    "companyLogo":"centrointegraldisciplinapositiva_sq",
-    
-    "price":160,
-    "priceCouple":250,
-    "language":"spanish",
-    
-    
-    "description":[
-    "Los días 3, 10, 17 y 23 de octubre y 7 y 14 de noviembre 2019",
-    "18:00 - 20:00",
-    " ",
-    "Tras el gran éxito de los talleres de Disciplina Positiva, tenemos el honor de anunciaros que arrancamos una edición de los talleres: PRACTICANDO DISCIPLINA POSITIVA.",
-    "Se trata de 6 talleres, donde de semana en semana se descubren y practican las herramientas de la DP en vuestros hogares y/o aulas.",
-    "Prepárate en la difícil tarea de educar a los que más quieres (…porque ser padre/madre es el trabajo más duro al que nos tenemos que enfrentar, y para el único para el que no nos formamos…).",
-    "Estos talleres son la forma más eficaz y tradicional en la cual se difunden las herramientas de la Disciplina Positiva desde hace más de 30 años por todo el mundo.",
-    "Para ello, os proponemos 6 talleres que son el complemento idóneo a la práctica de la DP en casa, y trataremos de forma muy práctica y con vuestros propios casos las herramientas que nos pueden ayudar a:",
-    " - fomentar el sentido de pertenencia, ",
-    " - conexión antes que corrección,",
-    " - centrarnos en soluciones y no en consecuencias y castigos,",
-    " - motivar y preparar a nuestros hijos para la vida (capacitarles)",
-    " - cuidarnos y cuidarles.",
-    "Y todo ello, ante los Problemas Cotidianos en la educación de nuestros niños (peleas, celos, dormir, comer, mentiras, autodisciplina, obedecer, rabietas, deberes…). Desde niños de 3 años hasta la adolescencia.",
-    "Son talleres prácticos y vivenciales, en los que a través de actividades vivenciales y divertidas podremos ponernos en la piel de nuestros hijos, y aprenderemos a llevar a casa actitudes y estrategias que favorecen un clima alegre, tranquilo y enriquecedor para vuestros hijos/as.",
-    " ",
-    "Facilitadoras:",
-    "Bibiana Infante: Psicóloga licenciada por la Universidad Complutense de Madrid. Especialista en Psicología a Clínica y de la Salud. Máster en Psicología Clínica y de la Salud. Certificada por la Positive Discipline Association como Entrenadora en Disciplina Positiva y Speaker Bureau. Tras más de 15 años de experiencia en el ámbito clínico, ha redirigido su labor terapareútica una labor más preventiva y psicoeducativa. Ha fundado Disciplina Positiva Galicia y es miembro fundador de la Asociación de Disciplina Positiva España ADPE). También dirige el Centro Integral Disciplina Positiva. Actualmente como Entrenadora de Disciplina Positiva en España, se dedica también a expandir esta metodología a través de los talleres de certificación internacional formando a Educadores en Disciplina Positiva. Continua con su trabajo con niños/as, adolescentes, parejas y familias. Además, colaboradora en medios televisivos y escritos en temas psicológicos y de educación llevando a cabo charlas y conferencias por todo el territorio nacional e internacional. Se declara una apasionada de su profesión.",
-    "Carmen Fernandez Rivas: Coach profesional infanto – juvenil, familiar y educativa, avalada por ICF (International Coaching Federation) especializada en Inteligencia Emocional, Formación continúa en Comunicación No Violenta y Coaching. Educadora en Disciplina Positiva para docentes, familias y pareja (Certificada por American Positive Discipline Association). Miembro del equipo directivo de la Asociación Española de Disciplina Positiva. Formación en Cuentoterapia, Neuroeducación y reflejos primitivos. Candidata a Entrenadora de Disciplina Positiva. Instructora de Yoga, Mindfulnes y Educación emocional infantil. Certificada en el Método de Eline Snel. Consultora motivacional de liderazgo personal. Directora en padresayudandoapadres.com"
-    ],
-    "nameId":"centro-integral-disciplina-positiva-practicando-disciplina-positiva-5092"
-    },
-    {
-        "id":13004,
-        "nameId":"lucy-allen-baby-body-wearing-body-burn-041019",
-        "type":"group",
-        "className":"Baby Wearing Body Burn",
-        "tags":[
-        "postpartum",
-        "baby",
-        "fitness"
-        ],
-        "city":"Madrid",
-        "district":"Vallehermoso",
-        "address":"Parque Santander, Av. de Pablo Iglesias, 9 · Madrid",
-        "date":"2019-10-04T10:30+02:00",
-        "duration":60,
-        "url":"https://www.meetup.com/Body-burn-with-Baby/",
-        "image":"babywearingbodyburnlucyallen",
-        "companyName":"Lucy Allen",
-        "companyLogo":"lucyallen_sq",
-        "price":7,
-        "language":"english",
-        "description":[
-        "Feeling exhausted and need a boost of energy?",
-        "Lacking the motivation to workout?",
-        "Want to meet other mums in Madrid?",
-        "Come and join us with your little one for a full-body circuit that will leave your muscles sore and your mind refreshed!",
-        "What will the workout consist of?",
-        "The full-body circuit makes use of different strength resistance bands, as well as the ‘resistance’ provided by your baby to increase the intensity of the movements. We primarily focus on toning and lifting the legs and glutes, both for aesthetic purposes and injury-prevention, as well as toning and strengthening the shoulders and back to help hold and carry increasingly heavy little bundles whilst improving posture. The core is worked throughout the routine through mindful breathing and activation techniques.",
-        "How big will the group be?",
-        "The group is kept to a maximum of 10 mums, to ensure that the movements are performed safely and effectively.",
-        "What shall I bring/wear?",
-        "*Comfortable workout clothing/footwear.",
-        "*Bottle of water.",
-        "*Toys to entertain baby (as needed)",
-        "*The class is designed as a baby-wearing workout class, however you are welcome to come with baby in the buggy if you don’t own a carrier. I do recommend that even if you come wearing your little one, that you also bring your pram/buggy just in case baby gets too heavy/fussy during the routine.",
-        "*FIRST CLASS = 5 EUROS*",
-        ],
-    },
-    {
-        "id":9010,
-        "nameId":"bel-mums-curso-de-primeros-auxilios-bebes-y-ninos-9010",
-        "type":"group",
-        "className":"Curso de Primeros Auxilios - Bebés y Niños",
-        "tags":[
-        "baby",
-        "first aid"
-        ],
-        "city":"Madrid",
-        "district":"Almagro",
-        "address":"Paseo de las Castellana 45, Madrid",
-        "date":"2019-10-04T16:00+02:00",
-        "time":"16h00",
-        "duration":180,
-        "url":"https://www.belandmums.com/primeros-auxilios/",
-        "image":"firstaidbelandmums2",
-        "companyName":"Bel & Mums",
-        "companyLogo":"belandmums_sq",
-        
-        "price":60,
-        "language":"spanish",
-        
-        
-        "description":[
-        "Los niños son imprevisibles y, aunque las situaciones de emergencia ocurren muy rara vez, su solución suele ser fácil y eficiente.",
-        "Nuestro curso está dirigido a padres y cualquier persona a cargo de un menor.",
-        "El número máximo de plazas son 10 para asegurar una excelente calidad.",
-        "Es un curso teórico-práctico y todos los asistentes practican con los maniquíes de bebé y niño bajo supervisión directa.",
-        "La instructora es Belén, Enfermera Pediátrica Certificada y Matrona con gran experiencia en la materia.",
-        "Si necesitas certificación háznoslo saber cuando reserves tu plaza."
-        ],
-    },
-    {
-    "id":6000,
-    "type":"group",
-    "className":"\"Cómo hablar a tus hijos\" Taller de crianza",
-    "tags":[
-    "parenting"
-    ],
-    "city":"Madrid",
-    "district":"Bellas Vistas",
-    "address":"Belo Art, Calle Pamplona 59, Madrid",
-    "date":"2019-10-04T18:00+02:00",
-    "time":"18h00",
-    "duration":840,
-    "sessions": 7,
-    "url":"http://denisesuarez.com/workshop",
-    "image":"hablaratushijos",
-    "companyName":"Denise Suarez",
-    "companyLogo":"denisesuarez_sq",
-    
-    "price":175,
-    "priceCouple":310,
-    "language":"spanish",
-    
-    
-    "description":[
-    "¿Estás cansado de leer libros sobre la crianza y, sin embargo, no poder poner la teoría en práctica? ¿Estás buscando una manera de cumplir tus necesidades y las de tus hijos? ¿Quieres comunicarte con tus hijos sin frustraciones ni gritos?",
-    "¡Este taller es para ti!",
-    "El taller se basa en el libro «Cómo hablar para que sus hijos le escuchen y cómo escuchar para que sus hijos le hablen» de Adele Faber y Elaine Mazlish. Es un taller práctico que te proporciona herramientas distintas sobre cómo mejorar tu comunicación con los niños. El taller se centra en cómo ayudar a los niños aceptar las emociones, cómo animar la colaboración, alternativas al castigo, cómo fomentar la autonomía, el elogio y la autoestima y cómo liberar a los niños de las etiquetas.",
-    "Dirigido a: Padres y madres con niños de 2 a 6 años. También a otros familiares y profesionales que trabajan con niños de esa edad.",
-    "Impartido por: Denise Suarez de Con Cariño. Coach familiar y facilitadora certificada del taller \"Cómo hablar a tus hijos\". Más información en denisesuarez.com.",
-    "Fechas: 4, 11, 18 y 25 de Octubre & 8, 15 y 22 de Noviembre"
-    ],
-    "nameId":"denise-suarez-cómo-hablar-a-tus-hijos-taller-de-crianza-6000"
-    },
-    {
     "id":5091,
     "type":"group",
     "className":"Taller de Disciplina Positiva en la pareja NIVEL 1",
@@ -618,7 +10,6 @@ export const CLASSES = [
     "district":"Madrid Capital",
     "address":" ",
     "date":"2019-10-05T09:00+02:00",
-    "time":"09h00",
     "duration":720,
     "sessions": 2,
     "url":"https://centrodisciplinapositiva.com/producto/madrid-taller-disciplina-positiva-en-la-pareja-nivel-1-5-y-26-oct-2019/",
@@ -669,7 +60,6 @@ export const CLASSES = [
     "district":"Arroyomolinos",
     "address":"Embarazados. C/ Marbella, 11 - 28939 Arroyomolinos, Madrid",
     "date":"2019-10-05T10:30+02:00",
-    "time":"10h30",
     "duration":180,
     "url":"https://educarencalma.com/events/rabietas-desde-la-perspectiva-de-la-disciplina-positiva/",
     "image":"disciplinapositiva",
@@ -701,7 +91,6 @@ export const CLASSES = [
     "2019-10-06T10:30+02:00",
     "2019-10-17T18:30+02:00"
     ],
-    "time":"10h30",
     "duration":600,
     "sessions": 3,
     "city":"Madrid",
@@ -740,7 +129,6 @@ export const CLASSES = [
     "2019-10-06T16:00+02:00",
     "2019-10-17T12:00+02:00"
     ],
-    "time":"16h00",
     "duration":600,
     "sessions": 3,
     "city":"Madrid",
@@ -750,7 +138,6 @@ export const CLASSES = [
     "image":"antenatalbelandmums",
     "companyName":"Bel & Mums",
     "companyLogo":"belandmums_sq",
-    
     "price":330,
     "language":"spanish",
     "featured":true,
@@ -782,17 +169,14 @@ export const CLASSES = [
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
     "date":"2019-10-07T18:30+02:00",
-    "time":"18h30",
+    "date":"2019-10-05T16:00+02:00",
     "duration":90,
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"postpartoentremamas",
     "companyName":"Entre Mamás",
     "companyLogo":"entremamas_sq",
-    
     "price":30,
     "language":"spanish",
-    
-    
     "description":[
     "Precio:",
     "30€/sesión en grupo.",
@@ -890,8 +274,7 @@ export const CLASSES = [
         "city":"Madrid",
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
-        "date":"2019-10-10T11:00+02:00",
-        "time":"11h00",
+        "date":"2019-10-10T11:00:00+02:00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -984,7 +367,6 @@ export const CLASSES = [
         "otherDates":[
         "2019-10-16T16:00+02:00",
         ],
-        "time":"16h00",
         "duration":300,
         "sessions": 2,
         "city":"Madrid",
@@ -1017,7 +399,6 @@ export const CLASSES = [
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
     "date":"2019-10-14T18:30+02:00",
-    "time":"18h30",
     "duration":90,
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"postpartoentremamas",
@@ -1053,7 +434,6 @@ export const CLASSES = [
     "address":"Paseo de la Castellana 45",
     "city": "madrid",
     "date":"2019-10-15T11:00+02:00",
-    "time":"11h00",
     "duration":120,
     "image":"bumpstea",
     "url":"https://www.belandmums.com/informative-sessions/",
@@ -1087,7 +467,6 @@ export const CLASSES = [
         "otherDates":[
         "2019-10-17T16:00+02:00",
         ],
-        "time":"16h00",
         "duration":300,
         "sessions": 2,
         "city":"Madrid",
@@ -1118,7 +497,6 @@ export const CLASSES = [
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
     "date":"2019-10-15T18:30+02:00",
-    "time":"18h30",
     "duration":60,
     "url":"http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
     "image":"grupodeapoyo",
@@ -1146,7 +524,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
         "date":"2019-10-17T11:00+02:00",
-        "time":"11h00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -1174,7 +551,6 @@ export const CLASSES = [
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
     "date":"2019-10-17T11:00+02:00",
-    "time":"11h00",
     "duration":90,
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"masajeentremamas",
@@ -1234,7 +610,6 @@ export const CLASSES = [
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
     "date":"2019-10-19T11:00+02:00",
-    "time":"11h00 and 12h00",
     "duration":60,
     "url":"https://maternayoga.es/estimulacion-musical-en-familia/",
     "image":"estimulacionmusicalmaternayoga",
@@ -1274,7 +649,6 @@ export const CLASSES = [
     "district":"Rivas",
     "address":"Monetes, Avenida Pablo Iglesias 87 (local 1) 28521 Rivas",
     "date":"2019-10-19T11:30+02:00",
-    "time":"11h30",
     "duration":120,
     "url":"https://www.monetes.es/producto/primeros-auxilios-pediatricos/",
     "image":"primerosauxiliospediatricos",
@@ -1309,7 +683,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
         "date":"2019-10-24T11:00+02:00",
-        "time":"11h00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -1333,7 +706,6 @@ export const CLASSES = [
     "postpartum",
     ],
     "date":"2019-10-25T11:00+02:00",
-    "time":"11h00",
     "duration":600,
     "sessions": 3,
     "city":"Madrid",
@@ -1370,7 +742,6 @@ export const CLASSES = [
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
     "date":"2019-10-26T11:00+02:00",
-    "time":"11h00 and 12h00",
     "duration":60,
     "url":"https://maternayoga.es/estimulacion-musical-en-familia/",
     "image":"estimulacionmusicalmaternayoga",
@@ -1409,7 +780,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
         "date":"2019-10-31T11:00+02:00",
-        "time":"11h00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -1437,7 +807,6 @@ export const CLASSES = [
     "district":"Almagro",
     "address":"Paseo de las Castellana 45, Madrid",
     "date":"2019-11-07T10:00+01:00",
-    "time":"10h00",
     "duration":120,
     "url":"https://www.belandmums.com/breastfeeding/",
     "image":"breastfeeding",
@@ -1474,7 +843,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
         "date":"2019-11-07T11:00+02:00",
-        "time":"11h00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -1499,7 +867,6 @@ export const CLASSES = [
     "first aid"
     ],
     "date":"2019-11-07T17:00+01:00",
-    "time":"17h00",
     "duration":180,
     "city":"Madrid",
     "district":"Almagro",
@@ -1535,7 +902,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
         "date":"2019-11-08T10:00+01:00",
-        "time":"10h00",
         "duration":120,
         "url":"https://www.belandmums.com/lactancia-materna/",
         "image":"breastfeeding",
@@ -1566,7 +932,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
         "date":"2019-11-08T16:00+01:00",
-        "time":"16h00",
         "duration":180,
         "url":"https://www.belandmums.com/primeros-auxilios/",
         "image":"firstaidbelandmums2",
@@ -1598,7 +963,6 @@ export const CLASSES = [
     "2019-11-10T10:30+01:00",
     "2019-11-22T18:30+01:00"
     ],
-    "time":"10h30",
     "duration":600,
     "sessions": 3,
     "city":"Madrid",
@@ -1637,7 +1001,6 @@ export const CLASSES = [
     "2019-11-10T16:00+01:00",
     "2019-11-22T16:00+01:00"
     ],
-    "time":"16h00",
     "duration":600,
     "sessions": 3,
     "city":"Madrid",
@@ -1679,7 +1042,6 @@ export const CLASSES = [
     "district":"La Latina",
     "address":"c/ Aguas, 4, local 2, 28005 Madrid",
     "date":"2019-11-13T16:30+01:00",
-    "time":"16h30",
     "duration":480,
     "sessions": 8,
     "url":"https://espaciokenko.com/gimnasia-hipopresiva/",
@@ -1712,7 +1074,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
         "date":"2019-11-14T11:00+02:00",
-        "time":"11h00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -1739,7 +1100,6 @@ export const CLASSES = [
     "district":"La Latina",
     "address":"c/ Aguas, 4, local 2, 28005 Madrid",
     "date":"2019-11-14T19:30+01:00",
-    "time":"19h30",
     "duration":480,
     "sessions": 8,
     "url":"https://espaciokenko.com/gimnasia-hipopresiva/",
@@ -1773,7 +1133,6 @@ export const CLASSES = [
     "district":"Bellas Vistas",
     "address":"Avenida Pablo Iglesias, 87 (local 1) 28521 Rivas Vaciamadrid, Madrid",
     "date":"2019-11-16T11:30+01:00",
-    "time":"11h30",
     "duration":120,
     "url":"https://www.monetes.es/producto/baby-led-weaning/",
     "image":"blw_monetes",
@@ -1809,7 +1168,6 @@ export const CLASSES = [
         "otherDates":[
         "2019-11-20T17:30+01:00",
         ],
-        "time":"17h30",
         "duration":300,
         "sessions": 2,
         "city":"Madrid",
@@ -1843,7 +1201,6 @@ export const CLASSES = [
         "otherDates":[
         "2019-11-21T17:30+01:00",
         ],
-        "time":"17h30",
         "duration":300,
         "sessions": 2,
         "city":"Madrid",
@@ -1874,7 +1231,6 @@ export const CLASSES = [
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
     "date":"2019-11-19T18:30+01:00",
-    "time":"18h30",
     "duration":60,
     "url":"http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
     "image":"grupodeapoyo",
@@ -1905,7 +1261,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
         "date":"2019-11-21T11:00+02:00",
-        "time":"11h00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -1933,7 +1288,6 @@ export const CLASSES = [
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
     "date":"2019-11-21T11:00+01:00",
-    "time":"11h00",
     "duration":90,
     "url":"https://www.entremamas.org/calendaro-y-eventos-de-entremamas",
     "image":"masajeentremamas",
@@ -1964,7 +1318,6 @@ export const CLASSES = [
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
     "date":"2019-11-23T11:00+01:00",
-    "time":"11h00 and 12h00",
     "duration":60,
     "url":"https://maternayoga.es/estimulacion-musical-en-familia/",
     "image":"estimulacionmusicalmaternayoga",
@@ -2003,7 +1356,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
         "date":"2019-11-28T11:00+02:00",
-        "time":"11h00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -2031,7 +1383,6 @@ export const CLASSES = [
     "district":"Bellas Vistas",
     "address":"Avenida Pablo Iglesias, 87 (local 1) 28521 Rivas Vaciamadrid, Madrid",
     "date":"2019-11-28T11:30+01:00",
-    "time":"11h30",
     "duration":120,
     "url":"https://www.monetes.es/producto/baby-led-weaning/",
     "image":"blw_monetes",
@@ -2063,7 +1414,6 @@ export const CLASSES = [
     "postpartum"
     ],
     "date":"2019-11-29T11:00+01:00",
-    "time":"11h00",
     "duration":600,
     "sessions": 3,
     "city":"Madrid",
@@ -2100,7 +1450,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
         "date":"2019-12-05T11:00+02:00",
-        "time":"11h00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -2125,7 +1474,6 @@ export const CLASSES = [
     "first aid"
     ],
     "date":"2019-12-05T17:00+01:00",
-    "time":"17h00",
     "duration":180,
     "city":"Madrid",
     "district":"Almagro",
@@ -2185,7 +1533,6 @@ export const CLASSES = [
     "district":"Almagro",
     "address":"Paseo de las Castellana 45, Madrid",
     "date":"2019-12-12T10:00+01:00",
-    "time":"10h00",
     "duration":120,
     "url":"https://www.belandmums.com/breastfeeding/",
     "image":"breastfeeding",
@@ -2222,7 +1569,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Calle Rafael Calvo 15, 3C Madrid",
         "date":"2019-12-12T11:00+02:00",
-        "time":"11h00",
         "duration":90,
         "url":"https://m.facebook.com/pg/healthbyintuition/events/?ref=m_notif&mt_nav=0",
         "image":"parentbabymindfulnesshealthbyintuition",
@@ -2251,7 +1597,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
         "date":"2019-12-13T10:00+01:00",
-        "time":"10h00",
         "duration":120,
         "url":"https://www.belandmums.com/lactancia-materna/",
         "image":"breastfeeding",
@@ -2282,7 +1627,6 @@ export const CLASSES = [
         "district":"Almagro",
         "address":"Paseo de las Castellana 45, Madrid",
         "date":"2019-12-13T16:00+01:00",
-        "time":"16h00",
         "duration":180,
         "url":"https://www.belandmums.com/primeros-auxilios/",
         "image":"firstaidbelandmums2",
@@ -2314,7 +1658,6 @@ export const CLASSES = [
     "2019-12-15T16:00+01:00",
     "2019-12-20T16:00+01:00"
     ],
-    "time":"16h00",
     "duration":600,
     "sessions": 3,
     "city":"Madrid",
@@ -2357,7 +1700,6 @@ export const CLASSES = [
     "2019-12-15T10:30+01:00",
     "2019-12-20T18:30+01:00"
     ],
-    "time":"10h30",
     "duration":600,
     "sessions": 3,
     "city":"Madrid",
@@ -2396,7 +1738,6 @@ export const CLASSES = [
     "district":"Rivas",
     "address":"Monetes, Avenida Pablo Iglesias 87 (local 1) 28521 Rivas",
     "date":"2019-12-14T11:30+01:00",
-    "time":"11h30",
     "duration":120,
     "url":"https://www.monetes.es/producto/primeros-auxilios-pediatricos/",
     "image":"primerosauxiliospediatricos",
@@ -2432,7 +1773,6 @@ export const CLASSES = [
         "otherDates":[
         "2019-12-18T17:30+01:00",
         ],
-        "time":"17h30",
         "duration":300,
         "sessions": 2,
         "city":"Madrid",
@@ -2466,7 +1806,6 @@ export const CLASSES = [
         "otherDates":[
         "2019-12-19T17:30+01:00",
         ],
-        "time":"17h30",
         "duration": 300,
         "sessions": 2,
         "city":"Madrid",
@@ -2497,7 +1836,6 @@ export const CLASSES = [
     "district":"Chamartín",
     "address":"Calle Luis Larrainza, 55, 28002 Madrid",
     "date":"2019-12-17T18:30+01:00",
-    "time":"18h30",
     "duration":60,
     "url":"http://www.entremamas.org/grupos-de-apoyo-para-mamas-y-embarazadas",
     "image":"grupodeapoyo",
@@ -2525,7 +1863,6 @@ export const CLASSES = [
     "postpartum"
     ],
     "date":"2019-12-20T11:00+01:00",
-    "time":"11h00",
     "duration":600,
     "sessions": 3,
     "city":"Madrid",
@@ -2562,7 +1899,6 @@ export const CLASSES = [
     "district":"Vallecas",
     "address":"Calle Fuentespina, 13, Local 3, 28031 Madrid",
     "date":"2019-12-21T11:00+01:00",
-    "time":"11h00 and 12h00",
     "duration":60,
     "url":"https://maternayoga.es/estimulacion-musical-en-familia/",
     "image":"estimulacionmusicalmaternayoga",
