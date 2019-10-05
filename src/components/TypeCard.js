@@ -31,7 +31,7 @@ export default function TypeCard(props) {
 
     }
     return(
-        <Grid item xs={6} sm={6} md={3} key="3">
+        <Grid item key="3">
             <Link 
                     to={{
                         pathname: routePath, type: topic }}
@@ -52,6 +52,8 @@ export default function TypeCard(props) {
                     <CardContent>
                         <Icon>{icon}</Icon>
                     <h4>{props.topicLocalised}</h4>
+                    <span>{props.count}</span>
+
                     </CardContent>
                 </CardActionArea>
             </Card>

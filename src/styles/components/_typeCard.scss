@@ -1,5 +1,6 @@
 .type-card {
-    max-width: 290px !important;
+    width: 200px !important;
+    height: 180px !important;
 
     .MuiCardMedia-root {
         height: 150px;
@@ -8,26 +9,31 @@
     }
 
     .MuiCardContent-root {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        height: 180px;
         margin: 0;
         text-align: center;
         padding-bottom: 16px !important;
-        h4 {
-            // color: $green; 
-            
+        background: rgba(255,255,255,0.3) !important;
+
+        span {
+            font-size: 1.5em;
+            font-weight: 700;
         }
+
         .material-icons {
-            // color: $green;
+            font-size: 3em !important;
         }
-        p {
-            // margin: 0 0 20px 0;
+
+        h4 {
+            font-size: 1.7em;
         }
     }
-}
 
-.type-card-online {
-    // background-color: $pastel-lime !important;
-}
-
-.type-card-webinars {
-    // background-color: $pastel-blue !important;
+    .type-car-online {
+        height:180px !important;
+    }
 }

@@ -130,10 +130,11 @@ function Home(props) {
                         id={`homepage.searchOnline.${locale}`} 
                         defaultMessage="Search online" />    
                 </h2>  
-                <Grid container className="topic-cards " spacing={2} alignContent="center">
+                <Grid container className="topic-cards " spacing={2}>
                     <TypeCard className="classes-card"
                         locale={`${locale}`}
                         topic="online classes" 
+                        count={props.onlineClasses.filter(item => item.type === "class").length }
                         topicLocalised={<FormattedMessage 
                             id={`general.classes.${locale}`} 
                             defaultMessage="Classes" />}
@@ -143,6 +144,7 @@ function Home(props) {
                     <TypeCard className="webinars-card"
                         locale={`${locale}`}
                         topic="webinars" 
+                        count={props.onlineClasses.filter(item => item.type === "webinar").length }
                         topicLocalised={<FormattedMessage 
                             id={`general.webinars.${locale}`} 
                             defaultMessage="Webinars" />}
