@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -14,6 +14,10 @@ import LazyLoad from 'react-lazy-load';
 import * as moment from 'moment';
 import 'moment/locale/en-gb';
 import 'moment/locale/es';
+import firebase from '@firebase/app';
+import '@firebase/firestore';
+import '@firebase/auth';
+import '@firebase/storage';
 
 const mapStateToProps = (state) => {
   return(
@@ -80,8 +84,34 @@ function RenderFlag({language, locale}) {
   }
 }
 
+
+
 function MediaCard(props) {
     const classes = useStyles();
+    const storage = firebase.storage();
+    const [imageLink, setImageLink] = useState('someurl');
+    const [logo, setLogo] = useState('');
+    const imageUrl = getImage(props.classEntry.imageUrl);
+    const companyLogo = getLogo(props.classEntry.companyLogo);
+
+    function getImage() { 
+      storage
+        .ref( `/${props.classEntry.listingImage}_sm.jpg` )
+        .getDownloadURL()
+        .then( url => {
+          setImageLink(url);
+          } )
+        .catch( (err) => "Error getting image url: " + err);
+    }
+    function getLogo() { 
+      storage
+        .ref( `/${props.classEntry.companyLogo}_sq.jpg` )
+        .getDownloadURL()
+        .then( url => {
+          setLogo(url);
+          } )
+        .catch( (err) => "Error getting logo url: " + err);
+    }
     return (
       <LocaleContext.Consumer>{(context) => {
         const locale = context.locale;
@@ -102,11 +132,14 @@ function MediaCard(props) {
                     debounce={false}
                     offsetVertical={500}
                     >
+                
                 <CardMedia
+                  component="img"
                   className={classes.media}
-                  image={`../../images/classes/${props.classEntry.listingImage}_sm.jpg`}
+                  image={imageLink}
                   title={props.classEntry.className}
                 />
+                
             </LazyLoad>
             <CardContent>
               <Typography className={`class-name`} gutterBottom variant="h3" component="h3">
@@ -119,7 +152,7 @@ function MediaCard(props) {
                       debounce={false}
                       offsetVertical={500}
                       >
-                  <img className="company-logo" src={`../../images/logos/${props.classEntry.companyLogo}.jpg`} alt={`${props.classEntry.companyLogo} logo`} />
+                  <img className="company-logo" src={logo} alt={`${props.classEntry.companyLogo} logo`} />
                 </LazyLoad>
                 <span className="company-name">{props.classEntry.companyName}</span>
               </div> 
