@@ -37,18 +37,18 @@ const columns = [
     },
     {
         id: 'online',
-        label: 'Online',
+        label: 'Where',
         minWidth: 120,
         align: 'right',
     },
     { id: 'active', label: 'Live'}
 ];
 
-function createData(id, name, provider, date, online, active) {
+function createData(id, name, provider, date, online, city, active) {
     moment.locale('en');
     let class_date = moment(date).format("D MMM, YYYY");
     let class_time = moment(date).format("HH:mm");
-    return { id, name, provider, class_date, class_time , online, active };
+    return { id, name, provider, class_date, class_time , online, city, active };
 }
   
 const useStyles = makeStyles({
@@ -114,6 +114,7 @@ const Providers = () => {
     const [isListingSelected, setIsListingSelected] = useState(false);
     const [listingsSelected, setListingsSelected] = useState([]);
     let rows;
+
     if(listings!=null && listings.length > 0) {
         rows = listings.map((classEntry) => {
             return(
@@ -123,6 +124,7 @@ const Providers = () => {
                     classEntry.companyName,
                     classEntry.date,
                     classEntry.online,
+                    classEntry.city,
                     classEntry.active ? "true": "false"
             ));
         });
@@ -268,12 +270,15 @@ const Providers = () => {
                                       <TableRow hover role="checkbox" tabIndex={-1} key={uuid()}>
                                         {columns.map(column => {
                                             let value = null;
+                                            
                                             if (column.id == "active") {
-                                                value = (row[column.id  ]==="true") ? 
+                                                value = (row[column.id]==="true") ? 
                                                     <Icon style={{color: '#2DE080'}}>visibility</Icon>
                                                     :
                                                     <Icon style={{color: '#eaeaea'}}>visibility_off</Icon>;
-                                            } else if (column.id !=="id") {
+                                            } else if (column.id == "online") {
+                                                value = (row["online"] !== "online") ? row.city : "online";
+                                            } else if (column.id !== "id") {
                                                 value = row[column.id];
                                             } else {
                                                 value = <input checked={listingsSelected.includes(row[column.id])} type="checkbox" name={row[column.id]} value={row[column.id]} onChange={listingSelected} />
