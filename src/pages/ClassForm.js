@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
@@ -152,17 +152,22 @@ const ClassForm = () => {
     // }
 
         const cleanString = (string) => {
+            console.log(string);
             let output = string.toLowerCase();
-            output.replace(/[|&$%@"<>()+*'`!?:;,~]/g, "");
-            output.replace("é", "e");
-            output.replace("è", "e");
-            output.replace("ê", "e");
-            output.replace("ë", "e");
-            output.replace("à", "a");
-            output.replace("á", "a");
-            output.replace("â", "a");
-            output.replace("ä", "a");
-            output.replace("ñ", "n");
+            output = output.replace(/[|&$%@"<>()_+*'`!?\-:;,~]/g, "");
+            output = output.replace("é", "e");
+            output = output.replace("è", "e");
+            output = output.replace("ê", "e");
+            output = output.replace("ë", "e");
+            output = output.replace("à", "a");
+            output = output.replace("á", "a");
+            output = output.replace("â", "a");
+            output = output.replace("ä", "a");
+            output = output.replace("ñ", "n");
+            output = output.replace("ó", "o");
+            output = output.replace("ö", "o");
+            output = output.replace("ò", "o");
+            output = output.replace("ô", "o");
             return output.split(' ').join('-');
         }
 
@@ -192,9 +197,14 @@ const ClassForm = () => {
                 companyName,
                 listingImage: tempImageUrl,
                 companyLogo: tempCompanyLogo,
-                active: false
+                active: false,
+                dateAdded: new Date
 
-            }).then(() => {
+            })
+            .then(() => {
+                postImage(tempImageUrl);
+            })
+            .then(() => {
                 setLoading(false);
                 setCompanyLogo(tempCompanyLogo);
                 setListingImage(tempImageUrl);
@@ -212,7 +222,7 @@ const ClassForm = () => {
                 setDistrict('');
                 setAddress('');
                 setCompanyName('');
-            })
+            });
         }
 
         const [ loading, setLoading ] = useState(false);
@@ -229,7 +239,8 @@ const ClassForm = () => {
 
         const [ tags, setTags ] = useState('');
         const [ website, setWebsite ] = useState('');
-        const [ image, setImage ] = useState('');
+        const [ selectedFile, setSelectedFile ] = useState('');
+        const [ imageUploaded, setImageUploaded ] = useState(false);
         const [ description, setDescription ] = useState('');
         const [ city, setCity ] = useState('');
         const [ district, setDistrict ] = useState('');
@@ -237,6 +248,26 @@ const ClassForm = () => {
         const [ companyName, setCompanyName ] = useState('');
         const [ companyLogo, setCompanyLogo ] = useState('');
         const [ listingImage, setListingImage ] = useState('');
+
+        const postImage = async (imageName) => {
+            var formData = new FormData();
+            formData.append('image', selectedFile, imageName + "_sm.jpg" );
+        
+            let response = await fetch('https://europe-west1-app23980.cloudfunctions.net/uploadImage', {
+                method: 'post',
+                mode: 'no-cors',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                body: formData
+            })
+            .then(() => {
+                setImageUploaded(true);
+            })
+            .catch(() => {
+                console.log("Error uploading the image");
+            })
+        }
 
         return(
             <Container className="main-content">
@@ -332,23 +363,39 @@ const ClassForm = () => {
                                 </select>
                             </div>
                             
-                            {/* <div className="provider-form-item">
-                            <label className="ant-form-item-required" title="image">Image: </label>
-                            <Button
-                                variant="contained"
-                                component="label"
-                                >
-                                Upload File
-                                <input
-                                    // required
-                                    value={image}
-                                    type="file"
-                                    // style={{ display: "none" }}
-                                    onChange={(e) => setImage(e.currentTarget.value)}
-                                />
-                                <span>{image}</span>
-                                </Button>
-                            </div> */}
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="image">Image: </label>
+                                <div className="file-upload-container">
+                                    <input
+                                        // required
+                                        // value={selectedFile.name}
+                                        type="file"
+                                        // style={{ display: "none" }}
+                                        onChange={(e) => setSelectedFile(e.currentTarget.files[0])}
+                                    />
+                                    {/* <label className="custom-file-upload">
+                                        <input type="file"/>
+                                        Select file
+                                    </label> */}
+                                    { imageUploaded ? (
+                                            <Icon className="success-icon">
+                                                done
+                                            </Icon>
+                                        ) : 
+                                        // selectedFile ? (
+                                        //     <span className="upload-image"
+                                        //         onClick={postImage}
+                                        //     >
+                                        //     Upload
+                                        //     </span>
+                                        // ) : 
+                                        (
+                                            <span></span>
+                                        )
+                                    }
+                                    {/* <span>{imagePath}</span> */}
+                                </div>
+                            </div>
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="website">Website: </label>
                                 <TextField

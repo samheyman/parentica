@@ -8,7 +8,10 @@ function useListings() {
    
     useEffect(() => {
         const unsubscribe = firebase.firestore()
-            .collection('listings').where("active", "==", true).onSnapshot((snapshot) => {
+            .collection('listings')
+            .where("active", "==", true)
+            .orderBy('date', 'asc')
+            .onSnapshot((snapshot) => {
             const newListings = snapshot.docs.map((doc) => ({
                 id: doc.id,
                 ...doc.data()
