@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState, useEffect } from 'react';
 import Explore from './Explore';
 import ClassDetails from '../pages/ClassDetails';
 import Home from './Home';
@@ -13,100 +13,119 @@ import Footer from '../components/Footer';
 import PageNotFound from './PageNotFound';
 import ClassForm from './ClassForm';
 import Providers from './Providers';
-import { ListingsContext } from '../contexts/ListingsContext';
+import firebase from '@firebase/app';
+import '@firebase/firestore';
+import '@firebase/auth';
+import '@firebase/storage';
+import { TOPICS } from '../shared/topicsJSON';
+import { PROVIDERS } from '../shared/providersJSON';
 
-const mapStateToProps = (state) => {
-    return(
-        {
-            providers: state.providers,
-            topics: state.topics,
-            tab: state.tab,
-        }
-    );
-};
+export default function Main(props) {
+    const listings = useListings();
 
-class Main extends Component {
-    static contextType = ListingsContext;
-    render() {  
-        const {listings} = this.context;     
-        // console.log(listings);
-        const HomePage = () => {
-            let count = 0;
-            let today = new Date();
-            return(
-                <Home 
-                    topics={this.props.topics}
-                    onlineClasses={listings.filter((item) => 
-                        (item.online==='online' || item.type==='webinar' )  &&
-                        count++ < 4)}
-                    onlineProviders={this.props.providers.filter((provider) => provider.online)}
-                />
-            );
-        }
+    function useListings() {
+        const [listings, setListings] = useState([]);
+        useEffect(() => {
+            const unsubscribe = firebase.firestore()
+                .collection('listings')
+                .where("active", "==", true)
+                .orderBy('date', 'asc')
+                .onSnapshot((snapshot) => {
+                const newListings = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setListings(newListings);
+            });
+            return () => unsubscribe();
+    
+        }, [])
+    
+        return listings;
+    }
 
-        const CityPage = () => {
-            let count = 0;
-            let today = new Date();
-            let nextWeek = new Date();
-            let sevenDays = today.getDate() + 7;
-            nextWeek.setDate(sevenDays);
-            let results = listings.filter(
-                (item) => (item.city==='Madrid' || item.city==='madrid') && 
-                          new Date(item.date) > today && 
-                          new Date(item.date) < nextWeek  && 
-                          count++ < 4);
-            console.log(results);
-            console.log(nextWeek);
-            return(
-                <City 
-                    locale={this.props.locale}
-                    city='madrid'
-                    classesThisWeek={results}
-                    topics={this.props.topics}
-                    madridProviders={this.props.providers.filter((provider) => !provider.online)}
-                />
-            );
-        }
-
-        const OnlinePage = () => {
-            return(
-                <City 
-                    locale={this.props.locale}
-                    classEntries={this.props.classes}
-                    topics={this.props.topics}
-                    onlineProviders={this.props.providers.filter((provider) => provider.online)}
-                />
-            );
-        }
-
-        const ClassWithName = ({match}) => {
-            let selectedClass = listings.filter((item) => item.nameId === match.params.classNameId)[0];
-            return(
-                selectedClass ? 
-                    (
-                        <ClassDetails
-                            selectedClass={selectedClass}
-                            // TODO only send the class names, not all the information
-                            otherClasses={listings}
-                        />
-                    )
-                    :
-                    (<Redirect to='/error' />)
-            );
-        }
-
-        const { match } = this.props;
-
+    const HomePage = () => {
+        let count = 0;
+        let today = new Date();
         return(
-            <React.Fragment>
-                <Navbar/>
-                <Switch>
-                    <Route exact path={`${match.url}/`} component={HomePage} />
-                    <Route path={`${match.url}/home`} render={()=><Redirect to={`${match.url}/`} /> } />
-                    <Route exact path={`${match.url}/madrid`} component={CityPage} />
+            <Home 
+                topics={TOPICS}
+                onlineClasses={listings.filter((item) => 
+                    (item.online==='online' || item.type==='webinar' )  &&
+                    count++ < 4)}
+                onlineProviders={PROVIDERS.filter((provider) => provider.online)}
+            />
+        );
+    }
+
+    const CityPage = () => {
+        let count = 0;
+        let today = new Date();
+        let nextWeek = new Date();
+        let sevenDays = today.getDate() + 7;
+        nextWeek.setDate(sevenDays);
+        let results = listings.filter(
+            (item) => (item.city==='Madrid' || item.city==='madrid') && 
+                        new Date(item.date) > today && 
+                        new Date(item.date) < nextWeek  && 
+                        count++ < 6);
+        return(
+            <City 
+                city='madrid'
+                classesThisWeek={results}
+                topics={TOPICS}
+                madridProviders={PROVIDERS.filter((provider) => !provider.online)}
+            />
+        );
+    }
+
+        // const OnlinePage = () => {
+        //     return(
+        //         <City 
+        //             locale={this.props.locale}
+        //             classEntries={this.props.classes}
+        //             topics={this.props.topics}
+        //             onlineProviders={this.props.providers.filter((provider) => provider.online)}
+        //         />
+        //     );
+        // }
+
+        // const ListingWithName = ({match}) => {
+        //     console.log(listings);
+        //     let result = listings.filter((item) => item.nameId === match.params.listingId)[0];
+        //     // console.log(match.params.listingId + ": " + result.nameId);
+        //     return(
+        //         result ? 
+        //             (
+        //                 <ClassDetails
+        //                     selectedClass={result}
+        //                     // TODO only send the class names, not all the information
+        //                     otherClasses={listings}
+        //                 />
+        //             )
+        //             :
+        //             (<Redirect to='/error' />)
+        //     );
+        // }
+
+    return(
+        <React.Fragment>
+            <Navbar/>
+            <Switch>
+                <Route path={`${props.match.url}/home`} render={()=><Redirect to={`${props.match.url}/`} /> } />
+                <Route path={`${props.match.url}/madrid/explore`} component={() => <Explore tabSelected={0} />} />
+                <Route path={`${props.match.url}/madrid`} component={CityPage} />
+                <Route path={`${props.match.url}/about`} component={About}/>
+                <Route path={`${props.match.url}/providers/new`} component={ClassForm}/>
+                <Route path={`${props.match.url}/providers`} component={Providers}/>
+                <Route path={`${props.match.url}/contact`} render={()=> <Contact/>} />
+                <Route exact path={`${props.match.url}/`} component={HomePage} />
+                <Route component={PageNotFound}/> */}
+
+                    {/*
                     <Route exact path={`${match.url}/other`} component={About} />
 
-                    <Route exact path={`${match.url}/online`} component={OnlinePage} />
+                    <Route exact path={`${match.url}/online`} component={OnlinePage} /> */}
 
                     {/* <Route exact path={`${match.url}/explore`} render={() => {
                         if(this.props.location.topic == null || this.props.location.topic === "all") {
@@ -129,7 +148,7 @@ class Main extends Component {
                             );
                         }
                     }} /> */}
-                    <Route path={`${match.url}/online/explore`} render={() => {
+                    {/* <Route path={`${match.url}/online/explore`} render={() => {
                         console.log("Searching online classes for  " + this.props.location.topic);
                         console.log("and of type  " + this.props.location.type);
 
@@ -188,12 +207,14 @@ class Main extends Component {
                         let topic = this.props.location.topic;
                         let type = this.props.location.type;
                         let language = this.props.location.language;
+                        console.log("Searching " + type);
+
                         // let cityListings = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date());
                         if(language === 'english' || language === 'spanish') {
                             // let cityListingsLanguage = this.props.classes.filter((listing) => listing.city==='Madrid' && new Date(listing.date) > new Date() && listing.language===language);
                             return(
                                 <Explore
-                                    format="madrid"
+                                    format="group"
                                     topic="all"
                                     tabSelected={0}
                                     classLanguage={language}
@@ -212,7 +233,7 @@ class Main extends Component {
                         if(type === 'meetups') {
                             return(
                                 <Explore
-                                    format="madrid"
+                                    format="group"
                                     topic="all"
                                     tabSelected={2}
                                 />
@@ -221,7 +242,7 @@ class Main extends Component {
                         if(topic == null || topic === "all") {
                             return(
                                 <Explore
-                                    format="madrid"
+                                    format="group"
                                     topic="all"
                                     tabSelected={0}
                                 />
@@ -229,40 +250,26 @@ class Main extends Component {
                         } else {
                             return(
                                 <Explore
-                                    format="madrid"
+                                    format="group"
                                     topic={topic}
                                     tabSelected={0}
                                 />
                             );
                         }
-                    }} />
+                    }} /> */}
                     {/* issue here is that a new component is rendered every time, rather than update existing one */}
                     {/* https://tylermcginnis.com/react-router-pass-props-to-components/ */}
-                    {/* <Route path='/classes/:classId' component={ClassWithId} /> */}
-                    <Route path={`${match.url}/locations`} component={Locations}/>
-                    <Route path={`${match.url}/about`} component={About}/>
-                    <Route exact path={`${match.url}/providers`} render={
-                            (props) => <Providers {...props} classes={listings}
-                        />}
-                    />
-                    <Route path={`${match.url}/providers/new`} render={
-                            (props) => <ClassForm {...props}
-                        />}
-                    />
-                    <Route path={`${match.url}/contact`} render={
-                            (props) => <Contact {...props}
-                        />}
-                    />
-                    <Route path={`${match.url}/error`} component={PageNotFound}/>
+                    {/* <Route path={`${match.url}/listings/:listingId`} component={ListingWithName} />
+                    */}
                     
-                    <Route path={`${match.url}/:classNameId`} component={ClassWithName} />
+                    {/*}
+                    
+                    {/* <Route path={`${match.url}/:classNameId`} component={ClassWithName} /> */}
                     
                     <Route component={PageNotFound}  />
                 </Switch>
                 <Footer/>
             </React.Fragment>
         );
-    }
-}
 
-export default withRouter(connect(mapStateToProps)(Main));
+}

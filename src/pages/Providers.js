@@ -110,7 +110,7 @@ const Providers = () => {
     const listings = useListings();
     const classes = useStyles();
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(10);
+    const [rowsPerPage, setRowsPerPage] = useState(25);
     const [isListingSelected, setIsListingSelected] = useState(false);
     const [listingsSelected, setListingsSelected] = useState([]);
     let rows;
@@ -149,7 +149,7 @@ const Providers = () => {
             console.log("Checking if " + listingId + " in " + listingsSelected);
             if (listingsSelected.includes(listingId)) {
                 console.log(listingId + " already in list, removing it");
-                const newList = listingsSelected.filter(item => item!=listingId);
+                const newList = listingsSelected.filter(item => item!==listingId);
                 if (newList.length<1) { setIsListingSelected(false)}
                 return newList;
             } else {
@@ -214,7 +214,7 @@ const Providers = () => {
                                     }}
                                 >
                                     <Icon>
-                                        visibility
+                                        toggle_on
                                     </Icon>
                                     &nbsp;Activate
                                 </Button>
@@ -227,7 +227,7 @@ const Providers = () => {
                                     }}
                                 >
                                     <Icon>
-                                        visibility_off
+                                        toggle_off
                                     </Icon>
                                     &nbsp; Deactivate
                                 </Button>
@@ -266,18 +266,25 @@ const Providers = () => {
                                 </TableHead>
                                 <TableBody>
                                   {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
+                                    let today = new Date();
                                     return (
                                       <TableRow hover role="checkbox" tabIndex={-1} key={uuid()}>
                                         {columns.map(column => {
                                             let value = null;
-                                            
-                                            if (column.id == "active") {
+                                            if (column.id === "active") {
+                                                console.log(row);
                                                 value = (row[column.id]==="true") ? 
-                                                    <Icon style={{color: '#2DE080'}}>visibility</Icon>
+                                                    (new Date(row["class_date"]) > today ) ?
+                                                        <Icon style={{color: '#2DE080'}}>toggle_on</Icon>
+                                                        :
+                                                        <Icon style={{color: '#eaeaea'}}>clear</Icon>
                                                     :
-                                                    <Icon style={{color: '#eaeaea'}}>visibility_off</Icon>;
-                                            } else if (column.id == "online") {
-                                                value = (row["online"] !== "online") ? row.city : "online";
+                                                    <Icon style={{color: '#ffe0b2'}}>toggle_off</Icon>;
+                                            } else if (column.id === "online") {
+                                                value = (row["online"] !== "online") ? 
+                                                    row.city 
+                                                    : 
+                                                    "online";
                                             } else if (column.id !== "id") {
                                                 value = row[column.id];
                                             } else {
@@ -296,7 +303,7 @@ const Providers = () => {
                               </Table>
                             </div>
                             <TablePagination
-                              rowsPerPageOptions={[10, 25, 100]}
+                              rowsPerPageOptions={[25, 50, 100]}
                               component="div"
                               count={rows.length}
                               rowsPerPage={rowsPerPage}

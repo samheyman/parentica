@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -21,10 +21,13 @@ import { LocaleContext } from '../contexts/LocaleContext';
 import * as moment from 'moment';
 import 'moment/locale/en-gb';
 import 'moment/locale/es';
+import firebase from '@firebase/app';
+import '@firebase/firestore';
+import '@firebase/auth';
+import '@firebase/storage';
 
 function RenderTags({tags, locale, online}) {
     let i=0;
-    console.log(online);
     let rootUrl = (online==="online") ? 'online' : 'madrid';
     const output = tags.map((tag) => {
         return (
@@ -71,7 +74,7 @@ function RenderOtherClasses({otherClasses, locale}) {
         return (
             <TableRow key={i++}>
                 <TableCell>
-                    <Link to={`/${locale.split('-')[0]}/${item.nameId}`}>{item.className.toLowerCase()}</Link>
+                    <Link to={`/${locale.split('-')[0]}/listings/${item.nameId}`}>{item.listingName.toLowerCase()}</Link>
                 </TableCell>
                 <TableCell>{formatedDate}</TableCell>
                 <TableCell>
@@ -310,9 +313,34 @@ const useStyles = makeStyles({
 });
 
 function ClassDetails(props) {
+    const storage = firebase.storage();
+    const [imageLink, setImageLink] = useState('someurl');
+    const [logo, setLogo] = useState('');
+    const imageUrl = getImage();
+    const companyLogo = getLogo(props.selectedClass.companyLogo);
+
+    function getImage() { 
+        storage
+          .refFromURL(`gs://app23980.appspot.com/listings/${props.selectedClass.listingImage}.jpg` )
+          .getDownloadURL()
+          .then( url => {
+            setImageLink(url);
+            } )
+          .catch( (err) => "Error getting image url: " + err);
+    }
+
+    function getLogo() { 
+        storage
+            .refFromURL(`gs://app23980-providers-data/logos/${props.selectedClass.companyLogo}-60.jpg` )
+            .getDownloadURL()
+            .then( url => {
+            setLogo(url);
+            } )
+            .catch( (err) => "Error getting logo url: " + err);
+    }
     
     const divStyle = {
-        backgroundImage: 'url(../../images/classes/' + props.selectedClass.image + '.jpg    )',
+        backgroundImage: 'url(' +  imageLink + ')',
     };
     const classes = useStyles();
 
@@ -340,7 +368,7 @@ function ClassDetails(props) {
                             <div className="header">
                                 <h2 className="class-title">{props.selectedClass.className}</h2>
                                 <div className="company">
-                                    <img className="logo" src={`../../images/logos/${props.selectedClass.companyLogo}.jpg`} alt={`${props.selectedClass.companyLogo} logo`}></img>
+                                    <img className="logo" src={logo} alt={`${props.selectedClass.companyLogo} logo`}></img>
                                     <div className="company-name">
                                         {props.selectedClass.companyName}
                                     </div>

@@ -91,12 +91,12 @@ function MediaCard(props) {
     const storage = firebase.storage();
     const [imageLink, setImageLink] = useState('someurl');
     const [logo, setLogo] = useState('');
-    const imageUrl = getImage(props.classEntry.imageUrl);
+    const imageUrl = getImage(props.classEntry.listingImage);
     const companyLogo = getLogo(props.classEntry.companyLogo);
 
     function getImage() { 
       storage
-        .ref( `/${props.classEntry.listingImage}_sm.jpg` )
+        .ref( `/listings/${props.classEntry.listingImage}_330x140.jpg` )
         .getDownloadURL()
         .then( url => {
           setImageLink(url);
@@ -105,7 +105,7 @@ function MediaCard(props) {
     }
     function getLogo() { 
       storage
-        .ref( `/${props.classEntry.companyLogo}_sq.jpg` )
+        .refFromURL(`gs://app23980-providers-data/logos/${props.classEntry.companyLogo}-60.jpg` )
         .getDownloadURL()
         .then( url => {
           setLogo(url);
@@ -118,7 +118,7 @@ function MediaCard(props) {
         moment.locale(props.locale);
         return(<Card className={classes.card}>
           <CardActionArea>
-            <Link className="class-card-link" to={`/${locale.split('-')[0]}/${props.classEntry.nameId}`}
+            <Link className="class-card-link" to={`/${locale.split('-')[0]}/listings/${props.classEntry.nameId}`}
                 onClick={()=>{
                   window.gtag("event", props.classEntry.companyName, {
                       event_category: "class details",

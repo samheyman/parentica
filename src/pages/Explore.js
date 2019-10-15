@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
@@ -15,7 +15,6 @@ import { ListingsContext } from '../contexts/ListingsContext';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
-
     return (
         <Typography
         component="div"
@@ -45,9 +44,11 @@ function a11yProps(index) {
 
 
 function Explore(props) {
-    const [value, setValue] = React.useState(props.tabSelected);
+    const [value, setValue] = useState(props.tabSelected);
     const { listings } = useContext(ListingsContext);
-
+    console.log(listings);
+    const [tab, setTab] = useState(props.tab);
+    
     function handleChange(event, newValue) {
         // scroll down 1px to trigger lazy loading of cards
         window.scrollBy(0, 1);
@@ -56,7 +57,7 @@ function Explore(props) {
 
     const classesList = listings.map(
         (classEntry) => {
-            if ((classEntry.type === 'group' || classEntry.type === 'online')) {
+            if ((classEntry.format === 'group' || classEntry.format === 'online')) {
                 return(
                     <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
                         <ClassCard classEntry={classEntry} />      
@@ -67,7 +68,7 @@ function Explore(props) {
     );
 
     const meetupsList = listings.map((classEntry) => {
-        if( classEntry.type === 'meetup') {
+        if( classEntry.format === 'meetup') {
             return (
                 <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
                     <ClassCard classEntry={classEntry} />      
@@ -81,7 +82,7 @@ function Explore(props) {
     });
 
     const seminarsList = listings.map((classEntry) => {
-        if((classEntry.type === 'seminar' || classEntry.type === 'webinar')) {
+        if((classEntry.format === 'seminar' || classEntry.format === 'webinar')) {
             return (
                 <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
                     <ClassCard classEntry={classEntry} />      
@@ -106,7 +107,7 @@ function Explore(props) {
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
-            console.log(locale);
+            // console.log(locale);
             return(
                 <Container className="main-content">
                     <h2>{
