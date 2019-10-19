@@ -23,7 +23,8 @@ export default function TopicCard(props) {
         //     `/${props.locale.split('-')[0]}/online  `
         //     :
             
-        // ;    
+        // ;  
+    console.log();  
     return(
         <Grid item xs={6} sm={4} md={3} key="3">
             <Link 

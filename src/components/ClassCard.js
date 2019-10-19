@@ -105,7 +105,7 @@ function MediaCard(props) {
     }
     function getLogo() { 
       storage
-        .refFromURL(`gs://app23980-providers-data/logos/${props.classEntry.companyLogo}-60.jpg` )
+        .refFromURL(`gs://app23980-providers-data/logos/${props.classEntry.companyLogo}.jpg` )
         .getDownloadURL()
         .then( url => {
           setLogo(url);
@@ -185,7 +185,11 @@ function MediaCard(props) {
                           <React.Fragment>
                             <span className="dot"></span>
                             <span className="class-details-district">
-                            {props.classEntry.district}
+                            { (props.classEntry.district.length > 13) ?
+                                props.classEntry.district.substring(0,13) + "..."
+                                :
+                                props.classEntry.district
+                            }
                             </span>
                           </React.Fragment>                     
                         )

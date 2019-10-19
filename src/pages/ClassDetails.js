@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
@@ -313,30 +313,56 @@ const useStyles = makeStyles({
 });
 
 function ClassDetails(props) {
-    const storage = firebase.storage();
-    const [imageLink, setImageLink] = useState('someurl');
-    const [logo, setLogo] = useState('');
-    const imageUrl = getImage();
-    const companyLogo = getLogo(props.selectedClass.companyLogo);
+    let listingInfo = useListingDetails();
 
-    function getImage() { 
-        storage
-          .refFromURL(`gs://app23980.appspot.com/listings/${props.selectedClass.listingImage}.jpg` )
-          .getDownloadURL()
-          .then( url => {
-            setImageLink(url);
-            } )
-          .catch( (err) => "Error getting image url: " + err);
+    function useListingDetails() {
+        const [listingDetails, setListingDetails] = useState({});
+        useEffect(() => {
+            const unsubscribe = firebase.firestore()
+                .collection('listings')
+                .where("active", "==", true)
+                .where("nameId", "==", props.id)
+                .onSnapshot((snapshot) => {
+                const listing = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setListingDetails(listing);
+            });
+            return () => unsubscribe();
+        }, [])
+    
+        return listingDetails;
     }
 
-    function getLogo() { 
-        storage
-            .refFromURL(`gs://app23980-providers-data/logos/${props.selectedClass.companyLogo}-60.jpg` )
+    const storage = firebase.storage();
+    const [imageLink, setImageLink] = useState('');
+    const [logo, setLogo] = useState('');
+
+    if (listingInfo !== null) {
+        
+        const imageUrl = getImage();
+        const companyLogo = getLogo(listingInfo.companyLogo);
+        
+        function getImage() { 
+            storage
+            .refFromURL(`gs://app23980.appspot.com/listings/${listingInfo.listingImage}.jpg` )
             .getDownloadURL()
             .then( url => {
-            setLogo(url);
-            } )
-            .catch( (err) => "Error getting logo url: " + err);
+                setImageLink(url);
+                } )
+            .catch( (err) => "Error getting image url: " + err);
+        }
+
+        function getLogo() { 
+            storage
+                .refFromURL(`gs://app23980-providers-data/logos/${listingInfo.companyLogo}-60.jpg` )
+                .getDownloadURL()
+                .then( url => {
+                setLogo(url);
+                } )
+                .catch( (err) => "Error getting logo url: " + err);
+        }
     }
     
     const divStyle = {
@@ -366,36 +392,36 @@ function ClassDetails(props) {
                         <Grid item xs={12} sm={12} md={12} className="class-details">
                             
                             <div className="header">
-                                <h2 className="class-title">{props.selectedClass.className}</h2>
+                                <h2 className="class-title">{listingInfo.className}</h2>
                                 <div className="company">
-                                    <img className="logo" src={logo} alt={`${props.selectedClass.companyLogo} logo`}></img>
+                                    <img className="logo" src={logo} alt={`${listingInfo.companyLogo} logo`}></img>
                                     <div className="company-name">
-                                        {props.selectedClass.companyName}
+                                        {listingInfo.companyName}
                                     </div>
                                 </div>
                                 <div className="class-top-info">
                                         {/* <Icon className={classes.icon} color="">
                                         price
                                         </Icon> */}
-                                        {/* <span>{props.selectedClass.price}€</span> */}
-                                    <ClassDate classDate={props.selectedClass.date} classTime={props.selectedClass.classTime} classes={classes.icon} locale={locale} />
-                                    <OtherSessions otherDates={props.selectedClass.otherDates} classes={classes.icon} />
-                                    {/* <ClassTime classTime={props.selectedClass.time} classes={classes.icon} /> */}
-                                    <ClassDuration sessions={props.selectedClass.sessions} duration={props.selectedClass.duration} locale={locale} classes={classes.icon} />
-                                    <ClassLocation address={props.selectedClass.address} classes={classes.icon} />
-                                    <ClassLanguage language={props.selectedClass.language} locale={locale} classes={classes.icon} />
+                                        {/* <span>{listingInfo.price}€</span> */}
+                                    <ClassDate classDate={listingInfo.date} classTime={listingInfo.classTime} classes={classes.icon} locale={locale} />
+                                    <OtherSessions otherDates={listingInfo.otherDates} classes={classes.icon} />
+                                    {/* <ClassTime classTime={listingInfo.time} classes={classes.icon} /> */}
+                                    <ClassDuration sessions={listingInfo.sessions} duration={listingInfo.duration} locale={locale} classes={classes.icon} />
+                                    <ClassLocation address={listingInfo.address} classes={classes.icon} />
+                                    <ClassLanguage language={listingInfo.language} locale={locale} classes={classes.icon} />
                                     <div className="class-tags">
                                         <FormattedMessage 
                                             id={`classDetails.topics.${locale}`}
                                             defaultMessage=""
                                         /> 
-                                        <RenderTags tags={props.selectedClass.tags} locale={locale} online={props.selectedClass.type} />
+                                        {/* <RenderTags tags={listingInfo.tags} locale={locale} online={listingInfo.type} /> */}
                                     </div>
                                 </div>           
                             </div>
                             
                             <div className="redirect-div">
-                                <ClassPrice classPrice={props.selectedClass.price} classPriceCouple={props.selectedClass.priceCouple} locale={locale} />
+                                <ClassPrice classPrice={listingInfo.price} classPriceCouple={listingInfo.priceCouple} locale={locale} />
                                 <div>
                                     <span>
                                         <FormattedMessage 
@@ -405,11 +431,11 @@ function ClassDetails(props) {
                                     </span>
                                 </div>
                                 <div className="button-div">
-                                    <a href={props.selectedClass.url} target="_blank" rel="noopener noreferrer" 
+                                    <a href={listingInfo.url} target="_blank" rel="noopener noreferrer" 
                                         onClick={()=>{
-                                            window.gtag("event", props.selectedClass.companyName, {
+                                            window.gtag("event", listingInfo.companyName, {
                                                 event_category: "conversions",
-                                                event_label: props.selectedClass.companyName + " - " + props.selectedClass.className
+                                                event_label: listingInfo.companyName + " - " + listingInfo.className
                                             }); 
                                         }}
                                     >
@@ -455,13 +481,13 @@ function ClassDetails(props) {
                                     
                                     <TabPanel className="about-class" value={value} index={0} dir={theme.direction}>
                                         <RenderDescription 
-                                            description={props.selectedClass.description}
+                                            description={listingInfo.description}
                                         />
                                     </TabPanel>
                                     <TabPanel className="about-class" value={value} index={1} dir={theme.direction}>
-                                        <RenderOtherClasses
-                                            locale={locale} otherClasses={props.otherClasses.filter((item) => (item.companyName === props.selectedClass.companyName) && item.id !== props.selectedClass.id)}
-                                        />
+                                        {/* <RenderOtherClasses
+                                            locale={locale} otherClasses={props.otherClasses.filter((item) => (item.companyName === listingInfo.companyName) && item.id !== listingInfo.id)}
+                                        /> */}
                                     </TabPanel>
                                 </div>
                             </div>

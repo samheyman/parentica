@@ -44,10 +44,10 @@ function a11yProps(index) {
 
 
 function Explore(props) {
-    const [value, setValue] = useState(props.tabSelected);
+    const [value, setValue] = useState(props.tab);
     const { listings } = useContext(ListingsContext);
     console.log(listings);
-    const [tab, setTab] = useState(props.tab);
+    // const [tab, setTab] = useState(props.tab);
     
     function handleChange(event, newValue) {
         // scroll down 1px to trigger lazy loading of cards
@@ -57,7 +57,10 @@ function Explore(props) {
 
     const classesList = listings.map(
         (classEntry) => {
-            if ((classEntry.format === 'group' || classEntry.format === 'online')) {
+            if (( classEntry.format === 'group' || 
+                classEntry.format === 'online' ||
+                classEntry.format === 'class' ||
+                classEntry.format === 'workshop')) {
                 return(
                     <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
                         <ClassCard classEntry={classEntry} />      

@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Explore from './Explore';
 import ClassDetails from '../pages/ClassDetails';
+import ListingDetails from '../pages/ListingDetails';
 import Home from './Home';
 import City from './City';
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom';
+import { Switch, Route, Redirect, withRouter, useRouteMatch, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Locations from './Locations';
 import About from './About';
@@ -21,7 +22,8 @@ import { TOPICS } from '../shared/topicsJSON';
 import { PROVIDERS } from '../shared/providersJSON';
 
 export default function Main(props) {
-    const listings = useListings();
+    let listings = useListings();
+    const [loading, setLoading] = useState(false);
 
     function useListings() {
         const [listings, setListings] = useState([]);
@@ -36,9 +38,9 @@ export default function Main(props) {
                     ...doc.data()
                 }));
                 setListings(newListings);
+                setLoading(false);
             });
             return () => unsubscribe();
-    
         }, [])
     
         return listings;
@@ -90,36 +92,41 @@ export default function Main(props) {
         //     );
         // }
 
-        // const ListingWithName = ({match}) => {
-        //     console.log(listings);
-        //     let result = listings.filter((item) => item.nameId === match.params.listingId)[0];
-        //     // console.log(match.params.listingId + ": " + result.nameId);
-        //     return(
-        //         result ? 
-        //             (
-        //                 <ClassDetails
-        //                     selectedClass={result}
-        //                     // TODO only send the class names, not all the information
-        //                     otherClasses={listings}
-        //                 />
-        //             )
-        //             :
-        //             (<Redirect to='/error' />)
-        //     );
-        // }
+    const ListingWithName = () => {
+        let { listingId } = useParams();
+        console.log("ListingId:");
+        console.log(listingId);
+        // listings = useListings();
+        let result = listings.filter((item) => item.nameId === match.params.listingId)[0];
+        return(
+            // result !== null ? 
+            // (
+            //     <ClassDetails
+            //         selectedClass={result}
+            //         // TODO only send the class names, not all the information
+            //         otherClasses={listings}
+            //     />
+            // )
+            // :
+            // (<Redirect to='/error' />)
+            <div>{listingId}</div>
+        );
+    }
+    let match = useRouteMatch();
 
     return(
         <React.Fragment>
             <Navbar/>
             <Switch>
-                <Route path={`${props.match.url}/home`} render={()=><Redirect to={`${props.match.url}/`} /> } />
-                <Route path={`${props.match.url}/madrid/explore`} component={() => <Explore tabSelected={0} />} />
-                <Route path={`${props.match.url}/madrid`} component={CityPage} />
-                <Route path={`${props.match.url}/about`} component={About}/>
-                <Route path={`${props.match.url}/providers/new`} component={ClassForm}/>
-                <Route path={`${props.match.url}/providers`} component={Providers}/>
-                <Route path={`${props.match.url}/contact`} render={()=> <Contact/>} />
-                <Route exact path={`${props.match.url}/`} component={HomePage} />
+                <Route path={`${match.path}/home`} render={()=><Redirect to={`${props.match.url}/`} /> } />
+                <Route path={`${match.path}/madrid/explore`} render={()=><Explore tab={0}/>} />
+                <Route path={`${match.path}/madrid`} component={CityPage} />
+                <Route path={`${match.path}/listings/:listingId`} component={ListingDetails} />
+                <Route path={`${match.path}/about`} component={About}/>
+                <Route path={`${match.path}/providers/new`} component={ClassForm}/>
+                <Route path={`${match.path}/providers`} component={Providers}/>
+                <Route path={`${match.path}/contact`} render={()=> <Contact/>} />
+                <Route exact path={`${match.path}/`} component={HomePage} />
                 <Route component={PageNotFound}/> */}
 
                     {/*

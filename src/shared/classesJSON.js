@@ -231,8 +231,7 @@ export const CLASSES = [
         "url":"https://www.belandmums.com/babymassage/",
         "image":"babymassagebelandmums",
         "companyName":"Bel and Mums",
-        "companyLogo":"bel-and-mums",
-        
+        "companyLogo":"bel-and-mums",  
         "price":25,
         "language":"english",
         "description":[
