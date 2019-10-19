@@ -272,7 +272,6 @@ const Providers = () => {
                                         {columns.map(column => {
                                             let value = null;
                                             if (column.id === "active") {
-                                                console.log(row);
                                                 value = (row[column.id]==="true") ? 
                                                     (new Date(row["class_date"]) > today ) ?
                                                         <Icon style={{color: '#2DE080'}}>toggle_on</Icon>

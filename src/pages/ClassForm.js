@@ -155,21 +155,16 @@ const ClassForm = () => {
             console.log(string);
             let output = string.toLowerCase();
             output = output.replace(/[|&$%@"<>()_+*'`!?\-:;,~]/g, "");
-            output = output.replace("é", "e");
-            output = output.replace("è", "e");
-            output = output.replace("ê", "e");
-            output = output.replace("ë", "e");
-            output = output.replace("à", "a");
-            output = output.replace("á", "a");
-            output = output.replace("â", "a");
-            output = output.replace("ä", "a");
-            output = output.replace("ñ", "n");
-            output = output.replace("ó", "o");
-            output = output.replace("ö", "o");
-            output = output.replace("ò", "o");
-            output = output.replace("ô", "o");
-            return output.split(' ').join('-');
-        }
+            output = output.replace(/[áàâäãåā]/g, "a");
+            output = output.replace(/[èéêëėēę]/g, "e");
+            output = output.replace(/[îïíīįì]/g, "i");
+            output = output.replace(/[ñń]/g, "n");
+            output = output.replace(/[ôöòóœøōõ]/g, "o");
+            output = output.replace(/[ûüùúū]/g, "u");
+            output = output.replace(/[^a-z0-9 ]/gi,'');
+            output = output.split(' ').join('-');
+            return output.replace(/--/g, "-");
+        }   
 
         const { locale } = useContext(LocaleContext);
         const handleSubmit = (e) => {
@@ -179,12 +174,17 @@ const ClassForm = () => {
             const descriptionParagraphs = description.split('\n').map(paragraph => paragraph.trim());
             const descriptionCleaned = descriptionParagraphs.filter(paragraph => paragraph!=="");
             const tempImageUrl = cleanString(listingName + " " + companyName);
-            const tempCompanyLogo = cleanString(companyName);
+            const tempLogoUrl = cleanString(companyName);
+            const listingDate = date ? 
+                date.substring(0,10) + "T" + time + "+02:00" 
+                : 
+                Math.floor(Math.random() * (100+ 1));
             firebase.firestore().collection('listings').add({
                 online,
                 format,
                 listingName,
-                date: date + "T" + time + "+02:00",
+                nameId: tempImageUrl + "-" + listingDate.substring(0,10),
+                date: listingDate ,
                 duration:parseInt(duration),
                 language,
                 price,
@@ -196,7 +196,7 @@ const ClassForm = () => {
                 address,
                 companyName,
                 listingImage: tempImageUrl,
-                companyLogo: tempCompanyLogo,
+                companyLogo: tempLogoUrl,
                 active: false,
                 dateAdded: new Date
 
@@ -205,8 +205,11 @@ const ClassForm = () => {
                 postImage(tempImageUrl);
             })
             .then(() => {
+                postLogo(tempLogoUrl);
+            })
+            .then(() => {
                 setLoading(false);
-                setCompanyLogo(tempCompanyLogo);
+                setCompanyLogo(tempLogoUrl);
                 setListingImage(tempImageUrl);
                 setSuccess(true);
                 setOnline('');
@@ -222,6 +225,9 @@ const ClassForm = () => {
                 setDistrict('');
                 setAddress('');
                 setCompanyName('');
+            })
+            .catch((e) => {
+                console.log("Error posting the form: " + e);
             });
         }
 
@@ -241,6 +247,7 @@ const ClassForm = () => {
         const [ website, setWebsite ] = useState('');
         const [ selectedFile, setSelectedFile ] = useState('');
         const [ imageUploaded, setImageUploaded ] = useState(false);
+        const [ logoUploaded, setLogoUploaded ] = useState(false);
         const [ description, setDescription ] = useState('');
         const [ city, setCity ] = useState('');
         const [ district, setDistrict ] = useState('');
@@ -248,10 +255,11 @@ const ClassForm = () => {
         const [ companyName, setCompanyName ] = useState('');
         const [ companyLogo, setCompanyLogo ] = useState('');
         const [ listingImage, setListingImage ] = useState('');
+        const [ selectedLogo, setSelectedLogo ] = useState('');
 
         const postImage = async (imageName) => {
             var formData = new FormData();
-            formData.append('image', selectedFile, imageName + "_sm.jpg" );
+            formData.append('image', selectedFile, imageName + ".jpg" );
         
             let response = await fetch('https://europe-west1-app23980.cloudfunctions.net/uploadImage', {
                 method: 'post',
@@ -266,6 +274,26 @@ const ClassForm = () => {
             })
             .catch(() => {
                 console.log("Error uploading the image");
+            })
+        }
+
+        const postLogo = async (logoName) => {
+            var formData = new FormData();
+            formData.append('image', selectedFile, logoName + ".jpg" );
+        
+            let response = await fetch('https://europe-west1-app23980.cloudfunctions.net/uploadLogo', {
+                method: 'post',
+                mode: 'no-cors',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                body: formData
+            })
+            .then(() => {
+                setLogoUploaded(true);
+            })
+            .catch(() => {
+                console.log("Error uploading the logo");
             })
         }
 
@@ -474,6 +502,40 @@ const ClassForm = () => {
                                     onChange={(e) => setCompanyName(e.currentTarget.value)}
                                 />
                             </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="image">Logo: </label>
+                                <div className="file-upload-container">
+                                    <input
+                                        // required
+                                        // value={selectedFile.name}
+                                        type="file"
+                                        // style={{ display: "none" }}
+                                        onChange={(e) => setSelectedLogo(e.currentTarget.files[0])}
+                                    />
+                                    {/* <label className="custom-file-upload">
+                                        <input type="file"/>
+                                        Select file
+                                    </label> */}
+                                    { logoUploaded ? (
+                                            <Icon className="success-icon-logo">
+                                                done
+                                            </Icon>
+                                        ) : 
+                                        // selectedFile ? (
+                                        //     <span className="upload-image"
+                                        //         onClick={postImage}
+                                        //     >
+                                        //     Upload
+                                        //     </span>
+                                        // ) : 
+                                        (
+                                            <span></span>
+                                        )
+                                    }
+                                    {/* <span>{imagePath}</span> */}
+                                </div>
+                            </div>
+                            
                             {/* <div className="provider-form-item">
                             <label className="ant-form-item-required" title="logo">Company logo: </label>
                             <Button
