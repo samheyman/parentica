@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Explore from './Explore';
 import ClassDetails from '../pages/ClassDetails';
 import ListingDetails from '../pages/ListingDetails';
@@ -13,6 +13,8 @@ import Navbar from '../components/Header/Navbar';
 import Footer from '../components/Footer';
 import PageNotFound from './PageNotFound';
 import ClassForm from './ClassForm';
+import Login from './Auth/Login';
+import Signup from './Auth/Signup';
 import Providers from './Providers';
 import firebase from '@firebase/app';
 import '@firebase/firestore';
@@ -20,6 +22,7 @@ import '@firebase/auth';
 import '@firebase/storage';
 import { TOPICS } from '../shared/topicsJSON';
 import { PROVIDERS } from '../shared/providersJSON';
+import { AuthContext } from '../contexts/AuthContext';
 
 export default function Main(props) {
     let listings = useListings();
@@ -114,6 +117,26 @@ export default function Main(props) {
     }
     let match = useRouteMatch();
 
+    const PrivateRoute = ({ component: RouteComponent, ...rest}) => {
+        const { currentUser } = useContext(AuthContext);
+        console.log("Private route!");
+        console.log(currentUser);
+        return(
+            <Route 
+                {...rest}
+                render={routeProps =>
+                    !!currentUser ? (
+                        <RouteComponent {...routeProps} />
+                    ) 
+                    :
+                    (
+                        <Redirect to={`${match.path}/login`} />
+                    )
+                }
+            />
+        );
+    };
+
     return(
         <React.Fragment>
             <Navbar/>
@@ -123,9 +146,12 @@ export default function Main(props) {
                 <Route path={`${match.path}/madrid`} component={CityPage} />
                 <Route path={`${match.path}/listings/:listingId`} component={ListingDetails} />
                 <Route path={`${match.path}/about`} component={About}/>
-                <Route path={`${match.path}/providers/new`} component={ClassForm}/>
-                <Route path={`${match.path}/providers`} component={Providers}/>
+                <PrivateRoute exact path={`${match.path}/providers/new`} component={ClassForm}/>
+                <PrivateRoute exact path={`${match.path}/providers`} component={Providers} />
+                {/* <Route path={`${match.path}/providers`} component={Providers}/> */}
                 <Route path={`${match.path}/contact`} render={()=> <Contact/>} />
+                <Route path={`${match.path}/signup`} component={Signup}/>
+                <Route path={`${match.path}/login`} component={Login}/>
                 <Route exact path={`${match.path}/`} component={HomePage} />
                 <Route component={PageNotFound}/> */}
 

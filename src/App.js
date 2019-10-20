@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ScrollToTop from './components/ScrollToTop';
+import AuthContextProvider from './contexts/AuthContext';
 import LocaleContextProvider from './contexts/LocaleContext';
 import ListingsContextProvider from './contexts/ListingsContext';
 // import FirebaseContextProvider from './contexts/FirebaseContext';
@@ -16,12 +17,12 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
+        <AuthContextProvider>
           <BrowserRouter>
             <CssBaseline />
             <ScrollToTop>
               <div className="App">
                 <LocaleContextProvider>
-                  {/* <FirebaseContextProvider> */}
                     <ListingsContextProvider>
                       <Switch>
                         <Route path="/en" component={Main} />
@@ -29,11 +30,11 @@ class App extends Component {
                         <Redirect to="/en" />
                       </Switch>
                     </ListingsContextProvider>
-                  {/* </FirebaseContextProvider> */}
                 </LocaleContextProvider>
               </div>
             </ScrollToTop>
           </BrowserRouter>
+        </AuthContextProvider>
       </Provider>
     );
   }

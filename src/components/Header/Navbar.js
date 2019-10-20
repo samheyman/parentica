@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -13,6 +13,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Box from '@material-ui/core/Box';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../../contexts/LocaleContext';
+import { AuthContext } from '../../contexts/AuthContext';
+import firebase from '@firebase/app';
+import '@firebase/auth';
 
 const useStyles = makeStyles(theme => ({
   title: {
@@ -95,7 +98,8 @@ export default function Navbar(props) {
         </List>
       </div>
     );
-
+    let { currentUser } = useContext(AuthContext);
+    console.log(!!currentUser);
     return (
       <LocaleContext.Consumer>{(context) => {
         const locale = context.locale;
@@ -112,6 +116,18 @@ export default function Navbar(props) {
                 {/* <li><NavLink to={`/${locale.split('-')[0]}/locations`}><FormattedMessage id={`navbar.locations.link.${locale}`} /></NavLink></li> */}
                 {/* <li><NavLink to={`/${locale.split('-')[0]}/providers`}><FormattedMessage id={`navbar.providors.link.${locale}`} /></NavLink></li> */}
                 <li><NavLink to={`/${locale.split('-')[0]}/contact`}><FormattedMessage id={`navbar.contact.link.${locale}`} /></NavLink></li>
+                { !!currentUser ?           
+                    <li>
+                      <button onClick={()=> {
+                        firebase.auth().signOut();
+                      }}      
+                      >
+                        Log out
+                      </button>
+                    </li>  
+                    : 
+                    null
+                }
               </ul>
             </Box>
             <Box display={{ xs: 'block', sm: 'block', md: 'none', lg: 'none', xl: 'none' }}>

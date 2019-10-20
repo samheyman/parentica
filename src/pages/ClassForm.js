@@ -583,11 +583,7 @@ const ClassForm = () => {
                                     defaultMessage="Class added"
                                 />
                                 </p>
-                                <p>
-                                    Please add the following images to cloud store:
-                                    <br/>{listingImage}
-                                    <br/>{companyLogo}
-                                </p>
+                                
                                 <p><Link to={{pathname:`/${locale.split('-')[0]}/providers`}}>
                                 <FormattedMessage 
                                     id={`providers.backHomeLink.${locale}`}
