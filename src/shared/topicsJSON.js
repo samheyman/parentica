@@ -28,6 +28,10 @@ export const TOPICS = [
         name: "mindfulness",
     },
     {
+        id: "montessori",
+        name: "montessori",
+    },
+    {
         id: "music",
         name: "music",
     },
