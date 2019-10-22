@@ -7,7 +7,7 @@
 
     "general.classes.en-GB": "Classes",
     "general.classes.es-ES": "Clases",
-    "general.webinars.en-GB": "Seminars",
+    "general.webinars.en-GB": "Webinars",
     "general.webinars.es-ES": "Charlas virtuales",
     "general.blog.en-GB": "Blog",
     "general.blog.es-ES": "Blog",
@@ -101,6 +101,8 @@
     "topics.massage.es-ES": "masaje",
     "topics.mindfulness.en-GB": "mindfulness",
     "topics.mindfulness.es-ES": "mindfulness",
+    "topics.montessori.en-GB": "montessori",
+    "topics.montessori.es-ES": "montessori",
     "topics.music.en-GB": "music",
     "topics.music.es-ES": "música",
     "topics.nutrition.en-GB": "nutrition",
