@@ -19,6 +19,8 @@
     "general.clear.es-ES": "eliminar",
     "general.showAll.en-GB": "Show all",
     "general.showAll.es-ES": "Ver todas",
+    "general.password.en-GB": "Password",
+    "general.password.es-ES": "Contraseña",
 
     "navbar.selectLanguage.en-GB": "Offered in",
     "navbar.selectLanguage.es-ES": "Ofrecido en",
@@ -31,6 +33,12 @@
 
     "navbar.about.link.en-GB": "About",
     "navbar.about.link.es-ES": "Nosotros",
+
+    "navbar.login.link.en-GB": "Log in",
+    "navbar.login.link.es-ES": "Inicia sesión",
+
+    "navbar.logout.link.en-GB": "Log out",
+    "navbar.logout.link.es-ES": "Cerrar sesión",
 
     "navbar.locations.link.en-GB": "Locations",
     "navbar.locations.link.es-ES": "Ubicaciones",
@@ -244,6 +252,12 @@
     
     "contact.contact.en-GB": "Contact",
     "contact.contact.es-ES": "Contacto",
+
+    "contact.contactUs.en-GB": "Contact us",
+    "contact.contactUs.es-ES": "Contáctenos",
+
+    "contact.noAccount.en-GB": "Don't have an account? ",
+    "contact.noAccount.es-ES": "¿No tienes una cuenta?",
 
     "contact.p1.en-GB": "Please feel free to get in touch with us for more information or to find out about listing your classes.",
     "contact.p1.es-ES": "No dudes en ponerte en contacto con nosotros para obtener más información o para obtener información sobre cómo publicar tus clases.",

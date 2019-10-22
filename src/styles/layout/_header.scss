@@ -33,7 +33,7 @@
 header {
     width: 100%;
     background-color: $header-background-color;
-    text-transform: capitalize !important;
+    // text-transform: capitalize !important;
     border-bottom: 1px solid $very-pale-grey;
 
     div {
@@ -51,7 +51,7 @@ header {
             padding: 0 10px;
             font-size: 1.1em;
             color: $very-dark-grey;
-            text-transform: capitalize !important;
+            // text-transform: capitalize !important;
 
             a, a:active a:visited {
                 color: $very-dark-grey
@@ -119,6 +119,11 @@ header {
         .sidenav-trigger {
             margin: 0 !important;
         }
+    }
+
+    .logout-link {
+        z-index: 10;
+        cursor: pointer !important;
     }
 
     .sidenav {
