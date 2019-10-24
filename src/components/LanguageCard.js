@@ -25,7 +25,7 @@ export default function Language(props) {
             
         // ;    
     return(
-        <Grid item xs={6} sm={4} md={3} key="3">
+        <Grid item key="3">
             <Link 
                     to={{
                         pathname: routePath, language:`${topic}`}}

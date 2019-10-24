@@ -12,7 +12,7 @@ html, input, button {
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -webkit-tap-highlight-color: rgba(201, 224, 253, 0.8);
-
+    min-height: 100%;
 }
   
 /**
@@ -32,7 +32,7 @@ body {
     padding: 0;
     margin: 0;
     background-color: $body-background-color !important;
-    min-height: 100vh;
+    min-height: 100%;
 }
 
 .full-height-grow {
@@ -60,24 +60,38 @@ body {
 }
 
 .main-content {
-    min-height: 80vh;
+    min-height: 100%;
     margin-bottom: 20px;
+    width: 90% !important;
+    max-width: 1200px !important;
+    // border: 1px solid red;
 }
 
 .container, {
-    // width: $container-width !important;
-    max-width: $max-container-width !important;
+    width: 90% !important;
+    max-width: 1200px !important;
+    // border: 1px solid red;
 }
 
 @media only screen and (max-width: 993px) {
     .container {
-        width: $container-width !important;
+        width: 90% !important;
+    }
+    .main-content {
+        margin-bottom: 20px;
+        width: 90% !important;
+        // border: 1px solid orange;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .container {
-        width: $container-width-mobile !important;
+        width: 100% !important;
+    }
+    .main-content {
+        margin-bottom: 20px;
+        width: 100% !important;
+        // border: 1px solid green;
     }
 }
 

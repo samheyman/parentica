@@ -280,7 +280,7 @@ const Providers = () => {
                                                     :
                                                     <Icon style={{color: '#ffe0b2'}}>toggle_off</Icon>;
                                             } else if (column.id === "online") {
-                                                value = (row["online"] !== "online") ? 
+                                                value = (!row["online"]) ? 
                                                     row.city 
                                                     : 
                                                     "online";

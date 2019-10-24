@@ -3,6 +3,7 @@ import Explore from './Explore';
 import ClassDetails from '../pages/ClassDetails';
 import ListingDetails from '../pages/ListingDetails';
 import Home from './Home';
+import Online from './Online';
 import City from './City';
 import { Switch, Route, Redirect, withRouter, useRouteMatch, useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
@@ -51,13 +52,13 @@ export default function Main(props) {
 
     const HomePage = () => {
         let count = 0;
-        let today = new Date();
+        let onlineClasses = listings.filter(
+            (item) => (item.online || item.format==='webinar') && 
+                        count++ < 6);
         return(
             <Home 
                 topics={TOPICS}
-                onlineClasses={listings.filter((item) => 
-                    (item.online==='online' || item.type==='webinar' )  &&
-                    count++ < 4)}
+                onlineClasses={onlineClasses}
                 onlineProviders={PROVIDERS.filter((provider) => provider.online)}
             />
         );
@@ -142,8 +143,9 @@ export default function Main(props) {
             <Navbar/>
             <Switch>
                 <Route path={`${match.path}/home`} render={()=><Redirect to={`${props.match.url}/`} /> } />
-                <Route path={`${match.path}/madrid/explore`} render={()=><Explore tab={0}/>} />
+                <Route path={`${match.path}/madrid/explore`} render={()=><Explore tab={0} online={false} />} />
                 <Route path={`${match.path}/madrid`} component={CityPage} />
+                <Route path={`${match.path}/online/explore`} render={()=><Online />} />
                 <Route path={`${match.path}/listings/:listingId`} component={ListingDetails} />
                 <Route path={`${match.path}/about`} component={About}/>
                 <PrivateRoute exact path={`${match.path}/providers/new`} component={ClassForm}/>

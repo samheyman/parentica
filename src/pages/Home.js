@@ -14,6 +14,7 @@ import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Icon from '@material-ui/core/Icon';
+import CardMedia from '@material-ui/core/CardMedia';
 
 function RenderTags({tags, locale}) {
     let i=0;
@@ -66,6 +67,7 @@ function OnlineProviders({providers}) {
 }
 
 function Home(props) {
+    console.log(props.onlineClasses);
     return(
         <LocaleContext.Consumer>{(context) => {
             const locale = context.locale;
@@ -91,28 +93,48 @@ function Home(props) {
                         id={`homepage.searchByCity.${locale}`} 
                         defaultMessage="Search by city" />    
                 </h2>  
-                <Grid container className="cities-links" spacing={2} alignContent="center">
-                    <CityCard
-                        locale={`${locale}`}
-                        topic="madrid" 
-                        topicLocalised="Madrid"
-                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
-                    />
-                    <Grid item xs={6} sm={4} md={3} key="3">
-                        <Card className="more-cities">
-                            <CardActionArea>
-                                <CardContent>
-                                <h4><FormattedMessage 
-                                    id={`home.moreCities.${locale}`} 
-                                    defaultMessage="More cities to come!" /></h4>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                    </Grid>
-                </Grid>
+                <div className="test-scroll" style={{ height: '255px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+                    {/* <Grid container className="cities-links" spacing={2} alignContent="center"> */}
+                        <CityCard
+                            locale={`${locale}`}
+                            topic="madrid" 
+                            topicLocalised="Madrid"
+                            // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                        />
+                        <CityCard
+                            locale={`${locale}`}
+                            topic="paris" 
+                            topicLocalised="Paris"
+                            // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                        />
+                        <CityCard
+                            locale={`${locale}`}
+                            topic="oslo" 
+                            topicLocalised="Oslo"
+                            // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                        />
+                        <CityCard
+                            locale={`${locale}`}
+                            topic="stockholm" 
+                            topicLocalised="Stockholm"
+                            // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                        />
+                        {/* <Grid item xs={6} sm={4} md={3} key="3">
+                            <Card className="more-cities">
+                                <CardActionArea>
+                                    <CardContent>
+                                    <h4><FormattedMessage 
+                                        id={`home.moreCities.${locale}`} 
+                                        defaultMessage="More cities to come!" /></h4>
+                                    </CardContent>
+                                </CardActionArea>
+                            </Card>
+                        </Grid> */}
+                    {/* </Grid> */}
+                </div>
                 
             </div>
-            <div className="types">
+            {/* <div className="types">
                 <h2>
                     <FormattedMessage 
                         id={`homepage.searchOnline.${locale}`} 
@@ -122,7 +144,7 @@ function Home(props) {
                     <TypeCard className="classes-card"
                         locale={`${locale}`}
                         topic="online classes" 
-                        count={props.onlineClasses.filter(item => item.type === "class").length }
+                        count={props.onlineClasses.filter(item => item.format === "class").length }
                         topicLocalised={<FormattedMessage 
                             id={`general.classes.${locale}`} 
                             defaultMessage="Classes" />}
@@ -132,7 +154,7 @@ function Home(props) {
                     <TypeCard className="webinars-card"
                         locale={`${locale}`}
                         topic="webinars" 
-                        count={props.onlineClasses.filter(item => item.type === "webinar").length }
+                        count={props.onlineClasses.filter(item => item.format === "webinar").length }
                         topicLocalised={<FormattedMessage 
                             id={`general.webinars.${locale}`} 
                             defaultMessage="Webinars" />}
@@ -147,17 +169,17 @@ function Home(props) {
                             defaultMessage="Blog" />}
                         rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
-                    /> */}
+                    /> 
                 </Grid>
-            </div>
-            <div className="online-classes">
+            </div> */}
+            {/* <div className="online-classes">
                 <h2>
                     <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Popular online classes"/>    
                 </h2> 
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     {props.onlineClasses.map((item) => {                        
                         return(
-                            <Grid item xs={12} sm={6} md={4} key={item.id}>
+                            <Grid item key={item.id}>
                                 <ClassCard 
                                     classEntry={item}
                                 />
@@ -172,8 +194,79 @@ function Home(props) {
                     <Icon>keyboard_arrow_right</Icon>
                 </div>
                 
-            </div>
+            </div> */}
             <div className="popular-topics">
+                <h2>
+                    <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Topics"/>    
+                </h2>  
+                <div className="test-scroll" style={{ height: '320px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+                    {props.onlineClasses.map((item) => {                        
+                        return(
+                            <div style={{ width: '330px', marginRight: '10px', height: '250px', display:'inline-block' }}>
+                                <ClassCard 
+                                    classEntry={item}
+                                />
+                            </div>);
+                    })
+                    }
+                </div>
+                <div className="show-all-link">
+                    <Link to={{pathname:`/${locale.split('-')[0]}/online/explore`}}>
+                        <FormattedMessage id={`general.showAll.${locale}`} defaultMessage="show all" />    
+                    </Link>
+                    <Icon>keyboard_arrow_right</Icon>
+                </div>
+            </div>
+
+            <div className="popular-topics">
+                <h2>
+                    <FormattedMessage id={`homepage.popularTopics.${locale}`} defaultMessage="Topics"/>    
+                </h2>  
+                <div className="test-scroll" style={{ height: '210px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+                    <TopicCard
+                            locale={`${locale}`}
+                            topic="parenting" 
+                            topicLocalised={                            
+                                <FormattedMessage id={`topics.parenting.${locale}`} />
+                            }
+                            rootUrl="online"
+                    />
+                    <TopicCard
+                            locale={`${locale}`}
+                            topic="pregnancy" 
+                            topicLocalised={                            
+                                <FormattedMessage id={`topics.pregnancy.${locale}`} />
+                            }
+                            rootUrl="online"
+                    />
+                    <TopicCard
+                            locale={`${locale}`}
+                            topic="baby" 
+                            topicLocalised={                            
+                                <FormattedMessage id={`topics.baby.${locale}`} />
+                            }
+                            rootUrl="online"
+                    />
+                    <TopicCard 
+                        locale={`${locale}`}
+                        topic="nutrition" 
+                        topicLocalised={                            
+                            <FormattedMessage id={`topics.nutrition.${locale}`} />
+                        }
+                        rootUrl="online"
+                        // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}
+                    />
+                    <TopicCard 
+                        locale={`${locale}`}
+                        topic="postpartum" 
+                        topicLocalised={<FormattedMessage id={`topics.postpartum.${locale}`} defaultMessage="baby"/>}
+                        rootUrl="online"
+                        // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("baby")).length}
+                        />
+                    
+                </div>
+            </div>
+            {/* <div className="popular-topics">
                 <h2>
                     <FormattedMessage id={`homepage.popularTopics.${locale}`} defaultMessage="Topics"/>    
                 </h2>  
@@ -247,9 +340,9 @@ function Home(props) {
                         }
                         rootUrl="online"
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("first aid")).length}
-                        /> */}
+                        /> 
                 </Grid>
-            </div>
+            </div> */}
             <div className="all-topics">
                 <h2>
                 <FormattedMessage id={`homepage.allTopics.${locale}`} />        

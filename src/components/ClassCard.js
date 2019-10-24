@@ -159,8 +159,7 @@ function MediaCard(props) {
 
               <div className={`card-footer ${classes.cardFooter}`}>
                   <div className="class-details">
-                    {(props.classEntry.date != null)?
-                    
+                    {(props.classEntry.date !== "" && props.classEntry.date.length > 3) ?
                       <span className="class-details-date">
                         {moment(props.classEntry.date).format("MMM D")}
                       </span>
@@ -173,16 +172,19 @@ function MediaCard(props) {
                       </span>
                     }
                    
-                    <React.Fragment>
-                    <span className="dot"></span>
-                    <span className="class-details-time">
-                      {moment(props.classEntry.date).format("HH:mm")} 
-                    </span>
-                    </React.Fragment>                     
+                    {(props.classEntry.date !== "" && props.classEntry.date.length > 3 ) ?
+                      (<React.Fragment>
+                        <span className="dot"></span>
+                        <span className="class-details-time">
+                          {moment(props.classEntry.date).format("HH:mm")} 
+                        </span>
+                      </React.Fragment>)
+                      :
+                      (null)
+                    }                  
                         
-                    {(props.classEntry.district !== null && props.classEntry.district !== "")?
-                        (
-                          <React.Fragment>
+                    {(props.classEntry.district !== null && props.classEntry.district !== "") ?
+                        (<React.Fragment>
                             <span className="dot"></span>
                             <span className="class-details-district">
                             { (props.classEntry.district.length > 13) ?

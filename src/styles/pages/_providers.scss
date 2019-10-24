@@ -22,7 +22,7 @@ button {
 }
 
 form {
-    border: 1px solid #e1dede;
+    // border: 1px solid #e1dede;
     margin-top: 30px;
     border-radius: 5px;
     padding: 20px 30px;
@@ -51,6 +51,7 @@ form {
 
         .send-form-data, .cancel-form-data {
             width: 100px;
+            padding: 0;
         }
 
         .material-icons {
@@ -125,4 +126,12 @@ form {
 
 .form-buttons {
     margin: 20px auto;
+}
+
+.admin-section {
+    border-top: 1px solid #e1dede;
+    margin: 20px 0 0 20px;
+    padding: 10px 0;
+    text-transform: uppercase;
+    color: $font-pale;
 }

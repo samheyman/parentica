@@ -99,8 +99,8 @@ function Explore(props) {
     });
     // TODO better way to do this
     let classesCount = classesList.filter((item) => item !== '' && item != null).length;
-    let meetupsCount = meetupsList.filter((item) => item !== '' && item != null).length;
     let seminarsCount = seminarsList.filter((item) => item !== '' && item != null).length;
+    let meetupsCount = meetupsList.filter((item) => item !== '' && item != null).length;
 
     // console.log(props.classes.length + " classes: " + props.classes);
     console.log(classesCount + " classes");

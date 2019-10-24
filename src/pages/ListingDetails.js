@@ -8,7 +8,7 @@ import '@firebase/storage';
 import * as moment from 'moment';
 import 'moment/locale/en-gb';
 import 'moment/locale/es';
-import Loader from '../components/Loader';
+import Loader from '../components/Widgets/Loader';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
@@ -318,7 +318,7 @@ export default function ListingDetails(props) {
                                     </span>
                                 </div>
                                 <div className="button-div">
-                                    <a href={listingDetails[0].url} target="_blank" rel="noopener noreferrer" 
+                                    <a href={listingDetails[0].website} target="_blank" rel="noopener noreferrer" 
                                         onClick={()=>{
                                             window.gtag("event", listingDetails[0].companyName, {
                                                 event_category: "conversions",

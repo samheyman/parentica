@@ -1,15 +1,14 @@
 .topic-card {
-    max-width: 220px !important;
+    display: inline-block;
+    width: 220px !important;
 
     .MuiCardMedia-root {
-        height: 200px;
-        width: auto;
+        height: 150px;
         background-color: $image-background-color;
     }
 
     .MuiCardContent-root {
         padding: 0 16px;
-
         h4 {
             text-transform: capitalize;
             margin: 10px 0; 

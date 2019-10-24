@@ -33,27 +33,25 @@ export default function TypeCard(props) {
     return(
         <Grid item key="3">
             <Link 
-                    to={{
-                        pathname: routePath, type: topic }}
-                        onClick={()=>{
-                            window.gtag("event", "class format card", {
-                                event_category: "formats",
-                                event_label: topic
-                            }); 
-                        }}
+                to={{
+                    pathname: routePath, type: topic }}
+                    onClick={()=>{
+                        window.gtag("event", "class format card", {
+                            event_category: "formats",
+                            event_label: topic
+                        }); 
+                    }}
             >
             <Card className={`type-card type-card-${topicId}`}>
                 <CardActionArea>
-                    
                         {/* <CardMedia
                         image={`../images/topics/${topicId}.jpg`}
                         title={props.topicLocalised}
                         /> */}
                     <CardContent>
                         <Icon>{icon}</Icon>
-                    <h4>{props.topicLocalised}</h4>
-                    <span>{props.count}</span>
-
+                        <h4>{props.topicLocalised}</h4>
+                        <span>{props.count}</span>
                     </CardContent>
                 </CardActionArea>
             </Card>

@@ -7,7 +7,7 @@ import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon';
 import { LocaleContext } from '../contexts/LocaleContext';
 import { ListingsContext } from '../contexts/ListingsContext';
-import Loader from '../components/Loader';
+import Loader from '../components/Widgets/Loader';
 import MenuItem from '@material-ui/core/MenuItem';
 import firebase from '../config/firebase';
 import { FormattedMessage } from 'react-intl';
@@ -175,16 +175,16 @@ const ClassForm = () => {
             const descriptionCleaned = descriptionParagraphs.filter(paragraph => paragraph!=="");
             const tempImageUrl = cleanString(listingName + " " + companyName);
             const tempLogoUrl = cleanString(companyName);
-            const listingDate = date ? 
+            const listingDate = date.length > 0 ? 
                 date.substring(0,10) + "T" + time + "+02:00" 
                 : 
-                Math.floor(Math.random() * (100+ 1));
+                Math.floor(Math.random() * (1000 + 1));
             firebase.firestore().collection('listings').add({
                 online,
                 format,
                 listingName,
-                nameId: tempImageUrl + "-" + listingDate.substring(0,10),
-                date: listingDate ,
+                nameId: tempImageUrl + "-" + listingDate,
+                date: (listingDate.length > 4) ? listingDate : "",
                 duration:parseInt(duration),
                 language,
                 price,
@@ -234,7 +234,7 @@ const ClassForm = () => {
         const [ loading, setLoading ] = useState(false);
         const [ success, setSuccess ] = useState(false);
 
-        const [ online, setOnline ] = useState('');
+        const [ online, setOnline ] = useState();
         const [ format, setFormat ] = useState('');
         const [ listingName, setListingName ] = useState('');
         const [ duration, setDuration ] = useState('');
@@ -309,9 +309,9 @@ const ClassForm = () => {
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="online">Type: </label>
                                 <select required onChange={e => setOnline(e.currentTarget.value)}>
-                                    <option value=""></option>
-                                    <option value="online">Online</option>
-                                    <option value="person">In person</option>
+                                    <option value={null}></option>
+                                    <option value={true}>Online</option>
+                                    <option value={false}>In person</option>
                                 </select>
                             </div>
                             <div className="provider-form-item">
@@ -339,7 +339,6 @@ const ClassForm = () => {
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="date">Date: </label>
                                 <input 
-                                    required
                                     className="date-selector" 
                                     type="date" 
                                     name="date"
@@ -350,7 +349,6 @@ const ClassForm = () => {
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="time">Time: </label>
                                 <input
-                                    required
                                     className="date-selector" 
                                     type="time" 
                                     name="time"
@@ -444,7 +442,7 @@ const ClassForm = () => {
                                     margin="dense"
                                     variant="outlined"
                                     value={tags}
-                                    placeholder="e.g. 'parenting', 'yoga"
+                                    placeholder="e.g. parenting, fitness"
                                     onChange={(e) => setTags(e.currentTarget.value)}
                                 />
                             </div>
@@ -462,35 +460,9 @@ const ClassForm = () => {
                                     onChange={(e) => setDescription(e.currentTarget.value)}
                                 />
                             </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="city">City: </label>
-                                <TextField
-                                    id="city"
-                                    value={city}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setCity(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="district">District: </label>
-                                <TextField
-                                    id="district"
-                                    value={district}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setDistrict(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="address">Address of venue: </label>
-                                <TextField
-                                    id="address"
-                                    value={address}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setAddress(e.currentTarget.value)}
-                                />
+                            
+                            <div className="admin-section">
+                                <em>Admin only</em>
                             </div>
                             <div className="provider-form-item">
                                 <label className="ant-form-item-required" title="companyName">Company name: </label>
@@ -535,7 +507,36 @@ const ClassForm = () => {
                                     {/* <span>{imagePath}</span> */}
                                 </div>
                             </div>
-                            
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="city">City: </label>
+                                <TextField
+                                    id="city"
+                                    value={city}
+                                    margin="dense"
+                                    variant="outlined"
+                                    onChange={(e) => setCity(e.currentTarget.value)}
+                                />
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="district">District: </label>
+                                <TextField
+                                    id="district"
+                                    value={district}
+                                    margin="dense"
+                                    variant="outlined"
+                                    onChange={(e) => setDistrict(e.currentTarget.value)}
+                                />
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="ant-form-item-required" title="address">Address of venue: </label>
+                                <TextField
+                                    id="address"
+                                    value={address}
+                                    margin="dense"
+                                    variant="outlined"
+                                    onChange={(e) => setAddress(e.currentTarget.value)}
+                                />
+                            </div>
                             {/* <div className="provider-form-item">
                             <label className="ant-form-item-required" title="logo">Company logo: </label>
                             <Button

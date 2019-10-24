@@ -24,18 +24,17 @@ export default function TopicCard(props) {
         //     :
             
         // ;  
-    console.log();  
     return(
-        <Grid item xs={6} sm={4} md={3} key="3">
+        <div style={{ width: '220px', marginRight: '10px', display:'inline-block' }}>
             <Link 
-                    to={{
-                        pathname: routePath, topic:`${topic}`}}
-                        onClick={()=>{
-                            window.gtag("event", props.rootUrl + " topic card", {
-                                event_category: props.rootUrl + " topics",
-                                event_label: topic
-                            }); 
-                        }}
+                to={{
+                    pathname: routePath, topic:`${topic}`}}
+                    onClick={()=>{
+                        window.gtag("event", props.rootUrl + " topic card", {
+                            event_category: props.rootUrl + " topics",
+                            event_label: topic
+                        }); 
+                    }}
             >
             <Card className={`topic-card ${topic}-card`}>
                 <CardActionArea>
@@ -45,8 +44,8 @@ export default function TopicCard(props) {
                         offsetVertical={500}
                         >
                         <CardMedia
-                        image={`../images/topics/${topicId}.jpg`}
-                        title={props.topicLocalised}
+                            image={`../images/topics/${topicId}.jpg`}
+                            title={props.topicLocalised}
                         />
                     </LazyLoad>
                     <CardContent>
@@ -55,6 +54,6 @@ export default function TopicCard(props) {
                 </CardActionArea>
             </Card>
             </Link>            
-        </Grid>
+        </div>
     );
 }

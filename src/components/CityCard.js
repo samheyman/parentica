@@ -12,7 +12,7 @@ export default function CityCard(props) {
     let topicId = props.topic.split(" ")[0];
     let topic = props.topic;
     return(
-        <Grid item xs={6} sm={4} md={3} key="3">
+        <div style={{ width: '270px', marginRight: '10px', height: '255px', display:'inline-block' }}>
             <Link to={{pathname:`/${props.locale.split('-')[0]}/${topic}`}}
                 onClick={()=>{
                     window.gtag("event", "city card", {
@@ -41,6 +41,6 @@ export default function CityCard(props) {
                 </CardActionArea>
             </Card>
             </Link>            
-        </Grid>
+        </div>
     );
 }

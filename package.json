@@ -47,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^3.4.1"
+    "cypress": "^3.4.1",
+    "jest": "^24.9.0"
   }
 }
