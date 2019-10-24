@@ -96,18 +96,20 @@ export default function Navbar(props) {
             </ListItem>
           </NavLink>
           { !!currentUser ?           
-                    <li onClick={()=> {
+                    <ListItem button key="login" onClick={()=> {
                         firebase.auth().signOut();
                       }}      
                       >
-                        <FormattedMessage id={`navbar.logout.link.${locale}`} />
-                    </li>  
+                        <ListItemText               
+                          primary={<FormattedMessage id={`navbar.logout.link.${locale}`} />}
+                        />
+                      </ListItem>
                     : 
                     <NavLink to={`/${locale.split('-')[0]}/login`}>
                       <ListItem button key="login">
                         <ListItemText               
-                          primary={<FormattedMessage id={`navbar.login.${locale}`} />} 
-                      />
+                          primary={<FormattedMessage id={`navbar.login.link.${locale}`} />} 
+                        />
                       </ListItem>
                     </NavLink>
                 }

@@ -21,6 +21,10 @@
     "general.showAll.es-ES": "Ver todas",
     "general.password.en-GB": "Password",
     "general.password.es-ES": "Contraseña",
+    "general.please.en-GB": "Please",
+    "general.please.es-ES": "Por favor",
+    "general.pleaseWait.en-GB": "Please wait",
+    "general.pleaseWait.es-ES": "Espera un momento",
 
     "navbar.selectLanguage.en-GB": "Offered in",
     "navbar.selectLanguage.es-ES": "Ofrecido en",
@@ -34,8 +38,14 @@
     "navbar.about.link.en-GB": "About",
     "navbar.about.link.es-ES": "Nosotros",
 
-    "navbar.login.link.en-GB": "Log in",
+    "navbar.login.link.en-GB": "Sign in",
     "navbar.login.link.es-ES": "Inicia sesión",
+    
+    "navbar.alreadyAccount.en-GB": "Already have an account?",
+    "navbar.alreadyAccount.es-ES": "¿Ya tienes una cuenta?",
+
+    "navbar.signup.link.en-GB": "Sign up",
+    "navbar.signup.link.es-ES": "Registrate",
 
     "navbar.logout.link.en-GB": "Log out",
     "navbar.logout.link.es-ES": "Cerrar sesión",
@@ -251,12 +261,12 @@
     "about.team.elineDescription.es-ES": "Eline es madre primeriza y cofundadora de dos ONGs que empoderan a jóvenes de entornos vulnerables como agentes de cambio. Ha sido profesora y le apasiona el mundo de la educación como vía de transformación personal y social. Sabe que educar es una ciencia compleja y que los padres son los educadores más influyentes en la vida de un niño.",
     
     "contact.contact.en-GB": "Contact",
-    "contact.contact.es-ES": "Contacto",
+    "contact.contact.es-ES": "contacto",
 
-    "contact.contactUs.en-GB": "Contact us",
-    "contact.contactUs.es-ES": "Contáctenos",
+    "contact.contactUs.en-GB": "contact us",
+    "contact.contactUs.es-ES": "contáctanos",
 
-    "contact.noAccount.en-GB": "Don't have an account? ",
+    "contact.noAccount.en-GB": "Need a Parentica account? ",
     "contact.noAccount.es-ES": "¿No tienes una cuenta?",
 
     "contact.p1.en-GB": "Please feel free to get in touch with us for more information or to find out about listing your classes.",

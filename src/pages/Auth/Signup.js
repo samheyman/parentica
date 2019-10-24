@@ -1,4 +1,4 @@
-import React, { useCallback, useContext } from 'react';
+import React, { useCallback, useContext, useState } from 'react';
 import { withRouter } from 'react-router';
 import { Redirect } from 'react-router-dom';
 import firebase from '@firebase/app';
@@ -9,6 +9,9 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
+import { FormattedMessage } from 'react-intl';
+import { LocaleContext } from '../../contexts/LocaleContext';
+import SmallLoader from '../../components/Widgets/SmallLoader';
 
 const useStyles = makeStyles(theme => ({
     // container: {
@@ -29,9 +32,12 @@ const useStyles = makeStyles(theme => ({
 
 const Signup = ({ history }) => {
     const classes = useStyles();
+    const { locale } = useContext(LocaleContext);
+    const [ isLoading, setIsLoading ] = useState(false);
 
     const handleSignup = useCallback(async event => {
         event.preventDefault();
+        setIsLoading(true);
         const {email, password} = event.target.elements;
         try {
             await firebase
@@ -39,6 +45,7 @@ const Signup = ({ history }) => {
                 .createUserWithEmailAndPassword(email.value, password.value);
                 history.push("providers");
         } catch (error) {
+            setIsLoading(false);
             console.log("Error signing up: " + error);
         }
     }, [history]);
@@ -46,27 +53,34 @@ const Signup = ({ history }) => {
     return(
         <Container className="main-content">
             <div className="login-form">
-                <h1>Sign up</h1>
+                <h1>                            <FormattedMessage id={`navbar.signup.link.${locale}`} /></h1>
                 <form className={classes.container} onSubmit={handleSignup}>
-                    <div>
+                <div style={{marginTop:'30px',textAlign:'left'}}>
+                    <label>
+                        <FormattedMessage id={`contact.email.${locale}`} />
+                    </label>
                         <TextField
                             id="outlined-email-input"
                             name="email"
-                            label="Email"
+                            // label="Email"
                             className={classes.textField}
                             type="email"
                             name="email"
                             autoComplete="email"
                             margin="normal"
+                            placeholder="e.g. your@email.com"
                             fullWidth
                             variant="outlined"
                         />
                     </div>
-                    <div>
+                    <div style={{marginTop:'30px',textAlign:'left'}}>
+                    <label>
+                        <FormattedMessage id={`general.password.${locale}`} />
+                    </label>
                         <TextField
                             id="outlined-password-input"
                             name="password"
-                            label="Password"
+                            // label="Password"
                             className={classes.textField}
                             type="password"
                             autoComplete="current-password"
@@ -75,13 +89,26 @@ const Signup = ({ history }) => {
                             variant="outlined"
                         />
                     </div>
-                    <Button type="submit" variant="contained" color="primary" className={classes.button}>
-                        Create account
-                    </Button>
-                
+                    {(!isLoading) ?
+                        (<Button type="submit" variant="contained" className="signIn-signUp">
+                            <FormattedMessage id={`navbar.signup.link.${locale}`} />
+                        </Button>)
+                        :
+                        (<Button type="submit" variant="contained" className="loading">
+                            <SmallLoader style={{ height:'40px'}} />
+                            &nbsp;&nbsp;
+                            <FormattedMessage id={`general.pleaseWait.${locale}`} />...
+                        </Button>)            
+                    }                
                 </form>
                 <div className="create-account-link">
-                    <p><Link to="login">Log in</Link></p>
+                    <p>
+                        <FormattedMessage id={`navbar.alreadyAccount.${locale}`} />
+                        &nbsp;
+                        <Link to="login">
+                            <FormattedMessage id={`navbar.login.link.${locale}`} />
+                        </Link>
+                    </p>
                 </div>
             </div>
         </Container>

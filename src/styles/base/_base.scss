@@ -65,7 +65,8 @@ body {
 }
 
 .container, {
-    width: $container-width !important;
+    // width: $container-width !important;
+    max-width: $max-container-width !important;
 }
 
 @media only screen and (max-width: 993px) {
