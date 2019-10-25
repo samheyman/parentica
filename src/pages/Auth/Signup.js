@@ -51,9 +51,9 @@ const Signup = ({ history }) => {
     }, [history]);
 
     return(
-        <Container className="main-content">
+        <Container className="content">
             <div className="login-form">
-                <h1>                            <FormattedMessage id={`navbar.signup.link.${locale}`} /></h1>
+                <h1><FormattedMessage id={`navbar.signup.link.${locale}`} /></h1>
                 <form className={classes.container} onSubmit={handleSignup}>
                 <div style={{marginTop:'30px',textAlign:'left'}}>
                     <label>

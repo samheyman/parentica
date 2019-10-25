@@ -98,8 +98,8 @@ export default function Main(props) {
 
     const ListingWithName = () => {
         let { listingId } = useParams();
-        console.log("ListingId:");
-        console.log(listingId);
+        // console.log("ListingId:");
+        // console.log(listingId);
         // listings = useListings();
         let result = listings.filter((item) => item.nameId === match.params.listingId)[0];
         return(

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,11 +34,9 @@ const useStyles = makeStyles(theme => ({
 
 function About(props) {
     const classes = useStyles();
-
+    const { locale } = useContext(LocaleContext);
     return(
-        <LocaleContext.Consumer>{(context) => {
-            const locale = context.locale;
-            return(<Container className="main-content">
+        <Container className="content">
             <div className="col content">
                 <div className={classes.root}>
                     <h2>
@@ -150,7 +148,7 @@ function About(props) {
                     </h3>
                     <Grid container spacing={2}>
                         <Grid item sm={6} md={4}>
-                            <Card className={classes.card}>
+                            <Card className={`${classes.card} profile-div`}>
                                 <CardActionArea>
                                     <CardMedia
                                     className={`sam ${classes.media}`}
@@ -158,21 +156,21 @@ function About(props) {
                                     title="Sam Heyman"
                                     />
                                     <CardContent>
-                                    <Typography gutterBottom variant="h4" component="h4" className="team-name">
+                                    <h3 className="profile-div-title">
                                         Sam Heyman
-                                    </Typography>
-                                    <Typography gutterBottom variant="h4" component="h4" className="job-title">
+                                    </h3>
+                                    <p className="profile-div-subtitle">
                                         <FormattedMessage 
                                             id={`about.team.samJob.${locale}`}
                                             defaultMessage=""
                                         />
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    </p>
+                                    <p className="profile-div-text">
                                         <FormattedMessage 
                                             id={`about.team.samDescription.${locale}`}
                                             defaultMessage=""
                                         />     
-                                    </Typography>
+                                    </p>
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
@@ -181,7 +179,7 @@ function About(props) {
                             </Card>
                         </Grid>
                         <Grid item sm={6} md={4}>
-                            <Card className={classes.card}>
+                        <Card className={`${classes.card} profile-div`}>
                                 <CardActionArea>
                                     <CardMedia
                                         className={`eline ${classes.media}`}
@@ -189,21 +187,21 @@ function About(props) {
                                         title="Eline Lund"
                                     />
                                     <CardContent>
-                                    <Typography gutterBottom variant="h4" component="h4" className="team-name">
+                                    <h3 className="profile-div-title">
                                         Eline Lund
-                                    </Typography>
-                                    <Typography gutterBottom variant="h4" component="h4" className="job-title">
+                                    </h3>
+                                    <p className="profile-div-subtitle">
                                         <FormattedMessage 
                                             id={`about.team.elineJob.${locale}`}
                                             defaultMessage=""
                                         /> 
-                                    </Typography>
-                                    <Typography variant="body2" color="textSecondary" component="p">
+                                    </p>
+                                    <p className="profile-div-text">
                                         <FormattedMessage 
                                             id={`about.team.elineDescription.${locale}`}
                                             defaultMessage=""
                                         /> 
-                                    </Typography>
+                                    </p>
                                     </CardContent>
                                 </CardActionArea>
                                 <CardActions>
@@ -215,7 +213,7 @@ function About(props) {
                     <br/>
                 </div>
             </div>
-        </Container>)}}</LocaleContext.Consumer>
+        </Container>
     );
 }
 

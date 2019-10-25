@@ -117,11 +117,10 @@ export default function Navbar(props) {
       </div>
     );
     let { currentUser } = useContext(AuthContext);
-    console.log(!!currentUser);
+    const { locale } = useContext(LocaleContext);
+    
     return (
-      <LocaleContext.Consumer>{(context) => {
-        const locale = context.locale;
-        return(<div className={classes.root}>
+      <div className={classes.root}>
         <AppBar className="app-header" position="static">
           <Toolbar>
             <NavLink to={`/${locale.split('-')[0]}`} className="brand-logo">
@@ -165,7 +164,6 @@ export default function Navbar(props) {
         <Drawer anchor="right" open={state.top} onClose={toggleDrawer('top', false)}>
         {drawer('top', locale)}
         </Drawer>
-      </div>)}}</LocaleContext.Consumer>
-      
+      </div>
     );
 }

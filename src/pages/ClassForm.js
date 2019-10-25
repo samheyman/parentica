@@ -298,303 +298,304 @@ const ClassForm = () => {
         }
 
         return(
-            <Container className="main-content">
-                <Grid container className="contact-form">
-                    <Grid item xs={12} sm={12} >
-                        <h2>
-                            New Class
-                        </h2>           
-                        <form className={"new-class-form noValidate " + (success ? "hide" : "show")} autoComplete="off" onSubmit={handleSubmit}>
-                            {/* <h3>Format</h3> */}
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="online">Type: </label>
-                                <select required onChange={e => setOnline(e.currentTarget.value)}>
-                                    <option value={null}></option>
-                                    <option value={true}>Online</option>
-                                    <option value={false}>In person</option>
-                                </select>
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="format">Format: </label>
-                                <select required onChange={e => setFormat(e.currentTarget.value)}>
-                                    <option value=""></option>
-                                    <option value="class">Class</option>
-                                    <option value="workshop">Workshop</option>
-                                    <option value="meetup">Meetup</option>
-                                    <option value="seminar">Seminar</option>
-                                    <option value="webinar">Webinar</option>
-                                </select>
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="listingName">Name: </label>
-                                <TextField
-                                    required
-                                    id="listingName"
-                                    value={listingName}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setListingName(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="date">Date: </label>
-                                <input 
-                                    className="date-selector" 
-                                    type="date" 
-                                    name="date"
-                                    value={date}
-                                    onChange={(e) => setDate(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="time">Time: </label>
-                                <input
-                                    className="date-selector" 
-                                    type="time" 
-                                    name="time"
-                                    value={time}
-                                    onChange={(e) => setTime(e.currentTarget.value)}
-                                />
-                                <span className="time-notice">add 1h for classes after October 27</span>
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="duration">Duration: </label>
-                                <TextField
-                                    required
-                                    id="duration"
-                                    value={duration}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setDuration(e.currentTarget.value)}
-                                />
-                                <span className="time-notice">in minutes    </span>
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="price">Price: </label>
-                                <TextField
-                                    required
-                                    id="price"
-                                    value={price}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setPrice(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="Customer">Language: </label>
-                                <select required onChange={e => setLanguage(e.currentTarget.value)}>
-                                    <option value=""></option>
-                                    <option value="spanish">Spanish</option>
-                                    <option value="english">English</option>
-                                </select>
-                            </div>
-                            
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="image">Image: </label>
-                                <div className="file-upload-container">
-                                    <input
-                                        // required
-                                        // value={selectedFile.name}
-                                        type="file"
-                                        // style={{ display: "none" }}
-                                        onChange={(e) => setSelectedFile(e.currentTarget.files[0])}
-                                    />
-                                    {/* <label className="custom-file-upload">
-                                        <input type="file"/>
-                                        Select file
-                                    </label> */}
-                                    { imageUploaded ? (
-                                            <Icon className="success-icon">
-                                                done
-                                            </Icon>
-                                        ) : 
-                                        // selectedFile ? (
-                                        //     <span className="upload-image"
-                                        //         onClick={postImage}
-                                        //     >
-                                        //     Upload
-                                        //     </span>
-                                        // ) : 
-                                        (
-                                            <span></span>
-                                        )
-                                    }
-                                    {/* <span>{imagePath}</span> */}
-                                </div>
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="website">Website: </label>
-                                <TextField
-                                    required
-                                    id="website"
-                                    margin="dense"
-                                    variant="outlined"
-                                    value={website}
-                                    placeholder="e.g. https://example.com/class"
-                                    onChange={(e) => setWebsite(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="tags">Tags: </label>
-                                <TextField
-                                    required
-                                    id="tags"
-                                    margin="dense"
-                                    variant="outlined"
-                                    value={tags}
-                                    placeholder="e.g. parenting, fitness"
-                                    onChange={(e) => setTags(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="description">Description: </label>
-                                <TextField
-                                    required
-                                    id="description"
-                                    value={description}
-                                    multiline
-                                    rows="12"
-                                    placeholder="Please describe your class"
-                                    margin="normal"
-                                    variant="outlined"
-                                    onChange={(e) => setDescription(e.currentTarget.value)}
-                                />
-                            </div>
-                            
-                            <div className="admin-section">
-                                <em>Admin only</em>
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="companyName">Company name: </label>
-                                <TextField
-                                    id="companyName"
-                                    value={companyName}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setCompanyName(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="image">Logo: </label>
-                                <div className="file-upload-container">
-                                    <input
-                                        // required
-                                        // value={selectedFile.name}
-                                        type="file"
-                                        // style={{ display: "none" }}
-                                        onChange={(e) => setSelectedLogo(e.currentTarget.files[0])}
-                                    />
-                                    {/* <label className="custom-file-upload">
-                                        <input type="file"/>
-                                        Select file
-                                    </label> */}
-                                    { logoUploaded ? (
-                                            <Icon className="success-icon-logo">
-                                                done
-                                            </Icon>
-                                        ) : 
-                                        // selectedFile ? (
-                                        //     <span className="upload-image"
-                                        //         onClick={postImage}
-                                        //     >
-                                        //     Upload
-                                        //     </span>
-                                        // ) : 
-                                        (
-                                            <span></span>
-                                        )
-                                    }
-                                    {/* <span>{imagePath}</span> */}
-                                </div>
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="city">City: </label>
-                                <TextField
-                                    id="city"
-                                    value={city}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setCity(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="district">District: </label>
-                                <TextField
-                                    id="district"
-                                    value={district}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setDistrict(e.currentTarget.value)}
-                                />
-                            </div>
-                            <div className="provider-form-item">
-                                <label className="ant-form-item-required" title="address">Address of venue: </label>
-                                <TextField
-                                    id="address"
-                                    value={address}
-                                    margin="dense"
-                                    variant="outlined"
-                                    onChange={(e) => setAddress(e.currentTarget.value)}
-                                />
-                            </div>
-                            {/* <div className="provider-form-item">
-                            <label className="ant-form-item-required" title="logo">Company logo: </label>
-                            <Button
-                                variant="contained"
-                                component="label"
-                                >
-                                Upload File
-                                <input
-                                    type="file"
-                                    style={{ display: "none" }}
-                                />
-                                </Button>
-                            </div> */}
-                            <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
-                            { !loading ?
-                                <div className="form-buttons">
-                                    <Button variant="contained" className="send-form-data primary" type="submit" >
-                                        <Icon>
-                                            &nbsp;send
-                                        </Icon>
-                                        &nbsp;Send
-                                    </Button>
-                                    <Link to={{pathname:`/${locale.split('-')[0]}/providers`}}>
-                                    <Button variant="outlined" className="cancel-form-data secondary">
-                                        <Icon>
-                                            &nbsp;close
-                                        </Icon>
-                                        Cancel
-                                    </Button>
-                                    </Link>
-                                </div>
-                                :
-                                <Loader/>}
-                                
-                            </div>
-                            
-                        </form>
-                        <div className={"success-message " + (success ? "show" : "hide")} >
-                                <Icon className="success-icon">
-                                    done
+            <Container className="content">
+                <aside>
+
+                </aside>
+                <main>
+                <h2>
+                    New Class
+                </h2>           
+                <form className={"new-class-form noValidate " + (success ? "hide" : "show")} autoComplete="off" onSubmit={handleSubmit}>
+                    {/* <h3>Format</h3> */}
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="online">Type: </label>
+                        <select required onChange={e => setOnline(e.currentTarget.value)}>
+                            <option value={null}></option>
+                            <option value={true}>Online</option>
+                            <option value={false}>In person</option>
+                        </select>
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="format">Format: </label>
+                        <select required onChange={e => setFormat(e.currentTarget.value)}>
+                            <option value=""></option>
+                            <option value="class">Class</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="meetup">Meetup</option>
+                            <option value="seminar">Seminar</option>
+                            <option value="webinar">Webinar</option>
+                        </select>
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="listingName">Name: </label>
+                        <TextField
+                            required
+                            id="listingName"
+                            value={listingName}
+                            margin="dense"
+                            variant="outlined"
+                            onChange={(e) => setListingName(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="date">Date: </label>
+                        <input 
+                            className="date-selector" 
+                            type="date" 
+                            name="date"
+                            value={date}
+                            onChange={(e) => setDate(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="time">Time: </label>
+                        <input
+                            className="date-selector" 
+                            type="time" 
+                            name="time"
+                            value={time}
+                            onChange={(e) => setTime(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="duration">Duration (mins): </label>
+                        <TextField
+                            required
+                            id="duration"
+                            value={duration}
+                            margin="dense"
+                            variant="outlined"
+                            placeholder="e.g. 60"
+                            onChange={(e) => setDuration(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="price">Price: </label>
+                        <TextField
+                            required
+                            id="price"
+                            value={price}
+                            margin="dense"
+                            variant="outlined"
+                            onChange={(e) => setPrice(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="Customer">Language: </label>
+                        <select required onChange={e => setLanguage(e.currentTarget.value)}>
+                            <option value=""></option>
+                            <option value="spanish">Spanish</option>
+                            <option value="english">English</option>
+                        </select>
+                    </div>
+                    
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="image">Image: </label>
+                        <div className="file-upload-container">
+                            <input
+                                // required
+                                // value={selectedFile.name}
+                                type="file"
+                                // style={{ display: "none" }}
+                                onChange={(e) => setSelectedFile(e.currentTarget.files[0])}
+                            />
+                            {/* <label className="custom-file-upload">
+                                <input type="file"/>
+                                Select file
+                            </label> */}
+                            { imageUploaded ? (
+                                    <Icon className="success-icon">
+                                        done
+                                    </Icon>
+                                ) : 
+                                // selectedFile ? (
+                                //     <span className="upload-image"
+                                //         onClick={postImage}
+                                //     >
+                                //     Upload
+                                //     </span>
+                                // ) : 
+                                (
+                                    <span></span>
+                                )
+                            }
+                            {/* <span>{imagePath}</span> */}
+                        </div>
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="website">Website: </label>
+                        <TextField
+                            required
+                            id="website"
+                            margin="dense"
+                            variant="outlined"
+                            value={website}
+                            placeholder="e.g. https://example.com/class"
+                            onChange={(e) => setWebsite(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="tags">Tags: </label>
+                        <TextField
+                            required
+                            id="tags"
+                            margin="dense"
+                            variant="outlined"
+                            value={tags}
+                            placeholder="e.g. parenting, fitness"
+                            onChange={(e) => setTags(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="description">Description: </label>
+                        <TextField
+                            required
+                            id="description"
+                            value={description}
+                            multiline
+                            rows="12"
+                            placeholder="Please describe your class"
+                            margin="normal"
+                            variant="outlined"
+                            onChange={(e) => setDescription(e.currentTarget.value)}
+                        />
+                    </div>
+                    
+                    <div className="admin-section">
+                        <em>Admin only</em>
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="companyName">Company name: </label>
+                        <TextField
+                            id="companyName"
+                            value={companyName}
+                            margin="dense"
+                            variant="outlined"
+                            onChange={(e) => setCompanyName(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="image">Logo: </label>
+                        <div className="file-upload-container">
+                            <input
+                                // required
+                                // value={selectedFile.name}
+                                type="file"
+                                // style={{ display: "none" }}
+                                onChange={(e) => setSelectedLogo(e.currentTarget.files[0])}
+                            />
+                            {/* <label className="custom-file-upload">
+                                <input type="file"/>
+                                Select file
+                            </label> */}
+                            { logoUploaded ? (
+                                    <Icon className="success-icon-logo">
+                                        done
+                                    </Icon>
+                                ) : 
+                                // selectedFile ? (
+                                //     <span className="upload-image"
+                                //         onClick={postImage}
+                                //     >
+                                //     Upload
+                                //     </span>
+                                // ) : 
+                                (
+                                    <span></span>
+                                )
+                            }
+                            {/* <span>{imagePath}</span> */}
+                        </div>
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="city">City: </label>
+                        <TextField
+                            id="city"
+                            value={city}
+                            margin="dense"
+                            variant="outlined"
+                            onChange={(e) => setCity(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="district">District: </label>
+                        <TextField
+                            id="district"
+                            value={district}
+                            margin="dense"
+                            variant="outlined"
+                            onChange={(e) => setDistrict(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="ant-form-item-required" title="address">Address: </label>
+                        <TextField
+                            id="address"
+                            value={address}
+                            margin="dense"
+                            variant="outlined"
+                            onChange={(e) => setAddress(e.currentTarget.value)}
+                        />
+                    </div>
+                    {/* <div className="provider-form-item">
+                    <label className="ant-form-item-required" title="logo">Company logo: </label>
+                    <Button
+                        variant="contained"
+                        component="label"
+                        >
+                        Upload File
+                        <input
+                            type="file"
+                            style={{ display: "none" }}
+                        />
+                        </Button>
+                    </div> */}
+                    <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
+                    { !loading ?
+                        <div className="form-buttons">
+                            <Button variant="contained" className="send-form-data primary" type="submit" >
+                                <Icon>
+                                    &nbsp;send
                                 </Icon>
-                                <p>
-                                <FormattedMessage 
-                                    id={`providers.confirmClassAdded.${locale}`}
-                                    defaultMessage="Class added"
-                                />
-                                </p>
-                                
-                                <p><Link to={{pathname:`/${locale.split('-')[0]}/providers`}}>
-                                <FormattedMessage 
-                                    id={`providers.backHomeLink.${locale}`}
-                                    defaultMessage="back to list"
-                                />
-                                </Link></p>
-                            </div>
-                    </Grid>
-                </Grid>
-                <br/>
+                                &nbsp;Send
+                            </Button>
+                            <Link to={{pathname:`/${locale.split('-')[0]}/providers`}}>
+                            <Button variant="outlined" className="cancel-form-data secondary">
+                                <Icon>
+                                    &nbsp;close
+                                </Icon>
+                                Cancel
+                            </Button>
+                            </Link>
+                        </div>
+                        :
+                        <Loader/>}
+                        
+                    </div>
+                    
+                </form>
+                <div className={"success-message " + (success ? "show" : "hide")} >
+                    <Icon className="success-icon">
+                        done
+                    </Icon>
+                    <p>
+                    <FormattedMessage 
+                        id={`providers.confirmClassAdded.${locale}`}
+                        defaultMessage="Class added"
+                    />
+                    </p>
+                    
+                    <p>
+                        <Link to={{pathname:`/${locale.split('-')[0]}/providers`}}>
+                            <FormattedMessage 
+                                id={`providers.backHomeLink.${locale}`}
+                                defaultMessage="back to list"
+                            />
+                        </Link>
+                    </p>
+                </div>
+            </main>
             </Container>
         );
 }

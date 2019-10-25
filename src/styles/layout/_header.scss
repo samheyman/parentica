@@ -31,17 +31,11 @@
 }
 
 header {
-    width: 100%;
     background-color: $header-background-color;
-    // text-transform: capitalize !important;
     border-bottom: 1px solid $very-pale-grey;
 
     div {
         justify-content: space-between;
-    }
-
-    .container {
-        padding: 0 10px;
     }
 
     .app-header-full {
@@ -162,35 +156,6 @@ header {
     }
 }
 
-.mobile-back-header {
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    height: $navigation-height;
-    // background-color: transparent;
-    display : flex;
-    align-items : center;
-
-    div {
-        height: $navigation-height;
-        display : flex;
-        align-items : center;
-    }
-
-    a {
-        color: inherit;
-        // margin: 0 0 !important;
-        height: $navigation-height;
-
-        i {
-            height: $navigation-height;
-            display : flex;
-            align-items : center;
-            font-size: 25px;
-        }
-    }
-}
-
 // Overide the hamburger icon style
 .menu-icon {
     span {
@@ -215,7 +180,9 @@ header {
 }
 
 
-/* Icon 1 */
+/* ================================
+Navbar burger icon animation
+================================= */
 
 #nav-icon {
   width: 24px;

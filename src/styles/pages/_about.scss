@@ -1,8 +1,3 @@
-.content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .sam {
     background-position: 0 0px !important;
     width: 110%;
@@ -14,14 +9,25 @@
     height: 300px !important;
 }
 
-.team-name {
-    font-size: 28px !important;
-}
+.profile-div {
+    .profile-div-title {
+        font-weight: 700;
+        font-size: 1.6rem;
+        margin: 10px 0;
+        padding: 0;
+    }
 
-.job-title {
-    font-size: 18px !important;
-    margin: 10px 0 !important;
-    font-weight: bold;
+    .profile-div-subtitle {
+        font-weight: 400;
+        font-size: 1.2rem;
+        text-transform: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .profile-div-text {
+        text-transform: none;
+    }
 }
 
 ol {

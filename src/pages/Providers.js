@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
@@ -188,10 +188,10 @@ const Providers = () => {
         }
     }
 
-    return(<LocaleContext.Consumer>{(context) => {
-            const locale = context.locale;
-            return(
-                <Container className="main-content">
+    const { locale } = useContext(LocaleContext);
+
+    return(
+        <Container className="content">
                     <Grid container className="contact-form">
                         <Grid item xs={12} sm={12} >
                             <h2>
@@ -320,8 +320,8 @@ const Providers = () => {
                         </Grid>
                     </Grid>
                     <br/>
-                </Container>)}}</LocaleContext.Consumer>
-        );
+                </Container>
+            );
 }
 
 export default Providers; 

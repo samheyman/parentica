@@ -1,6 +1,6 @@
 {
   "name": "Parentica",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "dependencies": {
     "@firebase/storage": "^0.3.13",
@@ -47,7 +47,6 @@
     ]
   },
   "devDependencies": {
-    "cypress": "^3.4.1",
-    "jest": "^24.9.0"
+    "cypress": "^3.4.1"
   }
 }
