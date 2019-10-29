@@ -29,6 +29,10 @@ button {
     }
 }
 
+.MuiTableCell-body {
+    text-transform: lowercase !important;
+}
+
 .new-class-form {
     max-width: 860px;
 

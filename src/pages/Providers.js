@@ -24,8 +24,6 @@ const columns = [
     { id: 'id', label: ''},
     { id: 'name', label: 'Name' },
     { id: 'provider', label: 'Provider'},
-    { id: 'uid', label: 'UID'},
-
     {
         id: 'class_date',
         label: 'Date',
@@ -44,19 +42,21 @@ const columns = [
         minWidth: 120,
         align: 'right',
     },
-    { id: 'active', label: 'Live'}
+    { id: 'uid', label: 'UID'},
+    { id: 'addedBy', label: 'Added by'},
+    { id: 'active', label: 'Status'}
 ];
 
-function createData(id, name, provider, uid, date, online, city, active) {
+function createData(id, name, provider, date, online, city, uid, addedBy, active) {
     moment.locale('en');
-    let class_date = "";
-    let class_time = "";
-    if (date !== null) {
+    let class_date = "---";
+    let class_time = "---";
+    if (date !== null && typeof date === 'object') {
         let jsDate = new Date(date.seconds * 1000);
         class_date = moment(jsDate).format("D MMM, YYYY");
         class_time = moment(jsDate).format("HH:mm");
     }
-    return { id, name, provider, uid, class_date, class_time , online, city, active };
+    return { id, name, provider, uid, class_date, class_time , online, city, addedBy, active };
 }
   
 const useStyles = makeStyles({
@@ -118,11 +118,10 @@ const Providers = () => {
     const listings = useListings();
     const classes = useStyles();
     const [page, setPage] = useState(0);
-    const [rowsPerPage, setRowsPerPage] = useState(25);
+    const [rowsPerPage, setRowsPerPage] = useState(100);
     const [isListingSelected, setIsListingSelected] = useState(false);
     const [listingsSelected, setListingsSelected] = useState([]);
     let rows;
-
     if(listings!=null && listings.length > 0) {
         rows = listings.map((classEntry) => {
             let title = (classEntry.hasOwnProperty("listingName") ? 
@@ -130,15 +129,18 @@ const Providers = () => {
                 :
                 classEntry.listingTitle
             )
+            let date = (classEntry.date != null) ? classEntry.date : "";
+            let addedBy = (classEntry.hasOwnProperty('addedBy')) ? classEntry.addedBy : null;
             return(
                 createData(
                     classEntry.id,
                     title,
                     classEntry.companyName,
-                    classEntry.id.substring(0,4) + '...',
-                    classEntry.date,
+                    date,
                     classEntry.online,
                     classEntry.city,
+                    classEntry.id.substring(0,4) + '...',
+                    addedBy,
                     classEntry.active ? "true": "false"
             ));
         });

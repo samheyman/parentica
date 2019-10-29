@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import Explore from './Explore';
-import ClassDetails from '../pages/ClassDetails';
+// import ClassDetails from '../pages/ClassDetails';
 import ListingDetails from '../pages/ListingDetails';
 import Home from './Home';
 import Online from './Online';

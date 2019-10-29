@@ -18,6 +18,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import RadioButton from '@material-ui/core/Radio';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
+import { AuthContext } from '../contexts/AuthContext';
 
 
 const NewListing = () => {
@@ -173,6 +174,7 @@ const NewListing = () => {
             return output.replace(/--/g, "-");
         }   
 
+        const { currentUser } = useContext(AuthContext);
         const { locale } = useContext(LocaleContext);
         const handleSubmit = (e) => {
             e.preventDefault();
@@ -201,6 +203,7 @@ const NewListing = () => {
                 listingImage: tempImageUrl,
                 companyLogo: tempLogoUrl,
                 active: false,
+                addedBy: currentUser.email,
                 dateAdded: new Date
 
             })
@@ -302,6 +305,8 @@ const NewListing = () => {
             })
         }
 
+        console.log(currentUser);
+
         return(
             <Container className="content">
 
@@ -311,6 +316,29 @@ const NewListing = () => {
                 </h2>  
 
                 <form className={"new-class-form noValidate " + (success ? "hide" : "show")} autoComplete="off" onSubmit={handleSubmit}>
+                    <div className="provider-form-item">
+                        <label className="required" title="listingTitle">Title</label>
+                        <TextField
+                            required
+                            id="listingTitle"
+                            value={listingTitle}
+                            margin="normal"
+                            variant="outlined"
+                            onChange={(e) => setListingTitle(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="required" title="format">Format</label>
+                        <select required onChange={e => setFormat(e.currentTarget.value)}>
+                            <option value=""></option>
+                            <option value="class">Class</option>
+                            <option value="workshop">Workshop</option>
+                            <option value="meetup">Meetup</option>
+                            <option value="seminar">Seminar</option>
+                            <option value="webinar">Webinar</option>
+                        </select>
+                    </div>
+                    
                     <h3>Specific date?</h3>
                     <div className="specific-date">
                         <label className="specific-date-label">No</label>
@@ -340,6 +368,7 @@ const NewListing = () => {
                                 name="date"
                                 value={date}
                                 margin="normal"
+                                placeholder="e.g. 2019-12-01"
                                 onChange={(e) => setDate(e.currentTarget.value)}
                             />
                         </div>
@@ -351,6 +380,7 @@ const NewListing = () => {
                                 name="time"
                                 value={time}
                                 margin="normal"
+                                placeholder="e.g. 17:30"
                                 onChange={(e) => setTime(e.currentTarget.value)}
                             />
                         </div>
@@ -358,7 +388,7 @@ const NewListing = () => {
                         :
                         null
                     }
-                    <h3>Where?</h3>
+                    <h3>Format?</h3>
                     <div className="specific-date">
                         
                         <label className="specific-date-label">Online</label>
@@ -415,30 +445,7 @@ const NewListing = () => {
                     :
                     (null)
                     }
-                    <h3>Details</h3>
-                    <div className="provider-form-item">
-                        <label className="required" title="listingTitle">Title</label>
-                        <TextField
-                            required
-                            id="listingTitle"
-                            value={listingTitle}
-                            margin="normal"
-                            variant="outlined"
-                            onChange={(e) => setListingTitle(e.currentTarget.value)}
-                        />
-                    </div>
-                    <h3>Listing type</h3>
-                    <div className="provider-form-item">
-                        <label className="required" title="format">Format</label>
-                        <select required onChange={e => setFormat(e.currentTarget.value)}>
-                            <option value=""></option>
-                            <option value="class">Class</option>
-                            <option value="workshop">Workshop</option>
-                            <option value="meetup">Meetup</option>
-                            <option value="seminar">Seminar</option>
-                            <option value="webinar">Webinar</option>
-                        </select>
-                    </div>
+                    
 
                     <h3>Booking information</h3>
                     <div className="provider-form-item">
@@ -449,6 +456,7 @@ const NewListing = () => {
                             value={price}
                             margin="normal"
                             variant="outlined"
+                            placeholder="e.g. 25"
                             onChange={(e) => setPrice(e.currentTarget.value)}
                         />
                     </div>
@@ -529,8 +537,9 @@ const NewListing = () => {
                         <label className="required" title="Customer">Language</label>
                         <select required onChange={e => setLanguage(e.currentTarget.value)}>
                             <option value=""></option>
-                            <option value="spanish">Spanish</option>
                             <option value="english">English</option>
+                            <option value="french">French</option>
+                            <option value="spanish">Spanish</option>
                         </select>
                     </div>
                     <div className="provider-form-item">
