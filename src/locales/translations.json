@@ -38,6 +38,19 @@
     "navbar.about.link.en-GB": "About",
     "navbar.about.link.es-ES": "Nosotros",
 
+    "navbar.dashboard.link.en-GB": "Dashboard",
+    "navbar.dashboard.link.es-ES": "Tablero",
+
+    "navbar.listings.link.en-GB": "Listings",
+    "navbar.listings.link.es-ES": "Listados",
+
+    "navbar.newListing.link.en-GB": "New listing",
+    "navbar.newListing.link.es-ES": "Nuevo listado",
+
+    "navbar.settings.link.en-GB": "Account settings",
+    "navbar.settings.link.es-ES": "Ajustes",
+
+
     "navbar.login.link.en-GB": "Sign in",
     "navbar.login.link.es-ES": "Inicia sesión",
     
@@ -80,8 +93,8 @@
     "homepage.allTopics.en-GB": "All topics",
     "homepage.allTopics.es-ES": "Todos los temas",
 
-    "homepage.providers.madrid.header.en-GB": "Providers in Madrid",
-    "homepage.providers.madrid.header.es-ES": "Proveedores en Madrid",
+    "homepage.providers.header.en-GB": "Providers in",
+    "homepage.providers.header.es-ES": "Proveedores en",
 
     "homepage.onlineProviders.en-GB": "Online providers",
     "homepage.onlineProviders.es-ES": "Proveedores en línea",
@@ -140,8 +153,8 @@
     "topics.yoga.en-GB": "yoga",
     "topics.yoga.es-ES": "yoga",
 
-    "city.thisWeek.en-GB": "This week in Madrid",
-    "city.thisWeek.es-ES": "Esta semana en Madrid",
+    "city.thisWeek.en-GB": "This week in",
+    "city.thisWeek.es-ES": "Esta semana en",
     "city.searchByType.en-GB": "Search by type",
     "city.searchByType.es-ES": "Busca por tipo",
 
@@ -321,6 +334,13 @@
     "contact.error.email.invalid.es-ES": "Por favor introduce una dirección de correo electrónico válida.",
 
     "errorPage.notFound.en-GB": "Sorry, the page you requested was not found.",
-    "errorPage.notFound.es-ES": "Lo sentimos, no se encontró la página solicitada."
+    "errorPage.notFound.es-ES": "Lo sentimos, no se encontró la página solicitada.",
+
+    "providers.confirmListingCreated.en-GB": "Listing successfully created.",
+    "providers.confirmListingCreated.es-ES": "Listado creado con éxito",
+
+    "providers.backHomeLink.en-GB": "Back",
+    "providers.backHomeLink.es-ES": "Espalda"
 
 }
+

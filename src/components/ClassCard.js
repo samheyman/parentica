@@ -143,7 +143,12 @@ function MediaCard(props) {
             </LazyLoad>
             <CardContent>
               <Typography className={`class-name`} gutterBottom variant="h3" component="h3">
-                {props.classEntry.listingName.toLowerCase()}
+                {/* Support for old listing title name */}
+                {(props.classEntry.hasOwnProperty('listingName')) ?
+                  props.classEntry.listingName.toLowerCase()
+                  :
+                  props.classEntry.listingTitle.toLowerCase()
+                }
               </Typography>
               <div className="company">
                 <LazyLoad 
@@ -159,9 +164,9 @@ function MediaCard(props) {
 
               <div className={`card-footer ${classes.cardFooter}`}>
                   <div className="class-details">
-                    {(props.classEntry.date !== "" && props.classEntry.date.length > 3) ?
+                    {(props.classEntry.date !== null ) ?
                       <span className="class-details-date">
-                        {moment(props.classEntry.date).format("MMM D")}
+                        {moment(new Date(props.classEntry.date.seconds * 1000)).format("MMM D")}
                       </span>
                       :
                       <span className="class-details-date">
@@ -172,11 +177,11 @@ function MediaCard(props) {
                       </span>
                     }
                    
-                    {(props.classEntry.date !== "" && props.classEntry.date.length > 3 ) ?
+                    {(props.classEntry.date !== null && props.classEntry.date.length > 3 ) ?
                       (<React.Fragment>
                         <span className="dot"></span>
                         <span className="class-details-time">
-                          {moment(props.classEntry.date).format("HH:mm")} 
+                          {moment(new Date(props.classEntry.date * 1000)).format("HH:mm")} 
                         </span>
                       </React.Fragment>)
                       :

@@ -13,7 +13,7 @@
 }
 
 .spacer {
-    min-height: $navigation-height;
+    border-bottom: 1px solid $very-pale-grey
 }
 
 .MuiBackdrop-root {
@@ -69,7 +69,7 @@ header {
             vertical-align: middle;
         }
 
-        img {
+        .nav-img {
             vertical-align: middle;
             height: 26px;
         }

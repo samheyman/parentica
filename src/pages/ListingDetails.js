@@ -61,9 +61,9 @@ function ClassDate({classDate, locale}, {icon}) {
                 calendar_today
                 </Icon>
                 <span className="date-time">
-                    {moment(classDate).format("dddd, MMMM D, YYYY ")}
+                    {moment(new Date(classDate.seconds * 1000)).format("dddd, MMMM D, YYYY ")}
                 <br/>
-                    {moment(classDate).format("LT")}
+                    {moment(new Date(classDate.seconds * 1000)).format("LT")}
                 </span>
             </div>
         );
@@ -281,7 +281,14 @@ export default function ListingDetails(props) {
                 <Grid item xs={12} sm={12} md={12} className="class-details">
                     
                     <div className="header">
-                        <h2 className="class-title">{listingDetails[0].listingName}</h2>
+                        <h2 className="class-title">
+                        {/* Support for old lisiting title name */}
+                        {(listingDetails[0].hasOwnProperty('listingName')) ?
+                            listingDetails[0].listingName
+                            :
+                            listingDetails[0].listingTitle
+                        }
+                        </h2>
                         <div className="company">
                             <img className="logo" src={logo} alt={`${listingDetails[0].companyLogo} logo`}></img>
                             <div className="company-name">

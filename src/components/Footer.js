@@ -16,12 +16,12 @@ export default function Footer(props) {
                 <div className="social-links">
                     <div className="instagram">
                         <a href="https://www.linkedin.com/company/parentica/about" target="_blank" rel="noopener noreferrer">
-                            <img src="../../images/logos/social/linkedin.jpg" alt="linkedin"/>
+                            <img className="social-links-img" src="../../images/logos/social/linkedin.jpg" alt="linkedin"/>
                         </a>
                     </div>
                     <div className="facebook">
                         <a href="https://www.facebook.com/Parentica-107756380598610" target="_blank" rel="noopener noreferrer">
-                            <img src="../../images/logos/social/facebook.jpg" alt="facebook"/>
+                            <img className="social-links-img" src="../../images/logos/social/facebook.jpg" alt="facebook"/>
                         </a>
                     </div>
                 </div>

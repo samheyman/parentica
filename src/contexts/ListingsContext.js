@@ -5,11 +5,12 @@ export const ListingsContext = createContext();
 
 function useListings() {
     const [times, setTimes] = useState([]);
-   
+    const today = new Date();
     useEffect(() => {
         const unsubscribe = firebase.firestore()
             .collection('listings')
-            .where("active", "==", true)
+            // .where("active", "==", true)
+            .where("date", ">", today)
             .orderBy('date', 'asc')
             .onSnapshot((snapshot) => {
             const newListings = snapshot.docs.map((doc) => ({

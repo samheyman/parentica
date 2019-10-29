@@ -46,7 +46,7 @@ function a11yProps(index) {
 function Explore(props) {
     const [value, setValue] = useState(props.tab);
     const { listings } = useContext(ListingsContext);
-    console.log(listings);
+    // console.log(listings);
     // const [tab, setTab] = useState(props.tab);
     
     function handleChange(event, newValue) {
@@ -58,9 +58,9 @@ function Explore(props) {
     const classesList = listings.map(
         (classEntry) => {
             if (( classEntry.format === 'group' || 
-                classEntry.format === 'online' ||
                 classEntry.format === 'class' ||
-                classEntry.format === 'workshop')) {
+                classEntry.format === 'workshop')
+                && !classEntry.online ) {
                 return(
                     <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
                         <ClassCard classEntry={classEntry} />      

@@ -95,7 +95,37 @@ export default function Navbar(props) {
              />
             </ListItem>
           </NavLink>
-          { !!currentUser ?           
+          <div className="spacer"></div>
+          { !!currentUser ? 
+                  <React.Fragment>
+                    <NavLink to={`/${locale.split('-')[0]}/providers`}>
+                      <ListItem button key="providers">
+                        <ListItemText 
+                          primary={<FormattedMessage id={`navbar.dashboard.link.${locale}`} />} 
+                        />
+                      </ListItem>
+                    </NavLink>
+                    <NavLink to={`/${locale.split('-')[0]}/providers`}>
+                      <ListItem button key="providers">
+                        <ListItemText 
+                          primary={<FormattedMessage id={`navbar.listings.link.${locale}`} />} 
+                        />
+                      </ListItem>
+                    </NavLink>   
+                    <NavLink to={`/${locale.split('-')[0]}/providers/new`}>
+                      <ListItem button key="providers">
+                        <ListItemText 
+                          primary={<FormattedMessage id={`navbar.newListing.link.${locale}`} />} 
+                        />
+                      </ListItem>
+                    </NavLink>       
+                    <NavLink to={`/${locale.split('-')[0]}/providers/settings`}>
+                      <ListItem button key="providers">
+                        <ListItemText 
+                          primary={<FormattedMessage id={`navbar.settings.link.${locale}`} />} 
+                        />
+                      </ListItem>
+                    </NavLink>             
                     <ListItem button key="login" onClick={()=> {
                         firebase.auth().signOut();
                       }}      
@@ -103,7 +133,8 @@ export default function Navbar(props) {
                         <ListItemText               
                           primary={<FormattedMessage id={`navbar.logout.link.${locale}`} />}
                         />
-                      </ListItem>
+                    </ListItem>
+                  </React.Fragment>
                     : 
                     <NavLink to={`/${locale.split('-')[0]}/login`}>
                       <ListItem button key="login">
@@ -118,7 +149,7 @@ export default function Navbar(props) {
     );
     let { currentUser } = useContext(AuthContext);
     const { locale } = useContext(LocaleContext);
-    
+
     return (
       <div className={classes.root}>
         <AppBar className="app-header" position="static">
@@ -133,13 +164,25 @@ export default function Navbar(props) {
                 {/* <li><NavLink to={`/${locale.split('-')[0]}/locations`}><FormattedMessage id={`navbar.locations.link.${locale}`} /></NavLink></li> */}
                 {/* <li><NavLink to={`/${locale.split('-')[0]}/providers`}><FormattedMessage id={`navbar.providors.link.${locale}`} /></NavLink></li> */}
                 <li><NavLink to={`/${locale.split('-')[0]}/contact`}><FormattedMessage id={`navbar.contact.link.${locale}`} /></NavLink></li>
-                { !!currentUser ?           
-                    <li className="logout-link" onClick={()=> {
-                        firebase.auth().signOut();
-                      }}      
-                      >
-                        <FormattedMessage id={`navbar.logout.link.${locale}`} />
-                    </li>  
+                { !!currentUser ?
+                    <React.Fragment>
+                      <li>
+                        <NavLink to={`/${locale.split('-')[0]}/providers`}>
+                          <FormattedMessage id={`navbar.listings.link.${locale}`} />
+                        </NavLink>
+                      </li>  
+                      <li>
+                        <NavLink to={`/${locale.split('-')[0]}/providers/new`}>
+                          <FormattedMessage id={`navbar.newListing.link.${locale}`} />
+                        </NavLink>
+                      </li>       
+                      <li className="logout-link" onClick={()=> {
+                          firebase.auth().signOut();
+                        }}      
+                        >
+                          <FormattedMessage id={`navbar.logout.link.${locale}`} />
+                      </li>
+                    </React.Fragment>
                     : 
                     <li>
                       <NavLink to={`/${locale.split('-')[0]}/login`}>

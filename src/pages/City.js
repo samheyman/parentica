@@ -36,7 +36,7 @@ function RenderTags({tags, locale}) {
     return output;
 }
 
-function MadridProviders({providers}) {
+function Providers({providers}) {
     const providersList = providers.map((provider) => {
         return(
             <Grid item xs={4} sm={3} md={2} key={provider.id}>
@@ -61,6 +61,11 @@ function MadridProviders({providers}) {
     );
 }
 
+const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
 function City(props) {
     const locale = useContext(LocaleContext);
     return(
@@ -70,7 +75,9 @@ function City(props) {
                 <h2>
                     <FormattedMessage 
                         id={`city.thisWeek.${locale.locale}`} 
-                        defaultMessage="This week in Madrid"/>    
+                        defaultMessage="This week in"
+                    />  
+                    &nbsp;{capitalize(props.city)}  
                 </h2>
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
                     {props.classesThisWeek.map((item) => {                        
@@ -87,7 +94,7 @@ function City(props) {
                     }
                 </Grid>
                 <div className="show-all-link">
-                    <Link to={{pathname:`/${locale.locale.split('-')[0]}/madrid/explore`}}>
+                    <Link to={{pathname:`/${locale.locale.split('-')[0]}/${props.city}/explore`}}>
                     <FormattedMessage id={`general.showAll.${locale.locale}`} defaultMessage="show all" />    
                     </Link>
                     <Icon>keyboard_arrow_right</Icon>
@@ -99,7 +106,7 @@ function City(props) {
                 <h2>
                     <FormattedMessage id={`homepage.popularTopics.${locale.locale}`} defaultMessage="Topics"/>    
                 </h2>  
-                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                <div className="test-scroll" style={{ height: '210px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
                     <TopicCard 
                         locale={`${locale.locale}`}
                         topic="baby" 
@@ -165,11 +172,11 @@ function City(props) {
                         topicLocalised={                            
                             <FormattedMessage id={`topics.fitness.${locale.locale}`} />
                         }
-                        rootUrl="madrid"
+                        rootUrl={props.city}
                         // resultCount={props.classEntries.filter((item) => item.tags.includes("yoga")).length}
                         />
                     
-                </Grid>
+                </div>
             </div>
             <div className="all-topics">
                 <h2>
@@ -186,28 +193,28 @@ function City(props) {
                         locale={`${locale.locale}`}
                         topic="classes" 
                         topicLocalised={<FormattedMessage id={`general.classes.${locale.locale}`} defaultMessage="classes"/>}
-                        rootUrl="madrid"
-                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                        rootUrl={props.city}
+                        // resultCount={props.classEntries.filter((item) => item.city === {props.city}).length}
                     />
                     <TypeCard
                         locale={`${locale.locale}`}
                         topic="seminars" 
                         topicLocalised={<FormattedMessage id={`general.seminars.${locale.locale}`} defaultMessage="seminars"/>}
-                        rootUrl="madrid"
-                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                        rootUrl={props.city}
+                        // resultCount={props.classEntries.filter((item) => item.city === {props.city}).length}
                     />
                     <TypeCard
                         locale={`${locale.locale}`}
                         topic="meetups" 
                         topicLocalised={<FormattedMessage id={`general.meetups.${locale.locale}`} defaultMessage="meetups"/>}
-                        rootUrl="madrid"
+                        rootUrl={props.city}
 
-                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                        // resultCount={props.classEntries.filter((item) => item.city === {props.city}).length}
                     />
                     
                 </Grid>
             </div>
-            <div className="types">
+            {/* <div className="types">
                 <h2>
                     <FormattedMessage id={`homepage.byLanguage.${locale.locale}`} defaultMessage="By language" />    
                 </h2>  
@@ -231,11 +238,14 @@ function City(props) {
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
                 </Grid>
-            </div>
+            </div> */}
             <div className="row">
                 <div className="col s12 m12 l12 partners">
-                    <h2><FormattedMessage id={`homepage.providers.madrid.header.${locale.locale}`} /></h2> 
-                    <MadridProviders providers={props.madridProviders}/>
+                    <h2>
+                        <FormattedMessage id={`homepage.providers.header.${locale.locale}`} />
+                        &nbsp;{capitalize(props.city)}
+                    </h2> 
+                        <Providers providers={props.providers}/>
                     {/* <RenderProviderCard provider={props.providers} /> */}
                 </div>
             </div>

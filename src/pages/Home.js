@@ -92,7 +92,7 @@ function Home(props) {
                     id={`homepage.searchByCity.${locale}`} 
                     defaultMessage="Search by city" />    
             </h2>  
-            <div className="test-scroll" style={{ height: '255px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+            <div className="test-scroll" style={{ height: '261px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
                 {/* <Grid container className="cities-links" spacing={2} alignContent="center"> */}
                     <CityCard
                         locale={`${locale}`}
@@ -348,7 +348,7 @@ function Home(props) {
             </h2>  
             <RenderTags tags={props.topics} locale={`${locale}`} rootUrl="online" /> 
         </div>
-        <div className="types">
+        {/* <div className="types">
             <h2>
                 <FormattedMessage id={`homepage.onlineByLanguage.${locale}`} defaultMessage="By language" />    
             </h2>  
@@ -373,7 +373,7 @@ function Home(props) {
                 />
                 
             </Grid>
-        </div>
+        </div> */}
     
         <div className="providers">
             <h2>

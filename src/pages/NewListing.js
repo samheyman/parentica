@@ -11,9 +11,16 @@ import Loader from '../components/Widgets/Loader';
 import MenuItem from '@material-ui/core/MenuItem';
 import firebase from '../config/firebase';
 import { FormattedMessage } from 'react-intl';
+import { file } from '@babel/types';
+import SmallLoader from '../components/Widgets/SmallLoader';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import RadioButton from '@material-ui/core/Radio';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
 
-const ClassForm = () => {
+const NewListing = () => {
 
     // constructor(props) {
     //     super(props);
@@ -173,21 +180,17 @@ const ClassForm = () => {
             const tagList = tags.split(",").map(item => item.trim());
             const descriptionParagraphs = description.split('\n').map(paragraph => paragraph.trim());
             const descriptionCleaned = descriptionParagraphs.filter(paragraph => paragraph!=="");
-            const tempImageUrl = cleanString(listingName + " " + companyName);
+            const tempImageUrl = cleanString(listingTitle + " " + companyName);
             const tempLogoUrl = cleanString(companyName);
-            const listingDate = date.length > 0 ? 
-                date.substring(0,10) + "T" + time + "+02:00" 
-                : 
-                Math.floor(Math.random() * (1000 + 1));
             firebase.firestore().collection('listings').add({
-                online,
+                online: (online==="true") ? true : false,
                 format,
-                listingName,
-                nameId: tempImageUrl + "-" + listingDate,
-                date: (listingDate.length > 4) ? listingDate : "",
-                duration:parseInt(duration),
+                listingTitle,
+                nameId: tempImageUrl + "-" + (date.length > 0 ? date.substring(0,10) : Math.floor(Math.random() * (1000 + 1))),
+                date: (date.length > 1) ? new Date(date) : null,
+                duration: parseInt(duration),
                 language,
-                price,
+                price: parseFloat(price),
                 website,
                 tags: tagList,
                 description: descriptionCleaned,
@@ -214,7 +217,7 @@ const ClassForm = () => {
                 setSuccess(true);
                 setOnline('');
                 setFormat('');
-                setListingName('');
+                setListingTitle('');
                 setDuration('');
                 setPrice('');
                 setLanguage('');
@@ -233,10 +236,10 @@ const ClassForm = () => {
 
         const [ loading, setLoading ] = useState(false);
         const [ success, setSuccess ] = useState(false);
-
-        const [ online, setOnline ] = useState();
+        const [ specificDate, setSpecificDate ] = useState('false');
+        const [ online, setOnline ] = useState('true');
         const [ format, setFormat ] = useState('');
-        const [ listingName, setListingName ] = useState('');
+        const [ listingTitle, setListingTitle ] = useState('');
         const [ duration, setDuration ] = useState('');
         const [ price, setPrice ] = useState('');
         const [ date, setDate ] = useState('');
@@ -245,7 +248,10 @@ const ClassForm = () => {
 
         const [ tags, setTags ] = useState('');
         const [ website, setWebsite ] = useState('');
-        const [ selectedFile, setSelectedFile ] = useState('');
+        const [ selectedFile, setSelectedFile ] = useState(''); 
+        const [ selectedLogo, setSelectedLogo ] = useState('');
+        const [ logoInput, setLogoInput ] = useState(null);
+        const [ fileInput, setFileInput ] = useState(null);
         const [ imageUploaded, setImageUploaded ] = useState(false);
         const [ logoUploaded, setLogoUploaded ] = useState(false);
         const [ description, setDescription ] = useState('');
@@ -255,7 +261,6 @@ const ClassForm = () => {
         const [ companyName, setCompanyName ] = useState('');
         const [ companyLogo, setCompanyLogo ] = useState('');
         const [ listingImage, setListingImage ] = useState('');
-        const [ selectedLogo, setSelectedLogo ] = useState('');
 
         const postImage = async (imageName) => {
             var formData = new FormData();
@@ -279,7 +284,7 @@ const ClassForm = () => {
 
         const postLogo = async (logoName) => {
             var formData = new FormData();
-            formData.append('image', selectedFile, logoName + ".jpg" );
+            formData.append('image', selectedLogo, logoName + ".jpg" );
         
             let response = await fetch('https://europe-west1-app23980.cloudfunctions.net/uploadLogo', {
                 method: 'post',
@@ -299,25 +304,132 @@ const ClassForm = () => {
 
         return(
             <Container className="content">
-                <aside>
 
-                </aside>
                 <main>
                 <h2>
-                    New Class
-                </h2>           
+                    <FormattedMessage id={`navbar.newListing.link.${locale}`} />
+                </h2>  
+
                 <form className={"new-class-form noValidate " + (success ? "hide" : "show")} autoComplete="off" onSubmit={handleSubmit}>
-                    {/* <h3>Format</h3> */}
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="online">Type: </label>
-                        <select required onChange={e => setOnline(e.currentTarget.value)}>
-                            <option value={null}></option>
-                            <option value={true}>Online</option>
-                            <option value={false}>In person</option>
-                        </select>
+                    <h3>Specific date?</h3>
+                    <div className="specific-date">
+                        <label className="specific-date-label">No</label>
+                        <Radio
+                            checked={specificDate === 'false'}
+                            onChange={(e) => setSpecificDate(e.currentTarget.value)}
+                            value='false'
+                            name="radio-button-demo"
+                            inputProps={{ 'aria-label': 'A' }}
+                        />
+                        <label className="specific-date-label">Yes</label>
+                        <Radio
+                            checked={specificDate === 'true'}
+                            onChange={(e) => setSpecificDate(e.target.value)}
+                            value='true'
+                            name="radio-button-demo"
+                            inputProps={{ 'aria-label': 'A' }}
+                        />
                     </div>
+                    { (specificDate === 'true') ? (
+                        <React.Fragment>
+                        <div className="provider-form-item">
+                            <label className="required" title="date">Date</label>
+                            <input 
+                                className="date-selector" 
+                                type="date" 
+                                name="date"
+                                value={date}
+                                margin="normal"
+                                onChange={(e) => setDate(e.currentTarget.value)}
+                            />
+                        </div>
+                        <div className="provider-form-item">
+                            <label className="required" title="time">Time</label>
+                            <input
+                                className="date-selector" 
+                                type="time" 
+                                name="time"
+                                value={time}
+                                margin="normal"
+                                onChange={(e) => setTime(e.currentTarget.value)}
+                            />
+                        </div>
+                        </React.Fragment>)
+                        :
+                        null
+                    }
+                    <h3>Where?</h3>
+                    <div className="specific-date">
+                        
+                        <label className="specific-date-label">Online</label>
+                        <Radio
+                            checked={online === 'true'}
+                            onChange={(e) => setOnline(e.target.value)}
+                            value='true'
+                            name="radio-button-demo"
+                            inputProps={{ 'aria-label': 'A' }}
+                        />
+                        <label className="specific-date-label">In person</label>
+                        <Radio
+                            checked={online === 'false'}
+                            onChange={(e) => setOnline(e.currentTarget.value)}
+                            value='false'
+                            name="radio-button-demo"
+                            inputProps={{ 'aria-label': 'A' }}
+                        />
+                    </div>
+                    { (online==="false") ? (
+                        <React.Fragment>
+                        <h3>Location</h3>
+                        <div className="provider-form-item">
+                            <label className="required" title="city">City: </label>
+                            <TextField
+                                id="city"
+                                value={city}
+                                margin="normal"
+                                variant="outlined"
+                                onChange={(e) => setCity(e.currentTarget.value)}
+                            />
+                        </div>
+                        <div className="provider-form-item">
+                            <label className="required" title="district">District: </label>
+                            <TextField
+                                id="district"
+                                value={district}
+                                margin="normal"
+                                variant="outlined"
+                                onChange={(e) => setDistrict(e.currentTarget.value)}
+                            />
+                        </div>
+                        <div className="provider-form-item">
+                            <label className="required" title="address">Address: </label>
+                            <TextField
+                                id="address"
+                                value={address}
+                                margin="normal"
+                                variant="outlined"
+                                onChange={(e) => setAddress(e.currentTarget.value)}
+                            />
+                        </div>
+                    </React.Fragment>)
+                    :
+                    (null)
+                    }
+                    <h3>Details</h3>
                     <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="format">Format: </label>
+                        <label className="required" title="listingTitle">Title</label>
+                        <TextField
+                            required
+                            id="listingTitle"
+                            value={listingTitle}
+                            margin="normal"
+                            variant="outlined"
+                            onChange={(e) => setListingTitle(e.currentTarget.value)}
+                        />
+                    </div>
+                    <h3>Listing type</h3>
+                    <div className="provider-form-item">
+                        <label className="required" title="format">Format</label>
                         <select required onChange={e => setFormat(e.currentTarget.value)}>
                             <option value=""></option>
                             <option value="class">Class</option>
@@ -327,120 +439,74 @@ const ClassForm = () => {
                             <option value="webinar">Webinar</option>
                         </select>
                     </div>
+
+                    <h3>Booking information</h3>
                     <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="listingName">Name: </label>
-                        <TextField
-                            required
-                            id="listingName"
-                            value={listingName}
-                            margin="dense"
-                            variant="outlined"
-                            onChange={(e) => setListingName(e.currentTarget.value)}
-                        />
-                    </div>
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="date">Date: </label>
-                        <input 
-                            className="date-selector" 
-                            type="date" 
-                            name="date"
-                            value={date}
-                            onChange={(e) => setDate(e.currentTarget.value)}
-                        />
-                    </div>
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="time">Time: </label>
-                        <input
-                            className="date-selector" 
-                            type="time" 
-                            name="time"
-                            value={time}
-                            onChange={(e) => setTime(e.currentTarget.value)}
-                        />
-                    </div>
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="duration">Duration (mins): </label>
-                        <TextField
-                            required
-                            id="duration"
-                            value={duration}
-                            margin="dense"
-                            variant="outlined"
-                            placeholder="e.g. 60"
-                            onChange={(e) => setDuration(e.currentTarget.value)}
-                        />
-                    </div>
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="price">Price: </label>
+                        <label className="required" title="price">Price</label>
                         <TextField
                             required
                             id="price"
                             value={price}
-                            margin="dense"
+                            margin="normal"
                             variant="outlined"
                             onChange={(e) => setPrice(e.currentTarget.value)}
                         />
                     </div>
                     <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="Customer">Language: </label>
-                        <select required onChange={e => setLanguage(e.currentTarget.value)}>
-                            <option value=""></option>
-                            <option value="spanish">Spanish</option>
-                            <option value="english">English</option>
-                        </select>
-                    </div>
-                    
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="image">Image: </label>
-                        <div className="file-upload-container">
-                            <input
-                                // required
-                                // value={selectedFile.name}
-                                type="file"
-                                // style={{ display: "none" }}
-                                onChange={(e) => setSelectedFile(e.currentTarget.files[0])}
-                            />
-                            {/* <label className="custom-file-upload">
-                                <input type="file"/>
-                                Select file
-                            </label> */}
-                            { imageUploaded ? (
-                                    <Icon className="success-icon">
-                                        done
-                                    </Icon>
-                                ) : 
-                                // selectedFile ? (
-                                //     <span className="upload-image"
-                                //         onClick={postImage}
-                                //     >
-                                //     Upload
-                                //     </span>
-                                // ) : 
-                                (
-                                    <span></span>
-                                )
-                            }
-                            {/* <span>{imagePath}</span> */}
-                        </div>
-                    </div>
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="website">Website: </label>
+                        <label className="required" title="website">Website: </label>
                         <TextField
                             required
                             id="website"
-                            margin="dense"
+                            margin="normal"
                             variant="outlined"
                             value={website}
                             placeholder="e.g. https://example.com/class"
                             onChange={(e) => setWebsite(e.currentTarget.value)}
                         />
                     </div>
+
+                    <h3>Additional information</h3>
                     <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="tags">Tags: </label>
+                        <label className="required" title="image">Image</label>
+                        {/* <div className="file-upload-container"> */}
+                        <div className="image-uploader-box" onClick={() => fileInput.click()}>
+                        { imageUploaded ? (
+                            <Icon className="success-icon">
+                                done
+                            </Icon>
+                        ) : (selectedFile === "") ? (
+                            <React.Fragment>
+                                <div><Icon>add_a_photo</Icon></div>
+                                <div>
+                                    <strong>ADD IMAGE</strong>
+                                    <br/>
+                                    <span>Add a compeling image to bring your listing to life.</span>
+                                    {(fileInput===null) ? 
+                                        "fileInput"
+                                        :
+                                        null
+                                    }
+                                    <input
+                                        type="file"
+                                        style={{ display: "none" }}
+                                        onChange={(e) => setSelectedFile(e.currentTarget.files[0])}
+                                        ref={ref => setFileInput(ref)}
+                                    />
+                                </div>
+                            </React.Fragment>
+                            ) : (
+                                <span>{selectedFile.name}</span>
+                            )
+                        }
+                        </div>
+                    </div>
+                    
+                    <div className="provider-form-item">
+                        <label className="required" title="tags">Tags: </label>
                         <TextField
                             required
                             id="tags"
-                            margin="dense"
+                            margin="normal"
                             variant="outlined"
                             value={tags}
                             placeholder="e.g. parenting, fitness"
@@ -448,7 +514,27 @@ const ClassForm = () => {
                         />
                     </div>
                     <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="description">Description: </label>
+                        <label className="required" title="duration">Duration (mins)</label>
+                        <TextField
+                            required
+                            id="duration"
+                            value={duration}
+                            margin="normal"
+                            variant="outlined"
+                            placeholder="e.g. 60"
+                            onChange={(e) => setDuration(e.currentTarget.value)}
+                        />
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="required" title="Customer">Language</label>
+                        <select required onChange={e => setLanguage(e.currentTarget.value)}>
+                            <option value=""></option>
+                            <option value="spanish">Spanish</option>
+                            <option value="english">English</option>
+                        </select>
+                    </div>
+                    <div className="provider-form-item">
+                        <label className="required" title="description">Description: </label>
                         <TextField
                             required
                             id="description"
@@ -466,112 +552,69 @@ const ClassForm = () => {
                         <em>Admin only</em>
                     </div>
                     <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="companyName">Company name: </label>
+                        <label className="required" title="companyName">Company name: </label>
                         <TextField
                             id="companyName"
                             value={companyName}
-                            margin="dense"
+                            margin="normal"
                             variant="outlined"
                             onChange={(e) => setCompanyName(e.currentTarget.value)}
                         />
                     </div>
                     <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="image">Logo: </label>
-                        <div className="file-upload-container">
-                            <input
-                                // required
-                                // value={selectedFile.name}
-                                type="file"
-                                // style={{ display: "none" }}
-                                onChange={(e) => setSelectedLogo(e.currentTarget.files[0])}
-                            />
-                            {/* <label className="custom-file-upload">
-                                <input type="file"/>
-                                Select file
-                            </label> */}
-                            { logoUploaded ? (
-                                    <Icon className="success-icon-logo">
-                                        done
-                                    </Icon>
-                                ) : 
-                                // selectedFile ? (
-                                //     <span className="upload-image"
-                                //         onClick={postImage}
-                                //     >
-                                //     Upload
-                                //     </span>
-                                // ) : 
-                                (
-                                    <span></span>
-                                )
-                            }
-                            {/* <span>{imagePath}</span> */}
+                        <label className="required" title="image">Logo: </label>
+                        <div className="logo-uploader-box" onClick={() => logoInput.click()}>
+                        {/* { logoUploaded ? (
+                            <Icon className="success-icon">
+                                done
+                            </Icon>
+                        ) : */}
+                        {(selectedLogo === "") ? (
+                            <React.Fragment>
+                                <div><Icon>add_a_photo</Icon></div>
+                                <div>
+                                    <strong>ADD LOGO</strong>
+                                    <br/>
+                                    <span>Add a logo for your profile.</span>
+                                    {(logoInput===null) ? 
+                                        "logoInput"
+                                        :
+                                        null
+                                    }
+                                    <input
+                                        type="file"
+                                        style={{ display: "none" }}
+                                        onChange={(e) => setSelectedLogo(e.currentTarget.files[0])}
+                                        ref={ref => setLogoInput(ref)}
+                                    />
+                                </div>
+                            </React.Fragment>
+                            ) : (
+                                <span>{selectedLogo.name}</span>
+                            )
+                        }
                         </div>
+
                     </div>
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="city">City: </label>
-                        <TextField
-                            id="city"
-                            value={city}
-                            margin="dense"
-                            variant="outlined"
-                            onChange={(e) => setCity(e.currentTarget.value)}
-                        />
-                    </div>
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="district">District: </label>
-                        <TextField
-                            id="district"
-                            value={district}
-                            margin="dense"
-                            variant="outlined"
-                            onChange={(e) => setDistrict(e.currentTarget.value)}
-                        />
-                    </div>
-                    <div className="provider-form-item">
-                        <label className="ant-form-item-required" title="address">Address: </label>
-                        <TextField
-                            id="address"
-                            value={address}
-                            margin="dense"
-                            variant="outlined"
-                            onChange={(e) => setAddress(e.currentTarget.value)}
-                        />
-                    </div>
-                    {/* <div className="provider-form-item">
-                    <label className="ant-form-item-required" title="logo">Company logo: </label>
-                    <Button
-                        variant="contained"
-                        component="label"
-                        >
-                        Upload File
-                        <input
-                            type="file"
-                            style={{ display: "none" }}
-                        />
-                        </Button>
-                    </div> */}
+                    
                     <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
-                    { !loading ?
+                    
                         <div className="form-buttons">
-                            <Button variant="contained" className="send-form-data primary" type="submit" >
-                                <Icon>
-                                    &nbsp;send
-                                </Icon>
-                                &nbsp;Send
-                            </Button>
                             <Link to={{pathname:`/${locale.split('-')[0]}/providers`}}>
-                            <Button variant="outlined" className="cancel-form-data secondary">
-                                <Icon>
-                                    &nbsp;close
-                                </Icon>
-                                Cancel
-                            </Button>
+                                <Button variant="outlined" className="cancel-form-data secondary">            
+                                    Cancel
+                                </Button>
                             </Link>
+                            { !loading ? (
+                            <Button variant="contained" className="send-form-data primary" type="submit" >  
+                                &nbsp;Save
+                            </Button>
+                            ) : (
+                            <Button variant="contained" className="send-form-data primary" type="submit" >  
+                                <SmallLoader/>
+                            </Button>
+                            )}
                         </div>
-                        :
-                        <Loader/>}
-                        
                     </div>
                     
                 </form>
@@ -581,8 +624,8 @@ const ClassForm = () => {
                     </Icon>
                     <p>
                     <FormattedMessage 
-                        id={`providers.confirmClassAdded.${locale}`}
-                        defaultMessage="Class added"
+                        id={`providers.confirmListingCreated.${locale}`}
+                        defaultMessage="Listing added"
                     />
                     </p>
                     
@@ -600,4 +643,4 @@ const ClassForm = () => {
         );
 }
 
-export default ClassForm; 
+export default NewListing; 

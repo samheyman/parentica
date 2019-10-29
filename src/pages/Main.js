@@ -13,7 +13,7 @@ import Contact from './Contact';
 import Navbar from '../components/Header/Navbar';
 import Footer from '../components/Footer';
 import PageNotFound from './PageNotFound';
-import ClassForm from './ClassForm';
+import NewListing from './NewListing';
 import Login from './Auth/Login';
 import Signup from './Auth/Signup';
 import Providers from './Providers';
@@ -64,23 +64,24 @@ export default function Main(props) {
         );
     }
 
-    const CityPage = () => {
+    const CityPage = ({city}) => {
         let count = 0;
         let today = new Date();
         let nextWeek = new Date();
         let sevenDays = today.getDate() + 7;
         nextWeek.setDate(sevenDays);
         let results = listings.filter(
-            (item) => (item.city==='Madrid' || item.city==='madrid') && 
-                        new Date(item.date) > today && 
-                        new Date(item.date) < nextWeek  && 
+            (item) => (item.city.toLowerCase() === city) && 
+                        new Date(item.date.seconds * 1000) > today && 
+                        new Date(item.date.seconds * 1000) < nextWeek  && 
                         count++ < 6);
+        console.log(results);
         return(
             <City 
-                city='madrid'
+                city={city}
                 classesThisWeek={results}
                 topics={TOPICS}
-                madridProviders={PROVIDERS.filter((provider) => !provider.online)}
+                providers={PROVIDERS.filter((provider) => !provider.online && provider.city.toLowerCase() === city)}
             />
         );
     }
@@ -120,8 +121,8 @@ export default function Main(props) {
 
     const PrivateRoute = ({ component: RouteComponent, ...rest}) => {
         const { currentUser } = useContext(AuthContext);
-        console.log("Private route!");
-        console.log(currentUser);
+        // console.log("Private route!");
+        // console.log(currentUser);
         return(
             <Route 
                 {...rest}
@@ -143,12 +144,16 @@ export default function Main(props) {
             <Navbar/>
             <Switch>
                 <Route path={`${match.path}/home`} render={()=><Redirect to={`${props.match.url}/`} /> } />
-                <Route path={`${match.path}/madrid/explore`} render={()=><Explore tab={0} online={false} />} />
-                <Route path={`${match.path}/madrid`} component={CityPage} />
+                <Route path={`${match.path}/madrid/explore`} render={()=><Explore tab={0} />} />
+                <Route path={`${match.path}/madrid`} render={()=><CityPage city="madrid" />} />
+                <Route path={`${match.path}/oslo`} render={()=><CityPage city="oslo" />} />
+                <Route path={`${match.path}/stockholm`} render={()=><CityPage city="stockholm" />} />
+                <Route path={`${match.path}/paris`} render={()=><CityPage city="paris" />} />
+                <Route path={`${match.path}/london`} render={()=><CityPage city="london" />} />
                 <Route path={`${match.path}/online/explore`} render={()=><Online />} />
                 <Route path={`${match.path}/listings/:listingId`} component={ListingDetails} />
                 <Route path={`${match.path}/about`} component={About}/>
-                <PrivateRoute exact path={`${match.path}/providers/new`} component={ClassForm}/>
+                <PrivateRoute exact path={`${match.path}/providers/new`} component={NewListing}/>
                 <PrivateRoute exact path={`${match.path}/providers`} component={Providers} />
                 {/* <Route path={`${match.path}/providers`} component={Providers}/> */}
                 <Route path={`${match.path}/contact`} render={()=> <Contact/>} />

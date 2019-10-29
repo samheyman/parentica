@@ -35,6 +35,11 @@ body {
     font-size: 1.125rem;
 }
 
+img {
+    max-width: 100%;
+    display: block;
+}
+
 .container {
     min-height: 100%;
     margin: 20px auto;

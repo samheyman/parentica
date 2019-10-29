@@ -14,7 +14,8 @@ import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import { FormattedDate } from 'react-intl';
 import * as moment from 'moment';
- 
+import { FormattedMessage } from 'react-intl';
+
 import uuid from 'uuid';
 // import { ListingsContext } from '../contexts/ListingsContext';
 import firebase from '../config/firebase';
@@ -23,6 +24,8 @@ const columns = [
     { id: 'id', label: ''},
     { id: 'name', label: 'Name' },
     { id: 'provider', label: 'Provider'},
+    { id: 'uid', label: 'UID'},
+
     {
         id: 'class_date',
         label: 'Date',
@@ -44,11 +47,16 @@ const columns = [
     { id: 'active', label: 'Live'}
 ];
 
-function createData(id, name, provider, date, online, city, active) {
+function createData(id, name, provider, uid, date, online, city, active) {
     moment.locale('en');
-    let class_date = moment(date).format("D MMM, YYYY");
-    let class_time = moment(date).format("HH:mm");
-    return { id, name, provider, class_date, class_time , online, city, active };
+    let class_date = "";
+    let class_time = "";
+    if (date !== null) {
+        let jsDate = new Date(date.seconds * 1000);
+        class_date = moment(jsDate).format("D MMM, YYYY");
+        class_time = moment(jsDate).format("HH:mm");
+    }
+    return { id, name, provider, uid, class_date, class_time , online, city, active };
 }
   
 const useStyles = makeStyles({
@@ -117,11 +125,17 @@ const Providers = () => {
 
     if(listings!=null && listings.length > 0) {
         rows = listings.map((classEntry) => {
+            let title = (classEntry.hasOwnProperty("listingName") ? 
+                classEntry.listingName
+                :
+                classEntry.listingTitle
+            )
             return(
                 createData(
                     classEntry.id,
-                    classEntry.listingName,
+                    title,
                     classEntry.companyName,
+                    classEntry.id.substring(0,4) + '...',
                     classEntry.date,
                     classEntry.online,
                     classEntry.city,
@@ -195,7 +209,7 @@ const Providers = () => {
                     <Grid container className="contact-form">
                         <Grid item xs={12} sm={12} >
                             <h2>
-                                Classes
+                                <FormattedMessage id={`navbar.listings.link.${locale}`} />
                             </h2>           
                             <div>
                                 <Link to={{pathname:`/${locale.split('-')[0]}/providers/new`}}>
@@ -273,10 +287,10 @@ const Providers = () => {
                                             let value = null;
                                             if (column.id === "active") {
                                                 value = (row[column.id]==="true") ? 
-                                                    (new Date(row["class_date"]) > today ) ?
+                                                    (new Date(row["class_date"]) > today || row["class_date"] == "" ) ?
                                                         <Icon style={{color: '#2DE080'}}>toggle_on</Icon>
                                                         :
-                                                        <Icon style={{color: '#eaeaea'}}>clear</Icon>
+                                                        <Icon style={{color: '#eaeaea'}}>toggle_off</Icon>
                                                     :
                                                     <Icon style={{color: '#ffe0b2'}}>toggle_off</Icon>;
                                             } else if (column.id === "online") {

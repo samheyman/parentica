@@ -15,7 +15,7 @@ button {
     // padding: 3px 12px !important;
     font-weight: normal !important;
     font-size: 0.9rem !important;
-    margin: 0 10px 0 0 !important;
+    margin: 0 10px 10px 0 !important;
     .material-icons {
         font-size: 1rem !important;
     }
@@ -30,13 +30,23 @@ button {
 }
 
 .new-class-form {
-    max-width: 660px;
+    max-width: 860px;
+
+    .required:after { 
+        content:" *"; 
+        color: $purple;
+    }
+
+    .MuiFormControl-marginNormal {
+        margin-top: 0px;
+    }
 
     .provider-form-item {
         display: flex;
-        flex-direction: row;
-        align-items: center;
-
+        flex-direction: column;
+        // align-items: center;
+        margin-top: 1em;
+        
         input, .MuiSelect-root, textarea {
             min-width: 300px;
         }
@@ -46,58 +56,124 @@ button {
         }
 
         label {
-            margin: 0 10px 0 0 ;
-            min-width: 120px;
-            text-align: right;
+            margin-bottom: 8px;
+            padding: 0;
+            text-transform: uppercase;
+            font-size: 0.7rem; 
+            font-weight: 500;
         }
     }
 
-    select, .date-selector, .MuiButtonBase-root  {
-        margin: 8px 0 4px 0;
+    .image-uploader-box,
+    .logo-uploader-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-content: center;
+        border: 1px solid $medium-grey;
+        border-radius: 4px;
+        text-align: center;
+        vertical-align: middle;
+        color: $font-pale;
+        padding: 10px 30px ;
+        cursor: pointer;
+    }
+
+    .image-uploader-box {
         width: 330px;
+        height: 142px;
+    }
+
+    .logo-uploader-box {
+        width: 142px;
+        height: 142px;
+    }
+
+    // .date-input {
+    //     display: flex;
+    //     flex-direction: row;
+    //     height: 56px;
+
+    //     .provider-form-item {
+
+    //         .date-selector {
+    //             height: 56px;
+    //         }
+    //     }
+    // } 
+
+    select, .date-selector, .MuiButtonBase-root  {
+        margin: 0 0 4px 0;
+        // width: 330px;
         padding: 5px 35px 5px 5px;
         font-size: 16px;
         border: 1px solid #CCC;
-        height: 42px;
-        // -webkit-appearance: none;
-        // -moz-appearance: none;
-        // appearance: none;
+        height: 56px;
+        border-radius: 4px;
+        background: rgba(255, 255, 255, 0);
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
     }
 
-    @media (max-width: 760px) {
-        .provider-form-item {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-    
-            input, .MuiSelect-root, .MuiInputBase-input, textarea {
-                width: 100% !important;
-            }
-    
-            textarea {
-                height: auto;
-                width: 100% !important;
-            }
-
-            label {
-                margin: 0 10px 0 0 ;
-                min-width: 120px;
-                text-align: left;
-            }
-
-            select, .date-selector, .MuiButtonBase-root  {
-                margin: 8px 0 4px 0;
-                width: 100% !important;
-                padding: 5px 35px 5px 5px;
-                font-size: 16px;
-                border: 1px solid #CCC;
-                height: 42px;
-                // -webkit-appearance: none;
-                // -moz-appearance: none;
-                // appearance: none;
-            }
+    .specific-date {
+        display: flex;
+        flex-direction: row;
+        align-content: flex-end;
+        justify-content: flex-start;
+        padding-bottom: 10px;
+        label {
+            text-transform: uppercase;
+            padding: 5px 10px 0 0;
+            font-size: 0.7rem; 
+            font-weight: 500;
         }
     }
+
+    .MuiRadio-root {
+        border: none;
+        height: inherit;
+        margin-right: 20px;
+    }
+
+    .MuiRadio-colorSecondary {
+        color: $purple !important;
+    }
+
+    // @media (max-width: 760px) {
+    //     .provider-form-item {
+    //         display: flex;
+    //         flex-direction: column;
+    //         align-items: flex-start;
+    
+    //         input, .MuiSelect-root, .MuiInputBase-input, textarea {
+    //             width: 100% !important;
+    //         }
+    
+    //         textarea {
+    //             height: auto;
+    //             width: 100% !important;
+    //         }
+
+    //         label {
+    //             margin: 0 10px 0 0 ;
+    //             min-width: 120px;
+    //             text-align: left;
+    //         }
+
+    //         select, .date-selector, .MuiButtonBase-root  {
+    //             margin: 8px 0 4px 0;
+    //             width: 100% !important;
+    //             padding: 5px 35px 5px 5px;
+    //             font-size: 16px;
+    //             border: 1px solid #CCC;
+    //             height: 42px;
+    //             // -webkit-appearance: none;
+    //             // -moz-appearance: none;
+    //             // appearance: none;
+    //         }
+    //     }
+    // }
 
     .time-notice {
         font-size: 0.7rem;
@@ -142,10 +218,14 @@ button {
     }
 
     .form-buttons {
-
+        margin-top: 40px;
         .send-form-data, .cancel-form-data {
             width: 100px;
             padding: 0;
+            height: 46px;
+            span {
+                font-weight: 700;
+            }
         }
 
         .material-icons {
