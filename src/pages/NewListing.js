@@ -159,6 +159,21 @@ const NewListing = () => {
     //     });
     // }
 
+        Date.prototype.stdTimezoneOffset = function () {
+            var jan = new Date(this.getFullYear(), 0, 1);
+            var jul = new Date(this.getFullYear(), 6, 1);
+            return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
+        }
+        
+        Date.prototype.isDstObserved = function () {
+            return this.getTimezoneOffset() < this.stdTimezoneOffset();
+        }
+
+        // var today = new Date();
+        // if (today.isDstObserved()) { 
+        //     alert ("Daylight saving time!");
+        // }
+
         const cleanString = (string) => {
             console.log(string);
             let output = string.toLowerCase();
@@ -184,12 +199,16 @@ const NewListing = () => {
             const descriptionCleaned = descriptionParagraphs.filter(paragraph => paragraph!=="");
             const tempImageUrl = cleanString(listingTitle + " " + companyName);
             const tempLogoUrl = cleanString(companyName);
+            const dateTime = ((new Date(date)).isDstObserved()) ? 
+                date + "T" + time + "+02:00" 
+                : 
+                date + "T" + time + "+01:00" ;
             firebase.firestore().collection('listings').add({
                 online: (online==="true") ? true : false,
                 format,
                 listingTitle,
                 nameId: tempImageUrl + "-" + (date.length > 0 ? date.substring(0,10) : Math.floor(Math.random() * (1000 + 1))),
-                date: (date.length > 1) ? new Date(date) : null,
+                date: new Date(dateTime),
                 duration: parseInt(duration),
                 language,
                 price: parseFloat(price),
@@ -205,7 +224,6 @@ const NewListing = () => {
                 active: false,
                 addedBy: currentUser.email,
                 dateAdded: new Date
-
             })
             .then(() => {
                 postImage(tempImageUrl);
