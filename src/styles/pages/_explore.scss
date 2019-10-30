@@ -30,11 +30,25 @@
 
 .MuiTab-wrapper {
     color:$font-pale;
+    display: inline !important;
 }
 
 .Mui-selected {
     span {
         color: #666;
+    }
+}
+
+.listing-type-count {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    text-transform: lowercase !important;
+    .material-icons {
+        line-height: 25px;
+        font-size: 1.1rem !important;
+        padding-top: 0px;
     }
 }
 

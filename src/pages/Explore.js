@@ -12,6 +12,8 @@ import ListingCard from '../components/ListingCard';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 import { ListingsContext } from '../contexts/ListingsContext';
+import { transform } from '@babel/core';
+import Icon from '@material-ui/core/Icon';
 
 function TabPanel(props) {
     const { children, value, index, ...other } = props;
@@ -90,7 +92,7 @@ function Explore(props) {
     );
 
     const meetupsList = listings.map((listing) => {
-        if( listing.format === 'meetup') {
+        if( !listing.online && listing.city.toLowerCase() === props.city && listing.format === 'meetup') {
             return (
                 <Grid item xs={12} sm={6} md={4} key={listing.id}>
                     <ListingCard
@@ -119,7 +121,7 @@ function Explore(props) {
     });
 
     const seminarsList = listings.map((listing) => {
-        if((listing.format === 'seminar' || listing.format === 'webinar')) {
+        if(!listing.online && listing.city.toLowerCase() === props.city && (listing.format === 'seminar' || listing.format === 'webinar')) {
             return (
                 <Grid item xs={12} sm={6} md={4} key={listing.id}>
                     <ListingCard
@@ -158,7 +160,7 @@ function Explore(props) {
 
     return(
         <Container className="main-content">
-                <h2>{
+                <h2 style={{textTransform:'capitalize'}}>{
                     props.format === 'online' ?
                     <FormattedMessage 
                         id={`explore.tab.online.${locale}`}
@@ -166,8 +168,8 @@ function Explore(props) {
                     />
                     :
                     <FormattedMessage 
-                        id={`explore.tab.madrid.${locale}`}
-                        defaultMessage="Madrid"
+                        id={`explore.tab.${props.city}.${locale}`}
+                        defaultMessage={props.city}
                     />
                     
                 }</h2>
@@ -221,31 +223,31 @@ function Explore(props) {
             <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">
                 <Tab
                     label={
-                        <React.Fragment>
-                        <FormattedMessage 
-                            id={`explore.tab.classes.${locale}`}
-                            defaultMessage="Classes"
-                            values={{
-                                count: classesCount
-                            }}
-                        />
-                        {/* <br/><span className="results-count">({classesCount})</span> */}
-                        </React.Fragment>
+                        <div className="listing-type-count">
+                            <Icon>school</Icon>
+                            &nbsp;
+                            <strong>{classesCount}</strong>
+                            &nbsp;
+                            <FormattedMessage 
+                                id={`explore.tab.classes.${locale}`}
+                                defaultMessage="classes"
+                            />
+                        </div>
                     } 
                     {...a11yProps(0)} 
                 />
                 <Tab 
                     label={
-                        <React.Fragment>
-                        <FormattedMessage 
-                            id={`explore.tab.seminars.${locale}`}
-                            defaultMessage="seminars"
-                            values={{
-                                count: seminarsCount
-                            }}
-                        />
-                        {/* <br/><span className="results-count">({seminarsCount})</span> */}
-                        </React.Fragment>
+                        <div className="listing-type-count">
+                            <Icon>record_voice_over</Icon>
+                            &nbsp;
+                            <strong>{seminarsCount}</strong>
+                            &nbsp;
+                            <FormattedMessage 
+                                id={`explore.tab.seminars.${locale}`}
+                                defaultMessage="seminars"
+                            />
+                        </div>
                     } 
                     {...a11yProps(2)} 
                 />
@@ -253,16 +255,19 @@ function Explore(props) {
                 props.format!=='online' ?
                     <Tab 
                         label={
-                            <React.Fragment>
-                            <FormattedMessage 
-                                id={`explore.tab.meetups.${locale}`}
-                                defaultMessage="meetups"
-                                values={{
-                                    count: meetupsCount
-                                }}
-                            />
-                            {/* <br/><span className="results-count">({meetupsCount})</span> */}
-                            </React.Fragment>
+                            <div className="listing-type-count">
+                                <Icon>group</Icon>
+                                &nbsp;
+                                <strong>{meetupsCount}</strong>
+                                &nbsp;
+                                <FormattedMessage 
+                                    id={`explore.tab.meetups.${locale}`}
+                                    defaultMessage="meetups"
+                                    values={{
+                                        count: meetupsCount
+                                    }}
+                                />
+                            </div>
                         } 
                         {...a11yProps(1)} 
                     />

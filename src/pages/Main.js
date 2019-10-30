@@ -148,6 +148,7 @@ export default function Main(props) {
                 <Route path={`${match.path}/madrid`} render={()=><CityPage city="madrid" />} />
                 <Route path={`${match.path}/oslo`} render={()=><CityPage city="oslo" />} />
                 <Route path={`${match.path}/stockholm`} render={()=><CityPage city="stockholm" />} />
+                <Route path={`${match.path}/paris/explore`} render={()=><Explore tab={0} city="paris" />} />
                 <Route path={`${match.path}/paris`} render={()=><CityPage city="paris" />} />
                 <Route path={`${match.path}/london`} render={()=><CityPage city="london" />} />
                 <Route path={`${match.path}/online/explore`} render={()=><Online />} />

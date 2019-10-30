@@ -315,40 +315,42 @@ export default function ListingDetails(props) {
                             </div>
                         </div>
                         <div className="redirect-div">
-                                <ClassPrice classPrice={listingDetails[0].price} classPriceCouple={listingDetails[0].priceCouple} locale={locale} />
-                                <div>
-                                    <span>
-                                        <FormattedMessage 
-                                            id={`classDetails.infoLinkToWebsite.${locale}`}
-                                            defaultMessage=""
-                                        />
-                                    </span>
-                                </div>
-                                <div className="button-div">
-                                    <a href={listingDetails[0].website} target="_blank" rel="noopener noreferrer" 
-                                        onClick={()=>{
-                                            window.gtag("event", listingDetails[0].companyName, {
-                                                event_category: "conversions",
-                                                event_label: listingDetails[0].companyName + " - " + listingDetails[0].className
-                                            }); 
-                                        }}
-                                    >
-                                    <Button variant="contained">
-                                        <FormattedMessage 
-                                            id={`classDetails.linkToWebsite.${locale}`}
-                                            defaultMessage="Go to website"
-                                        />
-                                        <Icon className={classes.icon}>
-                                        &nbsp;keyboard_arrow_right
-                                        </Icon>
-                                    </Button>
-                                    </a>
-                                </div>
+                            <ClassPrice classPrice={listingDetails[0].price} classPriceCouple={listingDetails[0].priceCouple} locale={locale} />
+                            <div>
+                                <span>
+                                    <FormattedMessage 
+                                        id={`classDetails.infoLinkToWebsite.${locale}`}
+                                        defaultMessage=""
+                                    />
+                                </span>
                             </div>
+                            <div className="button-div">
+                                <a href={listingDetails[0].website} target="_blank" rel="noopener noreferrer" 
+                                    onClick={()=>{
+                                        window.gtag("event", listingDetails[0].companyName, {
+                                            event_category: "conversions",
+                                            event_label: listingDetails[0].companyName + " - " + listingDetails[0].className
+                                        }); 
+                                    }}
+                                >
+                                <Button variant="contained">
+                                    <FormattedMessage 
+                                        id={`classDetails.linkToWebsite.${locale}`}
+                                        defaultMessage="Go to website"
+                                    />
+                                    <Icon className={classes.icon}>
+                                    &nbsp;keyboard_arrow_right
+                                    </Icon>
+                                </Button>
+                                </a>
+                            </div>
+                        </div>
+                        <div>
+                            <RenderDescription description={listingDetails[0].description}/>
+                        </div>
                     </div>
                 </Grid>
             </Grid>
-            </Container>
-
+        </Container>
     );
 }
