@@ -6,7 +6,7 @@ import TopicCard from '../components/TopicCard';
 import LanguageCard from '../components/LanguageCard';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
-import ClassCard from '../components/ClassCard';
+import ListingCard from '../components/ListingCard';
 import TypeCard from '../components/TypeCard';
 import LazyLoad from 'react-lazy-load';
 import Icon from '@material-ui/core/Icon';
@@ -80,12 +80,25 @@ function City(props) {
                     &nbsp;{capitalize(props.city)}  
                 </h2>
                 <Grid container className="topic-cards" spacing={2} alignContent="center">
-                    {props.classesThisWeek.map((item) => {                        
+                    {props.classesThisWeek.map((listing) => {                        
                         return(
                             // <div className="item" key={item.id}>
-                            <Grid item key={item.id}>
-                                    <ClassCard 
-                                        classEntry={item}
+                            <Grid item key={listing.id}>
+                                    <ListingCard 
+                                        nameId={listing.nameId}
+                                        format={listing.format}
+                                        online={listing.online}
+                                        listingImage={listing.listingImage}
+                                        listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                                        companyLogo={listing.companyLogo}
+                                        companyName={listing.companyName}
+                                        date={listing.date}
+                                        duration={listing.duration}
+                                        district={listing.district}
+                                        address={listing.address}
+                                        city={listing.city}
+                                        language={listing.language}
+                                        tags={listing.tags}
                                     />
                             </Grid>
                             /* </div> */

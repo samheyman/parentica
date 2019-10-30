@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Container from '@material-ui/core/Container';
 import TopicCard from '../components/TopicCard';
-import ClassCard from '../components/ClassCard';
+import ListingCard from '../components/ListingCard';
 
 import CityCard from '../components/CityCard';
 import { FormattedMessage } from 'react-intl';
@@ -52,7 +52,22 @@ function Online(props) {
             {listings.map((listing) => {
                 return(
                     <Grid item key={listing.id}>
-                        <ClassCard classEntry={listing} />      
+                        <ListingCard
+                            nameId={listing.nameId}
+                            format={listing.format}
+                            online={listing.online}
+                            listingImage={listing.listingImage}
+                            listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                            companyLogo={listing.companyLogo}
+                            companyName={listing.companyName}
+                            date={listing.date}
+                            duration={listing.duration}
+                            district={listing.district}
+                            address={listing.address}
+                            city={listing.city}
+                            language={listing.language}
+                            tags={listing.tags}
+                        />      
                     </Grid>
                 );
             })}

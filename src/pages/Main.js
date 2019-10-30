@@ -144,7 +144,7 @@ export default function Main(props) {
             <Navbar/>
             <Switch>
                 <Route path={`${match.path}/home`} render={()=><Redirect to={`${props.match.url}/`} /> } />
-                <Route path={`${match.path}/madrid/explore`} render={()=><Explore tab={0} />} />
+                <Route path={`${match.path}/madrid/explore`} render={()=><Explore tab={0} city="madrid" />} />
                 <Route path={`${match.path}/madrid`} render={()=><CityPage city="madrid" />} />
                 <Route path={`${match.path}/oslo`} render={()=><CityPage city="oslo" />} />
                 <Route path={`${match.path}/stockholm`} render={()=><CityPage city="stockholm" />} />

@@ -8,7 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
-import ClassCard from '../components/ClassCard';
+import ListingCard from '../components/ListingCard';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 import { ListingsContext } from '../contexts/ListingsContext';
@@ -46,6 +46,7 @@ function a11yProps(index) {
 function Explore(props) {
     const [value, setValue] = useState(props.tab);
     const { listings } = useContext(ListingsContext);
+    const { locale } = useContext(LocaleContext);
     // console.log(listings);
     // const [tab, setTab] = useState(props.tab);
     
@@ -56,25 +57,58 @@ function Explore(props) {
     }
 
     const classesList = listings.map(
-        (classEntry) => {
-            if (( classEntry.format === 'group' || 
-                classEntry.format === 'class' ||
-                classEntry.format === 'workshop')
-                && !classEntry.online ) {
+        (listing) => {
+            console.log(props.city + " " + listing.city);
+            if (( 
+                !listing.online && listing.city.toLowerCase() === props.city && (
+                listing.format === 'group' || 
+                listing.format === 'class' ||
+                listing.format === 'workshop'))
+                ) {
                 return(
-                    <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
-                        <ClassCard classEntry={classEntry} />      
+                    <Grid item xs={12} sm={6} md={4} key={listing.id}>
+                        <ListingCard
+                            nameId={listing.nameId}
+                            format={listing.format}
+                            online={listing.online}
+                            listingImage={listing.listingImage}
+                            listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                            companyLogo={listing.companyLogo}
+                            companyName={listing.companyName}
+                            date={listing.date}
+                            duration={listing.duration}
+                            district={listing.district}
+                            address={listing.address}
+                            city={listing.city}
+                            language={listing.language}
+                            tags={listing.tags}
+                        />      
                     </Grid>
                 );
             }
         }
     );
 
-    const meetupsList = listings.map((classEntry) => {
-        if( classEntry.format === 'meetup') {
+    const meetupsList = listings.map((listing) => {
+        if( listing.format === 'meetup') {
             return (
-                <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
-                    <ClassCard classEntry={classEntry} />      
+                <Grid item xs={12} sm={6} md={4} key={listing.id}>
+                    <ListingCard
+                        nameId={listing.nameId}
+                        format={listing.format}
+                        online={listing.online}
+                        listingImage={listing.listingImage}
+                        listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                        companyLogo={listing.companyLogo}
+                        companyName={listing.companyName}
+                        date={listing.date}
+                        duration={listing.duration}
+                        district={listing.district}
+                        address={listing.address}
+                        city={listing.city}
+                        language={listing.language}
+                        tags={listing.tags}
+                    />      
                 </Grid>
             );        
         } else {
@@ -84,11 +118,26 @@ function Explore(props) {
         }
     });
 
-    const seminarsList = listings.map((classEntry) => {
-        if((classEntry.format === 'seminar' || classEntry.format === 'webinar')) {
+    const seminarsList = listings.map((listing) => {
+        if((listing.format === 'seminar' || listing.format === 'webinar')) {
             return (
-                <Grid item xs={12} sm={6} md={4} key={classEntry.id}>
-                    <ClassCard classEntry={classEntry} />      
+                <Grid item xs={12} sm={6} md={4} key={listing.id}>
+                    <ListingCard
+                        nameId={listing.nameId}
+                        format={listing.format}
+                        online={listing.online}
+                        listingImage={listing.listingImage}
+                        listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                        companyLogo={listing.companyLogo}
+                        companyName={listing.companyName}
+                        date={listing.date}
+                        duration={listing.duration}
+                        district={listing.district}
+                        address={listing.address}
+                        city={listing.city}
+                        language={listing.language}
+                        tags={listing.tags}
+                    />      
                 </Grid>
             );        
         } else {
@@ -108,184 +157,179 @@ function Explore(props) {
     console.log(meetupsCount + " meetups");
 
     return(
-        <LocaleContext.Consumer>{(context) => {
-            const locale = context.locale;
-            // console.log(locale);
-            return(
-                <Container className="main-content">
-                    <h2>{
-                        props.format === 'online' ?
-                        <FormattedMessage 
-                            id={`explore.tab.online.${locale}`}
-                            defaultMessage="online"
-                        />
-                        :
-                        <FormattedMessage 
-                            id={`explore.tab.madrid.${locale}`}
-                            defaultMessage="Madrid"
-                        />
-                        
-                    }</h2>
-                    <div className="result-filters">
-                        {(props.topic && props.topic!=="all" && props.topic!==null)?
-                            <React.Fragment>
-                                <span className={`tag tag-${props.topic}`}>
-                                    <FormattedMessage 
-                                        id={`topics.${props.topic.split(" ")[0]}.${locale}`}
-                                        defaultMessage={props.topic}
-                                    />
-                                </span>
-                                
-                                <Link to={{pathname:`/${locale.split('-')[0]}/${props.format}/explore`}}>
-                                    <span className="tag">
-                                        <FormattedMessage 
-                                            id={`general.clear.${locale}`}
-                                            defaultMessage="clear"
-                                        />
-                                    </span>
-                                </Link>
-                                
-                            </React.Fragment>
-                            :
-                            null
-                        }
-                        {(props.classLanguage==="spanish" || props.classLanguage==="english")?
-                            <React.Fragment>
-                                <span className={`tag tag-${props.topic}`}>
-                                    <FormattedMessage 
-                                        id={`general.${props.classLanguage}.${locale}`}
-                                        defaultMessage=""
-                                    />
-                                </span>
-                                
-                                <Link to={{pathname:`/${locale.split('-')[0]}/madrid/explore`}}>
-                                    <span className="tag">
-                                        <FormattedMessage 
-                                            id={`general.clear.${locale}`}
-                                            defaultMessage="clear"
-                                        />
-                                    </span>
-                                </Link>
-                                
-                            </React.Fragment>
-                            :
-                            null
-                        }
-                    </div>
-            <AppBar position="static" color="default">
-                <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">
-                    <Tab
-                        label={
-                            <React.Fragment>
-                            <FormattedMessage 
-                                id={`explore.tab.classes.${locale}`}
-                                defaultMessage="Classes"
-                                values={{
-                                    count: classesCount
-                                }}
-                            />
-                            {/* <br/><span className="results-count">({classesCount})</span> */}
-                            </React.Fragment>
-                        } 
-                        {...a11yProps(0)} 
+        <Container className="main-content">
+                <h2>{
+                    props.format === 'online' ?
+                    <FormattedMessage 
+                        id={`explore.tab.online.${locale}`}
+                        defaultMessage="online"
                     />
+                    :
+                    <FormattedMessage 
+                        id={`explore.tab.madrid.${locale}`}
+                        defaultMessage="Madrid"
+                    />
+                    
+                }</h2>
+                <div className="result-filters">
+                    {(props.topic && props.topic!=="all" && props.topic!==null)?
+                        <React.Fragment>
+                            <span className={`tag tag-${props.topic}`}>
+                                <FormattedMessage 
+                                    id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                                    defaultMessage={props.topic}
+                                />
+                            </span>
+                            
+                            <Link to={{pathname:`/${locale.split('-')[0]}/${props.format}/explore`}}>
+                                <span className="tag">
+                                    <FormattedMessage 
+                                        id={`general.clear.${locale}`}
+                                        defaultMessage="clear"
+                                    />
+                                </span>
+                            </Link>
+                            
+                        </React.Fragment>
+                        :
+                        null
+                    }
+                    {(props.classLanguage==="spanish" || props.classLanguage==="english")?
+                        <React.Fragment>
+                            <span className={`tag tag-${props.topic}`}>
+                                <FormattedMessage 
+                                    id={`general.${props.classLanguage}.${locale}`}
+                                    defaultMessage=""
+                                />
+                            </span>
+                            
+                            <Link to={{pathname:`/${locale.split('-')[0]}/madrid/explore`}}>
+                                <span className="tag">
+                                    <FormattedMessage 
+                                        id={`general.clear.${locale}`}
+                                        defaultMessage="clear"
+                                    />
+                                </span>
+                            </Link>
+                            
+                        </React.Fragment>
+                        :
+                        null
+                    }
+                </div>
+        <AppBar position="static" color="default">
+            <Tabs value={value} onChange={handleChange} variant="fullWidth" aria-label="full width tabs example">
+                <Tab
+                    label={
+                        <React.Fragment>
+                        <FormattedMessage 
+                            id={`explore.tab.classes.${locale}`}
+                            defaultMessage="Classes"
+                            values={{
+                                count: classesCount
+                            }}
+                        />
+                        {/* <br/><span className="results-count">({classesCount})</span> */}
+                        </React.Fragment>
+                    } 
+                    {...a11yProps(0)} 
+                />
+                <Tab 
+                    label={
+                        <React.Fragment>
+                        <FormattedMessage 
+                            id={`explore.tab.seminars.${locale}`}
+                            defaultMessage="seminars"
+                            values={{
+                                count: seminarsCount
+                            }}
+                        />
+                        {/* <br/><span className="results-count">({seminarsCount})</span> */}
+                        </React.Fragment>
+                    } 
+                    {...a11yProps(2)} 
+                />
+                {
+                props.format!=='online' ?
                     <Tab 
                         label={
                             <React.Fragment>
                             <FormattedMessage 
-                                id={`explore.tab.seminars.${locale}`}
-                                defaultMessage="seminars"
+                                id={`explore.tab.meetups.${locale}`}
+                                defaultMessage="meetups"
                                 values={{
-                                    count: seminarsCount
+                                    count: meetupsCount
                                 }}
                             />
-                            {/* <br/><span className="results-count">({seminarsCount})</span> */}
+                            {/* <br/><span className="results-count">({meetupsCount})</span> */}
                             </React.Fragment>
                         } 
-                        {...a11yProps(2)} 
+                        {...a11yProps(1)} 
                     />
-                    {
-                    props.format!=='online' ?
-                        <Tab 
-                            label={
-                                <React.Fragment>
-                                <FormattedMessage 
-                                    id={`explore.tab.meetups.${locale}`}
-                                    defaultMessage="meetups"
-                                    values={{
-                                        count: meetupsCount
-                                    }}
-                                />
-                                {/* <br/><span className="results-count">({meetupsCount})</span> */}
-                                </React.Fragment>
-                            } 
-                            {...a11yProps(1)} 
-                        />
-                    : null
-                    }
-                </Tabs>
-            </AppBar>
-            <TabPanel className="search-results" value={value} index={0}>
-                {(classesCount > 0 ) ?
-                <Grid container spacing={2} alignContent="center">
-                    {classesList.filter((item) => item !== '')}
-                </Grid>
-                :
-                <p>
-                    <FormattedMessage 
-                        id={`explore.results.city.none.${locale}`}
-                        defaultMessage=""
-                        // values={{
-                        //     topicLabel: <FormattedMessage 
-                        //                     id={`topics.${props.topic.split(" ")[0]}.${locale}`}
-                        //                     defaultMessage={props.topic}
-                        //                 />
-                        // }}
-                    />
-                </p>}
-            </TabPanel>
-            <TabPanel className="search-results" value={value} index={1}>
-                {(seminarsCount > 0 ) ?
-                <Grid container spacing={2} alignContent="center">
-                    {seminarsList.filter((item) => item !== '')}
-                </Grid>
-                :
-                <p>
-                    <FormattedMessage 
-                        id={`explore.results.seminars.none.${locale}`}
-                        defaultMessage="Sorry no seminars found."
-                        // values={{
-                        //     topicLabel: 
-                        //         <FormattedMessage 
-                        //             id={`topics.${props.topic.split(" ")[0]}.${locale}`}
-                        //             defaultMessage={props.topic}
-                        //         />
-                        // }}
-                    />
-                </p>}
-            </TabPanel>
-            <TabPanel className="search-results" value={value} index={2}>
-                {(meetupsCount > 0 ) ?
-                <Grid container spacing={2} alignContent="center">
-                    {meetupsList.filter((item) => item !== '')}
-                </Grid>
-                :
-                <p>
-                    <FormattedMessage 
-                        id={`explore.results.meetups.none.${locale}`}
-                        defaultMessage="Sorry no meetups found."
-                        // values={{
-                        //     topicLabel: 
-                        //         <FormattedMessage 
-                        //             id={`topics.${props.topic.split(" ")[0]}.${locale}`}
-                        //             defaultMessage={props.topic}
-                        //         />
-                        // }}
-                    />
-                </p>}
-            </TabPanel>
-        </Container>)}}</LocaleContext.Consumer>
-    );
+                : null
+                }
+            </Tabs>
+        </AppBar>
+        <TabPanel className="search-results" value={value} index={0}>
+            {(classesCount > 0 ) ?
+            <Grid container spacing={2} alignContent="center">
+                {classesList.filter((item) => item !== '')}
+            </Grid>
+            :
+            <p>
+                <FormattedMessage 
+                    id={`explore.results.city.none.${locale}`}
+                    defaultMessage=""
+                    // values={{
+                    //     topicLabel: <FormattedMessage 
+                    //                     id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                    //                     defaultMessage={props.topic}
+                    //                 />
+                    // }}
+                />
+            </p>}
+        </TabPanel>
+        <TabPanel className="search-results" value={value} index={1}>
+            {(seminarsCount > 0 ) ?
+            <Grid container spacing={2} alignContent="center">
+                {seminarsList.filter((item) => item !== '')}
+            </Grid>
+            :
+            <p>
+                <FormattedMessage 
+                    id={`explore.results.seminars.none.${locale}`}
+                    defaultMessage="Sorry no seminars found."
+                    // values={{
+                    //     topicLabel: 
+                    //         <FormattedMessage 
+                    //             id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                    //             defaultMessage={props.topic}
+                    //         />
+                    // }}
+                />
+            </p>}
+        </TabPanel>
+        <TabPanel className="search-results" value={value} index={2}>
+            {(meetupsCount > 0 ) ?
+            <Grid container spacing={2} alignContent="center">
+                {meetupsList.filter((item) => item !== '')}
+            </Grid>
+            :
+            <p>
+                <FormattedMessage 
+                    id={`explore.results.meetups.none.${locale}`}
+                    defaultMessage="Sorry no meetups found."
+                    // values={{
+                    //     topicLabel: 
+                    //         <FormattedMessage 
+                    //             id={`topics.${props.topic.split(" ")[0]}.${locale}`}
+                    //             defaultMessage={props.topic}
+                    //         />
+                    // }}
+                />
+            </p>}
+        </TabPanel>
+        </Container>)
 }
 
 export default Explore;

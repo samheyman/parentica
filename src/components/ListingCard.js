@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useContext} from 'react';
 import { connect } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
@@ -19,17 +19,6 @@ import '@firebase/firestore';
 import '@firebase/auth';
 import '@firebase/storage';
 
-const mapStateToProps = (state) => {
-  return(
-      {
-          classes: state.classes,
-          providers: state.providers,
-          resources: state.resources,
-          tab: state.tab,
-          locale: state.locale
-      }
-  );
-};
 
 const useStyles = makeStyles({
   card: {
@@ -43,7 +32,7 @@ const useStyles = makeStyles({
   }
 });
 
-function RenderTags({tags, lang}) {
+function RenderTags({tags, locale}) {
   let i = 0;
   const output = tags.map((tag) => {
       i++;
@@ -60,7 +49,7 @@ function RenderTags({tags, lang}) {
         //     >
           <span key={i} className={`tag tag-${tag}`}>
             <FormattedMessage 
-              id={`topics.${tag.split(" ")[0]}.${lang}`}
+              id={`topics.${tag}.${locale}`}
               defaultMessage={tag}
             />
           </span>
@@ -71,7 +60,7 @@ function RenderTags({tags, lang}) {
   return output;
 }
 
-function RenderFlag({language, locale}) {
+function RenderFlag(language, locale) {
   if ((language==='english' && locale==='es-ES') || (language==='spanish' && locale==='en-GB')) {
       return (
         <React.Fragment>
@@ -86,17 +75,32 @@ function RenderFlag({language, locale}) {
 
 
 
-function MediaCard(props) {
+function ListingCard({
+  nameId,
+  format,
+  online,
+  listingImage,
+  listingTitle,
+  companyLogo,
+  companyName,
+  date,
+  duration,
+  district,
+  address,
+  city,
+  language,
+  tags,
+}) {
     const classes = useStyles();
     const storage = firebase.storage();
     const [imageLink, setImageLink] = useState('someurl');
     const [logo, setLogo] = useState('');
-    const imageUrl = getImage(props.classEntry.listingImage);
-    const companyLogo = getLogo(props.classEntry.companyLogo);
+    const imageUrl = getImage(listingImage);
+    const avatar = getLogo(companyLogo);
 
     function getImage() { 
       storage
-        .ref( `/listings/${props.classEntry.listingImage}_330x140.jpg` )
+        .ref( `/listings/${listingImage}_330x140.jpg` )
         .getDownloadURL()
         .then( url => {
           setImageLink(url);
@@ -105,24 +109,25 @@ function MediaCard(props) {
     }
     function getLogo() { 
       storage
-        .refFromURL(`gs://app23980-providers-data/logos/${props.classEntry.companyLogo}.jpg` )
+        .refFromURL(`gs://app23980-providers-data/logos/${companyLogo}.jpg` )
         .getDownloadURL()
         .then( url => {
           setLogo(url);
           } )
         .catch( (err) => "Error getting logo url: " + err);
     }
+
+    const { locale } = useContext(LocaleContext);
+    moment.locale(locale);
+
     return (
-      <LocaleContext.Consumer>{(context) => {
-        const locale = context.locale;
-        moment.locale(props.locale);
-        return(<Card className={classes.card}>
+      <Card className={classes.card}>
           <CardActionArea>
-            <Link className="class-card-link" to={`/${locale.split('-')[0]}/listings/${props.classEntry.nameId}`}
+            <Link className="class-card-link" to={`/${locale.split('-')[0]}/listings/${nameId}`}
                 onClick={()=>{
-                  window.gtag("event", props.classEntry.companyName, {
-                      event_category: "class details",
-                      event_label: props.classEntry.companyName + " - " + props.classEntry.className
+                  window.gtag("event", companyName, {
+                      event_category: "listing details",
+                      event_label: companyName + " - " + listingTitle
                   }); 
                 }}
             >
@@ -137,18 +142,13 @@ function MediaCard(props) {
                   component="img"
                   className={classes.media}
                   image={imageLink}
-                  title={props.classEntry.className}
+                  title={listingTitle}
                 />
                 
             </LazyLoad>
             <CardContent>
               <Typography className={`class-name`} gutterBottom variant="h3" component="h3">
-                {/* Support for old listing title name */}
-                {(props.classEntry.hasOwnProperty('listingName')) ?
-                  props.classEntry.listingName.toLowerCase()
-                  :
-                  props.classEntry.listingTitle.toLowerCase()
-                }
+                {listingTitle.toLowerCase()}
               </Typography>
               <div className="company">
                 <LazyLoad 
@@ -157,45 +157,35 @@ function MediaCard(props) {
                       debounce={false}
                       offsetVertical={500}
                       >
-                  <img className="company-logo" src={logo} alt={`${props.classEntry.companyLogo} logo`} />
+                  <img className="company-logo" src={logo} alt={`${companyLogo} logo`} />
                 </LazyLoad>
-                <span className="company-name">{props.classEntry.companyName}</span>
+                <span className="company-name">{companyName}</span>
               </div> 
 
               <div className={`card-footer ${classes.cardFooter}`}>
                   <div className="class-details">
-                    {(props.classEntry.date !== null ) ?
-                      <span className="class-details-date">
-                        {moment(new Date(props.classEntry.date.seconds * 1000)).format("MMM D")}
-                      </span>
-                      :
-                      <span className="class-details-date">
-                        <FormattedMessage 
-                          id={`classDetails.time.anytime.${locale}`}
-                          defaultMessage="Anytime"
-                        />
-                      </span>
-                    }
-                   
-                    {(props.classEntry.date !== null && props.classEntry.date.length > 3 ) ?
+                    {(date !== null) ?
                       (<React.Fragment>
+                        <span className="class-details-date">
+                          {moment(new Date(date.seconds * 1000)).format("MMM D")}
+                        </span>
                         <span className="dot"></span>
                         <span className="class-details-time">
-                          {moment(new Date(props.classEntry.date * 1000)).format("HH:mm")} 
+                          {moment(new Date(date.seconds * 1000)).format("HH:mm")} 
                         </span>
                       </React.Fragment>)
                       :
-                      (null)
-                    }                  
-                        
-                    {(props.classEntry.district !== null && props.classEntry.district !== "") ?
+                      null
+                    }
+                       
+                    {(district !== null && district !== "") ?
                         (<React.Fragment>
                             <span className="dot"></span>
                             <span className="class-details-district">
-                            { (props.classEntry.district.length > 13) ?
-                                props.classEntry.district.substring(0,13) + "..."
+                            { (district.length > 13) ?
+                                district.substring(0,13) + "..."
                                 :
-                                props.classEntry.district
+                                district
                             }
                             </span>
                           </React.Fragment>                     
@@ -203,7 +193,7 @@ function MediaCard(props) {
                         :
                         (null)
                     }
-                    <RenderFlag language={props.classEntry.language} locale={locale} />
+                    <RenderFlag language={language} locale={locale} />
 
                   </div>
                   
@@ -212,10 +202,9 @@ function MediaCard(props) {
             </Link>
           </CardActionArea>
           <CardActions>
-            <RenderTags tags={props.classEntry.tags} lang={locale} />
+            <RenderTags tags={tags} locale={locale} />
           </CardActions>
-        </Card>)}}</LocaleContext.Consumer>
-    );
+        </Card>)
   }
 
-  export default connect(mapStateToProps)(MediaCard);
+  export default ListingCard;

@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container';
 import CityCard from '../components/CityCard';
 import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
-import ClassCard from '../components/ClassCard';
+import ListingCard from '../components/ListingCard';
 import LazyLoad from 'react-lazy-load';
 import TypeCard from '../components/TypeCard';
 import LanguageCard from '../components/LanguageCard';
@@ -176,11 +176,24 @@ function Home(props) {
                 <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Popular online classes"/>    
             </h2> 
             <Grid container className="topic-cards" spacing={2} alignContent="center">
-                {props.onlineClasses.map((item) => {                        
+                {props.onlineClasses.map((listing) => {                        
                     return(
-                        <Grid item key={item.id}>
-                            <ClassCard 
-                                classEntry={item}
+                        <Grid item key={listing.id}>
+                            <ListingCard 
+                                nameId={listing.nameId}
+                                format={listing.format}
+                                online={listing.online}
+                                listingImage={listing.listingImage}
+                                listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                                companyLogo={listing.companyLogo}
+                                companyName={listing.companyName}
+                                date={listing.date}
+                                duration={listing.duration}
+                                district={listing.district}
+                                address={listing.address}
+                                city={listing.city}
+                                language={listing.language}
+                                tags={listing.tags}
                             />
                         </Grid>);
                 })
@@ -199,11 +212,25 @@ function Home(props) {
                 <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Topics"/>    
             </h2>  
             <div className="test-scroll" style={{ height: '320px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
-                {props.onlineClasses.map((item) => {                        
+                {props.onlineClasses.map((listing) => {    
+                    console.log(typeof listing.date);                    
                     return(
                         <div style={{ width: '330px', marginRight: '10px', height: '250px', display:'inline-block' }}>
-                            <ClassCard 
-                                classEntry={item}
+                            <ListingCard 
+                                nameId={listing.nameId}
+                                format={listing.format}
+                                online={listing.online}
+                                listingImage={listing.listingImage}
+                                listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                                companyLogo={listing.companyLogo}
+                                companyName={listing.companyName}
+                                date={(listing.date !== "") ? listing.date : null }
+                                duration={listing.duration}
+                                district={listing.district}
+                                address={listing.address}
+                                city={listing.city}
+                                language={listing.language}
+                                tags={listing.tags}
                             />
                         </div>);
                 })
