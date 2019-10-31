@@ -19,7 +19,7 @@ import RadioButton from '@material-ui/core/Radio';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { AuthContext } from '../contexts/AuthContext';
-
+// const admin = require('firebase-admin');
 
 const NewListing = () => {
 
@@ -208,7 +208,7 @@ const NewListing = () => {
                 format,
                 listingTitle,
                 nameId: tempImageUrl + "-" + (date.length > 0 ? date.substring(0,10) : Math.floor(Math.random() * (1000 + 1))),
-                date: new Date(dateTime),
+                date: firebase.Timestamp.fromDate(new Date(dateTime)),
                 duration: parseInt(duration),
                 language,
                 price: parseFloat(price),
@@ -574,55 +574,60 @@ const NewListing = () => {
                             onChange={(e) => setDescription(e.currentTarget.value)}
                         />
                     </div>
-                    
-                    <div className="admin-section">
-                        <em>Admin only</em>
-                    </div>
-                    <div className="provider-form-item">
-                        <label className="required" title="companyName">Company name: </label>
-                        <TextField
-                            id="companyName"
-                            value={companyName}
-                            margin="normal"
-                            variant="outlined"
-                            onChange={(e) => setCompanyName(e.currentTarget.value)}
-                        />
-                    </div>
-                    <div className="provider-form-item">
-                        <label className="required" title="image">Logo: </label>
-                        <div className="logo-uploader-box" onClick={() => logoInput.click()}>
-                        {/* { logoUploaded ? (
-                            <Icon className="success-icon">
-                                done
-                            </Icon>
-                        ) : */}
-                        {(selectedLogo === "") ? (
-                            <React.Fragment>
-                                <div><Icon>add_a_photo</Icon></div>
-                                <div>
-                                    <strong>ADD LOGO</strong>
-                                    <br/>
-                                    <span>Add a logo for your profile.</span>
-                                    {(logoInput===null) ? 
-                                        "logoInput"
-                                        :
-                                        null
-                                    }
-                                    <input
-                                        type="file"
-                                        style={{ display: "none" }}
-                                        onChange={(e) => setSelectedLogo(e.currentTarget.files[0])}
-                                        ref={ref => setLogoInput(ref)}
-                                    />
+                    {   (currentUser.email.indexOf('parentica') !== -1) ?
+                        (<React.Fragment>
+                            <div className="admin-section">
+                                <em>Admin only</em>
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="required" title="companyName">Company name: </label>
+                                <TextField
+                                    id="companyName"
+                                    value={companyName}
+                                    margin="normal"
+                                    variant="outlined"
+                                    onChange={(e) => setCompanyName(e.currentTarget.value)}
+                                />
+                            </div>
+                            <div className="provider-form-item">
+                                <label className="required" title="image">Logo: </label>
+                                <div className="logo-uploader-box" onClick={() => logoInput.click()}>
+                                {/* { logoUploaded ? (
+                                    <Icon className="success-icon">
+                                        done
+                                    </Icon>
+                                ) : */}
+                                {(selectedLogo === "") ? (
+                                    <React.Fragment>
+                                        <div><Icon>add_a_photo</Icon></div>
+                                        <div>
+                                            <strong>ADD LOGO</strong>
+                                            <br/>
+                                            <span>Add a logo for your profile.</span>
+                                            {(logoInput===null) ? 
+                                                "logoInput"
+                                                :
+                                                null
+                                            }
+                                            <input
+                                                type="file"
+                                                style={{ display: "none" }}
+                                                onChange={(e) => setSelectedLogo(e.currentTarget.files[0])}
+                                                ref={ref => setLogoInput(ref)}
+                                            />
+                                        </div>
+                                    </React.Fragment>
+                                    ) : (
+                                        <span>{selectedLogo.name}</span>
+                                    )
+                                }
                                 </div>
-                            </React.Fragment>
-                            ) : (
-                                <span>{selectedLogo.name}</span>
-                            )
-                        }
-                        </div>
 
-                    </div>
+                            </div>
+                        </React.Fragment>)
+                            :
+                            null
+                    }
                     
                     <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
                     

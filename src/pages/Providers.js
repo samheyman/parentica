@@ -15,6 +15,7 @@ import TableRow from '@material-ui/core/TableRow';
 import { FormattedDate } from 'react-intl';
 import * as moment from 'moment';
 import { FormattedMessage } from 'react-intl';
+import { AuthContext } from '../contexts/AuthContext';
 
 import uuid from 'uuid';
 // import { ListingsContext } from '../contexts/ListingsContext';
@@ -71,21 +72,41 @@ const useStyles = makeStyles({
 
 
 function useListings() {
-    const [times, setTimes] = useState([]);
-   
+    const { currentUser } = useContext(AuthContext);
+    const [listings, setListings] = useState([]);
+    console.log(currentUser.email);
     useEffect(() => {
-        const unsubscribe = firebase.firestore().collection('listings').orderBy('date', 'desc').onSnapshot((snapshot) => {
-            const newListings = snapshot.docs.map((doc) => ({
-                id: doc.id,
-                ...doc.data()
-            }));
-            setTimes(newListings);
-        });
+        let unsubscribe;
+        if(currentUser.email.indexOf('parentica') !== -1) {
+            unsubscribe = firebase.firestore()
+                .collection('listings')
+                // .where()
+                .orderBy('date', 'desc')
+                .onSnapshot((snapshot) => {
+                const newListings = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setListings(newListings);
+            });
+        } else {
+            unsubscribe = firebase.firestore()
+                .collection('listings')
+                .where('addedBy', '==', currentUser.email)
+                .orderBy('date', 'desc')
+                .onSnapshot((snapshot) => {
+                const newListings = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data()
+                }));
+                setListings(newListings);
+            });
+        }
         return () => unsubscribe();
 
     }, [])
 
-    return times;
+    return listings;
 }
 
 function deleteListings(listings) {
@@ -122,6 +143,7 @@ const Providers = () => {
     const [isListingSelected, setIsListingSelected] = useState(false);
     const [listingsSelected, setListingsSelected] = useState([]);
     let rows;
+
     if(listings!=null && listings.length > 0) {
         rows = listings.map((classEntry) => {
             let title = (classEntry.hasOwnProperty("listingName") ? 
