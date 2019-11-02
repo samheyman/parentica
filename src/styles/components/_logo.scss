@@ -2,7 +2,6 @@
     color: $font-dark;
     height: $navigation-height !important;
     text-decoration: none;
-    font-size: 1.8em !important;
 
     .brand {
         display: flex;
@@ -11,15 +10,29 @@
         align-items: center;
 
         .brand-logo {
-            margin: 0 5px 2px 0; 
-            height:18px !important;
+            margin: 4px 5px 0px 0; 
+            height:30px !important;
         }
 
         .brand-name {
+            line-height: 32px;
+            font-size: 1.8rem !important;
             color: #000000;
-            font-family: Roboto;
-            text-transform: capitalize;
-            font-weight: 700;
+            font-family: 'Comfortaa', cursive;
+            text-transform: lowercase;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+
+        @media (max-width: 700px) {
+            .brand-name {
+                font-size: 1.6rem !important;
+            }
+
+            .brand-logo {
+                margin: 4px 5px 0px 0; 
+                height: 26px !important;
+            }
         }
 
     }

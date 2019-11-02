@@ -9,7 +9,6 @@ import ScrollToTop from './components/ScrollToTop';
 import AuthContextProvider from './contexts/AuthContext';
 import LocaleContextProvider from './contexts/LocaleContext';
 import ListingsContextProvider from './contexts/ListingsContext';
-// import FirebaseContextProvider from './contexts/FirebaseContext';
 
 const store = ConfigureStore();
 

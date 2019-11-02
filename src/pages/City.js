@@ -79,33 +79,33 @@ function City(props) {
                     />  
                     &nbsp;{capitalize(props.city)}  
                 </h2>
-                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                <div className="test-scroll" style={{ height: '320px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
                     {props.classesThisWeek.map((listing) => {                        
                         return(
-                            // <div className="item" key={item.id}>
-                            <Grid item key={listing.id}>
-                                    <ListingCard 
-                                        nameId={listing.nameId}
-                                        format={listing.format}
-                                        online={listing.online}
-                                        listingImage={listing.listingImage}
-                                        listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
-                                        companyLogo={listing.companyLogo}
-                                        companyName={listing.companyName}
-                                        date={listing.date}
-                                        duration={listing.duration}
-                                        district={listing.district}
-                                        address={listing.address}
-                                        city={listing.city}
-                                        language={listing.language}
-                                        tags={listing.tags}
-                                    />
-                            </Grid>
-                            /* </div> */
+                            <div 
+                                key={listing.id}
+                                style={{ width: '330px', marginRight: '10px', display:'inline-block' }}>
+                                <ListingCard 
+                                    nameId={listing.nameId}
+                                    format={listing.format}
+                                    online={listing.online}
+                                    listingImage={listing.listingImage}
+                                    listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                                    companyLogo={listing.companyLogo}
+                                    companyName={listing.companyName}
+                                    date={(listing.date !== "") ? listing.date : null }
+                                    duration={listing.duration}
+                                    district={listing.district}
+                                    address={listing.address}
+                                    city={listing.city}
+                                    language={listing.language}
+                                    tags={listing.tags}
+                                />
+                            </div>
                         );
                     })
                     }
-                </Grid>
+                </div>
                 <div className="show-all-link">
                     <Link to={{pathname:`/${locale.locale.split('-')[0]}/${props.city}/explore`}}>
                     <FormattedMessage id={`general.showAll.${locale.locale}`} defaultMessage="show all" />    

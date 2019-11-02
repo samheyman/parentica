@@ -230,14 +230,11 @@ const NewListing = () => {
                 district,
                 address,
                 companyName,
-                listingImage: tempImageUrl,
+                listingImage: imageLink.split(' ')[0],
                 companyLogo: tempLogoUrl,
                 active: false,
                 addedBy: currentUser.email,
                 dateAdded: new Date
-            })
-            .then(() => {
-                postImage(tempImageUrl);
             })
             .then(() => {
                 postLogo(tempLogoUrl);
@@ -260,6 +257,7 @@ const NewListing = () => {
                 setDistrict('');
                 setAddress('');
                 setCompanyName('');
+                setImageLink('');
             })
             .catch((e) => {
                 console.log("Error posting the form: " + e);
@@ -377,8 +375,6 @@ const NewListing = () => {
             const fileInput = document.getElementById('imageInput');
             fileInput.click();
         }
-
-        console.log(currentUser);
 
         return(
             <Container className="content">
@@ -762,7 +758,7 @@ const NewListing = () => {
                     <p>
                     <FormattedMessage 
                         id={`providers.confirmListingCreated.${locale}`}
-                        defaultMessage="Listing added"
+                        defaultMessage="Listing successfully saved. You can now acitvate it when you are ready."
                     />
                     </p>
                     

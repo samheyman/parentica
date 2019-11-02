@@ -40,19 +40,24 @@ function Online(props) {
         return listings;
     }
 
-    console.log("Listings: " + listings);
+    console.log(listings);
     const { locale } = useContext(LocaleContext);
 
     return(
-        <Container className="main-content"> 
-            <h2>
+        <Container className="content"> 
+            <h2 style={{textTransform:'capitalize'}}>
                 <FormattedMessage id={`homepage.tagline.online.button.${locale}`} defaultMessage="Online"/>    
             </h2>  
-            <Grid container spacing={2} alignContent="center">
+            <div 
+                className="test-scroll upcoming-online" 
+                // style={{ height: '320px', overflowX: 'scroll', whiteSpace: 'nowrap'}}
+            >
             {listings.map((listing) => {
                 return(
-                    <Grid item key={listing.id}>
-                        <ListingCard
+                    <div 
+                        key={listing.id}
+                        style={{ width: '330px', marginRight: '10px', height: '250px', display:'inline-block' }}>
+                        <ListingCard 
                             nameId={listing.nameId}
                             format={listing.format}
                             online={listing.online}
@@ -60,18 +65,18 @@ function Online(props) {
                             listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
                             companyLogo={listing.companyLogo}
                             companyName={listing.companyName}
-                            date={listing.date}
+                            date={(listing.date !== "") ? listing.date : null }
                             duration={listing.duration}
                             district={listing.district}
                             address={listing.address}
                             city={listing.city}
                             language={listing.language}
                             tags={listing.tags}
-                        />      
-                    </Grid>
+                        />
+                    </div>
                 );
             })}
-            </Grid>
+            </div>
         </Container>
     );
 }

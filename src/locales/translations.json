@@ -338,11 +338,11 @@
     "errorPage.notFound.en-GB": "Sorry, the page you requested was not found.",
     "errorPage.notFound.es-ES": "Lo sentimos, no se encontró la página solicitada.",
 
-    "providers.confirmListingCreated.en-GB": "Listing successfully created.",
-    "providers.confirmListingCreated.es-ES": "Listado creado con éxito",
+    "providers.confirmListingCreated.en-GB": "Listing successfully saved. You can now activate it when you are ready.",
+    "providers.confirmListingCreated.es-ES": "Listado guardado con éxito. Puedes activarlo cuando quieras.",
 
     "providers.backHomeLink.en-GB": "Back",
-    "providers.backHomeLink.es-ES": "Espalda"
+    "providers.backHomeLink.es-ES": "Volver"
 
 }
 

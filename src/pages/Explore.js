@@ -164,7 +164,7 @@ function Explore(props) {
                     props.format === 'online' ?
                     <FormattedMessage 
                         id={`explore.tab.online.${locale}`}
-                        defaultMessage="online"
+                        defaultMessage="Online"
                     />
                     :
                     <FormattedMessage 
@@ -256,7 +256,7 @@ function Explore(props) {
                     <Tab 
                         label={
                             <div className="listing-type-count">
-                                <Icon>group</Icon>
+                                <Icon>people_alt</Icon>
                                 &nbsp;
                                 <strong>{meetupsCount}</strong>
                                 &nbsp;

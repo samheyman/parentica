@@ -92,7 +92,7 @@ function Home(props) {
                     id={`homepage.searchByCity.${locale}`} 
                     defaultMessage="Search by city" />    
             </h2>  
-            <div className="test-scroll" style={{ height: '261px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+            <div className="test-scroll" style={{ height: '280px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
                 {/* <Grid container className="cities-links" spacing={2} alignContent="center"> */}
                     <CityCard
                         locale={`${locale}`}
@@ -207,15 +207,16 @@ function Home(props) {
             </div>
             
         </div> */}
-        <div className="popular-topics">
+        <div className="popular-online">
             <h2>
-                <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Topics"/>    
+                <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Popular online classes"/>    
             </h2>  
             <div className="test-scroll" style={{ height: '320px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
                 {props.onlineClasses.map((listing) => {    
-                    console.log(typeof listing.date);                    
                     return(
-                        <div style={{ width: '330px', marginRight: '10px', height: '250px', display:'inline-block' }}>
+                        <div 
+                            key={listing.id}
+                            style={{ width: '330px', marginRight: '10px', display:'inline-block' }}>
                             <ListingCard 
                                 nameId={listing.nameId}
                                 format={listing.format}

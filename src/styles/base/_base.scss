@@ -33,6 +33,12 @@ body {
     background-color: $body-background-color !important;
     min-height: 100%;
     font-size: 1.125rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 img {
@@ -66,8 +72,8 @@ img {
 h1,
 h2,
 h3 {
-    font-family: Roboto, sans-serif;
-    font-weight: 400;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-weight: 700;
     color: $font-dark;
 }
 
@@ -80,11 +86,6 @@ h2 {
     font-size: 1.5rem;
     letter-spacing: 1px;
     margin-top: 40px;
-    text-transform: none;
-}
-
-h2.lowercase {
-    text-transform: none;
 }
 
 .title {
@@ -97,7 +98,7 @@ h2.lowercase {
 
 .subtitle {
     font-weight: 500;
-    font-size: 1.2em;
+    font-size: 1.5em;
     margin-bottom: 2rem;
 }
 

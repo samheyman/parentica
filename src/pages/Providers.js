@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
@@ -45,7 +45,8 @@ const columns = [
     },
     { id: 'uid', label: 'UID'},
     { id: 'addedBy', label: 'Added by'},
-    { id: 'active', label: 'Status'}
+    { id: 'active', label: 'Status', align: 'center'},   
+    { id: 'edit', label: 'Edit'}
 ];
 
 function createData(id, name, provider, date, online, city, uid, addedBy, active) {
@@ -70,11 +71,12 @@ const useStyles = makeStyles({
     },
 });
 
+const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   // General scroll to element function
 
 function useListings() {
     const { currentUser } = useContext(AuthContext);
     const [listings, setListings] = useState([]);
-    console.log(currentUser.email);
+    console.log("render listings");
     useEffect(() => {
         let unsubscribe;
         if(currentUser.email.indexOf('parentica') !== -1) {
@@ -123,7 +125,7 @@ function activateListings(listings) {
             "active": true
         });
     });
-    return true;
+    return true
 }
 
 function deactivateListings(listings) {
@@ -138,11 +140,14 @@ function deactivateListings(listings) {
 const Providers = () => {
     const listings = useListings();
     const classes = useStyles();
+    const { currentUser } = useContext(AuthContext);
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(100);
     const [isListingSelected, setIsListingSelected] = useState(false);
     const [listingsSelected, setListingsSelected] = useState([]);
     let rows;
+
+    const executeScroll = () => scrollToRef(myRef)
 
     if(listings!=null && listings.length > 0) {
         rows = listings.map((classEntry) => {
@@ -226,8 +231,19 @@ const Providers = () => {
         }
     }
 
-    const { locale } = useContext(LocaleContext);
+    const showField = (fieldId) => {
+        // Hide table column for non-admins, returns true if admin
+        const adminOnlyColumns = ['uid', 'addedBy', 'provider', 'online'];    
+        return !(adminOnlyColumns.includes(fieldId)) 
+            || (adminOnlyColumns.includes(fieldId) && currentUser.email.indexOf('parentica')!==-1);
+    }
 
+    const { locale } = useContext(LocaleContext);
+    
+    const myRef = useRef(null)
+    // let myRef = React.createRef();
+
+    // console.log(currentUser);
     return(
         <Container className="content">
                     <Grid container className="contact-form">
@@ -292,13 +308,16 @@ const Providers = () => {
                                 <TableHead>
                                   <TableRow>
                                     {columns.map(column => (
-                                      <TableCell
-                                        key={column.id}
-                                        align={column.align}
-                                        style={{ minWidth: column.minWidth }}
-                                      >
-                                        {column.label}
-                                      </TableCell>
+                                        (showField(column.id)) ? 
+                                            <TableCell
+                                                key={column.id}
+                                                align={column.align}
+                                                style={{ minWidth: column.minWidth }}
+                                            >
+                                                {column.label}
+                                            </TableCell>
+                                            : 
+                                            null
                                     ))}
                                   </TableRow>
                                 </TableHead>
@@ -306,17 +325,44 @@ const Providers = () => {
                                   {rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => {
                                     let today = new Date();
                                     return (
-                                      <TableRow hover role="checkbox" tabIndex={-1} key={uuid()}>
+                                      <TableRow hover role="checkbox" tabIndex={-1} key={row['id']} ref={myRef}>
                                         {columns.map(column => {
                                             let value = null;
                                             if (column.id === "active") {
                                                 value = (row[column.id]==="true") ? 
-                                                    (new Date(row["class_date"]) > today || row["class_date"] == "" ) ?
-                                                        <Icon style={{color: '#2DE080'}}>toggle_on</Icon>
+                                                    (new Date(row["class_date"]) > today || row["class_date"] === "---" ) ?
+                                                        <Icon 
+                                                            onClick={() => {
+                                                                deactivateListings([row['id']]);
+                                                                // executeScroll();
+                                                                // window.scrollTo(0, position);
+                                                                // .scrollIntoView({ behavior: 'smooth', block: 'start' })
+                                                            }}
+                                                            style={{color: '#2DE080', cursor:'pointer'}}>
+                                                            visibility
+                                                        </Icon>
                                                         :
-                                                        <Icon style={{color: '#eaeaea'}}>toggle_off</Icon>
+                                                        <span style={{color: '#999999'}}>past</span>
                                                     :
-                                                    <Icon style={{color: '#ffe0b2'}}>toggle_off</Icon>;
+                                                    <Icon 
+                                                        onClick={() => {
+                                                            activateListings([row['id']]);
+                                                            // window.scrollTo(0, myRef.current.offsetTop);
+                                                        }}
+                                                        style={{color: '#999999', cursor:'pointer'}}>
+                                                        visibility_off
+                                                    </Icon>;
+                                            } else if (column.id === "edit") {
+                                                value = <Icon 
+                                                            onClick={() => {
+                                                                console.log(row['id'] + " edited");
+                                                                // setListingsSelected([row['id']]);
+                                                                // console.log([row['id']] + " added: " + listingsSelected);
+                                                                // deactivateListings([row['id']]);
+                                                            }}
+                                                            style={{color: '#999999', cursor:'pointer'}}>
+                                                            edit
+                                                        </Icon>;
                                             } else if (column.id === "online") {
                                                 value = (!row["online"]) ? 
                                                     row.city 
@@ -325,12 +371,20 @@ const Providers = () => {
                                             } else if (column.id !== "id") {
                                                 value = row[column.id];
                                             } else {
-                                                value = <input checked={listingsSelected.includes(row[column.id])} type="checkbox" name={row[column.id]} value={row[column.id]} onChange={listingSelected} />
+                                                value = <input 
+                                                            checked={listingsSelected.includes(row[column.id])} 
+                                                            type="checkbox" 
+                                                            name={row[column.id]} 
+                                                            value={row[column.id]} 
+                                                            onChange={listingSelected} />
                                             }
                                             return (
-                                                <TableCell key={column.id} align={column.align}>
-                                                {value}
-                                                </TableCell>
+                                                (showField(column.id)) ? 
+                                                    <TableCell key={column.id} align={column.align}>
+                                                    {value}
+                                                    </TableCell>
+                                                    :
+                                                    null
                                             );
                                         })}
                                       </TableRow>
