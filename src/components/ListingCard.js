@@ -49,7 +49,7 @@ function RenderTags({tags, locale}) {
         //     >
           <span key={i} className={`tag tag-${tag}`}>
             <FormattedMessage 
-              id={`topics.${tag}.${locale}`}
+              id={`topics.${tag.split(' ')[0]}.${locale}`}
               defaultMessage={tag}
             />
           </span>

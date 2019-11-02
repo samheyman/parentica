@@ -20,6 +20,10 @@ export const TOPICS = [
         name: "fitness",
     },
     {
+        id: "health",
+        name: "health",
+    },
+    {
         id: "massage",
         name: "massage",
     },

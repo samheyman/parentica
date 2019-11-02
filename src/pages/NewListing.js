@@ -9,7 +9,6 @@ import { LocaleContext } from '../contexts/LocaleContext';
 import { ListingsContext } from '../contexts/ListingsContext';
 import Loader from '../components/Widgets/Loader';
 import MenuItem from '@material-ui/core/MenuItem';
-import firebase from '../config/firebase';
 import { FormattedMessage } from 'react-intl';
 import { file } from '@babel/types';
 import SmallLoader from '../components/Widgets/SmallLoader';
@@ -19,6 +18,19 @@ import RadioButton from '@material-ui/core/Radio';
 import FormControl from '@material-ui/core/FormControl';
 import FormLabel from '@material-ui/core/FormLabel';
 import { AuthContext } from '../contexts/AuthContext';
+
+// Mui imports
+import Tooltip from '@material-ui/core/Tooltip';
+import EditIcon from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
+
+// Firebase imports
+import firebase from '@firebase/app';
+import '@firebase/firestore';
+import '@firebase/auth';
+import '@firebase/storage';
+import { async } from '@firebase/util';
+
 // const admin = require('firebase-admin');
 
 const NewListing = () => {
@@ -175,7 +187,6 @@ const NewListing = () => {
         // }
 
         const cleanString = (string) => {
-            console.log(string);
             let output = string.toLowerCase();
             output = output.replace(/[|&$%@"<>()_+*'`!?\-:;,~]/g, "");
             output = output.replace(/[áàâäãåā]/g, "a");
@@ -199,16 +210,16 @@ const NewListing = () => {
             const descriptionCleaned = descriptionParagraphs.filter(paragraph => paragraph!=="");
             const tempImageUrl = cleanString(listingTitle + " " + companyName);
             const tempLogoUrl = cleanString(companyName);
-            const dateTime = ((new Date(date)).isDstObserved()) ? 
-                date + "T" + time + "+02:00" 
-                : 
-                date + "T" + time + "+01:00" ;
+            // const dateTime = ((new Date(date)).isDstObserved()) ? 
+            //     date + "T" + time + "+02:00" 
+            //     : 
+            //     date + "T" + time + "+01:00" ;
             firebase.firestore().collection('listings').add({
                 online: (online==="true") ? true : false,
                 format,
                 listingTitle,
                 nameId: tempImageUrl + "-" + (date.length > 0 ? date.substring(0,10) : Math.floor(Math.random() * (1000 + 1))),
-                date: firebase.Timestamp.fromDate(new Date(dateTime)),
+                date: (date && date !== null && date !== "") ? new Date(date + "T" + time + "+01:00") : null,
                 duration: parseInt(duration),
                 language,
                 price: parseFloat(price),
@@ -267,21 +278,25 @@ const NewListing = () => {
         const [ time, setTime ] = useState('');
         const [ language, setLanguage ] = useState('');
 
-        const [ tags, setTags ] = useState('');
-        const [ website, setWebsite ] = useState('');
-        const [ selectedFile, setSelectedFile ] = useState(''); 
-        const [ selectedLogo, setSelectedLogo ] = useState('');
-        const [ logoInput, setLogoInput ] = useState(null);
-        const [ fileInput, setFileInput ] = useState(null);
-        const [ imageUploaded, setImageUploaded ] = useState(false);
-        const [ logoUploaded, setLogoUploaded ] = useState(false);
-        const [ description, setDescription ] = useState('');
-        const [ city, setCity ] = useState('');
-        const [ district, setDistrict ] = useState('');
-        const [ address, setAddress ] = useState('');
-        const [ companyName, setCompanyName ] = useState('');
-        const [ companyLogo, setCompanyLogo ] = useState('');
-        const [ listingImage, setListingImage ] = useState('');
+        const [ tags, setTags ]                     = useState('');
+        const [ website, setWebsite ]               = useState('');
+        const [ selectedFile, setSelectedFile ]     = useState(''); 
+        const [ selectedLogo, setSelectedLogo ]     = useState('');
+        const [ imageLink, setImageLink]            = useState('');
+        const [ imageUploading, setImageUploading ] = useState(false);
+        const [ logoInput, setLogoInput ]           = useState(null);
+        const [ fileInput, setFileInput ]           = useState(null);
+        const [ imageUploaded, setImageUploaded ]   = useState(false);
+        const [ logoUploaded, setLogoUploaded ]     = useState(false);
+        const [ description, setDescription ]       = useState('');
+        const [ city, setCity ]                     = useState('');
+        const [ district, setDistrict ]             = useState('');
+        const [ address, setAddress ]               = useState('');
+        const [ companyName, setCompanyName ]       = useState('');
+        const [ companyLogo, setCompanyLogo ]       = useState('');
+        const [ listingImage, setListingImage ]     = useState('');
+
+        const storage = firebase.storage();
 
         const postImage = async (imageName) => {
             var formData = new FormData();
@@ -321,6 +336,46 @@ const NewListing = () => {
             .catch(() => {
                 console.log("Error uploading the logo");
             })
+        }
+
+        function getImage(imageName) { 
+            storage
+            .refFromURL(`gs://app23980.appspot.com/listings/${imageName}.jpg` )
+            .getDownloadURL()
+            .then( url => {
+                setImageLink(url);
+                setImageUploading(false);
+                } )
+            .catch( (err) => {
+                setImageUploading(false);
+                console.log("Error getting image url: " + err);
+            });
+        }
+
+        const handleImageChange = async (image) => {
+            const formData = new FormData();
+            formData.append('image', image, image.name);
+            setImageUploading(true);
+            let response = await fetch('https://europe-west1-app23980.cloudfunctions.net/uploadImage', {
+                method: 'post',
+                mode: 'no-cors',
+                headers: {
+                    'Accept': 'application/json',
+                },
+                body: formData
+            })
+            .then(() => {
+                setImageLink(getImage(image.name.split('.')[0]));
+            })
+            .catch(() => {
+                console.log("Error uploading the image");
+                setImageUploading(false);
+            })
+        }
+
+        function handleListingImage() {
+            const fileInput = document.getElementById('imageInput');
+            fileInput.click();
         }
 
         console.log(currentUser);
@@ -494,16 +549,64 @@ const NewListing = () => {
                     <h3>Additional information</h3>
                     <div className="provider-form-item">
                         <label className="required" title="image">Image</label>
+                        <Tooltip title="Edit listing image" placement="top">
+                            <div style={{ width: '750px', height: '300px', border: '1px solid #eaeaea' }}>
+                                { 
+                                    (imageUploading) ?
+                                        (   
+                                            <div style={{ width: '100%', height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center'}}>
+                                                <SmallLoader style/>
+                                            </div>
+                                        )
+                                        :
+                                        (imageLink!=="") ? 
+                                            (
+                                                <div className="image-container">
+                                                    <img 
+                                                        style={{ position:'absolute', width: '750px', height: '300px' }} 
+                                                        src={imageLink} 
+                                                        alt="Add a compeling image to bring your listing to life."
+                                                    />
+                                                    <EditIcon 
+                                                        className="edit-icon"
+                                                        onClick={ handleListingImage }
+                                                    />
+                                                </div>
+                                            )
+                                            :
+                                            (
+                                                <div 
+                                                    style={{ display: 'flex', flexDirection: 'column', height: '100%', justifyContent: 'center', alignItems:'center', color: '#999999'}}
+                                                    onClick={ handleListingImage }
+                                                >
+                                                    <EditIcon style={{ marginBottom: '20px'}} />
+                                                    <strong>ADD IMAGE</strong>
+                                                    <p>Add a compeling image to bring your listing to life.</p>
+                                                </div>
+                                            )
+                                }
+                            </div>
+                        </Tooltip>
+                        <input
+                            type="file"
+                            id="imageInput"
+                            hidden="hidden"
+                            onChange={ e => {
+                                let image = e.currentTarget.files[0];
+                                if(image!==null && typeof image !== 'undefined') handleImageChange(image)}}
+                        />
+                        
                         {/* <div className="file-upload-container"> */}
-                        <div className="image-uploader-box" onClick={() => fileInput.click()}>
-                        { imageUploaded ? (
+                        {/* <div className="image-uploader-box" onClick={() => fileInput.click()}> */}
+                        {/* { imageUploaded ? (
                             <Icon className="success-icon">
                                 done
-                            </Icon>
-                        ) : (selectedFile === "") ? (
-                            <React.Fragment>
-                                <div><Icon>add_a_photo</Icon></div>
-                                <div>
+                            </Icon> */}
+                        {/* ) : (selectedFile === "") ? (
+                            <React.Fragment> */}
+                                {/* <div><Icon>add_a_photo</Icon></div>
+                                <img src="" alt=""/> */}
+                                {/* <div>
                                     <strong>ADD IMAGE</strong>
                                     <br/>
                                     <span>Add a compeling image to bring your listing to life.</span>
@@ -514,17 +617,19 @@ const NewListing = () => {
                                     }
                                     <input
                                         type="file"
-                                        style={{ display: "none" }}
+                                        hidden="hidden"
+                                        // style={{ display: "none" }}
                                         onChange={(e) => setSelectedFile(e.currentTarget.files[0])}
+                                        onChange={handleImageChange}
                                         ref={ref => setFileInput(ref)}
                                     />
-                                </div>
-                            </React.Fragment>
+                                </div> */}
+                            {/* </React.Fragment>
                             ) : (
                                 <span>{selectedFile.name}</span>
                             )
                         }
-                        </div>
+                        </div> */}
                     </div>
                     
                     <div className="provider-form-item">

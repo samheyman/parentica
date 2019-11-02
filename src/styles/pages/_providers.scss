@@ -29,10 +29,6 @@ button {
     }
 }
 
-.MuiTableCell-body {
-    text-transform: lowercase !important;
-}
-
 .new-class-form {
     max-width: 860px;
 
@@ -82,6 +78,30 @@ button {
         padding: 10px 30px ;
         cursor: pointer;
     }
+
+    // CSS for the image upload box
+    .image-container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    .image-container .edit-icon {
+        position: absolute;
+        top: 35%;
+        left: 45%;
+        display: none;
+        color: #FFF;
+    }
+    .image-container:hover .edit-icon {
+        display: block;
+        background: rgba(0, 0, 0, .6);
+        border-radius: 50%;
+    }
+    .edit-icon {
+        font-size: 6rem;
+        padding: 20px;
+    }
+    // end of CSS for image upload box
 
     .image-uploader-box {
         width: 330px;
