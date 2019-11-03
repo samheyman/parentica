@@ -1,12 +1,12 @@
 .primary {
-    background-color: $purple !important;
+    background-color: $primary-color !important;
     color: #fff !important;
     
 }
 
 .secondary {
     background-color: transparent !important;
-    color: $font-pale !important;
+    color: $light-grey !important;
 }
 
 button {
@@ -34,7 +34,7 @@ button {
 
     .required:after { 
         content:" *"; 
-        color: $purple;
+        color: $primary-color;
     }
 
     .MuiFormControl-marginNormal {
@@ -70,11 +70,11 @@ button {
         flex-direction: column;
         justify-content: space-evenly;
         align-content: center;
-        border: 1px solid $medium-grey;
+        border: 1px solid $dark-grey;
         border-radius: 4px;
         text-align: center;
         vertical-align: middle;
-        color: $font-pale;
+        color: $light-grey;
         padding: 10px 30px ;
         cursor: pointer;
     }
@@ -161,7 +161,7 @@ button {
     }
 
     .MuiRadio-colorSecondary {
-        color: $purple !important;
+        color: $primary-color !important;
     }
 
     // @media (max-width: 760px) {
@@ -268,5 +268,5 @@ button {
     margin: 20px 0 0 0px;
     padding: 10px 0;
     text-transform: uppercase;
-    color: $font-pale;
+    color: $light-grey;
 }

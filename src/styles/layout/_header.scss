@@ -1,6 +1,6 @@
 .MuiAppBar-colorPrimary {
     background-color: #ffffff !important;
-    color: $font-dark !important;
+    color: $dark-grey !important;
 }
 
 .MuiPaper-elevation4 {
@@ -13,7 +13,7 @@
 }
 
 .spacer {
-    border-bottom: 1px solid $very-pale-grey
+    border-bottom: 1px solid $very-light-grey
 }
 
 .MuiBackdrop-root {
@@ -55,7 +55,7 @@ header {
     nav {
         height: $navigation-height !important;
         line-height: $navigation-height !important;
-        color: $font-dark;
+        color: $dark-grey;
         box-shadow: none;
         -webkit-box-shadow: none;
 
@@ -74,7 +74,7 @@ header {
         }
 
         a {
-            color: $font-dark;
+            color: $dark-grey;
         }
 
         ul {
@@ -85,7 +85,7 @@ header {
             }
 
             a {
-                color: $font-dark; 
+                color: $dark-grey; 
                 font-size: 0.9rem;
             }
 

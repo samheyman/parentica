@@ -4,78 +4,29 @@
 
 /// Text color
 /// @type Color
-$font-dark: rgb(36, 38, 18);
-$font-medium: rgb(110, 109, 109);
-// $font-pale: rgba(91, 93, 95, 0.7);
-$font-pale:rgb(153, 153, 153);
-$font-very-pale: rgb(224, 224, 224);
-// $purple: #3f51b5;
-// $purple: #5e00f0;
-$purple: #785BF3;
-$green: #2DE080;
-// $green: #6EDB88;
-$navy: #03314B;
 $very-dark-grey: rgb(36,30,18);
-$medium-grey: rgb(110, 109, 109);
-$very-pale-grey: rgb(229,227,221);
+$dark-grey: rgb(36, 38, 18);
+$light-grey: rgb(110, 109, 109);
+$very-light-grey: rgb(224, 224, 224);
+
+/// Main color
+/// @type Color
+$primary-color: #785BF3;
+// $primary-color: rgb(94, 0, 240);
+
+/// Secondary color
+/// @type Color
+$secondary-color: #2DE080;
+
 /// Background colors
 /// @type Color
 // $body-background-color: rgb(255, 255, 255);
-$body-background-color: rgba(247, 247, 247,0);
+$body-background-color: #ffffff;
 $header-background-color: rgb(255, 255, 255);
 $footer-background-color: rgb(129, 122, 122);
 $image-background-color: #eaeaea;
 
-/// Main color
-/// @type Color
-$primary-color: rgb(127, 135, 158);
-
-/// Secondary color
-/// @type Color
-$secondary-color: rgb(94, 0, 240);
-
 /// Navigation height
 $navigation-height: 64px;
 
-// Pastel colors for tag labels
-// https://material-ui.com/customization/color/
-
-// pregnancy
-$pastel-red: #FFEAEA;
-// montessori
-$pastel-pink: #fce4ec;
-// massage
-$pastel-purple: #FDF2FF;
-// breastfeeding
-$pastel-deep-purple: #F1ECFF;
-// yoga
-$pastel-indigo: #e8eaf6;
-// fitness
-$pastel-blue: #e3f2fd;
-// sleep
-$pastel-light-blue: #DBEBFF;
-// nutrition
-$pastel-cyan: #e0f7fa;
-// music
-$pastel-teal: #e0f2f1;
-// health
-$pastel-green: #e8f5e9;
-// parenting
-$pastel-light-green: #f1f8e9;
-
-$pastel-dark-green: #CFFEF0;
-// feeding
-$pastel-lime: #f9fbe7;
-// postpartum
-$pastel-yellow: #FFFFE3;
-// mindfulness
-$pastel-amber: #fff8e1;
-//speech
-$pastel-orange: #ffe0b2;
-// first aid
-$pastel-deep-orange: #fbe9e7;
-// baby
-$pastel-brown: #efebe9;
-// all
-$pastel-blue-grey: #cfd8dc;
 

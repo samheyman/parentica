@@ -6,7 +6,7 @@
  * Set up a decent box model on the root element
  */
 html, input, button {
-    color: $font-dark;
+    color: $dark-grey;
     text-size-adjust: 100%;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
@@ -74,7 +74,6 @@ h2,
 h3 {
     font-family: 'Helvetica Neue', sans-serif;
     font-weight: 700;
-    color: $font-dark;
 }
 
 h1 {
@@ -117,19 +116,15 @@ p {
 }
 
 .btn-first {
-    background-color: $purple !important;
+    background-color: $primary-color !important;
     color: white !important;
 }
 
 .btn-second {
-    background-color: $green !important;
+    background-color: $secondary-color !important;
     color: white !important;
-    border: 1px solid $green !important;
+    // border: 1px solid $secondary-color !important;
 }
-
-
-
-
 
 .z-depth-1 {
     -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.05) !important;

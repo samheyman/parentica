@@ -7,7 +7,7 @@
 }
 
 .MuiTabs-indicator {
-    background-color: $secondary-color !important;
+    background-color: $primary-color !important;
 }
 
 .MuiGrid-container {
@@ -34,7 +34,7 @@
 
 .Mui-selected {
     span {
-        color: $purple;
+        color: $primary-color;
     }
 }
 
@@ -73,7 +73,7 @@
     justify-content: flex-start;
     align-items: stretch;
     // background-color: #f9f9f9;
-    color: $font-pale;
+    color: $light-grey;
 
     ul {
 
@@ -91,5 +91,5 @@
 
 .results-count {
     font-size: 0.7rem;
-    color: $font-pale;
+    color: $light-grey;
 }

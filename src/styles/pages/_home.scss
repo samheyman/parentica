@@ -41,7 +41,7 @@
     }
 
     btn-first {
-        background-color: $purple;
+        background-color: $primary-color;
     }
 }
 
@@ -57,7 +57,7 @@
 }
 
 .MuiButton-containedPrimary {
-    background-color: $green !important;
+    background-color: $secondary-color !important;
 }
 
 .MuiButton-contained {
@@ -88,7 +88,7 @@ a {
     border-bottom: 4px solid $secondary-color;
     // height: 4rem;
     font-weight: bold;
-    color: $font-dark;
+    color: $dark-grey;
     // border-radius: 3px;
     // width: 100%;
 }
@@ -148,7 +148,7 @@ a {
 
 .show-all-link {
     font-size: 1.1rem;
-    color: $purple;  
+    color: $primary-color;  
     font-weight: bold;
     display: flex;
     flex-direction: row;

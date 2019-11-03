@@ -10,7 +10,7 @@
 .dot {
     height: 4px;
     width: 4px;
-    background-color: $font-pale;
+    background-color: $light-grey;
     border-radius: 50%;
     display: inline-block;
     margin: 10px 10px 0 10px;
@@ -18,7 +18,7 @@
 
 .class-name {
     text-transform: capitalize !important;
-    color: $font-dark !important;
+    color: $dark-grey !important;
     font-weight: 600 !important;
     font-size: 22px !important;
 }
@@ -34,7 +34,7 @@
     }
 
     .company-name {
-        color: $font-dark;
+        color: $dark-grey;
     }
 
     .company-logo {

@@ -1,6 +1,7 @@
 .footer {
-    border-top: 1px solid $font-very-pale;
-    color: $font-pale;
+    margin-top:20px;
+    border-top: 1px solid $very-light-grey;
+    color: $light-grey;
     min-height: 50px;
     padding: 20px 0 30px 0; 
     display: flex;
@@ -10,7 +11,7 @@
 
     .brand {
         font-weight: bold;
-        color: $font-pale;
+        color: $light-grey;
     }
 
     .copyright{

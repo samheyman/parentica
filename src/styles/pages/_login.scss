@@ -10,6 +10,11 @@
     form {
         padding: 0;
 
+        .required:after { 
+            content:" *"; 
+            color: $primary-color;
+        }
+
         label {
             margin-bottom: 8px;
             padding: 0;
@@ -28,22 +33,28 @@
             }
         }
 
+        .provider-selector {
+            .MuiRadio-colorSecondary.Mui-checked {
+                color: $primary-color !important;
+            }
+        }
+
         button:disabled,
         button[disabled] {
-            background-color: $purple;
-            color: $font-medium;
+            background-color: $primary-color;
+            color: $dark-grey;
             box-shadow: none !important;
         }
 
         .signIn-signUp {
-            background-color: $purple;
+            background-color: $primary-color;
             box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) !important;
             color: #ffffff;
         }
 
         .loading {
             background-color: #eaeaea;
-            color: $font-medium;
+            color: $dark-grey;
             box-shadow: none !important;
 
             .loading-spinner {
@@ -55,7 +66,7 @@
                 height: 20px !important;
                 width: 20px !important;
                 border-width: 2px !important;
-                border-color: $font-medium !important;
+                border-color: $dark-grey !important;
             }
 
         }
@@ -68,7 +79,7 @@
 }
 
 .create-account-link {
-    margin: 20px 0 40px 0;
+    margin: 20px 0 60px 0;
 
     p, a {
         font-size: 1rem;
@@ -78,7 +89,7 @@
 }
 
 .signUp-link {
-    color: $font-pale;
+    color: $light-grey;
     font-size: 1rem;
     font-weight: 300;
 }

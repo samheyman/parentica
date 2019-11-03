@@ -50,7 +50,7 @@
         }
 
         .class-title {
-            color: $font-dark;
+            color: $dark-grey;
             font-weight: 400 !important;
             margin: 0;
         }
@@ -63,8 +63,8 @@
             margin: 0;
             padding: 20px 0;
             color: rgba(0, 0, 0, 0.54);
-            border-top: 1px solid $font-very-pale;
-            border-bottom: 1px solid $font-very-pale;
+            border-top: 1px solid $very-light-grey;
+            border-bottom: 1px solid $very-light-grey;
 
             .value {
                 display: flex;
@@ -149,7 +149,7 @@
         }
 
         .description {
-            color: $font-dark;
+            color: $dark-grey;
             font-size: 1em;
             line-height: 1.4em;
         }
@@ -197,10 +197,10 @@
     justify-content: space-evenly;
     margin: 0px 0 40px 0;
     padding-bottom: 30px;
-    border-bottom: 1px solid $font-very-pale;
+    border-bottom: 1px solid $very-light-grey;
 
     .MuiButton-contained {
-        background-color: $purple !important;
+        background-color: $primary-color !important;
         color: #fff !important;
     }
 
