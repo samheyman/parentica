@@ -58,7 +58,7 @@
     "navbar.alreadyAccount.es-ES": "¿Ya tienes una cuenta?",
 
     "navbar.signup.link.en-GB": "Sign up",
-    "navbar.signup.link.es-ES": "Registrate",
+    "navbar.signup.link.es-ES": "Regístrate",
 
     "navbar.logout.link.en-GB": "Log out",
     "navbar.logout.link.es-ES": "Cerrar sesión",
@@ -342,7 +342,21 @@
     "providers.confirmListingCreated.es-ES": "Listado guardado con éxito. Puedes activarlo cuando quieras.",
 
     "providers.backHomeLink.en-GB": "Back",
-    "providers.backHomeLink.es-ES": "Volver"
+    "providers.backHomeLink.es-ES": "Volver",
+
+    "signup.companyName.en-GB": "Company name",
+    "signup.companyName.es-ES": "Nombre de empresa",
+
+    "signup.signUpAs.en-GB": "Sign me up as",
+    "signup.signUpAs.es-ES": "Regístrate como",
+
+    "signup.asParent.en-GB": "Parent (I want to learn)",
+    "signup.asParent.es-ES": "Madre o padre (quiero aprender)",
+
+    "signup.asProvider.en-GB": "Company (I want to list classes or events)",
+    "signup.asProvider.es-ES": "Empresa (quiero publicar clases o eventos)"
+
+    
 
 }
 

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 import CityCard from '../components/CityCard';
-import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../contexts/LocaleContext';
 import ListingCard from '../components/ListingCard';
 import LazyLoad from 'react-lazy-load';
@@ -16,8 +15,13 @@ import CardContent from '@material-ui/core/CardContent';
 import Icon from '@material-ui/core/Icon';
 import CardMedia from '@material-ui/core/CardMedia';
 
-function RenderTags({tags, locale}) {
+// Translated text
+import TranslatedText from '../components/TranslatedText';
+
+function RenderTags({tags}) {
     let i=0;
+    const { locale } = useContext(LocaleContext);
+
     const output = tags.map((tag) => {
         return (
             <Link className="homepage-tags" key={i++} to={{pathname:`/${locale.split('-')[0]}/online/explore`, topic:`${tag.name}`}}
@@ -29,8 +33,8 @@ function RenderTags({tags, locale}) {
                 }}
             >
                 <span className={`tag tag-${tag.id}`}>
-                    <FormattedMessage 
-                        id={`topics.${tag.name.split(" ")[0]}.${locale}`}
+                    <TranslatedText 
+                        id={`topics.${tag.name.split(" ")[0]}`}
                         defaultMessage={tag.name}
                     />
                 </span>
@@ -73,14 +77,14 @@ function Home(props) {
         <Container className="content">
         <div className="tagline">
             <h2 className="tagline-header">
-                <FormattedMessage 
-                    id={`homepage.tagline.header.${locale}`}
+                <TranslatedText 
+                    id={`homepage.tagline.header`}
                     defaultMessage="Parenting and pregnancy classes for all"
                 />
             </h2>  
             <p className="tagline-paragraph">
-                <FormattedMessage 
-                    id={`homepage.tagline.paragraph.${locale}`}
+                <TranslatedText 
+                    id={`homepage.tagline.paragraph`}
                     defaultMessage="Find pregnancy and parenting classes and events, either online or in one of the cities we are in"
                 />
             </p>
@@ -88,8 +92,8 @@ function Home(props) {
         
         <div className="cities">
             <h2>
-                <FormattedMessage 
-                    id={`homepage.searchByCity.${locale}`} 
+                <TranslatedText 
+                    id={`homepage.searchByCity`} 
                     defaultMessage="Search by city" />    
             </h2>  
             <div className="test-scroll" style={{ height: '280px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
@@ -116,6 +120,12 @@ function Home(props) {
                         locale={`${locale}`}
                         topic="stockholm" 
                         topicLocalised="Stockholm"
+                        // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
+                    />
+                    <CityCard
+                        locale={`${locale}`}
+                        topic="london" 
+                        topicLocalised="London"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
                     {/* <Grid item xs={6} sm={4} md={3} key="3">
@@ -209,7 +219,7 @@ function Home(props) {
         </div> */}
         <div className="popular-online">
             <h2>
-                <FormattedMessage id={`homepage.popularOnlineClasses.${locale}`} defaultMessage="Popular online classes"/>    
+                <TranslatedText id={`homepage.popularOnlineClasses`} defaultMessage="Popular online classes"/>    
             </h2>  
             <div className="test-scroll" style={{ height: '320px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
                 {props.onlineClasses.map((listing) => {    
@@ -239,7 +249,7 @@ function Home(props) {
             </div>
             <div className="show-all-link">
                 <Link to={{pathname:`/${locale.split('-')[0]}/online/explore`}}>
-                    <FormattedMessage id={`general.showAll.${locale}`} defaultMessage="show all" />    
+                    <TranslatedText id={`general.showAll`} defaultMessage="show all" />    
                 </Link>
                 <Icon>keyboard_arrow_right</Icon>
             </div>
@@ -247,14 +257,14 @@ function Home(props) {
 
         <div className="popular-topics">
             <h2>
-                <FormattedMessage id={`homepage.popularTopics.${locale}`} defaultMessage="Topics"/>    
+                <TranslatedText id={`homepage.popularTopics`} defaultMessage="Topics"/>    
             </h2>  
             <div className="test-scroll" style={{ height: '210px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
                 <TopicCard
                         locale={`${locale}`}
                         topic="parenting" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.parenting.${locale}`} />
+                            <TranslatedText id={`topics.parenting`} />
                         }
                         rootUrl="online"
                 />
@@ -262,7 +272,7 @@ function Home(props) {
                         locale={`${locale}`}
                         topic="pregnancy" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.pregnancy.${locale}`} />
+                            <TranslatedText id={`topics.pregnancy`} />
                         }
                         rootUrl="online"
                 />
@@ -270,7 +280,7 @@ function Home(props) {
                         locale={`${locale}`}
                         topic="baby" 
                         topicLocalised={                            
-                            <FormattedMessage id={`topics.baby.${locale}`} />
+                            <TranslatedText id={`topics.baby`} />
                         }
                         rootUrl="online"
                 />
@@ -278,7 +288,7 @@ function Home(props) {
                     locale={`${locale}`}
                     topic="nutrition" 
                     topicLocalised={                            
-                        <FormattedMessage id={`topics.nutrition.${locale}`} />
+                        <TranslatedText id={`topics.nutrition`} />
                     }
                     rootUrl="online"
                     // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}
@@ -286,7 +296,14 @@ function Home(props) {
                 <TopicCard 
                     locale={`${locale}`}
                     topic="postpartum" 
-                    topicLocalised={<FormattedMessage id={`topics.postpartum.${locale}`} defaultMessage="baby"/>}
+                    topicLocalised={<TranslatedText id={`topics.postpartum`} defaultMessage="baby"/>}
+                    rootUrl="online"
+                    // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("baby")).length}
+                    />
+                <TopicCard 
+                    locale={`${locale}`}
+                    topic="fitness" 
+                    topicLocalised={<TranslatedText id={`topics.fitness`} defaultMessage="fitness"/>}
                     rootUrl="online"
                     // resultCount={props.classesThisWeek.filter((item) => item.tags.includes("baby")).length}
                     />
@@ -372,7 +389,7 @@ function Home(props) {
         </div> */}
         <div className="all-topics">
             <h2>
-            <FormattedMessage id={`homepage.allTopics.${locale}`} />        
+            <TranslatedText id={`homepage.allTopics`} />        
             </h2>  
             <RenderTags tags={props.topics} locale={`${locale}`} rootUrl="online" /> 
         </div>
@@ -405,7 +422,7 @@ function Home(props) {
     
         <div className="providers">
             <h2>
-                <FormattedMessage id={`homepage.onlineProviders.${locale}`} defaultMessage="Online providers"/>    
+                <TranslatedText id={`homepage.onlineProviders`} defaultMessage="Online providers"/>    
             </h2> 
             {/* <p>List your classes</p> */}
             <OnlineProviders providers={props.onlineProviders}/>
