@@ -11,6 +11,9 @@ import TypeCard from '../components/TypeCard';
 import LazyLoad from 'react-lazy-load';
 import Icon from '@material-ui/core/Icon';
 
+// Translated text
+import TranslatedText from '../components/TranslatedText';
+
 
 function RenderTags({tags, locale}) {
     let i=0;
@@ -73,13 +76,10 @@ function City(props) {
             
             <div className="upcoming-classes">
                 <h2>
-                    <FormattedMessage 
-                        id={`city.thisWeek.${locale.locale}`} 
-                        defaultMessage="This week in"
-                    />  
+                    <TranslatedText id={`city.thisWeek`} defaultMessage="This week in"/>  
                     &nbsp;{capitalize(props.city)}  
                 </h2>
-                <div className="test-scroll" style={{ height: '320px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+                <div className="test-scroll" style={{ height: '330px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
                     {props.classesThisWeek.map((listing) => {                        
                         return(
                             <div 

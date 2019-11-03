@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Redirect } from 'react-router'
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -128,6 +129,7 @@ export default function Navbar(props) {
                     </NavLink>             
                     <ListItem button key="login" onClick={()=> {
                         firebase.auth().signOut();
+                        return <Redirect to="/login" />;
                       }}      
                       >
                         <ListItemText               
@@ -178,6 +180,7 @@ export default function Navbar(props) {
                       </li>       
                       <li className="logout-link" onClick={()=> {
                           firebase.auth().signOut();
+                          return <Redirect to="/login" />;
                         }}      
                         >
                           <FormattedMessage id={`navbar.logout.link.${locale}`} />

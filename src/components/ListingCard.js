@@ -60,7 +60,8 @@ function RenderTags({tags, locale}) {
   return output;
 }
 
-function RenderFlag(language, locale) {
+function RenderFlag({language}) {
+  const { locale } = useContext(LocaleContext);
   if ((language==='english' && locale==='es-ES') || (language==='spanish' && locale==='en-GB')) {
       return (
         <React.Fragment>
@@ -193,7 +194,7 @@ function ListingCard({
                         :
                         (null)
                     }
-                    <RenderFlag language={language} locale={locale} />
+                    <RenderFlag language={language} />
 
                   </div>
                   

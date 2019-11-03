@@ -76,7 +76,6 @@ const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   // Gene
 function useListings() {
     const { currentUser } = useContext(AuthContext);
     const [listings, setListings] = useState([]);
-    console.log("render listings");
     useEffect(() => {
         let unsubscribe;
         if(currentUser.email.indexOf('parentica') !== -1) {

@@ -12,17 +12,18 @@ import MenuItem from '@material-ui/core/MenuItem';
 import { FormattedMessage } from 'react-intl';
 import { file } from '@babel/types';
 import SmallLoader from '../components/Widgets/SmallLoader';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import RadioButton from '@material-ui/core/Radio';
-import FormControl from '@material-ui/core/FormControl';
-import FormLabel from '@material-ui/core/FormLabel';
+
 import { AuthContext } from '../contexts/AuthContext';
 
 // Mui imports
 import Tooltip from '@material-ui/core/Tooltip';
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from '@material-ui/core/IconButton';
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import RadioButton from '@material-ui/core/Radio';
+import FormControl from '@material-ui/core/FormControl';
+import FormLabel from '@material-ui/core/FormLabel';
 
 // Firebase imports
 import firebase from '@firebase/app';
@@ -237,9 +238,6 @@ const NewListing = () => {
                 dateAdded: new Date
             })
             .then(() => {
-                postLogo(tempLogoUrl);
-            })
-            .then(() => {
                 setLoading(false);
                 setCompanyLogo(tempLogoUrl);
                 setListingImage(tempImageUrl);
@@ -378,7 +376,6 @@ const NewListing = () => {
 
         return(
             <Container className="content">
-
                 <main>
                 <h2>
                     <FormattedMessage id={`navbar.newListing.link.${locale}`} />
@@ -421,7 +418,7 @@ const NewListing = () => {
                         <label className="specific-date-label">Yes</label>
                         <Radio
                             checked={specificDate === 'true'}
-                            onChange={(e) => setSpecificDate(e.target.value)}
+                            onChange={(e) => setSpecificDate(e.currentTarget.value)}
                             value='true'
                             name="radio-button-demo"
                             inputProps={{ 'aria-label': 'A' }}

@@ -9,9 +9,11 @@ import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
 import { LocaleContext } from '../../contexts/LocaleContext';
 import SmallLoader from '../../components/Widgets/SmallLoader';
+
+// Translated text
+import TranslatedText from '../../components/TranslatedText';
 
 const useStyles = makeStyles(theme => ({
     // container: {
@@ -60,20 +62,20 @@ const Login = ({ history }) => {
     return(
         <Container className="main-content">
             <div className="login-form">
-                <h1><FormattedMessage id={`navbar.login.link.${locale}`} /></h1>
+                <h1><TranslatedText id={`navbar.login.link`} /></h1>
                 <div className="create-account-link">
                     <span className="signUp-link">
-                        <FormattedMessage id={`contact.noAccount.${locale}`}/>
+                        <TranslatedText id={`contact.noAccount`}/>
                         {/* &nbsp;
                         <FormattedMessage id={`general.please.${locale}`}/> */}
                         &nbsp;
-                        <Link to="signup"><FormattedMessage id={`navbar.signup.link.${locale}`}/></Link>
+                        <Link to="signup"><TranslatedText id={`navbar.signup.link`}/></Link>
                     </span>
                 </div>
                 <form className={classes.container} onSubmit={handleSignup}>
                     <div style={{textAlign:'left'}}>
                         <label>
-                            <FormattedMessage id={`contact.email.${locale}`} />
+                            <TranslatedText id={`contact.email`} />
                         </label>
                         <TextField
                             id="outlined-email-input"
@@ -90,7 +92,7 @@ const Login = ({ history }) => {
                     </div>
                     <div style={{marginTop:'30px',textAlign:'left'}}>
                     <label>
-                        <FormattedMessage id={`general.password.${locale}`} />
+                        <TranslatedText id={`general.password`} />
                     </label>
                         <TextField
                             id="outlined-password-input"
@@ -106,13 +108,13 @@ const Login = ({ history }) => {
                     </div>
                     {(!isLoading) ?
                         (<Button type="submit" variant="contained" className="signIn-signUp">
-                            <FormattedMessage id={`navbar.login.link.${locale}`} />
+                            <TranslatedText id={`navbar.login.link`} />
                         </Button>)
                         :
                         (<Button type="submit" variant="contained" className="loading">
                             <SmallLoader style={{ height:'40px'}} />
-                            &nbsp;&nbsp;
-                            <FormattedMessage id={`general.pleaseWait.${locale}`} />...
+                            {/* &nbsp;&nbsp;
+                            <TranslatedText id={`general.pleaseWait`} />... */}
                         </Button>)            
                     }
                 </form>
