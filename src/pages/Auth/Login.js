@@ -41,22 +41,21 @@ const Login = ({ history }) => {
         event.preventDefault();
         setIsLoading(true);
         const {email, password} = event.target.elements;
-        try {
-            await firebase
-                .auth()
-                .signInWithEmailAndPassword(email.value, password.value);
-                history.push("providers");
-        } catch (error) {
+        firebase
+            .auth()
+            .signInWithEmailAndPassword(email.value, password.value)
+        .then(() => <Redirect to="profile" />)
+        .catch ((error) => {
             setIsLoading(false);
             console.log("Error signing up: " + error);
-        }
+        })
     }, [history]);
 
     const { currentUser } = useContext(AuthContext);
 
     if(currentUser) {
         console.log("User signed in: " + currentUser.email);
-        return <Redirect to="providers" />;
+        return <Redirect to="profile" />;
     }
 
     return(

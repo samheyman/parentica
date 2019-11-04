@@ -3,8 +3,8 @@ import Spinner from 'react-spinner-material';
 
 const SmallLoader = () => {
     return(
-        <div className="loading-spinner">
-            <Spinner spinnerWidth={4} visible={true} />
+        <div className="loading-spinner" style={{width:'40px'}}>
+            <Spinner spinnerWidth={3} visible={true} />
         </div>
     );
 }

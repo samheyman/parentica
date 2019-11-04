@@ -99,10 +99,10 @@ export default function Navbar(props) {
           <div className="spacer"></div>
           { !!currentUser ? 
                   <React.Fragment>
-                    <NavLink to={`/${locale.split('-')[0]}/providers`}>
-                      <ListItem button key="providers">
+                    <NavLink to={`/${locale.split('-')[0]}/profile`}>
+                      <ListItem button key="profile">
                         <ListItemText 
-                          primary={<FormattedMessage id={`navbar.dashboard.link.${locale}`} />} 
+                          primary={<FormattedMessage id={`navbar.profile.link.${locale}`} />} 
                         />
                       </ListItem>
                     </NavLink>
@@ -169,7 +169,12 @@ export default function Navbar(props) {
                 { !!currentUser ?
                     <React.Fragment>
                       <li>
-                        <NavLink to={`/${locale.split('-')[0]}/providers`}>
+                        <NavLink to={`/${locale.split('-')[0]}/profile`}>
+                          <FormattedMessage id={`navbar.profile.link.${locale}`} />
+                        </NavLink>
+                      </li>  
+                      <li>
+                        <NavLink to={`/${locale.split('-')[0]}/listings`}>
                           <FormattedMessage id={`navbar.listings.link.${locale}`} />
                         </NavLink>
                       </li>  

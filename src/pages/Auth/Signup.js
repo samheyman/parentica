@@ -18,6 +18,7 @@ import Radio from '@material-ui/core/Radio';
 // Text translation
 import TranslatedText from '../../components/TranslatedText';
 
+
 const useStyles = makeStyles(theme => ({
     // container: {
     //   display: 'flex',
@@ -50,44 +51,39 @@ const Signup = ({ history }) => {
         const collection = (isProvider) ? 'providers' : 'users';
         console.log("Signing up as: " + userType.value );
 
-        try {
-            await firebase
-                .auth()
-                .createUserWithEmailAndPassword(email.value, password.value); 
-            if (isProvider) {
-                firebase.firestore().collection(collection).doc(email.value).set({
-                    name: companyName.value,
-                    url: null,
-                    logo: null,
-                    listings: [],
-                    companyId: null,
-                    address: null,
-                    city: null,
-                    country: null,
-                    createdOn: new Date()
-                })
-                .then(()=> {
-                    history.push("providers");
-                })
-                .catch(e=>console.error(e))
-            } else {
-                firebase.firestore().collection(collection).doc(email.value).set({
-                    name: '',
-                    avatar: null,
-                    city: null,
-                    country: null,
-                    createdOn: new Date()
-                })
-                .then(()=> {
-                    history.push("providers");
-                })
-                .catch(e=>console.error(e))
-            }
-            history.push("providers");
-        } catch (error) {
-            setIsLoading(false);
-            console.log("Error signing up: " + error);
-        }
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(email.value, password.value) 
+            .then(userCredential => {
+                let user = {};
+                (isProvider) ?
+                    user = {
+                        name: companyName.value,
+                        url: null,
+                        logo: null,
+                        listings: [],
+                        companyId: null,
+                        address: null,
+                        city: null,
+                        country: null,
+                        createdOn: new Date()
+                    }
+                    :
+                    user = {
+                        name: '',
+                        email: email.value,
+                        avatar: null,
+                        city: null,
+                        country: null,
+                        createdOn: new Date()
+                    } 
+                firebase.firestore().collection(collection).doc(userCredential.user.uid).set(user)
+            })
+            .then(() => <Redirect to="Profile" />)
+            .catch ((error) => {
+                setIsLoading(false);
+                console.log("Error signing up: " + error);
+            })
     }, [history]);
 
     return(

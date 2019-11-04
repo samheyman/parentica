@@ -6,13 +6,21 @@ export const AuthContext = createContext();
 
 const AuthContextProvider = (props) => {
     const [currentUser, setCurrentUser] = useState(null);
+    const [fetchingUser, setFetchingUser] = useState(true);
 
     useEffect(() => {
-        firebase.auth().onAuthStateChanged(setCurrentUser);
+        setFetchingUser(true);
+        firebase.auth()
+        .onAuthStateChanged((user) => {
+            setCurrentUser(user);
+            setFetchingUser(false)
+        })
     }, []);
 
+    // const isAdmin = () => currentUser.email.indexOf('parentica')!==-1;
+
     return(
-        <AuthContext.Provider value={{currentUser}}>
+        <AuthContext.Provider value={{currentUser, fetchingUser}}>
             {props.children}
         </AuthContext.Provider>
     );

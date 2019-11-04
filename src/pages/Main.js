@@ -14,9 +14,11 @@ import Navbar from '../components/Header/Navbar';
 import Footer from '../components/Footer';
 import PageNotFound from './PageNotFound';
 import NewListing from './NewListing';
+import LoadingPage from '../pages/LoadingPage';
 import Login from './Auth/Login';
 import Signup from './Auth/Signup';
 import Providers from './Providers';
+import Profile from './Profile';
 import firebase from '@firebase/app';
 import '@firebase/firestore';
 import '@firebase/auth';
@@ -118,23 +120,29 @@ export default function Main(props) {
         );
     }
     let match = useRouteMatch();
+    const { currentUser, fetchingUser } = useContext(AuthContext);
 
     const PrivateRoute = ({ component: RouteComponent, ...rest}) => {
-        const { currentUser } = useContext(AuthContext);
         // console.log("Private route!");
         // console.log(currentUser);
         return(
-            <Route 
-                {...rest}
-                render={routeProps =>
-                    !!currentUser ? (
+            <Route {...rest} render={routeProps => {
+                    console.log("Current user in route: ");
+                    console.log(currentUser);
+                    console.log(rest);
+
+                    if (fetchingUser) {
+                        // console.log()
+                        return(<LoadingPage />)
+                    }
+                    return (!!currentUser ? (
                         <RouteComponent {...routeProps} />
                     ) 
                     :
                     (
                         <Redirect to={`${match.path}/login`} />
-                    )
-                }
+                    ));
+                }}
             />
         );
     };
@@ -154,8 +162,9 @@ export default function Main(props) {
                 <Route path={`${match.path}/online/explore`} render={()=><Online />} />
                 <Route path={`${match.path}/listings/:listingId`} component={ListingDetails} />
                 <Route path={`${match.path}/about`} component={About}/>
-                <PrivateRoute exact path={`${match.path}/providers/new`} component={NewListing}/>
-                <PrivateRoute exact path={`${match.path}/providers`} component={Providers} />
+                <PrivateRoute path={`${match.path}/providers/new`} component={NewListing}/>
+                <PrivateRoute path={`${match.path}/listings`} component={Providers} />
+                <PrivateRoute path={`${match.path}/profile`} component={Profile} />
                 {/* <Route path={`${match.path}/providers`} component={Providers}/> */}
                 <Route path={`${match.path}/contact`} render={()=> <Contact/>} />
                 <Route path={`${match.path}/signup`} component={Signup}/>
