@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { ConfigureStore } from './redux/configureStore';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import ScrollToTop from './components/ScrollToTop';
-import AuthContextProvider from './contexts/AuthContext';
+import { AuthContextProvider } from './contexts/AuthContext';
 import LocaleContextProvider from './contexts/LocaleContext';
 import ListingsContextProvider from './contexts/ListingsContext';
 

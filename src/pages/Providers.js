@@ -15,7 +15,7 @@ import TableRow from '@material-ui/core/TableRow';
 import { FormattedDate } from 'react-intl';
 import * as moment from 'moment';
 import { FormattedMessage } from 'react-intl';
-import { AuthContext } from '../contexts/AuthContext';
+import {useAuth} from '../contexts/AuthContext';
 
 import uuid from 'uuid';
 // import { ListingsContext } from '../contexts/ListingsContext';
@@ -74,11 +74,12 @@ const useStyles = makeStyles({
 const scrollToRef = (ref) => window.scrollTo(0, ref.current.offsetTop)   // General scroll to element function
 
 function useListings() {
-    const { currentUser } = useContext(AuthContext);
+    const auth = useAuth();
+    // const { currentUser, isAdmin } = useAuth();
     const [listings, setListings] = useState([]);
     useEffect(() => {
         let unsubscribe;
-        if(currentUser.email.indexOf('parentica') !== -1) {
+        if(auth.isAdmin) {
             unsubscribe = firebase.firestore()
                 .collection('listings')
                 // .where()
@@ -93,7 +94,7 @@ function useListings() {
         } else {
             unsubscribe = firebase.firestore()
                 .collection('listings')
-                .where('addedBy', '==', currentUser.email)
+                .where('addedBy', '==', auth.user.email)
                 .orderBy('date', 'desc')
                 .onSnapshot((snapshot) => {
                 const newListings = snapshot.docs.map((doc) => ({
@@ -139,12 +140,13 @@ function deactivateListings(listings) {
 const Providers = () => {
     const listings = useListings();
     const classes = useStyles();
-    const { currentUser } = useContext(AuthContext);
+    // const { currentUser, isAdmin } = useAuth();
     const [page, setPage] = useState(0);
     const [rowsPerPage, setRowsPerPage] = useState(100);
     const [isListingSelected, setIsListingSelected] = useState(false);
     const [listingsSelected, setListingsSelected] = useState([]);
     let rows;
+    const auth = useAuth();
 
     const executeScroll = () => scrollToRef(myRef)
 
@@ -234,7 +236,7 @@ const Providers = () => {
         // Hide table column for non-admins, returns true if admin
         const adminOnlyColumns = ['uid', 'addedBy', 'provider', 'online'];    
         return !(adminOnlyColumns.includes(fieldId)) 
-            || (adminOnlyColumns.includes(fieldId) && currentUser.email.indexOf('parentica')!==-1);
+            || (adminOnlyColumns.includes(fieldId) && auth.isAdmin);
     }
 
     const { locale } = useContext(LocaleContext);

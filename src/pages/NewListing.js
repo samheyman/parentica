@@ -13,7 +13,7 @@ import { FormattedMessage } from 'react-intl';
 import { file } from '@babel/types';
 import SmallLoader from '../components/Widgets/SmallLoader';
 
-import { AuthContext } from '../contexts/AuthContext';
+import {useAuth} from '../contexts/AuthContext';
 
 // Mui imports
 import Tooltip from '@material-ui/core/Tooltip';
@@ -35,7 +35,7 @@ import { async } from '@firebase/util';
 // const admin = require('firebase-admin');
 
 const NewListing = () => {
-
+    const auth = useAuth();
     // constructor(props) {
     //     super(props);
 
@@ -201,7 +201,7 @@ const NewListing = () => {
             return output.replace(/--/g, "-");
         }   
 
-        const { currentUser } = useContext(AuthContext);
+        // const { currentUser } = useAuth();
         const { locale } = useContext(LocaleContext);
         const handleSubmit = (e) => {
             e.preventDefault();
@@ -234,7 +234,7 @@ const NewListing = () => {
                 listingImage: imageLink.split(' ')[0],
                 companyLogo: tempLogoUrl,
                 active: false,
-                addedBy: currentUser.email,
+                addedBy: auth.currentUser.email,
                 dateAdded: new Date
             })
             .then(() => {
@@ -672,7 +672,7 @@ const NewListing = () => {
                             onChange={(e) => setDescription(e.currentTarget.value)}
                         />
                     </div>
-                    {   (currentUser.email.indexOf('parentica') !== -1) ?
+                    {   (auth.currentUser.email.indexOf('parentica') !== -1) ?
                         (<React.Fragment>
                             <div className="admin-section">
                                 <em>Admin only</em>

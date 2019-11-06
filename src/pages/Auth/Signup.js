@@ -3,7 +3,8 @@ import { withRouter } from 'react-router';
 import { Redirect } from 'react-router-dom';
 import firebase from '@firebase/app';
 import Container from '@material-ui/core/Container';
-import { AuthContext } from '../../contexts/AuthContext';
+// import { AuthContext } from '../../contexts/AuthContext';
+import { useAuth } from '../../contexts/AuthContext';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -39,51 +40,31 @@ const useStyles = makeStyles(theme => ({
 const Signup = ({ history }) => {
     const classes = useStyles();
     const { locale } = useContext(LocaleContext);
-    const [ isLoading, setIsLoading ] = useState(false);
+    // const [ isLoading, setIsLoading ] = useState(false);
     const [ provider, setProvider] = useState('false');
     // const [ companyName, setCompanyName] = useState('');
+    const auth = useAuth();
 
     const handleSignup = useCallback(async event => {
         event.preventDefault();
-        setIsLoading(true);
+        // setState(state => ({ ...state, isLoading: true}));
         const {email, password, companyName, userType} = event.target.elements;
-        const isProvider = (userType.value==='provider') ? true : false;
-        const collection = (isProvider) ? 'providers' : 'users';
-        console.log("Signing up as: " + userType.value );
+        const provider = (userType.value==='provider') ? true : false;
+        // const collection = (isProvider) ? 'providers' : 'users';
+        console.log("Signing up " + email.value + " as: " + userType.value );
 
-        firebase
-            .auth()
-            .createUserWithEmailAndPassword(email.value, password.value) 
-            .then(userCredential => {
-                let user = {};
-                (isProvider) ?
-                    user = {
-                        name: companyName.value,
-                        url: null,
-                        logo: null,
-                        listings: [],
-                        companyId: null,
-                        address: null,
-                        city: null,
-                        country: null,
-                        createdOn: new Date()
-                    }
-                    :
-                    user = {
-                        name: '',
-                        email: email.value,
-                        avatar: null,
-                        city: null,
-                        country: null,
-                        createdOn: new Date()
-                    } 
-                firebase.firestore().collection(collection).doc(userCredential.user.uid).set(user)
-            })
-            .then(() => <Redirect to="Profile" />)
-            .catch ((error) => {
-                setIsLoading(false);
-                console.log("Error signing up: " + error);
-            })
+        // get form values and show loading symbol
+
+        // sign user up (firebase or other)
+
+        // add to users database (firebase or other)
+
+        // save to authcontext
+        // await signUpUser();
+        auth.signUp(email.value, password.value, provider, companyName);
+        // redirect and stop loading symbol
+        // console.log(state);
+
     }, [history]);
 
     return(
@@ -182,7 +163,7 @@ const Signup = ({ history }) => {
                             variant="outlined"
                         />
                     </div>
-                    {(!isLoading) ?
+                    {(!auth.isLoading) ?
                         (<Button type="submit" variant="contained" className="signIn-signUp">
                             <TranslatedText id="navbar.signup.link" defaultText="Sign up"/>
                         </Button>)

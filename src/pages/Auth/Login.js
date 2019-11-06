@@ -1,9 +1,7 @@
 import React, { useCallback, useContext, useState } from 'react';
 import { withRouter } from 'react-router';
 import { Redirect } from 'react-router-dom';
-import firebase from '@firebase/app';
 import Container from '@material-ui/core/Container';
-import { AuthContext } from '../../contexts/AuthContext';
 import { makeStyles } from '@material-ui/core/styles';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
@@ -11,6 +9,9 @@ import Button from '@material-ui/core/Button';
 import { Link } from 'react-router-dom';
 import { LocaleContext } from '../../contexts/LocaleContext';
 import SmallLoader from '../../components/Widgets/SmallLoader';
+
+// Auth
+import { useAuth } from '../../contexts/AuthContext';
 
 // Translated text
 import TranslatedText from '../../components/TranslatedText';
@@ -34,29 +35,22 @@ const useStyles = makeStyles(theme => ({
 
 const Login = ({ history }) => {
     const classes = useStyles();
-    const { locale } = useContext(LocaleContext);
-    const [ isLoading, setIsLoading ] = useState(false);
+    const auth = useAuth();
 
-    const handleSignup = useCallback(async event => {
+    const handleSignin = useCallback(async event => {
         event.preventDefault();
-        setIsLoading(true);
         const {email, password} = event.target.elements;
-        firebase
-            .auth()
-            .signInWithEmailAndPassword(email.value, password.value)
-        .then(() => <Redirect to="profile" />)
+        auth.signIn(email.value, password.value)
+        .then(() => history.push('profile'))
         .catch ((error) => {
-            setIsLoading(false);
             console.log("Error signing up: " + error);
         })
     }, [history]);
 
-    const { currentUser } = useContext(AuthContext);
-
-    if(currentUser) {
-        console.log("User signed in: " + currentUser.email);
-        return <Redirect to="profile" />;
-    }
+    // if(currentUser) {
+    //     console.log("User signed in: " + currentUser.email);
+    //     return <Redirect to="profile" />;
+    // }
 
     return(
         <Container className="main-content">
@@ -71,7 +65,7 @@ const Login = ({ history }) => {
                         <Link to="signup"><TranslatedText id={`navbar.signup.link`}/></Link>
                     </span>
                 </div>
-                <form className={classes.container} onSubmit={handleSignup}>
+                <form className={classes.container} onSubmit={handleSignin}>
                     <div style={{textAlign:'left'}}>
                         <label>
                             <TranslatedText id={`contact.email`} />
@@ -105,7 +99,7 @@ const Login = ({ history }) => {
                             variant="outlined"
                         />
                     </div>
-                    {(!isLoading) ?
+                    {(!auth.isLoading) ?
                         (<Button type="submit" variant="contained" className="signIn-signUp">
                             <TranslatedText id={`navbar.login.link`} />
                         </Button>)

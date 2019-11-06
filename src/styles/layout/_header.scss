@@ -38,7 +38,11 @@ header {
     }
 
     .app-header-full {
-
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        align-content: center;
+        
         li {
             display: inline;
             padding: 0 10px;
@@ -78,6 +82,7 @@ header {
         }
 
         ul {
+
             li {
                 a:hover {
                     background-color: none;

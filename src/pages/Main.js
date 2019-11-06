@@ -20,15 +20,17 @@ import Signup from './Auth/Signup';
 import Providers from './Providers';
 import Profile from './Profile';
 import firebase from '@firebase/app';
-import '@firebase/firestore';
-import '@firebase/auth';
-import '@firebase/storage';
+// import '@firebase/firestore';
+// import '@firebase/auth';
+// import '@firebase/storage';
 import { TOPICS } from '../shared/topicsJSON';
 import { PROVIDERS } from '../shared/providersJSON';
-import { AuthContext } from '../contexts/AuthContext';
+// import { AuthContext } from '../contexts/AuthContext';
+import { useAuth } from '../contexts/AuthContext';
 
 export default function Main(props) {
     let listings = useListings();
+    const auth = useAuth();
     const [loading, setLoading] = useState(false);
 
     function useListings() {
@@ -120,28 +122,21 @@ export default function Main(props) {
         );
     }
     let match = useRouteMatch();
-    const { currentUser, fetchingUser } = useContext(AuthContext);
+    // const { currentUser, isLoading, isAdmin } = useAuth();
 
     const PrivateRoute = ({ component: RouteComponent, ...rest}) => {
-        // console.log("Private route!");
-        // console.log(currentUser);
         return(
             <Route {...rest} render={routeProps => {
-                    console.log("Current user in route: ");
-                    console.log(currentUser);
-                    console.log(rest);
-
-                    if (fetchingUser) {
-                        // console.log()
-                        return(<LoadingPage />)
-                    }
-                    return (!!currentUser ? (
-                        <RouteComponent {...routeProps} />
-                    ) 
-                    :
-                    (
-                        <Redirect to={`${match.path}/login`} />
-                    ));
+                if (auth.isLoading) {
+                    return(<LoadingPage />)
+                }
+                return (auth.user ? (
+                    <RouteComponent {...routeProps} />
+                ) 
+                :
+                (
+                    <Redirect to={`${match.path}/login`} />
+                ));
                 }}
             />
         );

@@ -1,30 +1,21 @@
-import React, { createContext, useState, useEffect } from 'react';
-import firebase from '../config/firebase';
+import React, { useState, useEffect, useContext } from 'react';
+import { useFirebaseAuth } from '../firebase/useFirebaseAuth';
 
-export const AuthContext = createContext();
+export const AuthContext = React.createContext();
 
-
-const AuthContextProvider = (props) => {
-    const [currentUser, setCurrentUser] = useState(null);
-    const [fetchingUser, setFetchingUser] = useState(true);
-
-    useEffect(() => {
-        setFetchingUser(true);
-        firebase.auth()
-        .onAuthStateChanged((user) => {
-            setCurrentUser(user);
-            setFetchingUser(false)
-        })
-    }, []);
-
-    // const isAdmin = () => currentUser.email.indexOf('parentica')!==-1;
+export const AuthContextProvider = (props) => {
+    const auth = useFirebaseAuth();
 
     return(
-        <AuthContext.Provider value={{currentUser, fetchingUser}}>
+        <AuthContext.Provider value={auth}>
             {props.children}
         </AuthContext.Provider>
     );
 }
 
-export default AuthContextProvider;
+export const useAuth = () => {
+    return useContext(AuthContext);
+}
+
+
 

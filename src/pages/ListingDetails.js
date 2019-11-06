@@ -268,13 +268,13 @@ export default function ListingDetails(props) {
 
     return(
         (listingDetails && listingDetails.length == 0) ?
-            <Container className="main-content">
+            <Container className="content">
                 <Grid container className="class-details-container">    
                     <Loader/>
                 </Grid>
             </Container>
             :
-            <Container className="main-content">
+            <Container className="content">
             <Grid container className="class-details-container">
                 <div className="class-image-mobile hide-on-med-and-up" style={divStyle}></div>
                 <div className="class-image hide-on-med-and-down" style={divStyle}></div>

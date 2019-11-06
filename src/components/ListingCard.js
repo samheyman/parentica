@@ -65,7 +65,7 @@ function RenderFlag({language}) {
   if ((language==='english' && locale==='es-ES') || (language==='spanish' && locale==='en-GB')) {
       return (
         <React.Fragment>
-          <span className="dot"></span>
+          {/* <span className="dot"></span> */}
           <img className="class-details-flag language-flag" src={`/images/flags/${language}.png`} alt={`${language}`} />
         </React.Fragment>
       );
@@ -194,7 +194,6 @@ function ListingCard({
                         :
                         (null)
                     }
-                    <RenderFlag language={language} />
 
                   </div>
                   
@@ -204,6 +203,7 @@ function ListingCard({
           </CardActionArea>
           <CardActions>
             <RenderTags tags={tags} locale={locale} />
+            <RenderFlag language={language} />
           </CardActions>
         </Card>)
   }
