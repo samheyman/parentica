@@ -1,0 +1,10 @@
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+import 'firebase/auth';
+import firebaseConfig from './firebaseConfig';
+
+firebase.initializeApp(firebaseConfig);
+
+export { useFirebaseAuth } from './useFirebaseAuth';
+
+export default firebase;

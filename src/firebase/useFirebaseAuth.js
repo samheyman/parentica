@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import firebase from '@firebase/app';
+import firebase from './index';
 
 export const useFirebaseAuth = () => {
     const [state, setState] = useState({
@@ -99,13 +99,20 @@ export const useFirebaseAuth = () => {
     }
 
     const sendPasswordResetEmail = email => {
+        setState({...state, isLoading:true});
         return firebase
             .auth()
             .sendPasswordResetEmail(email)
             .then(() => {
+                setState({...state, isLoading:false});
                 return true;
-        });
-    };
+            })
+            .catch(e => {
+                console.log("Error sending email: " + e);
+                setState({...state, isLoading:false});
+                return false;
+            })
+    }
     
     return {
         signUp,

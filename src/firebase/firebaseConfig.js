@@ -1,11 +1,4 @@
-
-// import React, { createContext } from 'react';
-// import app from 'firebase/app';
-import firebase from 'firebase/app';
-import 'firebase/firestore';
-import 'firebase/auth';
-
-const firebaseConfig = {
+const config = {
     apiKey: "AIzaSyA_jSoHnIsHAtHCxNHPdtPJcBANBA8fDA8",
     authDomain: "app23980.firebaseapp.com",
     databaseURL: "https://app23980.firebaseio.com",
@@ -16,8 +9,4 @@ const firebaseConfig = {
     measurementId: "G-HG0D2TNCEV"
 };
 
-firebase.initializeApp(firebaseConfig);
-
-// var providersData = firebase.initializeApp(firebaseConfig2, "providersData")
-
-export default firebase;
+export default config;

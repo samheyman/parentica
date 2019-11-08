@@ -35,12 +35,12 @@ const useStyles = makeStyles(theme => ({
 
 const Login = ({ history }) => {
     const classes = useStyles();
-    const auth = useAuth();
+    const { signIn, isLoading } = useAuth();
 
     const handleSignin = useCallback(async event => {
         event.preventDefault();
         const {email, password} = event.target.elements;
-        auth.signIn(email.value, password.value)
+        signIn(email.value, password.value)
         .then(() => history.push('profile'))
         .catch ((error) => {
             console.log("Error signing up: " + error);
@@ -99,7 +99,7 @@ const Login = ({ history }) => {
                             variant="outlined"
                         />
                     </div>
-                    {(!auth.isLoading) ?
+                    {(!isLoading) ?
                         (<Button type="submit" variant="contained" className="signIn-signUp">
                             <TranslatedText id={`navbar.login.link`} />
                         </Button>)
@@ -111,8 +111,13 @@ const Login = ({ history }) => {
                         </Button>)            
                     }
                 </form>
-                
+                <div>
+                    <Link to="forgottenPassword">
+                        <TranslatedText id={`signin.forgottenPassword`}/>
+                    </Link>
+                </div>
             </div>
+            
         </Container>
     );
 };
