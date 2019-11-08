@@ -173,3 +173,8 @@ p {
 .scroll-container::-webkit-scrollbar {    
     display: none;
 }
+
+.link--grey, .link--grey:visited {
+    color: $light-grey;
+    font-weight: 300;
+}

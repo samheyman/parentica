@@ -8,7 +8,7 @@
     }
     
     form {
-        padding: 0;
+        padding: 0 0 20px;
 
         .required:after { 
             content:" *"; 
@@ -23,8 +23,13 @@
             font-weight: 500;
         }
 
+        .provider-label--option {
+            font-weight: normal;
+            text-transform: none;
+        }
+
         button {
-            margin: 45px 0 !important;
+            margin: 40px 0 !important;
             width: 60%;
             height: 60px;
             text-transform: none !important;
@@ -68,7 +73,6 @@
                 border-width: 2px !important;
                 border-color: $dark-grey !important;
             }
-
         }
 
         .MuiFormControl-marginNormal {
@@ -78,18 +82,11 @@
     }
 }
 
-.create-account-link {
-    margin: 20px 0 60px 0;
-
-    p, a {
-        font-size: 1rem;
-        // color: inherit;
-    }
-
+.signUp-link {
+    margin: 30px 0;
+    color: $light-grey;
 }
 
-.signUp-link {
+.create-account-link {
     color: $light-grey;
-    font-size: 1rem;
-    font-weight: 300;
 }

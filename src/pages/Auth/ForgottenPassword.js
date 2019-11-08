@@ -104,8 +104,8 @@ const ForgottenPassword = ({ history }) => {
                             </Button>)            
                         }
                         <div>
-                            <Link to="login">
-                                <TranslatedText id={`general.cancel`}/>
+                            <Link to="login" className="link--grey">
+                            ←&nbsp;<TranslatedText id={`signup.backToLogin`}/>
                             </Link>
                         </div>
                     </div>

@@ -57,13 +57,13 @@ const Login = ({ history }) => {
             <div className="login-form">
                 <h1><TranslatedText id={`navbar.login.link`} /></h1>
                 <div className="create-account-link">
-                    <span className="signUp-link">
+                    <p className="signUp-link">
                         <TranslatedText id={`contact.noAccount`}/>
                         {/* &nbsp;
                         <FormattedMessage id={`general.please.${locale}`}/> */}
                         &nbsp;
                         <Link to="signup"><TranslatedText id={`navbar.signup.link`}/></Link>
-                    </span>
+                    </p>
                 </div>
                 <form className={classes.container} onSubmit={handleSignin}>
                     <div style={{textAlign:'left'}}>
@@ -110,12 +110,13 @@ const Login = ({ history }) => {
                             <TranslatedText id={`general.pleaseWait`} />... */}
                         </Button>)            
                     }
+                    <div>
+                        <Link to="forgottenPassword" className="link--grey">
+                            <TranslatedText id={`signin.forgottenPassword`}/>
+                        </Link>
+                    </div>
                 </form>
-                <div>
-                    <Link to="forgottenPassword">
-                        <TranslatedText id={`signin.forgottenPassword`}/>
-                    </Link>
-                </div>
+                
             </div>
             
         </Container>

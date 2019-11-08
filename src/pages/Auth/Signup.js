@@ -86,8 +86,8 @@ const Signup = ({ history }) => {
                                 name="userType"
                                 inputProps={{ 'aria-label': 'A' }}
                             />
-                            <label htmlFor="parent" className="provider-label">
-                                &nbsp;
+                            <label htmlFor="parent" className="provider-label--option">
+                                &nbsp;&nbsp;
                                 <TranslatedText id="signup.asParent"/>
                             </label> 
                         </div>
@@ -99,8 +99,8 @@ const Signup = ({ history }) => {
                                 name="userType"
                                 inputProps={{ 'aria-label': 'A' }}
                             />
-                            <label htmlFor="provider" className="provider-label">
-                                &nbsp;
+                            <label htmlFor="provider" className="provider-label--option">
+                                &nbsp;&nbsp;
                                 <TranslatedText id="signup.asProvider"/>
                             </label>
                         </div>
@@ -173,17 +173,17 @@ const Signup = ({ history }) => {
                             {/* &nbsp;&nbsp;
                             <FormattedMessage id={`general.pleaseWait.${locale}`} />... */}
                         </Button>)            
-                    }                
+                    }    
+                    <div className="create-account-link">
+                        <p style={{margin:'0'}}>
+                            <TranslatedText id="navbar.alreadyAccount" defaultText="Already have an account?"/>
+                            &nbsp;
+                            <Link to="login" className="link--grey">
+                                <TranslatedText id="navbar.login.link" defaultText="Log in"/>
+                            </Link>
+                        </p>
+                </div>            
                 </form>
-                <div className="create-account-link">
-                    <p>
-                        <TranslatedText id="navbar.alreadyAccount" defaultText="Already have an account?"/>
-                        &nbsp;
-                        <Link to="login">
-                            <TranslatedText id="navbar.login.link" defaultText="Log in"/>
-                        </Link>
-                    </p>
-                </div>
             </div>
         </Container>
     );
