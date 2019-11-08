@@ -12,7 +12,7 @@ export default function CityCard(props) {
     let topicId = props.topic.split(" ")[0];
     let topic = props.topic;
     return(
-        <div style={{ width: '270px', marginRight: '10px', height: '255px', display:'inline-block' }}>
+        <div className="scroll-container__item scroll-container__item--city">
             <Link to={{pathname:`/${props.locale.split('-')[0]}/${topic}`}}
                 onClick={()=>{
                     window.gtag("event", "city card", {

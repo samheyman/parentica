@@ -79,29 +79,25 @@ function City(props) {
                     <TranslatedText id={`city.thisWeek`} defaultMessage="This week in"/>  
                     &nbsp;{capitalize(props.city)}  
                 </h2>
-                <div className="test-scroll" style={{ height: '330px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+                <div className="scroll-container">
                     {props.classesThisWeek.map((listing) => {                        
                         return(
-                            <div 
-                                key={listing.id}
-                                style={{ width: '330px', marginRight: '10px', display:'inline-block' }}>
-                                <ListingCard 
-                                    nameId={listing.nameId}
-                                    format={listing.format}
-                                    online={listing.online}
-                                    listingImage={listing.listingImage}
-                                    listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
-                                    companyLogo={listing.companyLogo}
-                                    companyName={listing.companyName}
-                                    date={(listing.date !== "") ? listing.date : null }
-                                    duration={listing.duration}
-                                    district={listing.district}
-                                    address={listing.address}
-                                    city={listing.city}
-                                    language={listing.language}
-                                    tags={listing.tags}
-                                />
-                            </div>
+                            <ListingCard 
+                                nameId={listing.nameId}
+                                format={listing.format}
+                                online={listing.online}
+                                listingImage={listing.listingImage}
+                                listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                                companyLogo={listing.companyLogo}
+                                companyName={listing.companyName}
+                                date={(listing.date !== "") ? listing.date : null }
+                                duration={listing.duration}
+                                district={listing.district}
+                                address={listing.address}
+                                city={listing.city}
+                                language={listing.language}
+                                tags={listing.tags}
+                            />
                         );
                     })
                     }
@@ -119,7 +115,7 @@ function City(props) {
                 <h2>
                     <FormattedMessage id={`homepage.popularTopics.${locale.locale}`} defaultMessage="Topics"/>    
                 </h2>  
-                <div className="test-scroll" style={{ height: '210px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+                <div className="scroll-container">
                     <TopicCard 
                         locale={`${locale.locale}`}
                         topic="baby" 
@@ -201,7 +197,7 @@ function City(props) {
                 <h2>
                     <FormattedMessage id={`city.searchByType.${locale.locale}`} defaultMessage="Search by type" />    
                 </h2>  
-                <Grid container className="topic-cards" spacing={2} alignContent="center">
+                <div className="scroll-container">
                     <TypeCard
                         locale={`${locale.locale}`}
                         topic="classes" 
@@ -225,7 +221,7 @@ function City(props) {
                         // resultCount={props.classEntries.filter((item) => item.city === {props.city}).length}
                     />
                     
-                </Grid>
+                </div>
             </div>
             {/* <div className="types">
                 <h2>

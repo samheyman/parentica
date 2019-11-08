@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import Icon from '@material-ui/core/Icon';
+import uuid from 'uuid';
 
 export default function TypeCard(props) {
     let topicId = props.topic.split(" ")[0];
@@ -31,7 +31,7 @@ export default function TypeCard(props) {
 
     }
     return(
-        <Grid item key="3">
+        <div className="scroll-container__item scroll-container__item--topic" key={{uuid}}>
             <Link 
                 to={{
                     pathname: routePath, type: topic }}
@@ -56,6 +56,6 @@ export default function TypeCard(props) {
                 </CardActionArea>
             </Card>
             </Link>            
-        </Grid>
+        </div>
     );
 }

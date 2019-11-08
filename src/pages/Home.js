@@ -96,7 +96,7 @@ function Home(props) {
                     id={`homepage.searchByCity`} 
                     defaultMessage="Search by city" />    
             </h2>  
-            <div className="test-scroll" style={{ height: '280px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+            <div className="scroll-container">
                 {/* <Grid container className="cities-links" spacing={2} alignContent="center"> */}
                     <CityCard
                         locale={`${locale}`}
@@ -128,18 +128,6 @@ function Home(props) {
                         topicLocalised="London"
                         // resultCount={props.classEntries.filter((item) => item.city === "Madrid").length}
                     />
-                    {/* <Grid item xs={6} sm={4} md={3} key="3">
-                        <Card className="more-cities">
-                            <CardActionArea>
-                                <CardContent>
-                                <h4><FormattedMessage 
-                                    id={`home.moreCities.${locale}`} 
-                                    defaultMessage="More cities to come!" /></h4>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                    </Grid> */}
-                {/* </Grid> */}
             </div>
             
         </div>
@@ -221,31 +209,27 @@ function Home(props) {
             <h2>
                 <TranslatedText id={`homepage.popularOnlineClasses`} defaultMessage="Popular online classes"/>    
             </h2>  
-            <div className="test-scroll" style={{ height: '320px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+            <div className="scroll-container">
                 {props.onlineClasses.map((listing) => {    
                     return(
-                        <div 
-                            key={listing.id}
-                            style={{ width: '330px', marginRight: '10px', display:'inline-block' }}>
-                            <ListingCard 
-                                nameId={listing.nameId}
-                                format={listing.format}
-                                online={listing.online}
-                                listingImage={listing.listingImage}
-                                listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
-                                companyLogo={listing.companyLogo}
-                                companyName={listing.companyName}
-                                date={(listing.date !== "") ? listing.date : null }
-                                duration={listing.duration}
-                                district={listing.district}
-                                address={listing.address}
-                                city={listing.city}
-                                language={listing.language}
-                                tags={listing.tags}
-                            />
-                        </div>);
-                })
-                }
+                        <ListingCard 
+                            nameId={listing.nameId}
+                            format={listing.format}
+                            online={listing.online}
+                            listingImage={listing.listingImage}
+                            listingTitle={(listing.hasOwnProperty('listingTitle')) ? listing.listingTitle : listing.listingName}
+                            companyLogo={listing.companyLogo}
+                            companyName={listing.companyName}
+                            date={(listing.date !== "") ? listing.date : null }
+                            duration={listing.duration}
+                            district={listing.district}
+                            address={listing.address}
+                            city={listing.city}
+                            language={listing.language}
+                            tags={listing.tags}
+                        />
+                    );
+                })}
             </div>
             <div className="show-all-link">
                 <Link to={{pathname:`/${locale.split('-')[0]}/online/explore`}}>
@@ -259,30 +243,30 @@ function Home(props) {
             <h2>
                 <TranslatedText id={`homepage.popularTopics`} defaultMessage="Topics"/>    
             </h2>  
-            <div className="test-scroll" style={{ height: '210px', overflowX: 'scroll', whiteSpace: 'nowrap'}}>
+            <div className="scroll-container">
                 <TopicCard
-                        locale={`${locale}`}
-                        topic="parenting" 
-                        topicLocalised={                            
-                            <TranslatedText id={`topics.parenting`} />
-                        }
-                        rootUrl="online"
+                    locale={`${locale}`}
+                    topic="parenting" 
+                    topicLocalised={                            
+                        <TranslatedText id={`topics.parenting`} />
+                    }
+                    rootUrl="online"
                 />
                 <TopicCard
-                        locale={`${locale}`}
-                        topic="pregnancy" 
-                        topicLocalised={                            
-                            <TranslatedText id={`topics.pregnancy`} />
-                        }
-                        rootUrl="online"
+                    locale={`${locale}`}
+                    topic="pregnancy" 
+                    topicLocalised={                            
+                        <TranslatedText id={`topics.pregnancy`} />
+                    }
+                    rootUrl="online"
                 />
                 <TopicCard
-                        locale={`${locale}`}
-                        topic="baby" 
-                        topicLocalised={                            
-                            <TranslatedText id={`topics.baby`} />
-                        }
-                        rootUrl="online"
+                    locale={`${locale}`}
+                    topic="baby" 
+                    topicLocalised={                            
+                        <TranslatedText id={`topics.baby`} />
+                    }
+                    rootUrl="online"
                 />
                 <TopicCard 
                     locale={`${locale}`}

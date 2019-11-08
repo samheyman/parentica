@@ -122,90 +122,92 @@ function ListingCard({
     moment.locale(locale);
 
     return (
-      <Card className={classes.card}>
-          <CardActionArea>
-            <Link className="class-card-link" to={`/${locale.split('-')[0]}/listings/${nameId}`}
-                onClick={()=>{
-                  window.gtag("event", companyName, {
-                      event_category: "listing details",
-                      event_label: companyName + " - " + listingTitle
-                  }); 
-                }}
-            >
-            <LazyLoad 
-                    width={327}
-                    height={140}
-                    debounce={false}
-                    offsetVertical={500}
-                    >
-                
-                <CardMedia
-                  component="img"
-                  className={classes.media}
-                  image={imageLink}
-                  title={listingTitle}
-                />
-                
-            </LazyLoad>
-            <CardContent>
-              <Typography className={`class-name`} gutterBottom variant="h3" component="h3">
-                {listingTitle.toLowerCase()}
-              </Typography>
-              <div className="company">
-                <LazyLoad 
-                      width={25}
-                      height={25}
+      <div className="scroll-container__item scroll-container__item-listing">
+        <Card className={classes.card}>
+            <CardActionArea>
+              <Link className="class-card-link" to={`/${locale.split('-')[0]}/listings/${nameId}`}
+                  onClick={()=>{
+                    window.gtag("event", companyName, {
+                        event_category: "listing details",
+                        event_label: companyName + " - " + listingTitle
+                    }); 
+                  }}
+              >
+              <LazyLoad 
+                      width={327}
+                      height={140}
                       debounce={false}
                       offsetVertical={500}
                       >
-                  <img className="company-logo" src={logo} alt={`${companyLogo} logo`} />
-                </LazyLoad>
-                <span className="company-name">{companyName}</span>
-              </div> 
-
-              <div className={`card-footer ${classes.cardFooter}`}>
-                  <div className="class-details">
-                    {(date !== null) ?
-                      (<React.Fragment>
-                        <span className="class-details-date">
-                          {moment(new Date(date.seconds * 1000)).format("MMM D")}
-                        </span>
-                        <span className="dot"></span>
-                        <span className="class-details-time">
-                          {moment(new Date(date.seconds * 1000)).format("HH:mm")} 
-                        </span>
-                      </React.Fragment>)
-                      :
-                      null
-                    }
-                       
-                    {(district !== null && district !== "") ?
-                        (<React.Fragment>
-                            <span className="dot"></span>
-                            <span className="class-details-district">
-                            { (district.length > 13) ?
-                                district.substring(0,13) + "..."
-                                :
-                                district
-                            }
-                            </span>
-                          </React.Fragment>                     
-                        )
-                        :
-                        (null)
-                    }
-
-                  </div>
                   
-              </div>
-            </CardContent>
-            </Link>
-          </CardActionArea>
-          <CardActions>
-            <RenderTags tags={tags} locale={locale} />
-            <RenderFlag language={language} />
-          </CardActions>
-        </Card>)
+                  <CardMedia
+                    component="img"
+                    className={classes.media}
+                    image={imageLink}
+                    title={listingTitle}
+                  />
+                  
+              </LazyLoad>
+              <CardContent>
+                <Typography className={`class-name`} gutterBottom variant="h3" component="h3">
+                  {listingTitle.toLowerCase()}
+                </Typography>
+                <div className="company">
+                  <LazyLoad 
+                        width={25}
+                        height={25}
+                        debounce={false}
+                        offsetVertical={500}
+                        >
+                    <img className="company-logo" src={logo} alt={`${companyLogo} logo`} />
+                  </LazyLoad>
+                  <span className="company-name">{companyName}</span>
+                </div> 
+
+                <div className={`card-footer ${classes.cardFooter}`}>
+                    <div className="class-details">
+                      {(date !== null) ?
+                        (<React.Fragment>
+                          <span className="class-details-date">
+                            {moment(new Date(date.seconds * 1000)).format("MMM D")}
+                          </span>
+                          <span className="dot"></span>
+                          <span className="class-details-time">
+                            {moment(new Date(date.seconds * 1000)).format("HH:mm")} 
+                          </span>
+                        </React.Fragment>)
+                        :
+                        null
+                      }
+                        
+                      {(district !== null && district !== "") ?
+                          (<React.Fragment>
+                              <span className="dot"></span>
+                              <span className="class-details-district">
+                              { (district.length > 13) ?
+                                  district.substring(0,13) + "..."
+                                  :
+                                  district
+                              }
+                              </span>
+                            </React.Fragment>                     
+                          )
+                          :
+                          (null)
+                      }
+
+                    </div>
+                    
+                </div>
+              </CardContent>
+              </Link>
+            </CardActionArea>
+            <CardActions>
+              <RenderTags tags={tags} locale={locale} />
+              <RenderFlag language={language} />
+            </CardActions>
+          </Card>
+        </div>)
   }
 
   export default ListingCard;

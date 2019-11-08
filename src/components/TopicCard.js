@@ -25,7 +25,7 @@ export default function TopicCard(props) {
             
         // ;  
     return(
-        <div style={{ width: '220px', marginRight: '10px', display:'inline-block' }}>
+        <div className="scroll-container__item scroll-container__item--topic">
             <Link 
                 to={{
                     pathname: routePath, topic:`${topic}`}}
