@@ -25,7 +25,8 @@
     "general.please.es-ES": "Por favor",
     "general.pleaseWait.en-GB": "Please wait",
     "general.pleaseWait.es-ES": "Espera un momento",
-
+    "general.cancel.en-GB": "Cancel",
+    "general.cancel.es-ES": "Cancelar",
     "navbar.selectLanguage.en-GB": "Offered in",
     "navbar.selectLanguage.es-ES": "Ofrecido en",
 
@@ -347,19 +348,32 @@
     "providers.backHomeLink.en-GB": "Back",
     "providers.backHomeLink.es-ES": "Volver",
 
+    "signin.forgottenPassword.en-GB": "Forgot your password?",
+    "signin.forgottenPassword.es-ES": "¿Olvidaste tu contraseña?",
+
+    "signin.resetPassword.en-GB": "Reset password",
+    "signin.resetPassword.es-ES": "Restablecer contraseña",
+
     "signup.companyName.en-GB": "Company name",
     "signup.companyName.es-ES": "Nombre de empresa",
 
     "signup.signUpAs.en-GB": "Sign me up as",
     "signup.signUpAs.es-ES": "Regístrate como",
 
+    "signup.passwordReset.success.en-GB": "We have sent you an email to reset your password.",
+    "signup.passwordReset.success.es-ES": "Le hemos enviado un correo electrónico para restablecer su contraseña.",
+
+    "signup.passwordReset.sorryError.en-GB": "Sorry, there was an error while trying to reset your password.",
+    "signup.passwordReset.sorryError.es-ES": "Lo sentimos, se produjo un error al intentar restablecer su contraseña.",
+
     "signup.asParent.en-GB": "Parent (I want to learn)",
     "signup.asParent.es-ES": "Madre o padre (quiero aprender)",
 
     "signup.asProvider.en-GB": "Company (I want to list classes or events)",
-    "signup.asProvider.es-ES": "Empresa (quiero publicar clases o eventos)"
+    "signup.asProvider.es-ES": "Empresa (quiero publicar clases o eventos)",
 
-    
+    "signup.backToLogin.en-GB": "Back to login",
+    "signup.backToLogin.es-ES": "Volver a inicio"
 
 }
 
