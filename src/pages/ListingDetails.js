@@ -213,8 +213,15 @@ export default function ListingDetails(props) {
         const companyLogo = getLogo(listingDetails[0].companyLogo);
         
         function getImage() { 
+            const blocks = listingDetails[0].listingImage.split('.');
+            let listingImage = '';
+            if (blocks.length === 1) {
+                listingImage = listingDetails[0].listingImage + "_330x140.jpg"
+            } else {
+                listingImage = listingDetails[0].listingImage.split('.')[0] + "_330x140." + listingDetails[0].listingImage.split('.')[1];
+            }
             storage
-            .refFromURL(`gs://app23980.appspot.com/listings/${listingDetails[0].listingImage}.jpg` )
+            .refFromURL(`gs://app23980.appspot.com/listings/${listingImage}` )
             .getDownloadURL()
             .then( url => {
                 setImageLink(url);
@@ -223,8 +230,15 @@ export default function ListingDetails(props) {
         }
 
         function getLogo() { 
+            const blocks = listingDetails[0].companyLogo.split('.');
+            let companyLogo = '';
+            if (blocks.length === 1) {
+              companyLogo = listingDetails[0].companyLogo + ".jpg"
+            } else {
+                companyLogo = listingDetails[0].companyLogo
+            }
             storage
-                .refFromURL(`gs://app23980-providers-data/logos/${listingDetails[0].companyLogo}.jpg` )
+                .refFromURL(`gs://app23980-providers-data/logos/${companyLogo}` )
                 .getDownloadURL()
                 .then( url => {
                     setLogo(url);

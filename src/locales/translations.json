@@ -1,32 +1,87 @@
 {
     "general.english.en-GB": "English",
     "general.english.es-ES": "Inglés",
+    "general.english.fr-FR": "Anglais",
 
     "general.spanish.en-GB": "Spanish",
     "general.spanish.es-ES": "Español",
+    "general.spanish.fr-FR": "Espagnol",
 
     "general.classes.en-GB": "Classes",
     "general.classes.es-ES": "Clases",
+    "general.classes.fr-FR": "Cours",
+
+    "general.type.en-GB": "Type",
+    "general.type.es-ES": "Tipo",
+    "general.type.fr-FR": "Type",
+
+    "general.topics.en-GB": "Topics",
+    "general.topics.es-ES": "Temas",
+    "general.topics.fr-FR": "Thèmes",
+
+    "general.online.en-GB": "Online",
+    "general.online.es-ES": "En línea",
+    "general.online.fr-FR": "En ligne",
+
+    "general.inPerson.en-GB": "In person",
+    "general.inPerson.es-ES": "Presencial",
+    "general.inPerson.fr-FR": "En personne",
+
     "general.webinars.en-GB": "Webinars",
     "general.webinars.es-ES": "Charlas virtuales",
+    "general.webinars.fr-FR": "Webinars",
+
     "general.blog.en-GB": "Blog",
     "general.blog.es-ES": "Blog",
+    "general.blog.fr-FR": "Blog",
+
     "general.meetups.en-GB": "Meetups",
     "general.meetups.es-ES": "Encuentros",
+    "general.meetups.fr-FR": "Meetups",
+
     "general.seminars.en-GB": "Seminars",
     "general.seminars.es-ES": "Charlas",
+    "general.seminars.fr-FR": "Seminaires",
+
     "general.clear.en-GB": "clear",
     "general.clear.es-ES": "eliminar",
+    "general.clear.fr-FR": "suprimer",
+
     "general.showAll.en-GB": "Show all",
     "general.showAll.es-ES": "Ver todas",
+    "general.showAll.fr-FR": "Voir tous",
+
     "general.password.en-GB": "Password",
     "general.password.es-ES": "Contraseña",
+    "general.password.fr-FR": "Mot de passe",
+
     "general.please.en-GB": "Please",
     "general.please.es-ES": "Por favor",
+    "general.please.fr-FR": "S'il vous plaît",
+
     "general.pleaseWait.en-GB": "Please wait",
     "general.pleaseWait.es-ES": "Espera un momento",
+    "general.pleaseWait.fr-FR": "Un instant",
+
     "general.cancel.en-GB": "Cancel",
     "general.cancel.es-ES": "Cancelar",
+    "general.cancel.fr-FR": "Annuler",
+
+    "general.save.en-GB": "Save",
+    "general.save.es-ES": "Salvar",
+    "general.save.fr-FR": "Enregistrer",
+
+    "general.yes.en-GB": "yes",
+    "general.yes.es-ES": "sí",
+    "general.yes.fr-FR": "oui",
+
+    "general.no.en-GB": "no",
+    "general.no.es-ES": "no",
+    "general.no.fr-FR": "non",
+
+
+
+
     "navbar.selectLanguage.en-GB": "Offered in",
     "navbar.selectLanguage.es-ES": "Ofrecido en",
 
@@ -49,11 +104,10 @@
     "navbar.profile.link.es-ES": "Perfil",
 
     "navbar.newListing.link.en-GB": "New listing",
-    "navbar.newListing.link.es-ES": "Nuevo listado",
+    "navbar.newListing.link.es-ES": "Nueva publicación",
 
     "navbar.settings.link.en-GB": "Account settings",
     "navbar.settings.link.es-ES": "Ajustes",
-
 
     "navbar.login.link.en-GB": "Sign in",
     "navbar.login.link.es-ES": "Inicia sesión",
@@ -72,6 +126,10 @@
 
     "navbar.contact.link.en-GB": "Contact",
     "navbar.contact.link.es-ES": "Contacto",
+
+
+
+
     
     "home.moreCities.en-GB": "More cities to come!",
     "home.moreCities.es-ES": "¡Más ciudades pronto!",
@@ -118,69 +176,39 @@
     "homepage.onlinePopularTopics.en-GB": "Online classes by topic",
     "homepage.onlinePopularTopics.es-ES": "Clases en línea por tema",
 
-    "topics.all.en-GB": "all",
-    "topics.all.es-ES": "todos",
-    "topics.baby.en-GB": "baby",
-    "topics.baby.es-ES": "bebé",
-    "topics.breastfeeding.en-GB": "breastfeeding",
-    "topics.breastfeeding.es-ES": "lactancia",
-    "topics.feeding.en-GB": "feeding",
-    "topics.feeding.es-ES": "alimentación",
-    "topics.fitness.en-GB": "fitness",
-    "topics.fitness.es-ES": "fitness",
-    "topics.first.en-GB": "first aid",
-    "topics.first.es-ES": "primeros auxilios",
-    "topics.health.en-GB": "health",
-    "topics.health.es-ES": "salud",
-    "topics.lecture.en-GB": "lecture",
-    "topics.lecture.es-ES": "charla",
-    "topics.massage.en-GB": "massage",
-    "topics.massage.es-ES": "masaje",
-    "topics.mindfulness.en-GB": "mindfulness",
-    "topics.mindfulness.es-ES": "mindfulness",
-    "topics.montessori.en-GB": "montessori",
-    "topics.montessori.es-ES": "montessori",
-    "topics.music.en-GB": "music",
-    "topics.music.es-ES": "música",
-    "topics.nutrition.en-GB": "nutrition",
-    "topics.nutrition.es-ES": "nutrición",
-    "topics.parenting.en-GB": "parenting",
-    "topics.parenting.es-ES": "paternidad",
-    "topics.postpartum.en-GB": "postpartum",
-    "topics.postpartum.es-ES": "postparto",
-    "topics.pregnancy.en-GB": "pregnancy",
-    "topics.pregnancy.es-ES": "embarazo",
-    "topics.sleep.en-GB": "sleep",
-    "topics.sleep.es-ES": "sueño",
-    "topics.social.en-GB": "social",
-    "topics.social.es-ES": "social",
-    "topics.speech.en-GB": "speech",
-    "topics.speech.es-ES": "lenguaje",
-    "topics.yoga.en-GB": "yoga",
-    "topics.yoga.es-ES": "yoga",
+
+
 
     "city.thisWeek.en-GB": "This week in",
     "city.thisWeek.es-ES": "Esta semana en",
+
     "city.searchByType.en-GB": "Search by type",
     "city.searchByType.es-ES": "Busca por tipo",
 
     "explore.tab.classes.en-GB": "Classes",
     "explore.tab.classes.es-ES": "Clases",
+
     "explore.tab.meetups.en-GB": "Meetups",
     "explore.tab.meetups.es-ES": "Encuentros",
+
     "explore.tab.seminars.en-GB": "Seminars",
     "explore.tab.seminars.es-ES": "Charlas",
+
     "explore.tab.madrid.en-GB": "Madrid",
     "explore.tab.madrid.es-ES": "Madrid",
+
     "explore.tab.online.en-GB": "Online",
     "explore.tab.online.es-ES": "En línea",
 
     "explore.results.city.none.en-GB": "Sorry no classes found.",
     "explore.results.city.none.es-ES": "Lo sentimos, no se encontraron clases.",
+
     "explore.results.online.none.en-GB": "Sorry no online classes found.",
-    "explore.results.online.none.es-ES": "Lo sentimos, no se encontraron clases en linea.",
+    "explore.results.online.none.es-ES": "Lo sentimos, no se encontraron clases en línea.",
+
     "explore.results.meetups.none.en-GB": "Sorry no meetups found.",
     "explore.results.meetups.none.es-ES": "Lo sentimos, no se encontraron encuentros.",
+
     "explore.results.seminars.none.en-GB": "Sorry no seminars found.",
     "explore.results.seminars.none.es-ES": "Lo sentimos, no se encontraron charlas.",
 
@@ -279,8 +307,10 @@
     "about.team.elineDescription.en-GB": "Eline is a fist-time mom and co-founder of two NGOs that empower young people in vulnerable communities as change agents. She used to be a teacher and is passionate about education as a way of personal and social transformation. She knows that education is a complex science and that parents are the most influential educators in a child’s life.",
     "about.team.elineDescription.es-ES": "Eline es madre primeriza y cofundadora de dos ONGs que empoderan a jóvenes de entornos vulnerables como agentes de cambio. Ha sido profesora y le apasiona el mundo de la educación como vía de transformación personal y social. Sabe que educar es una ciencia compleja y que los padres son los educadores más influyentes en la vida de un niño.",
     
+
+
     "contact.contact.en-GB": "Contact",
-    "contact.contact.es-ES": "contacto",
+    "contact.contact.es-ES": "Contacto",
 
     "contact.contactUs.en-GB": "contact us",
     "contact.contactUs.es-ES": "contáctanos",
@@ -339,11 +369,105 @@
     "contact.error.email.invalid.en-GB": "Please enter a valid email",
     "contact.error.email.invalid.es-ES": "Por favor introduce una dirección de correo electrónico válida.",
 
+
+
+
     "errorPage.notFound.en-GB": "Sorry, the page you requested was not found.",
     "errorPage.notFound.es-ES": "Lo sentimos, no se encontró la página solicitada.",
 
+
+
+
+    "newListing.title.en-GB": "Title",
+    "newListing.title.es-ES": "Título",
+
+    "newListing.format.en-GB": "Format",
+    "newListing.format.es-ES": "Formato",
+
+    "newListing.specificDate.en-GB": "Specific date?",
+    "newListing.specificDate.es-ES": "¿Fecha específica?",
+
+    "newListing.date.en-GB": "Date",
+    "newListing.date.es-ES": "Fecha",
+
+    "newListing.time.en-GB": "Time",
+    "newListing.time.es-ES": "Hora",
+
+    "newListing.location.en-GB": "Location",
+    "newListing.location.es-ES": "Lugar",
+
+    "newListing.city.en-GB": "City",
+    "newListing.city.es-ES": "Ciudad",
+
+    "newListing.district.en-GB": "District",
+    "newListing.district.es-ES": "Barrio",
+
+    "newListing.address.en-GB": "Address",
+    "newListing.address.es-ES": "Dirección",
+
+    "newListing.bookingInfo.en-GB": "Booking information",
+    "newListing.bookingInfo.es-ES": "Para apuntarte",
+
+    "newListing.additionalInfo.en-GB": "Additional information",
+    "newListing.additionalInfo.es-ES": "Información adicional",
+
+    "newListing.image.en-GB": "Image",
+    "newListing.image.es-ES": "Imagen",
+
+    "newListing.addImage.en-GB": "ADD IMAGE",
+    "newListing.addImage.es-ES": "AÑADIR IMAGEN",
+
+    "newListing.addCompelingImage.en-GB": "Add a compelling image to bring your listing to life.",
+    "newListing.addCompelingImage.es-ES": "Añade una imagen atractiva para darle vida a tu publicación.",
+    
+    "newListing.topics.en-GB": "Please select up to 3 topics",
+    "newListing.topics.es-ES": "Selecciona hasta 3 temas",
+
+    "newListing.duration.en-GB": "Duration",
+    "newListing.duration.es-ES": "Duración",
+
+    "newListing.language.en-GB": "Language",
+    "newListing.language.es-ES": "Idioma",
+    
+    "newListing.description.en-GB": "Description",
+    "newListing.description.es-ES": "Descripción",
+
+    "newListing.describeListing.en-GB": "Please describe your listing.",
+    "newListing.describeListing.es-ES": "Por favor describa su publicación",
+
+    "newListing.offeredBy.en-GB": "Offered by",
+    "newListing.offeredBy.es-ES": "Ofrecido por",
+
+    "newListing.companyName.en-GB": "Company name",
+    "newListing.companyName.es-ES": "Nombre de empresa",
+
+    "newListing.logo.en-GB": "Logo",
+    "newListing.logo.es-ES": "Logo",
+
+    "newListing.addLogo.en-GB": "ADD LOGO",
+    "newListing.addLogo.es-ES": "AÑADIR LOGO",
+
+    "newListing.price.en-GB": "Price",
+    "newListing.price.es-ES": "Precio",
+
+    "newListing.class.en-GB": "Class or webinar",
+    "newListing.class.es-ES": "Clase o taller",
+
+    "newListing.webinar.en-GB": "Webinar",
+    "newListing.webinar.es-ES": "Charla virtuale",
+
+    "newListing.seminar.en-GB": "Seminar",
+    "newListing.seminar.es-ES": "Charla",
+
+    "newListing.meetup.en-GB": "Meetup",
+    "newListing.meetup.es-ES": "Encuentro",
+    
+    "newListing.website.en-GB": "Website",
+    "newListing.website.es-ES": "Sitio web",
+    
+
     "providers.confirmListingCreated.en-GB": "Listing successfully saved. You can now activate it when you are ready.",
-    "providers.confirmListingCreated.es-ES": "Listado guardado con éxito. Puedes activarlo cuando quieras.",
+    "providers.confirmListingCreated.es-ES": "Publicación guardada con éxito. Puedes activarla cuando quieras.",
 
     "providers.backHomeLink.en-GB": "Back",
     "providers.backHomeLink.es-ES": "Volver",
@@ -361,10 +485,10 @@
     "signup.signUpAs.es-ES": "Regístrate como",
 
     "signup.passwordReset.success.en-GB": "We have sent you an email to reset your password.",
-    "signup.passwordReset.success.es-ES": "Le hemos enviado un correo electrónico para restablecer su contraseña.",
+    "signup.passwordReset.success.es-ES": "Te hemos enviado un correo electrónico para restablecer tu contraseña.",
 
     "signup.passwordReset.sorryError.en-GB": "Sorry, there was an error while trying to reset your password.",
-    "signup.passwordReset.sorryError.es-ES": "Lo sentimos, se produjo un error al intentar restablecer su contraseña.",
+    "signup.passwordReset.sorryError.es-ES": "Lo sentimos, se produjo un error al intentar restablecer tu contraseña.",
 
     "signup.asParent.en-GB": "Parent (I want to learn)",
     "signup.asParent.es-ES": "Madre o padre (quiero aprender)",
@@ -373,7 +497,49 @@
     "signup.asProvider.es-ES": "Empresa (quiero publicar clases o eventos)",
 
     "signup.backToLogin.en-GB": "Back to login",
-    "signup.backToLogin.es-ES": "Volver a inicio"
+    "signup.backToLogin.es-ES": "Volver a inicio",
+
+    "topics.all.en-GB": "all",
+    "topics.all.es-ES": "todos",
+    "topics.all.fr-FR": "tout",
+    "topics.baby.en-GB": "baby",
+    "topics.baby.es-ES": "bebé",
+    "topics.breastfeeding.en-GB": "breastfeeding",
+    "topics.breastfeeding.es-ES": "lactancia",
+    "topics.feeding.en-GB": "feeding",
+    "topics.feeding.es-ES": "alimentación",
+    "topics.fitness.en-GB": "fitness",
+    "topics.fitness.es-ES": "fitness",
+    "topics.first.en-GB": "first aid",
+    "topics.first.es-ES": "primeros auxilios",
+    "topics.health.en-GB": "health",
+    "topics.health.es-ES": "salud",
+    "topics.lecture.en-GB": "lecture",
+    "topics.lecture.es-ES": "charla",
+    "topics.massage.en-GB": "massage",
+    "topics.massage.es-ES": "masaje",
+    "topics.mindfulness.en-GB": "mindfulness",
+    "topics.mindfulness.es-ES": "mindfulness",
+    "topics.montessori.en-GB": "montessori",
+    "topics.montessori.es-ES": "montessori",
+    "topics.music.en-GB": "music",
+    "topics.music.es-ES": "música",
+    "topics.nutrition.en-GB": "nutrition",
+    "topics.nutrition.es-ES": "nutrición",
+    "topics.parenting.en-GB": "parenting",
+    "topics.parenting.es-ES": "paternidad",
+    "topics.postpartum.en-GB": "postpartum",
+    "topics.postpartum.es-ES": "postparto",
+    "topics.pregnancy.en-GB": "pregnancy",
+    "topics.pregnancy.es-ES": "embarazo",
+    "topics.sleep.en-GB": "sleep",
+    "topics.sleep.es-ES": "sueño",
+    "topics.social.en-GB": "social",
+    "topics.social.es-ES": "social",
+    "topics.speech.en-GB": "speech",
+    "topics.speech.es-ES": "lenguaje",
+    "topics.yoga.en-GB": "yoga",
+    "topics.yoga.es-ES": "yoga"
 
 }
 

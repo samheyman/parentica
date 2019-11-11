@@ -74,9 +74,8 @@ function RenderFlag({language}) {
   }
 }
 
-
-
 function ListingCard({
+  id,
   nameId,
   format,
   online,
@@ -100,29 +99,39 @@ function ListingCard({
     const avatar = getLogo(companyLogo);
 
     function getImage() { 
+      const blocks = listingImage.split('.');
+      if (blocks.length === 1) {
+        listingImage = listingImage + "_330x140.jpg"
+      } else {
+        listingImage = listingImage.split('.')[0] + "_330x140." + listingImage.split('.')[1];
+      }
       storage
-        .ref( `/listings/${listingImage}_330x140.jpg` )
+        .ref( `/listings/${listingImage}` )
         .getDownloadURL()
         .then( url => {
           setImageLink(url);
-          } )
-        .catch( (err) => "Error getting image url: " + err);
+        })
+        .catch((err) => console.error("Error getting image url: " + err));
     }
-    function getLogo() { 
+    function getLogo() {
+      const blocks = companyLogo.split('.');
+      if (blocks.length === 1) {
+        companyLogo = companyLogo + ".jpg"
+      }
       storage
-        .refFromURL(`gs://app23980-providers-data/logos/${companyLogo}.jpg` )
+        .refFromURL(`gs://app23980-providers-data/logos/${companyLogo}` )
         .getDownloadURL()
         .then( url => {
           setLogo(url);
-          } )
-        .catch( (err) => "Error getting logo url: " + err);
-    }
+        })
+        .catch((err) => console.error("Error getting logo url: " + err));
+        }
 
     const { locale } = useContext(LocaleContext);
     moment.locale(locale);
 
     return (
-      <div className="scroll-container__item scroll-container__item-listing">
+      <div className="scroll-container__item scroll-container__item-listing" key={`${id}`}>
         <Card className={classes.card}>
             <CardActionArea>
               <Link className="class-card-link" to={`/${locale.split('-')[0]}/listings/${nameId}`}
@@ -150,7 +159,11 @@ function ListingCard({
               </LazyLoad>
               <CardContent>
                 <Typography className={`class-name`} gutterBottom variant="h3" component="h3">
-                  {listingTitle.toLowerCase()}
+                  {(listingTitle.length < 50) ?
+                    listingTitle.toLowerCase()
+                    :
+                    listingTitle.toLowerCase().substring(0,50) + "..."
+                  }
                 </Typography>
                 <div className="company">
                   <LazyLoad 

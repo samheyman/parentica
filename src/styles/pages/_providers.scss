@@ -82,24 +82,42 @@ button {
     // CSS for the image upload box
     .image-container {
         position: relative;
-        width: 100%;
-        height: 100%;
+        border: 1px solid $very-light-grey;
     }
-    .image-container .edit-icon {
+    .image-container--listing-image {
+        width: 750px;
+        height: 300px;
+    }
+    .image-container--listing-logo {
+        width: 142px;
+        height: 142px;
+        border-radius: 50%;
+    }
+    .image-container__edit-icon {
         position: absolute;
-        top: 35%;
-        left: 45%;
         display: none;
         color: #FFF;
     }
-    .image-container:hover .edit-icon {
+    .image-container__edit-icon--image {
+        top: 35%;
+        left: 45%;
+        font-size: 6rem;
+        padding: 20px;
+    }
+    .image-container__edit-icon--logo {
+        top: 23%;
+        left: 23%;
+        font-size: 5rem;
+        padding: 20px;
+    }
+    .image-container__image--logo {
+        border-radius: 50%;
+    }
+    .image-container:hover 
+    .image-container__edit-icon {
         display: block;
         background: rgba(0, 0, 0, .6);
         border-radius: 50%;
-    }
-    .edit-icon {
-        font-size: 6rem;
-        padding: 20px;
     }
     // end of CSS for image upload box
 
@@ -140,12 +158,13 @@ button {
         appearance: none;
     }
 
-    .specific-date {
+    .specific-date, .listing-type {
         display: flex;
         flex-direction: row;
         align-content: flex-end;
         justify-content: flex-start;
         padding-bottom: 10px;
+        
         label {
             text-transform: uppercase;
             padding: 5px 10px 0 0;
@@ -209,6 +228,37 @@ button {
         font-size: 12px;
         min-width: 120px !important;
         // display: none;
+    }
+
+    .topics-selection {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        max-width: 100%;
+        overflow-wrap: normal;
+        white-space: nowrap;
+
+        .topics-selection__input {
+            display: flex;
+            flex-direction: row;
+            align-content: center;
+            white-space:nowrap;
+            border: 1px solid $very-light-grey;
+            width: fit-content;
+            padding: 10px 15px;
+            border-radius: 32px;
+            margin: 0 10px 10px 0;
+            color: $light-grey;
+            input {
+                min-width: 15px;
+            }
+        }
+
+        .topics-selection--selected {
+            border-color: $light-grey;
+            color: $dark-grey;
+        }
     }
 
     .file-upload-container {
