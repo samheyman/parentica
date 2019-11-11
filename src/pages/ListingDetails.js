@@ -8,7 +8,7 @@ import '@firebase/storage';
 import * as moment from 'moment';
 import 'moment/locale/en-gb';
 import 'moment/locale/es';
-import Loader from '../components/Widgets/Loader';
+import LoadingPage from '../pages/LoadingPage';
 import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
@@ -116,7 +116,7 @@ function ClassPrice({classPrice, classPriceCouple, locale}) {
 }
 
 function ClassLocation({address, icon}) {
-    if (address != null) {
+    if (address !== null && address !== '') {
         return(
             <div className="value">
                 <Icon className={icon}>
@@ -282,11 +282,7 @@ export default function ListingDetails(props) {
 
     return(
         (listingDetails && listingDetails.length == 0) ?
-            <Container className="content">
-                <Grid container className="class-details-container">    
-                    <Loader/>
-                </Grid>
-            </Container>
+            <LoadingPage/>
             :
             <Container className="content">
             <Grid container className="class-details-container">
