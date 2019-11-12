@@ -210,9 +210,10 @@ function Home(props) {
                 <TranslatedText id={`homepage.popularOnlineClasses`} defaultMessage="Popular online classes"/>    
             </h2>  
             <div className="scroll-container">
-                {props.onlineClasses.map((listing) => {    
+                {props.onlineClasses.map((listing) => {
                     return(
                         <ListingCard 
+                            key={listing.id}
                             nameId={listing.nameId}
                             format={listing.format}
                             online={listing.online}

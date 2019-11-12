@@ -7,6 +7,18 @@
     "general.spanish.es-ES": "Español",
     "general.spanish.fr-FR": "Espagnol",
 
+    "general.norwegian.en-GB": "Norwegian",
+    "general.norwegian.es-ES": "Noruego",
+    "general.norwegian.fr-FR": "Norvégien",
+
+    "general.french.en-GB": "French",
+    "general.french.es-ES": "Francés",
+    "general.french.fr-FR": "Français",
+
+    "general.swedish.en-GB": "Swedish",
+    "general.swedish.es-ES": "Sueco",
+    "general.swedish.fr-FR": "Suédois",
+
     "general.classes.en-GB": "Classes",
     "general.classes.es-ES": "Clases",
     "general.classes.fr-FR": "Cours",
@@ -68,7 +80,7 @@
     "general.cancel.fr-FR": "Annuler",
 
     "general.save.en-GB": "Save",
-    "general.save.es-ES": "Salvar",
+    "general.save.es-ES": "Guardar",
     "general.save.fr-FR": "Enregistrer",
 
     "general.yes.en-GB": "yes",
@@ -98,7 +110,7 @@
     "navbar.dashboard.link.es-ES": "Tablero",
 
     "navbar.listings.link.en-GB": "Listings",
-    "navbar.listings.link.es-ES": "Listados",
+    "navbar.listings.link.es-ES": "Publicaciones",
 
     "navbar.profile.link.en-GB": "Profile",
     "navbar.profile.link.es-ES": "Perfil",
@@ -181,6 +193,9 @@
 
     "city.thisWeek.en-GB": "This week in",
     "city.thisWeek.es-ES": "Esta semana en",
+
+    "city.upcoming.en-GB": "Upcoming in",
+    "city.upcoming.es-ES": "Proximas en",
 
     "city.searchByType.en-GB": "Search by type",
     "city.searchByType.es-ES": "Busca por tipo",
@@ -450,8 +465,8 @@
     "newListing.price.en-GB": "Price",
     "newListing.price.es-ES": "Precio",
 
-    "newListing.class.en-GB": "Class or webinar",
-    "newListing.class.es-ES": "Clase o taller",
+    "newListing.class.en-GB": "Class (or workshop)",
+    "newListing.class.es-ES": "Clase (o taller)",
 
     "newListing.webinar.en-GB": "Webinar",
     "newListing.webinar.es-ES": "Charla virtual",
@@ -471,6 +486,9 @@
 
     "providers.backHomeLink.en-GB": "Back",
     "providers.backHomeLink.es-ES": "Volver",
+
+    "listings.myListings.en-GB": "My listings",
+    "listings.myListings.es-ES": "Mis publicaciones",
 
     "signin.forgottenPassword.en-GB": "Forgot your password?",
     "signin.forgottenPassword.es-ES": "¿Olvidaste tu contraseña?",

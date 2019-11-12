@@ -62,7 +62,12 @@ function RenderTags({tags, locale}) {
 
 function RenderFlag({language}) {
   const { locale } = useContext(LocaleContext);
-  if ((language==='english' && locale==='es-ES') || (language==='spanish' && locale==='en-GB')) {
+  if ((language==='english' && locale!=='en-GB') 
+      || (language==='spanish' && locale!=='es-ES')
+      || (language==='norwegian' && locale!=='no-NO')
+      || (language==='french' && locale!=='fr-FR')
+      || (language==='swedish' && locale!=='sv-SE')
+  ) {
       return (
         <React.Fragment>
           {/* <span className="dot"></span> */}

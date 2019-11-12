@@ -76,13 +76,14 @@ function City(props) {
             
             <div className="upcoming-classes">
                 <h2>
-                    <TranslatedText id={`city.thisWeek`} defaultMessage="This week in"/>  
+                    <TranslatedText id={`city.upcoming`} defaultMessage="Upcoming in"/>  
                     &nbsp;{capitalize(props.city)}  
                 </h2>
                 <div className="scroll-container">
-                    {props.classesThisWeek.map((listing) => {                        
+                    {props.upcomingListings.map((listing) => {  
                         return(
                             <ListingCard 
+                                key={listing.id}
                                 nameId={listing.nameId}
                                 format={listing.format}
                                 online={listing.online}
@@ -122,7 +123,7 @@ function City(props) {
                         topicLocalised={<FormattedMessage id={`topics.baby.${locale.locale}`} defaultMessage="baby"/>}
                         rootUrl="madrid"
 
-                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("baby")).length}/>
+                        resultCount={props.upcomingListings.filter((item) => item.tags.includes("baby")).length}/>
                     <TopicCard 
                         locale={`${locale.locale}`}
                         topic="pregnancy" 
@@ -131,7 +132,7 @@ function City(props) {
                         }
                         rootUrl="madrid"
 
-                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}/>
+                        resultCount={props.upcomingListings.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard
                         locale={`${locale.locale}`}
                         topic="massage" 
@@ -139,7 +140,7 @@ function City(props) {
                             <FormattedMessage id={`topics.massage.${locale.locale}`} />
                         }
                         rootUrl="madrid"
-                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("pregnancy")).length}/>
+                        resultCount={props.upcomingListings.filter((item) => item.tags.includes("pregnancy")).length}/>
                     <TopicCard 
                         locale={`${locale.locale}`}
                         topic="music" 
@@ -165,7 +166,7 @@ function City(props) {
                         }
                         rootUrl="madrid"
 
-                        resultCount={props.classesThisWeek.filter((item) => item.tags.includes("nutrition")).length}/>
+                        resultCount={props.upcomingListings.filter((item) => item.tags.includes("nutrition")).length}/>
                     <TopicCard
                         locale={`${locale.locale}`}
                         topic="postpartum" 

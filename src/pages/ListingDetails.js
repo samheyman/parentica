@@ -130,8 +130,14 @@ function ClassLocation({address, icon}) {
     }
 }
 
-function ClassLanguage({language, locale}, {icon}) {
-    if ((language==='english' && locale==='es-ES') || (language==='spanish' && locale==='en-GB')) {
+function ClassLanguage({language}, {icon}) {
+    const { locale } = useContext(LocaleContext);
+    if ((language==='english' && locale!=='en-GB') 
+      || (language==='spanish' && locale!=='es-ES')
+      || (language==='norwegian' && locale!=='no-NO')
+      || (language==='french' && locale!=='fr-FR')
+      || (language==='swedish' && locale!=='sv-SE')
+    ) {
         return(
             <div className="value">
                 <Icon className={icon}>

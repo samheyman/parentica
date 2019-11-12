@@ -671,6 +671,8 @@ const NewListing = () => {
                         <option value="english">English</option>
                         <option value="french">French</option>
                         <option value="spanish">Spanish</option>
+                        <option value="norwegian">Norwegian</option>
+                        <option value="swedish">Swedish</option>
                     </select>
                 </div>
                 <div className="provider-form-item">

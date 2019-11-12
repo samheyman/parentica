@@ -17,7 +17,8 @@ import NewListing from './NewListing';
 import LoadingPage from '../pages/LoadingPage';
 import Login from './Auth/Login';
 import Signup from './Auth/Signup';
-import Providers from './Providers';
+import ForgottenPassword from './Auth/ForgottenPassword';
+import Listings from './Listings';
 import Profile from './Profile';
 import firebase from '@firebase/app';
 // import '@firebase/firestore';
@@ -73,17 +74,17 @@ export default function Main(props) {
         let today = new Date();
         let nextWeek = new Date();
         let sevenDays = today.getDate() + 7;
-        nextWeek.setDate(sevenDays);
+        // nextWeek.setDate(sevenDays);
         let results = listings.filter(
             (item) => (item.city.toLowerCase() === city) && 
                         new Date(item.date.seconds * 1000) > today && 
-                        new Date(item.date.seconds * 1000) < nextWeek  && 
+                        // new Date(item.date.seconds * 1000) < nextWeek  && 
                         count++ < 6);
         console.log(results);
         return(
             <City 
                 city={city}
-                classesThisWeek={results}
+                upcomingListings={results}
                 topics={TOPICS}
                 providers={PROVIDERS.filter((provider) => !provider.online && provider.city.toLowerCase() === city)}
             />
@@ -125,18 +126,17 @@ export default function Main(props) {
     // const { currentUser, isLoading, isAdmin } = useAuth();
 
     const PrivateRoute = ({ component: RouteComponent, ...rest}) => {
+        console.log("User loading")
+        console.log(auth.user);
         return(
             <Route {...rest} render={routeProps => {
-                if (auth.isLoading) {
-                    return(<LoadingPage />)
+                if (auth.isLoading || auth.user === undefined || auth.user === null) {
+                    return <LoadingPage />;
+                } else if (auth.user !== null && auth.user) {
+                    return <RouteComponent {...routeProps} />;
+                } else {
+                    return <Redirect to={`${match.path}/login`} />;
                 }
-                return (auth.user ? (
-                    <RouteComponent {...routeProps} />
-                ) 
-                :
-                (
-                    <Redirect to={`${match.path}/login`} />
-                ));
                 }}
             />
         );
@@ -149,7 +149,9 @@ export default function Main(props) {
                 <Route path={`${match.path}/home`} render={()=><Redirect to={`${props.match.url}/`} /> } />
                 <Route path={`${match.path}/madrid/explore`} render={()=><Explore tab={0} city="madrid" />} />
                 <Route path={`${match.path}/madrid`} render={()=><CityPage city="madrid" />} />
+                <Route path={`${match.path}/oslo/explore`} render={()=><Explore tab={0} city="oslo" />} />
                 <Route path={`${match.path}/oslo`} render={()=><CityPage city="oslo" />} />
+                <Route path={`${match.path}/stockholm/explore`} render={()=><Explore tab={0} city="stockholm" />} />
                 <Route path={`${match.path}/stockholm`} render={()=><CityPage city="stockholm" />} />
                 <Route path={`${match.path}/paris/explore`} render={()=><Explore tab={0} city="paris" />} />
                 <Route path={`${match.path}/paris`} render={()=><CityPage city="paris" />} />
@@ -157,11 +159,12 @@ export default function Main(props) {
                 <Route path={`${match.path}/online/explore`} render={()=><Online />} />
                 <Route path={`${match.path}/listings/:listingId`} component={ListingDetails} />
                 <Route path={`${match.path}/about`} component={About}/>
-                <PrivateRoute path={`${match.path}/providers/new`} component={NewListing}/>
-                <PrivateRoute path={`${match.path}/listings`} component={Providers} />
+                <PrivateRoute path={`${match.path}/new-listing`} component={NewListing}/>
+                <PrivateRoute path={`${match.path}/listings`} component={Listings} />
                 <PrivateRoute path={`${match.path}/profile`} component={Profile} />
                 {/* <Route path={`${match.path}/providers`} component={Providers}/> */}
                 <Route path={`${match.path}/contact`} render={()=> <Contact/>} />
+                <Route path={`${match.path}/reset-password`} component={ForgottenPassword}/>
                 <Route path={`${match.path}/signup`} component={Signup}/>
                 <Route path={`${match.path}/login`} component={Login}/>
                 <Route exact path={`${match.path}/`} component={HomePage} />
