@@ -86,12 +86,13 @@ button {
     }
     .image-container--listing-image {
         width: 750px;
-        height: 300px;
+        height: 302px;
     }
     .image-container--listing-logo {
-        width: 142px;
-        height: 142px;
+        width: 146px;
+        height: 146px;
         border-radius: 50%;
+        position: relative;
     }
     .image-container__edit-icon {
         position: absolute;
@@ -105,18 +106,28 @@ button {
         padding: 20px;
     }
     .image-container__edit-icon--logo {
-        top: 23%;
-        left: 23%;
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: 50%;
+        left: 50%;
         font-size: 5rem;
-        padding: 20px;
+        margin: -35px 0 0 -35px;
     }
     .image-container__image--logo {
+        position: absolute;
+        width: 142px; 
+        height: 142px; 
         border-radius: 50%;
+        top: 50%;
+        left: 50%;
+        margin: -71px 0 0 -71px;
     }
     .image-container:hover 
     .image-container__edit-icon {
         display: block;
-        background: rgba(0, 0, 0, .6);
+        color: $light-grey;
+        background: rgba(0, 0, 0, .1);
         border-radius: 50%;
     }
     // end of CSS for image upload box
@@ -237,7 +248,9 @@ button {
         flex-wrap: wrap;
         max-width: 100%;
         overflow-wrap: normal;
+        margin: 10px 0 0 0;
         white-space: nowrap;
+        font-size: 1rem;
 
         .topics-selection__input {
             display: flex;
@@ -246,18 +259,26 @@ button {
             white-space:nowrap;
             border: 1px solid $very-light-grey;
             width: fit-content;
-            padding: 10px 15px;
-            border-radius: 32px;
+            padding: 10px 20px;
+            border-radius: 40px;
             margin: 0 10px 10px 0;
-            color: $light-grey;
+            color: $dark-grey;
+            height: 44px;
             input {
                 min-width: 15px;
             }
         }
 
+        .topics-selection__input:hover {
+            border-color: $primary-color;
+        }
+
         .topics-selection--selected {
-            border-color: $light-grey;
-            color: $dark-grey;
+            border-color: $primary-color;
+            border-width: 2px;
+            color: $primary-color;
+            height: 43px;
+            padding: 9px 19px;
         }
     }
 

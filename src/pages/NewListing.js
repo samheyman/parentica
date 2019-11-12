@@ -123,8 +123,8 @@ const NewListing = () => {
     const [ listingTitle, setListingTitle ] = useState('');
     const [ duration, setDuration ] = useState('');
     const [ price, setPrice ] = useState('');
-    const [ date, setDate ] = useState('');
-    const [ time, setTime ] = useState('');
+    const [ date, setDate ] = useState(null);
+    const [ time, setTime ] = useState(null);
     const [ language, setLanguage ] = useState('');
 
     const [ tags, setTags ]                     = useState('');
@@ -281,10 +281,10 @@ const NewListing = () => {
             if (listingTopics.includes(topic)) {
                 console.log(topic + " already in list, removing it");
                 const newList = listingTopics.filter(item => item!==topic);
-                document.getElementsByClassName('topics-selection__input--' + topic)[0].classList.remove("topics-selection--selected", "tag-" + topic);
+                document.getElementsByClassName('topics-selection__input--' + topic)[0].classList.remove("topics-selection--selected");
                 return newList;
             } else if (listingTopics.length < 3) {
-                document.getElementsByClassName('topics-selection__input--' + topic)[0].classList.add("topics-selection--selected", "tag-" + topic);
+                document.getElementsByClassName('topics-selection__input--' + topic)[0].classList.add("topics-selection--selected");
                 return [...listingTopics, topic];
             } else {
                 return listingTopics;
@@ -419,7 +419,7 @@ const NewListing = () => {
                                     <TranslatedText id="newListing.webinar"  />
                                 </label>
                                 <Radio
-                                    checked={listingFormat === 'false'}
+                                    checked={listingFormat === 'webinar'}
                                     onChange={(e) => setListingFormat(e.currentTarget.value)}
                                     value='webinar'
                                     name="radio-button-demo"
@@ -450,7 +450,7 @@ const NewListing = () => {
                                     <TranslatedText id="newListing.seminar"  />
                                 </label>
                                 <Radio
-                                    checked={listingFormat === 'false'}
+                                    checked={listingFormat === 'seminar'}
                                     onChange={(e) => setListingFormat(e.currentTarget.value)}
                                     value='seminar'
                                     name="radio-button-demo"
@@ -460,7 +460,7 @@ const NewListing = () => {
                                     <TranslatedText id="newListing.meetup"  />
                                 </label>
                                 <Radio
-                                    checked={listingFormat === 'false'}
+                                    checked={listingFormat === 'meetup'}
                                     onChange={(e) => setListingFormat(e.currentTarget.value)}
                                     value='meetup'
                                     name="radio-button-demo"
@@ -718,7 +718,6 @@ const NewListing = () => {
                                 (logoLink!=="") ? 
                                     (<React.Fragment>
                                         <img 
-                                            style={{ position:'absolute', width: '142px', height: '142px' }} 
                                             src={logoLink} 
                                             className="image-container__image image-container__image--logo"
                                             alt="Logo"
@@ -734,7 +733,7 @@ const NewListing = () => {
                                         onClick={ handleListingLogo }
                                     >
                                         <EditIcon
-                                            style={{ marginBottom: '20px'}} />
+                                            style={{ marginBottom: '5px'}} />
                                         <strong><TranslatedText id="newListing.addImage" /></strong>
                                     </div>)
                             }
@@ -757,7 +756,7 @@ const NewListing = () => {
                 <div className="MuiFormControl-root MuiFormControl-marginNormal MuiFormControl-fullWidth">
                 
                     <div className="form-buttons">
-                        <Link to={{pathname:`/${locale.split('-')[0]}/providers`}}>
+                        <Link to={{pathname:`/${locale.split('-')[0]}/listings`}}>
                             <Button variant="outlined" className="cancel-form-data secondary">            
                                 <TranslatedText id="general.cancel" />
                             </Button>
